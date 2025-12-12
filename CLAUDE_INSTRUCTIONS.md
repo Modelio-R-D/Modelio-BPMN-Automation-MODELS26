@@ -1,4 +1,4 @@
-# Modelio BPMN Macro Generation - Claude Instructions v2.4
+# Modelio BPMN Macro Generation - Claude Instructions v2.5
 
 ## Overview
 
@@ -9,10 +9,11 @@ You are helping users create BPMN process diagrams in Modelio using Jython macro
 1. **BPMN_Helpers.py** - Helper library (placed in Modelio macros folder)
 2. **Generated file** - Pure configuration + `execfile()` to load helpers
 
-**v2.4 Features**:
+**v2.5 Features**:
 - Data Objects with automatic lane expansion (always positioned below lane center)
 - Data Associations with auto-detected direction based on element types
 - Lane-by-lane positioning for proper diagram layout
+- Clarified BPMN rules: Events CAN have data associations, Gateways CANNOT
 
 ## Why Two Files?
 
@@ -198,18 +199,43 @@ CONFIG = {
 
 - **Source/Target**: Element or data object names (direction is auto-detected based on element types)
 
+**CRITICAL - BPMN Data Association Rules:**
+
+| Element Type | Data Associations Allowed? | Direction |
+|--------------|---------------------------|-----------|
+| **Tasks** | YES | Input and Output |
+| **Start Events** | YES | Output only (Start -> Data) |
+| **End Events** | YES | Input only (Data -> End) |
+| **Gateways** | **NO - NEVER!** | N/A |
+
+**Valid Examples:**
+```python
+"data_associations": [
+    ("Start",         "Initial Data"),    # Start Event -> Data (OK)
+    ("Task A",        "Output Doc"),      # Task -> Data (OK)
+    ("Input Doc",     "Task B"),          # Data -> Task (OK)
+    ("Final Report",  "End"),             # Data -> End Event (OK)
+]
+```
+
+**INVALID - Will cause E205 orphan error:**
+```python
+"data_associations": [
+    ("Some Data",     "Decision?"),       # Data -> Gateway (INVALID!)
+    ("Gateway",       "Output Data"),     # Gateway -> Data (INVALID!)
+]
+```
+
 **BPMN Semantics** (auto-detected):
-- Task → DataObject: Sets `StartingActivity = Task`, `TargetRef = DataObject`
-- DataObject → Task: Sets `EndingActivity = Task`, `SourceRef = DataObject`
+- Task -> DataObject: Sets `StartingActivity = Task`, `TargetRef = DataObject`
+- DataObject -> Task: Sets `EndingActivity = Task`, `SourceRef = DataObject`
+- Start -> DataObject: Output association from start event
+- DataObject -> End: Input association to end event
 
 **Data Flow Pattern**: A typical data flow goes:
 ```
-Task A --> Data Object --> Task B
+Start --> Data Object --> Task A --> Data Object --> Task B --> Data Object --> End
 ```
-
-This means:
-1. Task A produces the data object (arrow from Task A to Data Object)
-2. The data object is consumed by Task B (arrow from Data Object to Task B)
 
 ---
 
@@ -232,7 +258,7 @@ f"Count: {count}"
 "Approved?", "Yes", "No"
 
 # WRONG - Will cause UnicodeDecodeError
-"Approved?", "✓", "✗"
+"Approved?", "checkmark", "x-mark"
 ```
 
 ### 3. Exact Name Matching
@@ -242,6 +268,9 @@ Lane names, element names, and flow references must match exactly (case-sensitiv
 - Every element needs a layout entry
 - Every element except ends needs at least one outgoing flow
 - Every element except starts needs at least one incoming flow
+
+### 5. No Data Associations to Gateways
+Gateways (EXCLUSIVE_GW, PARALLEL_GW) can NEVER have data associations. Only Tasks and Events can connect to Data Objects.
 
 ---
 
@@ -310,6 +339,7 @@ CONFIG = {
 
     # Data Associations: (source, target)
     # Pattern: Task outputs data, data inputs to next task
+    # Note: Only Tasks and Events can have data associations!
     "data_associations": [
         ("Write Document", "Draft"),        # Task produces data
         ("Draft",          "Submit"),       # Data consumed by task
@@ -356,6 +386,7 @@ CONFIG = {
 | Data object overlaps task | Adjust DATA_OFFSET_Y configuration |
 | Data object outside lane | Handled automatically by lane-by-lane positioning |
 | Guard not showing | Verify flow tuple has 3 elements: (src, tgt, guard) |
+| **E205 orphan BpmnDataAssociation** | **Data association to GATEWAY is invalid! Only Tasks and Events can have data associations.** |
 
 ---
 
@@ -394,6 +425,7 @@ When generating a process file, include this note:
 
 ## Version History
 
+- v2.5 (Dec 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - v2.4 (Dec 2025): Simplified data objects by removing position parameter (always below)
 - v2.3 (Dec 2025): Simplified data associations by auto-detecting direction
 - v2.2 (Dec 2025): Fixed Data Association semantics, lane-by-lane positioning

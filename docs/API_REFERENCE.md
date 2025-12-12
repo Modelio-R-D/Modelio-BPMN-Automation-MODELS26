@@ -484,6 +484,7 @@ COMPLETE: MyProcess_12345
 
 ## Version History
 
+- **v2.5** (December 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (December 2025): Simplified data objects by removing position parameter (always below)
 - **v2.3** (December 2025): Simplified data associations by auto-detecting direction
 - **v2.2** (December 2025): Fixed Data Association semantics, lane-by-lane data object positioning

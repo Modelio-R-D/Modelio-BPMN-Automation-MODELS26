@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.5] - December 2025
+
+### Documentation
+- **Clarified BPMN data association rules**: Events CAN have data associations, Gateways CANNOT
+  - Start Events: Output associations only (Start -> Data)
+  - End Events: Input associations only (Data -> End)
+  - Gateways: NEVER allowed - causes E205 orphan error
+- Added detailed table and examples showing valid/invalid data associations
+
+---
+
 ## [v2.4] - December 2025
 
 ### Changed

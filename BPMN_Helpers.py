@@ -12,7 +12,7 @@
 #   - BUT: There may be a delay before elements are available
 #   - IF elements still missing: manual unmask INSIDE the correct lane
 #
-# Version: 2.4 - December 2025
+# Version: 2.5 - December 2025
 #
 
 from org.modelio.metamodel.bpmn.processCollaboration import BpmnProcess
@@ -256,13 +256,7 @@ def _createDataAssociation(process, source, target):
 
     BPMN Data Association Semantics:
         - OUTPUT (Task -> DataObject): StartingActivity = Task, TargetRef = DataObject
-          The association is owned by the activity (added to DataOutputAssociation list)
         - INPUT (DataObject -> Task): EndingActivity = Task, SourceRef = DataObject
-          The association is owned by the activity (added to DataInputAssociation list)
-    
-    IMPORTANT: The BpmnDataAssociation must be added to the activity's
-    DataInputAssociation or DataOutputAssociation list to establish proper
-    containment, otherwise Modelio will report an "orphan element" error.
     """
     if not _DATA_OBJECTS_AVAILABLE:
         print "ERROR: BpmnDataAssociation not available in this Modelio version"
@@ -284,28 +278,12 @@ def _createDataAssociation(process, source, target):
 
         if sourceIsData:
             # Data flows INTO the activity (DataObject -> Task)
-            # This is a DataInputAssociation
             assoc.getSourceRef().add(source)   # SourceRef = DataObject
             assoc.setEndingActivity(target)    # EndingActivity = Task (receives data)
-            
-            # CRITICAL: Add to activity's DataInputAssociation list for proper containment
-            # This establishes the ownership relationship and prevents "orphan element" error
-            try:
-                target.getDataInputAssociation().add(assoc)
-            except Exception as e:
-                print "  Warning: Could not add to DataInputAssociation list: " + str(e)
         else:
             # Data flows OUT OF the activity (Task -> DataObject)
-            # This is a DataOutputAssociation
             assoc.setTargetRef(target)         # TargetRef = DataObject
             assoc.setStartingActivity(source)  # StartingActivity = Task (produces data)
-            
-            # CRITICAL: Add to activity's DataOutputAssociation list for proper containment
-            # This establishes the ownership relationship and prevents "orphan element" error
-            try:
-                source.getDataOutputAssociation().add(assoc)
-            except Exception as e:
-                print "  Warning: Could not add to DataOutputAssociation list: " + str(e)
 
         return assoc
     except Exception as e:

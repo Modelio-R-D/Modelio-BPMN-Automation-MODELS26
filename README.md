@@ -337,6 +337,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## Version History
 
+- **v2.5** (Dec 2025) - Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (Dec 2025) - Simplified data objects by removing position parameter (always below)
 - **v2.3** (Dec 2025) - Simplified data associations by auto-detecting direction
 - **v2.2** (Dec 2025) - Fixed Data Association semantics, lane-by-lane data object positioning
