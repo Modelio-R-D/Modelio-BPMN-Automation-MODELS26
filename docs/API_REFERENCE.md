@@ -27,9 +27,14 @@ Use these constants in the `elements` section of your configuration.
 
 | Constant | Visual | Description |
 |----------|--------|-------------|
+| `TASK` | ▭ (rectangle) | Generic task |
 | `USER_TASK` | 👤▭ (person icon + rectangle) | Human activity requiring IT interaction |
 | `SERVICE_TASK` | ⚙▭ (gear icon + rectangle) | Automated/system task |
 | `MANUAL_TASK` | ✋▭ (hand icon + rectangle) | Physical task without IT involvement |
+| `SCRIPT_TASK` | ▭ (rectangle) | Script execution task |
+| `BUSINESS_RULE_TASK` | ▭ (rectangle) | Business rule evaluation |
+| `SEND_TASK` | ▭ (rectangle) | Send message task |
+| `RECEIVE_TASK` | ▭ (rectangle) | Receive message task |
 
 ### Gateways
 
@@ -37,6 +42,9 @@ Use these constants in the `elements` section of your configuration.
 |----------|--------|-------------|
 | `EXCLUSIVE_GW` | ◇✕ (diamond with X) | XOR - exactly one outgoing path chosen |
 | `PARALLEL_GW` | ◇+ (diamond with +) | AND - all paths execute in parallel |
+| `INCLUSIVE_GW` | ◇○ (diamond with O) | OR - one or more paths |
+| `COMPLEX_GW` | ◇* (diamond with *) | Complex routing logic |
+| `EVENT_BASED_GW` | ◇ (diamond) | Wait for event |
 
 ### Data Elements
 
@@ -484,6 +492,7 @@ COMPLETE: MyProcess_12345
 
 ## Version History
 
+- **v3.0** (December 2025): Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (December 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (December 2025): Simplified data objects by removing position parameter (always below)
 - **v2.3** (December 2025): Simplified data associations by auto-detecting direction

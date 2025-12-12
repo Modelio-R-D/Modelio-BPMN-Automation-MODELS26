@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.0] - December 2025
+
+### Major Features
+- **BPMN Export/Import**: New `BPMN_Export.py` macro to export existing diagrams to Python configuration
+  - Captures all elements with exact positions and sizes
+  - Uses lane-relative Y coordinates for proper positioning
+  - Supports diagram cloning and migration between projects
+
+- **Lane-Relative Positioning**: New positioning mode for exact diagram recreation
+  - Elements format: `("Name", TYPE, "Lane", x, y_offset, width, height)`
+  - `y_offset` is relative to lane top, not absolute Y coordinate
+  - Handles Modelio's dynamic lane resizing automatically
+
+- **New Element Types**:
+  - Tasks: `SCRIPT_TASK`, `BUSINESS_RULE_TASK`, `SEND_TASK`, `RECEIVE_TASK`, generic `TASK`
+  - Gateways: `INCLUSIVE_GW`, `COMPLEX_GW`, `EVENT_BASED_GW`
+  - Events: `SIGNAL_START`, `CONDITIONAL_START`, `SIGNAL_END`, `TERMINATE_END`, `ERROR_END`
+  - Intermediate Events: `INTERMEDIATE_CATCH`, `INTERMEDIATE_THROW`, `MESSAGE_CATCH`, `MESSAGE_THROW`, `TIMER_CATCH`, `SIGNAL_CATCH`, `SIGNAL_THROW`
+
+### Changed
+- **Backward Compatible**: Column-based positioning still works (3-tuple elements format)
+- **Helper Library Renamed**: `BPMN_Helpers.py` now referred to as `BPMN_Helpers_v2.py` in generated exports
+- **Dynamic Imports**: Gracefully handles missing element types in older Modelio versions
+
+### Files
+- `BPMN_Helpers.py` - Enhanced helper library with new positioning and element types
+- `BPMN_Export.py` - New export macro for diagram extraction
+
+---
+
 ## [v2.5] - December 2025
 
 ### Documentation

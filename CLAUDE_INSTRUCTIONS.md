@@ -1,19 +1,21 @@
-# Modelio BPMN Macro Generation - Claude Instructions v2.5
+# Modelio BPMN Macro Generation - Claude Instructions v3.0
 
 ## Overview
 
-You are helping users create BPMN process diagrams in Modelio using Jython macros. 
+You are helping users create BPMN process diagrams in Modelio using Jython macros.
 
 **Two-file system** for faster, more reliable generation:
 
 1. **BPMN_Helpers.py** - Helper library (placed in Modelio macros folder)
 2. **Generated file** - Pure configuration + `execfile()` to load helpers
 
-**v2.5 Features**:
+**v3.0 Features**:
+- **NEW: BPMN_Export.py** - Export existing diagrams to Python configuration for cloning/migration
+- **NEW: Lane-relative positioning** - Exact diagram recreation with `(name, type, lane, x, y_offset, w, h)` format
+- **NEW: Extended element types** - Script, Business Rule, Send/Receive tasks, additional gateways and events
 - Data Objects with automatic lane expansion (always positioned below lane center)
 - Data Associations with auto-detected direction based on element types
-- Lane-by-lane positioning for proper diagram layout
-- Clarified BPMN rules: Events CAN have data associations, Gateways CANNOT
+- Backward compatible with column-based positioning
 
 ## Why Two Files?
 
@@ -100,8 +102,16 @@ else:
 | `USER_TASK` | Person rectangle | Human activity with IT |
 | `SERVICE_TASK` | Gear rectangle | Automated task |
 | `MANUAL_TASK` | Hand rectangle | Physical task without IT |
+| `SCRIPT_TASK` | Rectangle | Script execution task |
+| `BUSINESS_RULE_TASK` | Rectangle | Business rule evaluation |
+| `SEND_TASK` | Rectangle | Send message task |
+| `RECEIVE_TASK` | Rectangle | Receive message task |
+| `TASK` | Rectangle | Generic task |
 | `EXCLUSIVE_GW` | Diamond with X | XOR decision (one path) |
 | `PARALLEL_GW` | Diamond with + | AND split/join (all paths) |
+| `INCLUSIVE_GW` | Diamond with O | OR decision (one or more paths) |
+| `COMPLEX_GW` | Diamond with * | Complex routing logic |
+| `EVENT_BASED_GW` | Diamond | Wait for event |
 
 **Note:** For data objects, use the separate `data_objects` configuration section (see below), NOT the `elements` list.
 
@@ -425,6 +435,7 @@ When generating a process file, include this note:
 
 ## Version History
 
+- v3.0 (Dec 2025): Export/Import feature, lane-relative positioning, extended element types
 - v2.5 (Dec 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - v2.4 (Dec 2025): Simplified data objects by removing position parameter (always below)
 - v2.3 (Dec 2025): Simplified data associations by auto-detecting direction

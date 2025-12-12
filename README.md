@@ -21,6 +21,8 @@ This project enables you to:
 - ✅ Configurable task dimensions and spacing
 - ✅ Robust element unmasking with fallback mechanisms
 - ✅ Two-file architecture for faster, more reliable AI generation
+- ✅ **NEW: Export/Import** - Clone or migrate existing diagrams between projects
+- ✅ **NEW: Extended element types** - Script, Business Rule, Send/Receive tasks, additional gateways and events
 
 ## Requirements
 
@@ -85,6 +87,7 @@ Your BPMN diagram will appear automatically!
 Modelio-Automation/
 ├── README.md                 # This file
 ├── BPMN_Helpers.py           # Helper library (install to Modelio)
+├── BPMN_Export.py            # Export macro (install to Modelio) - NEW in v3.0
 ├── CLAUDE_INSTRUCTIONS.md    # AI instructions for macro generation
 ├── docs/
 │   ├── QUICK_START.md        # Detailed setup guide
@@ -181,8 +184,15 @@ When a BPMN diagram is created, Modelio automatically "unmasks" elements. Howeve
 | User Task | `USER_TASK` | 👤▭ | Human activity with IT system |
 | Manual Task | `MANUAL_TASK` | ✋▭ | Physical task without IT |
 | Service Task | `SERVICE_TASK` | ⚙▭ | Automated/system task |
+| Script Task | `SCRIPT_TASK` | ▭ | Script execution task |
+| Business Rule Task | `BUSINESS_RULE_TASK` | ▭ | Business rule evaluation |
+| Send Task | `SEND_TASK` | ▭ | Send message task |
+| Receive Task | `RECEIVE_TASK` | ▭ | Receive message task |
 | Exclusive Gateway | `EXCLUSIVE_GW` | ◇ | XOR decision (one path) |
 | Parallel Gateway | `PARALLEL_GW` | ⊕ | AND split/join (all paths) |
+| Inclusive Gateway | `INCLUSIVE_GW` | ◇ | OR decision (one or more paths) |
+| Complex Gateway | `COMPLEX_GW` | ◇ | Complex routing logic |
+| Event-Based Gateway | `EVENT_BASED_GW` | ◇ | Wait for event |
 | Data Object | `DATA_OBJECT` | 📄 | Document or data in process |
 
 ---
@@ -337,6 +347,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## Version History
 
+- **v3.0** (Dec 2025) - Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (Dec 2025) - Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (Dec 2025) - Simplified data objects by removing position parameter (always below)
 - **v2.3** (Dec 2025) - Simplified data associations by auto-detecting direction
