@@ -2,19 +2,12 @@
 # BPMN_Helpers.py
 #
 # Description:
-#   Enhanced helper library for creating BPMN process diagrams in Modelio.
-#   Supports ABSOLUTE POSITIONING for exact diagram recreation.
-#   Use with BPMN_Export.py for diagram cloning/migration.
+#   Comprehensive helper library for creating BPMN process diagrams in Modelio.
+#   Based on v2.7 positioning logic (best results) with extended element types.
 #
-#   Place this file in: .modelio/5.4/macros/BPMN_Helpers_v2.py
-#   Load from scripts with: execfile(".modelio/5.4/macros/BPMN_Helpers_v2.py")
+#   Place this file in: .modelio/5.4/macros/BPMN_Helpers.py
 #
-# Version: 3.0 - December 2025
-#   - Added absolute positioning support
-#   - Added more element types (Script, BusinessRule, Send, Receive tasks)
-#   - Added more event types (Intermediate, Signal, etc.)
-#   - Added more gateway types (Inclusive, Complex, EventBased)
-#   - Backward compatible with column-based layout
+# Version: 3.1 - December 2025
 #
 
 from org.modelio.metamodel.bpmn.processCollaboration import BpmnProcess
@@ -34,7 +27,7 @@ from org.eclipse.draw2d.geometry import Rectangle as Draw2DRectangle
 import re
 import time
 
-# Try to import additional task types
+# Try imports for extended types
 try:
     from org.modelio.metamodel.bpmn.activities import BpmnScriptTask
     _SCRIPT_TASK_AVAILABLE = True
@@ -54,7 +47,6 @@ try:
 except ImportError:
     _SEND_RECEIVE_AVAILABLE = False
 
-# Try to import additional gateway types
 try:
     from org.modelio.metamodel.bpmn.gateways import BpmnInclusiveGateway
     from org.modelio.metamodel.bpmn.gateways import BpmnComplexGateway
@@ -63,7 +55,6 @@ try:
 except ImportError:
     _ADDITIONAL_GATEWAYS_AVAILABLE = False
 
-# Try to import intermediate events
 try:
     from org.modelio.metamodel.bpmn.events import BpmnIntermediateCatchEvent
     from org.modelio.metamodel.bpmn.events import BpmnIntermediateThrowEvent
@@ -71,7 +62,6 @@ try:
 except ImportError:
     _INTERMEDIATE_EVENTS_AVAILABLE = False
 
-# Try to import Data Object classes
 try:
     from org.modelio.metamodel.bpmn.objects import BpmnDataObject
     from org.modelio.metamodel.bpmn.objects import BpmnDataAssociation
@@ -79,10 +69,7 @@ try:
 except ImportError:
     _DATA_OBJECTS_AVAILABLE = False
 
-print "BPMN_Helpers_v2.py loaded"
-print "  Data Objects: " + str(_DATA_OBJECTS_AVAILABLE)
-print "  Script Task: " + str(_SCRIPT_TASK_AVAILABLE)
-print "  Additional Gateways: " + str(_ADDITIONAL_GATEWAYS_AVAILABLE)
+print "BPMN_Helpers.py v3.1 loaded (Data Objects: " + str(_DATA_OBJECTS_AVAILABLE) + ")"
 
 
 # ============================================================================
@@ -98,8 +85,8 @@ BPMN_DEFAULT_CONFIG = {
     "TASK_HEIGHT": 60,
     "DATA_WIDTH": 40,
     "DATA_HEIGHT": 50,
-    "DATA_OFFSET_X": 20,
-    "DATA_OFFSET_Y": 80,
+    "DATA_OFFSET_X": 90,
+    "DATA_OFFSET_Y": 10,
 }
 
 
@@ -156,34 +143,25 @@ DATA_OBJECT = "DATA_OBJECT"
 # ============================================================================
 
 def _createLane(laneSet, name):
-    """Create a BPMN Lane."""
     lane = modelingSession.getModel().createBpmnLane()
     lane.setName(name)
     lane.setLaneSet(laneSet)
     return lane
 
-
 def _addToLane(element, lane):
-    """Assign an element to a lane."""
     try:
         lane.getFlowElementRef().add(element)
         return True
     except:
         return False
 
-
-# --- Start Events ---
-
 def _createStartEvent(process, name):
-    """Create a BPMN Start Event."""
     event = modelingSession.getModel().createBpmnStartEvent()
     event.setName(name)
     event.setContainer(process)
     return event
 
-
 def _createMessageStartEvent(process, name):
-    """Create a BPMN Message Start Event."""
     event = modelingSession.getModel().createBpmnStartEvent()
     event.setName(name)
     event.setContainer(process)
@@ -194,9 +172,7 @@ def _createMessageStartEvent(process, name):
         pass
     return event
 
-
 def _createTimerStartEvent(process, name):
-    """Create a BPMN Timer Start Event."""
     event = modelingSession.getModel().createBpmnStartEvent()
     event.setName(name)
     event.setContainer(process)
@@ -207,9 +183,7 @@ def _createTimerStartEvent(process, name):
         pass
     return event
 
-
 def _createSignalStartEvent(process, name):
-    """Create a BPMN Signal Start Event."""
     event = modelingSession.getModel().createBpmnStartEvent()
     event.setName(name)
     event.setContainer(process)
@@ -220,9 +194,7 @@ def _createSignalStartEvent(process, name):
         pass
     return event
 
-
 def _createConditionalStartEvent(process, name):
-    """Create a BPMN Conditional Start Event."""
     event = modelingSession.getModel().createBpmnStartEvent()
     event.setName(name)
     event.setContainer(process)
@@ -233,19 +205,13 @@ def _createConditionalStartEvent(process, name):
         pass
     return event
 
-
-# --- End Events ---
-
 def _createEndEvent(process, name):
-    """Create a BPMN End Event."""
     event = modelingSession.getModel().createBpmnEndEvent()
     event.setName(name)
     event.setContainer(process)
     return event
 
-
 def _createMessageEndEvent(process, name):
-    """Create a BPMN Message End Event."""
     event = modelingSession.getModel().createBpmnEndEvent()
     event.setName(name)
     event.setContainer(process)
@@ -256,9 +222,7 @@ def _createMessageEndEvent(process, name):
         pass
     return event
 
-
 def _createSignalEndEvent(process, name):
-    """Create a BPMN Signal End Event."""
     event = modelingSession.getModel().createBpmnEndEvent()
     event.setName(name)
     event.setContainer(process)
@@ -269,9 +233,7 @@ def _createSignalEndEvent(process, name):
         pass
     return event
 
-
 def _createTerminateEndEvent(process, name):
-    """Create a BPMN Terminate End Event."""
     event = modelingSession.getModel().createBpmnEndEvent()
     event.setName(name)
     event.setContainer(process)
@@ -282,9 +244,7 @@ def _createTerminateEndEvent(process, name):
         pass
     return event
 
-
 def _createErrorEndEvent(process, name):
-    """Create a BPMN Error End Event."""
     event = modelingSession.getModel().createBpmnEndEvent()
     event.setName(name)
     event.setContainer(process)
@@ -295,33 +255,23 @@ def _createErrorEndEvent(process, name):
         pass
     return event
 
-
-# --- Intermediate Events ---
-
 def _createIntermediateCatchEvent(process, name):
-    """Create a BPMN Intermediate Catch Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
-        print "WARNING: Intermediate events not available, creating generic event"
         return _createStartEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateCatchEvent()
     event.setName(name)
     event.setContainer(process)
     return event
 
-
 def _createIntermediateThrowEvent(process, name):
-    """Create a BPMN Intermediate Throw Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
-        print "WARNING: Intermediate events not available, creating generic event"
         return _createEndEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateThrowEvent()
     event.setName(name)
     event.setContainer(process)
     return event
 
-
 def _createMessageCatchEvent(process, name):
-    """Create a BPMN Message Catch Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
         return _createIntermediateCatchEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateCatchEvent()
@@ -334,9 +284,7 @@ def _createMessageCatchEvent(process, name):
         pass
     return event
 
-
 def _createMessageThrowEvent(process, name):
-    """Create a BPMN Message Throw Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
         return _createIntermediateThrowEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateThrowEvent()
@@ -349,9 +297,7 @@ def _createMessageThrowEvent(process, name):
         pass
     return event
 
-
 def _createTimerCatchEvent(process, name):
-    """Create a BPMN Timer Catch Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
         return _createIntermediateCatchEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateCatchEvent()
@@ -364,9 +310,7 @@ def _createTimerCatchEvent(process, name):
         pass
     return event
 
-
 def _createSignalCatchEvent(process, name):
-    """Create a BPMN Signal Catch Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
         return _createIntermediateCatchEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateCatchEvent()
@@ -379,9 +323,7 @@ def _createSignalCatchEvent(process, name):
         pass
     return event
 
-
 def _createSignalThrowEvent(process, name):
-    """Create a BPMN Signal Throw Event."""
     if not _INTERMEDIATE_EVENTS_AVAILABLE:
         return _createIntermediateThrowEvent(process, name)
     event = modelingSession.getModel().createBpmnIntermediateThrowEvent()
@@ -394,140 +336,99 @@ def _createSignalThrowEvent(process, name):
         pass
     return event
 
-
-# --- Tasks ---
-
 def _createTask(process, name):
-    """Create a generic BPMN Task."""
     task = modelingSession.getModel().createBpmnTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createUserTask(process, name):
-    """Create a BPMN User Task."""
     task = modelingSession.getModel().createBpmnUserTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createServiceTask(process, name):
-    """Create a BPMN Service Task."""
     task = modelingSession.getModel().createBpmnServiceTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createManualTask(process, name):
-    """Create a BPMN Manual Task."""
     task = modelingSession.getModel().createBpmnManualTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createScriptTask(process, name):
-    """Create a BPMN Script Task."""
     if not _SCRIPT_TASK_AVAILABLE:
-        print "WARNING: Script Task not available, creating Service Task"
         return _createServiceTask(process, name)
     task = modelingSession.getModel().createBpmnScriptTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createBusinessRuleTask(process, name):
-    """Create a BPMN Business Rule Task."""
     if not _BUSINESS_RULE_TASK_AVAILABLE:
-        print "WARNING: Business Rule Task not available, creating Service Task"
         return _createServiceTask(process, name)
     task = modelingSession.getModel().createBpmnBusinessRuleTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createSendTask(process, name):
-    """Create a BPMN Send Task."""
     if not _SEND_RECEIVE_AVAILABLE:
-        print "WARNING: Send Task not available, creating Service Task"
         return _createServiceTask(process, name)
     task = modelingSession.getModel().createBpmnSendTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
 def _createReceiveTask(process, name):
-    """Create a BPMN Receive Task."""
     if not _SEND_RECEIVE_AVAILABLE:
-        print "WARNING: Receive Task not available, creating Service Task"
         return _createServiceTask(process, name)
     task = modelingSession.getModel().createBpmnReceiveTask()
     task.setName(name)
     task.setContainer(process)
     return task
 
-
-# --- Gateways ---
-
 def _createExclusiveGateway(process, name):
-    """Create a BPMN Exclusive Gateway."""
     gateway = modelingSession.getModel().createBpmnExclusiveGateway()
     gateway.setName(name)
     gateway.setContainer(process)
     return gateway
 
-
 def _createParallelGateway(process, name):
-    """Create a BPMN Parallel Gateway."""
     gateway = modelingSession.getModel().createBpmnParallelGateway()
     gateway.setName(name)
     gateway.setContainer(process)
     return gateway
 
-
 def _createInclusiveGateway(process, name):
-    """Create a BPMN Inclusive Gateway."""
     if not _ADDITIONAL_GATEWAYS_AVAILABLE:
-        print "WARNING: Inclusive Gateway not available, creating Exclusive Gateway"
         return _createExclusiveGateway(process, name)
     gateway = modelingSession.getModel().createBpmnInclusiveGateway()
     gateway.setName(name)
     gateway.setContainer(process)
     return gateway
 
-
 def _createComplexGateway(process, name):
-    """Create a BPMN Complex Gateway."""
     if not _ADDITIONAL_GATEWAYS_AVAILABLE:
-        print "WARNING: Complex Gateway not available, creating Exclusive Gateway"
         return _createExclusiveGateway(process, name)
     gateway = modelingSession.getModel().createBpmnComplexGateway()
     gateway.setName(name)
     gateway.setContainer(process)
     return gateway
 
-
 def _createEventBasedGateway(process, name):
-    """Create a BPMN Event-Based Gateway."""
     if not _ADDITIONAL_GATEWAYS_AVAILABLE:
-        print "WARNING: Event-Based Gateway not available, creating Exclusive Gateway"
         return _createExclusiveGateway(process, name)
     gateway = modelingSession.getModel().createBpmnEventBasedGateway()
     gateway.setName(name)
     gateway.setContainer(process)
     return gateway
 
-
-# --- Data Objects ---
-
 def _createDataObject(process, name):
-    """Create a BPMN Data Object."""
     if not _DATA_OBJECTS_AVAILABLE:
         print "ERROR: BpmnDataObject not available"
         return None
@@ -540,11 +441,7 @@ def _createDataObject(process, name):
         print "ERROR creating data object: " + str(e)
         return None
 
-
-# --- Flows ---
-
 def _createSequenceFlow(process, source, target, guard=""):
-    """Create a BPMN Sequence Flow."""
     flow = modelingSession.getModel().createBpmnSequenceFlow()
     flow.setSourceRef(source)
     flow.setTargetRef(target)
@@ -557,23 +454,18 @@ def _createSequenceFlow(process, source, target, guard=""):
             pass
     return flow
 
-
 def _createDataAssociation(process, source, target):
-    """Create a BPMN Data Association."""
     if not _DATA_OBJECTS_AVAILABLE:
         print "ERROR: BpmnDataAssociation not available"
         return None
-    
     sourceIsData = isinstance(source, BpmnDataObject)
     targetIsData = isinstance(target, BpmnDataObject)
-    
     if sourceIsData and targetIsData:
         print "ERROR: Both source and target are DataObjects"
         return None
     if not sourceIsData and not targetIsData:
         print "ERROR: Neither source nor target is a DataObject"
         return None
-    
     try:
         assoc = modelingSession.getModel().createBpmnDataAssociation()
         if sourceIsData:
@@ -587,24 +479,17 @@ def _createDataAssociation(process, source, target):
         print "ERROR creating data association: " + str(e)
         return None
 
-
-# Element type to creator mapping
 _ELEMENT_CREATORS = {
-    # Start events
     START: _createStartEvent,
     MESSAGE_START: _createMessageStartEvent,
     TIMER_START: _createTimerStartEvent,
     SIGNAL_START: _createSignalStartEvent,
     CONDITIONAL_START: _createConditionalStartEvent,
-    
-    # End events
     END: _createEndEvent,
     MESSAGE_END: _createMessageEndEvent,
     SIGNAL_END: _createSignalEndEvent,
     TERMINATE_END: _createTerminateEndEvent,
     ERROR_END: _createErrorEndEvent,
-    
-    # Intermediate events
     INTERMEDIATE_CATCH: _createIntermediateCatchEvent,
     INTERMEDIATE_THROW: _createIntermediateThrowEvent,
     MESSAGE_CATCH: _createMessageCatchEvent,
@@ -612,8 +497,6 @@ _ELEMENT_CREATORS = {
     TIMER_CATCH: _createTimerCatchEvent,
     SIGNAL_CATCH: _createSignalCatchEvent,
     SIGNAL_THROW: _createSignalThrowEvent,
-    
-    # Tasks
     TASK: _createTask,
     USER_TASK: _createUserTask,
     SERVICE_TASK: _createServiceTask,
@@ -622,21 +505,15 @@ _ELEMENT_CREATORS = {
     BUSINESS_RULE_TASK: _createBusinessRuleTask,
     SEND_TASK: _createSendTask,
     RECEIVE_TASK: _createReceiveTask,
-    
-    # Gateways
     EXCLUSIVE_GW: _createExclusiveGateway,
     PARALLEL_GW: _createParallelGateway,
     INCLUSIVE_GW: _createInclusiveGateway,
     COMPLEX_GW: _createComplexGateway,
     EVENT_BASED_GW: _createEventBasedGateway,
-    
-    # Data
     DATA_OBJECT: _createDataObject,
 }
 
-
 def _createElement(process, name, elementType):
-    """Create a BPMN element by type."""
     creator = _ELEMENT_CREATORS.get(elementType)
     if creator:
         return creator(process, name)
@@ -650,10 +527,9 @@ def _createElement(process, name, elementType):
 # ============================================================================
 
 def _parseBounds(boundsStr):
-    """Parse a Rectangle bounds string."""
     match = re.search(
         r'Rectangle\((-?[0-9.]+),\s*(-?[0-9.]+),\s*(-?[0-9.]+),\s*(-?[0-9.]+)\)',
-        str(boundsStr)
+        boundsStr
     )
     if match:
         return {
@@ -664,32 +540,38 @@ def _parseBounds(boundsStr):
         }
     return None
 
-
 def _getGraphics(diagramHandle, element):
-    """Get diagram graphics for an element."""
     try:
         graphics = diagramHandle.getDiagramGraphics(element)
-        if graphics and graphics.size() > 0:
+        if graphics is not None and graphics.size() > 0:
             return graphics.get(0)
     except:
         pass
     return None
 
-
 def _getBounds(diagramHandle, element):
-    """Get bounds of an element."""
     dg = _getGraphics(diagramHandle, element)
     if dg:
         return _parseBounds(str(dg.getBounds()))
     return None
 
-
 def _getLaneCenterY(diagramHandle, lane):
-    """Get center Y position of a lane."""
     bounds = _getBounds(diagramHandle, lane)
     if bounds:
         return bounds["y"] + bounds["h"] / 2 - 23
     return None
+
+def _formatLanesSummary(diagramHandle, lanes, laneOrder):
+    parts = []
+    for laneName in laneOrder:
+        lane = lanes[laneName]
+        info = _getBounds(diagramHandle, lane)
+        if info:
+            yEnd = int(info["y"] + info["h"])
+            parts.append(laneName + "(" + str(int(info["y"])) + "-" + str(yEnd) + ")")
+        else:
+            parts.append(laneName + "(--)")
+    return "Lanes: " + "; ".join(parts)
 
 
 # ============================================================================
@@ -697,11 +579,11 @@ def _getLaneCenterY(diagramHandle, lane):
 # ============================================================================
 
 def _waitForElements(diagramHandle, elements, config):
-    """Wait until all elements are available."""
     elementGraphics = {}
     attempt = 0
-    maxAttempts = config.get("MAX_ATTEMPTS", 3)
-    waitTimeMs = config.get("WAIT_TIME_MS", 50)
+    totalElements = len(elements)
+    maxAttempts = config.get("MAX_ATTEMPTS", BPMN_DEFAULT_CONFIG["MAX_ATTEMPTS"])
+    waitTimeMs = config.get("WAIT_TIME_MS", BPMN_DEFAULT_CONFIG["WAIT_TIME_MS"])
     
     while attempt < maxAttempts:
         attempt += 1
@@ -712,23 +594,27 @@ def _waitForElements(diagramHandle, elements, config):
                 if dg:
                     elementGraphics[name] = dg
         
-        if len(elementGraphics) == len(elements):
-            print "  [Attempt " + str(attempt) + "] All " + str(len(elements)) + " elements ready"
+        foundCount = len(elementGraphics)
+        if foundCount == totalElements:
+            print "  [Attempt " + str(attempt) + "] All " + str(foundCount) + " elements ready"
             return elementGraphics, attempt
+        else:
+            missing = [e.getName()[:12] for e in elements if e.getName() not in elementGraphics]
+            print "  [Attempt " + str(attempt) + "] Found: " + str(foundCount) + "/" + str(totalElements) + " | Missing: " + ", ".join(missing[:5]) + "..."
         
         time.sleep(waitTimeMs / 1000.0)
     
+    print "  [Attempt " + str(attempt) + "] TIMEOUT - " + str(len(elementGraphics)) + "/" + str(totalElements) + " elements"
     return elementGraphics, attempt
 
-
 def _unmaskMissingElements(diagramHandle, elements, elementGraphics, lanes, elementLanes):
-    """Unmask elements that weren't auto-unmasked."""
     unmaskedCount = 0
     laneY = {}
     for laneName, lane in lanes.items():
         bounds = _getBounds(diagramHandle, lane)
         if bounds:
-            laneY[laneName] = int(bounds["y"] + bounds["h"] / 2)
+            centerY = int(bounds["y"] + bounds["h"] / 2)
+            laneY[laneName] = centerY
     
     for elem in elements:
         name = elem.getName()
@@ -740,29 +626,23 @@ def _unmaskMissingElements(diagramHandle, elements, elementGraphics, lanes, elem
                 if result and result.size() > 0:
                     elementGraphics[name] = result.get(0)
                     unmaskedCount += 1
-            except:
-                pass
+                    print "  [Unmask] " + name + " -> Y=" + str(targetY) + " (" + laneName + "): OK"
+                else:
+                    print "  [Unmask] " + name + " -> Y=" + str(targetY) + " (" + laneName + "): FAILED"
+            except Exception as e:
+                print "  [Unmask] " + name + ": ERROR - " + str(e)
     
     return unmaskedCount
 
 
 # ============================================================================
-# MAIN CREATION FUNCTION - LANE-RELATIVE POSITIONING
+# MAIN ORCHESTRATION FUNCTION (from v2.7 - best results)
 # ============================================================================
 
 def createBPMNFromConfig(parentPackage, config):
     """
-    Create a BPMN process from configuration.
-    
-    Supports two formats:
-    
-    1. LANE-RELATIVE POSITIONING (from BPMN_Export v2):
-       "elements": [("Name", TYPE, "Lane", x, y_offset, width, height), ...]
-       y_offset is relative to lane top
-       
-    2. COLUMN-BASED (backward compatible):
-       "elements": [("Name", TYPE, "Lane"), ...]
-       "layout": {"Name": column_index, ...}
+    Create a BPMN process diagram from a configuration dictionary.
+    Uses v2.7 positioning logic for best results.
     """
     
     executionId = str(int(time.time() * 1000) % 100000)
@@ -773,26 +653,17 @@ def createBPMNFromConfig(parentPackage, config):
         stepCounter[0] += 1
         return stepCounter[0]
     
-    # Merge with defaults
     cfg = dict(BPMN_DEFAULT_CONFIG)
-    for key in BPMN_DEFAULT_CONFIG.keys():
+    for key in ["SPACING", "START_X", "TASK_WIDTH", "TASK_HEIGHT", "WAIT_TIME_MS", "MAX_ATTEMPTS",
+                "DATA_WIDTH", "DATA_HEIGHT", "DATA_OFFSET_X", "DATA_OFFSET_Y"]:
         if key in config:
             cfg[key] = config[key]
-    
-    # Detect format: lane-relative vs column-based
-    elementDefs = config.get("elements", [])
-    useLaneRelativePositioning = False
-    if elementDefs and len(elementDefs) > 0:
-        firstElem = elementDefs[0]
-        if len(firstElem) >= 7:
-            useLaneRelativePositioning = True
     
     print ""
     print "=================================================================="
     print "BPMN PROCESS CREATION"
     print "=================================================================="
     print "Process Name: " + processName
-    print "Positioning: " + ("LANE-RELATIVE" if useLaneRelativePositioning else "COLUMN-BASED")
     print "=================================================================="
     
     # =========================================================================
@@ -818,7 +689,7 @@ def createBPMNFromConfig(parentPackage, config):
     print "[" + str(step()) + "] Lanes: " + ", ".join(laneOrder)
     
     # =========================================================================
-    # PHASE 2: CREATE ALL ELEMENTS (but don't position yet)
+    # PHASE 2: CREATE ELEMENTS
     # =========================================================================
     print ""
     print "== PHASE 2: CREATE ELEMENTS ====================================="
@@ -827,45 +698,50 @@ def createBPMNFromConfig(parentPackage, config):
     elements = []
     elementRefs = {}
     elementLanes = {}
-    elementPositions = {}  # name -> (x, y_offset, w, h)
+    elementDefs = config.get("elements", [])
     
-    # Group elements by lane for lane-by-lane processing
-    elementsByLane = {}
+    laneElements = {}
     for laneName in laneOrder:
-        elementsByLane[laneName] = []
+        laneElements[laneName] = []
     
+    # Extended format stores custom positioning for imported diagrams
+    extendedPositions = {}
+
     for elemDef in elementDefs:
-        if useLaneRelativePositioning:
-            name, elemType, laneName, x, yOffset, w, h = elemDef[0], elemDef[1], elemDef[2], elemDef[3], elemDef[4], elemDef[5], elemDef[6]
-            elementPositions[name] = (x, yOffset, w, h)
+        # Support both formats:
+        # 3-tuple: (name, type, lane) - column-based layout
+        # 7-tuple: (name, type, lane, x, y_offset, w, h) - exact positioning (from export)
+        if len(elemDef) == 7:
+            name, elemType, laneName, x, yOffset, w, h = elemDef
+            extendedPositions[name] = {"x": x, "y_offset": yOffset, "w": w, "h": h}
         else:
-            name, elemType, laneName = elemDef[0], elemDef[1], elemDef[2]
-        
+            name, elemType, laneName = elemDef[:3]
+
         elem = _createElement(process, name, elemType)
         if elem:
-            if laneName and laneName in lanes:
+            if laneName in lanes:
                 _addToLane(elem, lanes[laneName])
             elements.append(elem)
             elementRefs[name] = elem
             elementLanes[name] = laneName
-            
-            # Group by lane
-            if laneName in elementsByLane:
-                elementsByLane[laneName].append(name)
+            if laneName in laneElements:
+                laneElements[laneName].append(name)
     
-    print "[" + str(step()) + "] Created " + str(len(elements)) + " elements"
-    
-    # Log elements per lane
     for laneName in laneOrder:
-        count = len(elementsByLane.get(laneName, []))
-        print "  " + laneName + ": " + str(count) + " elements"
+        count = len(laneElements[laneName])
+        print "[" + str(step()) + "] " + laneName + ": " + str(count) + " elements"
+    
+    print ""
+    print "  Total: " + str(len(elements)) + " elements"
     
     # =========================================================================
     # PHASE 2B: CREATE DATA OBJECTS
     # =========================================================================
     dataObjectDefs = config.get("data_objects", [])
     dataObjects = []
-    dataObjectPositions = {}
+    dataObjectRefs = {}
+    dataObjectLanes = {}
+    dataObjectLayout = {}
     
     if dataObjectDefs:
         print ""
@@ -873,25 +749,29 @@ def createBPMNFromConfig(parentPackage, config):
         print ""
         
         for dataDef in dataObjectDefs:
-            if len(dataDef) >= 6:
-                # Lane-relative: (name, lane, x, y_offset, w, h)
-                name, laneName, x, yOffset, w, h = dataDef[0], dataDef[1], dataDef[2], dataDef[3], dataDef[4], dataDef[5]
-                dataObjectPositions[name] = (x, yOffset, w, h)
+            # Support both formats:
+            # 3-tuple: (name, lane, column) - column-based layout
+            # 6-tuple: (name, lane, x, y_offset, w, h) - exact positioning (from export)
+            if len(dataDef) == 6:
+                name, laneName, x, yOffset, w, h = dataDef
+                extendedPositions[name] = {"x": x, "y_offset": yOffset, "w": w, "h": h}
+                column = 0  # Placeholder, not used with extended positioning
             else:
-                # Column-based: (name, lane, column)
-                name, laneName, column = dataDef[0], dataDef[1], dataDef[2]
-            
-            dataObj = _createDataObject(process, name)
-            if dataObj:
-                if laneName and laneName in lanes:
-                    _addToLane(dataObj, lanes[laneName])
-                dataObjects.append(dataObj)
-                elementRefs[name] = dataObj
-                elementLanes[name] = laneName
-                
-                # Group by lane
-                if laneName in elementsByLane:
-                    elementsByLane[laneName].append(name)
+                name, laneName, column = dataDef[:3]
+
+            try:
+                dataObj = _createDataObject(process, name)
+                if dataObj:
+                    if laneName in lanes:
+                        _addToLane(dataObj, lanes[laneName])
+                    dataObjects.append(dataObj)
+                    dataObjectRefs[name] = dataObj
+                    dataObjectLanes[name] = laneName
+                    dataObjectLayout[name] = column
+                    elementRefs[name] = dataObj
+                    elementLanes[name] = laneName
+            except Exception as e:
+                print "[" + str(step()) + "] ERROR creating " + name + ": " + str(e)
         
         print "[" + str(step()) + "] Data Objects: " + str(len(dataObjects))
     
@@ -913,143 +793,280 @@ def createBPMNFromConfig(parentPackage, config):
     print "[" + str(step()) + "] Save (triggers auto-unmask)"
     
     # =========================================================================
-    # PHASE 4 & 5: LANE-BY-LANE UNMASK AND POSITION
+    # PHASE 4: WAIT FOR ELEMENTS
     # =========================================================================
     print ""
-    print "== PHASE 4 & 5: LANE-BY-LANE POSITIONING ========================="
+    print "== PHASE 4: WAIT FOR AUTO-UNMASK ================================"
     print ""
     
+    layoutConfig = config.get("layout", {})
     allElements = elements + dataObjects
-    elementGraphics = {}
+    
+    elementGraphics, attempts = _waitForElements(diagramHandle, allElements, cfg)
+    foundCount = len(elementGraphics)
+    
+    if foundCount < len(allElements):
+        print ""
+        print "[" + str(step()) + "] Manual unmask for missing elements..."
+        print ""
+        unmaskedCount = _unmaskMissingElements(diagramHandle, allElements, elementGraphics, lanes, elementLanes)
+        if unmaskedCount > 0:
+            diagramHandle.save()
+    
+    foundCount = len(elementGraphics)
+    print ""
+    print "[" + str(step()) + "] Elements ready: " + str(foundCount) + "/" + str(len(allElements))
+    print "  " + _formatLanesSummary(diagramHandle, lanes, laneOrder)
+    
+    # =========================================================================
+    # PHASE 5: REPOSITION ELEMENTS (v2.7 logic)
+    # =========================================================================
+    print ""
+    print "== PHASE 5: REPOSITION ELEMENTS ================================="
+    print "(Using laneTop + 20, with coordinate refresh after each save)"
+    print ""
+    
+    def _parseLayoutEntry(entry):
+        if isinstance(entry, tuple):
+            return entry[0], entry[1]
+        else:
+            return entry, 0
+    
+    sortedElements = []
+    for name, layoutEntry in layoutConfig.items():
+        col, yOffset = _parseLayoutEntry(layoutEntry)
+        laneName = elementLanes.get(name, "")
+        sortedElements.append((col, yOffset, name, laneName))
+    sortedElements.sort()
+    
     repositionedCount = 0
+    spacing = cfg["SPACING"]
+    startX = cfg["START_X"]
+    taskWidth = cfg["TASK_WIDTH"]
+    taskHeight = cfg["TASK_HEIGHT"]
+    taskTopOffset = 20
     
-    if useLaneRelativePositioning:
-        # LANE-BY-LANE POSITIONING (top to bottom)
-        for laneName in laneOrder:
-            # Get current lane bounds
-            laneBounds = _getBounds(diagramHandle, lanes[laneName])
-            if not laneBounds:
-                print "[" + laneName + "] WARNING: Could not get lane bounds"
-                continue
-            
-            laneTop = laneBounds["y"]
-            print "[" + laneName + "] Lane top Y = " + str(int(laneTop))
-            
-            # Get elements for this lane
-            laneElementNames = elementsByLane.get(laneName, [])
-            if not laneElementNames:
-                continue
-            
-            # Wait for / unmask elements in this lane
-            laneElements = [elementRefs[n] for n in laneElementNames if n in elementRefs]
-            
-            for elem in laneElements:
-                name = elem.getName()
-                dg = _getGraphics(diagramHandle, elem)
-                if dg:
-                    elementGraphics[name] = dg
-                else:
-                    # Manual unmask into this lane
-                    try:
-                        targetY = int(laneTop + laneBounds["h"] / 2)
-                        result = diagramHandle.unmask(elem, 100, targetY)
-                        if result and result.size() > 0:
-                            elementGraphics[name] = result.get(0)
-                    except:
-                        pass
-            
-            # Position elements in this lane
-            for name in laneElementNames:
-                if name not in elementGraphics:
-                    print "  " + name + ": SKIP (no graphics)"
-                    continue
-                
-                dg = elementGraphics[name]
-                
-                # Get position data
-                if name in elementPositions:
-                    x, yOffset, w, h = elementPositions[name]
-                elif name in dataObjectPositions:
-                    x, yOffset, w, h = dataObjectPositions[name]
-                else:
-                    continue
-                
-                # Apply minimum task size from config (for tasks only)
-                elem = elementRefs.get(name)
-                if elem:
-                    elemClass = elem.getMClass().getName()
-                    if "Task" in elemClass:
-                        minW = cfg.get("TASK_WIDTH", 120)
-                        minH = cfg.get("TASK_HEIGHT", 60)
-                        w = max(w, minW)
-                        h = max(h, minH)
-                
-                # Calculate actual Y: lane top + offset
-                actualY = laneTop + yOffset
-                
-                newBounds = Draw2DRectangle(int(x), int(actualY), int(w), int(h))
-                dg.setBounds(newBounds)
-                repositionedCount += 1
-                print "  " + name + ": (" + str(int(x)) + ", " + str(int(actualY)) + ") " + str(int(w)) + "x" + str(int(h))
-            
-            # Save after each lane to allow Modelio to adjust
-            diagramHandle.save()
-            print ""
+    elementPositions = {}
+    relativeOffsets = {}
     
-    else:
-        # COLUMN-BASED POSITIONING (backward compatible)
-        print "Using column-based positioning..."
+    for col, yOffset, name, laneName in sortedElements:
+        if name not in elementGraphics:
+            continue
         
-        # Wait for all elements
-        elementGraphics, attempts = _waitForElements(diagramHandle, allElements, cfg)
+        laneBounds = {}
+        for ln in laneOrder:
+            lb = _getBounds(diagramHandle, lanes[ln])
+            if lb:
+                laneBounds[ln] = {"top": lb["y"], "bottom": lb["y"] + lb["h"], "height": lb["h"]}
         
-        if len(elementGraphics) < len(allElements):
-            _unmaskMissingElements(diagramHandle, allElements, elementGraphics, lanes, elementLanes)
-            diagramHandle.save()
+        if laneName not in laneBounds:
+            print "  " + name + ": SKIP (lane bounds not found)"
+            continue
         
-        layoutConfig = config.get("layout", {})
-        spacing = cfg["SPACING"]
-        startX = cfg["START_X"]
-        taskWidth = cfg["TASK_WIDTH"]
-        taskHeight = cfg["TASK_HEIGHT"]
+        laneTop = laneBounds[laneName]["top"]
         
-        # Get lane Y values
-        laneY = {}
-        for laneName in laneOrder:
-            y = _getLaneCenterY(diagramHandle, lanes[laneName])
-            if y:
-                laneY[laneName] = y
+        dg = elementGraphics[name]
+        elem = elementRefs[name]
+        bounds = _getBounds(diagramHandle, elem)
         
-        for name, col in layoutConfig.items():
-            if name not in elementGraphics:
-                continue
-            
-            dg = elementGraphics[name]
-            elem = elementRefs[name]
-            laneName = elementLanes.get(name, "")
-            
+        if not bounds:
+            continue
+        
+        # Use extended positioning if available (from export), otherwise calculate from layout
+        if name in extendedPositions:
+            extPos = extendedPositions[name]
+            targetX = extPos["x"]
+            targetY = laneTop + extPos["y_offset"]
+            width = extPos["w"]
+            height = extPos["h"]
+        else:
             targetX = startX + spacing * col
-            targetY = laneY.get(laneName, 100)
-            
-            bounds = _getBounds(diagramHandle, elem)
+            targetY = laneTop + taskTopOffset + yOffset
+
             elemClass = elem.getMClass().getName()
             if "Task" in elemClass:
                 width = taskWidth
                 height = taskHeight
-            elif bounds:
+            else:
                 width = bounds["w"]
                 height = bounds["h"]
-            else:
-                width = 30
-                height = 30
-            
-            newBounds = Draw2DRectangle(int(targetX), int(targetY), int(width), int(height))
-            dg.setBounds(newBounds)
-            repositionedCount += 1
+        
+        newBounds = Draw2DRectangle(
+            int(targetX), int(targetY),
+            int(width), int(height)
+        )
+        dg.setBounds(newBounds)
+        repositionedCount += 1
+        
+        elementPositions[name] = {"x": targetX, "y": targetY, "w": width, "h": height}
         
         diagramHandle.save()
+        
+        freshBounds = _getBounds(diagramHandle, elem)
+        if freshBounds:
+            freshLaneBounds = _getBounds(diagramHandle, lanes[laneName])
+            if freshLaneBounds:
+                freshLaneTop = freshLaneBounds["y"]
+                relativeY = freshBounds["y"] - freshLaneTop
+                relativeOffsets[name] = relativeY
+                
+                elementPositions[name] = {
+                    "x": freshBounds["x"],
+                    "y": freshBounds["y"],
+                    "w": freshBounds["w"],
+                    "h": freshBounds["h"]
+                }
+                
+                print "  " + name + " -> col=" + str(col) + " Y=" + str(int(freshBounds["y"])) + " (relY=" + str(int(relativeY)) + " laneTop=" + str(int(freshLaneTop)) + ")"
     
-    print "[" + str(step()) + "] Repositioned: " + str(repositionedCount) + " elements"
+    print ""
+    print "[" + str(step()) + "] Repositioned: " + str(repositionedCount) + "/" + str(len(elements))
+    
+    print ""
+    print "  Relative Y offsets (element Y - lane top):"
+    for ln in laneOrder:
+        laneElems = [(n, relativeOffsets.get(n, "?")) for n in relativeOffsets.keys() if elementLanes.get(n) == ln]
+        if laneElems:
+            offsetStrs = [n + "=" + str(int(o) if isinstance(o, (int, float)) else o) for n, o in laneElems[:5]]
+            print "    " + ln + ": " + ", ".join(offsetStrs) + ("..." if len(laneElems) > 5 else "")
+    
+    # =========================================================================
+    # PHASE 5B: REPOSITION DATA OBJECTS (v2.7 logic)
+    # =========================================================================
+    if dataObjects:
+        print ""
+        print "== PHASE 5B: REPOSITION DATA OBJECTS ============================"
+        print "(Lane-by-lane with coordinate refresh)"
+        print ""
+        
+        dataWidth = cfg["DATA_WIDTH"]
+        dataHeight = cfg["DATA_HEIGHT"]
+        dataOffsetX = cfg["DATA_OFFSET_X"]
+        dataOffsetY = cfg["DATA_OFFSET_Y"]
+        
+        dataObjectSourceTask = {}
+        dataAssocDefs = config.get("data_associations", [])
+        dataObjectNames = set(dataObjectLayout.keys())
+        
+        for assocDef in dataAssocDefs:
+            srcName, tgtName = assocDef[0], assocDef[1]
+            if tgtName in dataObjectNames and srcName not in dataObjectNames:
+                dataObjectSourceTask[tgtName] = srcName
+        
+        print "  Source task mapping:"
+        for doName, taskName in dataObjectSourceTask.items():
+            print "    " + doName + " <- " + taskName
+        print ""
+        
+        dataRepositioned = 0
+        
+        for laneIdx, laneName in enumerate(laneOrder):
+            laneHasData = any(dataObjectLanes.get(name) == laneName for name in dataObjectLayout.keys())
+            if not laneHasData:
+                continue
+            
+            diagramHandle.save()
+            
+            allLaneTops = {}
+            for ln in laneOrder:
+                lnBounds = _getBounds(diagramHandle, lanes[ln])
+                if lnBounds:
+                    allLaneTops[ln] = lnBounds["y"]
+            
+            lb = _getBounds(diagramHandle, lanes[laneName])
+            if not lb:
+                print "[" + laneName + "] ERROR: Could not get lane bounds"
+                continue
+            
+            laneTop = lb["y"]
+            laneBottom = lb["y"] + lb["h"]
+            laneCenterY = lb["y"] + lb["h"] / 2
+            
+            print "[" + laneName + "] FRESH bounds: " + str(int(laneTop)) + "-" + str(int(laneBottom)) + " (center=" + str(int(laneCenterY)) + ")"
+            
+            laneDataCount = 0
+            for name, column in dataObjectLayout.items():
+                if dataObjectLanes.get(name) != laneName:
+                    continue
+
+                if name not in elementGraphics:
+                    print "  " + name + ": SKIP (not in graphics)"
+                    continue
+
+                dg = elementGraphics[name]
+
+                # Use extended positioning if available (from export)
+                if name in extendedPositions:
+                    extPos = extendedPositions[name]
+                    targetX = extPos["x"]
+                    targetY = laneTop + extPos["y_offset"]
+                    dataWidth = extPos["w"]
+                    dataHeight = extPos["h"]
+                    print "  " + name + " (extended) -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
+
+                    newBounds = Draw2DRectangle(
+                        int(targetX), int(targetY),
+                        int(dataWidth), int(dataHeight)
+                    )
+                    dg.setBounds(newBounds)
+                    dataRepositioned += 1
+                    laneDataCount += 1
+                    continue
+
+                targetX = startX + spacing * column + dataOffsetX
+
+                sourceTaskName = dataObjectSourceTask.get(name)
+                
+                if sourceTaskName and sourceTaskName in relativeOffsets:
+                    sourceTaskLane = elementLanes.get(sourceTaskName)
+                    freshLaneTop = allLaneTops.get(sourceTaskLane, laneTop)
+                    sourceRelY = relativeOffsets[sourceTaskName]
+                    
+                    sourceTaskY = freshLaneTop + sourceRelY
+                    sourceTaskH = taskHeight
+                    
+                    targetY = sourceTaskY + sourceTaskH + dataOffsetY
+                    print "  " + name + " (from " + sourceTaskName + " relY=" + str(int(sourceRelY)) + " laneTop=" + str(int(freshLaneTop)) + ") -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
+                else:
+                    nearestTaskBottom = None
+                    minDistance = 999999
+                    
+                    for elemName in relativeOffsets.keys():
+                        if elementLanes.get(elemName) != laneName:
+                            continue
+                        elemLayout = layoutConfig.get(elemName)
+                        if elemLayout:
+                            elemCol, elemYOff = _parseLayoutEntry(elemLayout)
+                            distance = abs(elemCol - column)
+                            if distance < minDistance:
+                                minDistance = distance
+                                elemRelY = relativeOffsets[elemName]
+                                nearestTaskBottom = laneTop + elemRelY + taskHeight
+                    
+                    if nearestTaskBottom is not None:
+                        targetY = nearestTaskBottom + dataOffsetY
+                    else:
+                        targetY = laneTop + taskTopOffset + taskHeight + dataOffsetY
+                    
+                    print "  " + name + " (fallback) -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
+                
+                if targetY + dataHeight > laneBottom - 5:
+                    targetY = laneBottom - dataHeight - 5
+
+                newBounds = Draw2DRectangle(
+                    int(targetX), int(targetY),
+                    int(dataWidth), int(dataHeight)
+                )
+                dg.setBounds(newBounds)
+                dataRepositioned += 1
+                laneDataCount += 1
+            
+            if laneDataCount > 0:
+                diagramHandle.save()
+                print "  [Saved " + str(laneDataCount) + " DOs, refreshing coordinates...]"
+                print ""
+        
+        print "[" + str(step()) + "] Data objects repositioned: " + str(dataRepositioned) + "/" + str(len(dataObjects))
     
     # =========================================================================
     # PHASE 6: CREATE FLOWS
@@ -1062,7 +1079,7 @@ def createBPMNFromConfig(parentPackage, config):
     flows = []
     
     for flowDef in flowDefs:
-        srcName, tgtName, guard = flowDef[0], flowDef[1], flowDef[2] if len(flowDef) > 2 else ""
+        srcName, tgtName, guard = flowDef
         src = elementRefs.get(srcName)
         tgt = elementRefs.get(tgtName)
         if src and tgt:
@@ -1086,10 +1103,15 @@ def createBPMNFromConfig(parentPackage, config):
             srcName, tgtName = assocDef[0], assocDef[1]
             src = elementRefs.get(srcName)
             tgt = elementRefs.get(tgtName)
-            if src and tgt:
-                assoc = _createDataAssociation(process, src, tgt)
-                if assoc:
-                    dataAssocs.append(assoc)
+            if not src:
+                print "  ERROR: Source not found: " + srcName
+                continue
+            if not tgt:
+                print "  ERROR: Target not found: " + tgtName
+                continue
+            assoc = _createDataAssociation(process, src, tgt)
+            if assoc:
+                dataAssocs.append(assoc)
         
         print "[" + str(step()) + "] Data associations: " + str(len(dataAssocs))
     

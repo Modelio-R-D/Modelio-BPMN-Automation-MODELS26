@@ -87,7 +87,7 @@ Your BPMN diagram will appear automatically!
 Modelio-Automation/
 ├── README.md                 # This file
 ├── BPMN_Helpers.py           # Helper library (install to Modelio)
-├── BPMN_Export.py            # Export macro (install to Modelio) - NEW in v3.0
+├── BPMN_Export.py            # Export macro (install to Modelio) - NEW in v3.x
 ├── CLAUDE_INSTRUCTIONS.md    # AI instructions for macro generation
 ├── docs/
 │   ├── QUICK_START.md        # Detailed setup guide
@@ -181,6 +181,18 @@ When a BPMN diagram is created, Modelio automatically "unmasks" elements. Howeve
 | Message Start | `MESSAGE_START` | ✉○ | Triggered by message |
 | Message End | `MESSAGE_END` | ✉◉ | Sends message on completion |
 | Timer Start | `TIMER_START` | ⏱○ | Triggered by schedule |
+| Signal Start | `SIGNAL_START` | ○ | Triggered by signal |
+| Conditional Start | `CONDITIONAL_START` | ○ | Triggered by condition |
+| Signal End | `SIGNAL_END` | ◉ | Sends signal on completion |
+| Terminate End | `TERMINATE_END` | ◉ | Terminates all instances |
+| Error End | `ERROR_END` | ◉ | Throws error |
+| Intermediate Catch | `INTERMEDIATE_CATCH` | ◎ | Generic catch event |
+| Intermediate Throw | `INTERMEDIATE_THROW` | ◎ | Generic throw event |
+| Message Catch | `MESSAGE_CATCH` | ✉◎ | Wait for message |
+| Message Throw | `MESSAGE_THROW` | ✉◎ | Send message |
+| Timer Catch | `TIMER_CATCH` | ⏱◎ | Wait for timer |
+| Signal Catch | `SIGNAL_CATCH` | ◎ | Wait for signal |
+| Signal Throw | `SIGNAL_THROW` | ◎ | Send signal |
 | User Task | `USER_TASK` | 👤▭ | Human activity with IT system |
 | Manual Task | `MANUAL_TASK` | ✋▭ | Physical task without IT |
 | Service Task | `SERVICE_TASK` | ⚙▭ | Automated/system task |
@@ -188,6 +200,7 @@ When a BPMN diagram is created, Modelio automatically "unmasks" elements. Howeve
 | Business Rule Task | `BUSINESS_RULE_TASK` | ▭ | Business rule evaluation |
 | Send Task | `SEND_TASK` | ▭ | Send message task |
 | Receive Task | `RECEIVE_TASK` | ▭ | Receive message task |
+| Generic Task | `TASK` | ▭ | Generic task |
 | Exclusive Gateway | `EXCLUSIVE_GW` | ◇ | XOR decision (one path) |
 | Parallel Gateway | `PARALLEL_GW` | ⊕ | AND split/join (all paths) |
 | Inclusive Gateway | `INCLUSIVE_GW` | ◇ | OR decision (one or more paths) |
@@ -219,8 +232,8 @@ CONFIG = {
     "TASK_HEIGHT": 60,     # Height for task elements
     "DATA_WIDTH": 40,      # Width for data objects
     "DATA_HEIGHT": 50,     # Height for data objects
-    "DATA_OFFSET_X": 20,   # Data object X offset from column
-    "DATA_OFFSET_Y": 80,   # Data object Y offset (positive = below)
+    "DATA_OFFSET_X": 90,   # Data object X offset (near right side of task)
+    "DATA_OFFSET_Y": 10,   # Data object Y gap below source task
     "WAIT_TIME_MS": 50,    # Time between unmask attempts
     "MAX_ATTEMPTS": 3,     # Maximum unmask attempts
 }
@@ -347,6 +360,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## Version History
 
+- **v3.1** (Dec 2025) - Improved positioning: Y-offset layout support, data objects below source task
 - **v3.0** (Dec 2025) - Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (Dec 2025) - Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (Dec 2025) - Simplified data objects by removing position parameter (always below)

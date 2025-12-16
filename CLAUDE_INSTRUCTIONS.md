@@ -1,4 +1,4 @@
-# Modelio BPMN Macro Generation - Claude Instructions v3.0
+# Modelio BPMN Macro Generation - Claude Instructions v3.1
 
 ## Overview
 
@@ -9,23 +9,11 @@ You are helping users create BPMN process diagrams in Modelio using Jython macro
 1. **BPMN_Helpers.py** - Helper library (placed in Modelio macros folder)
 2. **Generated file** - Pure configuration + `execfile()` to load helpers
 
-**v3.0 Features**:
-- **NEW: BPMN_Export.py** - Export existing diagrams to Python configuration for cloning/migration
-- **NEW: Lane-relative positioning** - Exact diagram recreation with `(name, type, lane, x, y_offset, w, h)` format
-- **NEW: Extended element types** - Script, Business Rule, Send/Receive tasks, additional gateways and events
-- Data Objects with automatic lane expansion (always positioned below lane center)
-- Data Associations with auto-detected direction based on element types
-- Backward compatible with column-based positioning
-
-## Why Two Files?
-
-| Benefit | Explanation |
-|---------|-------------|
-| Faster generation | Only generate configuration, not 500+ lines of helpers |
-| More reliable | Helper code is tested; only configuration can vary |
-| Easier debugging | Configuration is declarative and easy to validate |
-| Smaller error surface | Less generated code = fewer syntax errors |
-| Single execution | `execfile()` loads helpers automatically |
+**v3.1 Updates**:
+- Corrected Y-offset documentation (positive = down from default position)
+- Fixed default config values (DATA_OFFSET_X=90, DATA_OFFSET_Y=10)
+- Complete element type reference
+- Data object positioning based on source task (via data associations)
 
 ---
 
@@ -49,7 +37,7 @@ When a user asks for a BPMN diagram:
 
 from org.modelio.metamodel.uml.statik import Package
 
-# Load helper library (adjust path for your Modelio version)
+# Load helper library
 execfile(".modelio/5.4/macros/BPMN_Helpers.py")
 
 CONFIG = {
@@ -90,30 +78,59 @@ else:
 
 ## Configuration Reference
 
-### Element Types (for `elements` list)
+### Element Types (Complete Reference)
 
-| Constant | Icon | Use |
-|----------|------|-----|
-| `START` | Green circle | Process start |
-| `MESSAGE_START` | Envelope green circle | Start triggered by message |
-| `TIMER_START` | Clock green circle | Start triggered by schedule |
-| `END` | Red circle | Process end |
-| `MESSAGE_END` | Envelope red circle | End that sends message |
-| `USER_TASK` | Person rectangle | Human activity with IT |
-| `SERVICE_TASK` | Gear rectangle | Automated task |
-| `MANUAL_TASK` | Hand rectangle | Physical task without IT |
-| `SCRIPT_TASK` | Rectangle | Script execution task |
-| `BUSINESS_RULE_TASK` | Rectangle | Business rule evaluation |
-| `SEND_TASK` | Rectangle | Send message task |
-| `RECEIVE_TASK` | Rectangle | Receive message task |
-| `TASK` | Rectangle | Generic task |
-| `EXCLUSIVE_GW` | Diamond with X | XOR decision (one path) |
-| `PARALLEL_GW` | Diamond with + | AND split/join (all paths) |
-| `INCLUSIVE_GW` | Diamond with O | OR decision (one or more paths) |
-| `COMPLEX_GW` | Diamond with * | Complex routing logic |
-| `EVENT_BASED_GW` | Diamond | Wait for event |
+#### Start Events
+| Constant | Description |
+|----------|-------------|
+| `START` | Standard start (green circle) |
+| `MESSAGE_START` | Triggered by message |
+| `TIMER_START` | Triggered by schedule |
+| `SIGNAL_START` | Triggered by signal |
+| `CONDITIONAL_START` | Triggered by condition |
 
-**Note:** For data objects, use the separate `data_objects` configuration section (see below), NOT the `elements` list.
+#### End Events
+| Constant | Description |
+|----------|-------------|
+| `END` | Standard end (red circle) |
+| `MESSAGE_END` | Sends message on completion |
+| `SIGNAL_END` | Sends signal on completion |
+| `TERMINATE_END` | Terminates all process instances |
+| `ERROR_END` | Throws error |
+
+#### Intermediate Events
+| Constant | Description |
+|----------|-------------|
+| `INTERMEDIATE_CATCH` | Generic catch event |
+| `INTERMEDIATE_THROW` | Generic throw event |
+| `MESSAGE_CATCH` | Wait for message |
+| `MESSAGE_THROW` | Send message |
+| `TIMER_CATCH` | Wait for timer |
+| `SIGNAL_CATCH` | Wait for signal |
+| `SIGNAL_THROW` | Send signal |
+
+#### Tasks
+| Constant | Description |
+|----------|-------------|
+| `TASK` | Generic task |
+| `USER_TASK` | Human activity with IT (person icon) |
+| `SERVICE_TASK` | Automated task (gear icon) |
+| `MANUAL_TASK` | Physical task without IT (hand icon) |
+| `SCRIPT_TASK` | Script execution |
+| `BUSINESS_RULE_TASK` | Business rule evaluation |
+| `SEND_TASK` | Send message |
+| `RECEIVE_TASK` | Receive message |
+
+#### Gateways
+| Constant | Description |
+|----------|-------------|
+| `EXCLUSIVE_GW` | XOR - one path (X diamond) |
+| `PARALLEL_GW` | AND - all paths (+ diamond) |
+| `INCLUSIVE_GW` | OR - one or more paths (O diamond) |
+| `COMPLEX_GW` | Complex routing (* diamond) |
+| `EVENT_BASED_GW` | Wait for event |
+
+**Note:** For data objects, use the `data_objects` configuration section, NOT the `elements` list.
 
 ### CONFIG Structure
 
@@ -124,25 +141,64 @@ CONFIG = {
     "lanes": ["Lane1", "Lane2"],     # Top to bottom order
     "elements": [...],               # List of (name, type, lane)
     "flows": [...],                  # List of (source, target, guard)
-    "layout": {...},                 # Dict of name -> column
+    "layout": {...},                 # Dict of name -> column or (column, y_offset)
     
     # Optional - Data Objects
     "data_objects": [...],           # List of (name, lane, column)
     "data_associations": [...],      # List of (source, target)
     
     # Optional layout settings (defaults shown)
-    "SPACING": 150,                  # Horizontal spacing
+    "SPACING": 150,                  # Horizontal spacing between columns
     "START_X": 80,                   # Starting X position
     "TASK_WIDTH": 120,               # Task width
     "TASK_HEIGHT": 60,               # Task height
     "DATA_WIDTH": 40,                # Data object width
     "DATA_HEIGHT": 50,               # Data object height
-    "DATA_OFFSET_X": 20,             # Data object X offset from column center
-    "DATA_OFFSET_Y": 80,             # Data object Y offset from lane center (positive = below)
-    "WAIT_TIME_MS": 50,              # Wait between unmask checks
-    "MAX_ATTEMPTS": 3,               # Max unmask attempts
+    "DATA_OFFSET_X": 90,             # Data object X offset (near right side of task)
+    "DATA_OFFSET_Y": 10,             # Data object Y gap below task bottom
 }
 ```
+
+### Layout Format (with Y-Offset Support)
+
+```python
+"layout": {
+    # Simple format: column index only
+    "Element Name": column_index,
+    
+    # Extended format: (column, y_offset) for vertical positioning
+    "Element Name": (column_index, y_offset),
+}
+```
+
+**Positioning Formula:**
+```
+Element Y = laneTop + 20 + y_offset
+```
+
+**Y-Offset Rules:**
+- Default position is `laneTop + 20` (20px from lane top)
+- `y_offset = 0` (or omitted) → default position
+- **Positive y_offset** → moves element **DOWN** within lane
+- **Negative y_offset** → avoid! Could place element above lane
+
+**Example - Stacking Elements Vertically:**
+```python
+"layout": {
+    # Gateway at default position
+    "Decision?": 5,
+    
+    # Two outputs in same column, stacked vertically
+    "Success Path": (6, 0),     # Y = laneTop + 20 (default)
+    "Error Path":   (6, 70),    # Y = laneTop + 90 (70px lower)
+}
+```
+
+**Recommended Y-Offset Values for Stacking:**
+| Elements to Stack | Y-Offsets |
+|-------------------|-----------|
+| 2 elements | 0, 70 |
+| 3 elements | 0, 70, 140 |
 
 ### Elements Format
 
@@ -153,10 +209,6 @@ CONFIG = {
 ]
 ```
 
-- **Element Name**: Unique string shown in diagram
-- **ELEMENT_TYPE**: One of the constants above
-- **Lane Name**: Must exactly match a name in `lanes` list
-
 ### Flows Format
 
 ```python
@@ -166,24 +218,9 @@ CONFIG = {
 ]
 ```
 
-- **Source/Target Name**: Must match element names exactly
-- **Guard/Label**: Text shown on arrow (use "" for no label)
-- Guards are especially useful for gateway outflows: `"Yes"`, `"No"`, `"Approved"`, etc.
+- Guards are useful for gateway outflows: `"Yes"`, `"No"`, `"Approved"`, etc.
 
-### Layout Format
-
-```python
-"layout": {
-    "Element Name": column_index,  # 0, 1, 2, ...
-    # ...
-}
-```
-
-- **column_index**: Horizontal position (0 = leftmost)
-- Elements in same lane at same column will overlap!
-- Plan your column layout carefully for complex processes
-
-### Data Objects Format (Optional)
+### Data Objects Format
 
 ```python
 "data_objects": [
@@ -192,13 +229,9 @@ CONFIG = {
 ]
 ```
 
-- **Data Name**: Unique string for the data object
-- **Lane Name**: Which lane to place it in
-- **column_index**: Horizontal position (typically same column as the task that outputs it)
+**Positioning:** Data objects are positioned **below their source task**. The source task is determined from data associations (Task -> DataObject pattern).
 
-**Positioning Note**: Data objects are always placed below the lane center. They are positioned lane-by-lane (top to bottom). When data objects extend beyond a lane's boundary, Modelio auto-expands the lane, pushing subsequent lanes down. The helper library handles this by re-reading lane coordinates after each lane's data objects are positioned.
-
-### Data Associations Format (Optional)
+### Data Associations Format
 
 ```python
 "data_associations": [
@@ -207,44 +240,28 @@ CONFIG = {
 ]
 ```
 
-- **Source/Target**: Element or data object names (direction is auto-detected based on element types)
+**CRITICAL - BPMN Rules:**
 
-**CRITICAL - BPMN Data Association Rules:**
+| Element Type | Data Associations? |
+|--------------|-------------------|
+| **Tasks** | YES |
+| **Start Events** | YES (output only) |
+| **End Events** | YES (input only) |
+| **Gateways** | **NO - NEVER!** |
 
-| Element Type | Data Associations Allowed? | Direction |
-|--------------|---------------------------|-----------|
-| **Tasks** | YES | Input and Output |
-| **Start Events** | YES | Output only (Start -> Data) |
-| **End Events** | YES | Input only (Data -> End) |
-| **Gateways** | **NO - NEVER!** | N/A |
-
-**Valid Examples:**
+**Valid:**
 ```python
 "data_associations": [
-    ("Start",         "Initial Data"),    # Start Event -> Data (OK)
-    ("Task A",        "Output Doc"),      # Task -> Data (OK)
-    ("Input Doc",     "Task B"),          # Data -> Task (OK)
-    ("Final Report",  "End"),             # Data -> End Event (OK)
+    ("Task A",       "Output Doc"),    # Task -> Data (OK)
+    ("Input Doc",    "Task B"),        # Data -> Task (OK)
 ]
 ```
 
-**INVALID - Will cause E205 orphan error:**
+**INVALID - Will cause E205 error:**
 ```python
 "data_associations": [
-    ("Some Data",     "Decision?"),       # Data -> Gateway (INVALID!)
-    ("Gateway",       "Output Data"),     # Gateway -> Data (INVALID!)
+    ("Some Data",    "Decision?"),     # Data -> Gateway (INVALID!)
 ]
-```
-
-**BPMN Semantics** (auto-detected):
-- Task -> DataObject: Sets `StartingActivity = Task`, `TargetRef = DataObject`
-- DataObject -> Task: Sets `EndingActivity = Task`, `SourceRef = DataObject`
-- Start -> DataObject: Output association from start event
-- DataObject -> End: Input association to end event
-
-**Data Flow Pattern**: A typical data flow goes:
-```
-Start --> Data Object --> Task A --> Data Object --> Task B --> Data Object --> End
 ```
 
 ---
@@ -255,11 +272,9 @@ Start --> Data Object --> Task A --> Data Object --> Task B --> Data Object --> 
 ```python
 # CORRECT
 print "Hello"
-print "Count: " + str(count)
 
 # WRONG (Python 3)
 print("Hello")
-f"Count: {count}"
 ```
 
 ### 2. ASCII Only - No Unicode
@@ -267,55 +282,87 @@ f"Count: {count}"
 # CORRECT
 "Approved?", "Yes", "No"
 
-# WRONG - Will cause UnicodeDecodeError
-"Approved?", "checkmark", "x-mark"
+# WRONG
+"Approved?", "✓", "✗"
 ```
 
 ### 3. Exact Name Matching
 Lane names, element names, and flow references must match exactly (case-sensitive).
 
-### 4. Complete Coverage
-- Every element needs a layout entry
-- Every element except ends needs at least one outgoing flow
-- Every element except starts needs at least one incoming flow
+### 4. Sequential Tasks Need Different Columns
+Tasks connected by a flow (Task A → Task B) **MUST** be in different columns:
 
-### 5. No Data Associations to Gateways
-Gateways (EXCLUSIVE_GW, PARALLEL_GW) can NEVER have data associations. Only Tasks and Events can connect to Data Objects.
+```python
+# BAD - Sequential tasks overlap
+"flows": [("Task A", "Task B", "")],
+"layout": {
+    "Task A": 5,
+    "Task B": 5,   # WRONG! Same column as predecessor
+}
+
+# GOOD - Sequential tasks in consecutive columns
+"layout": {
+    "Task A": 5,
+    "Task B": 6,   # CORRECT! Next column
+}
+```
+
+### 5. Y-Offset is for Parallel Paths Only
+Use y_offset **only** for gateway outputs (parallel branches), NOT for sequential tasks:
+
+```python
+# CORRECT - Gateway outputs (parallel paths) can use y_offset
+"layout": {
+    "Decision?":     5,
+    "Success Path":  (6, 0),    # Parallel branch 1
+    "Error Path":    (6, 70),   # Parallel branch 2
+}
+
+# WRONG - Don't use y_offset for sequential tasks
+"layout": {
+    "Task A": (5, 0),
+    "Task B": (5, 70),   # WRONG if Task A -> Task B!
+}
+```
+
+### 6. No Data Associations to Gateways
+Gateways can NEVER have data associations.
 
 ---
 
-## Example: Simple Approval Process
+## Example: Gateway with Stacked Outputs
 
 ```python
 CONFIG = {
-    "name": "SimpleApproval",
+    "name": "ValidationProcess",
     
-    "lanes": ["Requester", "Approver"],
+    "lanes": ["Validator"],
     
     "elements": [
-        ("Submit Request",  START,        "Requester"),
-        ("Fill Form",       USER_TASK,    "Requester"),
-        ("Review Request",  USER_TASK,    "Approver"),
-        ("Decide",          EXCLUSIVE_GW, "Approver"),
-        ("Approved",        END,          "Requester"),
-        ("Rejected",        END,          "Requester"),
+        ("Start",            START,        "Validator"),
+        ("Validate",         SERVICE_TASK, "Validator"),
+        ("Valid?",           EXCLUSIVE_GW, "Validator"),
+        ("Process Valid",    SERVICE_TASK, "Validator"),
+        ("Handle Invalid",   SERVICE_TASK, "Validator"),
+        ("End",              END,          "Validator"),
     ],
     
     "flows": [
-        ("Submit Request", "Fill Form",      ""),
-        ("Fill Form",      "Review Request", ""),
-        ("Review Request", "Decide",         ""),
-        ("Decide",         "Approved",       "Yes"),
-        ("Decide",         "Rejected",       "No"),
+        ("Start",          "Validate",       ""),
+        ("Validate",       "Valid?",         ""),
+        ("Valid?",         "Process Valid",  "Yes"),
+        ("Valid?",         "Handle Invalid", "No"),
+        ("Process Valid",  "End",            ""),
+        ("Handle Invalid", "End",            ""),
     ],
     
     "layout": {
-        "Submit Request":  0,
-        "Fill Form":       1,
-        "Review Request":  2,
-        "Decide":          3,
-        "Approved":        4,
-        "Rejected":        4,  # Same column, different lane
+        "Start":          0,
+        "Validate":       1,
+        "Valid?":         2,
+        "Process Valid":  (3, 0),    # Default position
+        "Handle Invalid": (3, 70),   # 70px below Process Valid
+        "End":            4,
     },
 }
 ```
@@ -335,36 +382,26 @@ CONFIG = {
         ("Write Document",  USER_TASK, "Author"),
         ("Submit",          USER_TASK, "Author"),
         ("Review",          USER_TASK, "Reviewer"),
-        ("Add Comments",    USER_TASK, "Reviewer"),
         ("End",             END,       "Reviewer"),
     ],
 
-    # Data Objects: (name, lane, column)
-    # Place at the same column as the task that outputs them
     "data_objects": [
-        ("Draft",     "Author",   1),  # Same column as Write Document
-        ("Final Doc", "Author",   2),  # Same column as Submit
-        ("Comments",  "Reviewer", 3),  # Same column as Review
+        ("Draft",     "Author",   1),
+        ("Final Doc", "Author",   2),
     ],
 
-    # Data Associations: (source, target)
-    # Pattern: Task outputs data, data inputs to next task
-    # Note: Only Tasks and Events can have data associations!
     "data_associations": [
-        ("Write Document", "Draft"),        # Task produces data
-        ("Draft",          "Submit"),       # Data consumed by task
+        ("Write Document", "Draft"),
+        ("Draft",          "Submit"),
         ("Submit",         "Final Doc"),
         ("Final Doc",      "Review"),
-        ("Review",         "Comments"),
-        ("Comments",       "Add Comments"),
     ],
 
     "flows": [
         ("Start",          "Write Document", ""),
         ("Write Document", "Submit",         ""),
         ("Submit",         "Review",         ""),
-        ("Review",         "Add Comments",   ""),
-        ("Add Comments",   "End",            ""),
+        ("Review",         "End",            ""),
     ],
 
     "layout": {
@@ -372,8 +409,7 @@ CONFIG = {
         "Write Document": 1,
         "Submit":         2,
         "Review":         3,
-        "Add Comments":   4,
-        "End":            5,
+        "End":            4,
     },
 }
 ```
@@ -384,62 +420,18 @@ CONFIG = {
 
 | Problem | Solution |
 |---------|----------|
-| `IOError: No such file` | Check BPMN_Helpers.py path in execfile() |
-| `NameError: createBPMNFromConfig` | execfile() path is wrong or file missing |
-| UnicodeDecodeError | Use ASCII only - no special characters |
-| Element in wrong lane | Check lane name spelling in elements list |
-| Missing element | Check name spelling in layout and flows |
-| Elements overlap | Use different column indices |
-| Flow not showing | Check source/target names match exactly |
-| Data association missing | Check element names in data_associations |
-| Data association arrow wrong direction | Verify source and target order is correct |
-| Data object overlaps task | Adjust DATA_OFFSET_Y configuration |
-| Data object outside lane | Handled automatically by lane-by-lane positioning |
-| Guard not showing | Verify flow tuple has 3 elements: (src, tgt, guard) |
-| **E205 orphan BpmnDataAssociation** | **Data association to GATEWAY is invalid! Only Tasks and Events can have data associations.** |
-
----
-
-## User Instructions to Include
-
-When generating a process file, include this note:
-
-```
-## Setup (one time)
-
-1. Place `BPMN_Helpers.py` in your Modelio macros folder:
-   `.modelio/5.4/macros/BPMN_Helpers.py`
-
-2. Adjust the path in execfile() if the path differs
-
-## Usage
-
-1. Select a Package in Modelio
-2. Run this macro
-3. The diagram will be created automatically
-```
-
----
-
-## Test Cases Available
-
-| Test | Description | Features Tested |
-|------|-------------|-----------------|
-| Test_01_SimpleLinear | 3 tasks in sequence | START, END, USER_TASK, basic flows |
-| Test_02_ExclusiveGateway | Decision with guards | EXCLUSIVE_GW, guards, multiple ends |
-| Test_03_ParallelGateway | Fork and join | PARALLEL_GW, parallel paths |
-| Test_04_TimerMessageEvents | Scheduled process | TIMER_START, MESSAGE_END, SERVICE_TASK |
-| Test_05_DataObjects | Document workflow | DATA_OBJECT, data_associations |
+| `IOError: No such file` | Check BPMN_Helpers.py path |
+| `NameError: createBPMNFromConfig` | execfile() path is wrong |
+| UnicodeDecodeError | Use ASCII only |
+| Element in wrong lane | Check lane name spelling |
+| Elements overlap | Use different columns or y_offsets |
+| Data object overlaps task | Automatic - positioned below source task |
+| **E205 orphan BpmnDataAssociation** | Data association to GATEWAY is invalid! |
 
 ---
 
 ## Version History
 
-- v3.0 (Dec 2025): Export/Import feature, lane-relative positioning, extended element types
-- v2.5 (Dec 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
-- v2.4 (Dec 2025): Simplified data objects by removing position parameter (always below)
-- v2.3 (Dec 2025): Simplified data associations by auto-detecting direction
-- v2.2 (Dec 2025): Fixed Data Association semantics, lane-by-lane positioning
-- v2.1 (Dec 2025): Added Data Objects and Data Associations
-- v2.0 (Dec 2025): Two-file approach with helper library separation
-- v0.9.x and earlier: Single-file approach (archived in v1/ directory)
+- v3.1 (Dec 2025): Corrected Y-offset docs, fixed defaults, complete element types
+- v3.0 (Dec 2025): Export/Import, lane-relative positioning, extended elements
+- v2.x (Dec 2025): Data objects, two-file approach

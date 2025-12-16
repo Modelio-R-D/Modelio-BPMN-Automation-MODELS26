@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1] - December 2025
+
+### Improved
+- **Data object positioning**: Data objects now positioned below their source task (determined from data associations)
+- **Y-offset support in layout**: Layout entries can now use `(column, y_offset)` tuple format for vertical stacking
+  - `"Element": 5` - column 5, default Y position
+  - `"Element": (5, 70)` - column 5, 70px below default position
+- **Default config values**: Updated `DATA_OFFSET_X=90` (near task right edge), `DATA_OFFSET_Y=10` (small gap below task)
+
+### Documentation
+- **Y-offset rules clarified**: Positive y_offset moves elements DOWN within lane
+- **Complete element type reference**: All 30+ element types documented with descriptions
+- **Sequential vs parallel guidance**: Clear rules for when to use y_offset (parallel branches only)
+
+---
+
 ## [v3.0] - December 2025
 
 ### Major Features
@@ -23,7 +39,6 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - **Backward Compatible**: Column-based positioning still works (3-tuple elements format)
-- **Helper Library Renamed**: `BPMN_Helpers.py` now referred to as `BPMN_Helpers_v2.py` in generated exports
 - **Dynamic Imports**: Gracefully handles missing element types in older Modelio versions
 
 ### Files

@@ -462,7 +462,7 @@ def formatPythonOutput(config):
     output.append("from org.modelio.metamodel.uml.statik import Package")
     output.append("")
     output.append("# Load helper library")
-    output.append('execfile(".modelio/5.4/macros/BPMN_Helpers_v2.py")')
+    output.append('execfile(".modelio/5.4/macros/BPMN_Helpers.py")')
     output.append("")
     output.append("CONFIG = {")
     output.append('    "name": "' + config["name"] + '",')

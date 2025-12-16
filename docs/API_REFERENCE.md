@@ -15,6 +15,8 @@ Use these constants in the `elements` section of your configuration.
 | `START` | ○ (green circle) | Standard process start point |
 | `MESSAGE_START` | ✉○ (envelope + green circle) | Process triggered by receiving a message |
 | `TIMER_START` | ⏰○ (clock + green circle) | Process triggered by timer/schedule |
+| `SIGNAL_START` | ○ | Process triggered by signal |
+| `CONDITIONAL_START` | ○ | Process triggered by condition |
 
 ### End Events
 
@@ -22,6 +24,21 @@ Use these constants in the `elements` section of your configuration.
 |----------|--------|-------------|
 | `END` | ● (red circle) | Standard process end point |
 | `MESSAGE_END` | ✉● (envelope + red circle) | End event that sends a message |
+| `SIGNAL_END` | ● | End event that sends a signal |
+| `TERMINATE_END` | ● | Terminates all process instances |
+| `ERROR_END` | ● | End event that throws an error |
+
+### Intermediate Events
+
+| Constant | Visual | Description |
+|----------|--------|-------------|
+| `INTERMEDIATE_CATCH` | ◎ | Generic intermediate catch event |
+| `INTERMEDIATE_THROW` | ◎ | Generic intermediate throw event |
+| `MESSAGE_CATCH` | ✉◎ | Wait for message |
+| `MESSAGE_THROW` | ✉◎ | Send message |
+| `TIMER_CATCH` | ⏰◎ | Wait for timer |
+| `SIGNAL_CATCH` | ◎ | Wait for signal |
+| `SIGNAL_THROW` | ◎ | Send signal |
 
 ### Tasks
 
@@ -84,8 +101,8 @@ CONFIG = {
     "TASK_HEIGHT": 60,               # Height of task rectangles
     "DATA_WIDTH": 40,                # Width of data objects
     "DATA_HEIGHT": 50,               # Height of data objects
-    "DATA_OFFSET_X": 20,             # Data object X offset from column center
-    "DATA_OFFSET_Y": 80,             # Data object Y offset from lane center (positive = below)
+    "DATA_OFFSET_X": 90,             # Data object X offset (near right side of source task)
+    "DATA_OFFSET_Y": 10,             # Data object Y gap below source task bottom
     "WAIT_TIME_MS": 50,              # Milliseconds between unmask checks
     "MAX_ATTEMPTS": 3,               # Maximum unmask retry attempts
 }
@@ -143,15 +160,18 @@ Format: `(source, target, guard)`
 
 ## Layout Dictionary
 
-Format: `{element_name: column_index}`
+Format: `{element_name: column_index}` or `{element_name: (column_index, y_offset)}`
 
 ```python
 "layout": {
+    # Simple format: column index only
     "Submit Request": 0,
     "Review Request": 1,
     "Decision": 2,
-    "Approved": 3,
-    "Rejected": 3,  # Same column as Approved (different lanes)
+
+    # Extended format with Y-offset for vertical stacking
+    "Approved": (3, 0),    # Column 3, default Y position
+    "Rejected": (3, 70),   # Column 3, 70px below default
 }
 ```
 
@@ -159,13 +179,20 @@ Format: `{element_name: column_index}`
 |-------|------|-------------|
 | `element_name` | string | Must match element name exactly |
 | `column_index` | integer | Horizontal position (0 = leftmost) |
+| `y_offset` | integer | Optional vertical offset from default position (positive = down) |
+
+**Y-Offset Positioning** (v3.1):
+- Default position is `laneTop + 20` (20px from lane top)
+- `y_offset = 0` (or omitted) places element at default position
+- **Positive y_offset** moves element **DOWN** within lane
+- Use for stacking gateway outputs: `(col, 0)`, `(col, 70)`, `(col, 140)`
 
 **Layout tips**:
 - Column indices can have gaps (0, 1, 5, 10 is fine)
-- Elements in the same lane at the same column will overlap
+- Elements in the same lane at the same column will overlap (use y_offset to stack)
 - Elements in different lanes can share a column (parallel positioning)
-- Events and gateways are typically single columns
-- Plan complex processes on paper first
+- Use y_offset **only** for parallel paths (gateway outputs), not sequential tasks
+- Sequential tasks (A → B) must be in different columns
 
 ---
 
@@ -187,11 +214,12 @@ Format: `(name, lane, column)`
 | `lane` | string | Which lane to place it in |
 | `column` | integer | Horizontal position (typically same as related task) |
 
-**Positioning notes**:
-- Data objects are always placed below the lane center
-- Data objects are positioned lane-by-lane (top to bottom)
+**Positioning notes** (v3.1):
+- Data objects are positioned **below their source task** (determined from data associations)
+- Source task is found by looking for `(Task -> DataObject)` patterns in `data_associations`
+- If no source task found, falls back to nearest task in same column
+- Data objects are positioned lane-by-lane with coordinate refresh after each lane
 - When data objects extend beyond lane boundaries, Modelio auto-expands the lane
-- The helper library re-reads lane coordinates after each lane's positioning
 
 ---
 
@@ -492,6 +520,7 @@ COMPLETE: MyProcess_12345
 
 ## Version History
 
+- **v3.1** (December 2025): Y-offset layout support, data objects positioned below source task
 - **v3.0** (December 2025): Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (December 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (December 2025): Simplified data objects by removing position parameter (always below)
