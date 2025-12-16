@@ -520,7 +520,7 @@ COMPLETE: MyProcess_12345
 
 ## Version History
 
-- **v3.1** (December 2025): Y-offset layout support, data objects positioned below source task
+- **v3.1** (December 2025): Fixed data association export, Y-offset layout support, data objects positioned below source task
 - **v3.0** (December 2025): Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (December 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (December 2025): Simplified data objects by removing position parameter (always below)

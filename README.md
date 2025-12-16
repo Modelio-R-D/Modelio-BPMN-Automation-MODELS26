@@ -153,7 +153,7 @@ CONFIG = {
     },
     # Optional: Data Objects
     "data_objects": [
-        ("Expense Report", "Employee", 0, "below"),
+        ("Expense Report", "Employee", 0),
     ],
     "data_associations": [
         ("Submit Expense", "Expense Report"),
@@ -252,11 +252,10 @@ CONFIG = {
 ### Data Associations Configuration
 
 ```python
-# Format: (source, target, direction)
-# direction: "output" = task produces data, "input" = task consumes data
+# Format: (source, target) - direction is auto-detected
 "data_associations": [
-    ("Write Document", "Draft Document", "output"),  # Task → Data
-    ("Draft Document", "Review Task", "input"),      # Data → Task
+    ("Write Document", "Draft Document"),  # Task → Data (task produces data)
+    ("Draft Document", "Review Task"),     # Data → Task (task consumes data)
 ]
 ```
 
@@ -360,7 +359,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## Version History
 
-- **v3.1** (Dec 2025) - Improved positioning: Y-offset layout support, data objects below source task
+- **v3.1** (Dec 2025) - Fixed data association export, Y-offset layout support, data objects below source task
 - **v3.0** (Dec 2025) - Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (Dec 2025) - Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
 - **v2.4** (Dec 2025) - Simplified data objects by removing position parameter (always below)

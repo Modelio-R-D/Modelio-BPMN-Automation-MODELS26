@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file.
   - `"Element": (5, 70)` - column 5, 70px below default position
 - **Default config values**: Updated `DATA_OFFSET_X=90` (near task right edge), `DATA_OFFSET_Y=10` (small gap below task)
 
+### Fixed
+- **BPMN_Export.py**: Data associations now correctly exported using BpmnDataObject metamodel
+  - Uses `getTargetOfDataAssociation()` for Task→Data associations (StartingActivity)
+  - Uses `getSourceOfDataAssociation()` for Data→Task associations (EndingActivity)
+  - Previously data associations were missing from exported configs
+
 ### Documentation
 - **Y-offset rules clarified**: Positive y_offset moves elements DOWN within lane
 - **Complete element type reference**: All 30+ element types documented with descriptions

@@ -384,33 +384,42 @@ def exportBPMNProcess(process, diagram):
                     pass
             flows.append((srcName, tgtName, guard))
     
-    # Collect data associations
+    # Collect data associations by checking each data object
+    # Based on metamodel: BpmnDataObject has TargetOfDataAssociation and SourceOfDataAssociation
     dataAssociations = []
+
     if _DATA_OBJECTS_AVAILABLE:
         for elem in flowElements:
-            try:
-                if isinstance(elem, BpmnDataAssociation):
-                    srcRef = elem.getSourceRef()
-                    tgtRef = elem.getTargetRef()
-                    startingAct = elem.getStartingActivity()
-                    endingAct = elem.getEndingActivity()
-                    
-                    # Determine source and target names
-                    if startingAct:
-                        # Output: Task -> DataObject
-                        srcName = startingAct.getName()
-                        tgtName = tgtRef.getName() if tgtRef else ""
-                    elif endingAct:
-                        # Input: DataObject -> Task
-                        srcName = srcRef.get(0).getName() if srcRef and srcRef.size() > 0 else ""
-                        tgtName = endingAct.getName()
-                    else:
-                        continue
-                    
-                    if srcName and tgtName:
-                        dataAssociations.append((srcName, tgtName))
-            except Exception as e:
-                pass
+            if isinstance(elem, BpmnDataObject):
+                dataName = elem.getName()
+
+                # TargetOfDataAssociation: associations where data object is TARGET (Task -> Data)
+                # These have StartingActivity = the task that produces this data
+                try:
+                    targetAssocs = elem.getTargetOfDataAssociation()
+                    if targetAssocs:
+                        for assoc in targetAssocs:
+                            startAct = assoc.getStartingActivity()
+                            if startAct:
+                                taskName = startAct.getName()
+                                dataAssociations.append((taskName, dataName))
+                except:
+                    pass
+
+                # SourceOfDataAssociation: associations where data object is SOURCE (Data -> Task)
+                # These have EndingActivity = the task that consumes this data
+                try:
+                    sourceAssocs = elem.getSourceOfDataAssociation()
+                    if sourceAssocs:
+                        for assoc in sourceAssocs:
+                            endAct = assoc.getEndingActivity()
+                            if endAct:
+                                taskName = endAct.getName()
+                                dataAssociations.append((dataName, taskName))
+                except:
+                    pass
+
+    print "Data associations found: " + str(len(dataAssociations))
     
     # Collect lane bounds
     laneBoundsList = []

@@ -432,6 +432,6 @@ CONFIG = {
 
 ## Version History
 
-- v3.1 (Dec 2025): Corrected Y-offset docs, fixed defaults, complete element types
+- v3.1 (Dec 2025): Fixed data association export, Y-offset layout, complete element types
 - v3.0 (Dec 2025): Export/Import, lane-relative positioning, extended elements
 - v2.x (Dec 2025): Data objects, two-file approach
