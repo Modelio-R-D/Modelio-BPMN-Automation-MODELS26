@@ -1,4 +1,4 @@
-# Modelio BPMN Macro Generation - Claude Instructions v3.1
+# Modelio BPMN Macro Generation - Claude Instructions v3.2
 
 ## Overview
 
@@ -9,11 +9,10 @@ You are helping users create BPMN process diagrams in Modelio using Jython macro
 1. **BPMN_Helpers.py** - Helper library (placed in Modelio macros folder)
 2. **Generated file** - Pure configuration + `execfile()` to load helpers
 
-**v3.1 Updates**:
-- Corrected Y-offset documentation (positive = down from default position)
-- Fixed default config values (DATA_OFFSET_X=90, DATA_OFFSET_Y=10)
-- Complete element type reference
-- Data object positioning based on source task (via data associations)
+**v3.2 Updates**:
+- **Auto-stacking**: Elements in same lane + same column are automatically stacked (90px apart)
+- No more manual y_offset needed for gateway branches - just use same column number
+- Manual `(column, y_offset)` format still supported for precise control
 
 ---
 
@@ -159,46 +158,42 @@ CONFIG = {
 }
 ```
 
-### Layout Format (with Y-Offset Support)
+### Layout Format (with Auto-Stacking)
 
 ```python
 "layout": {
     # Simple format: column index only
     "Element Name": column_index,
-    
-    # Extended format: (column, y_offset) for vertical positioning
+
+    # Extended format: (column, y_offset) for manual vertical positioning
     "Element Name": (column_index, y_offset),
 }
 ```
 
-**Positioning Formula:**
-```
-Element Y = laneTop + 20 + y_offset
-```
+**Auto-Stacking (v3.2):**
+When multiple elements in the **same lane** share the **same column**, they are automatically stacked vertically with 90px spacing. No manual y_offset needed!
 
-**Y-Offset Rules:**
-- Default position is `laneTop + 20` (20px from lane top)
-- `y_offset = 0` (or omitted) → default position
-- **Positive y_offset** → moves element **DOWN** within lane
-- **Negative y_offset** → avoid! Could place element above lane
-
-**Example - Stacking Elements Vertically:**
 ```python
+# Auto-stacking example - just use the same column number
 "layout": {
-    # Gateway at default position
-    "Decision?": 5,
-    
-    # Two outputs in same column, stacked vertically
-    "Success Path": (6, 0),     # Y = laneTop + 20 (default)
-    "Error Path":   (6, 70),    # Y = laneTop + 90 (70px lower)
+    "Decision?":     5,
+    "Success Path":  6,    # Same lane, same column = auto-stacked
+    "Error Path":    6,    # Automatically placed 90px below Success Path
 }
 ```
 
-**Recommended Y-Offset Values for Stacking:**
-| Elements to Stack | Y-Offsets |
-|-------------------|-----------|
-| 2 elements | 0, 70 |
-| 3 elements | 0, 70, 140 |
+**Manual Y-Offset (optional):**
+You can still use `(column, y_offset)` tuple for precise control:
+- `y_offset = 0` → default position (laneTop + 20)
+- **Positive y_offset** → moves element **DOWN** within lane
+
+**Example - Manual Override:**
+```python
+"layout": {
+    "Success Path": (6, 0),      # Explicit: default position
+    "Error Path":   (6, 120),    # Explicit: 120px below default
+}
+```
 
 ### Elements Format
 
@@ -307,21 +302,21 @@ Tasks connected by a flow (Task A → Task B) **MUST** be in different columns:
 }
 ```
 
-### 5. Y-Offset is for Parallel Paths Only
-Use y_offset **only** for gateway outputs (parallel branches), NOT for sequential tasks:
+### 5. Same Column = Auto-Stacked (v3.2)
+Elements in the same lane and same column are automatically stacked:
 
 ```python
-# CORRECT - Gateway outputs (parallel paths) can use y_offset
+# SIMPLE - Just use same column number for gateway branches
 "layout": {
     "Decision?":     5,
-    "Success Path":  (6, 0),    # Parallel branch 1
-    "Error Path":    (6, 70),   # Parallel branch 2
+    "Success Path":  6,    # Auto-stacked with Error Path
+    "Error Path":    6,    # Automatically 90px below Success Path
 }
 
-# WRONG - Don't use y_offset for sequential tasks
+# WRONG - Don't put sequential tasks in same column
 "layout": {
-    "Task A": (5, 0),
-    "Task B": (5, 70),   # WRONG if Task A -> Task B!
+    "Task A": 5,
+    "Task B": 5,   # WRONG if Task A -> Task B (sequential)!
 }
 ```
 
@@ -335,9 +330,9 @@ Gateways can NEVER have data associations.
 ```python
 CONFIG = {
     "name": "ValidationProcess",
-    
+
     "lanes": ["Validator"],
-    
+
     "elements": [
         ("Start",            START,        "Validator"),
         ("Validate",         SERVICE_TASK, "Validator"),
@@ -346,7 +341,7 @@ CONFIG = {
         ("Handle Invalid",   SERVICE_TASK, "Validator"),
         ("End",              END,          "Validator"),
     ],
-    
+
     "flows": [
         ("Start",          "Validate",       ""),
         ("Validate",       "Valid?",         ""),
@@ -355,13 +350,13 @@ CONFIG = {
         ("Process Valid",  "End",            ""),
         ("Handle Invalid", "End",            ""),
     ],
-    
+
     "layout": {
         "Start":          0,
         "Validate":       1,
         "Valid?":         2,
-        "Process Valid":  (3, 0),    # Default position
-        "Handle Invalid": (3, 70),   # 70px below Process Valid
+        "Process Valid":  3,    # Same column = auto-stacked
+        "Handle Invalid": 3,    # Automatically 90px below Process Valid
         "End":            4,
     },
 }
@@ -432,6 +427,7 @@ CONFIG = {
 
 ## Version History
 
+- v3.2 (Dec 2025): Auto-stacking for same-lane/same-column elements
 - v3.1 (Dec 2025): Fixed data association export, Y-offset layout, complete element types
 - v3.0 (Dec 2025): Export/Import, lane-relative positioning, extended elements
 - v2.x (Dec 2025): Data objects, two-file approach

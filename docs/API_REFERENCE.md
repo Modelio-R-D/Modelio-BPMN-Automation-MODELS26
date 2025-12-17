@@ -164,14 +164,15 @@ Format: `{element_name: column_index}` or `{element_name: (column_index, y_offse
 
 ```python
 "layout": {
-    # Simple format: column index only
+    # Simple format: column index only (recommended)
     "Submit Request": 0,
     "Review Request": 1,
     "Decision": 2,
+    "Approved": 3,     # Same column as Rejected = auto-stacked
+    "Rejected": 3,     # Automatically 90px below Approved
 
-    # Extended format with Y-offset for vertical stacking
-    "Approved": (3, 0),    # Column 3, default Y position
-    "Rejected": (3, 70),   # Column 3, 70px below default
+    # Extended format with explicit Y-offset (optional)
+    "Custom Position": (4, 120),   # Column 4, 120px below default
 }
 ```
 
@@ -181,17 +182,27 @@ Format: `{element_name: column_index}` or `{element_name: (column_index, y_offse
 | `column_index` | integer | Horizontal position (0 = leftmost) |
 | `y_offset` | integer | Optional vertical offset from default position (positive = down) |
 
-**Y-Offset Positioning** (v3.1):
-- Default position is `laneTop + 20` (20px from lane top)
-- `y_offset = 0` (or omitted) places element at default position
-- **Positive y_offset** moves element **DOWN** within lane
-- Use for stacking gateway outputs: `(col, 0)`, `(col, 70)`, `(col, 140)`
+**Auto-Stacking (v3.2)**:
+When multiple elements in the **same lane** share the **same column**, they are automatically stacked vertically with 90px spacing. No manual y_offset needed!
+
+```python
+# Just use the same column number - auto-stacking handles the rest
+"layout": {
+    "Decision?":     5,
+    "Success Path":  6,    # Same lane + same column = auto-stacked
+    "Error Path":    6,    # Automatically placed 90px below Success Path
+}
+```
+
+**Manual Y-Offset (optional)**:
+You can still use `(column, y_offset)` tuple for precise control:
+- `y_offset = 0` → default position (laneTop + 20)
+- **Positive y_offset** → moves element **DOWN** within lane
 
 **Layout tips**:
 - Column indices can have gaps (0, 1, 5, 10 is fine)
-- Elements in the same lane at the same column will overlap (use y_offset to stack)
 - Elements in different lanes can share a column (parallel positioning)
-- Use y_offset **only** for parallel paths (gateway outputs), not sequential tasks
+- Use same column for gateway outputs (parallel branches) - they auto-stack
 - Sequential tasks (A → B) must be in different columns
 
 ---
@@ -285,6 +296,62 @@ if (selectedElements.size > 0):
         process = createBPMNFromConfig(element, CONFIG)
         print "Created: " + process.getName()
 ```
+
+---
+
+## Positioning Algorithm (v3.2)
+
+The helper library uses a lane-by-lane positioning strategy with auto-stacking for optimal layout.
+
+### Lane-by-Lane Processing
+
+Elements are positioned one lane at a time, with diagram saves between lanes:
+
+```
+For each lane (top to bottom):
+  1. Get fresh lane bounds from diagram
+  2. Unmask/retrieve graphics for elements in this lane
+  3. Calculate max element bottom (for data object placement)
+  4. Position elements using layout config + auto-stacking
+  5. Position data objects below elements
+  6. Save diagram (allows Modelio to adjust lane size)
+```
+
+This approach ensures:
+- Accurate lane bounds after auto-expansion
+- Proper element placement within each lane
+- Data objects don't overlap with stacked elements
+
+### Auto-Stacking Algorithm
+
+When multiple elements share the same lane AND column:
+
+```
+For each (lane, column) group:
+  If only 1 element:
+    Use explicit y_offset or 0
+  Else if ALL elements have explicit non-zero y_offset:
+    Use specified offsets
+  Else:
+    Auto-assign: 0, 90, 180, ... (in config order)
+```
+
+**Order matters**: Elements are stacked in the order they appear in the `elements` list.
+
+### Data Object Placement
+
+Data objects are positioned below ALL elements in their lane:
+
+```
+1. Find max element bottom in lane:
+   maxBottom = max(taskTopOffset + yOffset + height) for all elements
+
+2. Position data object:
+   Y = laneTop + maxBottom + DATA_OFFSET_Y
+   X = startX + (column * spacing) + DATA_OFFSET_X
+```
+
+This ensures data objects never overlap with stacked tasks.
 
 ---
 
@@ -520,6 +587,7 @@ COMPLETE: MyProcess_12345
 
 ## Version History
 
+- **v3.2** (December 2025): Auto-stacking for same-lane/same-column elements (90px spacing)
 - **v3.1** (December 2025): Fixed data association export, Y-offset layout support, data objects positioned below source task
 - **v3.0** (December 2025): Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (December 2025): Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT

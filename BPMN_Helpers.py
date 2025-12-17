@@ -9,7 +9,7 @@
 #
 #   Place this file in: .modelio/5.4/macros/BPMN_Helpers.py
 #
-# Version: 3.1 - December 2025
+# Version: 3.2 - December 2025
 #
 
 from org.modelio.metamodel.bpmn.processCollaboration import BpmnProcess
@@ -71,7 +71,7 @@ try:
 except ImportError:
     _DATA_OBJECTS_AVAILABLE = False
 
-print "BPMN_Helpers.py v3.1 loaded (Data Objects: " + str(_DATA_OBJECTS_AVAILABLE) + ")"
+print "BPMN_Helpers.py v3.2 loaded (Data Objects: " + str(_DATA_OBJECTS_AVAILABLE) + ")"
 
 
 # ============================================================================
@@ -910,30 +910,13 @@ def createBPMNFromConfig(parentPackage, config):
 
     else:
         # =====================================================================
-        # COLUMN-BASED POSITIONING (standard - v2.7 logic)
+        # COLUMN-BASED POSITIONING (lane-by-lane strategy - v3.2)
         # =====================================================================
-        print "Mode: COLUMN-BASED (standard layout)"
+        print "Mode: COLUMN-BASED (lane-by-lane)"
         print ""
 
         layoutConfig = config.get("layout", {})
-
-        # Wait for all elements
-        elementGraphics, attempts = _waitForElements(diagramHandle, allElements, cfg)
-        foundCount = len(elementGraphics)
-
-        if foundCount < len(allElements):
-            print ""
-            print "[" + str(step()) + "] Manual unmask for missing elements..."
-            print ""
-            unmaskedCount = _unmaskMissingElements(diagramHandle, allElements, elementGraphics, lanes, elementLanes)
-            if unmaskedCount > 0:
-                diagramHandle.save()
-
-        foundCount = len(elementGraphics)
-        print ""
-        print "[" + str(step()) + "] Elements ready: " + str(foundCount) + "/" + str(len(allElements))
-        print "  " + _formatLanesSummary(diagramHandle, lanes, laneOrder)
-        print ""
+        dataAssocDefs = config.get("data_associations", [])
 
         def _parseLayoutEntry(entry):
             if isinstance(entry, tuple):
@@ -941,216 +924,197 @@ def createBPMNFromConfig(parentPackage, config):
             else:
                 return entry, 0
 
-        sortedElements = []
-        for name, layoutEntry in layoutConfig.items():
-            col, yOffset = _parseLayoutEntry(layoutEntry)
-            laneName = elementLanes.get(name, "")
-            sortedElements.append((col, yOffset, name, laneName))
-        sortedElements.sort()
-
+        # Layout settings
         spacing = cfg["SPACING"]
         startX = cfg["START_X"]
         taskWidth = cfg["TASK_WIDTH"]
         taskHeight = cfg["TASK_HEIGHT"]
         taskTopOffset = 20
-
-        for col, yOffset, name, laneName in sortedElements:
-            if name not in elementGraphics:
-                continue
-
-            laneBoundsDict = {}
-            for ln in laneOrder:
-                lb = _getBounds(diagramHandle, lanes[ln])
-                if lb:
-                    laneBoundsDict[ln] = {"top": lb["y"], "bottom": lb["y"] + lb["h"], "height": lb["h"]}
-
-            if laneName not in laneBoundsDict:
-                print "  " + name + ": SKIP (lane bounds not found)"
-                continue
-
-            laneTop = laneBoundsDict[laneName]["top"]
-
-            dg = elementGraphics[name]
-            elem = elementRefs[name]
-            bounds = _getBounds(diagramHandle, elem)
-
-            if not bounds:
-                continue
-
-            targetX = startX + spacing * col
-            targetY = laneTop + taskTopOffset + yOffset
-
-            elemClass = elem.getMClass().getName()
-            if "Task" in elemClass:
-                width = taskWidth
-                height = taskHeight
-            else:
-                width = bounds["w"]
-                height = bounds["h"]
-
-            newBounds = Draw2DRectangle(
-                int(targetX), int(targetY),
-                int(width), int(height)
-            )
-            dg.setBounds(newBounds)
-            repositionedCount += 1
-
-            diagramHandle.save()
-
-            freshBounds = _getBounds(diagramHandle, elem)
-            if freshBounds:
-                freshLaneBounds = _getBounds(diagramHandle, lanes[laneName])
-                if freshLaneBounds:
-                    freshLaneTop = freshLaneBounds["y"]
-                    relativeY = freshBounds["y"] - freshLaneTop
-                    relativeOffsets[name] = relativeY
-                    print "  " + name + " -> col=" + str(col) + " Y=" + str(int(freshBounds["y"])) + " (relY=" + str(int(relativeY)) + " laneTop=" + str(int(freshLaneTop)) + ")"
-
-        print ""
-        print "  Relative Y offsets (element Y - lane top):"
-        for ln in laneOrder:
-            laneElems = [(n, relativeOffsets.get(n, "?")) for n in relativeOffsets.keys() if elementLanes.get(n) == ln]
-            if laneElems:
-                offsetStrs = [n + "=" + str(int(o) if isinstance(o, (int, float)) else o) for n, o in laneElems[:5]]
-                print "    " + ln + ": " + ", ".join(offsetStrs) + ("..." if len(laneElems) > 5 else "")
-
-    print ""
-    print "[" + str(step()) + "] Repositioned: " + str(repositionedCount) + "/" + str(len(allElements))
-    
-    # =========================================================================
-    # PHASE 5B: REPOSITION DATA OBJECTS (column-based only)
-    # =========================================================================
-    # Skip for lane-relative positioning - data objects already positioned above
-    if dataObjects and not useLaneRelativePositioning:
-        print ""
-        print "== PHASE 5B: REPOSITION DATA OBJECTS ============================"
-        print "(Lane-by-lane with coordinate refresh)"
-        print ""
-
-        # Define layout variables for column-based positioning
-        layoutConfig = config.get("layout", {})
-        spacing = cfg["SPACING"]
-        startX = cfg["START_X"]
-        taskWidth = cfg["TASK_WIDTH"]
-        taskHeight = cfg["TASK_HEIGHT"]
-        taskTopOffset = 20
+        stackingOffset = 90  # Vertical offset between stacked elements
         dataWidth = cfg["DATA_WIDTH"]
         dataHeight = cfg["DATA_HEIGHT"]
         dataOffsetX = cfg["DATA_OFFSET_X"]
         dataOffsetY = cfg["DATA_OFFSET_Y"]
 
-        def _parseLayoutEntry(entry):
-            if isinstance(entry, tuple):
-                return entry[0], entry[1]
-            else:
-                return entry, 0
-
+        # Build data object source task mapping (Task -> DataObject associations)
         dataObjectSourceTask = {}
-        dataAssocDefs = config.get("data_associations", [])
-        dataObjectNames = set(dataObjectLayout.keys())
-        
+        dataObjectNames = set(dataObjectLayout.keys()) if dataObjects else set()
         for assocDef in dataAssocDefs:
             srcName, tgtName = assocDef[0], assocDef[1]
             if tgtName in dataObjectNames and srcName not in dataObjectNames:
                 dataObjectSourceTask[tgtName] = srcName
-        
-        print "  Source task mapping:"
-        for doName, taskName in dataObjectSourceTask.items():
-            print "    " + doName + " <- " + taskName
-        print ""
-        
-        dataRepositioned = 0
-        
-        for laneIdx, laneName in enumerate(laneOrder):
-            laneHasData = any(dataObjectLanes.get(name) == laneName for name in dataObjectLayout.keys())
-            if not laneHasData:
+
+        # Pre-compute auto-stacking: detect same-lane/same-column conflicts
+        # Build: {laneName: {column: [element_names_in_order]}}
+        laneColumnElements = {}
+        for laneName in laneOrder:
+            laneColumnElements[laneName] = {}
+            laneElems = [n for n in elementsByLane.get(laneName, []) if n not in dataObjectNames]
+            for name in laneElems:
+                if name in layoutConfig:
+                    col, explicitYOffset = _parseLayoutEntry(layoutConfig[name])
+                    if col not in laneColumnElements[laneName]:
+                        laneColumnElements[laneName][col] = []
+                    laneColumnElements[laneName][col].append((name, explicitYOffset))
+
+        # Compute effective y_offset for each element (auto-stack if no explicit offset)
+        effectiveYOffset = {}
+        for laneName in laneOrder:
+            for col, elemList in laneColumnElements[laneName].items():
+                if len(elemList) == 1:
+                    # Single element in column - use explicit offset or 0
+                    name, explicitOffset = elemList[0]
+                    effectiveYOffset[name] = explicitOffset
+                else:
+                    # Multiple elements in same column - check if all have explicit offsets
+                    hasExplicitOffsets = all(offset != 0 for _, offset in elemList)
+                    if hasExplicitOffsets:
+                        # User specified offsets - use them
+                        for name, offset in elemList:
+                            effectiveYOffset[name] = offset
+                    else:
+                        # Auto-stack: assign 0, 90, 180, ... in order
+                        for idx, (name, explicitOffset) in enumerate(elemList):
+                            if explicitOffset != 0:
+                                # User specified this one - use it
+                                effectiveYOffset[name] = explicitOffset
+                            else:
+                                # Auto-assign based on position in list
+                                effectiveYOffset[name] = idx * stackingOffset
+                        stackInfo = []
+                        for n, _ in elemList:
+                            stackInfo.append(n + "=" + str(effectiveYOffset[n]))
+                        print "  [Auto-stack] col " + str(col) + ": " + ", ".join(stackInfo)
+
+        # Process lane by lane
+        for laneName in laneOrder:
+            # Get current lane bounds (fresh read)
+            laneBounds = _getBounds(diagramHandle, lanes[laneName])
+            if not laneBounds:
+                print "[" + laneName + "] WARNING: Could not get lane bounds"
                 continue
-            
-            diagramHandle.save()
-            
-            allLaneTops = {}
-            for ln in laneOrder:
-                lnBounds = _getBounds(diagramHandle, lanes[ln])
-                if lnBounds:
-                    allLaneTops[ln] = lnBounds["y"]
-            
-            lb = _getBounds(diagramHandle, lanes[laneName])
-            if not lb:
-                print "[" + laneName + "] ERROR: Could not get lane bounds"
+
+            laneTop = laneBounds["y"]
+            laneBottom = laneBounds["y"] + laneBounds["h"]
+            print "[" + laneName + "] Lane bounds: " + str(int(laneTop)) + "-" + str(int(laneBottom))
+
+            # Get elements for this lane (excluding data objects)
+            laneElementNames = [n for n in elementsByLane.get(laneName, []) if n not in dataObjectNames]
+            laneDataNames = [n for n in elementsByLane.get(laneName, []) if n in dataObjectNames]
+
+            if not laneElementNames and not laneDataNames:
                 continue
-            
-            laneTop = lb["y"]
-            laneBottom = lb["y"] + lb["h"]
-            laneCenterY = lb["y"] + lb["h"] / 2
-            
-            print "[" + laneName + "] FRESH bounds: " + str(int(laneTop)) + "-" + str(int(laneBottom)) + " (center=" + str(int(laneCenterY)) + ")"
-            
-            laneDataCount = 0
-            for name, column in dataObjectLayout.items():
-                if dataObjectLanes.get(name) != laneName:
+
+            # Get element objects for this lane
+            laneElements = [elementRefs[n] for n in laneElementNames if n in elementRefs]
+            laneDataObjects = [elementRefs[n] for n in laneDataNames if n in elementRefs]
+
+            # Wait for / unmask elements in this lane
+            for elem in laneElements + laneDataObjects:
+                name = elem.getName()
+                dg = _getGraphics(diagramHandle, elem)
+                if dg:
+                    elementGraphics[name] = dg
+                else:
+                    # Manual unmask into this lane
+                    try:
+                        targetY = int(laneTop + laneBounds["h"] / 2)
+                        result = diagramHandle.unmask(elem, 100, targetY)
+                        if result and result.size() > 0:
+                            elementGraphics[name] = result.get(0)
+                            print "  [Unmask] " + name + " -> Y=" + str(targetY) + ": OK"
+                    except Exception as e:
+                        print "  [Unmask] " + name + ": ERROR - " + str(e)
+
+            # Pre-calculate max element bottom for this lane (for data object placement)
+            maxElementBottomRelY = taskTopOffset + taskHeight  # Default: one task height
+            for name in laneElementNames:
+                if name in effectiveYOffset:
+                    yOffset = effectiveYOffset[name]
+                    elem = elementRefs.get(name)
+                    if elem:
+                        elemClass = elem.getMClass().getName()
+                        height = taskHeight if "Task" in elemClass else 40  # Approximate
+                        elementBottomRelY = taskTopOffset + yOffset + height
+                        if elementBottomRelY > maxElementBottomRelY:
+                            maxElementBottomRelY = elementBottomRelY
+
+            print "  [maxElementBottomRelY=" + str(int(maxElementBottomRelY)) + "]"
+
+            # Position elements in this lane
+            for name in laneElementNames:
+                if name not in elementGraphics:
+                    print "  " + name + ": SKIP (no graphics)"
                     continue
 
-                if name not in elementGraphics:
-                    print "  " + name + ": SKIP (not in graphics)"
+                if name not in layoutConfig:
+                    print "  " + name + ": SKIP (no layout entry)"
                     continue
 
                 dg = elementGraphics[name]
+                elem = elementRefs[name]
+                bounds = _getBounds(diagramHandle, elem)
+                if not bounds:
+                    continue
 
+                col, _ = _parseLayoutEntry(layoutConfig[name])  # Get column only
+                yOffset = effectiveYOffset.get(name, 0)  # Use computed offset
+
+                targetX = startX + spacing * col
+                targetY = laneTop + taskTopOffset + yOffset
+
+                elemClass = elem.getMClass().getName()
+                if "Task" in elemClass:
+                    width = taskWidth
+                    height = taskHeight
+                else:
+                    width = bounds["w"]
+                    height = bounds["h"]
+
+                newBounds = Draw2DRectangle(
+                    int(targetX), int(targetY),
+                    int(width), int(height)
+                )
+                dg.setBounds(newBounds)
+                repositionedCount += 1
+                relativeOffsets[name] = taskTopOffset + yOffset
+                print "  " + name + " -> col=" + str(col) + " (" + str(int(targetX)) + "," + str(int(targetY)) + ") relY=" + str(int(taskTopOffset + yOffset))
+
+            # Position data objects in this lane (below ALL tasks to avoid overlap)
+            for name in laneDataNames:
+                if name not in elementGraphics:
+                    print "  " + name + " (DO): SKIP (no graphics)"
+                    continue
+
+                dg = elementGraphics[name]
+                column = dataObjectLayout.get(name, 0)
                 targetX = startX + spacing * column + dataOffsetX
 
-                sourceTaskName = dataObjectSourceTask.get(name)
-                
-                if sourceTaskName and sourceTaskName in relativeOffsets:
-                    sourceTaskLane = elementLanes.get(sourceTaskName)
-                    freshLaneTop = allLaneTops.get(sourceTaskLane, laneTop)
-                    sourceRelY = relativeOffsets[sourceTaskName]
-                    
-                    sourceTaskY = freshLaneTop + sourceRelY
-                    sourceTaskH = taskHeight
-                    
-                    targetY = sourceTaskY + sourceTaskH + dataOffsetY
-                    print "  " + name + " (from " + sourceTaskName + " relY=" + str(int(sourceRelY)) + " laneTop=" + str(int(freshLaneTop)) + ") -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
-                else:
-                    nearestTaskBottom = None
-                    minDistance = 999999
-                    
-                    for elemName in relativeOffsets.keys():
-                        if elementLanes.get(elemName) != laneName:
-                            continue
-                        elemLayout = layoutConfig.get(elemName)
-                        if elemLayout:
-                            elemCol, elemYOff = _parseLayoutEntry(elemLayout)
-                            distance = abs(elemCol - column)
-                            if distance < minDistance:
-                                minDistance = distance
-                                elemRelY = relativeOffsets[elemName]
-                                nearestTaskBottom = laneTop + elemRelY + taskHeight
-                    
-                    if nearestTaskBottom is not None:
-                        targetY = nearestTaskBottom + dataOffsetY
-                    else:
-                        targetY = laneTop + taskTopOffset + taskHeight + dataOffsetY
-                    
-                    print "  " + name + " (fallback) -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
-                
-                if targetY + dataHeight > laneBottom - 5:
-                    targetY = laneBottom - dataHeight - 5
+                # Position ALL data objects below the maximum element bottom in this lane
+                # This avoids overlap with tasks that have Y-offsets
+                targetY = laneTop + maxElementBottomRelY + dataOffsetY
 
+                sourceTaskName = dataObjectSourceTask.get(name)
+                if sourceTaskName:
+                    print "  " + name + " (DO from " + sourceTaskName + ") -> (" + str(int(targetX)) + "," + str(int(targetY)) + ") maxBottomRelY=" + str(int(maxElementBottomRelY))
+                else:
+                    print "  " + name + " (DO) -> (" + str(int(targetX)) + "," + str(int(targetY)) + ")"
+
+                # No clamping - lanes auto-expand to fit data objects
                 newBounds = Draw2DRectangle(
                     int(targetX), int(targetY),
                     int(dataWidth), int(dataHeight)
                 )
                 dg.setBounds(newBounds)
-                dataRepositioned += 1
-                laneDataCount += 1
-            
-            if laneDataCount > 0:
-                diagramHandle.save()
-                print "  [Saved " + str(laneDataCount) + " DOs, refreshing coordinates...]"
-                print ""
-        
-        print "[" + str(step()) + "] Data objects repositioned: " + str(dataRepositioned) + "/" + str(len(dataObjects))
-    
+                repositionedCount += 1
+
+            # Save after each lane to allow Modelio to adjust
+            diagramHandle.save()
+            print ""
+
+    print ""
+    print "[" + str(step()) + "] Repositioned: " + str(repositionedCount) + "/" + str(len(allElements))
+
     # =========================================================================
     # PHASE 6: CREATE FLOWS
     # =========================================================================

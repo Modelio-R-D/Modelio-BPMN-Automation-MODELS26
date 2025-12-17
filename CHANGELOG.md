@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2] - December 2025
+
+### Major Features
+- **Auto-stacking**: Elements in same lane + same column are automatically stacked vertically (90px spacing)
+  - No more manual `(column, y_offset)` tuples needed for gateway branches
+  - Just use the same column number - stacking happens automatically
+  - Manual override still supported via `(column, y_offset)` format
+
+### Improved
+- **Simplified layout config**: Gateway outputs can now share same column without explicit offsets
+  ```python
+  # Before (v3.1) - required explicit y_offset
+  "Success Path": (3, 0),
+  "Error Path":   (3, 90),
+
+  # After (v3.2) - auto-stacking
+  "Success Path": 3,
+  "Error Path":   3,   # Automatically 90px below
+  ```
+- **Lane-by-lane processing**: Elements processed one lane at a time for better Modelio integration
+
+---
+
 ## [v3.1] - December 2025
 
 ### Improved

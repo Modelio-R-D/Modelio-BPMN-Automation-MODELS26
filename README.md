@@ -21,8 +21,9 @@ This project enables you to:
 - ✅ Configurable task dimensions and spacing
 - ✅ Robust element unmasking with fallback mechanisms
 - ✅ Two-file architecture for faster, more reliable AI generation
-- ✅ **NEW: Export/Import** - Clone or migrate existing diagrams between projects
-- ✅ **NEW: Extended element types** - Script, Business Rule, Send/Receive tasks, additional gateways and events
+- ✅ **NEW: Auto-stacking** - Same lane + same column elements automatically stacked (v3.2)
+- ✅ Export/Import - Clone or migrate existing diagrams between projects
+- ✅ Extended element types - Script, Business Rule, Send/Receive tasks, additional gateways and events
 
 ## Requirements
 
@@ -138,6 +139,7 @@ CONFIG = {
         ("Review", USER_TASK, "Manager"),
         ("Approved?", EXCLUSIVE_GW, "Manager"),
         ("Process Payment", SERVICE_TASK, "Finance"),
+        ("Rejected", END, "Manager"),
         # ...
     ],
     "flows": [
@@ -149,6 +151,8 @@ CONFIG = {
         "Submit Expense": 0,
         "Review": 1,
         "Approved?": 2,
+        "Process Payment": 3,    # Same column = auto-stacked (v3.2)
+        "Rejected": 3,           # Automatically 90px below
         # ...
     },
     # Optional: Data Objects
@@ -359,6 +363,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## Version History
 
+- **v3.2** (Dec 2025) - Auto-stacking for same-lane/same-column elements (90px spacing)
 - **v3.1** (Dec 2025) - Fixed data association export, Y-offset layout support, data objects below source task
 - **v3.0** (Dec 2025) - Export/Import feature, lane-relative positioning, extended element types
 - **v2.5** (Dec 2025) - Clarified BPMN rules - Events CAN have data associations, Gateways CANNOT
