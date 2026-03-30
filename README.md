@@ -4,6 +4,21 @@ Generate BPMN (Business Process Model and Notation) diagrams in [Modelio](https:
 
 ![BPMN Example](docs/images/expense-approval-example.png)
 
+## For Researchers & Reproducibility
+
+This repository is the open-source artifact accompanying the MODELS '26 paper:
+**"Towards LLM-Assisted Business Process Modeling in an Industrial Modeling Tool: An Experience Report"**
+
+The evaluation data and results are in the [`Evaluation/`](Evaluation/) folder:
+
+| File | Content |
+|------|---------|
+| [`Evaluation/Eval.md`](Evaluation/Eval.md) | Full evaluation results — MATISSE industrial validation (24 scenarios, 7 partners) and controlled benchmark (55 PMo scenarios, 3 LLMs) with all paper tables |
+| [`Evaluation/Evals.ipynb`](Evaluation/Evals.ipynb) | Jupyter notebook that loads the JSONL experiment data and reproduces all paper tables |
+| [`Evaluation/output/exp_config_helper/`](Evaluation/output/exp_config_helper/) | Raw JSONL data for the Config+Helpers experiment (Claude Opus 4.5, GPT-5.2, GLM5) |
+| [`Evaluation/output/exp_no_helper/`](Evaluation/output/exp_no_helper/) | Raw JSONL data for the No-Helper experiment (Claude Opus 4.5, GPT-5.2, GLM5) |
+
+---
 ## Overview
 
 This project enables you to:
