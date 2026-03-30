@@ -99,6 +99,18 @@ Modelio-Automation/
 │   └── ExpenseApprovalProcess.py
 ├── lm_studio/
 │    └── LMStudio_Qwen_Guide_with_helpers.md
+├── Evaluation/       # Methodologie, Quantitative results and analysis
+│   ├── Eval.md               # Evaluation methodologie, results and Analysis
+│   ├── Evals.ipynb           # Main analysis notebook
+│   └── output/
+│       ├── exp_config_helper/   # Config+Helpers experiment JSONL data
+│       │   ├── generated_configs_modelio_claude_opus_4_5.jsonl
+│       │   ├── generated_configs_helper_GPT_5_2_modelio.jsonl
+│       │   └── generated_configs_helper_GLM5_modelio.jsonl
+│       └── exp_no_helper/       # No-Helper (direct native) experiment JSONL data
+│           ├── generated_configs_no_helper_claude_opus_4_5_modelio.jsonl
+│           ├── generated_configs_no_helper_gpt_5_2_modelio.jsonl
+│           └── generated_configs_no_helper_GLM5_modelio.jsonl
 └── v1/                       # Previous single-file version with examples
 ```
 
