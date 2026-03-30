@@ -99,8 +99,8 @@ Modelio-Automation/
 │   └── ExpenseApprovalProcess.py
 ├── lm_studio/
 │    └── LMStudio_Qwen_Guide_with_helpers.md
-├── Evaluation/       # Methodologie, Quantitative results and analysis
-│   ├── Eval.md               # Evaluation methodologie, results and Analysis
+├── Evaluation/       # Evaluation data, results and analysis for the paper
+│   ├── Eval.md               # Evaluation methodology, metrics, and all results tables
 │   ├── Evals.ipynb           # Main analysis notebook
 │   └── output/
 │       ├── exp_config_helper/   # Config+Helpers experiment JSONL data
