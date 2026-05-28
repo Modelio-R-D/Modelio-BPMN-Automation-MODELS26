@@ -3,7 +3,7 @@ render_diagrams.py
 ==================
 
 Internal automation driver used by the authors to produce the
-`diagram.png` files committed under `evaluation/runs/`. It depends on a
+`diagram_generated.png` files committed under `evaluation/runs/`. It depends on a
 project-internal Modelio remote-execution channel and is not part of the
 public reproduction path.
 
@@ -178,10 +178,10 @@ print "DONE"
 '''
 
 
-def build_wrapper(generated_py: Path, out_png: Path) -> str:
-    parts = generated_py.relative_to(RUNS_DIR).parts  # approach, llm, scenario_NN, generated.py
+def build_wrapper(generated_py: Path, out_png: Path, pkg_suffix: str = "") -> str:
+    parts = generated_py.relative_to(RUNS_DIR).parts  # approach, llm, scenario_NN, <script>.py
     approach, llm, scenario = parts[0], parts[1], parts[2]
-    pkg = safe_pkg_name(approach, llm, scenario)
+    pkg = safe_pkg_name(approach, llm, scenario) + pkg_suffix
 
     raw = generated_py.read_text(encoding="utf-8")
     patched = patch_helper_execfile(raw)
@@ -203,7 +203,7 @@ def build_wrapper(generated_py: Path, out_png: Path) -> str:
 
 def render_one(generated_py: Path, dry_run: bool = False) -> tuple[bool, str]:
     run_dir = generated_py.parent
-    out_png = run_dir / "diagram.png"
+    out_png = run_dir / "diagram_generated.png"
     log_path = run_dir / "diagram_render.log"
     err_path = run_dir / "diagram_render_error.txt"
     if err_path.exists():

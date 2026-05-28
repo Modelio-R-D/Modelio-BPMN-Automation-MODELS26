@@ -5,7 +5,7 @@ Utilities used during artifact preparation and reproduction.
 | Path                              | Purpose                                                                 |
 |-----------------------------------|-------------------------------------------------------------------------|
 | `extract_runs_from_jsonl.py`      | Regenerates [`evaluation/runs/`](../evaluation/runs/) from [`evaluation/results/raw_jsonl/`](../evaluation/results/raw_jsonl/). |
-| `macros/render_all.py`            | **Modelio macro for reproducibility.** Re-renders every `generated.py` inside a stock Modelio and saves `diagram.png` next to each script. |
+| `macros/render_all.py`            | **Modelio macro for reproducibility.** Re-renders every `generated.py` inside a stock Modelio and saves `diagram_generated.png` next to each script. |
 | `render_diagrams.py`              | Internal automation driver the authors used to produce the committed PNGs. Documented for transparency, but **not the public reproduction path** — see the note below. |
 
 The paper's analysis notebook lives with the data, not here:
@@ -37,7 +37,7 @@ stock Modelio installation and uses only standard Modelio APIs
    `MODELS26` (create it if missing).
 4. Right-click that package → **Macros → render_all**.
 
-The macro prints progress as it works and writes `diagram.png` next to
+The macro prints progress as it works and writes `diagram_generated.png` next to
 each `evaluation/runs/.../generated.py`. To restrict the run, edit
 `ONLY_APPROACH`, `ONLY_LLM`, or `ONLY_SCENARIO` at the top of the macro.
 

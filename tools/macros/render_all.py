@@ -7,7 +7,7 @@
 #   evaluation/runs/<approach>/<llm>/scenario_<NN>/generated.py
 # this macro creates a fresh sub-package, executes the generated script
 # inside that sub-package, and saves a PNG of the resulting BPMN diagram
-# as evaluation/runs/.../diagram.png. It is the portable reproduction
+# as evaluation/runs/.../diagram_generated.png. It is the portable reproduction
 # path for the renders committed to the artifact.
 #
 # This macro uses only standard Modelio APIs (transactions, the
@@ -156,7 +156,7 @@ def _list_runs():
 
 def _render_one(approach, llm, scenario, script_path, models26):
     out_dir = os.path.dirname(script_path)
-    out_png = os.path.join(out_dir, "diagram.png").replace("\\", "/")
+    out_png = os.path.join(out_dir, "diagram_generated.png").replace("\\", "/")
     err_path = os.path.join(out_dir, "diagram_render_error.txt")
     if os.path.isfile(err_path):
         try:

@@ -13,7 +13,7 @@ config-helpers/                       no-helper/
 │   │   ├── generated.py              │   │   ├── generated.py
 │   │   ├── execution_output.txt      │   │   ├── execution_output.txt
 │   │   ├── metrics.json              │   │   ├── metrics.json
-│   │   ├── diagram.png               │   │   ├── diagram.png
+│   │   ├── diagram_generated.png               │   │   ├── diagram_generated.png
 │   │   └── diagram_render.log        │   │   └── diagram_render.log
 │   …                                 │   …
 ├── gpt_5_2/                          ├── gpt_5_2/
@@ -30,9 +30,9 @@ config-helpers/                       no-helper/
 | `generated.py`             | The LLM's output for this run — either a `CONFIG = {…}` config (Config+Helpers) or a full Modelio script (No-Helper). | Sent to the LLM in the original experiment; recorded in the JSONL.                                 |
 | `execution_output.txt`     | stdout/stderr captured when `generated.py` was run in Modelio during the original experiment.           | Recorded in the JSONL at experiment time.                                                          |
 | `metrics.json`             | Ground-truth metrics, generated metrics, token counts, generation time, execution success flag.         | Projection over the JSONL record.                                                                  |
-| `diagram.png`              | A re-rendered Modelio screenshot of `generated.py` (the diagram a reviewer would actually want to look at). | Produced by [`tools/render_diagrams.py`](../../tools/render_diagrams.py) running each `generated.py` in a fresh Modelio session. |
+| `diagram_generated.png`              | A re-rendered Modelio screenshot of `generated.py` (the diagram a reviewer would actually want to look at). | Produced by [`tools/render_diagrams.py`](../../tools/render_diagrams.py) running each `generated.py` in a fresh Modelio session. |
 | `diagram_render.log`       | The Modelio execution transcript from rendering `generated.py` (used to debug PNG failures).            | Written by the render driver / macro.                                                              |
-| `diagram_render_error.txt` *(only on failures)* | Exception text + truncated traceback when the LLM-generated script could not be re-rendered.  | Written by `tools/render_diagrams.py` when no `diagram.png` was produced.                          |
+| `diagram_render_error.txt` *(only on failures)* | Exception text + truncated traceback when the LLM-generated script could not be re-rendered.  | Written by `tools/render_diagrams.py` when no `diagram_generated.png` was produced.                          |
 
 > **Ground-truth vs. generated, in one line.** `ground_truth.py` is *our*
 > Modelio reconstruction of what the BPMN should look like (used purely to
@@ -41,7 +41,7 @@ config-helpers/                       no-helper/
 
 ## Regenerating
 
-The JSONL is the source of truth; everything except `diagram.png` is
+The JSONL is the source of truth; everything except `diagram_generated.png` is
 derived from it.
 
 ```bash

@@ -45,7 +45,7 @@ runs/<approach>/<llm>/scenario_<NN>/
     generated.py           # the LLM-generated script for this run
     execution_output.txt   # Modelio execution log captured at experiment time
     metrics.json           # ground-truth & generated metrics, tokens, timing
-    diagram.png            # Modelio render of generated.py (312/330 succeeded)
+    diagram_generated.png            # Modelio render of generated.py (312/330 succeeded)
     diagram_render.log     # transcript of that render
 ```
 

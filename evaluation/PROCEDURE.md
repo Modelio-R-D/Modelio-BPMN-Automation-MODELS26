@@ -103,7 +103,7 @@ Modelio model it produces — the JSONL fields `lanes`, `elements`,
 After the metric-collection phase, every `generated.py` is re-executed
 inside a clean Modelio session — each in its own sub-package under the
 `MODELS26` UML package — and the resulting BPMN diagram is exported as
-`diagram.png` next to the script. This step is **for reviewer inspection
+`diagram_generated.png` next to the script. This step is **for reviewer inspection
 only** — it does not feed back into any number in the paper. 312/330
 renders succeed; the 18 failures (mostly GLM5 syntactic and
 hallucinated-import issues) are documented per-cell in
