@@ -39,12 +39,17 @@ For every (approach, LLM, scenario) cell, [`runs/`](runs/) contains:
 runs/<approach>/<llm>/scenario_<NN>/
     input_scenario.md      # natural-language process description
     ground_truth.bpmn      # ground-truth BPMN XML from the PMo dataset
-    ground_truth.py        # ground-truth Modelio config
-    generated.py           # the LLM-generated script
-    execution_output.txt   # Modelio execution log
-    metrics.json           # ground-truth and generated metrics + tokens + timing
+    ground_truth.py        # Modelio script that reconstructs the ground-truth
+                           # BPMN so the helper can count its elements
+                           # (this is how we obtain the *ground-truth* metrics)
+    generated.py           # the LLM-generated script for this run
+    execution_output.txt   # Modelio execution log captured at experiment time
+    metrics.json           # ground-truth & generated metrics, tokens, timing
+    diagram.png            # Modelio render of generated.py (312/330 succeeded)
+    diagram_render.log     # transcript of that render
 ```
 
-The entire `runs/` tree is regenerated from
-[`results/raw_jsonl/`](results/raw_jsonl/) by
-[`../tools/extract_runs_from_jsonl.py`](../tools/extract_runs_from_jsonl.py).
+See [`runs/README.md`](runs/README.md) for a per-file explanation of
+*what* each artifact is and *where it came from*. The entire tree is
+regenerable from [`results/raw_jsonl/`](results/raw_jsonl/) plus a
+running Modelio — see [`../REPRODUCE.md`](../REPRODUCE.md).

@@ -65,7 +65,8 @@ generated scripts, and the resulting metrics are all in this repository.
 │
 ├── tools/                          — utilities
 │   ├── extract_runs_from_jsonl.py  —   regenerates evaluation/runs/ from raw JSONL
-│   └── render_diagrams.py          —   batch-renders generated.py via Modelio ScriptServer
+│   ├── macros/render_all.py        —   Modelio macro: reproduce the PNGs inside a stock Modelio
+│   └── render_diagrams.py          —   internal driver (authors only; see tools/README.md)
 │
 └── tests/                          — feature-level test cases for the helper library
 ```
@@ -124,3 +125,12 @@ Apache 2.0 — see [`LICENSE`](LICENSE).
 - [MATISSE](https://matisse-kdt.eu/) — Project co-funded by the European
   Union under the Key Digital Technologies Joint Undertaking and
   participating national authorities (Grant Agreement ID 101140216).
+- **PMo Dataset** (55 process models with textual descriptions in nine
+  representations) — used as the controlled benchmark in
+  [`evaluation/`](evaluation/).
+  Brissard, A., Cuppens, F., & Zouaq, A. (2025).
+  *PMo Dataset* (v1.0.0) [Data set]. Zenodo.
+  [doi:10.5281/zenodo.15857589](https://doi.org/10.5281/zenodo.15857589).
+  Companion paper: *"What is the Best Process Model Representation?
+  A Comparative Analysis for Process Modeling with Large Language
+  Models."* In *Proceedings of the AI4BPM Workshop at BPM 2025*.

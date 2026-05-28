@@ -1,0 +1,6 @@
+Full Modelio execution output below.
+---
+ERROR: SyntaxError: no viable alternative at input '.' in <script> at line number 101 at column number 18
+---
+ERROR: SyntaxError: no viable alternative at input '.' in <script> at line number 101 at column number 18
+

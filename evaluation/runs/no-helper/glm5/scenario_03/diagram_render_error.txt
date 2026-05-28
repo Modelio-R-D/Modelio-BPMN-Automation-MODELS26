@@ -1,0 +1,6 @@
+Full Modelio execution output below.
+---
+ERROR: ImportError: cannot import name BpmnTimerStartEvent in <script> at line number 80
+---
+ERROR: ImportError: cannot import name BpmnTimerStartEvent in <script> at line number 80
+

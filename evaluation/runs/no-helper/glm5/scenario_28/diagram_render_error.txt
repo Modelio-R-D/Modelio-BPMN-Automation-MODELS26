@@ -1,0 +1,6 @@
+Full Modelio execution output below.
+---
+ERROR: ImportError: cannot import name BpmnMessageEndEvent in <script> at line number 77
+---
+ERROR: ImportError: cannot import name BpmnMessageEndEvent in <script> at line number 77
+

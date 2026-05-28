@@ -1,0 +1,6 @@
+Full Modelio execution output below.
+---
+ERROR: org.modelio.vcore.smkernel.IllegalModelManipulationException: IllegalModelManipulationException [Error: -1, object=null, closure=org.modelio.core.modelshield.internal.ErrorReport@2728951a] in <script> at line number 184
+---
+ERROR: org.modelio.vcore.smkernel.IllegalModelManipulationException: IllegalModelManipulationException [Error: -1, object=null, closure=org.modelio.core.modelshield.internal.ErrorReport@2728951a] in <script> at line number 184
+

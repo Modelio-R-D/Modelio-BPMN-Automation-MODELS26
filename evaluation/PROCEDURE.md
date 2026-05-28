@@ -61,8 +61,7 @@ exact text submitted to the LLM for each of the 330 runs is captured in the
 
 Each generated script was executed inside **Modelio 5.4** with the BPMN
 helper library (Config+Helpers approach) or directly against the Modelio
-Jython API (No-Helper approach). Execution was orchestrated via Modelio
-ScriptServer (socket port 9999). The execution log per run is stored as
+Jython API (No-Helper approach). The execution log per run is stored as
 `execution_output.txt` next to the script.
 
 ## 5. Measured outcomes
@@ -76,9 +75,48 @@ For each run we record:
 - `*_input_tokens`, `*_output_tokens`, `*_total_tokens` — provider-reported
   token counts (used to compute cost in Table 3)
 
-Ground-truth metrics (`complexity_metrics` in the JSONL) are computed from
-the original PMo ground-truth BPMN XML using `tools/compute_metrics.py`
-(TODO: add to the repo).
+### 5.1 How ground-truth metrics are obtained
+
+Ground-truth metrics (`complexity_metrics` in the JSONL) are **not** parsed
+out of the BPMN 2.0 XML directly. Instead, for each scenario we use a
+small Jython script — `ground_truth.py`, auto-generated once from
+`ground_truth.bpmn` and committed alongside it under
+[`runs/<approach>/<llm>/scenario_<NN>/`](runs/) — that *reconstructs the
+ground-truth BPMN inside Modelio* using the same
+[`BPMN_Helpers.py`](../approaches/config-helpers/BPMN_Helpers.py) library
+the experiment uses for the LLM-generated scripts. The structural counts
+(lanes, elements, gateways, flows, data objects, data associations) are
+then read from the resulting Modelio model.
+
+Using the same helper to count both the ground-truth and the generated
+output keeps the two metric vectors **directly comparable**: any
+counting convention (e.g., how lanes are counted when nested, how a
+gateway with one outgoing flow is treated) applies identically to both
+sides, so the MAE reflects model differences, not measurement differences.
+
+Each generated script's structural metrics are likewise read from the
+Modelio model it produces — the JSONL fields `lanes`, `elements`,
+`flows`, `gateways`, `data`, `data_assoc` are the after-execution counts.
+
+### 5.2 Diagram renders for inspection
+
+After the metric-collection phase, every `generated.py` is re-executed
+inside a clean Modelio session — each in its own sub-package under the
+`MODELS26` UML package — and the resulting BPMN diagram is exported as
+`diagram.png` next to the script. This step is **for reviewer inspection
+only** — it does not feed back into any number in the paper. 312/330
+renders succeed; the 18 failures (mostly GLM5 syntactic and
+hallucinated-import issues) are documented per-cell in
+`diagram_render_error.txt`.
+
+The reproducible path for reviewers is the Modelio macro
+[`tools/macros/render_all.py`](../tools/macros/render_all.py), which
+runs inside a stock Modelio installation and uses only standard Modelio
+APIs (`saveInFile("PNG", …)`). The committed PNGs were produced with the
+authors' equivalent automation driver
+[`tools/render_diagrams.py`](../tools/render_diagrams.py); see
+[`tools/README.md`](../tools/README.md) for the relationship between the
+two.
 
 ## 6. Who ran it, when
 
@@ -100,3 +138,8 @@ the original PMo ground-truth BPMN XML using `tools/compute_metrics.py`
   prompts and helper API surface may favor Config+Helpers.
 - **Model-version drift.** LLM endpoints evolve. Token-count and timing
   figures are pinned to model versions as listed in §2.
+- **Shared counter for both sides.** Ground-truth and generated metrics
+  are produced by the same `BPMN_Helpers.py` counting code (see §5.1).
+  Any bias in how the helper counts a particular construct affects both
+  sides equally — keeping MAE comparable — but the absolute counts are
+  helper-defined rather than abstract BPMN-XML-defined.

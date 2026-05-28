@@ -1,0 +1,6 @@
+Full Modelio execution output below.
+---
+ERROR: ImportError: cannot import name BpmnProcess in <script> at line number 61
+---
+ERROR: ImportError: cannot import name BpmnProcess in <script> at line number 61
+
