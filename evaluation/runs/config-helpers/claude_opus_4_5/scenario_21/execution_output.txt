@@ -1,0 +1,90 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ShippingProcess_3962
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ShippingProcess_3962
+[2] Lanes: Secretary, Logistics Head, Warehousemen
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Secretary: 9 elements
+[4] Logistics Head: 4 elements
+[5] Warehousemen: 3 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: ShippingProcess_3962
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Invite Logistic Companies=0, Split Small Amount=90
+  [Auto-stack] col 4: Select Company=0, Write Package Label=90
+  [Auto-stack] col 5: Take Parcel Insurance=0, Skip Insurance=90
+[Secretary] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Clarify Shipping -> Y=55: OK
+  [Unmask] Large Amount? -> Y=55: OK
+  [Unmask] Invite Logistic Companies -> Y=55: OK
+  [Unmask] Select Company -> Y=55: OK
+  [Unmask] Split Small Amount -> Y=55: OK
+  [Unmask] Write Package Label -> Y=55: OK
+  [Unmask] Join Activities -> Y=55: OK
+  [Unmask] Merge Paths -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Clarify Shipping -> col=1 (230,25) relY=20
+  Large Amount? -> col=2 (380,25) relY=20
+  Invite Logistic Companies -> col=3 (530,25) relY=20
+  Select Company -> col=4 (680,25) relY=20
+  Split Small Amount -> col=3 (530,115) relY=110
+  Write Package Label -> col=4 (680,115) relY=110
+  Join Activities -> col=7 (1130,25) relY=20
+  Merge Paths -> col=8 (1280,25) relY=20
+
+[Logistics Head] Lane bounds: 192-323
+  [Unmask] Merge Insurance -> Y=257: OK
+  [maxElementBottomRelY=170]
+  Insurance Needed? -> col=4 (680,212) relY=20
+  Take Parcel Insurance -> col=5 (830,212) relY=20
+  Skip Insurance -> col=5 (830,302) relY=110
+  Merge Insurance -> col=6 (980,212) relY=20
+
+[Warehousemen] Lane bounds: 373-473
+  [maxElementBottomRelY=80]
+  Package Goods -> col=4 (680,393) relY=20
+  Prepare for Pickup -> col=9 (1430,393) relY=20
+  End -> col=10 (1580,393) relY=20
+
+
+[8] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 19 sequence flows
+
+==================================================================
+COMPLETE: ShippingProcess_3962
+==================================================================
+Lanes: 3 | Elements: 16 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 6
+======================================================================

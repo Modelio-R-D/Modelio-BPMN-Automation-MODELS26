@@ -1,0 +1,176 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN RESTAURANT BUZZER PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   29265
+Process Name:   RestaurantBuzzer_29265
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RestaurantBuzzer_29265
+[2] Lanes: Guest, Employee, Chef
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Creating Guest lane elements...
+  [Add] Hungry -> Lane=Guest | addToLane=True
+  [Add] Enter restaurant -> Lane=Guest | addToLane=True
+  [Add] Choose dish from menu -> Lane=Guest | addToLane=True
+  [Add] Wait for turn -> Lane=Guest | addToLane=True
+  [Add] Place order -> Lane=Guest | addToLane=True
+  [Add] Notice buzzer -> Lane=Guest | addToLane=True
+  [Add] React to buzzer? -> Lane=Guest | addToLane=True
+  [Add] Go to service hatch -> Lane=Guest | addToLane=True
+  [Add] Pick up meal -> Lane=Guest | addToLane=True
+  [Add] Eat meal -> Lane=Guest | addToLane=True
+  [Add] Meal eaten -> Lane=Guest | addToLane=True
+[4] Creating Employee lane elements...
+  [Add] Enter order in POS -> Lane=Employee | addToLane=True
+  [Add] Collect payment -> Lane=Employee | addToLane=True
+  [Add] Set up buzzer and inform guest -> Lane=Employee | addToLane=True
+  [Add] Inform chef of new order -> Lane=Employee | addToLane=True
+  [Add] Trigger guest buzzer -> Lane=Employee | addToLane=True
+  [Add] Wait 5 minutes -> Lane=Employee | addToLane=True
+  [Add] Call guest -> Lane=Employee | addToLane=True
+  [Add] Hand over meal -> Lane=Employee | addToLane=True
+[5] Creating Chef lane elements...
+  [Add] Prepare meal -> Lane=Chef | addToLane=True
+  [Add] Place meal in service hatch -> Lane=Chef | addToLane=True
+  [Add] Inform employee meal ready -> Lane=Chef | addToLane=True
+
+[6] Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: RestaurantBuzzer_29265
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/22 | Missing: Hungry, Enter restau, Choose dish , Wait for tur, Place order, Notice buzze, React to buz, Go to servic, Pick up meal, Eat meal, Meal eaten, Enter order , Collect paym, Set up buzze, Inform chef , Trigger gues, Wait 5 minut, Call guest, Hand over me, Prepare meal, Place meal i, Inform emplo
+  [Attempt 2] Found: 0/22 | Missing: Hungry, Enter restau, Choose dish , Wait for tur, Place order, Notice buzze, React to buz, Go to servic, Pick up meal, Eat meal, Meal eaten, Enter order , Collect paym, Set up buzze, Inform chef , Trigger gues, Wait 5 minut, Call guest, Hand over me, Prepare meal, Place meal i, Inform emplo
+  [Attempt 3] Found: 0/22 | Missing: Hungry, Enter restau, Choose dish , Wait for tur, Place order, Notice buzze, React to buz, Go to servic, Pick up meal, Eat meal, Meal eaten, Enter order , Collect paym, Set up buzze, Inform chef , Trigger gues, Wait 5 minut, Call guest, Hand over me, Prepare meal, Place meal i, Inform emplo
+  [Attempt 3] TIMEOUT - 0/22 elements
+
+[11] WARNING: 0/22 elements ready after 150ms
+         Missing: Hungry, Enter restaurant, Choose dish from menu, Wait for turn, Place order, Notice buzzer, React to buzzer?, Go to service hatch, Pick up meal, Eat meal, Meal eaten, Enter order in POS, Collect payment, Set up buzzer and inform guest, Inform chef of new order, Trigger guest buzzer, Wait 5 minutes, Call guest, Hand over meal, Prepare meal, Place meal in service hatch, Inform employee meal ready
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Hungry -> Y=55 (Guest): OK
+  [Unmask] Enter restaurant -> Y=55 (Guest): OK
+  [Unmask] Choose dish from menu -> Y=55 (Guest): OK
+  [Unmask] Wait for turn -> Y=55 (Guest): OK
+  [Unmask] Place order -> Y=55 (Guest): OK
+  [Unmask] Notice buzzer -> Y=55 (Guest): OK
+  [Unmask] React to buzzer? -> Y=55 (Guest): OK
+  [Unmask] Go to service hatch -> Y=55 (Guest): OK
+  [Unmask] Pick up meal -> Y=55 (Guest): OK
+  [Unmask] Eat meal -> Y=55 (Guest): OK
+  [Unmask] Meal eaten -> Y=55 (Guest): OK
+  [Unmask] Enter order in POS -> Y=155 (Employee): OK
+  [Unmask] Collect payment -> Y=155 (Employee): OK
+  [Unmask] Set up buzzer and inform guest -> Y=155 (Employee): OK
+  [Unmask] Inform chef of new order -> Y=155 (Employee): OK
+  [Unmask] Trigger guest buzzer -> Y=155 (Employee): OK
+  [Unmask] Wait 5 minutes -> Y=155 (Employee): OK
+  [Unmask] Call guest -> Y=155 (Employee): OK
+  [Unmask] Hand over meal -> Y=155 (Employee): OK
+  [Unmask] Prepare meal -> Y=255 (Chef): OK
+  [Unmask] Place meal in service hatch -> Y=255 (Chef): OK
+  [Unmask] Inform employee meal ready -> Y=255 (Chef): OK
+
+[13] Manual unmask: 22 elements unmasked
+[14] All elements now available
+
+  Lanes: Guest(5-132); Employee(132-232); Chef(232-332)
+  Elements: Hungry=Y55, Enter restau=Y55, Choose dish =Y55, Wait for tur=Y55, Place order=Y55, Enter order =Y155, Collect paym=Y155, Set up buzze=Y155, Inform chef =Y155, Prepare meal=Y255, Place meal i=Y255, Inform emplo=Y255, Trigger gues=Y155, Notice buzze=Y55, React to buz=Y55, Go to servic=Y55, Wait 5 minut=Y155, Hand over me=Y155, Call guest=Y155, Pick up meal=Y55, Eat meal=Y55, Meal eaten=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Guest centerY = 45
+[16] Employee centerY = 159
+[17] Chef centerY = 259
+
+[18] Guest/Hungry -> (80,45) 33x33
+[19] Guest/Enter restaurant -> (230,45) 150x60
+[20] Guest/Choose dish from menu -> (380,45) 150x60
+[21] Guest/Wait for turn -> (530,45) 150x60
+[22] Guest/Place order -> (680,45) 150x60
+[23] Employee/Enter order in POS -> (830,159) 150x60
+[24] Employee/Collect payment -> (980,159) 150x60
+[25] Employee/Set up buzzer and inform guest -> (1130,159) 150x60
+[26] Employee/Inform chef of new order -> (1280,159) 150x60
+[27] Chef/Prepare meal -> (1430,259) 150x60
+[28] Chef/Place meal in service hatch -> (1580,259) 150x60
+[29] Chef/Inform employee meal ready -> (1730,259) 150x60
+[30] Employee/Trigger guest buzzer -> (1880,159) 150x60
+[31] Guest/Notice buzzer -> (2030,45) 150x60
+[32] Guest/React to buzzer? -> (2180,45) 40x40
+[33] Guest/Go to service hatch -> (2330,45) 150x60
+[34] Employee/Wait 5 minutes -> (2330,159) 150x60
+[35] Employee/Hand over meal -> (2480,159) 150x60
+[36] Employee/Call guest -> (2630,159) 150x60
+[37] Guest/Pick up meal -> (2630,45) 150x60
+[38] Guest/Eat meal -> (2780,45) 150x60
+[39] Guest/Meal eaten -> (2930,45) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Hungry -> Enter restaurant
+  [Flow] Enter restaurant -> Choose dish from menu
+  [Flow] Choose dish from menu -> Wait for turn
+  [Flow] Wait for turn -> Place order
+  [Flow] Place order -> Enter order in POS
+  [Flow] Enter order in POS -> Collect payment
+  [Flow] Collect payment -> Set up buzzer and inform guest
+  [Flow] Set up buzzer and inform guest -> Inform chef of new order
+  [Flow] Inform chef of new order -> Prepare meal
+  [Flow] Prepare meal -> Place meal in service hatch
+  [Flow] Place meal in service hatch -> Inform employee meal ready
+  [Flow] Inform employee meal ready -> Trigger guest buzzer
+  [Flow] Trigger guest buzzer -> Notice buzzer
+  [Flow] Notice buzzer -> React to buzzer?
+  [Flow] React to buzzer? -> Go to service hatch | guard=Yes
+  [Flow] React to buzzer? -> Wait 5 minutes | guard=No
+  [Flow] Wait 5 minutes -> Call guest
+  [Flow] Call guest -> React to buzzer?
+  [Flow] Go to service hatch -> Hand over meal
+  [Flow] Hand over meal -> Pick up meal
+  [Flow] Pick up meal -> Eat meal
+  [Flow] Eat meal -> Meal eaten
+
+[40] Created 22 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Guest(5-132); Employee(132-232); Chef(232-332)
+  Elements: Hungry=Y45, Enter restau=Y45, Choose dish =Y45, Wait for tur=Y45, Place order=Y45, Enter order =Y159, Collect paym=Y159, Set up buzze=Y159, Inform chef =Y159, Prepare meal=Y259, Place meal i=Y259, Inform emplo=Y259, Trigger gues=Y159, Notice buzze=Y45, React to buz=Y45, Go to servic=Y45, Wait 5 minut=Y159, Hand over me=Y159, Call guest=Y159, Pick up meal=Y45, Eat meal=Y45, Meal eaten=Y45
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RestaurantBuzzer_29265
+Lanes:    3
+Elements: 22 (22 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=22,gateways=1,flows=22,data=0,data_assoc=0
+======================================================================

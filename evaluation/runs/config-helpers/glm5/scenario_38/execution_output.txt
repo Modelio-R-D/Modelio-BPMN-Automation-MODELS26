@@ -1,0 +1,118 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BuildingHouse_45091
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BuildingHouse_45091
+[2] Lanes: You, Architect, Online Stores, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] You: 19 elements
+[4] Architect: 3 elements
+[5] Online Stores: 3 elements
+[6] Friends: 5 elements
+
+  Total: 30 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: BuildingHouse_45091
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Order Materials=0, Invite Builders=90
+  [Auto-stack] col 13: Receive Materials=0, House Complete=90
+[You] Lane bounds: 5-132
+  [Unmask] Order Materials -> Y=68: OK
+  [Unmask] Invite Builders -> Y=68: OK
+  [Unmask] Receive Materials -> Y=68: OK
+  [Unmask] House Complete -> Y=68: OK
+  [Unmask] Join Tasks -> Y=68: OK
+  [Unmask] Send Party Invitations -> Y=68: OK
+  [Unmask] Receive RSVPs -> Y=68: OK
+  [Unmask] Create Attendee List -> Y=68: OK
+  [Unmask] Buy Snacks -> Y=68: OK
+  [Unmask] End -> Y=68: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Collect Requirements -> col=1 (230,25) relY=20
+  Send Requirements -> col=2 (380,25) relY=20
+  Refine Requirements -> col=3 (530,25) relY=20
+  Receive Draft -> col=4 (680,25) relY=20
+  Review Draft -> col=5 (830,25) relY=20
+  Draft Complete? -> col=6 (980,25) relY=20
+  Create Material List -> col=7 (1130,25) relY=20
+  Split Tasks -> col=8 (1280,25) relY=20
+  Order Materials -> col=9 (1430,25) relY=20
+  Invite Builders -> col=9 (1430,115) relY=110
+  Receive Materials -> col=13 (2030,25) relY=20
+  House Complete -> col=13 (2030,115) relY=110
+  Join Tasks -> col=14 (2180,25) relY=20
+  Send Party Invitations -> col=15 (2330,25) relY=20
+  Receive RSVPs -> col=16 (2480,25) relY=20
+  Create Attendee List -> col=17 (2630,25) relY=20
+  Buy Snacks -> col=18 (2780,25) relY=20
+  End -> col=19 (2930,25) relY=20
+
+[Architect] Lane bounds: 186-286
+  [Unmask] Receive Requirements -> Y=236: OK
+  [Unmask] Create Draft -> Y=236: OK
+  [Unmask] Send Draft -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Receive Requirements -> col=2 (380,206) relY=20
+  Create Draft -> col=3 (530,206) relY=20
+  Send Draft -> col=4 (680,206) relY=20
+
+[Online Stores] Lane bounds: 306-406
+  [Unmask] Receive Order -> Y=356: OK
+  [Unmask] Process Order -> Y=356: OK
+  [Unmask] Send Confirmation -> Y=356: OK
+  [maxElementBottomRelY=80]
+  Receive Order -> col=10 (1580,326) relY=20
+  Process Order -> col=11 (1730,326) relY=20
+  Send Confirmation -> col=12 (1880,326) relY=20
+
+[Friends] Lane bounds: 427-527
+  [Unmask] Receive Build Invitation -> Y=477: OK
+  [Unmask] Build House -> Y=477: OK
+  [Unmask] Notify Complete -> Y=477: OK
+  [Unmask] Receive Party Invitation -> Y=477: OK
+  [Unmask] Send RSVP -> Y=477: OK
+  [maxElementBottomRelY=80]
+  Receive Build Invitation -> col=10 (1580,447) relY=20
+  Build House -> col=11 (1730,447) relY=20
+  Notify Complete -> col=12 (1880,447) relY=20
+  Receive Party Invitation -> col=15 (2330,447) relY=20
+  Send RSVP -> col=16 (2480,447) relY=20
+
+
+[9] Repositioned: 30/30
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 27 sequence flows
+
+==================================================================
+COMPLETE: BuildingHouse_45091
+==================================================================
+Lanes: 4 | Elements: 30 | Flows: 27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=30,gateways=3,flows=27,data=0,data_assoc=0
+======================================================================

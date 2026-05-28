@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN UNIVERSITY ENROLLMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   54796
+Process Name:   UniversityEnrollment_54796
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_54796
+[2] Lanes: Student, Admissions, Committee, Finance, IT Dept, Intl Office, Advisor, Appeals
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Student lane: 22 elements
+[4] Admissions lane: 6 elements
+[5] Committee lane: 2 elements
+[6] Finance lane: 3 elements
+[7] IT Dept lane: 1 element
+[8] Intl Office lane: 2 elements
+[9] Advisor lane: 1 element
+[10] Appeals lane: 2 elements
+
+  Total elements: 39
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[11] Diagram created: UniversityEnrollment_54796
+[12] DiagramHandle obtained
+[13] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[14] Waiting for elements...
+
+  [Attempt 1] Found: 10/39 | Missing: Internatio, Get Studen, Meet Advis, Select Cou, Conflicts?...
+  [Attempt 2] Found: 10/39 | Missing: Internatio, Get Studen, Meet Advis, Select Cou, Conflicts?...
+  [Attempt 3] Found: 10/39 | Missing: Internatio, Get Studen, Meet Advis, Select Cou, Conflicts?...
+  [Attempt 4] Found: 10/39 | Missing: Internatio, Get Studen, Meet Advis, Select Cou, Conflicts?...
+  [Attempt 5] Found: 10/39 | Missing: Internatio, Get Studen, Meet Advis, Select Cou, Conflicts?...
+  [Attempt 5] TIMEOUT
+
+[15] WARNING: 10/39 elements ready
+
+[16] Trying manual unmask...
+
+  [Unmask] International? -> Y=58: OK
+  [Unmask] Get Student ID -> Y=58: OK
+  [Unmask] Meet Advisor -> Y=58: OK
+  [Unmask] Select Courses -> Y=58: OK
+  [Unmask] Conflicts? -> Y=58: OK
+  [Unmask] Resolve Conflicts -> Y=58: OK
+  [Unmask] Attend Classes -> Y=58: OK
+  [Unmask] Add/Drop? -> Y=58: OK
+  [Unmask] Modify Courses -> Y=58: OK
+  [Unmask] Review Grades -> Y=58: OK
+  [Unmask] Grievance? -> Y=58: OK
+  [Unmask] Submit Appeal -> Y=58: OK
+  [Unmask] Continue? -> Y=58: OK
+  [Unmask] Graduated -> Y=58: OK
+  [Unmask] Withdrawn -> Y=58: OK
+  [Unmask] App Canceled -> Y=58: OK
+  [Unmask] Review Application -> Y=162: OK
+  [Unmask] Docs Complete? -> Y=162: OK
+  [Unmask] Notify Missing Docs -> Y=162: OK
+  [Unmask] Send Acceptance -> Y=162: OK
+  [Unmask] Send Rejection -> Y=162: OK
+  [Unmask] Rejected End -> Y=162: OK
+  [Unmask] Split Eval -> Y=362: OK
+  [Unmask] Process Fees -> Y=362: OK
+  [Unmask] Join Eval -> Y=362: OK
+  [Unmask] Assist Visa -> Y=707: OK
+  [Unmask] Join Setup -> Y=707: OK
+  [Unmask] Meet Appeals Comm -> Y=1372: OK
+  [Unmask] Await Decision -> Y=1372: OK
+
+[17] Manual unmask: 29 elements
+[18] All elements now available
+
+  Lanes: Student(5-135); Admissio(135-240); Committe(240-340); Finance(340-440); IT Dept(440-685); Intl Off(685-785); Advisor(785-1350); Appeals(1350-1450)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[19] Student centerY = 47
+[20] Admissions centerY = 164
+[21] Committee centerY = 267
+[22] Finance centerY = 367
+[23] IT Dept centerY = 539
+[24] Intl Office centerY = 712
+[25] Advisor centerY = 1044
+[26] Appeals centerY = 1377
+
+[27] Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[28] Created 45 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Student(5-135); Admissio(135-241); Committe(241-344); Finance(344-447); IT Dept(447-692); Intl Off(692-792); Advisor(792-1357); Appeals(1357-1457)
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  UniversityEnrollment_54796
+Lanes:    8
+Elements: 39 (39 in diagram)
+Flows:    45
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=8,elements=39,gateways=11,flows=45,data=0,data_assoc=0
+======================================================================

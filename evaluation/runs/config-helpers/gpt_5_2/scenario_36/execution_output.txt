@@ -1,0 +1,159 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Luxury Airplane_5828
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Luxury Airplane_5828
+[2] Lanes: Customer, Luxury Airplane Co., Russian Team (Vodka Bar), Irish Team (Whiskey Bar), French Team (Champagne Bar), Craft Team (Beer Bar), Wellness Team (Mocktail Bar), Seat Team, Color and Trim Team, Toilet Team, Electronics Team, Assembly Team, QA Flight Crew
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 4 elements
+[4] Luxury Airplane Co.: 10 elements
+[5] Russian Team (Vodka Bar): 1 elements
+[6] Irish Team (Whiskey Bar): 1 elements
+[7] French Team (Champagne Bar): 1 elements
+[8] Craft Team (Beer Bar): 1 elements
+[9] Wellness Team (Mocktail Bar): 1 elements
+[10] Seat Team: 1 elements
+[11] Color and Trim Team: 1 elements
+[12] Toilet Team: 1 elements
+[13] Electronics Team: 1 elements
+[14] Assembly Team: 2 elements
+[15] QA Flight Crew: 6 elements
+
+  Total: 31 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[16] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[17] Diagram: Luxury Airplane_5828
+[18] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 16: Send protocol to customer=0, Send protocol to manufacturer=90
+[Customer] Lane bounds: 5-132
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Choose luxury options -> col=1 (230,25) relY=20
+  Send specifications -> col=2 (380,25) relY=20
+  Confirm delivery -> col=19 (2930,25) relY=20
+  Customer specifications (DO from Choose luxury options) -> (320,95) maxBottomRelY=80
+  Acceptance confirmation (DO from Confirm delivery) -> (3020,95) maxBottomRelY=80
+
+[Luxury Airplane Co.] Lane bounds: 187-287
+  [Unmask] Receive specifications -> Y=237: OK
+  [Unmask] Validate specifications -> Y=237: OK
+  [Unmask] Create requirements package -> Y=237: OK
+  [Unmask] Dispatch requirements -> Y=237: OK
+  [Unmask] Select bar type -> Y=237: OK
+  [Unmask] Bar completed -> Y=237: OK
+  [Unmask] Wait for all parts -> Y=237: OK
+  [Unmask] Deliver airplane -> Y=237: OK
+  [Unmask] Receive confirmation -> Y=237: OK
+  [Unmask] End -> Y=237: OK
+  [Unmask] Requirements package -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Receive specifications -> col=3 (530,207) relY=20
+  Validate specifications -> col=4 (680,207) relY=20
+  Create requirements package -> col=5 (830,207) relY=20
+  Dispatch requirements -> col=6 (980,207) relY=20
+  Select bar type -> col=7 (1130,207) relY=20
+  Bar completed -> col=9 (1430,207) relY=20
+  Wait for all parts -> col=10 (1580,207) relY=20
+  Deliver airplane -> col=18 (2780,207) relY=20
+  Receive confirmation -> col=20 (3080,207) relY=20
+  End -> col=21 (3230,207) relY=20
+  Requirements package (DO from Receive specifications) -> (920,277) maxBottomRelY=80
+
+[Russian Team (Vodka Bar)] Lane bounds: 369-469
+  [maxElementBottomRelY=80]
+  Manufacture vodka bar -> col=8 (1280,389) relY=20
+
+[Irish Team (Whiskey Bar)] Lane bounds: 469-569
+  [maxElementBottomRelY=80]
+  Manufacture whiskey bar -> col=8 (1280,489) relY=20
+
+[French Team (Champagne Bar)] Lane bounds: 569-669
+  [maxElementBottomRelY=80]
+  Manufacture champagne bar -> col=8 (1280,589) relY=20
+
+[Craft Team (Beer Bar)] Lane bounds: 669-769
+  [Unmask] Manufacture craft beer bar -> Y=719: OK
+  [maxElementBottomRelY=80]
+  Manufacture craft beer bar -> col=8 (1280,689) relY=20
+
+[Wellness Team (Mocktail Bar)] Lane bounds: 860-1375
+  [maxElementBottomRelY=80]
+  Manufacture mocktail bar -> col=8 (1280,880) relY=20
+
+[Seat Team] Lane bounds: 1375-1475
+  [maxElementBottomRelY=80]
+  Manufacture luxury seats -> col=7 (1130,1395) relY=20
+
+[Color and Trim Team] Lane bounds: 1475-2585
+  [maxElementBottomRelY=80]
+  Produce seat covers and trim -> col=7 (1130,1495) relY=20
+
+[Toilet Team] Lane bounds: 2585-2685
+  [Unmask] Configure toilets and water -> Y=2635: OK
+  [maxElementBottomRelY=80]
+  Configure toilets and water -> col=7 (1130,2605) relY=20
+
+[Electronics Team] Lane bounds: 2692-2792
+  [Unmask] Build mood lighting system -> Y=2742: OK
+  [maxElementBottomRelY=80]
+  Build mood lighting system -> col=7 (1130,2712) relY=20
+
+[Assembly Team] Lane bounds: 2845-2945
+  [maxElementBottomRelY=80]
+  Build base airplane (standard) -> col=11 (1730,2865) relY=20
+  Assemble luxury interior -> col=12 (1880,2865) relY=20
+
+[QA Flight Crew] Lane bounds: 2945-5471
+  [maxElementBottomRelY=170]
+  Test flight -> col=13 (2030,2965) relY=20
+  Create test protocol -> col=14 (2180,2965) relY=20
+  Distribute protocol -> col=15 (2330,2965) relY=20
+  Send protocol to customer -> col=16 (2480,2965) relY=20
+  Send protocol to manufacturer -> col=16 (2480,3055) relY=110
+  Protocol distributed -> col=17 (2630,2965) relY=20
+  Test protocol (DO from Create test protocol) -> (2270,3125) maxBottomRelY=170
+
+
+[19] Repositioned: 35/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[20] Created 39 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[21] Data associations: 17
+
+==================================================================
+COMPLETE: Luxury Airplane_5828
+==================================================================
+Lanes: 13 | Elements: 31 | Data: 4 | Flows: 39 | DataAssoc: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=13,elements=35,gateways=6,flows=39,data=4,data_assoc=17
+======================================================================

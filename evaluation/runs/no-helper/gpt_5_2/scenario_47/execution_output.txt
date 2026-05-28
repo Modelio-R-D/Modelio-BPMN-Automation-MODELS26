@@ -1,0 +1,204 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   1105
+Title:          New Application for Registering for an USI course
+Process Name:   USI_Course_Registration_1105
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: USI_Course_Registration_1105
+[2] Lanes: Applicant, Sports Institute System, University, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Applicant / Start Registration | addToLane=True
+  [Element] Applicant / Search Courses | addToLane=True
+  [Element] Applicant / Select Course and Date | addToLane=True
+  [Element] Applicant / Account Exists? | addToLane=True
+  [Element] Applicant / Eligible University? | addToLane=True
+  [Element] Applicant / Register Account | addToLane=True
+  [Element] Applicant / Request Activation | addToLane=True
+  [Element] Applicant / Wait for Activation Response | addToLane=True
+  [Element] Applicant / Activation Approved? | addToLane=True
+  [Element] Applicant / Activation Rejected | addToLane=True
+  [Element] Applicant / Log In | addToLane=True
+  [Element] Applicant / Tweet to Friends? | addToLane=True
+  [Element] Applicant / Provide Payment Information | addToLane=True
+  [Element] Applicant / Course Ticket Received | addToLane=True
+  [Element] Sports Institute System / Check Slot Availability | addToLane=True
+  [Element] Sports Institute System / Slots Free? | addToLane=True
+  [Element] Sports Institute System / Show Courses and Dates | addToLane=True
+  [Element] Sports Institute System / No Slots Available | addToLane=True
+  [Element] Sports Institute System / Create Account | addToLane=True
+  [Element] Sports Institute System / Link Twitter Account | addToLane=True
+  [Element] Sports Institute System / Process Payment | addToLane=True
+  [Element] Sports Institute System / Complete Course Registration | addToLane=True
+  [Element] University / Review Activation Request | addToLane=True
+  [Element] University / Send Activation Response | addToLane=True
+  [Element] Twitter / Tweet Friends | addToLane=True
+
+[3] Total elements created: 25
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: New Application for Registering for an USI course
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/25 | Missing: Select Cours, Account Exis, Eligible Uni, Register Acc, Request Acti, Wait for Act, Activation A, Activation R, Log In, Tweet to Fri, Provide Paym, Course Ticke, Check Slot A, Slots Free?, Show Courses, No Slots Ava, Create Accou, Link Twitter, Process Paym, Complete Cou, Review Activ, Send Activat, Tweet Friend
+  [Attempt 2] Found: 2/25 | Missing: Select Cours, Account Exis, Eligible Uni, Register Acc, Request Acti, Wait for Act, Activation A, Activation R, Log In, Tweet to Fri, Provide Paym, Course Ticke, Check Slot A, Slots Free?, Show Courses, No Slots Ava, Create Accou, Link Twitter, Process Paym, Complete Cou, Review Activ, Send Activat, Tweet Friend
+  [Attempt 3] Found: 2/25 | Missing: Select Cours, Account Exis, Eligible Uni, Register Acc, Request Acti, Wait for Act, Activation A, Activation R, Log In, Tweet to Fri, Provide Paym, Course Ticke, Check Slot A, Slots Free?, Show Courses, No Slots Ava, Create Accou, Link Twitter, Process Paym, Complete Cou, Review Activ, Send Activat, Tweet Friend
+  [Attempt 3] TIMEOUT - 2/25 elements
+
+[8] WARNING: 2/25 elements ready after 150ms
+         Missing: Select Course and Date, Account Exists?, Eligible University?, Register Account, Request Activation, Wait for Activation Response, Activation Approved?, Activation Rejected, Log In, Tweet to Friends?, Provide Payment Information, Course Ticket Received, Check Slot Availability, Slots Free?, Show Courses and Dates, No Slots Available, Create Account, Link Twitter Account, Process Payment, Complete Course Registration, Review Activation Request, Send Activation Response, Tweet Friends
+
+[9] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [LaneY] Twitter centerY=355
+  [LaneY] University centerY=255
+  [LaneY] Sports Institute System centerY=155
+  [LaneY] Applicant centerY=55
+  [Unmask] Select Course and Date -> Y=55 (Applicant): OK
+  [Unmask] Account Exists? -> Y=55 (Applicant): OK
+  [Unmask] Eligible University? -> Y=55 (Applicant): OK
+  [Unmask] Register Account -> Y=55 (Applicant): OK
+  [Unmask] Request Activation -> Y=55 (Applicant): OK
+  [Unmask] Wait for Activation Response -> Y=55 (Applicant): OK
+  [Unmask] Activation Approved? -> Y=55 (Applicant): OK
+  [Unmask] Activation Rejected -> Y=55 (Applicant): OK
+  [Unmask] Log In -> Y=55 (Applicant): OK
+  [Unmask] Tweet to Friends? -> Y=55 (Applicant): OK
+  [Unmask] Provide Payment Information -> Y=55 (Applicant): OK
+  [Unmask] Course Ticket Received -> Y=55 (Applicant): OK
+  [Unmask] Check Slot Availability -> Y=155 (Sports Institute System): OK
+  [Unmask] Slots Free? -> Y=155 (Sports Institute System): OK
+  [Unmask] Show Courses and Dates -> Y=155 (Sports Institute System): OK
+  [Unmask] No Slots Available -> Y=155 (Sports Institute System): OK
+  [Unmask] Create Account -> Y=155 (Sports Institute System): OK
+  [Unmask] Link Twitter Account -> Y=155 (Sports Institute System): OK
+  [Unmask] Process Payment -> Y=155 (Sports Institute System): OK
+  [Unmask] Complete Course Registration -> Y=155 (Sports Institute System): OK
+  [Unmask] Review Activation Request -> Y=255 (University): OK
+  [Unmask] Send Activation Response -> Y=255 (University): OK
+  [Unmask] Tweet Friends -> Y=355 (Twitter): OK
+
+[10] Manual unmask attempted, newly unmasked: 23
+[11] All elements now available after manual unmask
+
+  Lanes: Applicant(5-132); Sports Institute System(132-232); University(232-332); Twitter(332-432)
+  Elements: Start Regist=Y16, Search Cours=Y20, Check Slot A=Y155, Slots Free?=Y155, No Slots Ava=Y155, Show Courses=Y155, Select Cours=Y55, Account Exis=Y55, Eligible Uni=Y55, Register Acc=Y55, Request Acti=Y55, Review Activ=Y255, Send Activat=Y255, Wait for Act=Y55, Activation A=Y55, Activation R=Y55, Create Accou=Y155, Log In=Y55, Link Twitter=Y155, Tweet to Fri=Y55, Tweet Friend=Y355, Provide Paym=Y55, Process Paym=Y155, Complete Cou=Y155, Course Ticke=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Applicant centerY = 45
+[13] Sports Institute System centerY = 159
+[14] University centerY = 259
+[15] Twitter centerY = 359
+
+[16] Applicant/Start Registration -> (80,45) 33x33
+[17] Applicant/Search Courses -> (230,45) 160x60
+[18] Sports Institute System/Check Slot Availability -> (380,159) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); Sports Institute System(132-232); University(232-332); Twitter(332-432)
+         After:  Lanes: Applicant(5-132); Sports Institute System(132-339); University(339-439); Twitter(439-539)
+[19] Sports Institute System/Slots Free? -> (530,159) 40x40
+[20] Sports Institute System/No Slots Available -> (680,159) 33x33
+[21] Sports Institute System/Show Courses and Dates -> (680,159) 160x60
+[22] Applicant/Select Course and Date -> (830,45) 160x60
+[23] Applicant/Account Exists? -> (980,45) 40x40
+[24] Applicant/Eligible University? -> (1130,45) 40x40
+[25] Applicant/Register Account -> (1280,45) 160x60
+[26] Applicant/Request Activation -> (1280,45) 160x60
+[27] University/Review Activation Request -> (1430,259) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); Sports Institute System(132-339); University(339-439); Twitter(439-539)
+         After:  Lanes: Applicant(-86-41); Sports Institute System(41-248); University(248-439); Twitter(439-539)
+[28] University/Send Activation Response -> (1580,259) 160x60
+[29] Applicant/Wait for Activation Response -> (1730,45) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-86-41); Sports Institute System(41-248); University(248-439); Twitter(439-539)
+         After:  Lanes: Applicant(-86-116); Sports Institute System(116-323); University(323-514); Twitter(514-614)
+[30] Applicant/Activation Approved? -> (1880,45) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-86-116); Sports Institute System(116-323); University(323-514); Twitter(514-614)
+         After:  Lanes: Applicant(-86-122); Sports Institute System(122-329); University(329-520); Twitter(520-620)
+[31] Applicant/Activation Rejected -> (2030,45) 33x33
+[32] Sports Institute System/Create Account -> (2030,159) 160x60
+[33] Applicant/Log In -> (2180,45) 160x60
+[34] Sports Institute System/Link Twitter Account -> (2330,159) 160x60
+[35] Applicant/Tweet to Friends? -> (2480,45) 40x40
+[36] Twitter/Tweet Friends -> (2630,359) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-86-122); Sports Institute System(122-329); University(329-520); Twitter(520-620)
+         After:  Lanes: Applicant(-258--50); Sports Institute System(-50-157); University(157-348); Twitter(348-620)
+[37] Applicant/Provide Payment Information -> (2780,45) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-258--50); Sports Institute System(-50-157); University(157-348); Twitter(348-620)
+         After:  Lanes: Applicant(-258-116); Sports Institute System(116-323); University(323-514); Twitter(514-786)
+[38] Sports Institute System/Process Payment -> (2930,159) 160x60
+[39] Sports Institute System/Complete Course Registration -> (3080,159) 160x60
+[40] Applicant/Course Ticket Received -> (3230,45) 33x33
+
+[41] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Start Registration -> Search Courses
+  [Flow] Search Courses -> Check Slot Availab
+  [Flow] Check Slot Availab -> Slots Free?
+  [Flow] Slots Free? -> Show Courses and D | guard=Yes
+  [Flow] Slots Free? -> No Slots Available | guard=No
+  [Flow] Show Courses and D -> Select Course and 
+  [Flow] Select Course and  -> Account Exists?
+  [Flow] Account Exists? -> Log In | guard=Yes
+  [Flow] Account Exists? -> Eligible Universit | guard=No
+  [Flow] Eligible Universit -> Register Account | guard=Yes
+  [Flow] Eligible Universit -> Request Activation | guard=No
+  [Flow] Register Account -> Create Account
+  [Flow] Request Activation -> Review Activation 
+  [Flow] Review Activation  -> Send Activation Re
+  [Flow] Send Activation Re -> Wait for Activatio
+  [Flow] Wait for Activatio -> Activation Approve
+  [Flow] Activation Approve -> Create Account | guard=Approved
+  [Flow] Activation Approve -> Activation Rejecte | guard=Rejected
+  [Flow] Create Account -> Log In
+  [Flow] Log In -> Link Twitter Accou
+  [Flow] Link Twitter Accou -> Tweet to Friends?
+  [Flow] Tweet to Friends? -> Tweet Friends | guard=Yes
+  [Flow] Tweet to Friends? -> Provide Payment In | guard=No
+  [Flow] Tweet Friends -> Provide Payment In
+  [Flow] Provide Payment In -> Process Payment
+  [Flow] Process Payment -> Complete Course Re
+  [Flow] Complete Course Re -> Course Ticket Rece
+
+[42] Created flows: 27
+[43] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(-258-116); Sports Institute System(116-323); University(323-514); Twitter(514-786)
+  Elements: Start Regist=Y-218, Search Cours=Y-218, Check Slot A=Y143, Slots Free?=Y143, No Slots Ava=Y143, Show Courses=Y143, Select Cours=Y-218, Account Exis=Y-218, Eligible Uni=Y-218, Register Acc=Y-218, Request Acti=Y-218, Review Activ=Y334, Send Activat=Y334, Wait for Act=Y-127, Activation A=Y-127, Activation R=Y-127, Create Accou=Y153, Log In=Y-127, Link Twitter=Y153, Tweet to Fri=Y-127, Tweet Friend=Y525, Provide Paym=Y45, Process Paym=Y159, Complete Cou=Y159, Course Ticke=Y45
+
+[44] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    New Application for Registering for an USI course
+Process:  USI_Course_Registration_1105
+Lanes:    4
+Elements: 25 (25 in diagram graphics)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=25,gateways=5,flows=27,data=0,data_assoc=0
+======================================================================

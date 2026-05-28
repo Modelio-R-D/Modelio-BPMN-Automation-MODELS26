@@ -1,0 +1,181 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:         Chainsaw
+Script Version: v9.2
+Execution ID:   65864
+Process Name:   Chainsaw_65864
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Chainsaw_65864
+[2] Lanes: Customer, Sales, Procurement, Production, Shipping
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Customer / Need Custom Chainsaw | addToLane=True
+  [Elem] Customer / Provide Requirements | addToLane=True
+  [Elem] Sales / Capture Properties (5+) | addToLane=True
+  [Elem] Sales / Confirm Specs and Price | addToLane=True
+  [Elem] Procurement / Order Parts in Parallel | addToLane=True
+  [Elem] Procurement / Order Guide Bar (Schwertlaenge) | addToLane=True
+  [Elem] Procurement / Order Chain (Width/Pitch) | addToLane=True
+  [Elem] Procurement / Order Power Unit (Electric/Motor) | addToLane=True
+  [Elem] Procurement / Order Handle and Controls | addToLane=True
+  [Elem] Procurement / Order Safety and Fasteners | addToLane=True
+  [Elem] Procurement / All Parts Arrived | addToLane=True
+  [Elem] Production / Inspect All Parts | addToLane=True
+  [Elem] Production / Assemble First Saw | addToLane=True
+  [Elem] Sales / Send Update: First Saw Built | addToLane=True
+  [Elem] Shipping / Ship First Saw | addToLane=True
+  [Elem] Customer / Test First Saw | addToLane=True
+  [Elem] Customer / Customer Likes It? | addToLane=True
+  [Elem] Sales / Collect Change Request | addToLane=True
+  [Elem] Production / Adjust Design/Build | addToLane=True
+  [Elem] Production / Produce Remaining Saws | addToLane=True
+  [Elem] Sales / Send Production Updates (Periodic) | addToLane=True
+  [Elem] Shipping / Ship Remaining Saws | addToLane=True
+  [Elem] Customer / Order Completed | addToLane=True
+
+[3] Total elements: 23
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Chainsaw_65864
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/23 | Missing: Capture Prop, Confirm Spec, Order Parts , Order Guide , Order Chain , Order Power , Order Handle, Order Safety, All Parts Ar, Inspect All , Assemble Fir, Send Update:, Ship First S, Collect Chan, Adjust Desig, Produce Rema, Send Product, Ship Remaini
+  [Attempt 2] Found: 5/23 | Missing: Capture Prop, Confirm Spec, Order Parts , Order Guide , Order Chain , Order Power , Order Handle, Order Safety, All Parts Ar, Inspect All , Assemble Fir, Send Update:, Ship First S, Collect Chan, Adjust Desig, Produce Rema, Send Product, Ship Remaini
+  [Attempt 3] Found: 5/23 | Missing: Capture Prop, Confirm Spec, Order Parts , Order Guide , Order Chain , Order Power , Order Handle, Order Safety, All Parts Ar, Inspect All , Assemble Fir, Send Update:, Ship First S, Collect Chan, Adjust Desig, Produce Rema, Send Product, Ship Remaini
+  [Attempt 3] TIMEOUT - 5/23 elements
+
+[8] WARNING: 5/23 elements ready after 150ms
+         Missing: Capture Properties (5+), Confirm Specs and Price, Order Parts in Parallel, Order Guide Bar (Schwertlaenge), Order Chain (Width/Pitch), Order Power Unit (Electric/Motor), Order Handle and Controls, Order Safety and Fasteners, All Parts Arrived, Inspect All Parts, Assemble First Saw, Send Update: First Saw Built, Ship First Saw, Collect Change Request, Adjust Design/Build, Produce Remaining Saws, Send Production Updates (Periodic), Ship Remaining Saws
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Capture Properties (5+) -> Y=157 (Sales): OK
+  [Unmask] Confirm Specs and Price -> Y=157 (Sales): OK
+  [Unmask] Order Parts in Parallel -> Y=257 (Procurement): OK
+  [Unmask] Order Guide Bar (Schwertlaenge) -> Y=257 (Procurement): OK
+  [Unmask] Order Chain (Width/Pitch) -> Y=257 (Procurement): OK
+  [Unmask] Order Power Unit (Electric/Motor) -> Y=257 (Procurement): OK
+  [Unmask] Order Handle and Controls -> Y=257 (Procurement): OK
+  [Unmask] Order Safety and Fasteners -> Y=257 (Procurement): OK
+  [Unmask] All Parts Arrived -> Y=257 (Procurement): OK
+  [Unmask] Inspect All Parts -> Y=357 (Production): OK
+  [Unmask] Assemble First Saw -> Y=357 (Production): OK
+  [Unmask] Send Update: First Saw Built -> Y=157 (Sales): OK
+  [Unmask] Ship First Saw -> Y=457 (Shipping): OK
+  [Unmask] Collect Change Request -> Y=157 (Sales): OK
+  [Unmask] Adjust Design/Build -> Y=357 (Production): OK
+  [Unmask] Produce Remaining Saws -> Y=357 (Production): OK
+  [Unmask] Send Production Updates (Periodic) -> Y=157 (Sales): OK
+  [Unmask] Ship Remaining Saws -> Y=457 (Shipping): OK
+
+[10] Manual unmask: 18 elements unmasked
+[11] All elements now available
+
+  Lanes: Customer(5-107); Sales(107-214); Procurement(214-334); Production(334-434); Shipping(434-534)
+  Elements: Need Custom Ch=Y16, Provide Requir=Y20, Capture Proper=Y157, Confirm Specs =Y157, Order Parts in=Y257, Order Guide Ba=Y257, Order Chain (W=Y257, Order Power Un=Y257, Order Handle a=Y257, Order Safety a=Y257, All Parts Arri=Y257, Inspect All Pa=Y357, Assemble First=Y357, Send Update: F=Y157, Ship First Saw=Y457, Test First Saw=Y25, Customer Likes=Y30, Collect Change=Y157, Produce Remain=Y357, Adjust Design/=Y357, Send Productio=Y157, Ship Remaining=Y457, Order Complete=Y35
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 33
+[13] Sales centerY = 137
+[14] Procurement centerY = 251
+[15] Production centerY = 361
+[16] Shipping centerY = 461
+
+[17] Customer/Need Custom Chainsaw -> (80,33) 33x33
+[18] Customer/Provide Requirements -> (245,33) 170x60
+[19] Sales/Capture Properties (5+) -> (410,137) 170x60
+[20] Sales/Confirm Specs and Price -> (575,137) 170x60
+[21] Procurement/Order Parts in Parallel -> (740,251) 40x40
+[22] Procurement/Order Guide Bar (Schwertlaenge) -> (905,251) 170x60
+[23] Procurement/Order Chain (Width/Pitch) -> (1070,251) 170x60
+[24] Procurement/Order Power Unit (Electric/Motor) -> (1235,251) 170x60
+[25] Procurement/Order Handle and Controls -> (1400,251) 170x60
+[26] Procurement/Order Safety and Fasteners -> (1565,251) 170x60
+[27] Procurement/All Parts Arrived -> (1730,251) 40x40
+[28] Production/Inspect All Parts -> (1895,361) 170x60
+[29] Production/Assemble First Saw -> (2060,361) 170x60
+[30] Sales/Send Update: First Saw Built -> (2225,137) 170x60
+[31] Shipping/Ship First Saw -> (2390,461) 170x60
+[32] Customer/Test First Saw -> (2555,33) 170x60
+[33] Customer/Customer Likes It? -> (2720,33) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-107); Sales(107-214); Procurement(214-334); Production(334-434); Shipping(434-534)
+         After:  Lanes: Customer(5-110); Sales(110-217); Procurement(217-337); Production(337-437); Shipping(437-537)
+[34] Sales/Collect Change Request -> (2885,137) 170x60
+[35] Production/Produce Remaining Saws -> (2885,361) 170x60
+[36] Production/Adjust Design/Build -> (3050,361) 170x60
+[37] Sales/Send Production Updates (Periodic) -> (3050,137) 170x60
+[38] Shipping/Ship Remaining Saws -> (3215,461) 170x60
+[39] Customer/Order Completed -> (3380,33) 33x33
+
+  Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Need Custom Chains -> Provide Requiremen
+  [Flow] Provide Requiremen -> Capture Properties
+  [Flow] Capture Properties -> Confirm Specs and 
+  [Flow] Confirm Specs and  -> Order Parts in Par
+  [Flow] Order Parts in Par -> Order Guide Bar (S
+  [Flow] Order Parts in Par -> Order Chain (Width
+  [Flow] Order Parts in Par -> Order Power Unit (
+  [Flow] Order Parts in Par -> Order Handle and C
+  [Flow] Order Parts in Par -> Order Safety and F
+  [Flow] Order Guide Bar (S -> All Parts Arrived
+  [Flow] Order Chain (Width -> All Parts Arrived
+  [Flow] Order Power Unit ( -> All Parts Arrived
+  [Flow] Order Handle and C -> All Parts Arrived
+  [Flow] Order Safety and F -> All Parts Arrived
+  [Flow] All Parts Arrived -> Inspect All Parts
+  [Flow] Inspect All Parts -> Assemble First Saw
+  [Flow] Assemble First Saw -> Send Update: First
+  [Flow] Send Update: First -> Ship First Saw
+  [Flow] Ship First Saw -> Test First Saw
+  [Flow] Test First Saw -> Customer Likes It?
+  [Flow] Customer Likes It? -> Produce Remaining  | guard=Yes
+  [Flow] Customer Likes It? -> Collect Change Req | guard=No
+  [Flow] Collect Change Req -> Adjust Design/Buil
+  [Flow] Adjust Design/Buil -> Order Parts in Par
+  [Flow] Produce Remaining  -> Send Production Up
+  [Flow] Send Production Up -> Ship Remaining Saw
+  [Flow] Ship Remaining Saw -> Order Completed
+
+[40] Created 27 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-110); Sales(110-217); Procurement(217-337); Production(337-437); Shipping(437-537)
+  Elements: Need Custom Ch=Y33, Provide Requir=Y33, Capture Proper=Y140, Confirm Specs =Y140, Order Parts in=Y254, Order Guide Ba=Y254, Order Chain (W=Y254, Order Power Un=Y254, Order Handle a=Y254, Order Safety a=Y254, All Parts Arri=Y254, Inspect All Pa=Y364, Assemble First=Y364, Send Update: F=Y140, Ship First Saw=Y462, Test First Saw=Y33, Customer Likes=Y33, Collect Change=Y137, Produce Remain=Y361, Adjust Design/=Y361, Send Productio=Y137, Ship Remaining=Y461, Order Complete=Y33
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Chainsaw_65864
+Lanes:    5
+Elements: 23 (23 in diagram)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=23,gateways=3,flows=27,data=0,data_assoc=0
+======================================================================

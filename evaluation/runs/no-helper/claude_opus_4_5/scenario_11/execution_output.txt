@@ -1,0 +1,128 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUBSCRIPTION LIFECYCLE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   36027
+Process Name:   SubscriptionLifecycle_36027
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionLifecycle_36027
+[2] Lanes: Customer, System, Support Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 5 elements
+[4] System lane: 8 elements
+[5] Support Team lane: 7 elements
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SubscriptionLifecycle_36027
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/20 | Missing: Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Customer Con, Process Bill, Subscription, Review Cance, Refund Appli, Apply Refund, Apply Final , Deactivate A, Settle Balan, Subscription
+  [Attempt 2] Found: 5/20 | Missing: Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Customer Con, Process Bill, Subscription, Review Cance, Refund Appli, Apply Refund, Apply Final , Deactivate A, Settle Balan, Subscription
+  [Attempt 3] Found: 5/20 | Missing: Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Customer Con, Process Bill, Subscription, Review Cance, Refund Appli, Apply Refund, Apply Final , Deactivate A, Settle Balan, Subscription
+  [Attempt 3] TIMEOUT - 5/20 elements
+
+[10] WARNING: 5/20 elements ready after 150ms
+         Missing: Generate Account, Assign Access, Trigger Billing, Send Updates, Send Renewal Notice, Customer Continues?, Process Billing Cycle, Subscription Active, Review Cancellation, Refund Applicable?, Apply Refund, Apply Final Charges, Deactivate Account, Settle Balance, Subscription Ended
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Generate Account -> Y=155 (System): OK
+  [Unmask] Assign Access -> Y=155 (System): OK
+  [Unmask] Trigger Billing -> Y=155 (System): OK
+  [Unmask] Send Updates -> Y=155 (System): OK
+  [Unmask] Send Renewal Notice -> Y=155 (System): OK
+  [Unmask] Customer Continues? -> Y=155 (System): OK
+  [Unmask] Process Billing Cycle -> Y=155 (System): OK
+  [Unmask] Subscription Active -> Y=155 (System): OK
+  [Unmask] Review Cancellation -> Y=255 (Support Team): OK
+  [Unmask] Refund Applicable? -> Y=255 (Support Team): OK
+  [Unmask] Apply Refund -> Y=255 (Support Team): OK
+  [Unmask] Apply Final Charges -> Y=255 (Support Team): OK
+  [Unmask] Deactivate Account -> Y=255 (Support Team): OK
+  [Unmask] Settle Balance -> Y=255 (Support Team): OK
+  [Unmask] Subscription Ended -> Y=255 (Support Team): OK
+
+[12] Manual unmask: 15 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-105); System(105-232); Support Team(232-332)
+  Elements: Customer S=Y16, Enter Pers=Y20, Enter Paym=Y25, Generate A=Y155, Assign Acc=Y155, Trigger Bi=Y155, Receive Up=Y30, Send Updat=Y155, Send Renew=Y155, Customer C=Y155, Submit Can=Y35, Process Bi=Y155, Review Can=Y255, Refund App=Y255, Subscripti=Y155, Apply Fina=Y255, Apply Refu=Y255, Deactivate=Y255, Settle Bal=Y255, Subscripti=Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 32
+[15] System centerY = 145
+[16] Support Team centerY = 259
+
+[17] Customer/Customer Signup -> (80,32) 33x33
+[18] Customer/Enter Personal Info -> (230,32) 120x60
+[19] Customer/Enter Payment Info -> (380,32) 120x60
+[20] System/Generate Account -> (530,145) 120x60
+[21] System/Assign Access -> (680,145) 120x60
+[22] System/Trigger Billing -> (830,145) 120x60
+[23] Customer/Receive Updates -> (980,32) 120x60
+[24] System/Send Updates -> (980,145) 120x60
+[25] System/Send Renewal Notice -> (1130,145) 120x60
+[26] System/Customer Continues? -> (1280,145) 40x40
+[27] Customer/Submit Cancellation -> (1280,32) 120x60
+[28] System/Process Billing Cycle -> (1430,145) 120x60
+[29] Support Team/Review Cancellation -> (1430,259) 120x60
+[30] Support Team/Refund Applicable? -> (1580,259) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); System(105-232); Support Team(232-332)
+         After:  Lanes: Customer(5-105); System(105-232); Support Team(232-356)
+[31] System/Subscription Active -> (1580,145) 33x33
+[32] Support Team/Apply Final Charges -> (1730,294) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); System(105-232); Support Team(232-356)
+         After:  Lanes: Customer(5-105); System(105-232); Support Team(232-365)
+[33] Support Team/Apply Refund -> (1730,224) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); System(105-232); Support Team(232-365)
+         After:  Lanes: Customer(-14-86); System(86-213); Support Team(213-365)
+[34] Support Team/Deactivate Account -> (1880,259) 120x60
+[35] Support Team/Settle Balance -> (2030,259) 120x60
+[36] Support Team/Subscription Ended -> (2180,259) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[37] Created 20 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-14-86); System(86-213); Support Team(213-365)
+  Elements: Customer S=Y13, Enter Pers=Y13, Enter Paym=Y13, Generate A=Y126, Assign Acc=Y126, Trigger Bi=Y126, Receive Up=Y13, Send Updat=Y126, Send Renew=Y126, Customer C=Y126, Submit Can=Y13, Process Bi=Y126, Review Can=Y240, Refund App=Y240, Subscripti=Y126, Apply Fina=Y275, Apply Refu=Y224, Deactivate=Y259, Settle Bal=Y259, Subscripti=Y259
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SubscriptionLifecycle_36027
+Lanes:    3
+Elements: 20 (20 in diagram)
+Flows:    20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=2,flows=20,data=0,data_assoc=0
+======================================================================

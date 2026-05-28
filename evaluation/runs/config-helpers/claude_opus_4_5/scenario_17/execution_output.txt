@@ -1,0 +1,163 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OrderFulfillment_96958
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_96958
+[2] Lanes: Order Management, Payment, Inventory, Warehouse, Quality Control, Packaging, Shipping, Customer Service, Returns
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Order Management: 2 elements
+[4] Payment: 4 elements
+[5] Inventory: 6 elements
+[6] Warehouse: 1 elements
+[7] Quality Control: 1 elements
+[8] Packaging: 4 elements
+[9] Shipping: 7 elements
+[10] Customer Service: 4 elements
+[11] Returns: 5 elements
+
+  Total: 34 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[12] Data Objects: 10
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[13] Diagram: OrderFulfillment_96958
+[14] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 12: Standard Packaging=0, Gift Wrap Packaging=90
+  [Auto-stack] col 14: Docs Ready=0, Sync Pack and Ship=90
+[Order Management] Lane bounds: 5-175
+  [maxElementBottomRelY=80]
+  Order Placed -> col=0 (80,25) relY=20
+  Record Order Details -> col=1 (210,25) relY=20
+  Order Details (DO from Record Order Details) -> (300,95) maxBottomRelY=80
+
+[Payment] Lane bounds: 187-287
+  [Unmask] Process Payment -> Y=237: OK
+  [Unmask] Payment OK? -> Y=237: OK
+  [Unmask] Notify Payment Failed -> Y=237: OK
+  [Unmask] End Payment Failed -> Y=237: OK
+  [Unmask] Payment Record -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Process Payment -> col=2 (340,207) relY=20
+  Payment OK? -> col=3 (470,207) relY=20
+  Notify Payment Failed -> col=4 (600,207) relY=20
+  End Payment Failed -> col=5 (730,207) relY=20
+  Payment Record (DO from Process Payment) -> (430,277) maxBottomRelY=80
+
+[Inventory] Lane bounds: 369-469
+  [Unmask] Check Stock -> Y=419: OK
+  [Unmask] In Stock? -> Y=419: OK
+  [Unmask] Initiate Back-Order -> Y=419: OK
+  [Unmask] Notify Delay -> Y=419: OK
+  [Unmask] Receive Back-Order -> Y=419: OK
+  [Unmask] Update Inventory -> Y=419: OK
+  [Unmask] Stock Report -> Y=419: OK
+  [Unmask] Back-Order Request -> Y=419: OK
+  [maxElementBottomRelY=80]
+  Check Stock -> col=4 (600,389) relY=20
+  In Stock? -> col=5 (730,389) relY=20
+  Initiate Back-Order -> col=6 (860,389) relY=20
+  Notify Delay -> col=7 (990,389) relY=20
+  Receive Back-Order -> col=8 (1120,389) relY=20
+  Update Inventory -> col=15 (2030,389) relY=20
+  Stock Report (DO from Check Stock) -> (690,459) maxBottomRelY=80
+  Back-Order Request (DO from Initiate Back-Order) -> (820,459) maxBottomRelY=80
+
+[Warehouse] Lane bounds: 551-902
+  [maxElementBottomRelY=80]
+  Pick Items -> col=9 (1250,571) relY=20
+  Picked Items List (DO from Pick Items) -> (1210,641) maxBottomRelY=80
+
+[Quality Control] Lane bounds: 902-1002
+  [Unmask] QC Check -> Y=952: OK
+  [Unmask] QC Report -> Y=952: OK
+  [maxElementBottomRelY=80]
+  QC Check -> col=10 (1380,922) relY=20
+  QC Report (DO from QC Check) -> (1340,992) maxBottomRelY=80
+
+[Packaging] Lane bounds: 1084-1184
+  [maxElementBottomRelY=170]
+  Gift Wrap? -> col=11 (1510,1104) relY=20
+  Standard Packaging -> col=12 (1640,1104) relY=20
+  Gift Wrap Packaging -> col=12 (1640,1194) relY=110
+  Packaging Complete -> col=13 (1770,1104) relY=20
+
+[Shipping] Lane bounds: 1265-1365
+  [Unmask] Prepare Shipping Docs -> Y=1315: OK
+  [Unmask] International? -> Y=1315: OK
+  [Unmask] Prepare Customs Docs -> Y=1315: OK
+  [Unmask] Docs Ready -> Y=1315: OK
+  [Unmask] Sync Pack and Ship -> Y=1315: OK
+  [Unmask] Dispatch Order -> Y=1315: OK
+  [Unmask] Send Shipping Confirmation -> Y=1315: OK
+  [Unmask] Shipping Label -> Y=1315: OK
+  [Unmask] Customs Forms -> Y=1315: OK
+  [maxElementBottomRelY=150]
+  Prepare Shipping Docs -> col=11 (1510,1285) relY=20
+  International? -> col=12 (1640,1285) relY=20
+  Prepare Customs Docs -> col=13 (1770,1285) relY=20
+  Docs Ready -> col=14 (1900,1285) relY=20
+  Sync Pack and Ship -> col=14 (1900,1375) relY=110
+  Dispatch Order -> col=15 (2030,1285) relY=20
+  Send Shipping Confirmation -> col=16 (2160,1285) relY=20
+  Shipping Label (DO from Prepare Shipping Docs) -> (1470,1425) maxBottomRelY=150
+  Customs Forms (DO from Prepare Customs Docs) -> (1730,1425) maxBottomRelY=150
+
+[Customer Service] Lane bounds: 1517-2096
+  [maxElementBottomRelY=80]
+  Confirm Delivery -> col=17 (2290,1537) relY=20
+  Issues Reported? -> col=18 (2420,1537) relY=20
+  Send Feedback Request -> col=19 (2550,1537) relY=20
+  End Success -> col=20 (2680,1537) relY=20
+
+[Returns] Lane bounds: 2096-3224
+  [maxElementBottomRelY=80]
+  Send Return Label -> col=19 (2550,2116) relY=20
+  Receive Returned Items -> col=20 (2680,2116) relY=20
+  Inspect Returns -> col=21 (2810,2116) relY=20
+  Process Refund or Replace -> col=22 (2940,2116) relY=20
+  End Returns -> col=23 (3070,2116) relY=20
+  Return Label (DO from Send Return Label) -> (2380,2186) maxBottomRelY=80
+  Inspection Report (DO from Inspect Returns) -> (2640,2186) maxBottomRelY=80
+
+
+[15] Repositioned: 44/44
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[16] Created 37 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[17] Data associations: 13
+
+==================================================================
+COMPLETE: OrderFulfillment_96958
+==================================================================
+Lanes: 9 | Elements: 34 | Data: 10 | Flows: 37 | DataAssoc: 13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 8
+======================================================================

@@ -1,0 +1,88 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ViennaNightRun_52377
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ViennaNightRun_52377
+[2] Lanes: App User, Fitness Gadget
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] App User: 15 elements
+[4] Fitness Gadget: 2 elements
+
+  Total: 17 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ViennaNightRun_52377
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Time < 25 min?=0, Train More=90
+  [Auto-stack] col 8: Go from Home=0, Go from Work=90
+  [Auto-stack] col 10: Run Night Run=0, Drink Water=90
+[App User] Lane bounds: 5-107
+  [Unmask] Train More -> Y=56: OK
+  [Unmask] Get Starting Number -> Y=56: OK
+  [Unmask] Check Work Schedule -> Y=56: OK
+  [Unmask] Work > 1hr Before Start? -> Y=56: OK
+  [Unmask] Go from Home -> Y=56: OK
+  [Unmask] Go from Work -> Y=56: OK
+  [Unmask] Fork -> Y=56: OK
+  [Unmask] Run Night Run -> Y=56: OK
+  [Unmask] Drink Water -> Y=56: OK
+  [Unmask] Join -> Y=56: OK
+  [Unmask] End -> Y=56: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Select Starting Block -> col=1 (230,25) relY=20
+  Run 5km -> col=2 (380,25) relY=20
+  Time < 25 min? -> col=4 (680,25) relY=20
+  Train More -> col=4 (680,115) relY=110
+  Get Starting Number -> col=5 (830,25) relY=20
+  Check Work Schedule -> col=6 (980,25) relY=20
+  Work > 1hr Before Start? -> col=7 (1130,25) relY=20
+  Go from Home -> col=8 (1280,25) relY=20
+  Go from Work -> col=8 (1280,115) relY=110
+  Fork -> col=9 (1430,25) relY=20
+  Run Night Run -> col=10 (1580,25) relY=20
+  Drink Water -> col=10 (1580,115) relY=110
+  Join -> col=11 (1730,25) relY=20
+  End -> col=13 (2030,25) relY=20
+
+[Fitness Gadget] Lane bounds: 186-286
+  [maxElementBottomRelY=80]
+  Measure Time -> col=3 (530,206) relY=20
+  Record Final Time -> col=12 (1880,206) relY=20
+
+
+[7] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 19 sequence flows
+
+==================================================================
+COMPLETE: ViennaNightRun_52377
+==================================================================
+Lanes: 2 | Elements: 17 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=17,gateways=4,flows=19,data=0,data_assoc=0
+======================================================================

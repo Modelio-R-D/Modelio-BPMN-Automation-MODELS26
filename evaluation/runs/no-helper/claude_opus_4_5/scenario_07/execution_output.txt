@@ -1,0 +1,131 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TRAVEL BOOKING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   27894
+Process Name:   TravelBooking_27894
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TravelBooking_27894
+[2] Lanes: Customer, Booking System, Travel Company, Notification Service
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 9 elements
+[4] Booking System lane: 6 elements
+[5] Travel Company lane: 3 elements
+[6] Notification Service lane: 4 elements
+
+  Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: TravelBooking_27894
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/22 | Missing: Process Comp, Validate Pay, Payment Vali, Generate Tic, Create Booki, Notify Split, Payment Fail, Update Inven, Reserve Seat, Booking Join, Send Confirm, Send Travel , Send Check-i, Send Feedbac
+  [Attempt 2] Found: 8/22 | Missing: Process Comp, Validate Pay, Payment Vali, Generate Tic, Create Booki, Notify Split, Payment Fail, Update Inven, Reserve Seat, Booking Join, Send Confirm, Send Travel , Send Check-i, Send Feedbac
+  [Attempt 3] Found: 8/22 | Missing: Process Comp, Validate Pay, Payment Vali, Generate Tic, Create Booki, Notify Split, Payment Fail, Update Inven, Reserve Seat, Booking Join, Send Confirm, Send Travel , Send Check-i, Send Feedbac
+  [Attempt 3] TIMEOUT - 8/22 elements
+
+[11] WARNING: 8/22 elements ready after 150ms
+         Missing: Process Complete, Validate Payment, Payment Valid?, Generate Ticket, Create Booking Record, Notify Split, Payment Failed, Update Inventory, Reserve Seat, Booking Join, Send Confirmation, Send Travel Reminder, Send Check-in Info, Send Feedback Request
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Process Complete -> Y=56 (Customer): OK
+  [Unmask] Validate Payment -> Y=157 (Booking System): OK
+  [Unmask] Payment Valid? -> Y=157 (Booking System): OK
+  [Unmask] Generate Ticket -> Y=157 (Booking System): OK
+  [Unmask] Create Booking Record -> Y=157 (Booking System): OK
+  [Unmask] Notify Split -> Y=157 (Booking System): OK
+  [Unmask] Payment Failed -> Y=157 (Booking System): OK
+  [Unmask] Update Inventory -> Y=257 (Travel Company): OK
+  [Unmask] Reserve Seat -> Y=257 (Travel Company): OK
+  [Unmask] Booking Join -> Y=257 (Travel Company): OK
+  [Unmask] Send Confirmation -> Y=357 (Notification Service): OK
+  [Unmask] Send Travel Reminder -> Y=357 (Notification Service): OK
+  [Unmask] Send Check-in Info -> Y=357 (Notification Service): OK
+  [Unmask] Send Feedback Request -> Y=357 (Notification Service): OK
+
+[13] Manual unmask: 14 elements unmasked
+[14] All elements now available
+
+  Lanes: Customer(5-126); Booking System(126-334); Travel Company(334-434); Notification Service(434-534)
+  Elements: Search Tra=Y16, Select Tra=Y20, Choose Rou=Y25, Select Dat=Y30, Enter Pers=Y35, Enter Paym=Y40, Validate P=Y157, Payment Va=Y157, Generate T=Y157, Payment Fa=Y157, Create Boo=Y157, Notify Spl=Y157, Reserve Se=Y257, Send Confi=Y357, Update Inv=Y257, Booking Jo=Y257, Send Trave=Y357, Complete J=Y45, Send Check=Y357, Provide Fe=Y50, Send Feedb=Y357, Process Co=Y56
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 42
+[16] Booking System centerY = 207
+[17] Travel Company centerY = 361
+[18] Notification Service centerY = 461
+
+[19] Customer/Search Travel -> (80,42) 33x33
+[20] Customer/Select Transport Type -> (220,42) 120x60
+[21] Customer/Choose Route -> (360,42) 120x60
+[22] Customer/Select Date Time -> (500,42) 120x60
+[23] Customer/Enter Personal Info -> (640,42) 120x60
+[24] Customer/Enter Payment -> (780,42) 120x60
+[25] Booking System/Validate Payment -> (920,207) 120x60
+[26] Booking System/Payment Valid? -> (1060,207) 40x40
+[27] Booking System/Generate Ticket -> (1200,207) 120x60
+[28] Booking System/Payment Failed -> (1200,207) 33x33
+[29] Booking System/Create Booking Record -> (1340,207) 120x60
+[30] Booking System/Notify Split -> (1480,207) 40x40
+[31] Travel Company/Reserve Seat -> (1620,361) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-126); Booking System(126-334); Travel Company(334-434); Notification Service(434-534)
+         After:  Lanes: Customer(5-126); Booking System(126-432); Travel Company(432-532); Notification Service(532-632)
+[32] Notification Service/Send Confirmation -> (1620,461) 120x60
+[33] Travel Company/Update Inventory -> (1620,361) 120x60
+[34] Travel Company/Booking Join -> (1760,361) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-126); Booking System(126-432); Travel Company(432-532); Notification Service(532-632)
+         After:  Lanes: Customer(5-126); Booking System(126-438); Travel Company(438-538); Notification Service(538-638)
+[35] Notification Service/Send Travel Reminder -> (1760,461) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-126); Booking System(126-438); Travel Company(438-538); Notification Service(538-638)
+         After:  Lanes: Customer(5-126); Booking System(126-438); Travel Company(438-583); Notification Service(583-683)
+[36] Customer/Complete Journey -> (1900,42) 120x60
+[37] Notification Service/Send Check-in Info -> (1900,461) 120x60
+[38] Customer/Provide Feedback -> (2040,42) 120x60
+[39] Notification Service/Send Feedback Request -> (2040,461) 120x60
+[40] Customer/Process Complete -> (2180,42) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[41] Created 23 sequence flows
+[42] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-126); Booking System(126-438); Travel Company(438-583); Notification Service(583-683)
+  Elements: Search Tra=Y42, Select Tra=Y42, Choose Rou=Y42, Select Dat=Y42, Enter Pers=Y42, Enter Paym=Y42, Validate P=Y207, Payment Va=Y207, Generate T=Y207, Payment Fa=Y207, Create Boo=Y207, Notify Spl=Y207, Reserve Se=Y361, Send Confi=Y467, Update Inv=Y361, Booking Jo=Y361, Send Trave=Y461, Complete J=Y42, Send Check=Y461, Provide Fe=Y42, Send Feedb=Y461, Process Co=Y42
+
+[43] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TravelBooking_27894
+Lanes:    4
+Elements: 22 (22 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=22,gateways=3,flows=23,data=0,data_assoc=0
+======================================================================

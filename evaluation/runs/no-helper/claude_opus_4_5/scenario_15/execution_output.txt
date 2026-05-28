@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPLIANCE AUDIT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   43746
+Process Name:   ComplianceAudit_43746
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplianceAudit_43746
+[2] Lanes: Management, Compliance Team, Internal Teams, External Auditor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Management lane: 3 elements
+[4] Compliance Team lane: 6 elements
+[5] Internal Teams lane: 3 elements
+[6] External Auditor lane: 9 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: ComplianceAudit_43746
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 18/21 | Missing: Gather Evide, Conduct Self, Make Improve
+  [Attempt 2] Found: 18/21 | Missing: Gather Evide, Conduct Self, Make Improve
+  [Attempt 3] Found: 18/21 | Missing: Gather Evide, Conduct Self, Make Improve
+  [Attempt 3] TIMEOUT - 18/21 elements
+
+[11] WARNING: 18/21 elements ready after 150ms
+         Missing: Gather Evidence, Conduct Self-Assessment, Make Improvements
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Gather Evidence -> Y=270 (Internal Teams): OK
+  [Unmask] Conduct Self-Assessment -> Y=270 (Internal Teams): OK
+  [Unmask] Make Improvements -> Y=270 (Internal Teams): OK
+
+[13] Manual unmask: 3 elements unmasked
+[14] All elements now available
+
+  Lanes: Manageme(5-120); Complian(120-220); Internal(220-351); External(351-645)
+  Elements: Audit Sc=Y16, Define A=Y20, Select A=Y25, Prepare =Y131, Coordina=Y131, Gather E=Y270, Conduct =Y270, Review S=Y131, Compile =Y131, Review D=Y362, Conduct =Y362, Identify=Y362, Gaps Fou=Y362, Implemen=Y131, Make Imp=Y270, Verify C=Y131, Conduct =Y362, Criteria=Y362, Audit Fa=Y362, Issue Ce=Y362, Certifie=Y362
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Management centerY = 39
+[16] Compliance Team centerY = 147
+[17] Internal Teams centerY = 262
+[18] External Auditor centerY = 475
+
+[19] Management/Audit Scheduled -> (80,39)
+[20] Management/Define Audit Sc -> (220,39)
+[21] Management/Select Auditor -> (360,39)
+[22] Compliance/Prepare Documen -> (500,147) *** LANE CHANGED ***
+[23] Compliance/Coordinate Team -> (640,147)
+[24] Internal T/Gather Evidence -> (640,262) *** LANE CHANGED ***
+[25] Internal T/Conduct Self-As -> (780,262)
+[26] Compliance/Review Self-Ass -> (920,147)
+[27] Compliance/Compile Audit P -> (1060,147)
+[28] External A/Review Document -> (1200,475)
+[29] External A/Conduct Site Au -> (1340,475)
+[30] External A/Identify Gaps -> (1480,475)
+[31] External A/Gaps Found? -> (1620,475)
+[32] Compliance/Implement Corre -> (1620,147)
+[33] Internal T/Make Improvemen -> (1620,262)
+[34] Compliance/Verify Correcti -> (1760,147)
+[35] External A/Conduct Final A -> (1900,475)
+[36] External A/Criteria Met? -> (2040,475)
+[37] Management/Audit Failed -> (2180,39) *** LANE CHANGED ***
+[38] External A/Issue Certifica -> (2180,475) *** LANE CHANGED ***
+[39] External A/Certified -> (2320,475) *** LANE CHANGED ***
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[40] Created 21 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Manageme(-405--290); Complian(-290--131); Internal(-131-28); External(28-928)
+  Elements: Audit Sc=Y-371, Define A=Y-371, Select A=Y-371, Prepare =Y-263, Coordina=Y-263, Gather E=Y-120, Conduct =Y-120, Review S=Y-235, Compile =Y-235, Review D=Y93, Conduct =Y93, Identify=Y93, Gaps Fou=Y93, Implemen=Y-235, Make Imp=Y-120, Verify C=Y-235, Conduct =Y93, Criteria=Y93, Audit Fa=Y39, Issue Ce=Y475, Certifie=Y475
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComplianceAudit_43746
+Lanes:    4
+Elements: 21 (21 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=21,gateways=2,flows=21,data=0,data_assoc=0
+======================================================================

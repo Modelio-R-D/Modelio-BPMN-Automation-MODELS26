@@ -1,0 +1,181 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Work and Live in Austria
+Script Version: v1.0
+Execution ID:   45098
+Process Name:   WorkAndLiveInAustria_45098
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAndLiveInAustria_45098
+[2] Lanes: Applicant, Employer HR, Housing and Bank, Austrian Authorities, Applicant Renewal
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements: 36
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Work and Live in Austria
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/41 | Missing: Plan Move, Check Requir, Get Job Offe, Collect Empl, Determine Vi, Identify Com, Prepare Move, Negotiate Ac, Open Bank Ac, Gather Docum, Prepare Core, Travel Docum, Get Passport, Buy Health I, Prove Means , Collect Othe, Core Docs Re, Fill Visa Ap, Check Refusa, Ready to App, Submit Appli, Documents Co, Request Addi, Process Visa, Approved?, Book Travel , Register Res, Working and , Visa Refused, Renewal Due , Prepare Rene, Submit Renew, Process Rene, Renewal Appr, RWR Card Ren, Permit Ends
+  [Attempt 2] Found: 5/41 | Missing: Plan Move, Check Requir, Get Job Offe, Collect Empl, Determine Vi, Identify Com, Prepare Move, Negotiate Ac, Open Bank Ac, Gather Docum, Prepare Core, Travel Docum, Get Passport, Buy Health I, Prove Means , Collect Othe, Core Docs Re, Fill Visa Ap, Check Refusa, Ready to App, Submit Appli, Documents Co, Request Addi, Process Visa, Approved?, Book Travel , Register Res, Working and , Visa Refused, Renewal Due , Prepare Rene, Submit Renew, Process Rene, Renewal Appr, RWR Card Ren, Permit Ends
+  [Attempt 3] Found: 5/41 | Missing: Plan Move, Check Requir, Get Job Offe, Collect Empl, Determine Vi, Identify Com, Prepare Move, Negotiate Ac, Open Bank Ac, Gather Docum, Prepare Core, Travel Docum, Get Passport, Buy Health I, Prove Means , Collect Othe, Core Docs Re, Fill Visa Ap, Check Refusa, Ready to App, Submit Appli, Documents Co, Request Addi, Process Visa, Approved?, Book Travel , Register Res, Working and , Visa Refused, Renewal Due , Prepare Rene, Submit Renew, Process Rene, Renewal Appr, RWR Card Ren, Permit Ends
+  [Attempt 3] TIMEOUT - 5/41 elements
+
+[8] WARNING: 0/36 elements ready after 150ms
+         Missing: Plan Move, Check Requirements, Get Job Offer, Collect Employer Documents, Determine Visa Type (D / RWR), Identify Competent Representation, Prepare Move (Parallel), Negotiate Accommodation, Open Bank Account, Gather Documents, Prepare Core Docs (Parallel), Travel Document Validity Check, Get Passport Photo 35x45, Buy Health Insurance 30k Schengen, Prove Means of Subsistence, Collect Other Evidence (Bookings etc.), Core Docs Ready (Join), Fill Visa Application Form, Check Refusal Grounds and Schengen Rules, Ready to Apply (Join), Submit Application at Representation, Documents Complete?, Request Additional Evidence, Process Visa / Rot-Weiss-Rot Card, Approved?, Book Travel and Appointment, Register Residence (Meldezettel), Working and Living in Austria, Visa Refused, Renewal Due (every X months), Prepare Renewal Documents, Submit Renewal, Process Renewal, Renewal Approved?, RWR Card Renewed, Permit Ends
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Plan Move -> Y=55 (Applicant): OK
+  [Unmask] Check Requirements -> Y=55 (Applicant): OK
+  [Unmask] Get Job Offer -> Y=155 (Employer HR): OK
+  [Unmask] Collect Employer Documents -> Y=155 (Employer HR): OK
+  [Unmask] Determine Visa Type (D / RWR) -> Y=55 (Applicant): OK
+  [Unmask] Identify Competent Representation -> Y=355 (Austrian Authorities): OK
+  [Unmask] Prepare Move (Parallel) -> Y=55 (Applicant): OK
+  [Unmask] Negotiate Accommodation -> Y=255 (Housing and Bank): OK
+  [Unmask] Open Bank Account -> Y=255 (Housing and Bank): OK
+  [Unmask] Gather Documents -> Y=55 (Applicant): OK
+  [Unmask] Prepare Core Docs (Parallel) -> Y=55 (Applicant): OK
+  [Unmask] Travel Document Validity Check -> Y=55 (Applicant): OK
+  [Unmask] Get Passport Photo 35x45 -> Y=55 (Applicant): OK
+  [Unmask] Buy Health Insurance 30k Schengen -> Y=55 (Applicant): OK
+  [Unmask] Prove Means of Subsistence -> Y=55 (Applicant): OK
+  [Unmask] Collect Other Evidence (Bookings etc.) -> Y=55 (Applicant): OK
+  [Unmask] Core Docs Ready (Join) -> Y=55 (Applicant): OK
+  [Unmask] Fill Visa Application Form -> Y=55 (Applicant): OK
+  [Unmask] Check Refusal Grounds and Schengen Rules -> Y=355 (Austrian Authorities): OK
+  [Unmask] Ready to Apply (Join) -> Y=55 (Applicant): OK
+  [Unmask] Submit Application at Representation -> Y=355 (Austrian Authorities): OK
+  [Unmask] Documents Complete? -> Y=355 (Austrian Authorities): OK
+  [Unmask] Request Additional Evidence -> Y=355 (Austrian Authorities): OK
+  [Unmask] Process Visa / Rot-Weiss-Rot Card -> Y=355 (Austrian Authorities): OK
+  [Unmask] Approved? -> Y=355 (Austrian Authorities): OK
+  [Unmask] Book Travel and Appointment -> Y=55 (Applicant): OK
+  [Unmask] Register Residence (Meldezettel) -> Y=55 (Applicant): OK
+  [Unmask] Working and Living in Austria -> Y=55 (Applicant): OK
+  [Unmask] Visa Refused -> Y=355 (Austrian Authorities): OK
+  [Unmask] Renewal Due (every X months) -> Y=455 (Applicant Renewal): OK
+  [Unmask] Prepare Renewal Documents -> Y=455 (Applicant Renewal): OK
+  [Unmask] Submit Renewal -> Y=355 (Austrian Authorities): OK
+  [Unmask] Process Renewal -> Y=355 (Austrian Authorities): OK
+  [Unmask] Renewal Approved? -> Y=355 (Austrian Authorities): OK
+  [Unmask] RWR Card Renewed -> Y=455 (Applicant Renewal): OK
+  [Unmask] Permit Ends -> Y=455 (Applicant Renewal): OK
+
+[10] Manual unmask: 36 elements unmasked
+
+  Lanes: Applicant(5-132); Employer HR(132-232); Housing and Bank(232-332); Austrian Authorities(332-432); Applicant Renewal(432-597)
+  Elements: Plan Move=Y55, Check Requirem=Y55, Get Job Offer=Y162, Collect Employ=Y162, Determine Visa=Y55, Identify Compe=Y362, Prepare Move (=Y55, Gather Documen=Y55, Negotiate Acco=Y255, Open Bank Acco=Y255, Prepare Core D=Y55, Get Passport P=Y55, Travel Documen=Y55, Buy Health Ins=Y55, Prove Means of=Y55, Collect Other =Y55, Check Refusal =Y355, Core Docs Read=Y55, Fill Visa Appl=Y55, Ready to Apply=Y55, Submit Applica=Y355, Documents Comp=Y355, Renewal Due (e=Y455, Prepare Renewa=Y455, Request Additi=Y355, Process Visa /=Y355, Submit Renewal=Y355, Approved?=Y355, Process Renewa=Y355, Book Travel an=Y55, Renewal Approv=Y355, Visa Refused=Y355, Permit Ends=Y455, RWR Card Renew=Y455, Register Resid=Y55, Working and Li=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Applicant centerY = 45
+[12] Employer HR centerY = 159
+[13] Housing and Bank centerY = 259
+[14] Austrian Authorities centerY = 359
+[15] Applicant Renewal centerY = 491
+
+[16] Applicant/Plan Move -> (80,45) 33x33
+[17] Applicant/Check Requirements -> (235,45) 170x60
+[18] Employer HR/Get Job Offer -> (390,159) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); Employer HR(132-232); Housing and Bank(232-332); Austrian Authorities(332-432); Applicant Renewal(432-597)
+         After:  Lanes: Applicant(5-132); Employer HR(132-250); Housing and Bank(250-350); Austrian Authorities(350-450); Applicant Renewal(450-615)
+[19] Employer HR/Collect Employer Documents -> (545,159) 170x60
+[20] Applicant/Determine Visa Type (D / RWR) -> (700,45) 170x60
+[21] Austrian Authorities/Identify Competent Representation -> (855,359) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); Employer HR(132-250); Housing and Bank(250-350); Austrian Authorities(350-450); Applicant Renewal(450-615)
+         After:  Lanes: Applicant(-70-57); Employer HR(57-175); Housing and Bank(175-275); Austrian Authorities(275-450); Applicant Renewal(450-615)
+[22] Applicant/Prepare Move (Parallel) -> (1010,45) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-70-57); Employer HR(57-175); Housing and Bank(175-275); Austrian Authorities(275-450); Applicant Renewal(450-615)
+         After:  Lanes: Applicant(-70-122); Employer HR(122-240); Housing and Bank(240-340); Austrian Authorities(340-515); Applicant Renewal(515-680)
+[23] Applicant/Gather Documents -> (1165,45) 170x60
+[24] Housing and Bank/Negotiate Accommodation -> (1165,259) 170x60
+[25] Housing and Bank/Open Bank Account -> (1320,259) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-70-122); Employer HR(122-240); Housing and Bank(240-340); Austrian Authorities(340-515); Applicant Renewal(515-680)
+         After:  Lanes: Applicant(-70-122); Employer HR(122-240); Housing and Bank(240-400); Austrian Authorities(400-575); Applicant Renewal(575-740)
+[26] Applicant/Prepare Core Docs (Parallel) -> (1320,45) 40x40
+[27] Applicant/Get Passport Photo 35x45 -> (1475,45) 170x60
+[28] Applicant/Travel Document Validity Check -> (1475,45) 170x60
+[29] Applicant/Buy Health Insurance 30k Schengen -> (1630,45) 170x60
+[30] Applicant/Prove Means of Subsistence -> (1630,45) 170x60
+[31] Applicant/Collect Other Evidence (Bookings etc.) -> (1785,45) 170x60
+[32] Austrian Authorities/Check Refusal Grounds and Schengen Rules -> (1940,359) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-70-122); Employer HR(122-240); Housing and Bank(240-400); Austrian Authorities(400-575); Applicant Renewal(575-740)
+         After:  Lanes: Applicant(-122-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-575); Applicant Renewal(575-740)
+[33] Applicant/Core Docs Ready (Join) -> (1940,45) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-122-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-575); Applicant Renewal(575-740)
+         After:  Lanes: Applicant(-122-122); Employer HR(122-240); Housing and Bank(240-400); Austrian Authorities(400-627); Applicant Renewal(627-792)
+[34] Applicant/Fill Visa Application Form -> (2095,45) 170x60
+[35] Applicant/Ready to Apply (Join) -> (2250,45) 40x40
+[36] Austrian Authorities/Submit Application at Representation -> (2405,359) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-122-122); Employer HR(122-240); Housing and Bank(240-400); Austrian Authorities(400-627); Applicant Renewal(627-792)
+         After:  Lanes: Applicant(-174-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-627); Applicant Renewal(627-792)
+[37] Austrian Authorities/Documents Complete? -> (2560,359) 40x40
+[38] Applicant Renewal/Renewal Due (every X months) -> (2560,491) 33x33 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-174-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-627); Applicant Renewal(627-792)
+         After:  Lanes: Applicant(-321--77); Employer HR(-77-41); Housing and Bank(41-201); Austrian Authorities(201-480); Applicant Renewal(480-792)
+[39] Applicant Renewal/Prepare Renewal Documents -> (2715,491) 170x60
+[40] Austrian Authorities/Request Additional Evidence -> (2715,359) 170x60
+[41] Austrian Authorities/Process Visa / Rot-Weiss-Rot Card -> (2870,359) 170x60
+[42] Austrian Authorities/Submit Renewal -> (2870,359) 170x60
+[43] Austrian Authorities/Approved? -> (3025,359) 40x40
+[44] Austrian Authorities/Process Renewal -> (3025,359) 170x60
+[45] Applicant/Book Travel and Appointment -> (3180,45) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-321--77); Employer HR(-77-41); Housing and Bank(41-201); Austrian Authorities(201-480); Applicant Renewal(480-792)
+         After:  Lanes: Applicant(-321-116); Employer HR(116-234); Housing and Bank(234-394); Austrian Authorities(394-673); Applicant Renewal(673-985)
+[46] Austrian Authorities/Renewal Approved? -> (3180,359) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-321-116); Employer HR(116-234); Housing and Bank(234-394); Austrian Authorities(394-673); Applicant Renewal(673-985)
+         After:  Lanes: Applicant(-367-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-673); Applicant Renewal(673-985)
+[47] Austrian Authorities/Visa Refused -> (3180,359) 33x33
+[48] Applicant Renewal/Permit Ends -> (3335,491) 33x33 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-367-70); Employer HR(70-188); Housing and Bank(188-348); Austrian Authorities(348-673); Applicant Renewal(673-985)
+         After:  Lanes: Applicant(-560--123); Employer HR(-123--5); Housing and Bank(-5-155); Austrian Authorities(155-480); Applicant Renewal(480-985)
+[49] Applicant Renewal/RWR Card Renewed -> (3335,491) 33x33
+[50] Applicant/Register Residence (Meldezettel) -> (3335,45) 170x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(-560--123); Employer HR(-123--5); Housing and Bank(-5-155); Austrian Authorities(155-480); Applicant Renewal(480-985)
+         After:  Lanes: Applicant(-560-116); Employer HR(116-234); Housing and Bank(234-394); Austrian Authorities(394-719); Applicant Renewal(719-1224)
+[51] Applicant/Working and Living in Austria -> (3490,45) 33x33
+
+  Repositioned: 36/36
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[52] Created 41 sequence flows
+[53] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(-560-116); Employer HR(116-234); Housing and Bank(234-394); Austrian Authorities(394-719); Applicant Renewal(719-1224)
+  Elements: Plan Move=Y-520, Check Requirem=Y-520, Get Job Offer=Y143, Collect Employ=Y143, Determine Visa=Y-520, Identify Compe=Y405, Prepare Move (=Y-445, Gather Documen=Y-445, Negotiate Acco=Y253, Open Bank Acco=Y253, Prepare Core D=Y-445, Get Passport P=Y-445, Travel Documen=Y-445, Buy Health Ins=Y-445, Prove Means of=Y-445, Collect Other =Y-445, Check Refusal =Y405, Core Docs Read=Y-393, Fill Visa Appl=Y-393, Ready to Apply=Y-393, Submit Applica=Y405, Documents Comp=Y405, Renewal Due (e=Y730, Prepare Renewa=Y730, Request Additi=Y552, Process Visa /=Y552, Submit Renewal=Y552, Approved?=Y552, Process Renewa=Y552, Book Travel an=Y-194, Renewal Approv=Y405, Visa Refused=Y405, Permit Ends=Y730, RWR Card Renew=Y730, Register Resid=Y45, Working and Li=Y45
+
+[54] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  WorkAndLiveInAustria_45098
+Lanes:    5
+Elements: 36
+Flows:    41
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=36,gateways=7,flows=41,data=0,data_assoc=0
+======================================================================

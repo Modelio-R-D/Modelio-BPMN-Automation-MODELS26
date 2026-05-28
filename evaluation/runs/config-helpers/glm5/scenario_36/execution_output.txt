@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LuxuryAirplane_43109
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LuxuryAirplane_43109
+[2] Lanes: Customer, Manufacturer, Russian Team, Irish Team, Interior Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] Manufacturer: 10 elements
+[5] Russian Team: 1 elements
+[6] Irish Team: 1 elements
+[7] Interior Team: 4 elements
+
+  Total: 21 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: LuxuryAirplane_43109
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Build Seats=0, Apply Color=90, Install Water System=180
+[Customer] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Select Options -> col=1 (230,25) relY=20
+  Review Protocol -> col=12 (1880,25) relY=20
+  Confirm Delivery -> col=13 (2030,25) relY=20
+  End -> col=14 (2180,25) relY=20
+
+[Manufacturer] Lane bounds: 105-254
+  [maxElementBottomRelY=80]
+  Receive Order -> col=2 (380,125) relY=20
+  Fork -> col=3 (530,125) relY=20
+  Bar Type? -> col=4 (680,125) relY=20
+  Bar Done -> col=6 (980,125) relY=20
+  Join -> col=7 (1130,125) relY=20
+  Assemble Interior -> col=8 (1280,125) relY=20
+  Test Flight -> col=9 (1430,125) relY=20
+  Create Protocol -> col=10 (1580,125) relY=20
+  Send Protocol -> col=11 (1730,125) relY=20
+  Deliver Plane -> col=12 (1880,125) relY=20
+
+[Russian Team] Lane bounds: 254-354
+  [maxElementBottomRelY=80]
+  Build Vodka Bar -> col=5 (830,274) relY=20
+
+[Irish Team] Lane bounds: 354-454
+  [maxElementBottomRelY=80]
+  Build Whiskey Bar -> col=5 (830,374) relY=20
+
+[Interior Team] Lane bounds: 454-862
+  [maxElementBottomRelY=260]
+  Build Champagne Bar -> col=5 (830,474) relY=20
+  Build Seats -> col=4 (680,474) relY=20
+  Apply Color -> col=4 (680,564) relY=110
+  Install Water System -> col=4 (680,654) relY=200
+
+
+[10] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 26 sequence flows
+
+==================================================================
+COMPLETE: LuxuryAirplane_43109
+==================================================================
+Lanes: 5 | Elements: 21 | Flows: 26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=21,gateways=4,flows=26,data=0,data_assoc=0
+======================================================================

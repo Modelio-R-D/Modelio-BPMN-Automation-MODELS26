@@ -1,0 +1,75 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: RecourseHandling_56407
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RecourseHandling_56407
+[2] Lanes: Claims Handler, Collection Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Handler: 14 elements
+[4] Collection Agency: 1 elements
+
+  Total: 15 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: RecourseHandling_56407
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Payment received=0, Disagreement received=90, Disagreement deadline reached=180
+  [Auto-stack] col 7: Book payment=0, Check disagreement reasoning=90
+[Claims Handler] Lane bounds: 5-150
+  [maxElementBottomRelY=240]
+  Subrogation hint received -> col=0 (80,25) relY=20
+  Check case -> col=1 (230,25) relY=20
+  Recourse possible? -> col=2 (380,25) relY=20
+  Send request for payment -> col=3 (530,25) relY=20
+  Set reminder -> col=4 (680,25) relY=20
+  Wait for payment or response -> col=5 (830,25) relY=20
+  Payment received -> col=6 (980,25) relY=20
+  Disagreement received -> col=6 (980,115) relY=110
+  Disagreement deadline reached -> col=6 (980,205) relY=200
+  Book payment -> col=7 (1130,25) relY=20
+  Check disagreement reasoning -> col=7 (1130,115) relY=110
+  Insurant right? -> col=8 (1280,25) relY=20
+  Close case -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+
+[Collection Agency] Lane bounds: 275-375
+  [Unmask] Forward to collection agency -> Y=325: OK
+  [maxElementBottomRelY=80]
+  Forward to collection agency -> col=9 (1430,295) relY=20
+
+
+[7] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 18 sequence flows
+
+==================================================================
+COMPLETE: RecourseHandling_56407
+==================================================================
+Lanes: 2 | Elements: 15 | Flows: 18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=15,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

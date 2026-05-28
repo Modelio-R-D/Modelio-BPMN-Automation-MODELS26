@@ -1,0 +1,175 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   94863
+Title:          Robotic Burger Seller near the University of Vienna
+Process Name:   RoboticBurgerSeller_94863
+Diagram Name:   Robotic Burger Seller near the University of Vienna 94863
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: RoboticBurgerSeller_94863
+[2] LaneSet created
+[3] Lanes: Customer, Robot, Conveyor Belt
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Customer / Order placed | addToLane=True
+  [Elem] Customer / Choose menu or burger | addToLane=True
+  [Elem] Customer / Menu choice | addToLane=True
+  [Elem] Customer / Choose fries or wedges | addToLane=True
+  [Elem] Customer / Side choice | addToLane=True
+  [Elem] Customer / Order received | addToLane=True
+  [Elem] Robot / Receive order | addToLane=True
+  [Elem] Robot / Start drink and side | addToLane=True
+  [Elem] Robot / Prepare drink (size dependent) | addToLane=True
+  [Elem] Robot / Ask: fries or wedges | addToLane=True
+  [Elem] Robot / Prepare fries (size dependent) | addToLane=True
+  [Elem] Robot / Prepare wedges (size dependent) | addToLane=True
+  [Elem] Robot / Side prepared | addToLane=True
+  [Elem] Robot / Menu tasks done | addToLane=True
+  [Elem] Robot / Menu merge | addToLane=True
+  [Elem] Robot / Burger work start | addToLane=True
+  [Elem] Robot / Prepare burger (ingredients dependent) | addToLane=True
+  [Elem] Robot / Status updates (every 30s) | addToLane=True
+  [Elem] Robot / Burger done | addToLane=True
+  [Elem] Conveyor Belt / Deliver via conveyor belt | addToLane=True
+
+[4] Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: Robotic Burger Seller near the University of Vienna 94863
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for lanes first...
+  [Attempt 1] All 3 elements ready
+[9] Lane wait attempts: 1 | Ready: 3/3
+
+[10] Waiting for flow elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 6/20 | Missing: Receive orde, Start drink , Prepare drin, Ask: fries o, Prepare frie, Prepare wedg, Side prepare, Menu tasks d, Menu merge, Burger work , Prepare burg, Status updat, Burger done, Deliver via 
+  [Attempt 2] Found: 6/20 | Missing: Receive orde, Start drink , Prepare drin, Ask: fries o, Prepare frie, Prepare wedg, Side prepare, Menu tasks d, Menu merge, Burger work , Prepare burg, Status updat, Burger done, Deliver via 
+  [Attempt 3] Found: 6/20 | Missing: Receive orde, Start drink , Prepare drin, Ask: fries o, Prepare frie, Prepare wedg, Side prepare, Menu tasks d, Menu merge, Burger work , Prepare burg, Status updat, Burger done, Deliver via 
+  [Attempt 3] TIMEOUT - 6/20 elements
+
+[11] WARNING: 6/20 elements ready after 150ms
+         Missing: Receive order, Start drink and side, Prepare drink (size dependent), Ask: fries or wedges, Prepare fries (size dependent), Prepare wedges (size dependent), Side prepared, Menu tasks done, Menu merge, Burger work start, Prepare burger (ingredients dependent), Status updates (every 30s), Burger done, Deliver via conveyor belt
+
+[12] Trying manual unmask for missing elements...
+
+  [UnmaskPrep] Lane Customer centerY=58
+  [UnmaskPrep] Lane Conveyor Belt centerY=262
+  [UnmaskPrep] Lane Robot centerY=162
+  [Unmask] Receive order -> Y=162 (Robot): OK
+  [Unmask] Start drink and side -> Y=162 (Robot): OK
+  [Unmask] Prepare drink (size dependent) -> Y=162 (Robot): OK
+  [Unmask] Ask: fries or wedges -> Y=162 (Robot): OK
+  [Unmask] Prepare fries (size dependent) -> Y=162 (Robot): OK
+  [Unmask] Prepare wedges (size dependent) -> Y=162 (Robot): OK
+  [Unmask] Side prepared -> Y=162 (Robot): OK
+  [Unmask] Menu tasks done -> Y=162 (Robot): OK
+  [Unmask] Menu merge -> Y=162 (Robot): OK
+  [Unmask] Burger work start -> Y=162 (Robot): OK
+  [Unmask] Prepare burger (ingredients dependent) -> Y=162 (Robot): OK
+  [Unmask] Status updates (every 30s) -> Y=162 (Robot): OK
+  [Unmask] Burger done -> Y=162 (Robot): OK
+  [Unmask] Deliver via conveyor belt -> Y=262 (Conveyor Belt): OK
+
+[13] Manual unmask: 14 elements unmasked
+[14] All elements now available
+
+  Lanes: Customer(5-112); Robot(112-239); Conveyor Belt(239-339)
+  Elements: Order placed=Y16, Receive order=Y162, Choose menu or=Y20, Menu choice=Y25, Start drink an=Y162, Ask: fries or =Y162, Prepare drink =Y162, Choose fries o=Y30, Side choice=Y35, Prepare fries =Y162, Prepare wedges=Y162, Side prepared=Y162, Menu tasks don=Y162, Menu merge=Y162, Burger work st=Y162, Prepare burger=Y162, Status updates=Y162, Burger done=Y162, Deliver via co=Y262, Order received=Y40
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 28
+[16] Robot centerY = 145
+[17] Conveyor Belt centerY = 259
+
+[18] Customer/Order placed -> (80,28) 33x33
+[19] Robot/Receive order -> (240,145) 200x60
+[20] Customer/Choose menu or burger -> (400,28) 200x60
+[21] Customer/Menu choice -> (560,28) 40x40
+[22] Robot/Start drink and side -> (720,145) 40x40
+[23] Robot/Ask: fries or wedges -> (880,145) 200x60
+[24] Robot/Prepare drink (size dependent) -> (880,145) 200x60
+[25] Customer/Choose fries or wedges -> (1040,28) 200x60
+[26] Customer/Side choice -> (1200,28) 40x40
+[27] Robot/Prepare fries (size dependent) -> (1360,145) 200x60
+[28] Robot/Prepare wedges (size dependent) -> (1360,145) 200x60
+[29] Robot/Side prepared -> (1520,145) 40x40
+[30] Robot/Menu tasks done -> (1680,145) 40x40
+[31] Robot/Menu merge -> (1840,145) 40x40
+[32] Robot/Burger work start -> (2000,145) 40x40
+[33] Robot/Prepare burger (ingredients dependent) -> (2160,145) 200x60
+[34] Robot/Status updates (every 30s) -> (2160,145) 200x60
+[35] Robot/Burger done -> (2320,145) 40x40
+[36] Conveyor Belt/Deliver via conveyor belt -> (2480,259) 200x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-112); Robot(112-239); Conveyor Belt(239-339)
+         After:  Lanes: Customer(5-112); Robot(112-239); Conveyor Belt(239-367)
+[37] Customer/Order received -> (2640,28) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Order placed -> Receive order
+  [Flow] Receive order -> Choose menu or burger
+  [Flow] Choose menu or burger -> Menu choice
+  [Flow] Menu choice -> Start drink and side | guard=Menu
+  [Flow] Menu choice -> Menu merge | guard=Burger only
+  [Flow] Start drink and side -> Prepare drink (size dependent)
+  [Flow] Start drink and side -> Ask: fries or wedges
+  [Flow] Ask: fries or wedges -> Choose fries or wedges
+  [Flow] Choose fries or wedges -> Side choice
+  [Flow] Side choice -> Prepare fries (size dependent) | guard=Fries
+  [Flow] Side choice -> Prepare wedges (size dependent) | guard=Wedges
+  [Flow] Prepare fries (size dependent) -> Side prepared
+  [Flow] Prepare wedges (size dependent) -> Side prepared
+  [Flow] Prepare drink (size dependent) -> Menu tasks done
+  [Flow] Side prepared -> Menu tasks done
+  [Flow] Menu tasks done -> Menu merge
+  [Flow] Menu merge -> Burger work start
+  [Flow] Burger work start -> Prepare burger (ingredients dependent)
+  [Flow] Burger work start -> Status updates (every 30s)
+  [Flow] Prepare burger (ingredients dependent) -> Burger done
+  [Flow] Status updates (every 30s) -> Burger done
+  [Flow] Burger done -> Deliver via conveyor belt
+  [Flow] Deliver via conveyor belt -> Order received
+
+[38] Created 23 sequence flows
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-112); Robot(112-239); Conveyor Belt(239-367)
+  Elements: Order placed=Y28, Receive order=Y145, Choose menu or=Y28, Menu choice=Y28, Start drink an=Y145, Ask: fries or =Y145, Prepare drink =Y145, Choose fries o=Y28, Side choice=Y28, Prepare fries =Y145, Prepare wedges=Y145, Side prepared=Y145, Menu tasks don=Y145, Menu merge=Y145, Burger work st=Y145, Prepare burger=Y145, Status updates=Y145, Burger done=Y145, Deliver via co=Y259, Order received=Y28
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Robotic Burger Seller near the University of Vienna
+Process:  RoboticBurgerSeller_94863
+Lanes:    3
+Elements: 20 (20 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=8,flows=23,data=0,data_assoc=0
+======================================================================

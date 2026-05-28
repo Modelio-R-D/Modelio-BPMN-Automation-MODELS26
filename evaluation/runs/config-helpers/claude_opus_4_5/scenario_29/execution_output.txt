@@ -1,0 +1,161 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: WorkAndLiveInAustria_9112
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAndLiveInAustria_9112
+[2] Lanes: Applicant, Austrian Representation, Immigration Authority (MA35), Service Providers
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 29 elements
+[4] Austrian Representation: 4 elements
+[5] Immigration Authority (MA35): 7 elements
+[6] Service Providers: 1 elements
+
+  Total: 41 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: WorkAndLiveInAustria_9112
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Complete Visa Application Form=0, Obtain Passport Photo 35x45mm=90, Arrange Travel Health Insurance=180, Gather Financial Proof=270, Obtain Employment Contract=360, Check Passport Validity=450
+  [Auto-stack] col 5: Passport Valid?=0, Renew Passport=90
+  [Auto-stack] col 18: Search Accommodation=0, Research Banks=90
+  [Auto-stack] col 19: Negotiate Rental Terms=0, Schedule Bank Appointment=90
+  [Auto-stack] col 21: Register Residence Meldezettel=0, Receive Bank Details=90
+  [Auto-stack] col 9: Verify Documents Complete?=0, Request Additional Documents=90
+  [Auto-stack] col 13: Application Approved?=0, Issue Rejection Notice=90
+  [Auto-stack] col 14: Issue RWR Card=0, End Rejected=90
+[Applicant] Lane bounds: 5-112
+  [Unmask] Check Passport Validity -> Y=58: OK
+  [Unmask] Documents Ready -> Y=58: OK
+  [Unmask] Passport Valid? -> Y=58: OK
+  [Unmask] Renew Passport -> Y=58: OK
+  [Unmask] Submit RWR Card Application -> Y=58: OK
+  [Unmask] Provide Additional Documents -> Y=58: OK
+  [Unmask] Arrive in Austria -> Y=58: OK
+  [Unmask] Begin Settlement Tasks -> Y=58: OK
+  [Unmask] Search Accommodation -> Y=58: OK
+  [Unmask] Negotiate Rental Terms -> Y=58: OK
+  [Unmask] Sign Rental Contract -> Y=58: OK
+  [Unmask] Register Residence Meldezettel -> Y=58: OK
+  [Unmask] Research Banks -> Y=58: OK
+  [Unmask] Schedule Bank Appointment -> Y=58: OK
+  [Unmask] Receive Bank Details -> Y=58: OK
+  [Unmask] Settlement Complete -> Y=58: OK
+  [Unmask] Set Renewal Reminder -> Y=58: OK
+  [Unmask] Wait for Renewal Period -> Y=58: OK
+  [Unmask] Renewal Required? -> Y=58: OK
+  [Unmask] End Success -> Y=58: OK
+  [Unmask] Visa Application Form -> Y=58: OK
+  [Unmask] Passport Photo -> Y=58: OK
+  [Unmask] Health Insurance Policy -> Y=58: OK
+  [Unmask] Financial Documents -> Y=58: OK
+  [Unmask] Employment Contract -> Y=58: OK
+  [Unmask] Valid Passport -> Y=58: OK
+  [Unmask] Rental Contract -> Y=58: OK
+  [Unmask] Meldezettel -> Y=58: OK
+  [maxElementBottomRelY=530]
+  Start -> col=0 (60,25) relY=20
+  Research Requirements -> col=1 (220,25) relY=20
+  Identify Competent Representation -> col=2 (380,25) relY=20
+  Prepare Documents -> col=3 (540,25) relY=20
+  Complete Visa Application Form -> col=4 (700,25) relY=20
+  Obtain Passport Photo 35x45mm -> col=4 (700,115) relY=110
+  Arrange Travel Health Insurance -> col=4 (700,205) relY=200
+  Gather Financial Proof -> col=4 (700,295) relY=290
+  Obtain Employment Contract -> col=4 (700,385) relY=380
+  Check Passport Validity -> col=4 (700,475) relY=470
+  Documents Ready -> col=6 (1020,25) relY=20
+  Passport Valid? -> col=5 (860,25) relY=20
+  Renew Passport -> col=5 (860,115) relY=110
+  Submit RWR Card Application -> col=7 (1180,25) relY=20
+  Provide Additional Documents -> col=8 (1340,115) relY=110
+  Arrive in Austria -> col=16 (2620,25) relY=20
+  Begin Settlement Tasks -> col=17 (2780,25) relY=20
+  Search Accommodation -> col=18 (2940,25) relY=20
+  Negotiate Rental Terms -> col=19 (3100,25) relY=20
+  Sign Rental Contract -> col=20 (3260,25) relY=20
+  Register Residence Meldezettel -> col=21 (3420,25) relY=20
+  Research Banks -> col=18 (2940,115) relY=110
+  Schedule Bank Appointment -> col=19 (3100,115) relY=110
+  Receive Bank Details -> col=21 (3420,115) relY=110
+  Settlement Complete -> col=22 (3580,25) relY=20
+  Set Renewal Reminder -> col=23 (3740,25) relY=20
+  Wait for Renewal Period -> col=24 (3900,25) relY=20
+  Renewal Required? -> col=25 (4060,25) relY=20
+  End Success -> col=26 (4220,25) relY=20
+  Visa Application Form (DO from Complete Visa Application Form) -> (630,545) maxBottomRelY=530
+  Passport Photo (DO from Obtain Passport Photo 35x45mm) -> (630,545) maxBottomRelY=530
+  Health Insurance Policy (DO from Arrange Travel Health Insurance) -> (630,545) maxBottomRelY=530
+  Financial Documents (DO from Gather Financial Proof) -> (630,545) maxBottomRelY=530
+  Employment Contract (DO from Obtain Employment Contract) -> (630,545) maxBottomRelY=530
+  Valid Passport (DO from Check Passport Validity) -> (950,545) maxBottomRelY=530
+  Rental Contract (DO from Sign Rental Contract) -> (3030,545) maxBottomRelY=530
+  Meldezettel (DO from Register Residence Meldezettel) -> (3190,545) maxBottomRelY=530
+
+[Austrian Representation] Lane bounds: 637-851
+  [maxElementBottomRelY=170]
+  Receive Application -> col=8 (1340,657) relY=20
+  Verify Documents Complete? -> col=9 (1500,657) relY=20
+  Request Additional Documents -> col=9 (1500,747) relY=110
+  Forward to MA35 -> col=10 (1660,657) relY=20
+  Application Package (DO from Receive Application) -> (1430,817) maxBottomRelY=170
+
+[Immigration Authority (MA35)] Lane bounds: 909-1589
+  [maxElementBottomRelY=170]
+  Process Application -> col=11 (1820,929) relY=20
+  Check Eligibility Criteria -> col=12 (1980,929) relY=20
+  Application Approved? -> col=13 (2140,929) relY=20
+  Issue Rejection Notice -> col=13 (2140,1019) relY=110
+  Issue RWR Card -> col=14 (2300,929) relY=20
+  Notify Applicant -> col=15 (2460,929) relY=20
+  End Rejected -> col=14 (2300,1019) relY=110
+  RWR Card (DO from Issue RWR Card) -> (2230,1089) maxBottomRelY=170
+
+[Service Providers] Lane bounds: 1589-1809
+  [maxElementBottomRelY=80]
+  Open Bank Account -> col=20 (3260,1609) relY=20
+  Bank Account Details (DO from Open Bank Account) -> (3510,1679) maxBottomRelY=80
+
+
+[10] Repositioned: 52/52
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 49 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 16
+
+==================================================================
+COMPLETE: WorkAndLiveInAustria_9112
+==================================================================
+Lanes: 4 | Elements: 41 | Data: 11 | Flows: 49 | DataAssoc: 16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 8
+======================================================================

@@ -1,0 +1,126 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN STORAGE MANAGEMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   20923
+Process Name:   StorageManagement_20923
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: StorageManagement_20923
+[2] Lanes: System, Warehouse, Procurement
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] System lane: 7 elements
+[4] Warehouse lane: 7 elements
+[5] Procurement lane: 5 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: StorageManagement_20923
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 7/19 | Missing: Withdraw fro, Parallel Spl, Request Cour, Pack Product, Parallel Joi, Ship Order, Order Shippe, Reorder from, Receive Prod, Wait > 10 da, Demand Penal, Penalty Merg
+  [Attempt 2] Found: 7/19 | Missing: Withdraw fro, Parallel Spl, Request Cour, Pack Product, Parallel Joi, Ship Order, Order Shippe, Reorder from, Receive Prod, Wait > 10 da, Demand Penal, Penalty Merg
+  [Attempt 3] Found: 7/19 | Missing: Withdraw fro, Parallel Spl, Request Cour, Pack Product, Parallel Joi, Ship Order, Order Shippe, Reorder from, Receive Prod, Wait > 10 da, Demand Penal, Penalty Merg
+  [Attempt 4] Found: 7/19 | Missing: Withdraw fro, Parallel Spl, Request Cour, Pack Product, Parallel Joi, Ship Order, Order Shippe, Reorder from, Receive Prod, Wait > 10 da, Demand Penal, Penalty Merg
+  [Attempt 5] Found: 7/19 | Missing: Withdraw fro, Parallel Spl, Request Cour, Pack Product, Parallel Joi, Ship Order, Order Shippe, Reorder from, Receive Prod, Wait > 10 da, Demand Penal, Penalty Merg
+  [Attempt 5] TIMEOUT - 7/19 elements
+
+[10] WARNING: 7/19 elements ready after 250ms
+         Missing: Withdraw from Stock, Parallel Split, Request Courier, Pack Products, Parallel Join, Ship Order, Order Shipped, Reorder from Wholesaler, Receive Product, Wait > 10 days?, Demand Penalty, Penalty Merge
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Withdraw from Stock -> Y=167 (Warehouse): OK
+  [Unmask] Parallel Split -> Y=167 (Warehouse): OK
+  [Unmask] Request Courier -> Y=167 (Warehouse): OK
+  [Unmask] Pack Products -> Y=167 (Warehouse): OK
+  [Unmask] Parallel Join -> Y=167 (Warehouse): OK
+  [Unmask] Ship Order -> Y=167 (Warehouse): OK
+  [Unmask] Order Shipped -> Y=167 (Warehouse): OK
+  [Unmask] Reorder from Wholesaler -> Y=267 (Procurement): OK
+  [Unmask] Receive Product -> Y=267 (Procurement): OK
+  [Unmask] Wait > 10 days? -> Y=267 (Procurement): OK
+  [Unmask] Demand Penalty -> Y=267 (Procurement): OK
+  [Unmask] Penalty Merge -> Y=267 (Procurement): OK
+
+[12] Manual unmask: 12 elements unmasked
+[13] All elements now available
+
+  Lanes: System(5-117); Warehouse(117-244); Procurement(244-344)
+  Elements: Start=Y16, Read Order=Y20, Check Stoc=Y25, In Stock?=Y30, Reorder fr=Y267, Withdraw f=Y167, Receive Pr=Y267, Register i=Y35, Wait > 10 =Y267, Demand Pen=Y267, Order Comp=Y40, Penalty Me=Y267, Select Nex=Y45, Parallel S=Y167, Pack Produ=Y167, Request Co=Y167, Parallel J=Y167, Ship Order=Y167, Order Ship=Y167
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] System centerY = 38
+[15] Warehouse centerY = 157
+[16] Procurement centerY = 271
+
+[17] System/Start -> (60,38) 33x33
+[18] System/Read Order -> (190,38) 110x55
+[19] System/Check Stock -> (320,38) 110x55
+[20] System/In Stock? -> (450,38) 40x40
+[21] Procurement/Reorder from Wholesaler -> (580,271) 110x55 *** LANE CHANGED ***
+         Before: Lanes: System(5-117); Warehouse(117-244); Procurement(244-344)
+         After:  Lanes: System(5-117); Warehouse(117-244); Procurement(244-360)
+[22] Warehouse/Withdraw from Stock -> (580,157) 110x55
+[23] Procurement/Receive Product -> (710,271) 110x55
+[24] System/Register in Stock -> (840,38) 110x55
+[25] Procurement/Wait > 10 days? -> (840,271) 40x40
+[26] Procurement/Demand Penalty -> (970,271) 110x55
+[27] System/Order Complete? -> (970,38) 40x40
+[28] Procurement/Penalty Merge -> (1100,271) 40x40
+[29] System/Select Next Product -> (1100,38) 110x55
+[30] Warehouse/Parallel Split -> (1230,157) 40x40
+[31] Warehouse/Pack Products -> (1360,187) 110x55 *** LANE CHANGED ***
+         Before: Lanes: System(5-117); Warehouse(117-244); Procurement(244-360)
+         After:  Lanes: System(5-117); Warehouse(117-253); Procurement(253-369)
+[32] Warehouse/Request Courier -> (1360,127) 110x55 *** LANE CHANGED ***
+         Before: Lanes: System(5-117); Warehouse(117-253); Procurement(253-369)
+         After:  Lanes: System(4-116); Warehouse(116-253); Procurement(253-369)
+[33] Warehouse/Parallel Join -> (1490,157) 40x40
+[34] Warehouse/Ship Order -> (1620,157) 110x55
+[35] Warehouse/Order Shipped -> (1750,157) 33x33
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[36] Created 22 sequence flows
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: System(4-116); Warehouse(116-253); Procurement(253-369)
+  Elements: Start=Y37, Read Order=Y37, Check Stoc=Y37, In Stock?=Y37, Reorder fr=Y270, Withdraw f=Y156, Receive Pr=Y270, Register i=Y37, Wait > 10 =Y270, Demand Pen=Y270, Order Comp=Y37, Penalty Me=Y270, Select Nex=Y37, Parallel S=Y156, Pack Produ=Y186, Request Co=Y127, Parallel J=Y157, Ship Order=Y157, Order Ship=Y157
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  StorageManagement_20923
+Lanes:    3
+Elements: 19 (19 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=19,gateways=6,flows=22,data=0,data_assoc=0
+======================================================================

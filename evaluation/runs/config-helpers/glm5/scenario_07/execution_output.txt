@@ -1,0 +1,83 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: TravelBookingProcess_20650
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TravelBookingProcess_20650
+[2] Lanes: Customer, Booking System, Travel Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 8 elements
+[4] Booking System: 5 elements
+[5] Travel Company: 1 elements
+
+  Total: 14 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: TravelBookingProcess_20650
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Search Ticket -> Y=55: OK
+  [Unmask] Select Route -> Y=55: OK
+  [Unmask] Provide Details -> Y=55: OK
+  [Unmask] Complete Journey -> Y=55: OK
+  [Unmask] Provide Feedback -> Y=55: OK
+  [Unmask] Feedback? -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Search Ticket -> col=1 (230,25) relY=20
+  Select Route -> col=2 (380,25) relY=20
+  Provide Details -> col=3 (530,25) relY=20
+  Complete Journey -> col=9 (1430,25) relY=20
+  Provide Feedback -> col=11 (1730,25) relY=20
+  Feedback? -> col=10 (1580,25) relY=20
+  End -> col=12 (1880,25) relY=20
+
+[Booking System] Lane bounds: 132-232
+  [maxElementBottomRelY=80]
+  Fork -> col=5 (830,152) relY=20
+  Join -> col=7 (1130,152) relY=20
+  Generate Ticket -> col=4 (680,152) relY=20
+  Send Ticket -> col=6 (980,152) relY=20
+  Send Reminders -> col=8 (1280,152) relY=20
+
+[Travel Company] Lane bounds: 232-332
+  [maxElementBottomRelY=80]
+  Update Inventory -> col=6 (980,252) relY=20
+
+
+[8] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 15 sequence flows
+
+==================================================================
+COMPLETE: TravelBookingProcess_20650
+==================================================================
+Lanes: 3 | Elements: 14 | Flows: 15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=3,flows=15,data=0,data_assoc=0
+======================================================================

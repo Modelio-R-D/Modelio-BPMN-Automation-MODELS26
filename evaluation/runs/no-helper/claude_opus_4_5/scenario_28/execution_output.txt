@@ -1,0 +1,126 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INTERNSHIP PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   80783
+Process Name:   Internship_80783
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Internship_80783
+[2] Lanes: Applicant, Platform, Company, Social Media
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant lane: 11 elements
+[4] Platform lane: 8 elements
+[5] Company lane: 4 elements
+[6] Social Media lane: 6 elements
+
+  Total elements: 29
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: Internship_80783
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 19/29 | Missing: Send Offer, Company Upda, Company Upda, Company Upda, Tweet Split
+  [Attempt 2] Found: 19/29 | Missing: Send Offer, Company Upda, Company Upda, Company Upda, Tweet Split
+  [Attempt 3] Found: 19/29 | Missing: Send Offer, Company Upda, Company Upda, Company Upda, Tweet Split
+  [Attempt 4] Found: 19/29 | Missing: Send Offer, Company Upda, Company Upda, Company Upda, Tweet Split
+  [Attempt 5] Found: 19/29 | Missing: Send Offer, Company Upda, Company Upda, Company Upda, Tweet Split
+  [Attempt 5] TIMEOUT - 19/29 elements
+
+[11] WARNING: 19/29 elements ready
+
+[12] Trying manual unmask...
+
+  [Unmask] Send Offer -> Y=272 (Company): OK
+  [Unmask] Company Update 1 -> Y=272 (Company): OK
+  [Unmask] Company Update 2 -> Y=272 (Company): OK
+  [Unmask] Company Update 3 -> Y=272 (Company): OK
+  [Unmask] Tweet Split -> Y=372 (Social Media): OK
+  [Unmask] Tweet Friend 1 -> Y=372 (Social Media): OK
+  [Unmask] Tweet Friend 2 -> Y=372 (Social Media): OK
+  [Unmask] Tweet Friend 3 -> Y=372 (Social Media): OK
+  [Unmask] Tweet Join -> Y=372 (Social Media): OK
+  [Unmask] End -> Y=372 (Social Media): OK
+
+[13] Manual unmask: 10 elements
+
+  Lanes: Applicant(5-122); Platform(122-222); Company(222-329); Social Media(329-449)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Applicant centerY = 40
+[15] Platform centerY = 149
+[16] Company centerY = 252
+[17] Social Media centerY = 366
+
+[18] Applican/Start -> (60,40)
+[19] Applican/Enter Topic -> (190,40)
+[20] Applican/Enter Budget -> (320,40)
+[21] Applican/Enter Experienc -> (450,40)
+[22] Applican/Enter Hobbies -> (580,40)
+[23] Platform/Submit Profile -> (710,149)
+[24] Company/Send Offer -> (840,252)
+[25] Platform/Wait Events -> (840,149)
+[26] Platform/Offer Arrived -> (970,149)
+[27] Applican/Review Offer -> (970,40)
+[28] Applican/Accept? -> (1100,40)
+[29] Platform/Invalidate Offe -> (1230,149)
+[30] Platform/Start Internshi -> (1360,149)
+[31] Company/Company Update  -> (1490,252)
+[32] Platform/Status Split -> (1490,149)
+[33] Applican/Write Update 1 -> (1490,40)
+[34] Company/Company Update  -> (1620,252)
+[35] Applican/Write Update 2 -> (1620,40)
+[36] Company/Company Update  -> (1750,252)
+[37] Applican/Write Update 3 -> (1750,40)
+[38] Platform/Status Join -> (1880,149)
+[39] Platform/Complete Intern -> (2010,149)
+[40] Applican/Select Friends -> (2010,40)
+[41] Social M/Tweet Split -> (2140,366)
+[42] Social M/Tweet Friend 1 -> (2270,326)
+[43] Social M/Tweet Friend 2 -> (2270,366)
+[44] Social M/Tweet Friend 3 -> (2270,406)
+[45] Social M/Tweet Join -> (2400,366)
+[46] Social M/End -> (2530,366)
+
+  Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[47] Created 32 sequence flows
+[48] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(-13-104); Platform(104-208); Company(208-315); Social Media(315-472)
+
+[49] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Internship_80783
+Lanes:    4
+Elements: 29 (29 in diagram)
+Flows:    32
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=29,gateways=6,flows=32,data=0,data_assoc=0
+======================================================================

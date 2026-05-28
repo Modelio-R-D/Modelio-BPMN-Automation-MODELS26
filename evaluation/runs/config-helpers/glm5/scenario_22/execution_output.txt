@@ -1,0 +1,89 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SubrogationProcess_34429
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubrogationProcess_34429
+[2] Lanes: Insurance Clerk
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Insurance Clerk: 16 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: SubrogationProcess_34429
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Send Payment Request=0, End - No Recourse=100
+  [Auto-stack] col 6: Money Received=0, Disagreement Received=90, Deadline Reached=180
+  [Auto-stack] col 7: Make Booking=0, Check Reasoning=100
+  [Auto-stack] col 8: Insurant Right?=100, Forward to Collection=200, End - Case Closed=180
+[Insurance Clerk] Lane bounds: 5-205
+  [Unmask] Start -> Y=105: OK
+  [Unmask] Check Case -> Y=105: OK
+  [Unmask] Recourse Possible? -> Y=105: OK
+  [Unmask] Send Payment Request -> Y=105: OK
+  [Unmask] Create Reminder -> Y=105: OK
+  [Unmask] Wait for Response -> Y=105: OK
+  [Unmask] Money Received -> Y=105: OK
+  [Unmask] Disagreement Received -> Y=105: OK
+  [Unmask] Deadline Reached -> Y=105: OK
+  [Unmask] Make Booking -> Y=105: OK
+  [Unmask] Check Reasoning -> Y=105: OK
+  [Unmask] Insurant Right? -> Y=105: OK
+  [Unmask] Forward to Collection -> Y=105: OK
+  [Unmask] End - Case Closed -> Y=105: OK
+  [Unmask] End - No Recourse -> Y=105: OK
+  [Unmask] End - Collected -> Y=105: OK
+  [maxElementBottomRelY=280]
+  Start -> col=0 (80,25) relY=20
+  Check Case -> col=1 (230,25) relY=20
+  Recourse Possible? -> col=2 (380,25) relY=20
+  Send Payment Request -> col=3 (530,25) relY=20
+  Create Reminder -> col=4 (680,25) relY=20
+  Wait for Response -> col=5 (830,25) relY=20
+  Money Received -> col=6 (980,25) relY=20
+  Disagreement Received -> col=6 (980,115) relY=110
+  Deadline Reached -> col=6 (980,205) relY=200
+  Make Booking -> col=7 (1130,25) relY=20
+  Check Reasoning -> col=7 (1130,125) relY=120
+  Insurant Right? -> col=8 (1280,125) relY=120
+  Forward to Collection -> col=8 (1280,225) relY=220
+  End - Case Closed -> col=8 (1280,205) relY=200
+  End - No Recourse -> col=3 (530,125) relY=120
+  End - Collected -> col=9 (1430,225) relY=220
+
+
+[6] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 17 sequence flows
+
+==================================================================
+COMPLETE: SubrogationProcess_34429
+==================================================================
+Lanes: 1 | Elements: 16 | Flows: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=16,gateways=3,flows=17,data=0,data_assoc=0
+======================================================================

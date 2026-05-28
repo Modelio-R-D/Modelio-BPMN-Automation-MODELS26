@@ -1,0 +1,87 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN VACATION REQUEST PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   68443
+Process Name:   VacationRequest_68443
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: VacationRequest_68443
+[2] Lanes: Employee, Supervisor, HR Representative
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee lane: 4 elements
+[4] Supervisor lane: 2 elements
+[5] HR Representative lane: 2 elements
+
+  Total elements: 8
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: VacationRequest_68443
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 8 elements ready
+
+[10] SUCCESS: All 8 elements ready in 50ms
+
+  Lanes: Employee(5-105); Supervisor(105-205); HR Representative(205-429)
+  Elements: Vacation R=Y16, Submit Req=Y20, Review Req=Y116, Approved?=Y116, Review Rej=Y25, Complete H=Y216, Request Re=Y30, Vacation A=Y216
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Employee centerY = 32
+[12] Supervisor centerY = 132
+[13] HR Representative centerY = 294
+
+[14] Employee/Vacation Request -> (80,32) 33x33
+[15] Employee/Submit Request -> (230,32) 120x60
+[16] Supervisor/Review Request -> (380,132) 120x60
+[17] Supervisor/Approved? -> (530,132) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Employee(5-105); Supervisor(105-205); HR Representative(205-429)
+         After:  Lanes: Employee(5-105); Supervisor(105-209); HR Representative(209-433)
+[18] Employee/Review Rejection -> (530,32) 120x60
+[19] HR Representative/Complete HR Procedures -> (680,294) 120x60
+[20] Employee/Request Rejected -> (680,32) 33x33
+[21] HR Representative/Vacation Approved -> (830,294) 33x33
+
+  Repositioned: 8/8
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[22] Created 7 sequence flows
+[23] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-105); Supervisor(105-209); HR Representative(209-433)
+  Elements: Vacation R=Y32, Submit Req=Y32, Review Req=Y132, Approved?=Y132, Review Rej=Y32, Complete H=Y294, Request Re=Y32, Vacation A=Y294
+
+[24] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  VacationRequest_68443
+Lanes:    3
+Elements: 8 (8 in diagram)
+Flows:    7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=8,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

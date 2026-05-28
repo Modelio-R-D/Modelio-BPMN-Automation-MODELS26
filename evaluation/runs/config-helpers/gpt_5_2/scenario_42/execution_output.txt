@@ -1,0 +1,84 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Service for Your Fridge_47652
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Service for Your Fridge_47652
+[2] Lanes: Customer, Central Service Center, Service Facility
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 7 elements
+[4] Central Service Center: 3 elements
+[5] Service Facility: 11 elements
+
+  Total: 21 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Service for Your Fridge_47652
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 14: Order parts=0, Repair fridge=90
+  [Auto-stack] col 15: Set follow-up appointment=0, Send completion notice=90
+[Customer] Lane bounds: 5-115
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Describe symptoms -> col=1 (230,25) relY=20
+  Send request -> col=2 (380,25) relY=20
+  Receive appointment -> col=9 (1430,25) relY=20
+  Confirm fridge OK -> col=16 (2480,25) relY=20
+  Rate service facility -> col=17 (2630,25) relY=20
+  End -> col=18 (2780,25) relY=20
+
+[Central Service Center] Lane bounds: 115-215
+  [maxElementBottomRelY=80]
+  Receive request -> col=3 (530,135) relY=20
+  Select service facility -> col=4 (680,135) relY=20
+  Send job to facility -> col=5 (830,135) relY=20
+
+[Service Facility] Lane bounds: 215-419
+  [maxElementBottomRelY=170]
+  Receive job -> col=6 (980,235) relY=20
+  Set appointment -> col=7 (1130,235) relY=20
+  Notify customer -> col=8 (1280,235) relY=20
+  Wait until appointment -> col=10 (1580,235) relY=20
+  Arrive on site -> col=11 (1730,235) relY=20
+  Inspect fridge -> col=12 (1880,235) relY=20
+  Need additional parts? -> col=13 (2030,235) relY=20
+  Order parts -> col=14 (2180,235) relY=20
+  Repair fridge -> col=14 (2180,325) relY=110
+  Set follow-up appointment -> col=15 (2330,235) relY=20
+  Send completion notice -> col=15 (2330,325) relY=110
+
+
+[8] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 21 sequence flows
+
+==================================================================
+COMPLETE: Service for Your Fridge_47652
+==================================================================
+Lanes: 3 | Elements: 21 | Flows: 21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=1,flows=21,data=0,data_assoc=0
+======================================================================

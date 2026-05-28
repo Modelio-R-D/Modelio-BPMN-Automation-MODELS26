@@ -1,0 +1,109 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN VACATION REQUEST PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   28512
+Process Name:   VacationRequest_28512
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: VacationRequest_28512
+[2] Lanes: Employee, Supervisor, Human Resources
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee lane: 4 elements
+[4] Supervisor lane: 4 elements
+[5] Human Resources lane: 3 elements
+
+  Total elements: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: VacationRequest_28512
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/11 | Missing: Request Init, Submit Vacat, Review Rejec, Request Clos, Receive Requ, Review Reque, Decision, Send Rejecti, Receive Appr, Complete Pro, Vacation App
+  [Attempt 2] Found: 0/11 | Missing: Request Init, Submit Vacat, Review Rejec, Request Clos, Receive Requ, Review Reque, Decision, Send Rejecti, Receive Appr, Complete Pro, Vacation App
+  [Attempt 3] Found: 0/11 | Missing: Request Init, Submit Vacat, Review Rejec, Request Clos, Receive Requ, Review Reque, Decision, Send Rejecti, Receive Appr, Complete Pro, Vacation App
+  [Attempt 3] TIMEOUT - 0/11 elements
+
+[10] WARNING: 0/11 elements ready after 150ms
+         Missing: Request Initiated, Submit Vacation Request, Review Rejection, Request Closed, Receive Request, Review Request, Decision, Send Rejection, Receive Approval, Complete Procedures, Vacation Approved
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Request Initiated -> Y=55 (Employee): OK
+  [Unmask] Submit Vacation Request -> Y=55 (Employee): OK
+  [Unmask] Review Rejection -> Y=55 (Employee): OK
+  [Unmask] Request Closed -> Y=55 (Employee): OK
+  [Unmask] Receive Request -> Y=155 (Supervisor): OK
+  [Unmask] Review Request -> Y=155 (Supervisor): OK
+  [Unmask] Decision -> Y=155 (Supervisor): OK
+  [Unmask] Send Rejection -> Y=155 (Supervisor): OK
+  [Unmask] Receive Approval -> Y=255 (Human Resources): OK
+  [Unmask] Complete Procedures -> Y=255 (Human Resources): OK
+  [Unmask] Vacation Approved -> Y=255 (Human Resources): OK
+
+[12] Manual unmask: 11 elements unmasked
+[13] All elements now available
+
+  Lanes: Employee(5-125); Supervisor(125-232); Human Resources(232-395)
+  Elements: Request In=Y55, Submit Vac=Y55, Receive Re=Y155, Review Req=Y155, Decision=Y155, Receive Ap=Y255, Review Rej=Y55, Send Rejec=Y155, Complete P=Y255, Request Cl=Y55, Vacation A=Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Employee centerY = 42
+[15] Supervisor centerY = 155
+[16] Human Resources centerY = 290
+
+[17] Employee/Request Initiated -> (80,42) 33x33
+[18] Employee/Submit Vacation Request -> (230,42) 120x60
+[19] Supervisor/Receive Request -> (380,155) 120x60
+[20] Supervisor/Review Request -> (530,155) 120x60
+[21] Supervisor/Decision -> (680,155) 40x40
+[22] Human Resources/Receive Approval -> (830,290) 120x60
+[23] Employee/Review Rejection -> (830,42) 120x60
+[24] Supervisor/Send Rejection -> (830,155) 120x60
+[25] Human Resources/Complete Procedures -> (980,290) 120x60
+[26] Employee/Request Closed -> (980,42) 33x33
+[27] Human Resources/Vacation Approved -> (1130,290) 33x33
+
+  Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[28] Created 10 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-125); Supervisor(125-232); Human Resources(232-395)
+  Elements: Request In=Y42, Submit Vac=Y42, Receive Re=Y155, Review Req=Y155, Decision=Y155, Receive Ap=Y290, Review Rej=Y42, Send Rejec=Y155, Complete P=Y290, Request Cl=Y42, Vacation A=Y290
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  VacationRequest_28512
+Lanes:    3
+Elements: 11 (11 in diagram)
+Flows:    10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=11,gateways=1,flows=10,data=0,data_assoc=0
+======================================================================

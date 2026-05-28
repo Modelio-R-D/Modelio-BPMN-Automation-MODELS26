@@ -1,0 +1,149 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Work and Live in Austria_72806
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Work and Live in Austria_72806
+[2] Lanes: Applicant, Austrian Authorities, Landlord/Bank
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 19 elements
+[4] Austrian Authorities: 10 elements
+[5] Landlord/Bank: 2 elements
+
+  Total: 31 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 9
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: Work and Live in Austria_72806
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 28: End: continue in Austria=0, End: refused / must leave=90
+  [Auto-stack] col 18: Negotiate accommodation=0, Open bank account (negotiation)=90
+[Applicant] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Check eligibility and plan stay -> Y=55: OK
+  [Unmask] Determine competent representation -> Y=55: OK
+  [Unmask] Prepare visa application package -> Y=55: OK
+  [Unmask] All required documents assembled? -> Y=55: OK
+  [Unmask] Collect missing / other evidence -> Y=55: OK
+  [Unmask] Update application package -> Y=55: OK
+  [Unmask] Submit application at representation -> Y=55: OK
+  [Unmask] Provide additional documents -> Y=55: OK
+  [Unmask] Travel to Austria -> Y=55: OK
+  [Unmask] Register address (Meldezettel) -> Y=55: OK
+  [Unmask] Settle basics in parallel -> Y=55: OK
+  [Unmask] Basics completed -> Y=55: OK
+  [Unmask] Start working and living in Austria -> Y=55: OK
+  [Unmask] Before expiry (every X months) -> Y=55: OK
+  [Unmask] Prepare renewal application -> Y=55: OK
+  [Unmask] Submit renewal to authorities -> Y=55: OK
+  [Unmask] End: continue in Austria -> Y=55: OK
+  [Unmask] End: refused / must leave -> Y=55: OK
+  [Unmask] Visa application form -> Y=55: OK
+  [Unmask] Passport (valid +3 months, 2 blank pages, issued <10y) -> Y=55: OK
+  [Unmask] Passport photo 35x45 -> Y=55: OK
+  [Unmask] Travel health insurance (EUR 30000, Schengen) -> Y=55: OK
+  [Unmask] Proof of means of subsistence -> Y=55: OK
+  [Unmask] Other evidence (reservations, invitation, return ticket, etc.) -> Y=55: OK
+  [Unmask] Additional documents -> Y=55: OK
+  [Unmask] Rot-Weiss-Rot Card -> Y=55: OK
+  [Unmask] Renewal application package -> Y=55: OK
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,25) relY=20
+  Check eligibility and plan stay -> col=1 (230,25) relY=20
+  Determine competent representation -> col=2 (380,25) relY=20
+  Prepare visa application package -> col=3 (530,25) relY=20
+  All required documents assembled? -> col=4 (680,25) relY=20
+  Collect missing / other evidence -> col=5 (830,25) relY=20
+  Update application package -> col=6 (980,25) relY=20
+  Submit application at representation -> col=7 (1130,25) relY=20
+  Provide additional documents -> col=11 (1730,25) relY=20
+  Travel to Austria -> col=15 (2330,25) relY=20
+  Register address (Meldezettel) -> col=16 (2480,25) relY=20
+  Settle basics in parallel -> col=17 (2630,25) relY=20
+  Basics completed -> col=19 (2930,25) relY=20
+  Start working and living in Austria -> col=21 (3230,25) relY=20
+  Before expiry (every X months) -> col=22 (3380,25) relY=20
+  Prepare renewal application -> col=23 (3530,25) relY=20
+  Submit renewal to authorities -> col=24 (3680,25) relY=20
+  End: continue in Austria -> col=28 (4280,25) relY=20
+  End: refused / must leave -> col=28 (4280,115) relY=110
+  Visa application form (DO from Prepare visa application package) -> (620,165) maxBottomRelY=150
+  Passport (valid +3 months, 2 blank pages, issued <10y) (DO from Prepare visa application package) -> (620,165) maxBottomRelY=150
+  Passport photo 35x45 (DO from Prepare visa application package) -> (620,165) maxBottomRelY=150
+  Travel health insurance (EUR 30000, Schengen) (DO from Prepare visa application package) -> (620,165) maxBottomRelY=150
+  Proof of means of subsistence (DO from Prepare visa application package) -> (620,165) maxBottomRelY=150
+  Other evidence (reservations, invitation, return ticket, etc.) (DO from Collect missing / other evidence) -> (920,165) maxBottomRelY=150
+  Additional documents (DO from Provide additional documents) -> (1820,165) maxBottomRelY=150
+  Rot-Weiss-Rot Card (DO from Collect Rot-Weiss-Rot Card) -> (3170,165) maxBottomRelY=150
+  Renewal application package (DO from Prepare renewal application) -> (3620,165) maxBottomRelY=150
+
+[Austrian Authorities] Lane bounds: 257-357
+  [Unmask] Review application -> Y=307: OK
+  [Unmask] Additional documents needed? -> Y=307: OK
+  [Unmask] Request additional documents -> Y=307: OK
+  [Unmask] Review additional documents -> Y=307: OK
+  [Unmask] Decision: approved? -> Y=307: OK
+  [Unmask] Issue entry visa / approval -> Y=307: OK
+  [Unmask] Collect Rot-Weiss-Rot Card -> Y=307: OK
+  [Unmask] Review renewal -> Y=307: OK
+  [Unmask] Renewal approved? -> Y=307: OK
+  [Unmask] Issue renewed Rot-Weiss-Rot Card -> Y=307: OK
+  [maxElementBottomRelY=80]
+  Review application -> col=8 (1280,277) relY=20
+  Additional documents needed? -> col=9 (1430,277) relY=20
+  Request additional documents -> col=10 (1580,277) relY=20
+  Review additional documents -> col=12 (1880,277) relY=20
+  Decision: approved? -> col=13 (2030,277) relY=20
+  Issue entry visa / approval -> col=14 (2180,277) relY=20
+  Collect Rot-Weiss-Rot Card -> col=20 (3080,277) relY=20
+  Review renewal -> col=25 (3830,277) relY=20
+  Renewal approved? -> col=26 (3980,277) relY=20
+  Issue renewed Rot-Weiss-Rot Card -> col=27 (4130,277) relY=20
+
+[Landlord/Bank] Lane bounds: 432-532
+  [maxElementBottomRelY=170]
+  Negotiate accommodation -> col=18 (2780,452) relY=20
+  Open bank account (negotiation) -> col=18 (2780,542) relY=110
+
+
+[9] Repositioned: 40/40
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 34 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 18
+
+==================================================================
+COMPLETE: Work and Live in Austria_72806
+==================================================================
+Lanes: 3 | Elements: 31 | Data: 9 | Flows: 34 | DataAssoc: 18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=40,gateways=6,flows=34,data=9,data_assoc=18
+======================================================================

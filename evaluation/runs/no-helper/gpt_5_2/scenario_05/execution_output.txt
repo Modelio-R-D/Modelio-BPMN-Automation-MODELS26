@@ -1,0 +1,119 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUPPLIER SELECTION AND ONBOARDING - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   65517
+Process Name:   SupplierSelection_65517
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SupplierSelection_65517
+[2] Lanes: Requesting Dept, Procurement, Supplier
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Requesting Dept lane: 2 elements
+[4] Procurement lane: 12 elements
+[5] Supplier lane: 2 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SupplierSelection_65517
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/16 | Missing: Need Identif, Define Requi, Issue RFP, Receive Prop, Evaluate Pro, Site Visit N, Conduct Site, Select Suppl, Negotiate Co, Terms Agreed, Sign Contrac, Execute Cont, Onboard Supp, Supplier Onb
+  [Attempt 2] Found: 2/16 | Missing: Need Identif, Define Requi, Issue RFP, Receive Prop, Evaluate Pro, Site Visit N, Conduct Site, Select Suppl, Negotiate Co, Terms Agreed, Sign Contrac, Execute Cont, Onboard Supp, Supplier Onb
+  [Attempt 3] Found: 2/16 | Missing: Need Identif, Define Requi, Issue RFP, Receive Prop, Evaluate Pro, Site Visit N, Conduct Site, Select Suppl, Negotiate Co, Terms Agreed, Sign Contrac, Execute Cont, Onboard Supp, Supplier Onb
+  [Attempt 3] TIMEOUT - 2/16 elements
+
+[10] WARNING: 2/16 elements ready after 150ms
+         Missing: Need Identified, Define Requirements, Issue RFP, Receive Proposals, Evaluate Proposals, Site Visit Needed?, Conduct Site Visit / Interviews, Select Supplier, Negotiate Contract, Terms Agreed?, Sign Contract, Execute Contract, Onboard Supplier, Supplier Onboarded
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Need Identified -> Y=55 (Requesting Dept): OK
+  [Unmask] Define Requirements -> Y=55 (Requesting Dept): OK
+  [Unmask] Issue RFP -> Y=155 (Procurement): OK
+  [Unmask] Receive Proposals -> Y=155 (Procurement): OK
+  [Unmask] Evaluate Proposals -> Y=155 (Procurement): OK
+  [Unmask] Site Visit Needed? -> Y=155 (Procurement): OK
+  [Unmask] Conduct Site Visit / Interviews -> Y=155 (Procurement): OK
+  [Unmask] Select Supplier -> Y=155 (Procurement): OK
+  [Unmask] Negotiate Contract -> Y=155 (Procurement): OK
+  [Unmask] Terms Agreed? -> Y=155 (Procurement): OK
+  [Unmask] Sign Contract -> Y=155 (Procurement): OK
+  [Unmask] Execute Contract -> Y=155 (Procurement): OK
+  [Unmask] Onboard Supplier -> Y=155 (Procurement): OK
+  [Unmask] Supplier Onboarded -> Y=155 (Procurement): OK
+
+[12] Manual unmask: 14 elements unmasked
+[13] All elements now available
+
+  Lanes: Requesting Dept(5-153); Procurement(153-269); Supplier(269-369)
+  Elements: Need Identifie=Y55, Define Require=Y55, Issue RFP=Y164, Submit Proposa=Y280, Receive Propos=Y164, Evaluate Propo=Y164, Site Visit Nee=Y164, Conduct Site V=Y164, Select Supplie=Y164, Negotiate Cont=Y164, Review Contrac=Y280, Terms Agreed?=Y164, Sign Contract=Y164, Execute Contra=Y164, Onboard Suppli=Y164, Supplier Onboa=Y164
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Requesting Dept centerY = 56
+[15] Procurement centerY = 188
+[16] Supplier centerY = 296
+
+[17] Requesting Dept/Need Identified -> (80,56) 33x33
+[18] Requesting Dept/Define Requirements -> (230,56) 140x60
+[19] Procurement/Issue RFP -> (380,188) 140x60
+[20] Supplier/Submit Proposal -> (530,296) 140x60
+[21] Procurement/Receive Proposals -> (680,188) 140x60
+[22] Procurement/Evaluate Proposals -> (830,188) 140x60
+[23] Procurement/Site Visit Needed? -> (980,188) 40x40
+[24] Procurement/Conduct Site Visit / Interviews -> (1130,188) 140x60
+[25] Procurement/Select Supplier -> (1280,188) 140x60
+[26] Procurement/Negotiate Contract -> (1430,188) 140x60
+[27] Supplier/Review Contract Terms -> (1580,296) 140x60 *** LANE CHANGED ***
+         Before: Lanes: Requesting Dept(5-153); Procurement(153-269); Supplier(269-369)
+         After:  Lanes: Requesting Dept(5-153); Procurement(153-269); Supplier(269-383)
+[28] Procurement/Terms Agreed? -> (1730,188) 40x40
+[29] Procurement/Sign Contract -> (1880,188) 140x60
+[30] Procurement/Execute Contract -> (2030,188) 140x60
+[31] Procurement/Onboard Supplier -> (2180,188) 140x60
+[32] Procurement/Supplier Onboarded -> (2330,188) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 17 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Requesting Dept(5-153); Procurement(153-269); Supplier(269-383)
+  Elements: Need Identifie=Y56, Define Require=Y56, Issue RFP=Y188, Submit Proposa=Y296, Receive Propos=Y188, Evaluate Propo=Y188, Site Visit Nee=Y188, Conduct Site V=Y188, Select Supplie=Y188, Negotiate Cont=Y188, Review Contrac=Y296, Terms Agreed?=Y188, Sign Contract=Y188, Execute Contra=Y188, Onboard Suppli=Y188, Supplier Onboa=Y188
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SupplierSelection_65517
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=2,flows=17,data=0,data_assoc=0
+======================================================================

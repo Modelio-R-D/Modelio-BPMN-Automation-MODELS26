@@ -1,0 +1,127 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   51465
+Process Name:   LANParty_51465
+Diagram Title:  LAN Party
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: LANParty_51465
+[2] Lanes: Host, Guests
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Host lane: created 17 elements (including gateways/events)
+[4] Guests lane: created 3 elements
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: LAN Party_51465
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/20 | Missing: Start Planni, Send Invitat, Receive Game, Prep Split, Propose Date, Send Propose, Count Confir, 8+ Available, Check Games , All Games Av, Download Mis, Prep Join, Estimate Bee, Enough Beer?, Buy Missing , Enjoy LAN Pa, End, Receive Invi, Send Game Re, Check Availa
+  [Attempt 2] Found: 0/20 | Missing: Start Planni, Send Invitat, Receive Game, Prep Split, Propose Date, Send Propose, Count Confir, 8+ Available, Check Games , All Games Av, Download Mis, Prep Join, Estimate Bee, Enough Beer?, Buy Missing , Enjoy LAN Pa, End, Receive Invi, Send Game Re, Check Availa
+  [Attempt 3] Found: 0/20 | Missing: Start Planni, Send Invitat, Receive Game, Prep Split, Propose Date, Send Propose, Count Confir, 8+ Available, Check Games , All Games Av, Download Mis, Prep Join, Estimate Bee, Enough Beer?, Buy Missing , Enjoy LAN Pa, End, Receive Invi, Send Game Re, Check Availa
+  [Attempt 3] TIMEOUT - 0/20 elements
+
+[9] WARNING: 0/20 elements ready after 150ms
+         Missing: Start Planning, Send Invitations, Receive Game List, Prep Split, Propose Date, Send Proposed Date, Count Confirmations, 8+ Available?, Check Games Owned, All Games Available?, Download Missing Games, Prep Join, Estimate Beer Needed, Enough Beer?, Buy Missing Beer, Enjoy LAN Party, End, Receive Invitation, Send Game Requests, Check Availability
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Start Planning -> Y=55 (Host): OK
+  [Unmask] Send Invitations -> Y=55 (Host): OK
+  [Unmask] Receive Game List -> Y=55 (Host): OK
+  [Unmask] Prep Split -> Y=55 (Host): OK
+  [Unmask] Propose Date -> Y=55 (Host): OK
+  [Unmask] Send Proposed Date -> Y=55 (Host): OK
+  [Unmask] Count Confirmations -> Y=55 (Host): OK
+  [Unmask] 8+ Available? -> Y=55 (Host): OK
+  [Unmask] Check Games Owned -> Y=55 (Host): OK
+  [Unmask] All Games Available? -> Y=55 (Host): OK
+  [Unmask] Download Missing Games -> Y=55 (Host): OK
+  [Unmask] Prep Join -> Y=55 (Host): OK
+  [Unmask] Estimate Beer Needed -> Y=55 (Host): OK
+  [Unmask] Enough Beer? -> Y=55 (Host): OK
+  [Unmask] Buy Missing Beer -> Y=55 (Host): OK
+  [Unmask] Enjoy LAN Party -> Y=55 (Host): OK
+  [Unmask] End -> Y=55 (Host): OK
+  [Unmask] Receive Invitation -> Y=155 (Guests): OK
+  [Unmask] Send Game Requests -> Y=155 (Guests): OK
+  [Unmask] Check Availability -> Y=155 (Guests): OK
+
+[11] Manual unmask: 20 elements unmasked
+[12] All elements now available
+
+  Lanes: Host(5-132); Guests(132-232)
+  Elements: Start Planning=Y55, Send Invitatio=Y55, Receive Invita=Y155, Send Game Requ=Y155, Prep Split=Y55, Receive Game L=Y55, Check Games Ow=Y55, Propose Date=Y55, All Games Avai=Y55, Send Proposed =Y55, Check Availabi=Y155, Download Missi=Y55, Count Confirma=Y55, 8+ Available?=Y55, Prep Join=Y55, Estimate Beer =Y55, Enough Beer?=Y55, Buy Missing Be=Y55, Enjoy LAN Part=Y55, End=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Host centerY = 45
+[14] Guests centerY = 159
+
+[15] Host/Start Planning -> (80,45) 33x33
+[16] Host/Send Invitations -> (230,45) 150x60
+[17] Guests/Receive Invitation -> (380,159) 150x60
+[18] Guests/Send Game Requests -> (530,159) 150x60
+[19] Host/Prep Split -> (680,45) 40x40
+[20] Host/Receive Game List -> (680,45) 150x60
+[21] Host/Check Games Owned -> (830,45) 150x60
+[22] Host/Propose Date -> (830,45) 150x60
+[23] Host/All Games Available? -> (980,45) 40x40
+[24] Host/Send Proposed Date -> (980,45) 150x60
+[25] Guests/Check Availability -> (1130,159) 150x60
+[26] Host/Download Missing Games -> (1130,45) 150x60
+[27] Host/Count Confirmations -> (1280,45) 150x60
+[28] Host/8+ Available? -> (1430,45) 40x40
+[29] Host/Prep Join -> (1730,45) 40x40
+[30] Host/Estimate Beer Needed -> (1880,45) 150x60
+[31] Host/Enough Beer? -> (2030,45) 40x40
+[32] Host/Buy Missing Beer -> (2180,45) 150x60
+[33] Host/Enjoy LAN Party -> (2330,45) 150x60
+[34] Host/End -> (2480,45) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 23 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Host(5-132); Guests(132-232)
+  Elements: Start Planning=Y45, Send Invitatio=Y45, Receive Invita=Y159, Send Game Requ=Y159, Prep Split=Y45, Receive Game L=Y45, Check Games Ow=Y45, Propose Date=Y45, All Games Avai=Y45, Send Proposed =Y45, Check Availabi=Y159, Download Missi=Y45, Count Confirma=Y45, 8+ Available?=Y45, Prep Join=Y45, Estimate Beer =Y45, Enough Beer?=Y45, Buy Missing Be=Y45, Enjoy LAN Part=Y45, End=Y45
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LANParty_51465
+Title:    LAN Party
+Lanes:    2
+Elements: 20 (20 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=20,gateways=5,flows=23,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <collaboration id="Collaboration_1">
+    <participant id="Participant_1" name="Farming Bot Game" processRef="Process_1"/>
+  </collaboration>
+  <process id="Process_1">
+    <laneSet id="LaneSet_1">
+      <lane id="Lane_1" name="Player">
+        <flowNodeRef>StartEvent_1</flowNodeRef>
+        <flowNodeRef>UserTask_1</flowNodeRef>
+        <flowNodeRef>UserTask_2</flowNodeRef>
+        <flowNodeRef>Task_1</flowNodeRef>
+        <flowNodeRef>Task_2</flowNodeRef>
+        <flowNodeRef>ParallelGateway_1</flowNodeRef>
+        <flowNodeRef>Task_3</flowNodeRef>
+        <flowNodeRef>ParallelGateway_2</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_1</flowNodeRef>
+        <flowNodeRef>Task_4</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_2</flowNodeRef>
+      </lane>
+      <lane id="Lane_2" name="Farming Bot">
+        <flowNodeRef>Task_5</flowNodeRef>
+        <flowNodeRef>Task_6</flowNodeRef>
+        <flowNodeRef>ServiceTask_1</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_3</flowNodeRef>
+        <flowNodeRef>ServiceTask_2</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_4</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_5</flowNodeRef>
+        <flowNodeRef>InclusiveGateway_1</flowNodeRef>
+        <flowNodeRef>UserTask_3</flowNodeRef>
+        <flowNodeRef>UserTask_4</flowNodeRef>
+        <flowNodeRef>InclusiveGateway_2</flowNodeRef>
+        <flowNodeRef>ServiceTask_3</flowNodeRef>
+        <flowNodeRef>ParallelGateway_3</flowNodeRef>
+        <flowNodeRef>Task_7</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_6</flowNodeRef>
+        <flowNodeRef>Task_8</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_7</flowNodeRef>
+        <flowNodeRef>ExclusiveGateway_8</flowNodeRef>
+        <flowNodeRef>ParallelGateway_4</flowNodeRef>
+        <flowNodeRef>EndEvent_1</flowNodeRef>
+      </lane>
+    </laneSet>
+    <task id="Task_1" name="Collect urgently needed resources">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <task id="Task_2" name="Collect the remained resources">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+    </task>
+    <task id="Task_3" name="Check repo for already available resources">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <task id="Task_4" name="Build tools">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </task>
+    <task id="Task_5" name="Start farming">
+      <incoming>SequenceFlow_27</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </task>
+    <task id="Task_6" name="Continue farming">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </task>
+    <task id="Task_7" name="Update list of resources">
+      <incoming>SequenceFlow_28</incoming>
+      <outgoing>SequenceFlow_33</outgoing>
+    </task>
+    <task id="Task_8" name="Wait for random natural event for some time">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </task>
+    <userTask id="UserTask_1" name="Find out wanted resources">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Read message">
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Brag to friends">
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Help with materials">
+      <incoming>SequenceFlow_37</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Reset bot">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Notify player">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Give bot a sleeping break">
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="New tools needed?">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_13</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="New milestone achieved?">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_29</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_29</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5" name="Bot finished?">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_31</outgoing>
+      <outgoing>SequenceFlow_35</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6">
+      <incoming>SequenceFlow_17</incoming>
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_7" name="RNE happened?">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+      <outgoing>SequenceFlow_27</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_8">
+      <incoming>SequenceFlow_24</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_25</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+      <outgoing>SequenceFlow_9</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_3">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+      <outgoing>SequenceFlow_28</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_4">
+      <incoming>SequenceFlow_32</incoming>
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_34</outgoing>
+    </parallelGateway>
+    <inclusiveGateway id="InclusiveGateway_1">
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_36</outgoing>
+      <outgoing>SequenceFlow_37</outgoing>
+    </inclusiveGateway>
+    <inclusiveGateway id="InclusiveGateway_2">
+      <incoming>SequenceFlow_3</incoming>
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_32</outgoing>
+    </inclusiveGateway>
+    <startEvent id="StartEvent_1" name="Farming bot creation desire">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_34</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="UserTask_4" targetRef="InclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="UserTask_3" targetRef="InclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ParallelGateway_1" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ParallelGateway_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="Task_4" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ParallelGateway_1" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_11" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ExclusiveGateway_2" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_13" name="No" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="UserTask_2" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ExclusiveGateway_4" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ServiceTask_1" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="Task_5" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="UserTask_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ServiceTask_2" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="Task_6" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="Task_8" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_23" name="Yes" sourceRef="ExclusiveGateway_7" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="ParallelGateway_3" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="ExclusiveGateway_8" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="Task_2" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_27" name="No" sourceRef="ExclusiveGateway_7" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="ParallelGateway_3" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_29" name="No" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="ServiceTask_3" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_31" name="Yes" sourceRef="ExclusiveGateway_5" targetRef="InclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="InclusiveGateway_2" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_33" sourceRef="Task_7" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_34" sourceRef="ParallelGateway_4" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_35" name="No" sourceRef="ExclusiveGateway_5" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_36" name="brag" sourceRef="InclusiveGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_37" name="help" sourceRef="InclusiveGateway_1" targetRef="UserTask_4"/>
+  </process>
+</definitions>

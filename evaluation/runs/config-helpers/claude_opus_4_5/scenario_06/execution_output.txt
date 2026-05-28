@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OrderFulfillment_89128
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_89128
+[2] Lanes: Customer, System, Warehouse, Logistics
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 8 elements
+[4] System: 4 elements
+[5] Warehouse: 3 elements
+[6] Logistics: 3 elements
+
+  Total: 18 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: OrderFulfillment_89128
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 13: Submit Feedback=0, Request Return=90
+[Customer] Lane bounds: 5-147
+  [maxElementBottomRelY=170]
+  Order Placed -> col=0 (80,25) relY=20
+  Receive Confirmation -> col=3 (530,25) relY=20
+  Receive Tracking -> col=8 (1280,25) relY=20
+  Delivery Received -> col=11 (1730,25) relY=20
+  Feedback Decision -> col=12 (1880,25) relY=20
+  Submit Feedback -> col=13 (2030,25) relY=20
+  Request Return -> col=13 (2030,115) relY=110
+  Process Complete -> col=14 (2180,25) relY=20
+  Order Details (DO from Order Placed) -> (170,185) maxBottomRelY=170
+
+[System] Lane bounds: 277-377
+  [Unmask] Generate Confirmation -> Y=327: OK
+  [Unmask] Send Confirmation -> Y=327: OK
+  [Unmask] Generate Shipping Label -> Y=327: OK
+  [Unmask] Send Tracking Info -> Y=327: OK
+  [Unmask] Order Confirmation -> Y=327: OK
+  [Unmask] Shipping Label -> Y=327: OK
+  [Unmask] Tracking Info -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Generate Confirmation -> col=1 (230,297) relY=20
+  Send Confirmation -> col=2 (380,297) relY=20
+  Generate Shipping Label -> col=5 (830,297) relY=20
+  Send Tracking Info -> col=7 (1130,297) relY=20
+  Order Confirmation (DO from Generate Confirmation) -> (470,367) maxBottomRelY=80
+  Shipping Label (DO from Generate Shipping Label) -> (920,367) maxBottomRelY=80
+  Tracking Info (DO from Send Tracking Info) -> (1220,367) maxBottomRelY=80
+
+[Warehouse] Lane bounds: 459-559
+  [Unmask] Pick Items -> Y=509: OK
+  [Unmask] Pack Order -> Y=509: OK
+  [Unmask] Handover to Logistics -> Y=509: OK
+  [maxElementBottomRelY=80]
+  Pick Items -> col=4 (680,479) relY=20
+  Pack Order -> col=5 (830,479) relY=20
+  Handover to Logistics -> col=6 (980,479) relY=20
+
+[Logistics] Lane bounds: 566-862
+  [maxElementBottomRelY=80]
+  Receive Shipment -> col=7 (1130,586) relY=20
+  Monitor Shipment -> col=9 (1430,586) relY=20
+  Deliver to Customer -> col=10 (1580,586) relY=20
+
+
+[10] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 19 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setStartingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[12] Data associations: 7
+
+==================================================================
+COMPLETE: OrderFulfillment_89128
+==================================================================
+Lanes: 4 | Elements: 18 | Data: 4 | Flows: 19 | DataAssoc: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

@@ -1,0 +1,86 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Order Fulfillment Process_19578
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Order Fulfillment Process_19578
+[2] Lanes: Customer, System, Warehouse, Logistics Provider
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 2 elements
+[4] System: 2 elements
+[5] Warehouse: 2 elements
+[6] Logistics Provider: 2 elements
+
+  Total: 8 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: Order Fulfillment Process_19578
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Customer] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Order Placed -> col=0 (80,25) relY=20
+  Order Complete -> col=7 (1130,25) relY=20
+
+[System] Lane bounds: 105-205
+  [Unmask] Send Tracking Info -> Y=155: OK
+  [Unmask] Order Confirmation -> Y=155: OK
+  [Unmask] Tracking Number -> Y=155: OK
+  [maxElementBottomRelY=80]
+  Generate Confirmation -> col=1 (230,125) relY=20
+  Send Tracking Info -> col=3 (530,125) relY=20
+  Order Confirmation (DO from Generate Confirmation) -> (320,195) maxBottomRelY=80
+  Tracking Number (DO from Send Tracking Info) -> (620,195) maxBottomRelY=80
+
+[Warehouse] Lane bounds: 287-387
+  [maxElementBottomRelY=80]
+  Pick and Pack Items -> col=2 (380,307) relY=20
+  Hand Over to Carrier -> col=4 (680,307) relY=20
+
+[Logistics Provider] Lane bounds: 387-487
+  [maxElementBottomRelY=80]
+  Monitor Shipment -> col=5 (830,407) relY=20
+  Deliver Package -> col=6 (980,407) relY=20
+
+
+[10] Repositioned: 10/10
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 7 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 2
+
+==================================================================
+COMPLETE: Order Fulfillment Process_19578
+==================================================================
+Lanes: 4 | Elements: 8 | Data: 2 | Flows: 7 | DataAssoc: 2
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=10,gateways=0,flows=7,data=2,data_assoc=2
+======================================================================

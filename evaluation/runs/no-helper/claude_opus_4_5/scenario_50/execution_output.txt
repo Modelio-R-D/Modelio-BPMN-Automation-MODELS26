@@ -1,0 +1,81 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CLAIM HANDLING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   27944
+Process Name:   ClaimHandling_27944
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ClaimHandling_27944
+[2] Lanes: Claims Officer, Senior Claims Officer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Officer lane: 4 elements
+[4] Senior Claims Officer lane: 2 elements
+
+  Total elements: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: ClaimHandling_27944
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 6 elements ready
+
+[9] SUCCESS: All 6 elements ready in 50ms
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regi=Y16, Examine Cl=Y20, Write Sett=Y25, Check Reco=Y142, Recommenda=Y142, Claim Hand=Y30
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[10] Claims Officer centerY = 45
+[11] Senior Claims Officer centerY = 202
+
+[12] Claims Officer/Claim Registered -> (80,45) 33x33
+[13] Claims Officer/Examine Claim -> (230,45) 120x60
+[14] Claims Officer/Write Settlement Recommendation -> (380,45) 120x60
+[15] Senior Claims Officer/Check Recommendation -> (530,202) 120x60
+[16] Senior Claims Officer/Recommendation OK? -> (680,202) 40x40
+[17] Claims Officer/Claim Handled -> (830,45) 33x33
+
+  Repositioned: 6/6
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[18] Created 6 sequence flows
+[19] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regi=Y45, Examine Cl=Y45, Write Sett=Y45, Check Reco=Y202, Recommenda=Y202, Claim Hand=Y45
+
+[20] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ClaimHandling_27944
+Lanes:    2
+Elements: 6 (6 in diagram)
+Flows:    6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=6,gateways=1,flows=6,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,101 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Chainsaw Production_42278
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Chainsaw Production_42278
+[2] Lanes: Customer, Production
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] Production: 14 elements
+
+  Total: 19 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Chainsaw Production_42278
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Order Guide Bar=0, Order Chain=90, Order Engine=180, Order Handle=270, Order Safety Guard=360
+  [Auto-stack] col 11: Produce Remaining=0, Handle Rejection=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Specify Properties -> Y=55: OK
+  [Unmask] Evaluate First Saw -> Y=55: OK
+  [Unmask] Satisfied? -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Saw Specifications -> Y=55: OK
+  [Unmask] Customer Feedback -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Specify Properties -> col=1 (230,25) relY=20
+  Evaluate First Saw -> col=9 (1430,25) relY=20
+  Satisfied? -> col=10 (1580,25) relY=20
+  End -> col=13 (2030,25) relY=20
+  Saw Specifications (DO from Specify Properties) -> (320,95) maxBottomRelY=80
+  Customer Feedback (DO from Evaluate First Saw) -> (1520,95) maxBottomRelY=80
+
+[Production] Lane bounds: 187-352
+  [Unmask] Quality Report -> Y=269: OK
+  [Unmask] First Chainsaw -> Y=269: OK
+  [Unmask] Final Order -> Y=269: OK
+  [maxElementBottomRelY=440]
+  Order Parts -> col=2 (380,207) relY=20
+  Order Guide Bar -> col=3 (530,207) relY=20
+  Order Chain -> col=3 (530,297) relY=110
+  Order Engine -> col=3 (530,387) relY=200
+  Order Handle -> col=3 (530,477) relY=290
+  Order Safety Guard -> col=3 (530,567) relY=380
+  Parts Arrived -> col=4 (680,207) relY=20
+  Inspect Parts -> col=5 (830,207) relY=20
+  Assemble First Saw -> col=6 (980,207) relY=20
+  Send Update -> col=7 (1130,207) relY=20
+  Ship First Saw -> col=8 (1280,207) relY=20
+  Produce Remaining -> col=11 (1730,207) relY=20
+  Ship Final Order -> col=12 (1880,207) relY=20
+  Handle Rejection -> col=11 (1730,297) relY=110
+  Quality Report (DO from Inspect Parts) -> (920,637) maxBottomRelY=440
+  First Chainsaw (DO from Assemble First Saw) -> (1070,637) maxBottomRelY=440
+  Final Order (DO from Produce Remaining) -> (1820,637) maxBottomRelY=440
+
+
+[8] Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 9
+
+==================================================================
+COMPLETE: Chainsaw Production_42278
+==================================================================
+Lanes: 2 | Elements: 19 | Data: 5 | Flows: 23 | DataAssoc: 9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=24,gateways=3,flows=23,data=5,data_assoc=9
+======================================================================

@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: EmployeeDevelopmentAndPromotion_20442
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EmployeeDevelopmentAndPromotion_20442
+[2] Lanes: Employee, Manager, Supervisor, HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee: 6 elements
+[4] Manager: 3 elements
+[5] Supervisor: 3 elements
+[6] HR: 5 elements
+
+  Total: 17 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: EmployeeDevelopmentAndPromotion_20442
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Employee] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Identify development needs -> Y=55: OK
+  [Unmask] Execute development activities -> Y=55: OK
+  [Unmask] Continue skill enhancement -> Y=55: OK
+  [Unmask] Transition into new role -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Identify development needs -> col=1 (230,25) relY=20
+  Execute development activities -> col=4 (680,25) relY=20
+  Continue skill enhancement -> col=7 (1130,25) relY=20
+  Transition into new role -> col=11 (1730,25) relY=20
+  End -> col=12 (1880,25) relY=20
+
+[Manager] Lane bounds: 125-225
+  [Unmask] Draft personal development plan -> Y=175: OK
+  [Unmask] Consider promotion or new role -> Y=175: OK
+  [Unmask] Revise development plan -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Draft personal development plan -> col=2 (380,145) relY=20
+  Consider promotion or new role -> col=7 (1130,145) relY=20
+  Revise development plan -> col=10 (1580,145) relY=20
+
+[Supervisor] Lane bounds: 232-441
+  [maxElementBottomRelY=80]
+  Provide feedback and evaluation -> col=5 (830,252) relY=20
+  Milestones reached? -> col=6 (980,252) relY=20
+  Ongoing feedback -> col=8 (1280,252) relY=20
+
+[HR] Lane bounds: 441-834
+  [maxElementBottomRelY=80]
+  Co-create plan with HR -> col=3 (530,461) relY=20
+  HR formal performance review -> col=8 (1280,461) relY=20
+  Promotion approved? -> col=9 (1430,461) relY=20
+  Finalize promotion and adjust compensation -> col=10 (1580,461) relY=20
+  Align revised plan with HR -> col=11 (1730,461) relY=20
+
+
+[9] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 18 sequence flows
+
+==================================================================
+COMPLETE: EmployeeDevelopmentAndPromotion_20442
+==================================================================
+Lanes: 4 | Elements: 17 | Flows: 18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=17,gateways=2,flows=18,data=0,data_assoc=0
+======================================================================

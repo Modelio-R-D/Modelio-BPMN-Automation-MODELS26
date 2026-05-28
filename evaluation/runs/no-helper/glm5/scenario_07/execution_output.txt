@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TRAVEL BOOKING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   781
+Process Name:   TravelBooking_781
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TravelBooking_781
+[2] Lanes: Customer, Booking System, Travel Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 9 elements
+[4] Booking System lane: 6 elements
+[5] Travel Company lane: 1 element
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: TravelBooking_781
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 6/16 | Missing: Search Initi, Select Route, Enter Person, Enter Paymen, Complete Che, Travel Journ, Provide Feed, Submit Feedb, Journey Comp, Update Seat 
+  [Attempt 2] Found: 6/16 | Missing: Search Initi, Select Route, Enter Person, Enter Paymen, Complete Che, Travel Journ, Provide Feed, Submit Feedb, Journey Comp, Update Seat 
+  [Attempt 3] Found: 6/16 | Missing: Search Initi, Select Route, Enter Person, Enter Paymen, Complete Che, Travel Journ, Provide Feed, Submit Feedb, Journey Comp, Update Seat 
+  [Attempt 3] TIMEOUT - 6/16 elements
+
+[10] WARNING: 6/16 elements ready after 150ms
+         Missing: Search Initiated, Select Route & Schedule, Enter Personal Details, Enter Payment Details, Complete Check-in, Travel Journey, Provide Feedback?, Submit Feedback, Journey Complete, Update Seat Inventory
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Search Initiated -> Y=55 (Customer): OK
+  [Unmask] Select Route & Schedule -> Y=55 (Customer): OK
+  [Unmask] Enter Personal Details -> Y=55 (Customer): OK
+  [Unmask] Enter Payment Details -> Y=55 (Customer): OK
+  [Unmask] Complete Check-in -> Y=55 (Customer): OK
+  [Unmask] Travel Journey -> Y=55 (Customer): OK
+  [Unmask] Provide Feedback? -> Y=55 (Customer): OK
+  [Unmask] Submit Feedback -> Y=55 (Customer): OK
+  [Unmask] Journey Complete -> Y=55 (Customer): OK
+  [Unmask] Update Seat Inventory -> Y=301 (Travel Company): OK
+
+[12] Manual unmask: 10 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-132); Booking System(132-278); Travel Company(278-378)
+  Elements: Search Ini=Y55, Select Rou=Y55, Enter Pers=Y55, Enter Paym=Y55, Generate T=Y143, Fork=Y143, Send Ticke=Y143, Update Sea=Y301, Complete C=Y55, Join=Y143, Send Trave=Y143, Travel Jou=Y55, Check-in N=Y143, Provide Fe=Y55, Submit Fee=Y55, Journey Co=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 45
+[15] Booking System centerY = 182
+[16] Travel Company centerY = 305
+
+[17] Customer/Search Initiated -> (80,45) 33x33
+[18] Customer/Select Route & Schedule -> (210,45) 110x55
+[19] Customer/Enter Personal Details -> (340,45) 110x55
+[20] Customer/Enter Payment Details -> (470,45) 110x55
+[21] Booking System/Generate Ticket -> (600,182) 110x55
+[22] Booking System/Fork -> (730,182) 40x40
+[23] Booking System/Send Ticket Notification -> (860,182) 110x55
+[24] Travel Company/Update Seat Inventory -> (860,305) 110x55
+[25] Customer/Complete Check-in -> (990,45) 110x55
+[26] Booking System/Join -> (990,182) 40x40
+[27] Booking System/Send Travel Reminders -> (1120,182) 110x55
+[28] Customer/Travel Journey -> (1120,45) 110x55
+[29] Booking System/Check-in Needed? -> (1250,182) 40x40
+[30] Customer/Provide Feedback? -> (1250,45) 40x40
+[31] Customer/Submit Feedback -> (1380,45) 110x55
+[32] Customer/Journey Complete -> (1510,45) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 18 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Booking System(132-278); Travel Company(278-378)
+  Elements: Search Ini=Y45, Select Rou=Y45, Enter Pers=Y45, Enter Paym=Y45, Generate T=Y182, Fork=Y182, Send Ticke=Y182, Update Sea=Y305, Complete C=Y45, Join=Y182, Send Trave=Y182, Travel Jou=Y45, Check-in N=Y182, Provide Fe=Y45, Submit Fee=Y45, Journey Co=Y45
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TravelBooking_781
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=4,flows=18,data=0,data_assoc=0
+======================================================================

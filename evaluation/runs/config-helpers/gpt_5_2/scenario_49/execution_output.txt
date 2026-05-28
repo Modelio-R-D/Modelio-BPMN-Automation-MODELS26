@@ -1,0 +1,88 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComputerRepairProcess_58287
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComputerRepairProcess_58287
+[2] Lanes: Customer, CRS, Workshop
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 8 elements
+[4] CRS: 4 elements
+[5] Workshop: 8 elements
+
+  Total: 20 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: ComputerRepairProcess_58287
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Repair hardware=0, Configure software=90
+  [Auto-stack] col 9: Test after hardware=0, Test after software=90
+  [Auto-stack] col 10: Error after hardware?=0, Error after software?=90
+[Customer] Lane bounds: 5-120
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Bring defective computer -> col=1 (230,25) relY=20
+  Decide on costs -> col=5 (830,25) relY=20
+  Costs acceptable? -> col=6 (980,25) relY=20
+  Take computer home unrepaired -> col=7 (1130,25) relY=20
+  End (unrepaired) -> col=8 (1280,25) relY=20
+  Receive repaired computer -> col=13 (2030,25) relY=20
+  End (repaired) -> col=14 (2180,25) relY=20
+
+[CRS] Lane bounds: 120-220
+  [Unmask] Check defect -> Y=170: OK
+  [Unmask] Calculate repair cost -> Y=170: OK
+  [Unmask] Provide cost estimate -> Y=170: OK
+  [Unmask] Hand over repaired computer -> Y=170: OK
+  [maxElementBottomRelY=80]
+  Check defect -> col=2 (380,140) relY=20
+  Calculate repair cost -> col=3 (530,140) relY=20
+  Provide cost estimate -> col=4 (680,140) relY=20
+  Hand over repaired computer -> col=12 (1880,140) relY=20
+
+[Workshop] Lane bounds: 227-327
+  [maxElementBottomRelY=170]
+  Start repair (any order) -> col=7 (1130,247) relY=20
+  Repair hardware -> col=8 (1280,247) relY=20
+  Test after hardware -> col=9 (1430,247) relY=20
+  Error after hardware? -> col=10 (1580,247) relY=20
+  Configure software -> col=8 (1280,337) relY=110
+  Test after software -> col=9 (1430,337) relY=110
+  Error after software? -> col=10 (1580,337) relY=110
+  Repair complete -> col=11 (1730,247) relY=20
+
+
+[8] Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 22 sequence flows
+
+==================================================================
+COMPLETE: ComputerRepairProcess_58287
+==================================================================
+Lanes: 3 | Elements: 20 | Flows: 22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=5,flows=22,data=0,data_assoc=0
+======================================================================

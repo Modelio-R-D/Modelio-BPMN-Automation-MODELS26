@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: WorkAccidentProcess_7538
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAccidentProcess_7538
+[2] Lanes: Employee/Student, Employer/Institution, Insurance Provider
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee/Student: 7 elements
+[4] Employer/Institution: 9 elements
+[5] Insurance Provider: 8 elements
+
+  Total: 24 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: WorkAccidentProcess_7538
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Classify Accident Type=0, Not Work Accident=90
+  [Auto-stack] col 9: Prepare Report=0, Document Internally=90
+  [Auto-stack] col 13: Process Claim=0, Request More Info=90, Reject Claim=180
+[Employee/Student] Lane bounds: 5-169
+  [maxElementBottomRelY=150]
+  Accident Occurs -> col=0 (80,25) relY=20
+  Assess Severity -> col=1 (210,25) relY=20
+  Work Related? -> col=2 (340,25) relY=20
+  Classify Accident Type -> col=3 (470,25) relY=20
+  Notify Employer -> col=4 (600,25) relY=20
+  Seek Medical Attention -> col=5 (730,25) relY=20
+  Not Work Accident -> col=3 (470,115) relY=110
+  Accident Details (DO from Classify Accident Type) -> (430,165) maxBottomRelY=150
+  Medical Records (DO from Seek Medical Attention) -> (820,165) maxBottomRelY=150
+
+[Employer/Institution] Lane bounds: 257-357
+  [Unmask] Receive Notification -> Y=307: OK
+  [Unmask] Assess Incident -> Y=307: OK
+  [Unmask] Fatality or Serious? -> Y=307: OK
+  [Unmask] Report to Labour Inspect -> Y=307: OK
+  [Unmask] Incapacity 3+ Days? -> Y=307: OK
+  [Unmask] Prepare Report -> Y=307: OK
+  [Unmask] Submit to Insurance -> Y=307: OK
+  [Unmask] Document Internally -> Y=307: OK
+  [Unmask] Join Reports -> Y=307: OK
+  [Unmask] Incident Report -> Y=307: OK
+  [maxElementBottomRelY=170]
+  Receive Notification -> col=4 (600,277) relY=20
+  Assess Incident -> col=5 (730,277) relY=20
+  Fatality or Serious? -> col=6 (860,277) relY=20
+  Report to Labour Inspect -> col=7 (990,277) relY=20
+  Incapacity 3+ Days? -> col=8 (1120,277) relY=20
+  Prepare Report -> col=9 (1250,277) relY=20
+  Submit to Insurance -> col=10 (1380,277) relY=20
+  Document Internally -> col=9 (1250,367) relY=110
+  Join Reports -> col=11 (1510,277) relY=20
+  Incident Report (DO from Prepare Report) -> (1080,437) maxBottomRelY=170
+
+[Insurance Provider] Lane bounds: 529-762
+  [maxElementBottomRelY=260]
+  Receive Report -> col=10 (1380,549) relY=20
+  Validate Claim -> col=11 (1510,549) relY=20
+  Claim Valid? -> col=12 (1640,549) relY=20
+  Process Claim -> col=13 (1770,549) relY=20
+  Request More Info -> col=13 (1770,639) relY=110
+  Reject Claim -> col=13 (1770,729) relY=200
+  Notify Outcome -> col=14 (1900,549) relY=20
+  End Process -> col=15 (2030,549) relY=20
+  Insurance Claim (DO from Receive Report) -> (1340,799) maxBottomRelY=260
+
+
+[9] Repositioned: 28/28
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 27 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 7
+
+==================================================================
+COMPLETE: WorkAccidentProcess_7538
+==================================================================
+Lanes: 3 | Elements: 24 | Data: 4 | Flows: 27 | DataAssoc: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 5
+======================================================================

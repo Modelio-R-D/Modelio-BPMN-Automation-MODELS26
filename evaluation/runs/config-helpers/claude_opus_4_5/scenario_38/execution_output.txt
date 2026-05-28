@@ -1,0 +1,123 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BuildingAHouse_18786
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BuildingAHouse_18786
+[2] Lanes: You, Architect, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] You: 18 elements
+[4] Architect: 3 elements
+[5] Friends: 4 elements
+
+  Total: 25 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: BuildingAHouse_18786
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Refinement Needed?=0, Add Requirements=100
+  [Auto-stack] col 13: Wait for Delivery=0, Send Build Invites=90
+[You] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Collect Requirements -> Y=55: OK
+  [Unmask] Send to Architect -> Y=55: OK
+  [Unmask] Receive Draft -> Y=55: OK
+  [Unmask] Review Draft -> Y=55: OK
+  [Unmask] Refinement Needed? -> Y=55: OK
+  [Unmask] Add Requirements -> Y=55: OK
+  [Unmask] Create Materials List -> Y=55: OK
+  [Unmask] Categorize Materials -> Y=55: OK
+  [Unmask] Order from Stores -> Y=55: OK
+  [Unmask] Wait and Build -> Y=55: OK
+  [Unmask] Wait for Delivery -> Y=55: OK
+  [Unmask] Send Build Invites -> Y=55: OK
+  [Unmask] Sync After Build -> Y=55: OK
+  [Unmask] Send Party Invitations -> Y=55: OK
+  [Unmask] Create Attendee List -> Y=55: OK
+  [Unmask] Buy Party Snacks -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Requirements -> Y=55: OK
+  [Unmask] Final Plan -> Y=55: OK
+  [Unmask] Materials List -> Y=55: OK
+  [Unmask] Attendee List -> Y=55: OK
+  [maxElementBottomRelY=180]
+  Start -> col=0 (80,25) relY=20
+  Collect Requirements -> col=1 (210,25) relY=20
+  Send to Architect -> col=2 (340,25) relY=20
+  Receive Draft -> col=6 (860,25) relY=20
+  Review Draft -> col=7 (990,25) relY=20
+  Refinement Needed? -> col=8 (1120,25) relY=20
+  Add Requirements -> col=8 (1120,125) relY=120
+  Create Materials List -> col=9 (1250,25) relY=20
+  Categorize Materials -> col=10 (1380,25) relY=20
+  Order from Stores -> col=11 (1510,25) relY=20
+  Wait and Build -> col=12 (1640,25) relY=20
+  Wait for Delivery -> col=13 (1770,25) relY=20
+  Send Build Invites -> col=13 (1770,115) relY=110
+  Sync After Build -> col=16 (2160,25) relY=20
+  Send Party Invitations -> col=17 (2290,25) relY=20
+  Create Attendee List -> col=20 (2680,25) relY=20
+  Buy Party Snacks -> col=21 (2810,25) relY=20
+  End -> col=22 (2940,25) relY=20
+  Requirements (DO from Collect Requirements) -> (300,195) maxBottomRelY=180
+  Final Plan (DO from Review Draft) -> (1210,195) maxBottomRelY=180
+  Materials List (DO from Create Materials List) -> (1340,195) maxBottomRelY=180
+  Attendee List (DO from Create Attendee List) -> (2380,195) maxBottomRelY=180
+
+[Architect] Lane bounds: 287-419
+  [maxElementBottomRelY=80]
+  Receive Requirements -> col=3 (470,307) relY=20
+  Create Draft -> col=4 (600,307) relY=20
+  Send Draft -> col=5 (730,307) relY=20
+  Draft Plan (DO from Create Draft) -> (690,377) maxBottomRelY=80
+
+[Friends] Lane bounds: 469-569
+  [maxElementBottomRelY=80]
+  Receive Build Invite -> col=14 (1900,489) relY=20
+  Build Tree House -> col=15 (2030,489) relY=20
+  Receive Party Invite -> col=18 (2420,489) relY=20
+  Respond to Invite -> col=19 (2550,489) relY=20
+
+
+[9] Repositioned: 30/30
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 26 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 10
+
+==================================================================
+COMPLETE: BuildingAHouse_18786
+==================================================================
+Lanes: 3 | Elements: 25 | Data: 5 | Flows: 26 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

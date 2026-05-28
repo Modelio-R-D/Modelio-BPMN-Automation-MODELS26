@@ -1,0 +1,166 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Ordering in an Online Shop
+Script Version: v1.0
+Execution ID:   96797
+Process Name:   Ordering_Online_Shop_96797
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Ordering_Online_Shop_96797
+[2] Lanes: Customer, E-Shop System, Bank
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Customer / Start (addToLane=True)
+  [Add] Customer / Enter Credentials (addToLane=True)
+  [Add] E-Shop System / Check Credentials (addToLane=True)
+  [Add] E-Shop System / Login Successful? (addToLane=True)
+  [Add] Customer / Stop Shopping (addToLane=True)
+  [Add] Customer / Select Product (addToLane=True)
+  [Add] Customer / Add to Cart (addToLane=True)
+  [Add] E-Shop System / Save Product in Cart (addToLane=True)
+  [Add] Customer / More Products? (addToLane=True)
+  [Add] E-Shop System / Finish Order (addToLane=True)
+  [Add] E-Shop System / Prepare Payment and Shipment (addToLane=True)
+  [Add] Customer / Enter Payment Data (addToLane=True)
+  [Add] E-Shop System / Request Payment Authorization (addToLane=True)
+  [Add] Bank / Confirm Payment (addToLane=True)
+  [Add] Customer / Enter Shipping Address (addToLane=True)
+  [Add] Customer / Different Billing Address? (addToLane=True)
+  [Add] Customer / Enter Billing Address (addToLane=True)
+  [Add] Customer / Billing Address Done (addToLane=True)
+  [Add] E-Shop System / Prepare Shipment (addToLane=True)
+  [Add] E-Shop System / Ready to Complete? (addToLane=True)
+  [Add] E-Shop System / Complete Order (addToLane=True)
+  [Add] Customer / Order Completed (addToLane=True)
+
+[3] Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Ordering_Online_Shop_96797
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 5 attempts, 80ms interval)...
+
+  [Attempt 1] Found: 13/22 | Missing: Check Creden, Login Succes, Save Product, Finish Order, Prepare Paym, Request Paym, Prepare Ship, Ready to Com, Complete Ord
+  [Attempt 2] Found: 13/22 | Missing: Check Creden, Login Succes, Save Product, Finish Order, Prepare Paym, Request Paym, Prepare Ship, Ready to Com, Complete Ord
+  [Attempt 3] Found: 13/22 | Missing: Check Creden, Login Succes, Save Product, Finish Order, Prepare Paym, Request Paym, Prepare Ship, Ready to Com, Complete Ord
+  [Attempt 4] Found: 13/22 | Missing: Check Creden, Login Succes, Save Product, Finish Order, Prepare Paym, Request Paym, Prepare Ship, Ready to Com, Complete Ord
+  [Attempt 5] Found: 13/22 | Missing: Check Creden, Login Succes, Save Product, Finish Order, Prepare Paym, Request Paym, Prepare Ship, Ready to Com, Complete Ord
+  [Attempt 5] TIMEOUT - 13/22 elements
+
+[8] WARNING: 13/22 elements ready after 400ms
+         Missing: Check Credentials, Login Successful?, Save Product in Cart, Finish Order, Prepare Payment and Shipment, Request Payment Authorization, Prepare Shipment, Ready to Complete?, Complete Order
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Check Credentials -> Y=192 (E-Shop System): OK
+  [Unmask] Login Successful? -> Y=192 (E-Shop System): OK
+  [Unmask] Save Product in Cart -> Y=192 (E-Shop System): OK
+  [Unmask] Finish Order -> Y=192 (E-Shop System): OK
+  [Unmask] Prepare Payment and Shipment -> Y=192 (E-Shop System): OK
+  [Unmask] Request Payment Authorization -> Y=192 (E-Shop System): OK
+  [Unmask] Prepare Shipment -> Y=192 (E-Shop System): OK
+  [Unmask] Ready to Complete? -> Y=192 (E-Shop System): OK
+  [Unmask] Complete Order -> Y=192 (E-Shop System): OK
+
+[10] Manual unmask: 9 elements unmasked
+[11] All elements now available
+
+  Lanes: Customer(5-142); E-Shop System(142-279); Bank(279-424)
+  Elements: Start=Y16, Enter Creden=Y20, Check Creden=Y192, Login Succes=Y192, Select Produ=Y30, Stop Shoppin=Y25, Add to Cart=Y35, Save Product=Y192, More Product=Y40, Finish Order=Y192, Prepare Paym=Y192, Enter Paymen=Y45, Enter Shippi=Y50, Different Bi=Y55, Request Paym=Y192, Confirm Paym=Y290, Enter Billin=Y60, Billing Addr=Y65, Prepare Ship=Y192, Ready to Com=Y192, Complete Ord=Y192, Order Comple=Y70
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 50
+[13] E-Shop System centerY = 187
+[14] Bank centerY = 328
+
+[15] Customer/Start -> (80,50) 33x33
+[16] Customer/Enter Credentials -> (240,50) 150x60
+[17] E-Shop System/Check Credentials -> (400,187) 150x60
+[18] E-Shop System/Login Successful? -> (560,187) 40x40
+[19] Customer/Select Product -> (720,50) 150x60
+[20] Customer/Stop Shopping -> (720,50) 33x33
+[21] Customer/Add to Cart -> (880,50) 150x60
+[22] E-Shop System/Save Product in Cart -> (1040,187) 150x60
+[23] Customer/More Products? -> (1200,50) 40x40
+[24] E-Shop System/Finish Order -> (1360,187) 150x60
+[25] E-Shop System/Prepare Payment and Shipment -> (1520,187) 40x40
+[26] Customer/Enter Payment Data -> (1680,50) 150x60
+[27] Customer/Enter Shipping Address -> (1680,50) 150x60
+[28] Customer/Different Billing Address? -> (1840,50) 40x40
+[29] E-Shop System/Request Payment Authorization -> (1840,187) 150x60
+[30] Bank/Confirm Payment -> (2000,328) 150x60
+[31] Customer/Enter Billing Address -> (2000,50) 150x60
+[32] Customer/Billing Address Done -> (2160,50) 40x40
+[33] E-Shop System/Prepare Shipment -> (2320,187) 150x60
+[34] E-Shop System/Ready to Complete? -> (2480,187) 40x40
+[35] E-Shop System/Complete Order -> (2640,187) 150x60
+[36] Customer/Order Completed -> (2800,50) 33x33
+
+[37] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Start -> Enter Credentials
+  [Flow] Enter Credentials -> Check Credentials
+  [Flow] Check Credentials -> Login Successful?
+  [Flow] Login Successful? -> Select Product (guard=Yes)
+  [Flow] Login Successful? -> Stop Shopping (guard=No)
+  [Flow] Select Product -> Add to Cart
+  [Flow] Add to Cart -> Save Product in Cart
+  [Flow] Save Product in Cart -> More Products?
+  [Flow] More Products? -> Select Product (guard=Yes)
+  [Flow] More Products? -> Finish Order (guard=No)
+  [Flow] Finish Order -> Prepare Payment and Shipment
+  [Flow] Prepare Payment and Shipment -> Enter Payment Data
+  [Flow] Prepare Payment and Shipment -> Enter Shipping Address
+  [Flow] Enter Payment Data -> Request Payment Authorization
+  [Flow] Request Payment Authorization -> Confirm Payment
+  [Flow] Confirm Payment -> Ready to Complete?
+  [Flow] Enter Shipping Address -> Different Billing Address?
+  [Flow] Different Billing Address? -> Enter Billing Address (guard=Yes)
+  [Flow] Different Billing Address? -> Billing Address Done (guard=No)
+  [Flow] Enter Billing Address -> Billing Address Done
+  [Flow] Billing Address Done -> Prepare Shipment
+  [Flow] Prepare Shipment -> Ready to Complete?
+  [Flow] Ready to Complete? -> Complete Order
+  [Flow] Complete Order -> Order Completed
+
+[38] Created 24 sequence flows
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-142); E-Shop System(142-279); Bank(279-424)
+  Elements: Start=Y50, Enter Creden=Y50, Check Creden=Y187, Login Succes=Y187, Select Produ=Y50, Stop Shoppin=Y50, Add to Cart=Y50, Save Product=Y187, More Product=Y50, Finish Order=Y187, Prepare Paym=Y187, Enter Paymen=Y50, Enter Shippi=Y50, Different Bi=Y50, Request Paym=Y187, Confirm Paym=Y328, Enter Billin=Y50, Billing Addr=Y50, Prepare Ship=Y187, Ready to Com=Y187, Complete Ord=Y187, Order Comple=Y50
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Ordering in an Online Shop
+Process:  Ordering_Online_Shop_96797
+Lanes:    3
+Elements: 22 (22 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=22,gateways=6,flows=24,data=0,data_assoc=0
+======================================================================

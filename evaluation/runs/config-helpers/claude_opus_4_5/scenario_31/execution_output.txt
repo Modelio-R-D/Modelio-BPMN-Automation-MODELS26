@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BlizzardCharacterGenerator_11631
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BlizzardCharacterGenerator_11631
+[2] Lanes: Player, Blizzard System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player: 21 elements
+[4] Blizzard System: 5 elements
+
+  Total: 26 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: BlizzardCharacterGenerator_11631
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 2: Has Battle.net?=0, Brainstorm Character Names=90
+  [Auto-stack] col 3: Enter Account Info=0, Account Ready=90
+  [Auto-stack] col 4: Receive Confirmation Mail=0, Has Active Subscription?=90
+  [Auto-stack] col 5: Click Confirmation Link=0, Select Payment Method=90, Subscription Ready=180
+  [Auto-stack] col 6: Payment Choice=0, Sync Before Creation=90
+  [Auto-stack] col 7: Enter Credit Card Info=0, Enter IBAN and BIC=90, Log Into Game=180
+  [Auto-stack] col 8: Payment Done=0, Select Realm Race Class=90
+[Player] Lane bounds: 5-105
+  [Unmask] Receive Confirmation Mail -> Y=55: OK
+  [Unmask] Click Confirmation Link -> Y=55: OK
+  [Unmask] Account Ready -> Y=55: OK
+  [Unmask] Has Active Subscription? -> Y=55: OK
+  [Unmask] Select Payment Method -> Y=55: OK
+  [Unmask] Payment Choice -> Y=55: OK
+  [Unmask] Enter Credit Card Info -> Y=55: OK
+  [Unmask] Enter IBAN and BIC -> Y=55: OK
+  [Unmask] Payment Done -> Y=55: OK
+  [Unmask] Subscription Ready -> Y=55: OK
+  [Unmask] Brainstorm Character Names -> Y=55: OK
+  [Unmask] Sync Before Creation -> Y=55: OK
+  [Unmask] Log Into Game -> Y=55: OK
+  [Unmask] Select Realm Race Class -> Y=55: OK
+  [Unmask] Enter Character Name -> Y=55: OK
+  [Unmask] Receive Confirmation -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Split Activities -> col=1 (220,25) relY=20
+  Has Battle.net? -> col=2 (360,25) relY=20
+  Enter Account Info -> col=3 (500,25) relY=20
+  Receive Confirmation Mail -> col=4 (640,25) relY=20
+  Click Confirmation Link -> col=5 (780,25) relY=20
+  Account Ready -> col=3 (500,115) relY=110
+  Has Active Subscription? -> col=4 (640,115) relY=110
+  Select Payment Method -> col=5 (780,115) relY=110
+  Payment Choice -> col=6 (920,25) relY=20
+  Enter Credit Card Info -> col=7 (1060,25) relY=20
+  Enter IBAN and BIC -> col=7 (1060,115) relY=110
+  Payment Done -> col=8 (1200,25) relY=20
+  Subscription Ready -> col=5 (780,205) relY=200
+  Brainstorm Character Names -> col=2 (360,115) relY=110
+  Sync Before Creation -> col=6 (920,115) relY=110
+  Log Into Game -> col=7 (1060,205) relY=200
+  Select Realm Race Class -> col=8 (1200,115) relY=110
+  Enter Character Name -> col=9 (1340,25) relY=20
+  Receive Confirmation -> col=13 (1900,25) relY=20
+  End -> col=16 (2320,25) relY=20
+
+[Blizzard System] Lane bounds: 282-425
+  [maxElementBottomRelY=80]
+  Check Name Availability -> col=10 (1480,302) relY=20
+  Name Available? -> col=11 (1620,302) relY=20
+  Send Confirmation and Selfies -> col=12 (1760,302) relY=20
+  Wait for Expansion Release -> col=14 (2040,302) relY=20
+  Send Expansion Message -> col=15 (2180,302) relY=20
+
+
+[7] Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 30 sequence flows
+
+==================================================================
+COMPLETE: BlizzardCharacterGenerator_11631
+==================================================================
+Lanes: 2 | Elements: 26 | Flows: 30
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 9
+======================================================================

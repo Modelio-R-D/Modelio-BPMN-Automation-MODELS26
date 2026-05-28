@@ -1,0 +1,129 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN RECRUITMENT AND ONBOARDING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   17602
+Process Name:   Recruitment_17602
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Recruitment_17602
+[2] Lanes: Department, HR, Hiring Manager, New Hire
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department lane: 2 elements
+[4] HR lane: 9 elements
+[5] Hiring Manager lane: 4 elements
+[6] New Hire lane: 6 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: Recruitment_17602
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/21 | Missing: Create Job D, Post to Job , Collect Resu, Screen Resum, Conduct Phon, Pass Phone S, Extend Offer, Offer Accept, Negotiate Sa, Interview Fo, In-Person In, Virtual Inte, Select Candi
+  [Attempt 2] Found: 8/21 | Missing: Create Job D, Post to Job , Collect Resu, Screen Resum, Conduct Phon, Pass Phone S, Extend Offer, Offer Accept, Negotiate Sa, Interview Fo, In-Person In, Virtual Inte, Select Candi
+  [Attempt 3] Found: 8/21 | Missing: Create Job D, Post to Job , Collect Resu, Screen Resum, Conduct Phon, Pass Phone S, Extend Offer, Offer Accept, Negotiate Sa, Interview Fo, In-Person In, Virtual Inte, Select Candi
+  [Attempt 3] TIMEOUT - 8/21 elements
+
+[11] WARNING: 8/21 elements ready after 150ms
+         Missing: Create Job Description, Post to Job Boards, Collect Resumes, Screen Resumes, Conduct Phone Interview, Pass Phone Screen?, Extend Offer, Offer Accepted?, Negotiate Salary, Interview Format?, In-Person Interview, Virtual Interview, Select Candidate?
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Create Job Description -> Y=160 (HR): OK
+  [Unmask] Post to Job Boards -> Y=160 (HR): OK
+  [Unmask] Collect Resumes -> Y=160 (HR): OK
+  [Unmask] Screen Resumes -> Y=160 (HR): OK
+  [Unmask] Conduct Phone Interview -> Y=160 (HR): OK
+  [Unmask] Pass Phone Screen? -> Y=160 (HR): OK
+  [Unmask] Extend Offer -> Y=160 (HR): OK
+  [Unmask] Offer Accepted? -> Y=160 (HR): OK
+  [Unmask] Negotiate Salary -> Y=160 (HR): OK
+  [Unmask] Interview Format? -> Y=260 (Hiring Manager): OK
+  [Unmask] In-Person Interview -> Y=260 (Hiring Manager): OK
+  [Unmask] Virtual Interview -> Y=260 (Hiring Manager): OK
+  [Unmask] Select Candidate? -> Y=260 (Hiring Manager): OK
+
+[13] Manual unmask: 13 elements unmasked
+[14] All elements now available
+
+  Lanes: Department(5-110); HR(110-237); Hiring Manager(237-337); New Hire(337-616)
+  Elements: Hiring Nee=Y16, Submit Hir=Y20, Create Job=Y160, Post to Jo=Y160, Collect Re=Y160, Screen Res=Y160, Conduct Ph=Y160, Pass Phone=Y160, Candidate =Y348, Interview =Y260, In-Person =Y260, Virtual In=Y260, Select Can=Y260, Extend Off=Y160, Offer Acce=Y160, Negotiate =Y160, Complete P=Y348, Attend Ori=Y348, Complete T=Y348, Meet Team=Y348, Fully Inte=Y348
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Department centerY = 34
+[16] HR centerY = 150
+[17] Hiring Manager centerY = 264
+[18] New Hire centerY = 453
+
+[19] Department/Hiring Need Identified -> (80,34)
+[20] Department/Submit Hiring Request -> (220,34)
+[21] HR/Create Job Description -> (360,150)
+[22] HR/Post to Job Boards -> (500,150)
+[23] HR/Collect Resumes -> (640,150)
+[24] HR/Screen Resumes -> (780,150)
+[25] HR/Conduct Phone Interview -> (920,150)
+[26] HR/Pass Phone Screen? -> (1060,150)
+[27] New Hire/Candidate Rejected -> (1200,453)
+[28] Hiring Manager/Interview Format? -> (1200,264) *** LANE CHANGED ***
+         Before: Lanes: Department(5-110); HR(110-237); Hiring Manager(237-337); New Hire(337-616)
+         After:  Lanes: Department(5-110); HR(110-237); Hiring Manager(237-371); New Hire(371-650)
+[29] Hiring Manager/In-Person Interview -> (1340,234) *** LANE CHANGED ***
+         Before: Lanes: Department(5-110); HR(110-237); Hiring Manager(237-371); New Hire(371-650)
+         After:  Lanes: Department(-9-96); HR(96-223); Hiring Manager(223-371); New Hire(371-650)
+[30] Hiring Manager/Virtual Interview -> (1340,294)
+[31] Hiring Manager/Select Candidate? -> (1480,264)
+[32] HR/Extend Offer -> (1620,150)
+[33] HR/Offer Accepted? -> (1760,150) *** LANE CHANGED ***
+         Before: Lanes: Department(-9-96); HR(96-223); Hiring Manager(223-371); New Hire(371-650)
+         After:  Lanes: Department(-9-96); HR(96-227); Hiring Manager(227-375); New Hire(375-654)
+[34] HR/Negotiate Salary -> (1900,150)
+[35] New Hire/Complete Paperwork -> (2040,453)
+[36] New Hire/Attend Orientation -> (2180,453)
+[37] New Hire/Complete Training -> (2320,453)
+[38] New Hire/Meet Team -> (2460,453)
+[39] New Hire/Fully Integrated -> (2600,453)
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[40] Created 23 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(-9-96); HR(96-227); Hiring Manager(227-375); New Hire(375-654)
+  Elements: Hiring Nee=Y20, Submit Hir=Y20, Create Job=Y136, Post to Jo=Y136, Collect Re=Y136, Screen Res=Y136, Conduct Ph=Y136, Pass Phone=Y136, Candidate =Y439, Interview =Y254, In-Person =Y238, Virtual In=Y298, Select Can=Y268, Extend Off=Y150, Offer Acce=Y150, Negotiate =Y150, Complete P=Y453, Attend Ori=Y453, Complete T=Y453, Meet Team=Y453, Fully Inte=Y453
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Recruitment_17602
+Lanes:    4
+Elements: 21 (21 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=21,gateways=4,flows=23,data=0,data_assoc=0
+======================================================================

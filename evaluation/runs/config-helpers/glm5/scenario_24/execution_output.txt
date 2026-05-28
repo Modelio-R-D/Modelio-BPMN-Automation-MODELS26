@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: RestaurantProcess_35307
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RestaurantProcess_35307
+[2] Lanes: Guest, Employee, Chef
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest: 8 elements
+[4] Employee: 10 elements
+[5] Chef: 3 elements
+
+  Total: 21 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: RestaurantProcess_35307
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 15: Call Guest=90, Hand over Meal=90
+[Guest] Lane bounds: 5-152
+  [maxElementBottomRelY=80]
+  Hungry -> col=0 (80,25) relY=20
+  Choose Dish -> col=1 (230,25) relY=20
+  Wait for Turn -> col=2 (380,25) relY=20
+  Place Order -> col=3 (530,25) relY=20
+  Buzzer Rings -> col=13 (2030,25) relY=20
+  Go to Hatch -> col=14 (2180,25) relY=20
+  Eat Meal -> col=16 (2480,25) relY=20
+  End -> col=17 (2630,25) relY=20
+  Meal Range (DO) -> (320,95)
+  Order (DO from Place Order) -> (620,95) maxBottomRelY=80
+
+[Employee] Lane bounds: 187-328
+  [maxElementBottomRelY=170]
+  Enter Order in POS -> col=4 (680,207) relY=20
+  Collect Money -> col=5 (830,207) relY=20
+  Setup Buzzer -> col=6 (980,207) relY=20
+  Pass Buzzer -> col=7 (1130,207) relY=20
+  Inform Chef -> col=8 (1280,207) relY=20
+  Set off Buzzer -> col=12 (1880,207) relY=20
+  Wait 5 min -> col=13 (2030,207) relY=20
+  Guest Arrived? -> col=14 (2180,207) relY=20
+  Call Guest -> col=15 (2330,297) relY=110
+  Hand over Meal -> col=15 (2330,297) relY=110
+
+[Chef] Lane bounds: 368-468
+  [Unmask] Prepare Meal -> Y=418: OK
+  [Unmask] Place Meal in Hatch -> Y=418: OK
+  [Unmask] Inform Employee -> Y=418: OK
+  [Unmask] Meal -> Y=418: OK
+  [maxElementBottomRelY=80]
+  Prepare Meal -> col=9 (1430,388) relY=20
+  Place Meal in Hatch -> col=10 (1580,388) relY=20
+  Inform Employee -> col=11 (1730,388) relY=20
+  Meal (DO from Place Meal in Hatch) -> (1670,458) maxBottomRelY=80
+
+
+[9] Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 22 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 5
+
+==================================================================
+COMPLETE: RestaurantProcess_35307
+==================================================================
+Lanes: 3 | Elements: 21 | Data: 3 | Flows: 22 | DataAssoc: 5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=24,gateways=1,flows=22,data=3,data_assoc=5
+======================================================================

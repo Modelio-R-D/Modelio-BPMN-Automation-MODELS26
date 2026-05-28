@@ -1,0 +1,125 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Find a Job_60366
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Find a Job_60366
+[2] Lanes: Applicant, Company, Employment Office, Review Portal
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 18 elements
+[4] Company: 12 elements
+[5] Employment Office: 2 elements
+[6] Review Portal: 3 elements
+
+  Total: 35 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: Find a Job_60366
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 15: Negotiate Interview=0, Receive Rejection=90
+  [Auto-stack] col 19: Probation Work=0, Receive Interview Outcome=90
+  [Auto-stack] col 14: Propose Interview=0, Send Rejection=90
+  [Auto-stack] col 18: Hire on Probation=0, Reject After Interview=90
+[Applicant] Lane bounds: 5-105
+  [Unmask] Reporting Cycle -> Y=55: OK
+  [Unmask] Receive Job Offers -> Y=55: OK
+  [Unmask] Review Job Offers -> Y=55: OK
+  [Unmask] Apply? -> Y=55: OK
+  [Unmask] Prepare Application -> Y=55: OK
+  [Unmask] Send Application -> Y=55: OK
+  [Unmask] Report Required? -> Y=55: OK
+  [Unmask] Report Applications -> Y=55: OK
+  [Unmask] Negotiate Interview -> Y=55: OK
+  [Unmask] Receive Rejection -> Y=55: OK
+  [Unmask] Attend Interview -> Y=55: OK
+  [Unmask] Probation Work -> Y=55: OK
+  [Unmask] Receive Interview Outcome -> Y=55: OK
+  [Unmask] Receive Probation Result -> Y=55: OK
+  [Unmask] Rate Company -> Y=55: OK
+  [Unmask] Rating <= C? -> Y=55: OK
+  [Unmask] Continue Receiving Offers (No Reporting) -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=150]
+  Reporting Cycle -> col=0 (80,25) relY=20
+  Receive Job Offers -> col=1 (230,25) relY=20
+  Review Job Offers -> col=2 (380,25) relY=20
+  Apply? -> col=3 (530,25) relY=20
+  Prepare Application -> col=4 (680,25) relY=20
+  Send Application -> col=5 (830,25) relY=20
+  Report Required? -> col=6 (980,25) relY=20
+  Report Applications -> col=7 (1130,25) relY=20
+  Negotiate Interview -> col=15 (2330,25) relY=20
+  Receive Rejection -> col=15 (2330,115) relY=110
+  Attend Interview -> col=16 (2480,25) relY=20
+  Probation Work -> col=19 (2930,25) relY=20
+  Receive Interview Outcome -> col=19 (2930,115) relY=110
+  Receive Probation Result -> col=22 (3380,25) relY=20
+  Rate Company -> col=21 (3230,25) relY=20
+  Rating <= C? -> col=26 (3980,25) relY=20
+  Continue Receiving Offers (No Reporting) -> col=27 (4130,25) relY=20
+  End -> col=28 (4280,25) relY=20
+
+[Company] Lane bounds: 185-312
+  [maxElementBottomRelY=170]
+  Receive Application -> col=10 (1580,205) relY=20
+  Confirm Receipt -> col=11 (1730,205) relY=20
+  Rate Application -> col=12 (1880,205) relY=20
+  Invite Interview? -> col=13 (2030,205) relY=20
+  Propose Interview -> col=14 (2180,205) relY=20
+  Send Rejection -> col=14 (2180,295) relY=110
+  Offer Job? -> col=17 (2630,205) relY=20
+  Hire on Probation -> col=18 (2780,205) relY=20
+  Reject After Interview -> col=18 (2780,295) relY=110
+  Permanent? -> col=20 (3080,205) relY=20
+  Notify Not Permanent -> col=21 (3230,205) relY=20
+  Rate Applicant -> col=22 (3380,205) relY=20
+
+[Employment Office] Lane bounds: 366-537
+  [maxElementBottomRelY=80]
+  Receive Report -> col=8 (1280,386) relY=20
+  Archive Report -> col=9 (1430,386) relY=20
+
+[Review Portal] Lane bounds: 537-637
+  [Unmask] Record Reviews -> Y=587: OK
+  [Unmask] Wait 1 Year -> Y=587: OK
+  [Unmask] Publish Company Reviews -> Y=587: OK
+  [maxElementBottomRelY=80]
+  Record Reviews -> col=23 (3530,557) relY=20
+  Wait 1 Year -> col=24 (3680,557) relY=20
+  Publish Company Reviews -> col=25 (3830,557) relY=20
+
+
+[9] Repositioned: 35/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 40 sequence flows
+
+==================================================================
+COMPLETE: Find a Job_60366
+==================================================================
+Lanes: 4 | Elements: 35 | Flows: 40
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=35,gateways=6,flows=40,data=0,data_assoc=0
+======================================================================

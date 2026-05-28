@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: 3DModelPrintProcess_13265
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: 3DModelPrintProcess_13265
+[2] Lanes: Customer, Artist
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 19 elements
+[4] Artist: 5 elements
+
+  Total: 24 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: 3DModelPrintProcess_13265
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Check Quantity=0, Order Color=90
+  [Auto-stack] col 14: Heat Up Printer=0, Generate GCode=90
+[Customer] Lane bounds: 5-132
+  [Unmask] Order Color -> Y=68: OK
+  [Unmask] Merge Material -> Y=68: OK
+  [Unmask] Start Parallel -> Y=68: OK
+  [Unmask] Heat Up Printer -> Y=68: OK
+  [Unmask] Receive Status -> Y=68: OK
+  [Unmask] Generate GCode -> Y=68: OK
+  [Unmask] End Parallel -> Y=68: OK
+  [Unmask] Print Model -> Y=68: OK
+  [Unmask] End -> Y=68: OK
+  [Unmask] Sketches -> Y=68: OK
+  [Unmask] GCode File -> Y=68: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send Sketches -> col=1 (210,25) relY=20
+  Review Design -> col=4 (600,25) relY=20
+  Satisfied? -> col=5 (730,25) relY=20
+  Request Changes -> col=6 (860,25) relY=20
+  Choose Plastic Color -> col=7 (990,25) relY=20
+  Color In Stock? -> col=8 (1120,25) relY=20
+  Check Quantity -> col=9 (1250,25) relY=20
+  Under 100g? -> col=10 (1380,25) relY=20
+  Add to Shopping List -> col=11 (1510,25) relY=20
+  Order Color -> col=9 (1250,115) relY=110
+  Merge Material -> col=12 (1640,25) relY=20
+  Start Parallel -> col=13 (1770,25) relY=20
+  Heat Up Printer -> col=14 (1900,25) relY=20
+  Receive Status -> col=15 (2030,25) relY=20
+  Generate GCode -> col=14 (1900,115) relY=110
+  End Parallel -> col=16 (2160,25) relY=20
+  Print Model -> col=17 (2290,25) relY=20
+  End -> col=18 (2420,25) relY=20
+  Sketches (DO from Send Sketches) -> (170,185) maxBottomRelY=170
+  GCode File (DO from Generate GCode) -> (1730,185) maxBottomRelY=170
+
+[Artist] Lane bounds: 277-377
+  [Unmask] Receive Request -> Y=327: OK
+  [Unmask] Create 3D Model -> Y=327: OK
+  [Unmask] Send STL File -> Y=327: OK
+  [Unmask] Receive Change Request -> Y=327: OK
+  [Unmask] Update Model -> Y=327: OK
+  [Unmask] STL File -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Receive Request -> col=2 (340,297) relY=20
+  Create 3D Model -> col=3 (470,297) relY=20
+  Send STL File -> col=4 (600,297) relY=20
+  Receive Change Request -> col=7 (990,297) relY=20
+  Update Model -> col=8 (1120,297) relY=20
+  STL File (DO from Create 3D Model) -> (560,367) maxBottomRelY=80
+
+
+[8] Repositioned: 27/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 28 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 6
+
+==================================================================
+COMPLETE: 3DModelPrintProcess_13265
+==================================================================
+Lanes: 2 | Elements: 24 | Data: 3 | Flows: 28 | DataAssoc: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 6
+======================================================================

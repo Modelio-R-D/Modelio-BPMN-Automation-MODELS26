@@ -1,0 +1,102 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Chainsaw_85263
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Chainsaw_85263
+[2] Lanes: Customer, Chainsaw Maker
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] Chainsaw Maker: 26 elements
+
+  Total: 31 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Chainsaw_85263
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Order guide bar (Schwertlaenge)=0, Order chain (width)=90, Order power unit (electric/motor)=180, Order handle and housing=270, Order safety parts=360
+  [Auto-stack] col 7: Receive guide bar=0, Receive chain=90, Receive power unit=180, Receive handle and housing=270, Receive safety parts=360
+  [Auto-stack] col 18: Send update: remaining production=0, Adjust design=90
+[Customer] Lane bounds: 5-137
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Provide chainsaw specs -> col=1 (230,25) relY=20
+  Customer test first chainsaw -> col=15 (2330,25) relY=20
+  Customer likes it? -> col=16 (2480,25) relY=20
+  Request changes -> col=17 (2630,25) relY=20
+  Customer specs (bar length, chain width, power type, handle, safety) (DO from Provide chainsaw specs) -> (320,95) maxBottomRelY=80
+  Change request (DO from Request changes) -> (2720,95) maxBottomRelY=80
+
+[Chainsaw Maker] Lane bounds: 187-357
+  [maxElementBottomRelY=440]
+  Review specs and quote -> col=2 (380,207) relY=20
+  Confirm order -> col=3 (530,207) relY=20
+  Send update: ordering started -> col=4 (680,207) relY=20
+  Order parts in parallel -> col=5 (830,207) relY=20
+  Order guide bar (Schwertlaenge) -> col=6 (980,207) relY=20
+  Order chain (width) -> col=6 (980,297) relY=110
+  Order power unit (electric/motor) -> col=6 (980,387) relY=200
+  Order handle and housing -> col=6 (980,477) relY=290
+  Order safety parts -> col=6 (980,567) relY=380
+  Receive guide bar -> col=7 (1130,207) relY=20
+  Receive chain -> col=7 (1130,297) relY=110
+  Receive power unit -> col=7 (1130,387) relY=200
+  Receive handle and housing -> col=7 (1130,477) relY=290
+  Receive safety parts -> col=7 (1130,567) relY=380
+  All parts arrived -> col=8 (1280,207) relY=20
+  Send update: parts arrived -> col=9 (1430,207) relY=20
+  Manual inspect parts -> col=10 (1580,207) relY=20
+  Send update: parts inspected -> col=11 (1730,207) relY=20
+  Assemble first chainsaw -> col=12 (1880,207) relY=20
+  Send update: prototype built -> col=13 (2030,207) relY=20
+  Ship first chainsaw -> col=14 (2180,207) relY=20
+  Produce remaining chainsaws -> col=17 (2630,207) relY=20
+  Send update: remaining production -> col=18 (2780,207) relY=20
+  Ship remaining chainsaws -> col=19 (2930,207) relY=20
+  Adjust design -> col=18 (2780,297) relY=110
+  End -> col=20 (3080,207) relY=20
+  Prototype saw (DO from Assemble first chainsaw) -> (1970,637) maxBottomRelY=440
+
+
+[8] Repositioned: 34/34
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 35 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 6
+
+==================================================================
+COMPLETE: Chainsaw_85263
+==================================================================
+Lanes: 2 | Elements: 31 | Data: 3 | Flows: 35 | DataAssoc: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=34,gateways=3,flows=35,data=3,data_assoc=6
+======================================================================

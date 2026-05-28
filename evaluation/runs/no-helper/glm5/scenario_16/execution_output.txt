@@ -1,0 +1,138 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ANNUAL AUDIT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   14272
+Process Name:   AnnualAudit_14272
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: AnnualAudit_14272
+[2] Lanes: Audit Coordinator, Regional Office, Compliance Team, Central Audit Team, Audit Director
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Audit Coordinator lane: 2 elements
+[4] Regional Office lane: 4 elements
+[5] Compliance Team lane: 1 element
+[6] Central Audit Team lane: 20 elements
+[7] Audit Director lane: 2 elements
+
+  Total elements: 29
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: AnnualAudit_14272
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for elements (max 3 attempts)...
+
+  [Attempt 1] Found: 9/29 | Missing: Review Submi, Discrepancie, Request Clar, Conduct Risk, Risk Fork, Evaluate Fin, Evaluate Ope, Evaluate Com, Risk Join, High Risk?, Launch Inves, Investigatio, Perform Data, Conduct Inte, Conduct Site, Investigatio, Compile Audi, Update Repor, Distribute R, Audit Closed
+  [Attempt 2] Found: 9/29 | Missing: Review Submi, Discrepancie, Request Clar, Conduct Risk, Risk Fork, Evaluate Fin, Evaluate Ope, Evaluate Com, Risk Join, High Risk?, Launch Inves, Investigatio, Perform Data, Conduct Inte, Conduct Site, Investigatio, Compile Audi, Update Repor, Distribute R, Audit Closed
+  [Attempt 3] Found: 9/29 | Missing: Review Submi, Discrepancie, Request Clar, Conduct Risk, Risk Fork, Evaluate Fin, Evaluate Ope, Evaluate Com, Risk Join, High Risk?, Launch Inves, Investigatio, Perform Data, Conduct Inte, Conduct Site, Investigatio, Compile Audi, Update Repor, Distribute R, Audit Closed
+  [Attempt 3] TIMEOUT - 9/29 elements
+
+[12] WARNING: 9/29 elements ready
+         Missing: Review Submission, Discrepancies?, Request Clarifications, Conduct Risk Assessment, Risk Fork, Evaluate Financial Risks, Evaluate Operational Risks, Evaluate Compliance Risks, Risk Join, High Risk?, Launch Investigation, Investigation Fork, Perform Data Analysis, Conduct Interviews, Conduct Site Visits, Investigation Join, Compile Audit Report, Update Report, Distribute Report, Audit Closed
+
+[13] Trying manual unmask for missing elements...
+
+  [Unmask] Review Submission -> Y=411 (Central Audit Team): OK
+  [Unmask] Discrepancies? -> Y=411 (Central Audit Team): OK
+  [Unmask] Request Clarifications -> Y=411 (Central Audit Team): OK
+  [Unmask] Conduct Risk Assessment -> Y=411 (Central Audit Team): OK
+  [Unmask] Risk Fork -> Y=411 (Central Audit Team): OK
+  [Unmask] Evaluate Financial Risks -> Y=411 (Central Audit Team): OK
+  [Unmask] Evaluate Operational Risks -> Y=411 (Central Audit Team): OK
+  [Unmask] Evaluate Compliance Risks -> Y=411 (Central Audit Team): OK
+  [Unmask] Risk Join -> Y=411 (Central Audit Team): OK
+  [Unmask] High Risk? -> Y=411 (Central Audit Team): OK
+  [Unmask] Launch Investigation -> Y=411 (Central Audit Team): OK
+  [Unmask] Investigation Fork -> Y=411 (Central Audit Team): OK
+  [Unmask] Perform Data Analysis -> Y=411 (Central Audit Team): OK
+  [Unmask] Conduct Interviews -> Y=411 (Central Audit Team): OK
+  [Unmask] Conduct Site Visits -> Y=411 (Central Audit Team): OK
+  [Unmask] Investigation Join -> Y=411 (Central Audit Team): OK
+  [Unmask] Compile Audit Report -> Y=411 (Central Audit Team): OK
+  [Unmask] Update Report -> Y=411 (Central Audit Team): OK
+  [Unmask] Distribute Report -> Y=411 (Central Audit Team): OK
+  [Unmask] Audit Closed -> Y=411 (Central Audit Team): OK
+
+[14] Manual unmask: 20 elements unmasked
+
+  Lanes: Audit Co(5-161); Regional(161-261); Complian(261-361); Central (361-529); Audit Di(529-853)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Audit Coordinator centerY = 60
+[16] Regional Office centerY = 188
+[17] Compliance Team centerY = 288
+[18] Central Audit Team centerY = 422
+[19] Audit Director centerY = 668
+
+[20] Audit Co/Audit Initiated -> (80,60)
+[21] Audit Co/Send Notificati -> (190,60)
+[22] Complian/Check Regulator -> (410,288) *** LANE CHANGED ***
+[23] Regional/Prepare Financi -> (410,188)
+[24] Regional/Gather Document -> (520,188) *** LANE CHANGED ***
+[25] Regional/Submit Document -> (740,188)
+[26] Central /Review Submissi -> (850,422) *** LANE CHANGED ***
+[27] Central /Discrepancies? -> (960,422)
+[28] Central /Request Clarifi -> (1070,422)
+[29] Regional/Provide Clarifi -> (1180,188)
+[30] Central /Conduct Risk As -> (1290,422)
+[31] Central /Risk Fork -> (1400,422)
+[32] Central /Evaluate Compli -> (1510,422)
+[33] Central /Evaluate Financ -> (1510,422)
+[34] Central /Evaluate Operat -> (1510,422)
+[35] Central /Risk Join -> (1620,422)
+[36] Central /High Risk? -> (1730,422)
+[37] Central /Launch Investig -> (1840,422)
+[38] Central /Investigation F -> (1950,422)
+[39] Central /Conduct Intervi -> (2060,422)
+[40] Central /Conduct Site Vi -> (2060,422)
+[41] Central /Perform Data An -> (2060,422)
+[42] Central /Investigation J -> (2170,422)
+[43] Central /Compile Audit R -> (2280,422)
+[44] Audit Di/Review Report -> (2390,668)
+[45] Audit Di/Approved? -> (2500,668)
+[46] Central /Update Report -> (2610,422)
+[47] Central /Distribute Repo -> (2720,422)
+[48] Central /Audit Closed -> (2830,422)
+
+  Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  Note: Adjusting flow for investigation parallel activities
+[49] Created 36 sequence flows
+[50] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Audit Co(-40-116); Regional(116-252); Complian(252-411); Central (411-624); Audit Di(624-948)
+
+[51] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  AnnualAudit_14272
+Lanes:    5
+Elements: 29 (29 in diagram)
+Flows:    36
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=29,gateways=7,flows=36,data=0,data_assoc=0
+======================================================================

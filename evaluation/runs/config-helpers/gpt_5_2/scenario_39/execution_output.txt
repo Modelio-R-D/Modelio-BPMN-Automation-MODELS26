@@ -1,0 +1,131 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DIY Repair of a Broken Smartphone Screen_42003
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DIY Repair of a Broken Smartphone Screen_42003
+[2] Lanes: DIYer, Online Tool, Friends, Online Shop, Expert
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] DIYer: 15 elements
+[4] Online Tool: 2 elements
+[5] Friends: 2 elements
+[6] Online Shop: 1 elements
+[7] Expert: 2 elements
+
+  Total: 22 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[8] Data Objects: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram: DIY Repair of a Broken Smartphone Screen_42003
+[10] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 16: Create review/video=0, Send phone to expert=90
+[DIYer] Lane bounds: 5-122
+  [Unmask] Receive deliveries -> Y=63: OK
+  [Unmask] Repair phone -> Y=63: OK
+  [Unmask] Repair successful? -> Y=63: OK
+  [Unmask] Create review/video -> Y=63: OK
+  [Unmask] Submit review/video -> Y=63: OK
+  [Unmask] End - Fixed -> Y=63: OK
+  [Unmask] Send phone to expert -> Y=63: OK
+  [Unmask] Model and damage info -> Y=63: OK
+  [Unmask] Missing items list -> Y=63: OK
+  [Unmask] Friend offers -> Y=63: OK
+  [Unmask] Purchased items -> Y=63: OK
+  [Unmask] Repair instructions -> Y=63: OK
+  [Unmask] Review/video -> Y=63: OK
+  [Unmask] Phone shipment -> Y=63: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Enter model and damage -> col=1 (230,25) relY=20
+  Check what you already have -> col=3 (530,25) relY=20
+  Missing items? -> col=4 (680,25) relY=20
+  Ask friends for items -> col=5 (830,25) relY=20
+  Receive offers -> col=8 (1280,25) relY=20
+  Got everything from friends? -> col=9 (1430,25) relY=20
+  Buy remaining items -> col=10 (1580,25) relY=20
+  Receive deliveries -> col=12 (1880,25) relY=20
+  Repair phone -> col=14 (2180,25) relY=20
+  Repair successful? -> col=15 (2330,25) relY=20
+  Create review/video -> col=16 (2480,25) relY=20
+  Submit review/video -> col=17 (2630,25) relY=20
+  End - Fixed -> col=18 (2780,25) relY=20
+  Send phone to expert -> col=16 (2480,115) relY=110
+  Model and damage info (DO from Enter model and damage) -> (320,185) maxBottomRelY=170
+  Missing items list (DO from Check what you already have) -> (620,185) maxBottomRelY=170
+  Friend offers (DO from Friends send offer) -> (1220,185) maxBottomRelY=170
+  Purchased items (DO from Buy remaining items) -> (1670,185) maxBottomRelY=170
+  Repair instructions (DO from Provide repair instructions) -> (2120,185) maxBottomRelY=170
+  Review/video (DO from Create review/video) -> (2570,185) maxBottomRelY=170
+  Phone shipment (DO from Send phone to expert) -> (2570,185) maxBottomRelY=170
+
+[Online Tool] Lane bounds: 277-377
+  [Unmask] Generate lists and options -> Y=327: OK
+  [Unmask] Provide repair instructions -> Y=327: OK
+  [Unmask] Materials list -> Y=327: OK
+  [Unmask] Tools list -> Y=327: OK
+  [Unmask] Order options -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Generate lists and options -> col=2 (380,297) relY=20
+  Provide repair instructions -> col=13 (2030,297) relY=20
+  Materials list (DO from Generate lists and options) -> (470,367) maxBottomRelY=80
+  Tools list (DO from Generate lists and options) -> (470,367) maxBottomRelY=80
+  Order options (DO from Generate lists and options) -> (470,367) maxBottomRelY=80
+
+[Friends] Lane bounds: 459-595
+  [maxElementBottomRelY=80]
+  Friends consider request -> col=6 (980,479) relY=20
+  Friends send offer -> col=7 (1130,479) relY=20
+
+[Online Shop] Lane bounds: 595-695
+  [Unmask] Shop fulfills order -> Y=645: OK
+  [maxElementBottomRelY=80]
+  Shop fulfills order -> col=11 (1730,615) relY=20
+
+[Expert] Lane bounds: 704-1051
+  [maxElementBottomRelY=80]
+  Expert repairs phone -> col=17 (2630,724) relY=20
+  End - Repaired by expert -> col=18 (2780,724) relY=20
+  Repaired phone (DO from Expert repairs phone) -> (2720,794) maxBottomRelY=80
+
+
+[11] Repositioned: 33/33
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[12] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[13] Data associations: 21
+
+==================================================================
+COMPLETE: DIY Repair of a Broken Smartphone Screen_42003
+==================================================================
+Lanes: 5 | Elements: 22 | Data: 11 | Flows: 23 | DataAssoc: 21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=33,gateways=3,flows=23,data=11,data_assoc=21
+======================================================================

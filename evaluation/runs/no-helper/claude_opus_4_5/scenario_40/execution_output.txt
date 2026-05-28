@@ -1,0 +1,117 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN OEE MONITORING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   11815
+Process Name:   OEE_Monitoring_11815
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_Monitoring_11815
+[2] Lanes: Machine Interface, OEE Calculator, Alert System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Machine Interface lane: 7 elements
+[4] OEE Calculator lane: 4 elements
+[5] Alert System lane: 5 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: OEE_Monitoring_11815
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/16 | Missing: Stop Machine, Send Alert E, Engineer Rev, Restart Mach, Resume Monit
+  [Attempt 2] Found: 11/16 | Missing: Stop Machine, Send Alert E, Engineer Rev, Restart Mach, Resume Monit
+  [Attempt 3] Found: 11/16 | Missing: Stop Machine, Send Alert E, Engineer Rev, Restart Mach, Resume Monit
+  [Attempt 3] TIMEOUT - 11/16 elements
+
+[10] WARNING: 11/16 elements ready after 150ms
+         Missing: Stop Machine, Send Alert Email, Engineer Reviews, Restart Machine, Resume Monitoring
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Stop Machine -> Y=312 (Alert System): OK
+  [Unmask] Send Alert Email -> Y=312 (Alert System): OK
+  [Unmask] Engineer Reviews -> Y=312 (Alert System): OK
+  [Unmask] Restart Machine -> Y=312 (Alert System): OK
+  [Unmask] Resume Monitoring -> Y=312 (Alert System): OK
+
+[12] Manual unmask: 5 elements unmasked
+[13] All elements now available
+
+  Lanes: Machine Interface(5-162); OEE Calculator(162-262); Alert System(262-378)
+  Elements: Machine Co=Y16, Initialize=Y20, Collect Av=Y25, Collect Pe=Y30, Collect Qu=Y35, Calculate =Y173, OEE OK?=Y173, Log OEE Va=Y173, Stop Machi=Y312, Send Alert=Y312, Wait Inter=Y173, Connected?=Y40, Engineer R=Y312, Monitoring=Y45, Restart Ma=Y312, Resume Mon=Y312
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Machine Interface centerY = 60
+[15] OEE Calculator centerY = 189
+[16] Alert System centerY = 297
+
+[17] Machine Interface/Machine Connected -> (60,60) 33x33
+[18] Machine Interface/Initialize Connection -> (200,60) 110x55
+[19] Machine Interface/Collect Availability -> (340,60) 110x55
+[20] Machine Interface/Collect Performance -> (480,60) 110x55
+[21] Machine Interface/Collect Quality -> (620,60) 110x55
+[22] OEE Calculator/Calculate OEE -> (760,189) 110x55 *** LANE CHANGED ***
+         Before: Lanes: Machine Interface(5-162); OEE Calculator(162-262); Alert System(262-378)
+         After:  Lanes: Machine Interface(5-162); OEE Calculator(162-295); Alert System(295-411)
+[23] OEE Calculator/OEE OK? -> (900,189) 40x40
+[24] OEE Calculator/Log OEE Value -> (1040,189) 110x55
+[25] Alert System/Stop Machine -> (1040,297) 110x55 *** LANE CHANGED ***
+         Before: Lanes: Machine Interface(5-162); OEE Calculator(162-295); Alert System(295-411)
+         After:  Lanes: Machine Interface(-4-153); OEE Calculator(153-286); Alert System(286-411)
+[26] Alert System/Send Alert Email -> (1180,297) 110x55
+[27] OEE Calculator/Wait Interval -> (1180,189) 110x55
+[28] Machine Interface/Connected? -> (1320,60) 40x40
+[29] Alert System/Engineer Reviews -> (1320,297) 110x55
+[30] Machine Interface/Monitoring Ended -> (1460,60) 33x33
+[31] Alert System/Restart Machine -> (1460,297) 110x55
+[32] Alert System/Resume Monitoring -> (1600,297) 110x55
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 17 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Machine Interface(-4-153); OEE Calculator(153-286); Alert System(286-411)
+  Elements: Machine Co=Y51, Initialize=Y51, Collect Av=Y51, Collect Pe=Y51, Collect Qu=Y51, Calculate =Y180, OEE OK?=Y180, Log OEE Va=Y180, Stop Machi=Y297, Send Alert=Y297, Wait Inter=Y189, Connected?=Y60, Engineer R=Y297, Monitoring=Y60, Restart Ma=Y297, Resume Mon=Y297
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OEE_Monitoring_11815
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    17
+==================================================================
+
+OEE Formula: Availability x Performance x Quality
+Threshold:   When OEE falls below threshold, machine stops
+Loop:        Process monitors continuously until disconnected
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=2,flows=17,data=0,data_assoc=0
+======================================================================

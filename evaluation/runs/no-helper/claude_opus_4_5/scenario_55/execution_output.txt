@@ -1,0 +1,101 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CVC INSERTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   31652
+Process Name:   CVC_Insertion_31652
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CVC_Insertion_31652
+[2] Lane: Doctor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Created 42 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: CVC_Insertion_31652
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements...
+
+  [Attempt 1] Found: 11/42 | Missing: 31
+  [Attempt 2] Found: 11/42 | Missing: 31
+  [Attempt 3] Found: 11/42 | Missing: 31
+  [Attempt 4] Found: 11/42 | Missing: 31
+  [Attempt 5] Found: 11/42 | Missing: 31
+  [Attempt 5] TIMEOUT
+
+[8] Trying manual unmask...
+
+  [Unmask] US Join -> OK
+  [Unmask] Cover Probe -> OK
+  [Unmask] Put Sterile Gel -> OK
+  [Unmask] Pos Split -> OK
+  [Unmask] Position Probe -> OK
+  [Unmask] Position Patient -> OK
+  [Unmask] Pos Join -> OK
+  [Unmask] ID Split -> OK
+  [Unmask] Anatomic ID -> OK
+  [Unmask] Doppler ID -> OK
+  [Unmask] Compression ID -> OK
+  [Unmask] ID Join -> OK
+  [Unmask] Anesthetize -> OK
+  [Unmask] Puncture -> OK
+  [Unmask] Check Blood Return -> OK
+  [Unmask] Blood Return OK? -> OK
+  [Unmask] Drop Probe -> OK
+  [Unmask] Remove Syringe -> OK
+  [Unmask] Install Guidewire -> OK
+  [Unmask] Remove Trocar -> OK
+  [Unmask] Wire Check Split -> OK
+  [Unmask] Check Wire Long Axis -> OK
+  [Unmask] Check Wire Short Axi -> OK
+  [Unmask] Wire Check Join -> OK
+  [Unmask] Wire Position OK? -> OK
+  [Unmask] Widen Pathway -> OK
+  [Unmask] Advance Catheter -> OK
+  [Unmask] Remove Guidewire -> OK
+  [Unmask] Verify Flow/Reflow -> OK
+  [Unmask] Check Catheter Pos -> OK
+  [Unmask] End -> OK
+[9] Manual unmask: 31 elements
+
+[10] Elements ready: 42/42
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Lane centerY = 105
+
+[12] Repositioned: 42 elements
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[13] Created 50 sequence flows
+[14] Save
+[15] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CVC_Insertion_31652
+Lanes:    1 (Doctor)
+Elements: 42
+Flows:    50
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=42,gateways=12,flows=50,data=0,data_assoc=0
+======================================================================

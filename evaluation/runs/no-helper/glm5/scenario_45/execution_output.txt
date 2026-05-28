@@ -1,0 +1,126 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ONLINE SHOP ORDERING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   61864
+Process Name:   OnlineShopOrder_61864
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopOrder_61864
+[2] Lanes: Customer, System, Bank
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 6 elements
+[4] System lane: 13 elements
+[5] Bank lane: 1 element
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: OnlineShopOrder_61864
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 1/20 | Missing: Login Initia, Select Produ, Add to Cart, Enter Paymen, Enter Shippi, Enter Billin, Check Creden, Login Succes, Save Product, All Products, Prepare Orde, Parallel Spl, Process Paym, Different Bi, Prepare Ship, Parallel Joi, Finalize Ord, Login Failed, Order Comple
+  [Attempt 2] Found: 1/20 | Missing: Login Initia, Select Produ, Add to Cart, Enter Paymen, Enter Shippi, Enter Billin, Check Creden, Login Succes, Save Product, All Products, Prepare Orde, Parallel Spl, Process Paym, Different Bi, Prepare Ship, Parallel Joi, Finalize Ord, Login Failed, Order Comple
+  [Attempt 3] Found: 1/20 | Missing: Login Initia, Select Produ, Add to Cart, Enter Paymen, Enter Shippi, Enter Billin, Check Creden, Login Succes, Save Product, All Products, Prepare Orde, Parallel Spl, Process Paym, Different Bi, Prepare Ship, Parallel Joi, Finalize Ord, Login Failed, Order Comple
+  [Attempt 3] TIMEOUT - 1/20 elements
+
+[10] WARNING: 1/20 elements ready after 150ms
+         Missing: Login Initiated, Select Product, Add to Cart, Enter Payment Data, Enter Shipping Address, Enter Billing Address, Check Credentials, Login Successful?, Save Product, All Products Selected?, Prepare Order, Parallel Split, Process Payment, Different Billing?, Prepare Shipment, Parallel Join, Finalize Order, Login Failed, Order Complete
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Login Initiated -> Y=55 (Customer): OK
+  [Unmask] Select Product -> Y=55 (Customer): OK
+  [Unmask] Add to Cart -> Y=55 (Customer): OK
+  [Unmask] Enter Payment Data -> Y=55 (Customer): OK
+  [Unmask] Enter Shipping Address -> Y=55 (Customer): OK
+  [Unmask] Enter Billing Address -> Y=55 (Customer): OK
+  [Unmask] Check Credentials -> Y=155 (System): OK
+  [Unmask] Login Successful? -> Y=155 (System): OK
+  [Unmask] Save Product -> Y=155 (System): OK
+  [Unmask] All Products Selected? -> Y=155 (System): OK
+  [Unmask] Prepare Order -> Y=155 (System): OK
+  [Unmask] Parallel Split -> Y=155 (System): OK
+  [Unmask] Process Payment -> Y=155 (System): OK
+  [Unmask] Different Billing? -> Y=155 (System): OK
+  [Unmask] Prepare Shipment -> Y=155 (System): OK
+  [Unmask] Parallel Join -> Y=155 (System): OK
+  [Unmask] Finalize Order -> Y=155 (System): OK
+  [Unmask] Login Failed -> Y=155 (System): OK
+  [Unmask] Order Complete -> Y=155 (System): OK
+
+[12] Manual unmask: 19 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-125); System(125-232); Bank(232-350)
+  Elements: Login Init=Y55, Check Cred=Y155, Login Succ=Y155, Login Fail=Y155, Select Pro=Y55, Add to Car=Y55, Save Produ=Y155, All Produc=Y155, Prepare Or=Y155, Parallel S=Y155, Enter Paym=Y55, Process Pa=Y155, Confirm Pa=Y243, Enter Ship=Y55, Different =Y155, Enter Bill=Y55, Prepare Sh=Y155, Parallel J=Y155, Finalize O=Y155, Order Comp=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 42
+[15] System centerY = 155
+[16] Bank centerY = 268
+
+[17] Customer/Login Initiated -> (80,42) 33x33
+[18] System/Check Credentials -> (210,155) 120x60
+[19] System/Login Successful? -> (340,155) 40x40
+[20] System/Login Failed -> (470,155) 33x33
+[21] Customer/Select Product -> (470,42) 120x60
+[22] Customer/Add to Cart -> (600,42) 120x60
+[23] System/Save Product -> (730,155) 120x60
+[24] System/All Products Selected? -> (860,155) 40x40
+[25] System/Prepare Order -> (990,155) 120x60
+[26] System/Parallel Split -> (1120,155) 40x40
+[27] Customer/Enter Payment Data -> (1250,42) 120x60
+[28] System/Process Payment -> (1380,155) 120x60
+[29] Bank/Confirm Payment -> (1510,268) 120x60
+[30] Customer/Enter Shipping Address -> (1640,42) 120x60
+[31] System/Different Billing? -> (1770,155) 40x40
+[32] Customer/Enter Billing Address -> (1900,42) 120x60
+[33] System/Prepare Shipment -> (2030,155) 120x60
+[34] System/Parallel Join -> (2160,155) 40x40
+[35] System/Finalize Order -> (2290,155) 120x60
+[36] System/Order Complete -> (2420,155) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[37] Created 22 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); System(125-232); Bank(232-350)
+  Elements: Login Init=Y42, Check Cred=Y155, Login Succ=Y155, Login Fail=Y155, Select Pro=Y42, Add to Car=Y42, Save Produ=Y155, All Produc=Y155, Prepare Or=Y155, Parallel S=Y155, Enter Paym=Y42, Process Pa=Y155, Confirm Pa=Y268, Enter Ship=Y42, Different =Y155, Enter Bill=Y42, Prepare Sh=Y155, Parallel J=Y155, Finalize O=Y155, Order Comp=Y155
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OnlineShopOrder_61864
+Lanes:    3
+Elements: 20 (20 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=5,flows=22,data=0,data_assoc=0
+======================================================================

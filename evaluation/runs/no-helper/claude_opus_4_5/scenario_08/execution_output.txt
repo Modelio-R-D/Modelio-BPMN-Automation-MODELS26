@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INCIDENT MANAGEMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   30576
+Process Name:   IncidentManagement_30576
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IncidentManagement_30576
+[2] Lanes: Reporter, Support Team, Investigation Team, Management
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Reporter lane: 3 elements
+[4] Support Team lane: 6 elements
+[5] Investigation Team lane: 5 elements
+[6] Management lane: 5 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: IncidentManagement_30576
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/19 | Missing: Incident Rep, Submit Incid, Provide More, Log in Track, Triage Incid, Assign to Te, Implement So, Conduct Foll, Issue Resolv, Gather Infor, Identify Roo, Propose Corr, Action Type?, Request More
+  [Attempt 2] Found: 5/19 | Missing: Incident Rep, Submit Incid, Provide More, Log in Track, Triage Incid, Assign to Te, Implement So, Conduct Foll, Issue Resolv, Gather Infor, Identify Roo, Propose Corr, Action Type?, Request More
+  [Attempt 3] Found: 5/19 | Missing: Incident Rep, Submit Incid, Provide More, Log in Track, Triage Incid, Assign to Te, Implement So, Conduct Foll, Issue Resolv, Gather Infor, Identify Roo, Propose Corr, Action Type?, Request More
+  [Attempt 3] TIMEOUT - 5/19 elements
+
+[11] WARNING: 5/19 elements ready after 150ms
+         Missing: Incident Reported, Submit Incident Report, Provide More Details, Log in Tracking System, Triage Incident, Assign to Team, Implement Solution, Conduct Follow-up, Issue Resolved?, Gather Information, Identify Root Cause, Propose Corrective Actions, Action Type?, Request More Info
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Incident Reported -> Y=55 (Reporter): OK
+  [Unmask] Submit Incident Report -> Y=55 (Reporter): OK
+  [Unmask] Provide More Details -> Y=55 (Reporter): OK
+  [Unmask] Log in Tracking System -> Y=155 (Support Team): OK
+  [Unmask] Triage Incident -> Y=155 (Support Team): OK
+  [Unmask] Assign to Team -> Y=155 (Support Team): OK
+  [Unmask] Implement Solution -> Y=155 (Support Team): OK
+  [Unmask] Conduct Follow-up -> Y=155 (Support Team): OK
+  [Unmask] Issue Resolved? -> Y=155 (Support Team): OK
+  [Unmask] Gather Information -> Y=255 (Investigation Team): OK
+  [Unmask] Identify Root Cause -> Y=255 (Investigation Team): OK
+  [Unmask] Propose Corrective Actions -> Y=255 (Investigation Team): OK
+  [Unmask] Action Type? -> Y=255 (Investigation Team): OK
+  [Unmask] Request More Info -> Y=255 (Investigation Team): OK
+
+[13] Manual unmask: 14 elements unmasked
+[14] All elements now available
+
+  Lanes: Reporter(5-125); Support Team(125-249); Investigation Team(249-349); Management(349-643)
+  Elements: Incident R=Y55, Submit Inc=Y55, Log in Tra=Y155, Triage Inc=Y155, Assign to =Y155, Request Mo=Y260, Gather Inf=Y260, Provide Mo=Y55, Action Typ=Y260, Identify R=Y260, Propose Co=Y260, Request Re=Y360, Review Pro=Y360, Approved?=Y360, Implement =Y155, Conduct Fo=Y155, Issue Reso=Y155, Close Inci=Y360, Stakeholde=Y360
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Reporter centerY = 42
+[16] Support Team centerY = 164
+[17] Investigation Team centerY = 276
+[18] Management centerY = 473
+
+[19] Reporter/Incident Reported -> (80,42) 33x33
+[20] Reporter/Submit Incident Report -> (220,42) 110x55
+[21] Support Team/Log in Tracking System -> (360,164) 110x55
+[22] Support Team/Triage Incident -> (500,164) 110x55
+[23] Support Team/Assign to Team -> (640,164) 110x55
+[24] Investigation Team/Request More Info -> (640,276) 110x55
+[25] Investigation Team/Gather Information -> (780,276) 110x55 *** LANE CHANGED ***
+         Before: Lanes: Reporter(5-125); Support Team(125-249); Investigation Team(249-349); Management(349-643)
+         After:  Lanes: Reporter(5-125); Support Team(125-249); Investigation Team(249-417); Management(417-711)
+[26] Reporter/Provide More Details -> (780,42) 110x55
+[27] Investigation Team/Action Type? -> (920,276) 40x40
+[28] Investigation Team/Identify Root Cause -> (920,276) 110x55
+[29] Investigation Team/Propose Corrective Actions -> (1060,276) 110x55
+[30] Management/Request Revision -> (1060,473) 110x55
+[31] Management/Review Proposed Actions -> (1200,473) 110x55
+[32] Management/Approved? -> (1340,473) 40x40
+[33] Support Team/Implement Solution -> (1340,164) 110x55
+[34] Support Team/Conduct Follow-up -> (1480,164) 110x55
+[35] Support Team/Issue Resolved? -> (1620,164) 40x40
+[36] Management/Close Incident Report -> (1760,473) 110x55
+[37] Management/Stakeholders Notified -> (1900,473) 33x33
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[38] Created 19 sequence flows
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Reporter(5-125); Support Team(125-249); Investigation Team(249-417); Management(417-711)
+  Elements: Incident R=Y42, Submit Inc=Y42, Log in Tra=Y164, Triage Inc=Y164, Assign to =Y164, Request Mo=Y276, Gather Inf=Y276, Provide Mo=Y42, Action Typ=Y276, Identify R=Y276, Propose Co=Y276, Request Re=Y473, Review Pro=Y473, Approved?=Y473, Implement =Y164, Conduct Fo=Y164, Issue Reso=Y164, Close Inci=Y473, Stakeholde=Y473
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  IncidentManagement_30576
+Lanes:    4
+Elements: 19 (19 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=19,gateways=3,flows=19,data=0,data_assoc=0
+======================================================================

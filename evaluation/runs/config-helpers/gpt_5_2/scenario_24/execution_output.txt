@@ -1,0 +1,116 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: RestaurantMealPickup_58790
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RestaurantMealPickup_58790
+[2] Lanes: Guest, Employee, Chef
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest: 12 elements
+[4] Employee: 11 elements
+[5] Chef: 4 elements
+
+  Total: 27 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: RestaurantMealPickup_58790
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 21: Wait 5 minutes=0, Hand over meal=90
+[Guest] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Enter restaurant -> Y=55: OK
+  [Unmask] Choose dish -> Y=55: OK
+  [Unmask] Wait for turn -> Y=55: OK
+  [Unmask] Place order -> Y=55: OK
+  [Unmask] Receive buzzer and instruction -> Y=55: OK
+  [Unmask] Wait for buzzer ring -> Y=55: OK
+  [Unmask] Go to service hatch? -> Y=55: OK
+  [Unmask] Go to service hatch -> Y=55: OK
+  [Unmask] Receive meal -> Y=55: OK
+  [Unmask] Eat meal -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Enter restaurant -> col=1 (230,25) relY=20
+  Choose dish -> col=2 (380,25) relY=20
+  Wait for turn -> col=3 (530,25) relY=20
+  Place order -> col=4 (680,25) relY=20
+  Receive buzzer and instruction -> col=10 (1580,25) relY=20
+  Wait for buzzer ring -> col=18 (2780,25) relY=20
+  Go to service hatch? -> col=19 (2930,25) relY=20
+  Go to service hatch -> col=20 (3080,25) relY=20
+  Receive meal -> col=22 (3380,25) relY=20
+  Eat meal -> col=23 (3530,25) relY=20
+  End -> col=24 (3680,25) relY=20
+
+[Employee] Lane bounds: 132-232
+  [Unmask] Take order -> Y=182: OK
+  [Unmask] Enter order in POS -> Y=182: OK
+  [Unmask] Collect payment -> Y=182: OK
+  [Unmask] Set up buzzer -> Y=182: OK
+  [Unmask] Give buzzer and instruction -> Y=182: OK
+  [Unmask] Notify chef of order -> Y=182: OK
+  [Unmask] Receive meal ready notice -> Y=182: OK
+  [Unmask] Ring guest buzzer -> Y=182: OK
+  [Unmask] Wait 5 minutes -> Y=182: OK
+  [Unmask] Call guest -> Y=182: OK
+  [Unmask] Hand over meal -> Y=182: OK
+  [maxElementBottomRelY=170]
+  Take order -> col=5 (830,152) relY=20
+  Enter order in POS -> col=6 (980,152) relY=20
+  Collect payment -> col=7 (1130,152) relY=20
+  Set up buzzer -> col=8 (1280,152) relY=20
+  Give buzzer and instruction -> col=9 (1430,152) relY=20
+  Notify chef of order -> col=11 (1730,152) relY=20
+  Receive meal ready notice -> col=16 (2480,152) relY=20
+  Ring guest buzzer -> col=17 (2630,152) relY=20
+  Wait 5 minutes -> col=21 (3230,152) relY=20
+  Call guest -> col=22 (3380,152) relY=20
+  Hand over meal -> col=21 (3230,242) relY=110
+
+[Chef] Lane bounds: 313-413
+  [Unmask] Receive new order -> Y=363: OK
+  [Unmask] Prepare meal -> Y=363: OK
+  [Unmask] Place meal in service hatch -> Y=363: OK
+  [Unmask] Notify employee meal ready -> Y=363: OK
+  [maxElementBottomRelY=80]
+  Receive new order -> col=12 (1880,333) relY=20
+  Prepare meal -> col=13 (2030,333) relY=20
+  Place meal in service hatch -> col=14 (2180,333) relY=20
+  Notify employee meal ready -> col=15 (2330,333) relY=20
+
+
+[8] Repositioned: 27/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 27 sequence flows
+
+==================================================================
+COMPLETE: RestaurantMealPickup_58790
+==================================================================
+Lanes: 3 | Elements: 27 | Flows: 27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=27,gateways=1,flows=27,data=0,data_assoc=0
+======================================================================

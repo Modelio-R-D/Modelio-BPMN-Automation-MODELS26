@@ -1,0 +1,141 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DEPARTMENT BUDGET PLANNING PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   79767
+Process Name:   DeptBudgetPlanning_79767
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DeptBudgetPlanning_79767
+[2] Lanes: Department, Strategy, Finance, Stakeholders
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Add Department: Planning Period Start (BpmnStartEvent) -> laneRef OK
+[4] Add Department: Outline Objectives (BpmnUserTask) -> laneRef OK
+[5] Add Department: Draft Budget Plan (BpmnUserTask) -> laneRef OK
+[6] Add Department: Estimate Costs and Justify (BpmnUserTask) -> laneRef OK
+[7] Add Strategy: Strategic Alignment Review (BpmnUserTask) -> laneRef OK
+[8] Add Strategy: Aligned? (BpmnExclusiveGateway) -> laneRef OK
+[9] Add Department: Revise Plan (Strategy Feedback) (BpmnUserTask) -> laneRef OK
+[10] Add Department: Document Adjustment (Strategy) (BpmnUserTask) -> laneRef OK
+[11] Add Finance: Finance Detailed Review (BpmnUserTask) -> laneRef OK
+[12] Add Finance: Feasible? (BpmnExclusiveGateway) -> laneRef OK
+[13] Add Department: Revise Plan (Finance Feedback) (BpmnUserTask) -> laneRef OK
+[14] Add Department: Document Adjustment (Finance) (BpmnUserTask) -> laneRef OK
+[15] Add Stakeholders: Stakeholder Approve Adjustment (BpmnUserTask) -> laneRef OK
+[16] Add Stakeholders: Approve Final Budget (BpmnUserTask) -> laneRef OK
+[17] Add Finance: Allocate Budget (BpmnServiceTask) -> laneRef OK
+[18] Add Finance: Distribute Budget (BpmnServiceTask) -> laneRef OK
+[19] Add Department: Budget Distributed - Implement Plan (BpmnEndEvent) -> laneRef OK
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[20] Diagram created: DeptBudgetPlanning_79767
+[21] DiagramHandle obtained
+[22] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[23] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 15/17 | Missing: Strategic Al, Aligned?
+  [Attempt 2] Found: 15/17 | Missing: Strategic Al, Aligned?
+  [Attempt 3] Found: 15/17 | Missing: Strategic Al, Aligned?
+  [Attempt 3] TIMEOUT - 15/17 elements
+
+[24] WARNING: 15/17 elements ready after 150ms
+         Missing: Strategic Alignment Review, Aligned?
+
+[25] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [Unmask] Strategic Alignment Review -> Y=175 (Strategy): OK
+  [Unmask] Aligned? -> Y=175 (Strategy): OK
+
+[26] Manual unmask: 2 elements unmasked
+[27] All elements now available
+
+  Lanes: Department(5-125); Strategy(125-252); Finance(252-352); Stakeholders(352-631)
+  Elements: Planning Perio=Y16, Outline Object=Y20, Draft Budget P=Y25, Estimate Costs=Y30, Strategic Alig=Y175, Aligned?=Y175, Revise Plan (S=Y35, Document Adjus=Y40, Finance Detail=Y263, Feasible?=Y263, Revise Plan (F=Y45, Document Adjus=Y50, Stakeholder Ap=Y363, Approve Final =Y363, Allocate Budge=Y263, Distribute Bud=Y263, Budget Distrib=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[28] Department centerY = 42
+[29] Strategy centerY = 165
+[30] Finance centerY = 279
+[31] Stakeholders centerY = 468
+
+[32] Department/Planning Period Start -> (80,42) 33x33
+[33] Department/Outline Objectives -> (230,42) 150x60
+[34] Department/Draft Budget Plan -> (380,42) 150x60
+[35] Department/Estimate Costs and Justify -> (530,42) 150x60
+[36] Strategy/Strategic Alignment Review -> (680,165) 150x60
+[37] Strategy/Aligned? -> (830,165) 40x40
+[38] Department/Revise Plan (Strategy Feedback) -> (980,42) 150x60
+[39] Department/Document Adjustment (Strategy) -> (1130,42) 150x60
+[40] Finance/Finance Detailed Review -> (1280,279) 150x60
+[41] Finance/Feasible? -> (1430,279) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Department(5-125); Strategy(125-252); Finance(252-352); Stakeholders(352-631)
+         After:  Lanes: Department(5-125); Strategy(125-252); Finance(252-356); Stakeholders(356-635)
+[42] Department/Revise Plan (Finance Feedback) -> (1580,42) 150x60
+[43] Department/Document Adjustment (Finance) -> (1730,42) 150x60
+[44] Stakeholders/Stakeholder Approve Adjustment -> (1880,468) 150x60
+[45] Stakeholders/Approve Final Budget -> (2030,468) 150x60
+[46] Finance/Allocate Budget -> (2180,279) 150x60
+[47] Finance/Distribute Budget -> (2330,279) 150x60
+[48] Department/Budget Distributed - Implement Plan -> (2480,42) 33x33
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[49] Flow: Planning Period Start -> Outline Objectives
+[50] Flow: Outline Objectives -> Draft Budget Plan
+[51] Flow: Draft Budget Plan -> Estimate Costs and Justify
+[52] Flow: Estimate Costs and Justify -> Strategic Alignment Review
+[53] Flow: Strategic Alignment Review -> Aligned?
+[54] Flow: Aligned? -> Finance Detailed Review [guard=Yes]
+[55] Flow: Aligned? -> Revise Plan (Strategy Feedback) [guard=No]
+[56] Flow: Revise Plan (Strategy Feedback) -> Document Adjustment (Strategy)
+[57] Flow: Document Adjustment (Strategy) -> Stakeholder Approve Adjustment
+[58] Flow: Stakeholder Approve Adjustment -> Strategic Alignment Review
+[59] Flow: Finance Detailed Review -> Feasible?
+[60] Flow: Feasible? -> Approve Final Budget [guard=Yes]
+[61] Flow: Feasible? -> Revise Plan (Finance Feedback) [guard=No]
+[62] Flow: Revise Plan (Finance Feedback) -> Document Adjustment (Finance)
+[63] Flow: Document Adjustment (Finance) -> Stakeholder Approve Adjustment
+[64] Flow: Approve Final Budget -> Allocate Budget
+[65] Flow: Allocate Budget -> Distribute Budget
+[66] Flow: Distribute Budget -> Budget Distributed - Implement Plan
+[67] Created 18 sequence flows
+[68] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(5-125); Strategy(125-252); Finance(252-356); Stakeholders(356-635)
+  Elements: Planning Perio=Y42, Outline Object=Y42, Draft Budget P=Y42, Estimate Costs=Y42, Strategic Alig=Y165, Aligned?=Y165, Revise Plan (S=Y42, Document Adjus=Y42, Finance Detail=Y279, Feasible?=Y279, Revise Plan (F=Y42, Document Adjus=Y42, Stakeholder Ap=Y468, Approve Final =Y468, Allocate Budge=Y279, Distribute Bud=Y279, Budget Distrib=Y42
+
+[69] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  DeptBudgetPlanning_79767
+Lanes:    4
+Elements: 17 (17 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=17,gateways=2,flows=18,data=0,data_assoc=0
+======================================================================

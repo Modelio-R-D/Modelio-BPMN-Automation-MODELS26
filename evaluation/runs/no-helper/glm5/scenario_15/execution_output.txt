@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPLIANCE AUDIT PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   12809
+Process Name:   ComplianceAudit_12809
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplianceAudit_12809
+[2] Lanes: Company Team, External Auditor, Certification Body
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Company Team lane: 5 elements
+[4] External Auditor lane: 5 elements
+[5] Certification Body lane: 3 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ComplianceAudit_12809
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/13 | Missing: Conduct Self, Make Correct, Award Certif, Issue Docume, Certificatio
+  [Attempt 2] Found: 8/13 | Missing: Conduct Self, Make Correct, Award Certif, Issue Docume, Certificatio
+  [Attempt 3] Found: 8/13 | Missing: Conduct Self, Make Correct, Award Certif, Issue Docume, Certificatio
+  [Attempt 3] TIMEOUT - 8/13 elements
+
+[10] WARNING: 8/13 elements ready after 150ms
+         Missing: Conduct Self-Assessment, Make Corrections, Award Certification, Issue Documents, Certification Complete
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Conduct Self-Assessment -> Y=74 (Company Team): OK
+  [Unmask] Make Corrections -> Y=74 (Company Team): OK
+  [Unmask] Award Certification -> Y=294 (Certification Body): OK
+  [Unmask] Issue Documents -> Y=294 (Certification Body): OK
+  [Unmask] Certification Complete -> Y=294 (Certification Body): OK
+
+[12] Manual unmask: 5 elements unmasked
+[13] All elements now available
+
+  Lanes: Company Team(5-144); External Auditor(144-244); Certification Body(244-403)
+  Elements: Schedule A=Y16, Prepare Do=Y20, Gather Evi=Y25, Conduct Se=Y74, Review Pro=Y155, Identify G=Y155, Gaps Found=Y155, Make Corre=Y74, Conduct Fi=Y155, Criteria M=Y155, Award Cert=Y294, Issue Docu=Y294, Certificat=Y294
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Company Team centerY = 51
+[15] External Auditor centerY = 171
+[16] Certification Body centerY = 300
+
+[17] Company Team/Schedule Audit -> (80,51) 33x33
+[18] Company Team/Prepare Documentation -> (230,51) 120x60
+[19] Company Team/Gather Evidence -> (380,51) 120x60
+[20] Company Team/Conduct Self-Assessment -> (530,51) 120x60
+[21] External Auditor/Review Processes -> (680,171) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Company Team(5-144); External Auditor(144-244); Certification Body(244-403)
+         After:  Lanes: Company Team(5-144); External Auditor(144-287); Certification Body(287-446)
+[22] External Auditor/Identify Gaps -> (830,171) 120x60
+[23] External Auditor/Gaps Found? -> (980,171) 40x40
+[24] Company Team/Make Corrections -> (1130,51) 120x60
+[25] External Auditor/Conduct Final Audit -> (1280,171) 120x60
+[26] External Auditor/Criteria Met? -> (1430,171) 40x40
+[27] Certification Body/Award Certification -> (1580,300) 120x60
+[28] Certification Body/Issue Documents -> (1730,300) 120x60
+[29] Certification Body/Certification Complete -> (1880,300) 33x33
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 14 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Company Team(5-144); External Auditor(144-287); Certification Body(287-446)
+  Elements: Schedule A=Y51, Prepare Do=Y51, Gather Evi=Y51, Conduct Se=Y51, Review Pro=Y171, Identify G=Y171, Gaps Found=Y171, Make Corre=Y51, Conduct Fi=Y171, Criteria M=Y171, Award Cert=Y300, Issue Docu=Y300, Certificat=Y300
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComplianceAudit_12809
+Lanes:    3
+Elements: 13 (13 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=2,flows=14,data=0,data_assoc=0
+======================================================================

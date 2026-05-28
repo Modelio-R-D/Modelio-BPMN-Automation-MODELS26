@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN PRODUCT DEVELOPMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   4247
+Process Name:   ProductDevelopment_4247
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ProductDevelopment_4247
+[2] Lanes: Product Mgmt, R&D Team, Quality Testing
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Product Mgmt lane: 4 elements
+[4] R&D Team lane: 5 elements
+[5] Quality Testing lane: 3 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ProductDevelopment_4247
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/12 | Missing: Idea Identif, Approved?, Approved for, Discarded
+  [Attempt 2] Found: 8/12 | Missing: Idea Identif, Approved?, Approved for, Discarded
+  [Attempt 3] Found: 8/12 | Missing: Idea Identif, Approved?, Approved for, Discarded
+  [Attempt 3] TIMEOUT - 8/12 elements
+
+[10] WARNING: 8/12 elements ready after 150ms
+         Missing: Idea Identified, Approved?, Approved for Development, Discarded
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Idea Identified -> Y=55 (Product Mgmt): OK
+  [Unmask] Approved? -> Y=55 (Product Mgmt): OK
+  [Unmask] Approved for Development -> Y=55 (Product Mgmt): OK
+  [Unmask] Discarded -> Y=55 (Product Mgmt): OK
+
+[12] Manual unmask: 4 elements unmasked
+[13] All elements now available
+
+  Lanes: Product Mgmt(5-132); R&D Team(132-232); Quality Testing(232-436)
+  Elements: Idea Ident=Y55, Conduct Re=Y143, Draft Desi=Y143, Select Pro=Y143, Build Prot=Y143, Test Proto=Y243, Collect Fe=Y243, Refine Pro=Y143, Refinement=Y243, Approved?=Y55, Approved f=Y55, Discarded=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Product Mgmt centerY = 45
+[15] R&D Team centerY = 159
+[16] Quality Testing centerY = 311
+
+[17] Product Mgmt/Idea Identified -> (80,45) 33x33
+[18] R&D Team/Conduct Research -> (230,159) 120x60
+[19] R&D Team/Draft Design Concepts -> (380,159) 120x60
+[20] R&D Team/Select Promising Design -> (530,159) 120x60
+[21] R&D Team/Build Prototype -> (680,159) 120x60
+[22] Quality Testing/Test Prototype -> (830,311) 120x60
+[23] Quality Testing/Collect Feedback -> (980,311) 120x60
+[24] R&D Team/Refine Prototype -> (1130,159) 120x60
+[25] Quality Testing/Refinement Needed? -> (1280,311) 40x40
+[26] Product Mgmt/Approved? -> (1430,45) 40x40
+[27] Product Mgmt/Approved for Development -> (1580,45) 33x33
+[28] Product Mgmt/Discarded -> (1580,45) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Product Mgmt(5-132); R&D Team(132-232); Quality Testing(232-436)
+  Elements: Idea Ident=Y45, Conduct Re=Y159, Draft Desi=Y159, Select Pro=Y159, Build Prot=Y159, Test Proto=Y311, Collect Fe=Y311, Refine Pro=Y159, Refinement=Y311, Approved?=Y45, Approved f=Y45, Discarded=Y45
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ProductDevelopment_4247
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=2,flows=12,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,92 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: WorkAccident_37656
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAccident_37656
+[2] Lanes: Employee/Insured, Employer/School, Authority/Insurance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee/Insured: 5 elements
+[4] Employer/School: 4 elements
+[5] Authority/Insurance: 9 elements
+
+  Total: 18 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: WorkAccident_37656
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Death or 3+ Days?=0, No Insurance Coverage=90
+  [Auto-stack] col 10: Report to Insurance (5 Days)=0, Minor Injury Logged=90
+[Employee/Insured] Lane bounds: 5-167
+  [Unmask] Log Near-Miss/Risk -> Y=86: OK
+  [Unmask] Near-Miss Logged -> Y=86: OK
+  [maxElementBottomRelY=80]
+  Accident Occurs -> col=0 (80,25) relY=20
+  Report Incident -> col=1 (230,25) relY=20
+  Incident Type? -> col=2 (380,25) relY=20
+  Log Near-Miss/Risk -> col=3 (530,25) relY=20
+  Near-Miss Logged -> col=4 (680,25) relY=20
+
+[Employer/School] Lane bounds: 167-358
+  [maxElementBottomRelY=80]
+  Receive Report -> col=3 (530,187) relY=20
+  Assess Severity -> col=4 (680,187) relY=20
+  Fatal or Serious? -> col=5 (830,187) relY=20
+  Report to Labour Inspectorate -> col=6 (980,187) relY=20
+
+[Authority/Insurance] Lane bounds: 358-458
+  [Unmask] Verify Insurance Status -> Y=408: OK
+  [Unmask] Person Insured? -> Y=408: OK
+  [Unmask] Death or 3+ Days? -> Y=408: OK
+  [Unmask] Report to Insurance (5 Days) -> Y=408: OK
+  [Unmask] Fatality? -> Y=408: OK
+  [Unmask] Fatality Report (3 Days) -> Y=408: OK
+  [Unmask] No Insurance Coverage -> Y=408: OK
+  [Unmask] Minor Injury Logged -> Y=408: OK
+  [Unmask] Process Complete -> Y=408: OK
+  [maxElementBottomRelY=150]
+  Verify Insurance Status -> col=7 (1130,378) relY=20
+  Person Insured? -> col=8 (1280,378) relY=20
+  Death or 3+ Days? -> col=9 (1430,378) relY=20
+  Report to Insurance (5 Days) -> col=10 (1580,378) relY=20
+  Fatality? -> col=11 (1730,378) relY=20
+  Fatality Report (3 Days) -> col=12 (1880,378) relY=20
+  No Insurance Coverage -> col=9 (1430,468) relY=110
+  Minor Injury Logged -> col=10 (1580,468) relY=110
+  Process Complete -> col=13 (2030,378) relY=20
+
+
+[8] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 19 sequence flows
+
+==================================================================
+COMPLETE: WorkAccident_37656
+==================================================================
+Lanes: 3 | Elements: 18 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=18,gateways=5,flows=19,data=0,data_assoc=0
+======================================================================

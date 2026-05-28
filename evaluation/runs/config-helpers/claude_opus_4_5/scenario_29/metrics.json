@@ -1,0 +1,27 @@
+{
+  "complexity": "Complex",
+  "ground_truth_metrics": {
+    "lanes": 1,
+    "elements": 35,
+    "gateways": 12,
+    "flows": 50,
+    "data_objects": 0,
+    "data_assoc": 0
+  },
+  "generated_metrics": {
+    "lanes": 4,
+    "elements": 41,
+    "flows": 49,
+    "gateways": 8,
+    "data_objects": 11,
+    "data_assoc": 16
+  },
+  "execution_success": true,
+  "execution_error": null,
+  "tokens": {
+    "input": 4198,
+    "output": 3476,
+    "total": 7674
+  },
+  "generation_time_seconds": 41.1
+}

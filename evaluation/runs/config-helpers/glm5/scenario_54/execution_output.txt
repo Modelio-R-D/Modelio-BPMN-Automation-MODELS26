@@ -1,0 +1,69 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: TransactionDataRequest_56069
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TransactionDataRequest_56069
+[2] Lanes: INQ, IP
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] INQ: 3 elements
+[4] IP: 4 elements
+
+  Total: 7 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: TransactionDataRequest_56069
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Transmit Data=0, Reject Request=90
+[INQ] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Transmit Data Request -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Transmit Data Request -> col=1 (230,25) relY=20
+  End -> col=5 (830,25) relY=20
+
+[IP] Lane bounds: 125-269
+  [Unmask] Reject Request -> Y=197: OK
+  [maxElementBottomRelY=170]
+  Check Request -> col=2 (380,145) relY=20
+  Valid? -> col=3 (530,145) relY=20
+  Transmit Data -> col=4 (680,145) relY=20
+  Reject Request -> col=4 (680,235) relY=110
+
+
+[7] Repositioned: 7/7
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 7 sequence flows
+
+==================================================================
+COMPLETE: TransactionDataRequest_56069
+==================================================================
+Lanes: 2 | Elements: 7 | Flows: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=7,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

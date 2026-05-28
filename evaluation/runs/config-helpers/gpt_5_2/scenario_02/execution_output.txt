@@ -1,0 +1,99 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: HiringAndOnboardingProcess_6587
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: HiringAndOnboardingProcess_6587
+[2] Lanes: Department, HR, Candidate, Hiring Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department: 3 elements
+[4] HR: 14 elements
+[5] Candidate: 3 elements
+[6] Hiring Team: 5 elements
+
+  Total: 25 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: HiringAndOnboardingProcess_6587
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Virtual interview=0, In-person interview=90
+[Department] Lane bounds: 5-105
+  [Unmask] Need identified -> Y=55: OK
+  [Unmask] Request new hire -> Y=55: OK
+  [Unmask] Integrated into team -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Need identified -> col=0 (80,25) relY=20
+  Request new hire -> col=1 (230,25) relY=20
+  Integrated into team -> col=22 (3380,25) relY=20
+
+[HR] Lane bounds: 125-244
+  [maxElementBottomRelY=80]
+  Create job description -> col=2 (380,145) relY=20
+  Post job to boards -> col=3 (530,145) relY=20
+  Collect resumes -> col=4 (680,145) relY=20
+  Screen resumes -> col=5 (830,145) relY=20
+  Phone interviews -> col=6 (980,145) relY=20
+  Invite to interview -> col=7 (1130,145) relY=20
+  Interview mode? -> col=8 (1280,145) relY=20
+  Extend offer -> col=12 (1880,145) relY=20
+  Negotiate salary? -> col=13 (2030,145) relY=20
+  Negotiate salary -> col=14 (2180,145) relY=20
+  Issue revised offer -> col=15 (2330,145) relY=20
+  Begin onboarding -> col=18 (2780,145) relY=20
+  Complete paperwork -> col=19 (2930,145) relY=20
+  Orientation -> col=20 (3080,145) relY=20
+
+[Candidate] Lane bounds: 244-344
+  [maxElementBottomRelY=80]
+  Review offer -> col=16 (2480,264) relY=20
+  Offer accepted? -> col=17 (2630,264) relY=20
+  Offer declined -> col=18 (2780,264) relY=20
+
+[Hiring Team] Lane bounds: 344-444
+  [Unmask] Virtual interview -> Y=394: OK
+  [Unmask] In-person interview -> Y=394: OK
+  [Unmask] Evaluate candidates -> Y=394: OK
+  [Unmask] Select candidate -> Y=394: OK
+  [Unmask] Training -> Y=394: OK
+  [maxElementBottomRelY=170]
+  Virtual interview -> col=9 (1430,364) relY=20
+  In-person interview -> col=9 (1430,454) relY=110
+  Evaluate candidates -> col=10 (1580,364) relY=20
+  Select candidate -> col=11 (1730,364) relY=20
+  Training -> col=21 (3230,364) relY=20
+
+
+[9] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 26 sequence flows
+
+==================================================================
+COMPLETE: HiringAndOnboardingProcess_6587
+==================================================================
+Lanes: 4 | Elements: 25 | Flows: 26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=25,gateways=3,flows=26,data=0,data_assoc=0
+======================================================================

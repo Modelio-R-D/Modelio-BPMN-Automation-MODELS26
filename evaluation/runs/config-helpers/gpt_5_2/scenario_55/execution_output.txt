@@ -1,0 +1,130 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: UltrasoundGuidedVenousAccess_62507
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UltrasoundGuidedVenousAccess_62507
+[2] Lanes: Doctor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Doctor: 37 elements
+
+  Total: 37 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: UltrasoundGuidedVenousAccess_62507
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 2: Prepare implements=0, Wash hands=90, Put on sterile clothes=180
+  [Auto-stack] col 13: Anatomic identification=0, Doppler identification=90, Compression identification=180
+  [Auto-stack] col 23: Check wire long axis=0, Check wire short axis=90
+[Doctor] Lane bounds: 5-205
+  [Unmask] Start -> Y=105: OK
+  [Unmask] Prep steps -> Y=105: OK
+  [Unmask] Prepare implements -> Y=105: OK
+  [Unmask] Wash hands -> Y=105: OK
+  [Unmask] Put on sterile clothes -> Y=105: OK
+  [Unmask] Prep complete -> Y=105: OK
+  [Unmask] Clean puncture area -> Y=105: OK
+  [Unmask] Drape puncture zone -> Y=105: OK
+  [Unmask] Configure ultrasound -> Y=105: OK
+  [Unmask] Put gel on probe -> Y=105: OK
+  [Unmask] Cover probe -> Y=105: OK
+  [Unmask] Put sterile gel -> Y=105: OK
+  [Unmask] Position probe -> Y=105: OK
+  [Unmask] Position patient -> Y=105: OK
+  [Unmask] Vein identification method? -> Y=105: OK
+  [Unmask] Anatomic identification -> Y=105: OK
+  [Unmask] Doppler identification -> Y=105: OK
+  [Unmask] Compression identification -> Y=105: OK
+  [Unmask] Vein identified -> Y=105: OK
+  [Unmask] Anesthetize patient -> Y=105: OK
+  [Unmask] Puncture vein -> Y=105: OK
+  [Unmask] Check blood return -> Y=105: OK
+  [Unmask] Blood return correct? -> Y=105: OK
+  [Unmask] Drop probe and remove syringe -> Y=105: OK
+  [Unmask] Install guidewire -> Y=105: OK
+  [Unmask] Remove trocar -> Y=105: OK
+  [Unmask] Check wire axis? -> Y=105: OK
+  [Unmask] Check wire long axis -> Y=105: OK
+  [Unmask] Check wire short axis -> Y=105: OK
+  [Unmask] Wire checked -> Y=105: OK
+  [Unmask] Wire in good position? -> Y=105: OK
+  [Unmask] Widen pathway -> Y=105: OK
+  [Unmask] Advance catheter -> Y=105: OK
+  [Unmask] Remove guidewire -> Y=105: OK
+  [Unmask] Verify flow and reflow -> Y=105: OK
+  [Unmask] Check catheter position -> Y=105: OK
+  [Unmask] End -> Y=105: OK
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Prep steps -> col=1 (230,25) relY=20
+  Prepare implements -> col=2 (380,25) relY=20
+  Wash hands -> col=2 (380,115) relY=110
+  Put on sterile clothes -> col=2 (380,205) relY=200
+  Prep complete -> col=3 (530,25) relY=20
+  Clean puncture area -> col=4 (680,25) relY=20
+  Drape puncture zone -> col=5 (830,25) relY=20
+  Configure ultrasound -> col=6 (980,25) relY=20
+  Put gel on probe -> col=7 (1130,25) relY=20
+  Cover probe -> col=8 (1280,25) relY=20
+  Put sterile gel -> col=9 (1430,25) relY=20
+  Position probe -> col=10 (1580,25) relY=20
+  Position patient -> col=11 (1730,25) relY=20
+  Vein identification method? -> col=12 (1880,25) relY=20
+  Anatomic identification -> col=13 (2030,25) relY=20
+  Doppler identification -> col=13 (2030,115) relY=110
+  Compression identification -> col=13 (2030,205) relY=200
+  Vein identified -> col=14 (2180,25) relY=20
+  Anesthetize patient -> col=15 (2330,25) relY=20
+  Puncture vein -> col=16 (2480,25) relY=20
+  Check blood return -> col=17 (2630,25) relY=20
+  Blood return correct? -> col=18 (2780,25) relY=20
+  Drop probe and remove syringe -> col=19 (2930,25) relY=20
+  Install guidewire -> col=20 (3080,25) relY=20
+  Remove trocar -> col=21 (3230,25) relY=20
+  Check wire axis? -> col=22 (3380,25) relY=20
+  Check wire long axis -> col=23 (3530,25) relY=20
+  Check wire short axis -> col=23 (3530,115) relY=110
+  Wire checked -> col=24 (3680,25) relY=20
+  Wire in good position? -> col=25 (3830,25) relY=20
+  Widen pathway -> col=26 (3980,25) relY=20
+  Advance catheter -> col=27 (4130,25) relY=20
+  Remove guidewire -> col=28 (4280,25) relY=20
+  Verify flow and reflow -> col=29 (4430,25) relY=20
+  Check catheter position -> col=30 (4580,25) relY=20
+  End -> col=31 (4730,25) relY=20
+
+
+[6] Repositioned: 37/37
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 43 sequence flows
+
+==================================================================
+COMPLETE: UltrasoundGuidedVenousAccess_62507
+==================================================================
+Lanes: 1 | Elements: 37 | Flows: 43
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=37,gateways=8,flows=43,data=0,data_assoc=0
+======================================================================

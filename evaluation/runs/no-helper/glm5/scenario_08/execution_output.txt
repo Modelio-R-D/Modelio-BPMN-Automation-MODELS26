@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INCIDENT MANAGEMENT PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   2464
+Process Name:   IncidentManagement_2464
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IncidentManagement_2464
+[2] Lanes: Reporter, Support Team, Resolution Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Reporter lane: 3 elements
+[4] Support Team lane: 6 elements
+[5] Resolution Team lane: 9 elements
+
+  Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: IncidentManagement_2464
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 18 elements ready
+
+[10] SUCCESS: All 18 elements ready in 50ms
+
+  Lanes: Reporter(5-105); Support Team(105-205); Resolution Team(205-404)
+  Elements: Incident R=Y16, Log Incide=Y116, Assign to =Y116, Gather Inf=Y116, Identify C=Y116, Cause Foun=Y116, Request Mo=Y116, Propose So=Y216, Provide De=Y20, Solution T=Y216, Implement =Y216, Conduct Tr=Y216, Update Pol=Y216, Follow-up =Y216, Issue Reso=Y216, Close Repo=Y216, Confirm Re=Y25, Notify Sta=Y216
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Reporter centerY = 32
+[12] Support Team centerY = 132
+[13] Resolution Team centerY = 281
+
+[14] Reporter/Incident Reported -> (80,32) 33x33
+[15] Support Team/Log Incident -> (230,132) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Reporter(5-105); Support Team(105-205); Resolution Team(205-404)
+         After:  Lanes: Reporter(5-105); Support Team(105-229); Resolution Team(229-428)
+[16] Support Team/Assign to Team -> (380,132) 120x60
+[17] Support Team/Gather Information -> (530,132) 120x60
+[18] Support Team/Identify Cause -> (680,132) 120x60
+[19] Support Team/Cause Found? -> (830,132) 40x40
+[20] Support Team/Request More Info -> (980,132) 120x60
+[21] Resolution Team/Propose Solution -> (1130,281) 120x60
+[22] Reporter/Provide Details -> (1280,32) 120x60
+[23] Resolution Team/Solution Type? -> (1280,281) 40x40
+[24] Resolution Team/Implement Fix -> (1430,281) 120x60
+[25] Resolution Team/Conduct Training -> (1580,281) 120x60
+[26] Resolution Team/Update Policy -> (1730,281) 120x60
+[27] Resolution Team/Follow-up Check -> (1880,281) 120x60
+[28] Resolution Team/Issue Resolved? -> (2030,281) 40x40
+[29] Resolution Team/Close Report -> (2180,281) 120x60
+[30] Reporter/Confirm Resolution -> (2180,32) 120x60
+[31] Resolution Team/Notify Stakeholders -> (2330,281) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 21 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Reporter(5-105); Support Team(105-229); Resolution Team(229-428)
+  Elements: Incident R=Y32, Log Incide=Y132, Assign to =Y132, Gather Inf=Y132, Identify C=Y132, Cause Foun=Y132, Request Mo=Y132, Propose So=Y281, Provide De=Y32, Solution T=Y281, Implement =Y281, Conduct Tr=Y281, Update Pol=Y281, Follow-up =Y281, Issue Reso=Y281, Close Repo=Y281, Confirm Re=Y32, Notify Sta=Y281
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  IncidentManagement_2464
+Lanes:    3
+Elements: 18 (18 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=18,gateways=3,flows=21,data=0,data_assoc=0
+======================================================================

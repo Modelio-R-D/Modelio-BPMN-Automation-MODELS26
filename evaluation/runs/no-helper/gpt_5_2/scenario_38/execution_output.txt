@@ -1,0 +1,137 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Building a House (Tree House)
+Script Version: v9.1
+Execution ID:   84946
+Process Name:   Building_a_House_84946
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Building_a_House_84946
+[2] Lanes: Builder, Architect, Online Store, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Builder lane: elements created
+[4] Architect lane: elements created
+[5] Online Store lane: elements created
+[6] Friends lane: elements created
+
+  Total elements: 24
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: Building a House
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/24 | Missing: Start, Collect Requ, Send Require, Review Draft, Draft Approv, Refine Requi, Create Mater, Order and In, Order Catego, Materials Or, Ready to Bui, Message Frie, Send Party I, Create Atten, End, Order Lumber, Order Hardwa, Order Tools, Ship Materia, Confirm Buil, Build Tree H, RSVP to Part
+  [Attempt 2] Found: 2/24 | Missing: Start, Collect Requ, Send Require, Review Draft, Draft Approv, Refine Requi, Create Mater, Order and In, Order Catego, Materials Or, Ready to Bui, Message Frie, Send Party I, Create Atten, End, Order Lumber, Order Hardwa, Order Tools, Ship Materia, Confirm Buil, Build Tree H, RSVP to Part
+  [Attempt 3] Found: 2/24 | Missing: Start, Collect Requ, Send Require, Review Draft, Draft Approv, Refine Requi, Create Mater, Order and In, Order Catego, Materials Or, Ready to Bui, Message Frie, Send Party I, Create Atten, End, Order Lumber, Order Hardwa, Order Tools, Ship Materia, Confirm Buil, Build Tree H, RSVP to Part
+  [Attempt 3] TIMEOUT - 2/24 elements
+
+[11] WARNING: 2/24 elements ready after 150ms
+         Missing: Start, Collect Requirements, Send Requirements to Architect, Review Draft, Draft Approved?, Refine Requirements, Create Materials List, Order and Invite (Split), Order Categories (Split), Materials Ordered (Join), Ready to Build (Join), Message Friends to Build, Send Party Invitations, Create Attendee List, End, Order Lumber, Order Hardware, Order Tools, Ship Materials, Confirm Build Participation, Build Tree House, RSVP to Party
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (Builder): OK
+  [Unmask] Collect Requirements -> Y=55 (Builder): OK
+  [Unmask] Send Requirements to Architect -> Y=55 (Builder): OK
+  [Unmask] Review Draft -> Y=55 (Builder): OK
+  [Unmask] Draft Approved? -> Y=55 (Builder): OK
+  [Unmask] Refine Requirements -> Y=55 (Builder): OK
+  [Unmask] Create Materials List -> Y=55 (Builder): OK
+  [Unmask] Order and Invite (Split) -> Y=55 (Builder): OK
+  [Unmask] Order Categories (Split) -> Y=55 (Builder): OK
+  [Unmask] Materials Ordered (Join) -> Y=255 (Online Store): OK
+  [Unmask] Ready to Build (Join) -> Y=55 (Builder): OK
+  [Unmask] Message Friends to Build -> Y=55 (Builder): OK
+  [Unmask] Send Party Invitations -> Y=55 (Builder): OK
+  [Unmask] Create Attendee List -> Y=55 (Builder): OK
+  [Unmask] End -> Y=55 (Builder): OK
+  [Unmask] Order Lumber -> Y=255 (Online Store): OK
+  [Unmask] Order Hardware -> Y=255 (Online Store): OK
+  [Unmask] Order Tools -> Y=255 (Online Store): OK
+  [Unmask] Ship Materials -> Y=255 (Online Store): OK
+  [Unmask] Confirm Build Participation -> Y=355 (Friends): OK
+  [Unmask] Build Tree House -> Y=355 (Friends): OK
+  [Unmask] RSVP to Party -> Y=355 (Friends): OK
+
+[13] Manual unmask: 22 elements unmasked
+[14] All elements now available
+
+  Lanes: Builder(5-132); Architect(132-232); Online Store(232-343); Friends(343-443)
+  Elements: Start=Y55, Collect Requ=Y55, Send Require=Y55, Create Draft=Y143, Review Draft=Y55, Draft Approv=Y55, Refine Requi=Y55, Update Draft=Y143, Create Mater=Y55, Order and In=Y55, Message Frie=Y55, Order Catego=Y55, Confirm Buil=Y355, Order Hardwa=Y255, Order Lumber=Y255, Order Tools=Y255, Materials Or=Y255, Ship Materia=Y255, Ready to Bui=Y55, Build Tree H=Y355, Send Party I=Y55, RSVP to Part=Y355, Create Atten=Y55, End=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Builder centerY = 45
+[16] Architect centerY = 159
+[17] Online Store centerY = 264
+[18] Friends centerY = 370
+
+[19] Builder/Start -> (80,45) 33x33
+[20] Builder/Collect Requirements -> (230,45) 160x60
+[21] Builder/Send Requirements to Architect -> (380,45) 160x60
+[22] Architect/Create Draft Plan -> (530,159) 160x60
+[23] Builder/Review Draft -> (680,45) 160x60
+[24] Builder/Draft Approved? -> (830,45) 40x40
+[25] Builder/Refine Requirements -> (980,45) 160x60
+[26] Architect/Update Draft Plan -> (1130,159) 160x60
+[27] Builder/Create Materials List -> (1280,45) 160x60
+[28] Builder/Order and Invite (Split) -> (1430,45) 40x40
+[29] Builder/Message Friends to Build -> (1580,45) 160x60
+[30] Builder/Order Categories (Split) -> (1580,45) 40x40
+[31] Friends/Confirm Build Participation -> (1730,370) 160x60
+[32] Online Store/Order Hardware -> (1730,264) 160x60
+[33] Online Store/Order Lumber -> (1730,264) 160x60
+[34] Online Store/Order Tools -> (1730,264) 160x60
+[35] Online Store/Materials Ordered (Join) -> (1880,264) 40x40
+[36] Online Store/Ship Materials -> (2030,264) 160x60
+[37] Builder/Ready to Build (Join) -> (2180,45) 40x40
+[38] Friends/Build Tree House -> (2330,370) 160x60
+[39] Builder/Send Party Invitations -> (2480,45) 160x60
+[40] Friends/RSVP to Party -> (2630,370) 160x60
+[41] Builder/Create Attendee List -> (2780,45) 160x60
+[42] Builder/End -> (2930,45) 33x33
+
+  Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[43] Created 27 sequence flows
+[44] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Builder(5-132); Architect(132-232); Online Store(232-343); Friends(343-443)
+  Elements: Start=Y45, Collect Requ=Y45, Send Require=Y45, Create Draft=Y159, Review Draft=Y45, Draft Approv=Y45, Refine Requi=Y45, Update Draft=Y159, Create Mater=Y45, Order and In=Y45, Message Frie=Y45, Order Catego=Y45, Confirm Buil=Y370, Order Hardwa=Y264, Order Lumber=Y264, Order Tools=Y264, Materials Or=Y264, Ship Materia=Y264, Ready to Bui=Y45, Build Tree H=Y370, Send Party I=Y45, RSVP to Part=Y370, Create Atten=Y45, End=Y45
+
+[45] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Building a House (Tree House)
+Process:  Building_a_House_84946
+Lanes:    4
+Elements: 24 (24 in diagram)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=24,gateways=5,flows=27,data=0,data_assoc=0
+======================================================================

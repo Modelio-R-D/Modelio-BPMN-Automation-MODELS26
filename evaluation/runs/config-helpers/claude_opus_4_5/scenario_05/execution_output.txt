@@ -1,0 +1,96 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SupplierSelectionProcess_88488
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SupplierSelectionProcess_88488
+[2] Lanes: Procurement Team, Management, Supplier
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement Team: 15 elements
+[4] Management: 2 elements
+[5] Supplier: 1 elements
+
+  Total: 18 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: SupplierSelectionProcess_88488
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Conduct Site Visit=0, Conduct Interviews=90
+[Procurement Team] Lane bounds: 5-192
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Identify Supplier Need -> col=1 (230,25) relY=20
+  Issue RFP -> col=2 (380,25) relY=20
+  Receive Proposals -> col=3 (530,25) relY=20
+  Evaluate Proposals -> col=4 (680,25) relY=20
+  Site Visit Required? -> col=5 (830,25) relY=20
+  Conduct Site Visit -> col=6 (980,25) relY=20
+  Conduct Interviews -> col=6 (980,115) relY=110
+  Merge Evaluation -> col=7 (1130,25) relY=20
+  Analyze Results -> col=8 (1280,25) relY=20
+  Negotiate Contract -> col=10 (1580,25) relY=20
+  Terms Agreed? -> col=11 (1730,25) relY=20
+  Onboard Supplier -> col=14 (2180,25) relY=20
+  Execute Contract -> col=15 (2330,25) relY=20
+  End -> col=16 (2480,25) relY=20
+  RFP Document (DO from Issue RFP) -> (470,185) maxBottomRelY=170
+  Proposals (DO from Receive Proposals) -> (620,185) maxBottomRelY=170
+  Evaluation Report (DO from Analyze Results) -> (1070,185) maxBottomRelY=170
+
+[Management] Lane bounds: 277-377
+  [Unmask] Select Supplier -> Y=327: OK
+  [Unmask] Sign Contract -> Y=327: OK
+  [Unmask] Contract -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Select Supplier -> col=9 (1430,297) relY=20
+  Sign Contract -> col=12 (1880,297) relY=20
+  Contract (DO from Sign Contract) -> (1670,367) maxBottomRelY=80
+
+[Supplier] Lane bounds: 459-559
+  [Unmask] Countersign Contract -> Y=509: OK
+  [maxElementBottomRelY=80]
+  Countersign Contract -> col=13 (2030,479) relY=20
+
+
+[9] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 19 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 8
+
+==================================================================
+COMPLETE: SupplierSelectionProcess_88488
+==================================================================
+Lanes: 3 | Elements: 18 | Data: 4 | Flows: 19 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

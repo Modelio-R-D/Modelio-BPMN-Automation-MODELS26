@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+ROBOTIC BURGER SELLER - UNIVERSITY OF VIENNA
+==================================================================
+Script Version: v1.0
+Execution ID:   17797
+Process Name:   RoboticBurger_17797
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RoboticBurger_17797
+[2] Lanes: Customer, Robot, Conveyor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 3 elements
+[4] Robot lane: 12 elements
+[5] Conveyor lane: 2 elements
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements...
+
+  [Attempt 1] Found: 11/17 | Missing: Order Rece, Place Orde, Order Comp, 30s Status, Announce S
+  [Attempt 2] Found: 11/17 | Missing: Order Rece, Place Orde, Order Comp, 30s Status, Announce S
+  [Attempt 3] Found: 11/17 | Missing: Order Rece, Place Orde, Order Comp, 30s Status, Announce S
+  [Attempt 4] Found: 11/17 | Missing: Order Rece, Place Orde, Order Comp, 30s Status, Announce S
+  [Attempt 5] Found: 11/17 | Missing: Order Rece, Place Orde, Order Comp, 30s Status, Announce S
+  [Attempt 5] TIMEOUT
+
+[10] Trying manual unmask...
+
+  [Unmask] Order Received -> Y=55: OK
+  [Unmask] Place Order -> Y=55: OK
+  [Unmask] Order Complete -> Y=55: OK
+  [Unmask] 30s Status Upda -> Y=187: OK
+  [Unmask] Announce Status -> Y=187: OK
+  [Unmask] Assemble Order -> Y=187: OK
+
+[11] Elements ready: 17/17
+
+  Lanes: Customer(5-125); Robot(125-289); Conveyor(289-389)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 42
+[13] Robot centerY = 184
+[14] Conveyor centerY = 316
+
+[15] Order Received -> (60,42)
+[16] Place Order -> (200,42)
+[17] Menu or Burger? -> (340,184)
+[18] Start Menu Prep -> (480,184)
+[19] Prepare Drink -> (620,184)
+[20] Fries or Wedges? -> (760,184)
+[21] Prepare Fries -> (900,149)
+[22] Prepare Wedges -> (900,219)
+[23] Sides Ready -> (1040,184)
+[24] Menu Items Ready -> (1180,184)
+[25] Prepare Burger -> (1320,184)
+[26] 30s Status Update -> (1460,184)
+[27] Announce Status -> (1600,184)
+[28] Assemble Order -> (1740,184)
+[29] Load Conveyor -> (1880,316)
+[30] Deliver Order -> (2020,316)
+[31] Order Complete -> (2020,42)
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 19 sequence flows
+[33] Final save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); Robot(125-289); Conveyor(289-402)
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE - ROBOTIC BURGER SELLER
+==================================================================
+Process:  RoboticBurger_17797
+Lanes:    3 (Customer, Robot, Conveyor)
+Elements: 17
+Flows:    19
+
+Process Flow:
+  1. Customer places order
+  2. Robot asks: Menu or just burger?
+  3. If Menu: Parallel prep of drink + sides
+  4. Sides: Fries or Wedges (variable time by size)
+  5. Burger prep with 30s status updates
+  6. Conveyor belt delivery
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=5,flows=19,data=0,data_assoc=0
+======================================================================

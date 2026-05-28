@@ -1,0 +1,82 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CustomerInquiryToOrder_5476
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CustomerInquiryToOrder_5476
+[2] Lanes: Customer, Sales, System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] Sales: 7 elements
+[5] System: 2 elements
+
+  Total: 14 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: CustomerInquiryToOrder_5476
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Place Order=0, End - Quote Rejected=90
+  [Auto-stack] col 4: Guide Product Selection=0, End - Not Interested=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Review and Approve Quote -> Y=55: OK
+  [Unmask] Quote Approved? -> Y=55: OK
+  [Unmask] Place Order -> Y=55: OK
+  [Unmask] End - Quote Rejected -> Y=55: OK
+  [Unmask] Order Confirmed -> Y=55: OK
+  [maxElementBottomRelY=150]
+  Review and Approve Quote -> col=6 (980,25) relY=20
+  Quote Approved? -> col=7 (1130,25) relY=20
+  Place Order -> col=8 (1280,25) relY=20
+  End - Quote Rejected -> col=8 (1280,115) relY=110
+  Order Confirmed -> col=11 (1730,25) relY=20
+
+[Sales] Lane bounds: 185-285
+  [maxElementBottomRelY=150]
+  Inquiry Received -> col=0 (80,205) relY=20
+  Collect Customer Info -> col=1 (230,205) relY=20
+  Answer Questions -> col=2 (380,205) relY=20
+  Customer Interested? -> col=3 (530,205) relY=20
+  Guide Product Selection -> col=4 (680,205) relY=20
+  End - Not Interested -> col=4 (680,295) relY=110
+  Prepare Quote -> col=5 (830,205) relY=20
+
+[System] Lane bounds: 365-465
+  [maxElementBottomRelY=80]
+  Record Order -> col=9 (1430,385) relY=20
+  Send Order Confirmation -> col=10 (1580,385) relY=20
+
+
+[8] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 13 sequence flows
+
+==================================================================
+COMPLETE: CustomerInquiryToOrder_5476
+==================================================================
+Lanes: 3 | Elements: 14 | Flows: 13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=2,flows=13,data=0,data_assoc=0
+======================================================================

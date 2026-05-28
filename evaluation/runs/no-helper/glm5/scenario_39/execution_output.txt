@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIY SMARTPHONE REPAIR PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   55182
+Process Name:   SmartphoneRepair_55182
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SmartphoneRepair_55182
+[2] Lanes: User, Online Tool, Expert Service
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] User lane: 10 elements
+[4] Online Tool lane: 4 elements
+[5] Expert Service lane: 3 elements
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SmartphoneRepair_55182
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 13/17 | Missing: Generate Mat, Generate Too, Show Orderin, Send Instruc
+  [Attempt 2] Found: 13/17 | Missing: Generate Mat, Generate Too, Show Orderin, Send Instruc
+  [Attempt 3] Found: 13/17 | Missing: Generate Mat, Generate Too, Show Orderin, Send Instruc
+  [Attempt 3] TIMEOUT - 13/17 elements
+
+[10] WARNING: 13/17 elements ready after 150ms
+         Missing: Generate Materials List, Generate Tools List, Show Ordering Options, Send Instructions
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Generate Materials List -> Y=175 (Online Tool): OK
+  [Unmask] Generate Tools List -> Y=175 (Online Tool): OK
+  [Unmask] Show Ordering Options -> Y=175 (Online Tool): OK
+  [Unmask] Send Instructions -> Y=175 (Online Tool): OK
+
+[12] Manual unmask: 4 elements unmasked
+[13] All elements now available
+
+  Lanes: User(5-125); Online Tool(125-232); Expert Service(232-411)
+  Elements: Screen Bro=Y16, Enter Mode=Y20, Generate M=Y175, Generate T=Y175, Check What=Y25, Show Order=Y175, Contact Fr=Y30, Buy Remain=Y35, Send Instr=Y175, Perform Re=Y40, Success?=Y45, Submit Rev=Y50, Phone Fixe=Y55, Receive Ph=Y243, Send to Ex=Y60, Profession=Y243, Phone Repa=Y243
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] User centerY = 42
+[15] Online Tool centerY = 155
+[16] Expert Service centerY = 298
+
+[17] User/Screen Broken -> (80,42) 33x33
+[18] User/Enter Model & Problem -> (220,42) 120x60
+[19] Online Tool/Generate Materials List -> (360,155) 120x60
+[20] Online Tool/Generate Tools List -> (500,155) 120x60
+[21] User/Check What I Have -> (640,42) 120x60
+[22] Online Tool/Show Ordering Options -> (640,155) 120x60
+[23] User/Contact Friends -> (780,42) 120x60
+[24] User/Buy Remaining Items -> (920,42) 120x60
+[25] Online Tool/Send Instructions -> (1200,155) 120x60
+[26] User/Perform Repair -> (1340,42) 120x60
+[27] User/Success? -> (1480,42) 40x40
+[28] User/Submit Review/Video -> (1620,42) 120x60
+[29] User/Phone Fixed -> (1760,42) 33x33
+[30] Expert Service/Receive Phone -> (1900,298) 120x60
+[31] User/Send to Expert -> (1900,42) 120x60
+[32] Expert Service/Professional Repair -> (2040,298) 120x60
+[33] Expert Service/Phone Repaired -> (2180,298) 33x33
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 16 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: User(5-125); Online Tool(125-232); Expert Service(232-411)
+  Elements: Screen Bro=Y42, Enter Mode=Y42, Generate M=Y155, Generate T=Y155, Check What=Y42, Show Order=Y155, Contact Fr=Y42, Buy Remain=Y42, Send Instr=Y155, Perform Re=Y42, Success?=Y42, Submit Rev=Y42, Phone Fixe=Y42, Receive Ph=Y298, Send to Ex=Y42, Profession=Y298, Phone Repa=Y298
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SmartphoneRepair_55182
+Lanes:    3
+Elements: 17 (17 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=1,flows=16,data=0,data_assoc=0
+======================================================================

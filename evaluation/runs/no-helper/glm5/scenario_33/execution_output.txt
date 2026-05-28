@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CUSTOM 3D MODEL PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   46202
+Process Name:   Custom3DModel_46202
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Custom3DModel_46202
+[2] Lanes: Customer, Artist, Printer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 12 elements
+[4] Artist lane: 3 elements
+[5] Printer lane: 6 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Custom3DModel_46202
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 21 elements ready
+
+[10] SUCCESS: All 21 elements ready in 50ms
+
+  Lanes: Customer(5-132); Artist(132-232); Printer(232-332)
+  Elements: Need Custo=Y16, Send Sketc=Y20, Create Pro=Y143, Review Res=Y25, Satisfied?=Y30, Revise Pro=Y143, Tell Artis=Y35, Send STL=Y143, Choose Pla=Y40, Color in S=Y45, Check Amou=Y50, Order Colo=Y65, Under 100g=Y55, Add to Sho=Y60, Turn Print=Y243, Parallel S=Y243, Generate G=Y70, Heat Up Be=Y243, Parallel J=Y243, Print Mode=Y243, Model Comp=Y243
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Customer centerY = 45
+[12] Artist centerY = 159
+[13] Printer centerY = 259
+
+[14] Customer/Need Custom 3D Model -> (80,45)
+[15] Customer/Send Sketches -> (220,45)
+[16] Artist/Create Project -> (360,159)
+[17] Customer/Review Result -> (500,45)
+[18] Customer/Satisfied? -> (640,45)
+[19] Artist/Revise Project -> (780,159)
+[20] Customer/Tell Artist Changes -> (780,45)
+[21] Artist/Send STL -> (920,159)
+[22] Customer/Choose Plastic Color -> (1060,45)
+[23] Customer/Color in Stock? -> (1200,45)
+[24] Customer/Check Amount Left -> (1340,45)
+[25] Customer/Order Color -> (1340,45)
+[26] Customer/Under 100g? -> (1480,45)
+[27] Customer/Add to Shopping List -> (1620,45)
+[28] Printer/Turn Printer On -> (1760,259)
+[29] Printer/Parallel Split -> (1900,259) *** LANE CHANGED ***
+[30] Customer/Generate GCode -> (2040,45)
+[31] Printer/Heat Up Bed & Extruder -> (2040,259)
+[32] Printer/Parallel Join -> (2180,259)
+[33] Printer/Print Model -> (2320,259)
+[34] Printer/Model Complete -> (2460,259)
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 24 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Artist(132-232); Printer(232-336)
+  Elements: Need Custo=Y45, Send Sketc=Y45, Create Pro=Y159, Review Res=Y45, Satisfied?=Y45, Revise Pro=Y159, Tell Artis=Y45, Send STL=Y159, Choose Pla=Y45, Color in S=Y45, Check Amou=Y45, Order Colo=Y45, Under 100g=Y45, Add to Sho=Y45, Turn Print=Y259, Parallel S=Y259, Generate G=Y45, Heat Up Be=Y259, Parallel J=Y259, Print Mode=Y259, Model Comp=Y259
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Custom3DModel_46202
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=5,flows=24,data=0,data_assoc=0
+======================================================================

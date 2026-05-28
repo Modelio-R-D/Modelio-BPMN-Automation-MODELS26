@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN FRIDGE SERVICE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   58652
+Process Name:   FridgeService_58652
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FridgeService_58652
+[2] Lanes: Customer, Central Service, Local Facility
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 5 elements
+[4] Central Service lane: 1 element
+[5] Local Facility lane: 6 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: FridgeService_58652
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 10/12 | Missing: Rate Service, Service Comp
+  [Attempt 2] Found: 10/12 | Missing: Rate Service, Service Comp
+  [Attempt 3] Found: 10/12 | Missing: Rate Service, Service Comp
+  [Attempt 3] TIMEOUT - 10/12 elements
+
+[10] WARNING: 10/12 elements ready after 150ms
+         Missing: Rate Service, Service Complete
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Rate Service -> Y=55 (Customer): OK
+  [Unmask] Service Complete -> Y=55 (Customer): OK
+
+[12] Manual unmask: 2 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-125); Central Service(125-225); Local Facility(225-325)
+  Elements: Strange No=Y16, Describe S=Y20, Select Fac=Y136, Make Appoi=Y236, Arrive at =Y236, Parts Avai=Y236, Order Part=Y236, Reschedule=Y236, Confirm Re=Y25, Repair Fri=Y236, Rate Servi=Y55, Service Co=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 42
+[15] Central Service centerY = 152
+[16] Local Facility centerY = 252
+
+[17] Customer/Strange Noises -> (80,42) 33x33
+[18] Customer/Describe Symptoms -> (220,42) 120x60
+[19] Central Service/Select Facility -> (360,152) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); Central Service(125-225); Local Facility(225-325)
+         After:  Lanes: Customer(5-125); Central Service(125-262); Local Facility(262-362)
+[20] Local Facility/Make Appointment -> (500,252) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); Central Service(125-262); Local Facility(262-362)
+         After:  Lanes: Customer(-16-104); Central Service(104-241); Local Facility(241-362)
+[21] Local Facility/Arrive at Location -> (640,252) 120x60
+[22] Local Facility/Parts Available? -> (780,252) 40x40
+[23] Local Facility/Order Parts -> (920,252) 120x60
+[24] Local Facility/Reschedule -> (1060,252) 120x60
+[25] Customer/Confirm Repair OK -> (1200,42) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-16-104); Central Service(104-241); Local Facility(241-362)
+         After:  Lanes: Customer(-16-113); Central Service(113-250); Local Facility(250-371)
+[26] Local Facility/Repair Fridge -> (1200,252) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-16-113); Central Service(113-250); Local Facility(250-371)
+         After:  Lanes: Customer(-25-104); Central Service(104-241); Local Facility(241-371)
+[27] Customer/Rate Service -> (1340,42) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-25-104); Central Service(104-241); Local Facility(241-371)
+         After:  Lanes: Customer(-25-113); Central Service(113-250); Local Facility(250-380)
+[28] Customer/Service Complete -> (1480,42) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-25-113); Central Service(113-250); Local Facility(250-380)
+  Elements: Strange No=Y12, Describe S=Y12, Select Fac=Y140, Make Appoi=Y261, Arrive at =Y261, Parts Avai=Y261, Order Part=Y261, Reschedule=Y261, Confirm Re=Y33, Repair Fri=Y261, Rate Servi=Y42, Service Co=Y42
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  FridgeService_58652
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=1,flows=12,data=0,data_assoc=0
+======================================================================

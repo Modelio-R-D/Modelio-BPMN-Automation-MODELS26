@@ -1,0 +1,121 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN BUDGET PLANNING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   10959
+Process Name:   BudgetPlanning_10959
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BudgetPlanning_10959
+[2] Lanes: Department, Management, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department lane: 6 elements
+[4] Management lane: 5 elements
+[5] Finance lane: 5 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: BudgetPlanning_10959
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/16 | Missing: Budget Cycle, Define Objec, Draft Budget, Revise Budge, Implement Pl, Budget Imple, Strategic Al, Strategicall, Request Revi, Approve Fina, Final Approv, Detailed Fin, Budget Feasi, Document Adj, Allocate Bud, Distribute B
+  [Attempt 2] Found: 0/16 | Missing: Budget Cycle, Define Objec, Draft Budget, Revise Budge, Implement Pl, Budget Imple, Strategic Al, Strategicall, Request Revi, Approve Fina, Final Approv, Detailed Fin, Budget Feasi, Document Adj, Allocate Bud, Distribute B
+  [Attempt 3] Found: 0/16 | Missing: Budget Cycle, Define Objec, Draft Budget, Revise Budge, Implement Pl, Budget Imple, Strategic Al, Strategicall, Request Revi, Approve Fina, Final Approv, Detailed Fin, Budget Feasi, Document Adj, Allocate Bud, Distribute B
+  [Attempt 3] TIMEOUT - 0/16 elements
+
+[10] WARNING: 0/16 elements ready after 150ms
+         Missing: Budget Cycle Started, Define Objectives, Draft Budget Plan, Revise Budget Plan, Implement Plan, Budget Implemented, Strategic Alignment Review, Strategically Aligned?, Request Revision, Approve Final Budget, Final Approval?, Detailed Finance Review, Budget Feasible?, Document Adjustments, Allocate Budget, Distribute Budget
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Budget Cycle Started -> Y=55 (Department): OK
+  [Unmask] Define Objectives -> Y=55 (Department): OK
+  [Unmask] Draft Budget Plan -> Y=55 (Department): OK
+  [Unmask] Revise Budget Plan -> Y=55 (Department): OK
+  [Unmask] Implement Plan -> Y=55 (Department): OK
+  [Unmask] Budget Implemented -> Y=55 (Department): OK
+  [Unmask] Strategic Alignment Review -> Y=155 (Management): OK
+  [Unmask] Strategically Aligned? -> Y=155 (Management): OK
+  [Unmask] Request Revision -> Y=155 (Management): OK
+  [Unmask] Approve Final Budget -> Y=155 (Management): OK
+  [Unmask] Final Approval? -> Y=155 (Management): OK
+  [Unmask] Detailed Finance Review -> Y=255 (Finance): OK
+  [Unmask] Budget Feasible? -> Y=255 (Finance): OK
+  [Unmask] Document Adjustments -> Y=255 (Finance): OK
+  [Unmask] Allocate Budget -> Y=255 (Finance): OK
+  [Unmask] Distribute Budget -> Y=255 (Finance): OK
+
+[12] Manual unmask: 16 elements unmasked
+[13] All elements now available
+
+  Lanes: Department(5-125); Management(125-240); Finance(240-340)
+  Elements: Budget Cycle=Y55, Define Objec=Y55, Draft Budget=Y55, Strategic Al=Y155, Revise Budge=Y55, Strategicall=Y155, Detailed Fin=Y255, Request Revi=Y155, Budget Feasi=Y255, Approve Fina=Y155, Document Adj=Y255, Final Approv=Y155, Allocate Bud=Y255, Distribute B=Y255, Implement Pl=Y55, Budget Imple=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Department centerY = 42
+[15] Management centerY = 159
+[16] Finance centerY = 267
+
+[17] Department/Budget Cycle Started -> (80,42) 33x33
+[18] Department/Define Objectives -> (230,42) 120x60
+[19] Department/Draft Budget Plan -> (380,42) 120x60
+[20] Management/Strategic Alignment Review -> (530,159) 120x60
+[21] Department/Revise Budget Plan -> (680,42) 120x60
+[22] Management/Strategically Aligned? -> (680,159) 40x40
+[23] Finance/Detailed Finance Review -> (830,267) 120x60
+[24] Management/Request Revision -> (830,159) 120x60
+[25] Finance/Budget Feasible? -> (980,267) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Department(5-125); Management(125-240); Finance(240-340)
+         After:  Lanes: Department(5-125); Management(125-240); Finance(240-344)
+[26] Management/Approve Final Budget -> (1130,159) 120x60
+[27] Finance/Document Adjustments -> (1130,267) 120x60
+[28] Management/Final Approval? -> (1280,159) 40x40
+[29] Finance/Allocate Budget -> (1430,267) 120x60
+[30] Finance/Distribute Budget -> (1580,267) 120x60
+[31] Department/Implement Plan -> (1730,42) 120x60
+[32] Department/Budget Implemented -> (1880,42) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 18 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(5-125); Management(125-240); Finance(240-344)
+  Elements: Budget Cycle=Y42, Define Objec=Y42, Draft Budget=Y42, Strategic Al=Y159, Revise Budge=Y42, Strategicall=Y159, Detailed Fin=Y267, Request Revi=Y159, Budget Feasi=Y267, Approve Fina=Y159, Document Adj=Y267, Final Approv=Y159, Allocate Bud=Y267, Distribute B=Y267, Implement Pl=Y42, Budget Imple=Y42
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  BudgetPlanning_10959
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

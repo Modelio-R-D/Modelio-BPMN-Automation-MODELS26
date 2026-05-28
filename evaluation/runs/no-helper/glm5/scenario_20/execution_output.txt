@@ -1,0 +1,121 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ROOM SERVICE PROCESS - THE EVANSTONIAN
+==================================================================
+Script Version: v1.0
+Execution ID:   32348
+Process Name:   RoomService_32348
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RoomService_32348
+[2] Lanes: Manager, Kitchen, Sommelier, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Manager lane: 4 elements
+[4] Kitchen lane: 1 element
+[5] Sommelier lane: 1 element
+[6] Waiter lane: 6 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: RoomService_32348
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/12 | Missing: Fetch Wine a
+  [Attempt 2] Found: 11/12 | Missing: Fetch Wine a
+  [Attempt 3] Found: 11/12 | Missing: Fetch Wine a
+  [Attempt 3] TIMEOUT - 11/12 elements
+
+[11] WARNING: 11/12 elements ready after 150ms
+         Missing: Fetch Wine and Prepare Alcohol
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Fetch Wine and Prepare Alcohol -> Y=257 (Sommelier): OK
+
+[13] Manual unmask: 1 elements unmasked
+[14] All elements now available
+
+  Lanes: Manager(5-107); Kitchen(107-207); Sommelier(207-314); Waiter(314-414)
+  Elements: Room Servi=Y16, Take Order=Y20, Split Orde=Y25, Alcohol Or=Y30, Prepare Fo=Y118, Ready Cart=Y325, Fetch Wine=Y257, Prepare No=Y325, All Ready?=Y325, Deliver to=Y325, Debit Gues=Y325, Order Comp=Y325
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Manager centerY = 33
+[16] Kitchen centerY = 134
+[17] Sommelier centerY = 237
+[18] Waiter centerY = 341
+
+[19] Manager/Room Service Call -> (80,33) 33x33
+[20] Manager/Take Order -> (220,33) 120x60
+[21] Manager/Split Orders -> (360,33) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Manager(5-107); Kitchen(107-207); Sommelier(207-314); Waiter(314-414)
+         After:  Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-417)
+[22] Manager/Alcohol Ordered? -> (500,33) 40x40
+[23] Kitchen/Prepare Food -> (500,134) 120x60
+[24] Waiter/Ready Cart -> (500,341) 120x60
+[25] Sommelier/Fetch Wine and Prepare Alcohol -> (640,237) 120x60
+[26] Waiter/Prepare Non-Alcoholic Drinks -> (640,341) 120x60
+[27] Waiter/All Ready? -> (780,341) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-417)
+         After:  Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-418)
+[28] Waiter/Deliver to Room -> (920,341) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-418)
+         After:  Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-421)
+[29] Waiter/Debit Guest Account -> (1060,341) 120x60
+[30] Waiter/Order Complete -> (1200,341) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Created 14 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Manager(5-110); Kitchen(110-210); Sommelier(210-317); Waiter(317-421)
+  Elements: Room Servi=Y33, Take Order=Y33, Split Orde=Y33, Alcohol Or=Y33, Prepare Fo=Y134, Ready Cart=Y341, Fetch Wine=Y237, Prepare No=Y341, All Ready?=Y341, Deliver to=Y341, Debit Gues=Y341, Order Comp=Y341
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RoomService_32348
+Lanes:    4
+Elements: 12 (12 in diagram)
+Flows:    14
+==================================================================
+
+PROCESS FLOW SUMMARY:
+  1. Guest calls room service
+  2. Manager takes order
+  3. Parallel split -> Kitchen, Sommelier (conditional), Waiter
+  4. Kitchen: Prepare Food
+  5. Sommelier: Fetch Wine (80% of orders)
+  6. Waiter: Ready Cart + Prepare Non-Alcoholic Drinks
+  7. All paths synchronize at parallel join
+  8. Waiter delivers to room
+  9. Waiter debits guest account
+ 10. Order complete
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=12,gateways=3,flows=14,data=0,data_assoc=0
+======================================================================

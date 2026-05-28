@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ITSolutionRequest_22750
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ITSolutionRequest_22750
+[2] Lanes: Requester, IT Department
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Requester: 2 elements
+[4] IT Department: 13 elements
+
+  Total: 15 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: ITSolutionRequest_22750
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Notify Rejection=0, Procure Tools/Licenses=90
+  [Auto-stack] col 5: Request Rejected=0, Install Solution=90
+  [Auto-stack] col 8: Fix Issues=0, Roll Out to Department=90
+[Requester] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Submit IT Request -> Y=55: OK
+  [Unmask] IT Request -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Submit IT Request -> col=1 (230,25) relY=20
+  IT Request (DO from Submit IT Request) -> (320,95) maxBottomRelY=80
+
+[IT Department] Lane bounds: 187-287
+  [Unmask] Approved? -> Y=237: OK
+  [Unmask] Notify Rejection -> Y=237: OK
+  [Unmask] Request Rejected -> Y=237: OK
+  [Unmask] Procure Tools/Licenses -> Y=237: OK
+  [Unmask] Install Solution -> Y=237: OK
+  [Unmask] Test Solution -> Y=237: OK
+  [Unmask] Test Passed? -> Y=237: OK
+  [Unmask] Fix Issues -> Y=237: OK
+  [Unmask] Roll Out to Department -> Y=237: OK
+  [Unmask] Provide Training -> Y=237: OK
+  [Unmask] IT Support Available -> Y=237: OK
+  [Unmask] Solution Deployed -> Y=237: OK
+  [Unmask] Procurement Order -> Y=237: OK
+  [Unmask] Test Report -> Y=237: OK
+  [maxElementBottomRelY=170]
+  Assess Request -> col=2 (380,207) relY=20
+  Approved? -> col=3 (530,207) relY=20
+  Notify Rejection -> col=4 (680,207) relY=20
+  Request Rejected -> col=5 (830,207) relY=20
+  Procure Tools/Licenses -> col=4 (680,297) relY=110
+  Install Solution -> col=5 (830,297) relY=110
+  Test Solution -> col=6 (980,207) relY=20
+  Test Passed? -> col=7 (1130,207) relY=20
+  Fix Issues -> col=8 (1280,207) relY=20
+  Roll Out to Department -> col=8 (1280,297) relY=110
+  Provide Training -> col=9 (1430,207) relY=20
+  IT Support Available -> col=10 (1580,207) relY=20
+  Solution Deployed -> col=11 (1730,207) relY=20
+  Procurement Order (DO from Procure Tools/Licenses) -> (770,367) maxBottomRelY=170
+  Test Report (DO from Test Solution) -> (1070,367) maxBottomRelY=170
+
+
+[8] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 15 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 5
+
+==================================================================
+COMPLETE: ITSolutionRequest_22750
+==================================================================
+Lanes: 2 | Elements: 15 | Data: 3 | Flows: 15 | DataAssoc: 5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=18,gateways=2,flows=15,data=3,data_assoc=5
+======================================================================

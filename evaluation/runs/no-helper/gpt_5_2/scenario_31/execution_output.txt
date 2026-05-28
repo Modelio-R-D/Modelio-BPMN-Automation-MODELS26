@@ -1,0 +1,187 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Blizzard Online Character Generator
+Script Version: v1.0
+Execution ID:   53082
+Process Name:   BlizzardOnlineCharacterGenerator_53082
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: BlizzardOnlineCharacterGenerator_53082
+[2] Lanes: Player, Blizzard Systems, Payment Provider
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Element: Start character creation | Lane=Player | addToLane=True
+[4] Element: Parallel start | Lane=Player | addToLane=True
+[5] Element: Brainstorm character names | Lane=Player | addToLane=True
+[6] Element: Enter account information | Lane=Player | addToLane=True
+[7] Element: Click confirmation link | Lane=Player | addToLane=True
+[8] Element: Select payment method | Lane=Player | addToLane=True
+[9] Element: Payment method | Lane=Player | addToLane=True
+[10] Element: Enter credit card information | Lane=Player | addToLane=True
+[11] Element: Enter IBAN and BIC | Lane=Player | addToLane=True
+[12] Element: Log into game | Lane=Player | addToLane=True
+[13] Element: Select realm race and class | Lane=Player | addToLane=True
+[14] Element: Parallel join | Lane=Player | addToLane=True
+[15] Element: Enter character name | Lane=Player | addToLane=True
+[16] Element: Check battle.net account | Lane=Blizzard Systems | addToLane=True
+[17] Element: Have battle.net account | Lane=Blizzard Systems | addToLane=True
+[18] Element: Send confirmation email | Lane=Blizzard Systems | addToLane=True
+[19] Element: Check active subscription | Lane=Blizzard Systems | addToLane=True
+[20] Element: Subscription active | Lane=Blizzard Systems | addToLane=True
+[21] Element: Check name availability | Lane=Blizzard Systems | addToLane=True
+[22] Element: Name available | Lane=Blizzard Systems | addToLane=True
+[23] Element: Create character | Lane=Blizzard Systems | addToLane=True
+[24] Element: Send confirmation and selfies | Lane=Blizzard Systems | addToLane=True
+[25] Element: Notify on expansion release | Lane=Blizzard Systems | addToLane=True
+[26] Element: Expansion released message | Lane=Blizzard Systems | addToLane=True
+[27] Element: Process credit card payment | Lane=Payment Provider | addToLane=True
+[28] Element: Process bank transfer payment | Lane=Payment Provider | addToLane=True
+
+[29] Total elements created: 26
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[30] Diagram created: Blizzard Online Character Generator 53082
+[31] DiagramHandle obtained
+[32] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[33] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/26 | Missing: Start charac, Parallel sta, Brainstorm c, Enter accoun, Click confir, Select payme, Payment meth, Enter credit, Enter IBAN a, Log into gam, Select realm, Parallel joi, Enter charac, Send confirm, Notify on ex, Expansion re, Process cred, Process bank
+  [Attempt 2] Found: 8/26 | Missing: Start charac, Parallel sta, Brainstorm c, Enter accoun, Click confir, Select payme, Payment meth, Enter credit, Enter IBAN a, Log into gam, Select realm, Parallel joi, Enter charac, Send confirm, Notify on ex, Expansion re, Process cred, Process bank
+  [Attempt 3] Found: 8/26 | Missing: Start charac, Parallel sta, Brainstorm c, Enter accoun, Click confir, Select payme, Payment meth, Enter credit, Enter IBAN a, Log into gam, Select realm, Parallel joi, Enter charac, Send confirm, Notify on ex, Expansion re, Process cred, Process bank
+  [Attempt 3] TIMEOUT - 8/26 elements
+
+[34] WARNING: 8/26 elements ready after 150ms
+         Missing: Start character creation, Parallel start, Brainstorm character names, Enter account information, Click confirmation link, Select payment method, Payment method, Enter credit card information, Enter IBAN and BIC, Log into game, Select realm race and class, Parallel join, Enter character name, Send confirmation and selfies, Notify on expansion release, Expansion released message, Process credit card payment, Process bank transfer payment
+
+[35] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [Unmask] Start character creation -> Y=55 (Player): OK
+  [Unmask] Parallel start -> Y=55 (Player): OK
+  [Unmask] Brainstorm character names -> Y=55 (Player): OK
+  [Unmask] Enter account information -> Y=55 (Player): OK
+  [Unmask] Click confirmation link -> Y=55 (Player): OK
+  [Unmask] Select payment method -> Y=55 (Player): OK
+  [Unmask] Payment method -> Y=55 (Player): OK
+  [Unmask] Enter credit card information -> Y=55 (Player): OK
+  [Unmask] Enter IBAN and BIC -> Y=55 (Player): OK
+  [Unmask] Log into game -> Y=55 (Player): OK
+  [Unmask] Select realm race and class -> Y=55 (Player): OK
+  [Unmask] Parallel join -> Y=55 (Player): OK
+  [Unmask] Enter character name -> Y=55 (Player): OK
+  [Unmask] Send confirmation and selfies -> Y=181 (Blizzard Systems): OK
+  [Unmask] Notify on expansion release -> Y=181 (Blizzard Systems): OK
+  [Unmask] Expansion released message -> Y=181 (Blizzard Systems): OK
+  [Unmask] Process credit card payment -> Y=308 (Payment Provider): OK
+  [Unmask] Process bank transfer payment -> Y=308 (Payment Provider): OK
+
+[36] Manual unmask: 18 elements unmasked
+[37] All elements now available
+
+  Lanes: Player(5-132); Blizzard Systems(132-285); Payment Provider(285-385)
+  Elements: Start characte=Y55, Parallel start=Y55, Brainstorm cha=Y55, Check battle.n=Y143, Have battle.ne=Y143, Enter account =Y55, Send confirmat=Y143, Click confirma=Y55, Check active s=Y143, Subscription a=Y143, Select payment=Y55, Payment method=Y55, Enter IBAN and=Y55, Enter credit c=Y55, Process bank t=Y308, Process credit=Y308, Log into game=Y55, Select realm r=Y55, Parallel join=Y55, Enter characte=Y55, Check name ava=Y143, Name available=Y143, Create charact=Y147, Send confirmat=Y181, Notify on expa=Y181, Expansion rele=Y181
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[38] Player centerY = 45
+[39] Blizzard Systems centerY = 185
+[40] Payment Provider centerY = 312
+
+[41] Player/Start character creation -> (80,45) 33x33
+[42] Player/Parallel start -> (240,45) 40x40
+[43] Player/Brainstorm character names -> (400,45) 140x60
+[44] Blizzard Systems/Check battle.net account -> (400,185) 140x60
+[45] Blizzard Systems/Have battle.net account -> (560,185) 40x40
+[46] Player/Enter account information -> (720,45) 140x60
+[47] Blizzard Systems/Send confirmation email -> (880,185) 140x60
+[48] Player/Click confirmation link -> (1040,45) 140x60
+[49] Blizzard Systems/Check active subscription -> (1200,185) 140x60
+[50] Blizzard Systems/Subscription active -> (1360,185) 40x40
+[51] Player/Select payment method -> (1680,45) 140x60
+[52] Player/Payment method -> (1840,45) 40x40
+[53] Player/Enter IBAN and BIC -> (2000,45) 140x60
+[54] Player/Enter credit card information -> (2000,45) 140x60
+[55] Payment Provider/Process bank transfer payment -> (2160,312) 140x60 *** LANE CHANGED ***
+         Before: Lanes: Player(5-132); Blizzard Systems(132-285); Payment Provider(285-385)
+         After:  Lanes: Player(5-132); Blizzard Systems(132-285); Payment Provider(285-445)
+[56] Payment Provider/Process credit card payment -> (2160,312) 140x60
+[57] Player/Log into game -> (2320,45) 140x60
+[58] Player/Select realm race and class -> (2480,45) 140x60
+[59] Player/Parallel join -> (2640,45) 40x40
+[60] Player/Enter character name -> (2800,45) 140x60
+[61] Blizzard Systems/Check name availability -> (2960,185) 140x60
+[62] Blizzard Systems/Name available -> (3120,185) 40x40
+[63] Blizzard Systems/Create character -> (3280,185) 140x60
+[64] Blizzard Systems/Send confirmation and selfies -> (3440,185) 140x60
+[65] Blizzard Systems/Notify on expansion release -> (3600,185) 140x60
+[66] Blizzard Systems/Expansion released message -> (3760,185) 33x33
+
+[67] Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[68] Flow: Start character creation -> Parallel start
+[69] Flow: Parallel start -> Check battle.net account
+[70] Flow: Parallel start -> Brainstorm character names
+[71] Flow: Check battle.net account -> Have battle.net account
+[72] Flow: Have battle.net account -> Check active subscription | Guard=Yes
+[73] Flow: Have battle.net account -> Enter account information | Guard=No
+[74] Flow: Enter account information -> Send confirmation email
+[75] Flow: Send confirmation email -> Click confirmation link
+[76] Flow: Click confirmation link -> Check active subscription
+[77] Flow: Check active subscription -> Subscription active
+[78] Flow: Subscription active -> Log into game | Guard=Yes
+[79] Flow: Subscription active -> Select payment method | Guard=No
+[80] Flow: Select payment method -> Payment method
+[81] Flow: Payment method -> Enter credit card information | Guard=Credit card
+[82] Flow: Payment method -> Enter IBAN and BIC | Guard=Bank account
+[83] Flow: Enter credit card information -> Process credit card payment
+[84] Flow: Process credit card payment -> Log into game
+[85] Flow: Enter IBAN and BIC -> Process bank transfer payment
+[86] Flow: Process bank transfer payment -> Log into game
+[87] Flow: Log into game -> Select realm race and class
+[88] Flow: Select realm race and class -> Parallel join
+[89] Flow: Brainstorm character names -> Parallel join
+[90] Flow: Parallel join -> Enter character name
+[91] Flow: Enter character name -> Check name availability
+[92] Flow: Check name availability -> Name available
+[93] Flow: Name available -> Enter character name | Guard=No - try next
+[94] Flow: Name available -> Create character | Guard=Yes
+[95] Flow: Create character -> Send confirmation and selfies
+[96] Flow: Send confirmation and selfies -> Notify on expansion release
+[97] Flow: Notify on expansion release -> Expansion released message
+[98] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Player(5-132); Blizzard Systems(132-285); Payment Provider(285-445)
+  Elements: Start characte=Y45, Parallel start=Y45, Brainstorm cha=Y45, Check battle.n=Y185, Have battle.ne=Y185, Enter account =Y45, Send confirmat=Y185, Click confirma=Y45, Check active s=Y185, Subscription a=Y185, Select payment=Y45, Payment method=Y45, Enter IBAN and=Y45, Enter credit c=Y45, Process bank t=Y312, Process credit=Y312, Log into game=Y45, Select realm r=Y45, Parallel join=Y45, Enter characte=Y45, Check name ava=Y185, Name available=Y185, Create charact=Y185, Send confirmat=Y185, Notify on expa=Y185, Expansion rele=Y185
+
+[99] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Blizzard Online Character Generator
+Process:  BlizzardOnlineCharacterGenerator_53082
+Lanes:    3
+Elements: 26 (26 in diagram)
+Flows:    30
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=26,gateways=6,flows=30,data=0,data_assoc=0
+======================================================================

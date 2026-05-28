@@ -1,0 +1,79 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ProductDevelopment_22237
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ProductDevelopment_22237
+[2] Lanes: R&D Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] R&D Team: 12 elements
+
+  Total: 12 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: ProductDevelopment_22237
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Refine Prototype=0, Approved for Development?=90
+  [Auto-stack] col 9: End Approved=0, End Discarded=90
+[R&D Team] Lane bounds: 5-205
+  [Unmask] Start -> Y=105: OK
+  [Unmask] Identify Idea -> Y=105: OK
+  [Unmask] Conduct Research -> Y=105: OK
+  [Unmask] Draft Design Concepts -> Y=105: OK
+  [Unmask] Build Prototype -> Y=105: OK
+  [Unmask] Test Prototype -> Y=105: OK
+  [Unmask] Collect Feedback -> Y=105: OK
+  [Unmask] Refinement Needed? -> Y=105: OK
+  [Unmask] Refine Prototype -> Y=105: OK
+  [Unmask] Approved for Development? -> Y=105: OK
+  [Unmask] End Approved -> Y=105: OK
+  [Unmask] End Discarded -> Y=105: OK
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,25) relY=20
+  Identify Idea -> col=1 (230,25) relY=20
+  Conduct Research -> col=2 (380,25) relY=20
+  Draft Design Concepts -> col=3 (530,25) relY=20
+  Build Prototype -> col=4 (680,25) relY=20
+  Test Prototype -> col=5 (830,25) relY=20
+  Collect Feedback -> col=6 (980,25) relY=20
+  Refinement Needed? -> col=7 (1130,25) relY=20
+  Refine Prototype -> col=8 (1280,25) relY=20
+  Approved for Development? -> col=8 (1280,115) relY=110
+  End Approved -> col=9 (1430,25) relY=20
+  End Discarded -> col=9 (1430,115) relY=110
+
+
+[6] Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 12 sequence flows
+
+==================================================================
+COMPLETE: ProductDevelopment_22237
+==================================================================
+Lanes: 1 | Elements: 12 | Flows: 12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=12,gateways=2,flows=12,data=0,data_assoc=0
+======================================================================

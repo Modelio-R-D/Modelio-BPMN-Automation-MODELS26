@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: TicketBookingProcess_89879
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TicketBookingProcess_89879
+[2] Lanes: Customer, Booking System, Travel Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 8 elements
+[4] Booking System: 7 elements
+[5] Travel Company: 2 elements
+
+  Total: 17 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: TicketBookingProcess_89879
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Generate Ticket=0, Payment Failed=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Search Tickets -> Y=55: OK
+  [Unmask] Select Route and Time -> Y=55: OK
+  [Unmask] Provide Details -> Y=55: OK
+  [Unmask] Receive Ticket -> Y=55: OK
+  [Unmask] Receive Reminders -> Y=55: OK
+  [Unmask] Complete Journey -> Y=55: OK
+  [Unmask] Provide Feedback -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Search Criteria -> Y=55: OK
+  [Unmask] Booking Details -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Search Tickets -> col=1 (230,25) relY=20
+  Select Route and Time -> col=2 (380,25) relY=20
+  Provide Details -> col=3 (530,25) relY=20
+  Receive Ticket -> col=8 (1280,25) relY=20
+  Receive Reminders -> col=10 (1580,25) relY=20
+  Complete Journey -> col=11 (1730,25) relY=20
+  Provide Feedback -> col=12 (1880,25) relY=20
+  End -> col=13 (2030,25) relY=20
+  Search Criteria (DO from Search Tickets) -> (320,95) maxBottomRelY=80
+  Booking Details (DO from Provide Details) -> (620,95) maxBottomRelY=80
+
+[Booking System] Lane bounds: 187-287
+  [Unmask] Start -> Y=237: OK
+  [Unmask] Process Payment -> Y=237: OK
+  [Unmask] Payment OK? -> Y=237: OK
+  [Unmask] Generate Ticket -> Y=237: OK
+  [Unmask] Send Ticket -> Y=237: OK
+  [Unmask] Send Reminders -> Y=237: OK
+  [Unmask] Payment Failed -> Y=237: OK
+  [Unmask] E-Ticket -> Y=237: OK
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,207) relY=20
+  Process Payment -> col=4 (680,207) relY=20
+  Payment OK? -> col=5 (830,207) relY=20
+  Generate Ticket -> col=6 (980,207) relY=20
+  Send Ticket -> col=7 (1130,207) relY=20
+  Send Reminders -> col=9 (1430,207) relY=20
+  Payment Failed -> col=6 (980,297) relY=110
+  E-Ticket (DO from Generate Ticket) -> (1070,347) maxBottomRelY=150
+
+[Travel Company] Lane bounds: 439-603
+  [Unmask] Travel Instructions -> Y=521: OK
+  [maxElementBottomRelY=80]
+  Update Inventory -> col=7 (1130,459) relY=20
+  Prepare Check-in Info -> col=8 (1280,459) relY=20
+  Travel Instructions (DO from Prepare Check-in Info) -> (1370,529) maxBottomRelY=80
+
+
+[9] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 17 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 8
+
+==================================================================
+COMPLETE: TicketBookingProcess_89879
+==================================================================
+Lanes: 3 | Elements: 17 | Data: 4 | Flows: 17 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

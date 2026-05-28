@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CatheterInsertionProcess_56503
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CatheterInsertionProcess_56503
+[2] Lanes: Doctor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Doctor: 36 elements
+
+  Total: 36 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: CatheterInsertionProcess_56503
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 13: Anatomic identification=0, Doppler identification=90, Compression identification=180
+  [Auto-stack] col 24: Check wire long axis=0, Check wire short axis=90
+[Doctor] Lane bounds: 5-260
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Prepare implements -> col=1 (230,25) relY=20
+  Wash hands -> col=2 (380,25) relY=20
+  Get in sterile clothes -> col=3 (530,25) relY=20
+  Clean puncture area -> col=4 (680,25) relY=20
+  Drape puncture zone -> col=5 (830,25) relY=20
+  Configure ultrasound -> col=6 (980,25) relY=20
+  Put gel in probe -> col=7 (1130,25) relY=20
+  Cover probe -> col=8 (1280,25) relY=20
+  Put sterile gel -> col=9 (1430,25) relY=20
+  Position probe -> col=10 (1580,25) relY=20
+  Position patient -> col=11 (1730,25) relY=20
+  Identify vein -> col=12 (1880,25) relY=20
+  Anatomic identification -> col=13 (2030,25) relY=20
+  Doppler identification -> col=13 (2030,115) relY=110
+  Compression identification -> col=13 (2030,205) relY=200
+  Vein identified -> col=14 (2180,25) relY=20
+  Anesthetize patient -> col=15 (2330,25) relY=20
+  Puncture -> col=16 (2480,25) relY=20
+  Check blood return -> col=17 (2630,25) relY=20
+  Blood return correct? -> col=18 (2780,25) relY=20
+  Drop probe -> col=19 (2930,25) relY=20
+  Remove syringe -> col=20 (3080,25) relY=20
+  Install guidewire -> col=21 (3230,25) relY=20
+  Remove trocar -> col=22 (3380,25) relY=20
+  Check wire -> col=23 (3530,25) relY=20
+  Check wire long axis -> col=24 (3680,25) relY=20
+  Check wire short axis -> col=24 (3680,115) relY=110
+  Wire checked -> col=25 (3830,25) relY=20
+  Wire position good? -> col=26 (3980,25) relY=20
+  Widen pathway -> col=27 (4130,25) relY=20
+  Advance catheter -> col=28 (4280,25) relY=20
+  Remove guidewire -> col=29 (4430,25) relY=20
+  Verify flow and reflow -> col=30 (4580,25) relY=20
+  Check catheter position -> col=31 (4730,25) relY=20
+  End -> col=32 (4880,25) relY=20
+
+
+[6] Repositioned: 36/36
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 40 sequence flows
+
+==================================================================
+COMPLETE: CatheterInsertionProcess_56503
+==================================================================
+Lanes: 1 | Elements: 36 | Flows: 40
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=36,gateways=6,flows=40,data=0,data_assoc=0
+======================================================================

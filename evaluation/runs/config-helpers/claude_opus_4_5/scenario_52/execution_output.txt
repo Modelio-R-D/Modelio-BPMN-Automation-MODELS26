@@ -1,0 +1,75 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DismissalReviewProcess_26396
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DismissalReviewProcess_26396
+[2] Lanes: MPON, MPOO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] MPON: 2 elements
+[4] MPOO: 6 elements
+
+  Total: 8 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: DismissalReviewProcess_26396
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Oppose Dismissal=0, Confirm Dismissal=90
+  [Auto-stack] col 5: End Opposed=0, End Confirmed=90
+[MPON] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Send Dismissal -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Send Dismissal -> col=1 (230,25) relY=20
+
+[MPOO] Lane bounds: 125-225
+  [Unmask] Review Dismissal -> Y=175: OK
+  [Unmask] Decision? -> Y=175: OK
+  [Unmask] Oppose Dismissal -> Y=175: OK
+  [Unmask] Confirm Dismissal -> Y=175: OK
+  [Unmask] End Opposed -> Y=175: OK
+  [Unmask] End Confirmed -> Y=175: OK
+  [maxElementBottomRelY=170]
+  Review Dismissal -> col=2 (380,145) relY=20
+  Decision? -> col=3 (530,145) relY=20
+  Oppose Dismissal -> col=4 (680,145) relY=20
+  Confirm Dismissal -> col=4 (680,235) relY=110
+  End Opposed -> col=5 (830,145) relY=20
+  End Confirmed -> col=5 (830,235) relY=110
+
+
+[7] Repositioned: 8/8
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 7 sequence flows
+
+==================================================================
+COMPLETE: DismissalReviewProcess_26396
+==================================================================
+Lanes: 2 | Elements: 8 | Flows: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUPPLIER ONBOARDING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   98260
+Process Name:   SupplierOnboarding_98260
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SupplierOnboarding_98260
+[2] Lanes: Procurement, Suppliers, Legal
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement lane: 10 elements
+[4] Suppliers lane: 2 elements
+[5] Legal lane: 3 elements
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SupplierOnboarding_98260
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/15 | Missing: Evaluate Pro, Qualified Su, Conduct Site, Select Suppl, Negotiate Co, Onboard Supp, Contract Exe
+  [Attempt 2] Found: 8/15 | Missing: Evaluate Pro, Qualified Su, Conduct Site, Select Suppl, Negotiate Co, Onboard Supp, Contract Exe
+  [Attempt 3] Found: 8/15 | Missing: Evaluate Pro, Qualified Su, Conduct Site, Select Suppl, Negotiate Co, Onboard Supp, Contract Exe
+  [Attempt 3] TIMEOUT - 8/15 elements
+
+[10] WARNING: 8/15 elements ready after 150ms
+         Missing: Evaluate Proposals, Qualified Suppliers?, Conduct Site Visits, Select Supplier, Negotiate Contract, Onboard Supplier, Contract Executed
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Evaluate Proposals -> Y=63 (Procurement): OK
+  [Unmask] Qualified Suppliers? -> Y=63 (Procurement): OK
+  [Unmask] Conduct Site Visits -> Y=63 (Procurement): OK
+  [Unmask] Select Supplier -> Y=63 (Procurement): OK
+  [Unmask] Negotiate Contract -> Y=63 (Procurement): OK
+  [Unmask] Onboard Supplier -> Y=63 (Procurement): OK
+  [Unmask] Contract Executed -> Y=63 (Procurement): OK
+
+[12] Manual unmask: 7 elements unmasked
+[13] All elements now available
+
+  Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-340)
+  Elements: Need Identif=Y16, Issue RFP=Y20, Submit Propo=Y151, Receive Prop=Y25, Evaluate Pro=Y63, Qualified Su=Y63, Conduct Site=Y63, Participate =Y151, Select Suppl=Y63, Negotiate Co=Y63, Review Contr=Y251, Terms Agreed=Y251, Sign Contrac=Y251, Onboard Supp=Y63, Contract Exe=Y63
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Procurement centerY = 49
+[15] Suppliers centerY = 167
+[16] Legal centerY = 267
+
+[17] Procurement/Need Identified -> (80,49) 33x33
+[18] Procurement/Issue RFP -> (220,49) 120x60
+[19] Suppliers/Submit Proposals -> (360,167) 120x60
+[20] Procurement/Receive Proposals -> (500,49) 120x60
+[21] Procurement/Evaluate Proposals -> (640,49) 120x60
+[22] Procurement/Qualified Suppliers? -> (780,49) 40x40
+[23] Procurement/Conduct Site Visits -> (920,49) 120x60
+[24] Suppliers/Participate in Visits -> (1060,167) 120x60
+[25] Procurement/Select Supplier -> (1200,49) 120x60
+[26] Procurement/Negotiate Contract -> (1340,49) 120x60
+[27] Legal/Review Contract -> (1480,267) 120x60
+[28] Legal/Terms Agreed? -> (1620,267) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-340)
+         After:  Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-350)
+[29] Legal/Sign Contract -> (1760,267) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-350)
+         After:  Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-356)
+[30] Procurement/Onboard Supplier -> (1900,49) 120x60
+[31] Procurement/Contract Executed -> (2040,49) 33x33
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 16 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Procurement(5-140); Suppliers(140-240); Legal(240-356)
+  Elements: Need Identif=Y49, Issue RFP=Y49, Submit Propo=Y167, Receive Prop=Y49, Evaluate Pro=Y49, Qualified Su=Y49, Conduct Site=Y49, Participate =Y167, Select Suppl=Y49, Negotiate Co=Y49, Review Contr=Y267, Terms Agreed=Y267, Sign Contrac=Y267, Onboard Supp=Y49, Contract Exe=Y49
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SupplierOnboarding_98260
+Lanes:    3
+Elements: 15 (15 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=2,flows=16,data=0,data_assoc=0
+======================================================================

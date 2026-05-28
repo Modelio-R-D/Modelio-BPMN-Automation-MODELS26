@@ -1,0 +1,205 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Find a Job
+Script Version: v1.0
+Execution ID:   31318
+Process Name:   FindAJob_31318
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: FindAJob_31318
+[2] Lanes: Applicant, Company, Platform
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Applicant: Begin Job Search | addToLane=True
+  [Element] Applicant: Write Job Applications | addToLane=True
+  [Element] Applicant: Report Sent Applications | addToLane=True
+  [Element] Applicant: Interested in Offer? | addToLane=True
+  [Element] Applicant: Respond to Offer / Request Interview | addToLane=True
+  [Element] Applicant: Negotiate Interview | addToLane=True
+  [Element] Applicant: Start Probation Employment | addToLane=True
+  [Element] Applicant: Work During Probation | addToLane=True
+  [Element] Applicant: Applicant Rate Company | addToLane=True
+  [Element] Applicant: Applicant View Reviews | addToLane=True
+  [Element] Applicant: Applicant Rated <= C? | addToLane=True
+  [Element] Applicant: Interested in New Offer? | addToLane=True
+  [Element] Applicant: Respond While Employed | addToLane=True
+  [Element] Company: Confirm Application Received | addToLane=True
+  [Element] Company: Rate Application | addToLane=True
+  [Element] Company: Invite to Interview? | addToLane=True
+  [Element] Company: Conduct Interview | addToLane=True
+  [Element] Company: Hire Candidate? | addToLane=True
+  [Element] Company: Probation Passed? | addToLane=True
+  [Element] Company: Become Permanent Employee | addToLane=True
+  [Element] Company: Company Rate Applicant | addToLane=True
+  [Element] Platform: Analyze Applications and Match Offers | addToLane=True
+  [Element] Platform: Send Potential Job Offers | addToLane=True
+  [Element] Platform: Store Reviews (Hidden 1 year) | addToLane=True
+  [Element] Platform: Wait 1 year (Reviews hidden) | addToLane=True
+  [Element] Platform: Publish Reviews | addToLane=True
+  [Element] Platform: Receive Offers While Employed | addToLane=True
+  [Element] Applicant: Permanent Job End | addToLane=True
+  [Element] Applicant: Stay Employed End | addToLane=True
+
+[3] Total elements created: 29
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: FindAJob_31318
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/32 | Missing: Begin Job Se, Write Job Ap, Report Sent , Interested i, Respond to O, Negotiate In, Start Probat, Work During , Applicant Ra, Applicant Vi, Applicant Ra, Interested i, Respond Whil, Confirm Appl, Rate Applica, Invite to In, Conduct Inte, Hire Candida, Probation Pa, Become Perma, Company Rate, Permanent Jo, Stay Employe
+  [Attempt 2] Found: 9/32 | Missing: Begin Job Se, Write Job Ap, Report Sent , Interested i, Respond to O, Negotiate In, Start Probat, Work During , Applicant Ra, Applicant Vi, Applicant Ra, Interested i, Respond Whil, Confirm Appl, Rate Applica, Invite to In, Conduct Inte, Hire Candida, Probation Pa, Become Perma, Company Rate, Permanent Jo, Stay Employe
+  [Attempt 3] Found: 9/32 | Missing: Begin Job Se, Write Job Ap, Report Sent , Interested i, Respond to O, Negotiate In, Start Probat, Work During , Applicant Ra, Applicant Vi, Applicant Ra, Interested i, Respond Whil, Confirm Appl, Rate Applica, Invite to In, Conduct Inte, Hire Candida, Probation Pa, Become Perma, Company Rate, Permanent Jo, Stay Employe
+  [Attempt 3] TIMEOUT - 9/32 elements
+
+[8] Wait finished in ~150ms | graphics found: 9/32
+[9] WARNING: Missing flow elements after wait: Begin Job Search, Write Job Applications, Report Sent Applications, Interested in Offer?, Respond to Offer / Request Interview, Negotiate Interview, Start Probation Employment, Work During Probation, Applicant Rate Company, Applicant View Reviews, Applicant Rated <= C?, Interested in New Offer?, Respond While Employed, Confirm Application Received, Rate Application, Invite to Interview?, Conduct Interview, Hire Candidate?, Probation Passed?, Become Permanent Employee, Company Rate Applicant, Permanent Job End, Stay Employed End
+[10] Trying manual unmask fallback (inside correct lane Y)...
+
+  [LaneY] Company centerY=155
+  [LaneY] Platform centerY=274
+  [LaneY] Applicant centerY=55
+  [Unmask] Begin Job Search -> Y=55 (Applicant): OK
+  [Unmask] Write Job Applications -> Y=55 (Applicant): OK
+  [Unmask] Report Sent Applications -> Y=55 (Applicant): OK
+  [Unmask] Interested in Offer? -> Y=55 (Applicant): OK
+  [Unmask] Respond to Offer / Request Interview -> Y=55 (Applicant): OK
+  [Unmask] Negotiate Interview -> Y=55 (Applicant): OK
+  [Unmask] Start Probation Employment -> Y=55 (Applicant): OK
+  [Unmask] Work During Probation -> Y=55 (Applicant): OK
+  [Unmask] Applicant Rate Company -> Y=55 (Applicant): OK
+  [Unmask] Applicant View Reviews -> Y=55 (Applicant): OK
+  [Unmask] Applicant Rated <= C? -> Y=55 (Applicant): OK
+  [Unmask] Interested in New Offer? -> Y=55 (Applicant): OK
+  [Unmask] Respond While Employed -> Y=55 (Applicant): OK
+  [Unmask] Confirm Application Received -> Y=155 (Company): OK
+  [Unmask] Rate Application -> Y=155 (Company): OK
+  [Unmask] Invite to Interview? -> Y=155 (Company): OK
+  [Unmask] Conduct Interview -> Y=155 (Company): OK
+  [Unmask] Hire Candidate? -> Y=155 (Company): OK
+  [Unmask] Probation Passed? -> Y=155 (Company): OK
+  [Unmask] Become Permanent Employee -> Y=155 (Company): OK
+  [Unmask] Company Rate Applicant -> Y=155 (Company): OK
+  [Unmask] Permanent Job End -> Y=55 (Applicant): OK
+  [Unmask] Stay Employed End -> Y=55 (Applicant): OK
+
+[11] Manual unmask done. Newly unmasked: 23
+[12] All elements now available after fallback
+
+  Lanes: Applicant(5-132); Company(132-232); Platform(232-371)
+  Elements: Begin Job Se=Y55, Write Job Ap=Y55, Report Sent =Y55, Analyze Appl=Y243, Send Potenti=Y243, Interested i=Y55, Respond to O=Y55, Confirm Appl=Y155, Rate Applica=Y155, Invite to In=Y155, Negotiate In=Y55, Conduct Inte=Y155, Hire Candida=Y155, Start Probat=Y55, Work During =Y55, Probation Pa=Y155, Become Perma=Y155, Applicant Ra=Y55, Company Rate=Y155, Store Review=Y243, Wait 1 year =Y243, Publish Revi=Y243, Applicant Vi=Y55, Applicant Ra=Y55, Receive Offe=Y243, Interested i=Y55, Respond Whil=Y55, Permanent Jo=Y55, Stay Employe=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Applicant centerY = 45
+[14] Company centerY = 159
+[15] Platform centerY = 278
+
+[16] Applicant/Begin Job Search -> (80,45) 33x33
+[17] Applicant/Write Job Applications -> (235,45) 150x60
+[18] Applicant/Report Sent Applications -> (390,45) 150x60
+[19] Platform/Analyze Applications and Match Offers -> (545,278) 150x60
+[20] Platform/Send Potential Job Offers -> (700,278) 150x60
+[21] Applicant/Interested in Offer? -> (855,45) 40x40
+[22] Applicant/Respond to Offer / Request Interview -> (1010,45) 150x60
+[23] Company/Confirm Application Received -> (1165,159) 150x60
+[24] Company/Rate Application -> (1320,159) 150x60
+[25] Company/Invite to Interview? -> (1475,159) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); Company(132-232); Platform(232-371)
+         After:  Lanes: Applicant(5-132); Company(132-236); Platform(236-375)
+[26] Applicant/Negotiate Interview -> (1630,45) 150x60
+[27] Company/Conduct Interview -> (1785,159) 150x60
+[28] Company/Hire Candidate? -> (1940,159) 40x40
+[29] Applicant/Start Probation Employment -> (2095,45) 150x60
+[30] Applicant/Work During Probation -> (2250,45) 150x60
+[31] Company/Probation Passed? -> (2405,159) 40x40
+[32] Company/Become Permanent Employee -> (2560,159) 150x60
+[33] Applicant/Applicant Rate Company -> (2715,45) 150x60
+[34] Company/Company Rate Applicant -> (2870,159) 150x60
+[35] Platform/Store Reviews (Hidden 1 year) -> (3025,278) 150x60
+[36] Platform/Wait 1 year (Reviews hidden) -> (3180,278) 150x60
+[37] Platform/Publish Reviews -> (3335,278) 150x60
+[38] Applicant/Applicant View Reviews -> (3490,45) 150x60
+[39] Applicant/Applicant Rated <= C? -> (3645,45) 40x40
+[40] Platform/Receive Offers While Employed -> (3800,278) 150x60
+[41] Applicant/Interested in New Offer? -> (3955,45) 40x40
+[42] Applicant/Respond While Employed -> (4110,45) 150x60
+[43] Applicant/Permanent Job End -> (4265,45) 33x33
+[44] Applicant/Stay Employed End -> (4265,45) 33x33
+
+[45] Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Begin Job Search -> Write Job Applications
+  [Flow] Write Job Applications -> Report Sent Applications
+  [Flow] Report Sent Applications -> Analyze Applications and Match Offers
+  [Flow] Analyze Applications and Match Offers -> Send Potential Job Offers
+  [Flow] Send Potential Job Offers -> Interested in Offer?
+  [Flow] Interested in Offer? -> Write Job Applications | guard=No
+  [Flow] Interested in Offer? -> Respond to Offer / Request Interview | guard=Yes
+  [Flow] Respond to Offer / Request Interview -> Confirm Application Received
+  [Flow] Confirm Application Received -> Rate Application
+  [Flow] Rate Application -> Invite to Interview?
+  [Flow] Invite to Interview? -> Send Potential Job Offers | guard=No
+  [Flow] Invite to Interview? -> Negotiate Interview | guard=Yes
+  [Flow] Negotiate Interview -> Conduct Interview
+  [Flow] Conduct Interview -> Hire Candidate?
+  [Flow] Hire Candidate? -> Send Potential Job Offers | guard=No
+  [Flow] Hire Candidate? -> Start Probation Employment | guard=Yes
+  [Flow] Start Probation Employment -> Work During Probation
+  [Flow] Work During Probation -> Probation Passed?
+  [Flow] Probation Passed? -> Send Potential Job Offers | guard=No
+  [Flow] Probation Passed? -> Become Permanent Employee | guard=Yes
+  [Flow] Become Permanent Employee -> Applicant Rate Company
+  [Flow] Applicant Rate Company -> Company Rate Applicant
+  [Flow] Company Rate Applicant -> Store Reviews (Hidden 1 year)
+  [Flow] Store Reviews (Hidden 1 year) -> Wait 1 year (Reviews hidden)
+  [Flow] Wait 1 year (Reviews hidden) -> Publish Reviews
+  [Flow] Publish Reviews -> Applicant View Reviews
+  [Flow] Applicant View Reviews -> Applicant Rated <= C?
+  [Flow] Applicant Rated <= C? -> Permanent Job End | guard=No
+  [Flow] Applicant Rated <= C? -> Receive Offers While Employed | guard=Yes
+  [Flow] Receive Offers While Employed -> Interested in New Offer?
+  [Flow] Interested in New Offer? -> Stay Employed End | guard=No
+  [Flow] Interested in New Offer? -> Respond While Employed | guard=Yes
+  [Flow] Respond While Employed -> Confirm Application Received
+
+[46] Created 33 sequence flows
+[47] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(5-132); Company(132-236); Platform(236-375)
+  Elements: Begin Job Se=Y45, Write Job Ap=Y45, Report Sent =Y45, Analyze Appl=Y278, Send Potenti=Y278, Interested i=Y45, Respond to O=Y45, Confirm Appl=Y159, Rate Applica=Y159, Invite to In=Y159, Negotiate In=Y45, Conduct Inte=Y159, Hire Candida=Y159, Start Probat=Y45, Work During =Y45, Probation Pa=Y159, Become Perma=Y159, Applicant Ra=Y45, Company Rate=Y159, Store Review=Y278, Wait 1 year =Y278, Publish Revi=Y278, Applicant Vi=Y45, Applicant Ra=Y45, Receive Offe=Y278, Interested i=Y45, Respond Whil=Y45, Permanent Jo=Y45, Stay Employe=Y45
+
+[48] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Find a Job
+Process:  FindAJob_31318
+Lanes:    3
+Elements: 29
+Flows:    33
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=29,gateways=6,flows=33,data=0,data_assoc=0
+======================================================================

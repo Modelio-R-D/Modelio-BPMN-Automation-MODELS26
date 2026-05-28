@@ -1,0 +1,21 @@
+# Scenario 01
+
+**Complexity:** Complex
+
+## Natural-language description
+
+This process begins when a potential customer inquires about a product or service.
+Sales staff or customer support collects relevant information and addresses any concerns or questions.
+If the customer is interested, they are guided through selecting the appropriate product or service.
+Next, the sales representative provides a quote, and after approval from the customer, the process moves to order placement.
+The order is then recorded in the system, and the customer receives confirmation of their order.
+The process ends when the order is successfully placed and confirmed.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 16
+- gateways: 6
+- flows: 18
+- data_objects: 0
+- data_assoc: 0

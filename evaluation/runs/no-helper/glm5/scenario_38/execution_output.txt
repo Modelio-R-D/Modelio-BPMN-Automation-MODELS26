@@ -1,0 +1,131 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TREE HOUSE BUILDING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   53172
+Process Name:   TreeHouse_53172
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TreeHouse_53172
+[2] Lanes: You, Architect, Suppliers, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] You lane: 16 elements
+[4] Architect lane: 2 elements
+[5] Suppliers lane: 2 elements
+[6] Friends lane: 2 elements
+
+  Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: TreeHouse_53172
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/22 | Missing: Start Projec, Collect Requ, Send Require, Review Draft, Draft Comple, Send Refinem, Create Mater, Order Materi, Parallel Spl, Send Build I, Receive Mate, Parallel Joi, Send Party I, Create Atten, Buy Snacks, Tree House P, Create Draft, Update Draft, Build Tree H, RSVP to Part
+  [Attempt 2] Found: 2/22 | Missing: Start Projec, Collect Requ, Send Require, Review Draft, Draft Comple, Send Refinem, Create Mater, Order Materi, Parallel Spl, Send Build I, Receive Mate, Parallel Joi, Send Party I, Create Atten, Buy Snacks, Tree House P, Create Draft, Update Draft, Build Tree H, RSVP to Part
+  [Attempt 3] Found: 2/22 | Missing: Start Projec, Collect Requ, Send Require, Review Draft, Draft Comple, Send Refinem, Create Mater, Order Materi, Parallel Spl, Send Build I, Receive Mate, Parallel Joi, Send Party I, Create Atten, Buy Snacks, Tree House P, Create Draft, Update Draft, Build Tree H, RSVP to Part
+  [Attempt 3] TIMEOUT - 2/22 elements
+
+[11] WARNING: 2/22 elements ready after 150ms
+         Missing: Start Project, Collect Requirements, Send Requirements, Review Draft, Draft Complete?, Send Refinements, Create Materials List, Order Materials, Parallel Split, Send Build Invitations, Receive Materials, Parallel Join, Send Party Invitations, Create Attendee List, Buy Snacks, Tree House Party!, Create Draft, Update Draft, Build Tree House, RSVP to Party
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Start Project -> Y=55 (You): OK
+  [Unmask] Collect Requirements -> Y=55 (You): OK
+  [Unmask] Send Requirements -> Y=55 (You): OK
+  [Unmask] Review Draft -> Y=55 (You): OK
+  [Unmask] Draft Complete? -> Y=55 (You): OK
+  [Unmask] Send Refinements -> Y=55 (You): OK
+  [Unmask] Create Materials List -> Y=55 (You): OK
+  [Unmask] Order Materials -> Y=55 (You): OK
+  [Unmask] Parallel Split -> Y=55 (You): OK
+  [Unmask] Send Build Invitations -> Y=55 (You): OK
+  [Unmask] Receive Materials -> Y=55 (You): OK
+  [Unmask] Parallel Join -> Y=55 (You): OK
+  [Unmask] Send Party Invitations -> Y=55 (You): OK
+  [Unmask] Create Attendee List -> Y=55 (You): OK
+  [Unmask] Buy Snacks -> Y=55 (You): OK
+  [Unmask] Tree House Party! -> Y=55 (You): OK
+  [Unmask] Create Draft -> Y=155 (Architect): OK
+  [Unmask] Update Draft -> Y=155 (Architect): OK
+  [Unmask] Build Tree House -> Y=419 (Friends): OK
+  [Unmask] RSVP to Party -> Y=419 (Friends): OK
+
+[13] Manual unmask: 20 elements unmasked
+[14] All elements now available
+
+  Lanes: You(5-132); Architect(132-232); Suppliers(232-396); Friends(396-496)
+  Elements: Start Proj=Y55, Collect Re=Y55, Send Requi=Y55, Create Dra=Y155, Review Dra=Y55, Draft Comp=Y55, Send Refin=Y55, Update Dra=Y155, Create Mat=Y55, Order Mate=Y55, Parallel S=Y55, Process Or=Y243, Send Build=Y55, Build Tree=Y419, Receive Ma=Y55, Ship Mater=Y243, Parallel J=Y55, RSVP to Pa=Y419, Send Party=Y55, Create Att=Y55, Buy Snacks=Y55, Tree House=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] You centerY = 45
+[16] Architect centerY = 159
+[17] Suppliers centerY = 291
+[18] Friends centerY = 423
+
+[19] You/Start Project -> (80,45) 33x33
+[20] You/Collect Requirements -> (220,45) 120x60
+[21] You/Send Requirements -> (360,45) 120x60
+[22] Architect/Create Draft -> (500,159) 120x60
+[23] You/Review Draft -> (640,45) 120x60
+[24] You/Draft Complete? -> (780,45) 40x40
+[25] You/Send Refinements -> (920,45) 120x60
+[26] Architect/Update Draft -> (920,159) 120x60
+[27] You/Create Materials List -> (1060,45) 120x60
+[28] You/Order Materials -> (1200,45) 120x60
+[29] You/Parallel Split -> (1340,45) 40x40
+[30] Suppliers/Process Orders -> (1480,291) 120x60
+[31] You/Send Build Invitations -> (1480,45) 120x60
+[32] Friends/Build Tree House -> (1620,423) 120x60
+[33] You/Receive Materials -> (1620,45) 120x60
+[34] Suppliers/Ship Materials -> (1620,291) 120x60
+[35] You/Parallel Join -> (1760,45) 40x40
+[36] Friends/RSVP to Party -> (1900,423) 120x60
+[37] You/Send Party Invitations -> (1900,45) 120x60
+[38] You/Create Attendee List -> (2040,45) 120x60
+[39] You/Buy Snacks -> (2180,45) 120x60
+[40] You/Tree House Party! -> (2320,45) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[41] Created 23 sequence flows
+[42] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: You(5-132); Architect(132-232); Suppliers(232-396); Friends(396-496)
+  Elements: Start Proj=Y45, Collect Re=Y45, Send Requi=Y45, Create Dra=Y159, Review Dra=Y45, Draft Comp=Y45, Send Refin=Y45, Update Dra=Y159, Create Mat=Y45, Order Mate=Y45, Parallel S=Y45, Process Or=Y291, Send Build=Y45, Build Tree=Y423, Receive Ma=Y45, Ship Mater=Y291, Parallel J=Y45, RSVP to Pa=Y423, Send Party=Y45, Create Att=Y45, Buy Snacks=Y45, Tree House=Y45
+
+[43] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TreeHouse_53172
+Lanes:    4
+Elements: 22 (22 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=22,gateways=3,flows=23,data=0,data_assoc=0
+======================================================================

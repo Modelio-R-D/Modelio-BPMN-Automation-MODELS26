@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN EMPLOYEE DEVELOPMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   9027
+Process Name:   EmployeeDevelopment_9027
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EmployeeDevelopment_9027
+[2] Lanes: Employee, Manager, HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee lane: 3 elements
+[4] Manager lane: 4 elements
+[5] HR lane: 5 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: EmployeeDevelopment_9027
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/12 | Missing: Identify Dev, Create Devel, Provide Feed, Milestones M
+  [Attempt 2] Found: 8/12 | Missing: Identify Dev, Create Devel, Provide Feed, Milestones M
+  [Attempt 3] Found: 8/12 | Missing: Identify Dev, Create Devel, Provide Feed, Milestones M
+  [Attempt 3] TIMEOUT - 8/12 elements
+
+[10] WARNING: 8/12 elements ready after 150ms
+         Missing: Identify Development Needs, Create Development Plan, Provide Feedback, Milestones Met?
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Identify Development Needs -> Y=155 (Manager): OK
+  [Unmask] Create Development Plan -> Y=155 (Manager): OK
+  [Unmask] Provide Feedback -> Y=155 (Manager): OK
+  [Unmask] Milestones Met? -> Y=155 (Manager): OK
+
+[12] Manual unmask: 4 elements unmasked
+[13] All elements now available
+
+  Lanes: Employee(5-105); Manager(105-232); HR(232-332)
+  Elements: Career Asp=Y16, Identify D=Y155, Create Dev=Y155, Review Dev=Y243, Enhance Sk=Y20, Provide Fe=Y155, Milestones=Y155, Conduct Fo=Y243, Promotion =Y243, Finalize P=Y243, Adjust Com=Y243, Promoted t=Y25
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Employee centerY = 32
+[15] Manager centerY = 145
+[16] HR centerY = 259
+
+[17] Employee/Career Aspirations Identified -> (80,32) 33x33
+[18] Manager/Identify Development Needs -> (220,145) 120x60
+[19] Manager/Create Development Plan -> (360,145) 120x60
+[20] HR/Review Development Plan -> (500,259) 120x60
+[21] Employee/Enhance Skills -> (640,32) 120x60
+[22] Manager/Provide Feedback -> (780,145) 120x60
+[23] Manager/Milestones Met? -> (920,145) 40x40
+[24] HR/Conduct Formal Review -> (1060,259) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Employee(5-105); Manager(105-232); HR(232-332)
+         After:  Lanes: Employee(5-105); Manager(105-232); HR(232-342)
+[25] HR/Promotion Approved? -> (1200,259) 40x40
+[26] HR/Finalize Promotion -> (1340,259) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Employee(5-105); Manager(105-232); HR(232-342)
+         After:  Lanes: Employee(5-105); Manager(105-232); HR(232-348)
+[27] HR/Adjust Compensation -> (1480,259) 120x60
+[28] Employee/Promoted to New Role -> (1480,32) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 13 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-105); Manager(105-232); HR(232-348)
+  Elements: Career Asp=Y32, Identify D=Y145, Create Dev=Y145, Review Dev=Y259, Enhance Sk=Y32, Provide Fe=Y145, Milestones=Y145, Conduct Fo=Y259, Promotion =Y259, Finalize P=Y259, Adjust Com=Y259, Promoted t=Y32
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  EmployeeDevelopment_9027
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=2,flows=13,data=0,data_assoc=0
+======================================================================

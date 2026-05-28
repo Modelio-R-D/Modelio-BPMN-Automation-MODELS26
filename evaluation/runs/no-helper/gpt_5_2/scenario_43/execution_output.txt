@@ -1,0 +1,161 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Car Service
+Script Version: v9.2
+Execution ID:   92998
+Process Name:   CarService_92998
+Diagram Name:   Car Service_92998
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: CarService_92998
+[2] Lanes: Driver, Police App, Mechanic
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Police App | Service Completed (OK) | addToLane=True
+  [Elem] Police App | Store Next Service Date | addToLane=True
+  [Elem] Police App | Wait Until Service Due | addToLane=True
+  [Elem] Police App | Check Car Registration | addToLane=True
+  [Elem] Police App | Registered? | addToLane=True
+  [Elem] Police App | Stop (Not Registered) | addToLane=True
+  [Elem] Police App | Notify Driver (Service Due) | addToLane=True
+  [Elem] Police App | Service Attended? | addToLane=True
+  [Elem] Police App | Wait 30 Days | addToLane=True
+  [Elem] Police App | Issue Fine | addToLane=True
+  [Elem] Police App | Fine Issued | addToLane=True
+  [Elem] Police App | Send Status Updates (Email) | addToLane=True
+  [Elem] Driver | Go to Service Facility | addToLane=True
+  [Elem] Driver | Pay via App | addToLane=True
+  [Elem] Mechanic | Enter Car Problems | addToLane=True
+  [Elem] Mechanic | Repair And Updates | addToLane=True
+  [Elem] Mechanic | Repair Car | addToLane=True
+  [Elem] Mechanic | Repair Done | addToLane=True
+  [Elem] Mechanic | Record Repair Success and Pickerl | addToLane=True
+  [Elem] Mechanic | Enter Next Service Time | addToLane=True
+  [Elem] Mechanic | Cycle Complete | addToLane=True
+
+[3] Total elements created: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Car Service_92998
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 12/21 | Missing: Go to Servic, Pay via App, Enter Car Pr, Repair And U, Repair Car, Repair Done, Record Repai, Enter Next S, Cycle Comple
+  [Attempt 2] Found: 12/21 | Missing: Go to Servic, Pay via App, Enter Car Pr, Repair And U, Repair Car, Repair Done, Record Repai, Enter Next S, Cycle Comple
+  [Attempt 3] Found: 12/21 | Missing: Go to Servic, Pay via App, Enter Car Pr, Repair And U, Repair Car, Repair Done, Record Repai, Enter Next S, Cycle Comple
+  [Attempt 3] TIMEOUT - 12/21 elements
+
+[8] WARNING: 12/21 elements ready after 150ms
+         Missing: Go to Service Facility, Pay via App, Enter Car Problems, Repair And Updates, Repair Car, Repair Done, Record Repair Success and Pickerl, Enter Next Service Time, Cycle Complete
+
+[9] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [Unmask] Go to Service Facility -> Y=55 (Driver): OK
+  [Unmask] Pay via App -> Y=55 (Driver): OK
+  [Unmask] Enter Car Problems -> Y=263 (Mechanic): OK
+  [Unmask] Repair And Updates -> Y=263 (Mechanic): OK
+  [Unmask] Repair Car -> Y=263 (Mechanic): OK
+  [Unmask] Repair Done -> Y=263 (Mechanic): OK
+  [Unmask] Record Repair Success and Pickerl -> Y=263 (Mechanic): OK
+  [Unmask] Enter Next Service Time -> Y=263 (Mechanic): OK
+  [Unmask] Cycle Complete -> Y=263 (Mechanic): OK
+
+[10] Manual unmask complete: 9 elements
+[11] All elements now available
+
+  Lanes: Driver(5-112); Police App(112-220); Mechanic(220-340)
+  Elements: Service Comp=Y123, Store Next S=Y123, Wait Until S=Y123, Check Car Re=Y123, Registered?=Y123, Notify Drive=Y123, Stop (Not Re=Y123, Service Atte=Y123, Go to Servic=Y55, Wait 30 Days=Y123, Enter Car Pr=Y263, Issue Fine=Y123, Fine Issued=Y123, Repair And U=Y263, Repair Car=Y263, Send Status =Y123, Repair Done=Y263, Pay via App=Y55, Record Repai=Y263, Enter Next S=Y263, Cycle Comple=Y263
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Driver centerY = 35
+[13] Police App centerY = 143
+[14] Mechanic centerY = 257
+
+[15] Police App/Service Completed (OK) -> (80,143) 33x33
+[16] Police App/Store Next Service Date -> (230,143) 150x60
+[17] Police App/Wait Until Service Due -> (380,143) 150x60
+[18] Police App/Check Car Registration -> (530,143) 150x60
+[19] Police App/Registered? -> (680,143) 40x40
+[20] Police App/Notify Driver (Service Due) -> (830,143) 150x60
+[21] Police App/Stop (Not Registered) -> (830,143) 33x33
+[22] Police App/Service Attended? -> (980,143) 40x40
+[23] Driver/Go to Service Facility -> (1130,35) 150x60
+[24] Police App/Wait 30 Days -> (1130,143) 150x60
+[25] Mechanic/Enter Car Problems -> (1280,257) 150x60
+[26] Police App/Issue Fine -> (1280,143) 150x60
+[27] Police App/Fine Issued -> (1430,143) 33x33
+[28] Mechanic/Repair And Updates -> (1430,257) 40x40
+[29] Mechanic/Repair Car -> (1580,257) 150x60
+[30] Police App/Send Status Updates (Email) -> (1580,143) 150x60
+[31] Mechanic/Repair Done -> (1730,257) 40x40
+[32] Driver/Pay via App -> (1880,35) 150x60
+[33] Mechanic/Record Repair Success and Pickerl -> (2030,257) 150x60
+[34] Mechanic/Enter Next Service Time -> (2180,257) 150x60
+[35] Mechanic/Cycle Complete -> (2330,257) 33x33
+
+[36] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Service Completed (OK) -> Store Next Service Date
+  [Flow] Store Next Service Date -> Wait Until Service Due
+  [Flow] Wait Until Service Due -> Check Car Registration
+  [Flow] Check Car Registration -> Registered?
+  [Flow] Registered? -> Notify Driver (Service Due) | guard=Yes
+  [Flow] Registered? -> Stop (Not Registered) | guard=No
+  [Flow] Notify Driver (Service Due) -> Service Attended?
+  [Flow] Service Attended? -> Go to Service Facility | guard=Yes
+  [Flow] Service Attended? -> Wait 30 Days | guard=No
+  [Flow] Wait 30 Days -> Issue Fine
+  [Flow] Issue Fine -> Fine Issued
+  [Flow] Go to Service Facility -> Enter Car Problems
+  [Flow] Enter Car Problems -> Repair And Updates
+  [Flow] Repair And Updates -> Repair Car
+  [Flow] Repair And Updates -> Send Status Updates (Email)
+  [Flow] Repair Car -> Repair Done
+  [Flow] Send Status Updates (Email) -> Repair Done
+  [Flow] Repair Done -> Pay via App
+  [Flow] Pay via App -> Record Repair Success and Pickerl
+  [Flow] Record Repair Success and Pickerl -> Enter Next Service Time
+  [Flow] Enter Next Service Time -> Cycle Complete
+
+[37] Created 21 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Driver(5-112); Police App(112-220); Mechanic(220-340)
+  Elements: Service Comp=Y143, Store Next S=Y143, Wait Until S=Y143, Check Car Re=Y143, Registered?=Y143, Notify Drive=Y143, Stop (Not Re=Y143, Service Atte=Y143, Go to Servic=Y35, Wait 30 Days=Y143, Enter Car Pr=Y257, Issue Fine=Y143, Fine Issued=Y143, Repair And U=Y257, Repair Car=Y257, Send Status =Y143, Repair Done=Y257, Pay via App=Y35, Record Repai=Y257, Enter Next S=Y257, Cycle Comple=Y257
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Car Service
+Process:  CarService_92998
+Diagram:  Car Service_92998
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=4,flows=21,data=0,data_assoc=0
+======================================================================

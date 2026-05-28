@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN LEGO MACHINE BUILDING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   47690
+Process Name:   LegoMachine_47690
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LegoMachine_47690
+[2] Lanes: Designer, Procurement, Children, Builder
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Designer lane: 3 elements
+[4] Procurement lane: 2 elements
+[5] Children lane: 1 element
+[6] Builder lane: 7 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: LegoMachine_47690
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/13 | Missing: Project Star, Develop Basi, Redesign Sub, Sort Parts i
+  [Attempt 2] Found: 9/13 | Missing: Project Star, Develop Basi, Redesign Sub, Sort Parts i
+  [Attempt 3] Found: 9/13 | Missing: Project Star, Develop Basi, Redesign Sub, Sort Parts i
+  [Attempt 3] TIMEOUT - 9/13 elements
+
+[11] WARNING: 9/13 elements ready after 150ms
+         Missing: Project Started, Develop Basic Design, Redesign Subcomponent, Sort Parts into Containers
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Project Started -> Y=55 (Designer): OK
+  [Unmask] Develop Basic Design -> Y=55 (Designer): OK
+  [Unmask] Redesign Subcomponent -> Y=55 (Designer): OK
+  [Unmask] Sort Parts into Containers -> Y=255 (Children): OK
+
+[13] Manual unmask: 4 elements unmasked
+[14] All elements now available
+
+  Lanes: Designer(5-125); Procurement(125-225); Children(225-325); Builder(325-644)
+  Elements: Project St=Y55, Develop Ba=Y55, Order Lego=Y136, Sort Parts=Y255, Build Subc=Y336, Parts Avai=Y336, Reorder Pa=Y136, Test Subco=Y336, Test Passe=Y336, Redesign S=Y55, Rebuild Su=Y336, Assemble M=Y336, Machine Co=Y336
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Designer centerY = 42
+[16] Procurement centerY = 152
+[17] Children centerY = 252
+[18] Builder centerY = 461
+
+[19] Designer/Project Started -> (80,42) 33x33
+[20] Designer/Develop Basic Design -> (210,42) 120x60
+[21] Procurement/Order Lego Sets -> (340,152) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Designer(5-125); Procurement(125-225); Children(225-325); Builder(325-644)
+         After:  Lanes: Designer(5-125); Procurement(125-241); Children(241-341); Builder(341-660)
+[22] Children/Sort Parts into Containers -> (470,252) 120x60
+[23] Builder/Build Subcomponent -> (600,461) 120x60
+[24] Builder/Parts Available? -> (730,461) 40x40
+[25] Procurement/Reorder Parts -> (860,152) 120x60
+[26] Builder/Test Subcomponent -> (990,461) 120x60
+[27] Builder/Test Passed? -> (1120,461) 40x40
+[28] Designer/Redesign Subcomponent -> (1250,42) 120x60
+[29] Builder/Rebuild Subcomponent -> (1380,461) 120x60
+[30] Builder/Assemble Machine -> (1510,461) 120x60
+[31] Builder/Machine Complete -> (1640,461) 33x33
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 14 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Designer(5-125); Procurement(125-241); Children(241-341); Builder(341-660)
+  Elements: Project St=Y42, Develop Ba=Y42, Order Lego=Y152, Sort Parts=Y252, Build Subc=Y461, Parts Avai=Y461, Reorder Pa=Y152, Test Subco=Y461, Test Passe=Y461, Redesign S=Y42, Rebuild Su=Y461, Assemble M=Y461, Machine Co=Y461
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LegoMachine_47690
+Lanes:    4
+Elements: 13 (13 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=13,gateways=2,flows=14,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,134 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ORDER FULFILLMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   25679
+Process Name:   OrderFulfillment_25679
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_25679
+[2] Lanes: Customer, Sales System, Warehouse, Logistics
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 9 elements
+[4] Sales System lane: 3 elements
+[5] Warehouse lane: 4 elements
+[6] Logistics lane: 4 elements
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: OrderFulfillment_25679
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/20 | Missing: Order Placed, Receive Conf, View Trackin, Receive Deli, Satisfied?, Provide Feed, Initiate Ret, Order Comple, Return Initi, Generate Lab, Handover Pac, Receive Pack, Update Track, Deliver Pack, Confirm Deli
+  [Attempt 2] Found: 5/20 | Missing: Order Placed, Receive Conf, View Trackin, Receive Deli, Satisfied?, Provide Feed, Initiate Ret, Order Comple, Return Initi, Generate Lab, Handover Pac, Receive Pack, Update Track, Deliver Pack, Confirm Deli
+  [Attempt 3] Found: 5/20 | Missing: Order Placed, Receive Conf, View Trackin, Receive Deli, Satisfied?, Provide Feed, Initiate Ret, Order Comple, Return Initi, Generate Lab, Handover Pac, Receive Pack, Update Track, Deliver Pack, Confirm Deli
+  [Attempt 3] TIMEOUT - 5/20 elements
+
+[11] WARNING: 5/20 elements ready after 150ms
+         Missing: Order Placed, Receive Confirmation, View Tracking, Receive Delivery, Satisfied?, Provide Feedback, Initiate Return, Order Complete, Return Initiated, Generate Label, Handover Package, Receive Package, Update Tracking, Deliver Package, Confirm Delivery
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Order Placed -> Y=55 (Customer): OK
+  [Unmask] Receive Confirmation -> Y=55 (Customer): OK
+  [Unmask] View Tracking -> Y=55 (Customer): OK
+  [Unmask] Receive Delivery -> Y=55 (Customer): OK
+  [Unmask] Satisfied? -> Y=55 (Customer): OK
+  [Unmask] Provide Feedback -> Y=55 (Customer): OK
+  [Unmask] Initiate Return -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+  [Unmask] Return Initiated -> Y=55 (Customer): OK
+  [Unmask] Generate Label -> Y=255 (Warehouse): OK
+  [Unmask] Handover Package -> Y=255 (Warehouse): OK
+  [Unmask] Receive Package -> Y=355 (Logistics): OK
+  [Unmask] Update Tracking -> Y=355 (Logistics): OK
+  [Unmask] Deliver Package -> Y=355 (Logistics): OK
+  [Unmask] Confirm Delivery -> Y=355 (Logistics): OK
+
+[13] Manual unmask: 15 elements unmasked
+[14] All elements now available
+
+  Lanes: Customer(5-132); Sales System(132-232); Warehouse(232-332); Logistics(332-432)
+  Elements: Order Plac=Y55, Generate O=Y143, Receive Co=Y55, Send Confi=Y143, Pick Items=Y243, Pack Order=Y243, Generate L=Y255, Handover P=Y255, Receive Pa=Y355, View Track=Y55, Send Track=Y143, Update Tra=Y355, Deliver Pa=Y355, Confirm De=Y355, Receive De=Y55, Satisfied?=Y55, Initiate R=Y55, Provide Fe=Y55, Order Comp=Y55, Return Ini=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 45
+[16] Sales System centerY = 159
+[17] Warehouse centerY = 259
+[18] Logistics centerY = 359
+
+[19] Customer/Order Placed -> (80,45) 33x33
+[20] Sales System/Generate Order -> (220,159) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); Sales System(132-232); Warehouse(232-332); Logistics(332-432)
+         After:  Lanes: Customer(5-132); Sales System(132-254); Warehouse(254-354); Logistics(354-454)
+[21] Customer/Receive Confirmation -> (360,45) 120x60
+[22] Sales System/Send Confirmation -> (360,159) 120x60
+[23] Warehouse/Pick Items -> (500,259) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); Sales System(132-254); Warehouse(254-354); Logistics(354-454)
+         After:  Lanes: Customer(-1-126); Sales System(126-248); Warehouse(248-354); Logistics(354-454)
+[24] Warehouse/Pack Order -> (640,259) 120x60
+[25] Warehouse/Generate Label -> (780,259) 120x60
+[26] Warehouse/Handover Package -> (920,259) 120x60
+[27] Logistics/Receive Package -> (1060,359) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-1-126); Sales System(126-248); Warehouse(248-354); Logistics(354-454)
+         After:  Lanes: Customer(-7-120); Sales System(120-242); Warehouse(242-348); Logistics(348-454)
+[28] Customer/View Tracking -> (1060,45) 120x60
+[29] Sales System/Send Tracking Info -> (1200,159) 120x60
+[30] Logistics/Update Tracking -> (1200,359) 120x60
+[31] Logistics/Deliver Package -> (1340,359) 120x60
+[32] Logistics/Confirm Delivery -> (1480,359) 120x60
+[33] Customer/Receive Delivery -> (1620,45) 120x60
+[34] Customer/Satisfied? -> (1760,45) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(-7-120); Sales System(120-242); Warehouse(242-348); Logistics(348-454)
+         After:  Lanes: Customer(-7-122); Sales System(122-244); Warehouse(244-350); Logistics(350-456)
+[35] Customer/Initiate Return -> (1900,85) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-7-122); Sales System(122-244); Warehouse(244-350); Logistics(350-456)
+         After:  Lanes: Customer(-7-156); Sales System(156-278); Warehouse(278-384); Logistics(384-490)
+[36] Customer/Provide Feedback -> (1900,5) 120x60
+[37] Customer/Order Complete -> (2040,5) 33x33
+[38] Customer/Return Initiated -> (2040,85) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[39] Created 19 sequence flows
+[40] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-7-156); Sales System(156-278); Warehouse(278-384); Logistics(384-490)
+  Elements: Order Plac=Y33, Generate O=Y183, Receive Co=Y33, Send Confi=Y183, Pick Items=Y289, Pack Order=Y289, Generate L=Y289, Handover P=Y289, Receive Pa=Y395, View Track=Y45, Send Track=Y195, Update Tra=Y395, Deliver Pa=Y395, Confirm De=Y395, Receive De=Y45, Satisfied?=Y45, Initiate R=Y85, Provide Fe=Y5, Order Comp=Y5, Return Ini=Y85
+
+[41] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OrderFulfillment_25679
+Lanes:    4
+Elements: 20 (20 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=20,gateways=1,flows=19,data=0,data_assoc=0
+======================================================================

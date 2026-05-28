@@ -1,0 +1,77 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComplianceAuditCertification_25115
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplianceAuditCertification_25115
+[2] Lanes: Company, External Auditors, Certification Body
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Company: 5 elements
+[4] External Auditors: 5 elements
+[5] Certification Body: 3 elements
+
+  Total: 13 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: ComplianceAuditCertification_25115
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Company] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Audit scheduled -> col=0 (80,25) relY=20
+  Prepare documentation -> col=1 (230,25) relY=20
+  Gather evidence -> col=2 (380,25) relY=20
+  Conduct self-assessment -> col=3 (530,25) relY=20
+  Make corrections -> col=7 (1130,25) relY=20
+
+[External Auditors] Lane bounds: 105-205
+  [maxElementBottomRelY=80]
+  Review company processes -> col=4 (680,125) relY=20
+  Identify gaps or issues -> col=5 (830,125) relY=20
+  Gaps found? -> col=6 (980,125) relY=20
+  Final audit -> col=8 (1280,125) relY=20
+  Criteria met? -> col=9 (1430,125) relY=20
+
+[Certification Body] Lane bounds: 258-358
+  [Unmask] Award certification -> Y=308: OK
+  [Unmask] Issue official documents -> Y=308: OK
+  [Unmask] Process complete -> Y=308: OK
+  [maxElementBottomRelY=80]
+  Award certification -> col=10 (1580,278) relY=20
+  Issue official documents -> col=11 (1730,278) relY=20
+  Process complete -> col=12 (1880,278) relY=20
+
+
+[8] Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 14 sequence flows
+
+==================================================================
+COMPLETE: ComplianceAuditCertification_25115
+==================================================================
+Lanes: 3 | Elements: 13 | Flows: 14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=2,flows=14,data=0,data_assoc=0
+======================================================================

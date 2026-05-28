@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+THE EVANSTONIAN - ROOM SERVICE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   63537
+Process Name:   RoomService_63537
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RoomService_63537
+[2] Lanes: Guest, RS Manager, Kitchen/Sommelier, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest lane: 2 elements
+[4] RS Manager lane: 4 elements
+[5] Kitchen/Sommelier lane: 4 elements
+[6] Waiter lane: 9 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: RoomService_63537
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 13/19 | Missing: Call Room , Order Rece, Prepare Fo, Wine Order, Fetch Wine
+  [Attempt 2] Found: 13/19 | Missing: Call Room , Order Rece, Prepare Fo, Wine Order, Fetch Wine
+  [Attempt 3] Found: 13/19 | Missing: Call Room , Order Rece, Prepare Fo, Wine Order, Fetch Wine
+  [Attempt 4] Found: 13/19 | Missing: Call Room , Order Rece, Prepare Fo, Wine Order, Fetch Wine
+  [Attempt 5] Found: 13/19 | Missing: Call Room , Order Rece, Prepare Fo, Wine Order, Fetch Wine
+  [Attempt 5] TIMEOUT - 13/19 elements
+
+[11] WARNING: 13/19 ready
+
+[12] Trying manual unmask...
+
+  [Unmask] Call Room Servi -> Y=55 (Guest): OK
+  [Unmask] Order Received -> Y=55 (Guest): OK
+  [Unmask] Prepare Food -> Y=255 (Kitchen/Sommelier): OK
+  [Unmask] Wine Ordered? -> Y=255 (Kitchen/Sommelier): OK
+  [Unmask] Fetch Wine -> Y=255 (Kitchen/Sommelier): OK
+  [Unmask] Wine Ready -> Y=255 (Kitchen/Sommelier): OK
+
+[13] Manual unmask: 6 elements
+
+  Lanes: Guest(5-125); RS Manag(125-225); Kitchen/(225-395); Waiter(395-653)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Guest centerY = 42
+[15] RS Manager centerY = 152
+[16] Kitchen/Sommelier centerY = 287
+[17] Waiter centerY = 501
+
+[18] Guest/Call Room Servi -> (60,42)
+[19] RS Manag/Take Order -> (200,152)
+[20] RS Manag/Submit to Kitch -> (340,152)
+[21] RS Manag/Order Sommelier -> (480,152)
+[22] Kitchen//Prepare Food -> (480,287)
+[23] RS Manag/Assign to Waite -> (620,152)
+[24] Kitchen//Wine Ordered? -> (620,287)
+[25] Kitchen//Fetch Wine -> (760,287)
+[26] Waiter/Start Waiter Ta -> (760,501)
+[27] Waiter/Prepare Non-Alc -> (900,561)
+[28] Waiter/Ready Cart -> (900,501)
+[29] Kitchen//Wine Ready -> (900,287)
+[30] Waiter/Cart Ready -> (1040,501)
+[31] Waiter/All Ready -> (1180,501)
+[32] Waiter/Deliver to Room -> (1320,501)
+[33] Waiter/Another Order? -> (1460,501)
+[34] Guest/Order Received -> (1460,42)
+[35] Waiter/Debit Account -> (1600,501)
+[36] Waiter/Order Complete -> (1740,501)
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[37] Created 23 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Guest(5-125); RS Manag(125-232); Kitchen/(232-402); Waiter(402-660)
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RoomService_63537
+Lanes:    4
+Elements: 19 (19 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=19,gateways=6,flows=23,data=0,data_assoc=0
+======================================================================

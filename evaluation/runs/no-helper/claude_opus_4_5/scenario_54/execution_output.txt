@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TRANSACTION DATA REQUEST PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   30846
+Process Name:   TransactionDataRequest_30846
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TransactionDataRequest_30846
+[2] Lanes: INQ (Inquirer), IP (Information Provider)
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] INQ lane: 4 elements
+[4] IP lane: 5 elements
+
+  Total elements: 9
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: TransactionDataRequest_30846
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/9 | Missing: Receive Requ, Check Reques, Request Vali, Transmit Dat, Reject Reque
+  [Attempt 2] Found: 4/9 | Missing: Receive Requ, Check Reques, Request Vali, Transmit Dat, Reject Reque
+  [Attempt 3] Found: 4/9 | Missing: Receive Requ, Check Reques, Request Vali, Transmit Dat, Reject Reque
+  [Attempt 3] TIMEOUT - 4/9 elements
+
+[9] WARNING: 4/9 elements ready after 150ms
+         Missing: Receive Request, Check Request, Request Valid?, Transmit Data, Reject Request
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Receive Request -> Y=155 (IP): OK
+  [Unmask] Check Request -> Y=155 (IP): OK
+  [Unmask] Request Valid? -> Y=155 (IP): OK
+  [Unmask] Transmit Data -> Y=155 (IP): OK
+  [Unmask] Reject Request -> Y=155 (IP): OK
+
+[11] Manual unmask: 5 elements unmasked
+[12] All elements now available
+
+  Lanes: INQ(5-105); IP(105-232)
+  Elements: Request In=Y16, Transmit D=Y20, Receive Re=Y155, Check Requ=Y155, Request Va=Y155, Data Recei=Y25, Request Re=Y30, Transmit D=Y155, Reject Req=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] INQ centerY = 32
+[14] IP centerY = 145
+
+[15] INQ/Request Initiated -> (80,32) 33x33
+[16] INQ/Transmit Data Request -> (230,32) 120x60
+[17] IP/Receive Request -> (380,145) 120x60
+[18] IP/Check Request -> (530,145) 120x60
+[19] IP/Request Valid? -> (680,145) 40x40
+[20] INQ/Data Received -> (830,2) 33x33 *** LANE CHANGED ***
+         Before: Lanes: INQ(5-105); IP(105-232)
+         After:  Lanes: INQ(-9-105); IP(105-232)
+[21] INQ/Request Rejected -> (830,62) 33x33 *** LANE CHANGED ***
+         Before: Lanes: INQ(-9-105); IP(105-232)
+         After:  Lanes: INQ(-9-132); IP(132-259)
+[22] IP/Transmit Data -> (830,145) 120x60
+[23] IP/Reject Request -> (980,145) 120x60
+
+  Repositioned: 9/9
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[24] Created 8 sequence flows
+[25] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: INQ(-9-132); IP(132-259)
+  Elements: Request In=Y18, Transmit D=Y18, Receive Re=Y143, Check Requ=Y143, Request Va=Y143, Data Recei=Y2, Request Re=Y62, Transmit D=Y145, Reject Req=Y145
+
+[26] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TransactionDataRequest_30846
+Lanes:    2
+Elements: 9 (9 in diagram)
+Flows:    8
+==================================================================
+
+Process Description:
+  1. INQ initiates and transmits transaction data request
+  2. IP receives and checks/examines the request
+  3. IP decides based on examination:
+     - Valid: Transmit requested data to INQ
+     - Invalid: Reject the request
+  4. INQ receives either data or rejection notification
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=9,gateways=1,flows=8,data=0,data_assoc=0
+======================================================================

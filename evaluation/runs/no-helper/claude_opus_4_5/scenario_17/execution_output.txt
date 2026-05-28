@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ORDER FULFILLMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   49852
+Process Name:   OrderFulfillment_49852
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_49852
+[2] Lanes: CustomerSvc, Payment, Warehouse, Shipping, Quality
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] CustomerSvc lane: 9 elements
+[4] Payment lane: 2 elements
+[5] Warehouse lane: 13 elements
+[6] Shipping lane: 5 elements
+[7] Quality lane: 6 elements
+
+  Total elements: 35
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: OrderFulfillment_49852
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 26/35 | Missing: Process Pa, Payment OK, Dispatch O, Update Inv, Prep Ship ... +4
+  [Attempt 2] Found: 26/35 | Missing: Process Pa, Payment OK, Dispatch O, Update Inv, Prep Ship ... +4
+  [Attempt 3] Found: 26/35 | Missing: Process Pa, Payment OK, Dispatch O, Update Inv, Prep Ship ... +4
+  [Attempt 4] Found: 26/35 | Missing: Process Pa, Payment OK, Dispatch O, Update Inv, Prep Ship ... +4
+  [Attempt 5] Found: 26/35 | Missing: Process Pa, Payment OK, Dispatch O, Update Inv, Prep Ship ... +4
+  [Attempt 5] TIMEOUT - 26/35 elements
+
+[12] WARNING: 26/35 elements ready
+
+[13] Trying manual unmask...
+
+  [Unmask] Process Payment -> Y=177 (Payment): OK
+  [Unmask] Payment OK? -> Y=177 (Payment): OK
+  [Unmask] Dispatch Order -> Y=335 (Warehous): OK
+  [Unmask] Update Inventor -> Y=335 (Warehous): OK
+  [Unmask] Prep Ship Docs -> Y=493 (Shipping): OK
+  [Unmask] International? -> Y=493 (Shipping): OK
+  [Unmask] Prep Customs Do -> Y=493 (Shipping): OK
+  [Unmask] Merge Customs -> Y=493 (Shipping): OK
+  [Unmask] Confirm Deliver -> Y=493 (Shipping): OK
+
+[14] Manual unmask: 9 elements
+[15] All elements now available
+
+  Lanes: Customer(5-127); Payment(127-254); Warehous(254-470); Shipping(470-570); Quality(570-1007)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[16] CustomerSvc centerY = 43
+[17] Payment centerY = 167
+[18] Warehouse centerY = 339
+[19] Shipping centerY = 497
+[20] Quality centerY = 765
+
+[21] Repositioned: 35/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[22] Created 38 sequence flows
+[23] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-127); Payment(127-254); Warehous(254-470); Shipping(470-574); Quality(574-1011)
+
+[24] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OrderFulfillment_49852
+Lanes:    5
+Elements: 35 (35 in diagram)
+Flows:    38
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=35,gateways=9,flows=38,data=0,data_assoc=0
+======================================================================

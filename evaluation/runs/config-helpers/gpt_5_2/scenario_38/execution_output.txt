@@ -1,0 +1,146 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Building a House_39159
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Building a House_39159
+[2] Lanes: Builder, Architect, Online Stores, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Builder: 21 elements
+[4] Architect: 5 elements
+[5] Online Stores: 3 elements
+[6] Friends: 4 elements
+
+  Total: 33 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: Building a House_39159
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Refine Requirements=0, Approve Final Plan=90
+  [Auto-stack] col 9: Send Additional Requirements=0, Create Materials List=90
+  [Auto-stack] col 11: Order Materials=0, Request Friends To Build=90
+  [Auto-stack] col 13: Orders Processed=0, Friends Ready=90
+  [Auto-stack] col 12: Order Lumber=0, Order Hardware=90, Order Tools=180
+[Builder] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Collect Requirements -> Y=55: OK
+  [Unmask] Send Requirements to Architect -> Y=55: OK
+  [Unmask] Receive Draft Plan -> Y=55: OK
+  [Unmask] Need Changes? -> Y=55: OK
+  [Unmask] Refine Requirements -> Y=55: OK
+  [Unmask] Send Additional Requirements -> Y=55: OK
+  [Unmask] Approve Final Plan -> Y=55: OK
+  [Unmask] Create Materials List -> Y=55: OK
+  [Unmask] Procure And Recruit -> Y=55: OK
+  [Unmask] Order Materials -> Y=55: OK
+  [Unmask] Orders Processed -> Y=55: OK
+  [Unmask] Materials Delivered -> Y=55: OK
+  [Unmask] Request Friends To Build -> Y=55: OK
+  [Unmask] Friends Ready -> Y=55: OK
+  [Unmask] Ready To Build -> Y=55: OK
+  [Unmask] Send Party Invitations -> Y=55: OK
+  [Unmask] Receive RSVPs -> Y=55: OK
+  [Unmask] Create Attendee List -> Y=55: OK
+  [Unmask] Buy Snacks -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Requirements Doc -> Y=55: OK
+  [Unmask] Draft Plan -> Y=55: OK
+  [Unmask] Final Plan -> Y=55: OK
+  [Unmask] Materials List -> Y=55: OK
+  [Unmask] Attendee List -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Collect Requirements -> col=1 (230,25) relY=20
+  Send Requirements to Architect -> col=2 (380,25) relY=20
+  Receive Draft Plan -> col=6 (980,25) relY=20
+  Need Changes? -> col=7 (1130,25) relY=20
+  Refine Requirements -> col=8 (1280,25) relY=20
+  Send Additional Requirements -> col=9 (1430,25) relY=20
+  Approve Final Plan -> col=8 (1280,115) relY=110
+  Create Materials List -> col=9 (1430,115) relY=110
+  Procure And Recruit -> col=10 (1580,25) relY=20
+  Order Materials -> col=11 (1730,25) relY=20
+  Orders Processed -> col=13 (2030,25) relY=20
+  Materials Delivered -> col=14 (2180,25) relY=20
+  Request Friends To Build -> col=11 (1730,115) relY=110
+  Friends Ready -> col=13 (2030,115) relY=110
+  Ready To Build -> col=15 (2330,25) relY=20
+  Send Party Invitations -> col=17 (2630,25) relY=20
+  Receive RSVPs -> col=20 (3080,25) relY=20
+  Create Attendee List -> col=21 (3230,25) relY=20
+  Buy Snacks -> col=22 (3380,25) relY=20
+  End -> col=23 (3530,25) relY=20
+  Requirements Doc (DO from Collect Requirements) -> (320,185) maxBottomRelY=170
+  Draft Plan (DO from Receive Draft Plan) -> (1070,185) maxBottomRelY=170
+  Final Plan (DO from Approve Final Plan) -> (1370,185) maxBottomRelY=170
+  Materials List (DO from Create Materials List) -> (1520,185) maxBottomRelY=170
+  Attendee List (DO from Create Attendee List) -> (3320,185) maxBottomRelY=170
+
+[Architect] Lane bounds: 277-399
+  [maxElementBottomRelY=80]
+  Review Requirements -> col=3 (530,297) relY=20
+  Create Draft Plan -> col=4 (680,297) relY=20
+  Send Draft Plan -> col=5 (830,297) relY=20
+  Incorporate Changes -> col=10 (1580,297) relY=20
+  Send Updated Draft -> col=11 (1730,297) relY=20
+
+[Online Stores] Lane bounds: 399-520
+  [maxElementBottomRelY=260]
+  Order Lumber -> col=12 (1880,419) relY=20
+  Order Hardware -> col=12 (1880,509) relY=110
+  Order Tools -> col=12 (1880,599) relY=200
+
+[Friends] Lane bounds: 670-770
+  [Unmask] Friends Confirm -> Y=720: OK
+  [Unmask] Build Tree House -> Y=720: OK
+  [Unmask] Friends Receive Invitations -> Y=720: OK
+  [Unmask] Send RSVP -> Y=720: OK
+  [maxElementBottomRelY=80]
+  Friends Confirm -> col=12 (1880,690) relY=20
+  Build Tree House -> col=16 (2480,690) relY=20
+  Friends Receive Invitations -> col=18 (2780,690) relY=20
+  Send RSVP -> col=19 (2930,690) relY=20
+
+
+[10] Repositioned: 38/38
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 36 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 12
+
+==================================================================
+COMPLETE: Building a House_39159
+==================================================================
+Lanes: 4 | Elements: 33 | Data: 5 | Flows: 36 | DataAssoc: 12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=38,gateways=5,flows=36,data=5,data_assoc=12
+======================================================================

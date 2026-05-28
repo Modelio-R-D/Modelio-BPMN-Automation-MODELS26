@@ -1,0 +1,96 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SalesInquiryToOrder_86230
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SalesInquiryToOrder_86230
+[2] Lanes: Customer, Sales
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 6 elements
+[4] Sales: 8 elements
+
+  Total: 14 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: SalesInquiryToOrder_86230
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: End Not Interested=0, Guide Product Selection=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Customer Inquiry -> Y=55: OK
+  [Unmask] Review Quote -> Y=55: OK
+  [Unmask] Approved? -> Y=55: OK
+  [Unmask] Place Order -> Y=55: OK
+  [Unmask] Receive Confirmation -> Y=55: OK
+  [Unmask] End Order Confirmed -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Customer Inquiry -> col=0 (80,25) relY=20
+  Review Quote -> col=6 (980,25) relY=20
+  Approved? -> col=7 (1130,25) relY=20
+  Place Order -> col=8 (1280,25) relY=20
+  Receive Confirmation -> col=11 (1730,25) relY=20
+  End Order Confirmed -> col=12 (1880,25) relY=20
+
+[Sales] Lane bounds: 132-271
+  [Unmask] Guide Product Selection -> Y=201: OK
+  [Unmask] Provide Quote -> Y=201: OK
+  [Unmask] Record Order -> Y=201: OK
+  [Unmask] Send Confirmation -> Y=201: OK
+  [Unmask] Customer Info -> Y=201: OK
+  [Unmask] Quote Document -> Y=201: OK
+  [Unmask] Order Record -> Y=201: OK
+  [maxElementBottomRelY=170]
+  Collect Information -> col=1 (230,152) relY=20
+  Address Questions -> col=2 (380,152) relY=20
+  Interested? -> col=3 (530,152) relY=20
+  End Not Interested -> col=4 (680,152) relY=20
+  Guide Product Selection -> col=4 (680,242) relY=110
+  Provide Quote -> col=5 (830,152) relY=20
+  Record Order -> col=9 (1430,152) relY=20
+  Send Confirmation -> col=10 (1580,152) relY=20
+  Customer Info (DO from Collect Information) -> (320,312) maxBottomRelY=170
+  Quote Document (DO from Provide Quote) -> (920,312) maxBottomRelY=170
+  Order Record (DO from Record Order) -> (1370,312) maxBottomRelY=170
+
+
+[8] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 14 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 6
+
+==================================================================
+COMPLETE: SalesInquiryToOrder_86230
+==================================================================
+Lanes: 2 | Elements: 14 | Data: 3 | Flows: 14 | DataAssoc: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 2
+======================================================================

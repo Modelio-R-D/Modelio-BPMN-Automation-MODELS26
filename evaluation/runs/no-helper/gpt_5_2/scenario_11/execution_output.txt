@@ -1,0 +1,150 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUBSCRIPTION LIFECYCLE - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   75519
+Process Name:   SubscriptionLifecycle_75519
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionLifecycle_75519
+[2] Lanes: Customer, System, Support, Billing
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Customer / Sign Up | addToLane=True
+  [Element] Customer / Enter Personal Information | addToLane=True
+  [Element] Customer / Enter Payment Information | addToLane=True
+  [Element] System / Generate Account | addToLane=True
+  [Element] System / Assign Access | addToLane=True
+  [Element] System / Trigger Billing Cycle | addToLane=True
+  [Element] System / Send Updates and Enhancements | addToLane=True
+  [Element] System / Send Renewal Notifications | addToLane=True
+  [Element] Customer / Cancel Subscription? | addToLane=True
+  [Element] Customer / Submit Cancellation Request | addToLane=True
+  [Element] Support / Process Cancellation Request | addToLane=True
+  [Element] Billing / Check Cancellation Terms | addToLane=True
+  [Element] Billing / Refund Due? | addToLane=True
+  [Element] Billing / Issue Refund | addToLane=True
+  [Element] Billing / Apply Final Charge | addToLane=True
+  [Element] Support / Deactivate Subscription | addToLane=True
+  [Element] Billing / Settle Final Account Balance | addToLane=True
+  [Element] Billing / Subscription Deactivated and Settled | addToLane=True
+
+[3] Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: SubscriptionLifecycle_75519
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/18 | Missing: Sign Up, Enter Person, Enter Paymen, Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Cancel Subsc, Submit Cance
+  [Attempt 2] Found: 8/18 | Missing: Sign Up, Enter Person, Enter Paymen, Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Cancel Subsc, Submit Cance
+  [Attempt 3] Found: 8/18 | Missing: Sign Up, Enter Person, Enter Paymen, Generate Acc, Assign Acces, Trigger Bill, Send Updates, Send Renewal, Cancel Subsc, Submit Cance
+  [Attempt 3] TIMEOUT - 8/18 elements
+
+[8] WARNING: 8/18 elements ready after 150ms
+         Missing: Sign Up, Enter Personal Information, Enter Payment Information, Generate Account, Assign Access, Trigger Billing Cycle, Send Updates and Enhancements, Send Renewal Notifications, Cancel Subscription?, Submit Cancellation Request
+
+[9] Trying manual unmask for missing elements (inside lane Y)...
+
+  [Unmask] Sign Up -> Y=55 (Customer): OK
+  [Unmask] Enter Personal Information -> Y=55 (Customer): OK
+  [Unmask] Enter Payment Information -> Y=55 (Customer): OK
+  [Unmask] Generate Account -> Y=155 (System): OK
+  [Unmask] Assign Access -> Y=155 (System): OK
+  [Unmask] Trigger Billing Cycle -> Y=155 (System): OK
+  [Unmask] Send Updates and Enhancements -> Y=155 (System): OK
+  [Unmask] Send Renewal Notifications -> Y=155 (System): OK
+  [Unmask] Cancel Subscription? -> Y=55 (Customer): OK
+  [Unmask] Submit Cancellation Request -> Y=55 (Customer): OK
+
+[10] Manual unmask: 10 elements unmasked
+[11] All elements now available
+
+  Lanes: Customer(5-132); System(132-232); Support(232-332); Billing(332-631)
+  Elements: Sign Up=Y55, Enter Personal=Y55, Enter Payment =Y55, Generate Accou=Y162, Assign Access=Y162, Trigger Billin=Y162, Send Updates a=Y162, Cancel Subscri=Y55, Send Renewal N=Y162, Submit Cancell=Y55, Process Cancel=Y243, Check Cancella=Y343, Refund Due?=Y343, Apply Final Ch=Y343, Issue Refund=Y343, Deactivate Sub=Y243, Settle Final A=Y343, Subscription D=Y343
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 45
+[13] System centerY = 159
+[14] Support centerY = 259
+[15] Billing centerY = 458
+
+[16] Customer/Sign Up -> (80,45) 33x33
+[17] Customer/Enter Personal Information -> (250,45) 160x60
+[18] Customer/Enter Payment Information -> (420,45) 160x60
+[19] System/Generate Account -> (590,159) 160x60
+[20] System/Assign Access -> (760,159) 160x60
+[21] System/Trigger Billing Cycle -> (930,159) 160x60
+[22] System/Send Updates and Enhancements -> (1100,159) 160x60
+[23] Customer/Cancel Subscription? -> (1270,45) 40x40
+[24] System/Send Renewal Notifications -> (1270,159) 160x60
+[25] Customer/Submit Cancellation Request -> (1440,45) 160x60
+[26] Support/Process Cancellation Request -> (1610,259) 160x60
+[27] Billing/Check Cancellation Terms -> (1780,458) 160x60
+[28] Billing/Refund Due? -> (1950,458) 40x40
+[29] Billing/Apply Final Charge -> (2120,458) 160x60
+[30] Billing/Issue Refund -> (2120,458) 160x60
+[31] Support/Deactivate Subscription -> (2290,259) 160x60
+[32] Billing/Settle Final Account Balance -> (2460,458) 160x60
+[33] Billing/Subscription Deactivated and Settled -> (2630,458) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Sign Up -> Enter Personal Information
+  [Flow] Enter Personal Information -> Enter Payment Information
+  [Flow] Enter Payment Information -> Generate Account
+  [Flow] Generate Account -> Assign Access
+  [Flow] Assign Access -> Trigger Billing Cycle
+  [Flow] Trigger Billing Cycle -> Send Updates and Enhancements
+  [Flow] Send Updates and Enhancements -> Send Renewal Notifications
+  [Flow] Send Renewal Notifications -> Cancel Subscription?
+  [Flow] Cancel Subscription? -> Send Updates and Enhancements | guard=No
+  [Flow] Cancel Subscription? -> Submit Cancellation Request | guard=Yes
+  [Flow] Submit Cancellation Request -> Process Cancellation Request
+  [Flow] Process Cancellation Request -> Check Cancellation Terms
+  [Flow] Check Cancellation Terms -> Refund Due?
+  [Flow] Refund Due? -> Issue Refund | guard=Yes
+  [Flow] Refund Due? -> Apply Final Charge | guard=No
+  [Flow] Issue Refund -> Deactivate Subscription
+  [Flow] Apply Final Charge -> Deactivate Subscription
+  [Flow] Deactivate Subscription -> Settle Final Account Balance
+  [Flow] Settle Final Account Balance -> Subscription Deactivated and Settled
+[34] Created 19 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); System(132-232); Support(232-332); Billing(332-631)
+  Elements: Sign Up=Y45, Enter Personal=Y45, Enter Payment =Y45, Generate Accou=Y159, Assign Access=Y159, Trigger Billin=Y159, Send Updates a=Y159, Cancel Subscri=Y45, Send Renewal N=Y159, Submit Cancell=Y45, Process Cancel=Y259, Check Cancella=Y458, Refund Due?=Y458, Apply Final Ch=Y458, Issue Refund=Y458, Deactivate Sub=Y259, Settle Final A=Y458, Subscription D=Y458
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SubscriptionLifecycle_75519
+Lanes:    4
+Elements: 18 (18 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=18,gateways=2,flows=19,data=0,data_assoc=0
+======================================================================

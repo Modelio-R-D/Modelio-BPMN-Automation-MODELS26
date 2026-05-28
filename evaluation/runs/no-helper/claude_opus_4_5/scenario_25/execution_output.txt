@@ -1,0 +1,137 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN FIND A JOB PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   71719
+Process Name:   FindAJob_71719
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FindAJob_71719
+[2] Lanes: Applicant, Platform, Company, HR System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant lane: 11 elements
+[4] Platform lane: 5 elements
+[5] Company lane: 9 elements
+[6] HR System lane: 7 elements
+
+  Total elements: 32
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: FindAJob_71719
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 14/32 | Missing: Start Job Se, Report Appli, Review Job O, Interested?, Negotiate In
+  [Attempt 2] Found: 14/32 | Missing: Start Job Se, Report Appli, Review Job O, Interested?, Negotiate In
+  [Attempt 3] Found: 14/32 | Missing: Start Job Se, Report Appli, Review Job O, Interested?, Negotiate In
+  [Attempt 3] TIMEOUT - 14/32 elements
+
+[11] WARNING: 14/32 elements ready after 150ms
+         Missing: Start Job Search, Report Applications, Review Job Offers, Interested?, Negotiate Interview, Attend Interview, Start Probation, Rate Company, Job Permanent?, Rating C or less?
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Start Job Search -> Y=55 (Applicant): OK
+  [Unmask] Report Applications -> Y=55 (Applicant): OK
+  [Unmask] Review Job Offers -> Y=55 (Applicant): OK
+  [Unmask] Interested? -> Y=55 (Applicant): OK
+  [Unmask] Negotiate Interview -> Y=55 (Applicant): OK
+  [Unmask] Attend Interview -> Y=55 (Applicant): OK
+  [Unmask] Start Probation -> Y=55 (Applicant): OK
+  [Unmask] Rate Company -> Y=55 (Applicant): OK
+  [Unmask] Job Permanent? -> Y=55 (Applicant): OK
+  [Unmask] Rating C or less? -> Y=55 (Applicant): OK
+  [Unmask] Job Secured -> Y=55 (Applicant): OK
+  [Unmask] Rate Application -> Y=292 (Company): OK
+  [Unmask] Invite Interview? -> Y=292 (Company): OK
+  [Unmask] Conduct Interview -> Y=292 (Company): OK
+  [Unmask] Make Offer? -> Y=292 (Company): OK
+  [Unmask] Send Job Offer -> Y=292 (Company): OK
+  [Unmask] Rate Employee -> Y=292 (Company): OK
+  [Unmask] No Hire -> Y=292 (Company): OK
+
+[13] Manual unmask: 18 elements unmasked
+[14] All elements now available
+
+  Lanes: Applican(5-132); Platform(132-232); Company(232-406); HR Syste(406-704)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Applicant centerY = 45
+[16] Platform centerY = 159
+[17] Company centerY = 296
+[18] HR System centerY = 532
+
+[19] Applican/Start Job Search -> (60,45)
+[20] Applican/Report Application -> (200,45)
+[21] Company/Receive Applicatio -> (340,296)
+[22] Platform/Receive Report -> (340,159)
+[23] HR Syste/Track Applications -> (340,532)
+[24] Company/Confirm Receipt -> (480,296)
+[25] Platform/Match Job Offers -> (480,159)
+[26] Company/Rate Application -> (620,296)
+[27] Applican/Review Job Offers -> (620,45)
+[28] Platform/Send Job Offers -> (620,159)
+[29] Applican/Interested? -> (760,45)
+[30] Company/Invite Interview? -> (760,296)
+[31] Applican/Negotiate Intervie -> (900,45)
+[32] Company/Conduct Interview -> (1040,296)
+[33] Applican/Attend Interview -> (1180,45)
+[34] HR Syste/Record Interview -> (1180,532)
+[35] Company/Make Offer? -> (1320,296)
+[36] Company/No Hire -> (1460,296)
+[37] Company/Send Job Offer -> (1460,296)
+[38] Applican/Start Probation -> (1600,45)
+[39] HR Syste/Start Probation Pe -> (1600,532)
+[40] HR Syste/End Probation -> (1740,532)
+[41] HR Syste/Rating Split -> (1880,532)
+[42] Applican/Rate Company -> (2020,45)
+[43] Company/Rate Employee -> (2020,296)
+[44] HR Syste/Rating Join -> (2160,532)
+[45] Platform/Store Review -> (2160,159)
+[46] Applican/Job Permanent? -> (2300,45)
+[47] HR Syste/Wait 1 Year -> (2300,532)
+[48] Platform/Publish Review -> (2440,159)
+[49] Applican/Rating C or less? -> (2440,45)
+[50] Applican/Job Secured -> (2580,45)
+
+  Repositioned: 32/32
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[51] Created 37 sequence flows
+[52] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applican(5-132); Platform(132-232); Company(232-406); HR Syste(406-704)
+
+[53] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  FindAJob_71719
+Lanes:    4
+Elements: 32 (32 in diagram)
+Flows:    37
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=32,gateways=7,flows=37,data=0,data_assoc=0
+======================================================================

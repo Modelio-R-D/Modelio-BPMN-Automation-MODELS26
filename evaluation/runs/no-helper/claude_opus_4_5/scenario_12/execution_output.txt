@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN EMPLOYEE DEVELOPMENT AND PROMOTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   38517
+Process Name:   EmployeeDevelopment_38517
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EmployeeDevelopment_38517
+[2] Lanes: Employee, Manager, HR, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee lane: 6 elements
+[4] Manager lane: 7 elements
+[5] HR lane: 7 elements
+[6] Finance lane: 3 elements
+
+  Total elements: 23
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: EmployeeDevelopment_38517
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/23 | Missing: Development , Identify Asp, Work on Skil, Receive Feed, Accept Promo, Role Transit, Track Progre, Formal Revie, Approved?, Provide Feed, Finalize Pro, Update Recor
+  [Attempt 2] Found: 11/23 | Missing: Development , Identify Asp, Work on Skil, Receive Feed, Accept Promo, Role Transit, Track Progre, Formal Revie, Approved?, Provide Feed, Finalize Pro, Update Recor
+  [Attempt 3] Found: 11/23 | Missing: Development , Identify Asp, Work on Skil, Receive Feed, Accept Promo, Role Transit, Track Progre, Formal Revie, Approved?, Provide Feed, Finalize Pro, Update Recor
+  [Attempt 3] TIMEOUT - 11/23 elements
+
+[11] WARNING: 11/23 elements ready after 150ms
+         Missing: Development Need, Identify Aspirations, Work on Skills, Receive Feedback, Accept Promotion, Role Transition, Track Progress, Formal Review, Approved?, Provide Feedback, Finalize Promotion, Update Records
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Development Need -> Y=55 (Employee): OK
+  [Unmask] Identify Aspirations -> Y=55 (Employee): OK
+  [Unmask] Work on Skills -> Y=55 (Employee): OK
+  [Unmask] Receive Feedback -> Y=55 (Employee): OK
+  [Unmask] Accept Promotion -> Y=55 (Employee): OK
+  [Unmask] Role Transition -> Y=55 (Employee): OK
+  [Unmask] Track Progress -> Y=269 (HR): OK
+  [Unmask] Formal Review -> Y=269 (HR): OK
+  [Unmask] Approved? -> Y=269 (HR): OK
+  [Unmask] Provide Feedback -> Y=269 (HR): OK
+  [Unmask] Finalize Promotion -> Y=269 (HR): OK
+  [Unmask] Update Records -> Y=269 (HR): OK
+
+[13] Manual unmask: 12 elements unmasked
+[14] All elements now available
+
+  Lanes: Employee(5-125); Manager(125-239); HR(239-346); Finance(346-609)
+  Elements: Developmen=Y55, Identify A=Y55, Review Nee=Y136, Create Dev=Y136, Support De=Y250, Assign Act=Y136, Work on Sk=Y55, Receive Fe=Y55, Track Prog=Y269, Evaluate P=Y136, Milestone =Y136, Continue T=Y136, Recommend =Y136, Formal Rev=Y269, Approved?=Y269, Accept Pro=Y55, Adjust Com=Y357, Finalize P=Y269, Provide Fe=Y269, Process Ch=Y357, Role Trans=Y55, Update Rec=Y269, Send Notif=Y357
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Employee centerY = 42
+[16] Manager centerY = 159
+[17] HR centerY = 269
+[18] Finance centerY = 454
+
+[19] Employee/Development Need -> (80,42) 33x33
+[20] Employee/Identify Aspirations -> (240,42) 130x60
+[21] Manager/Review Needs -> (400,159) 130x60
+[22] Manager/Create Dev Plan -> (560,159) 130x60
+[23] HR/Support Dev Plan -> (560,269) 130x60
+[24] Manager/Assign Activities -> (720,159) 130x60
+[25] Employee/Work on Skills -> (720,42) 130x60
+[26] Employee/Receive Feedback -> (880,42) 130x60
+[27] HR/Track Progress -> (880,269) 130x60
+[28] Manager/Evaluate Progress -> (1040,159) 130x60
+[29] Manager/Milestone Reached? -> (1200,159) 40x40
+[30] Manager/Continue Training -> (1360,159) 130x60
+[31] Manager/Recommend Promotion -> (1360,159) 130x60
+[32] HR/Formal Review -> (1520,269) 130x60
+[33] HR/Approved? -> (1680,269) 40x40
+[34] Employee/Accept Promotion -> (1840,42) 130x60
+[35] Finance/Adjust Compensation -> (1840,454) 130x60
+[36] HR/Finalize Promotion -> (1840,269) 130x60
+[37] HR/Provide Feedback -> (1840,269) 130x60
+[38] Finance/Process Changes -> (2000,454) 130x60
+[39] Employee/Role Transition -> (2000,42) 33x33
+[40] HR/Update Records -> (2000,269) 130x60
+[41] Finance/Send Notification -> (2160,454) 130x60
+
+  Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[42] Created 24 sequence flows
+[43] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-125); Manager(125-239); HR(239-346); Finance(346-609)
+  Elements: Developmen=Y42, Identify A=Y42, Review Nee=Y159, Create Dev=Y159, Support De=Y269, Assign Act=Y159, Work on Sk=Y42, Receive Fe=Y42, Track Prog=Y269, Evaluate P=Y159, Milestone =Y159, Continue T=Y159, Recommend =Y159, Formal Rev=Y269, Approved?=Y269, Accept Pro=Y42, Adjust Com=Y454, Finalize P=Y269, Provide Fe=Y269, Process Ch=Y454, Role Trans=Y42, Update Rec=Y269, Send Notif=Y454
+
+[44] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  EmployeeDevelopment_38517
+Lanes:    4
+Elements: 23 (23 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=23,gateways=2,flows=24,data=0,data_assoc=0
+======================================================================

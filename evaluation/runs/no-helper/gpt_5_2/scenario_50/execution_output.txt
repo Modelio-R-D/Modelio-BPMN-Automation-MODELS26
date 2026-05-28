@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CLAIM HANDLING - RECOMMENDATION CHECK LOOP
+==================================================================
+Script Version: v1.0
+Execution ID:   8313
+Process Name:   ClaimHandling_8313
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: ClaimHandling_8313
+[2] LaneSet created
+[3] Lanes: Claims Officer, Senior Claims Officer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[4] Claims Officer: Claim Registered | addToLane=True
+[5] Claims Officer: Examine Claim | addToLane=True
+[6] Claims Officer: Write Settlement Recommendation | addToLane=True
+[7] Senior Claims Officer: Check Recommendation | addToLane=True
+[8] Senior Claims Officer: Claim OK? | addToLane=True
+[9] Claims Officer: Proceed with Claim Handling | addToLane=True
+[10] Claims Officer: Handling Proceeds | addToLane=True
+
+[11] Total elements: 7
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[12] Diagram created: ClaimHandling_8313
+[13] DiagramHandle obtained
+[14] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[15] Waiting for elements + lanes (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/9 | Missing: Claim Regist, Examine Clai, Write Settle, Check Recomm, Claim OK?, Proceed with, Handling Pro
+  [Attempt 2] Found: 2/9 | Missing: Claim Regist, Examine Clai, Write Settle, Check Recomm, Claim OK?, Proceed with, Handling Pro
+  [Attempt 3] Found: 2/9 | Missing: Claim Regist, Examine Clai, Write Settle, Check Recomm, Claim OK?, Proceed with, Handling Pro
+  [Attempt 3] TIMEOUT - 2/9 elements
+
+[16] WARNING: 0/7 elements ready after 150ms
+         Missing: Claim Registered, Examine Claim, Write Settlement Recommendation, Check Recommendation, Claim OK?, Proceed with Claim Handling, Handling Proceeds
+
+[17] Trying manual unmask for missing elements...
+
+  [Unmask] Computing lane center Y positions...
+  [Unmask] Lane Claims Officer centerY=55
+  [Unmask] Lane Senior Claims Officer centerY=155
+  [Unmask] Claim Registered -> Y=55 (Claims Officer): OK
+  [Unmask] Examine Claim -> Y=55 (Claims Officer): OK
+  [Unmask] Write Settlement Recommendation -> Y=55 (Claims Officer): OK
+  [Unmask] Check Recommendation -> Y=155 (Senior Claims Officer): OK
+  [Unmask] Claim OK? -> Y=155 (Senior Claims Officer): OK
+  [Unmask] Proceed with Claim Handling -> Y=55 (Claims Officer): OK
+  [Unmask] Handling Proceeds -> Y=55 (Claims Officer): OK
+
+[18] Manual unmask: 7 elements unmasked
+[19] All elements now available
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regist=Y55, Examine Clai=Y55, Write Settle=Y55, Check Recomm=Y155, Claim OK?=Y155, Proceed with=Y55, Handling Pro=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[20] Claims Officer centerY = 45
+[21] Senior Claims Officer centerY = 202
+
+[22] Claims Officer/Claim Registered -> (80,45) 33x33
+[23] Claims Officer/Examine Claim -> (240,45) 160x60
+[24] Claims Officer/Write Settlement Recommendation -> (400,45) 160x60
+[25] Senior Claims Officer/Check Recommendation -> (560,202) 160x60
+[26] Senior Claims Officer/Claim OK? -> (720,202) 40x40
+[27] Claims Officer/Proceed with Claim Handling -> (880,45) 160x60
+[28] Claims Officer/Handling Proceeds -> (1040,45) 33x33
+
+[29] Repositioned: 7/7
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Flow: Claim Registered -> Examine Claim
+[31] Flow: Examine Claim -> Write Settlement Recommendation
+[32] Flow: Write Settlement Recommendation -> Check Recommendation
+[33] Flow: Check Recommendation -> Claim OK?
+[34] Flow: Claim OK? -> Write Settlement Recommendation | guard=Not OK
+[35] Flow: Claim OK? -> Proceed with Claim Handling | guard=OK
+[36] Flow: Proceed with Claim Handling -> Handling Proceeds
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regist=Y45, Examine Clai=Y45, Write Settle=Y45, Check Recomm=Y202, Claim OK?=Y202, Proceed with=Y45, Handling Pro=Y45
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ClaimHandling_8313
+Lanes:    2
+Elements: 7 (7 in diagram)
+Flows:    7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=7,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

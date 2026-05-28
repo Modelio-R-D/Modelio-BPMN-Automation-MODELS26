@@ -1,0 +1,116 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN LUXURY AIRPLANE MANUFACTURING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   98495
+Process Name:   LuxuryAirplane_98495
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LuxuryAirplane_98495
+[2] Lanes: Sales, Engineering, Manufacturing, Assembly, Quality, Delivery
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Sales lane: 4 elements
+[4] Engineering lane: 3 elements
+[5] Manufacturing lane: 9 elements
+[6] Assembly lane: 4 elements
+[7] Quality lane: 5 elements
+[8] Delivery lane: 5 elements
+
+  Total elements: 30
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram created: LuxuryAirplane_98495
+[10] DiagramHandle obtained
+[11] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[12] Waiting for elements...
+
+  [Attempt 1] Found: 23/30 | Missing: 7
+  [Attempt 2] Found: 23/30 | Missing: 7
+  [Attempt 3] Found: 23/30 | Missing: 7
+  [Attempt 4] Found: 23/30 | Missing: 7
+  [Attempt 5] Found: 23/30 | Missing: 7
+  [Attempt 5] TIMEOUT - 23/30 elements
+
+[13] WARNING: 23/30 elements ready
+
+[14] Trying manual unmask...
+
+  [Unmask] Create Design Specs -> Y=155: OK
+  [Unmask] Split to Teams -> Y=155: OK
+  [Unmask] Deliver Airplane -> Y=1142: OK
+  [Unmask] Customer Acceptance -> Y=1142: OK
+  [Unmask] Accepted? -> Y=1142: OK
+  [Unmask] Handle Complaints -> Y=1142: OK
+  [Unmask] Order Complete -> Y=1142: OK
+
+[15] Manual unmask: 7 elements
+[16] All elements now available
+
+  Lanes: Sales(5-105); Engineer(105-232); Manufact(232-332); Assembly(332-601); Quality(601-1119); Delivery(1119-1219)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[17] Sales centerY = 32
+[18] Engineering centerY = 145
+[19] Manufacturing centerY = 259
+[20] Assembly centerY = 443
+[21] Quality centerY = 837
+[22] Delivery centerY = 1146
+
+[23] Repositioned: 30/30
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[24] Created 38 sequence flows
+[25] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Sales(-5-95); Engineer(95-222); Manufact(222-348); Assembly(348-617); Quality(617-1135); Delivery(1135-1245)
+
+[26] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LuxuryAirplane_98495
+Lanes:    6
+Elements: 30 (30 in diagram)
+Flows:    38
+==================================================================
+
+PROCESS DESCRIPTION:
+  1. Customer places order with luxury options
+  2. Sales confirms: 5 bar types, seats, colors, toilet water, entertainment
+  3. Engineering creates design specifications
+  4. Manufacturing teams work in parallel:
+     - Russian team: Vodka Bar
+     - Irish team: Whiskey Bar
+     - French team: Champagne Bar
+     - Mexican team: Tequila Bar
+     - Japanese team: Sake Bar
+     - Italian team: Luxury Seats
+     - German team: Toilet System
+     - American team: Entertainment System
+  5. Assembly installs all components
+  6. Test flight with protocol sent to customer
+  7. Delivery and customer acceptance
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=6,elements=30,gateways=4,flows=38,data=0,data_assoc=0
+======================================================================

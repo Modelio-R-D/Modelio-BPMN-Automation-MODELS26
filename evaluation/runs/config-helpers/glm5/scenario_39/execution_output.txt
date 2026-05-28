@@ -1,0 +1,92 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DIYRepairSmartphoneScreen_46270
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DIYRepairSmartphoneScreen_46270
+[2] Lanes: User, Online Tool, Friend, Expert
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] User: 11 elements
+[4] Online Tool: 2 elements
+[5] Friend: 1 elements
+[6] Expert: 2 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: DIYRepairSmartphoneScreen_46270
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Share Success=0, Send to Expert=90
+[User] Lane bounds: 5-105
+  [Unmask] Check What You Have -> Y=55: OK
+  [Unmask] Contact Friends -> Y=55: OK
+  [Unmask] Borrow/Buy from Friends -> Y=55: OK
+  [Unmask] Buy Remaining Items -> Y=55: OK
+  [Unmask] Follow Instructions -> Y=55: OK
+  [Unmask] Success? -> Y=55: OK
+  [Unmask] Share Success -> Y=55: OK
+  [Unmask] Send to Expert -> Y=55: OK
+  [Unmask] End Success -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Enter Model and Issue -> col=1 (230,25) relY=20
+  Check What You Have -> col=3 (530,25) relY=20
+  Contact Friends -> col=4 (680,25) relY=20
+  Borrow/Buy from Friends -> col=6 (980,25) relY=20
+  Buy Remaining Items -> col=7 (1130,25) relY=20
+  Follow Instructions -> col=9 (1430,25) relY=20
+  Success? -> col=10 (1580,25) relY=20
+  Share Success -> col=11 (1730,25) relY=20
+  Send to Expert -> col=11 (1730,115) relY=110
+  End Success -> col=12 (1880,25) relY=20
+
+[Online Tool] Lane bounds: 186-286
+  [maxElementBottomRelY=80]
+  Generate Lists -> col=2 (380,206) relY=20
+  Provide Instructions -> col=8 (1280,206) relY=20
+
+[Friend] Lane bounds: 286-386
+  [Unmask] Lend/Sell Items -> Y=336: OK
+  [maxElementBottomRelY=80]
+  Lend/Sell Items -> col=5 (830,306) relY=20
+
+[Expert] Lane bounds: 393-493
+  [maxElementBottomRelY=80]
+  Repair Phone -> col=12 (1880,413) relY=20
+  End Expert -> col=13 (2030,413) relY=20
+
+
+[9] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 15 sequence flows
+
+==================================================================
+COMPLETE: DIYRepairSmartphoneScreen_46270
+==================================================================
+Lanes: 4 | Elements: 16 | Flows: 15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=16,gateways=1,flows=15,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,94 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: StorageManagement_23978
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: StorageManagement_23978
+[2] Lanes: Warehouse, Procurement, Shipping
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Warehouse: 8 elements
+[4] Procurement: 5 elements
+[5] Shipping: 6 elements
+
+  Total: 19 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: StorageManagement_23978
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Order Ready?=0, Select Next Product=90
+  [Auto-stack] col 6: Demand Penalty=0, Merge After Penalty=90
+  [Auto-stack] col 11: Request Courier=0, Pack Products=90
+[Warehouse] Lane bounds: 5-122
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Read Order -> col=1 (230,25) relY=20
+  In Stock? -> col=2 (380,25) relY=20
+  Withdraw from Warehouse -> col=3 (530,25) relY=20
+  Register in Stock -> col=7 (1130,25) relY=20
+  Merge Product Ready -> col=8 (1280,25) relY=20
+  Order Ready? -> col=9 (1430,25) relY=20
+  Select Next Product -> col=9 (1430,115) relY=110
+
+[Procurement] Lane bounds: 186-286
+  [Unmask] Reorder from Wholesaler -> Y=236: OK
+  [Unmask] Wait for Delivery -> Y=236: OK
+  [Unmask] Delivery > 10 days? -> Y=236: OK
+  [Unmask] Demand Penalty -> Y=236: OK
+  [Unmask] Merge After Penalty -> Y=236: OK
+  [maxElementBottomRelY=150]
+  Reorder from Wholesaler -> col=3 (530,206) relY=20
+  Wait for Delivery -> col=4 (680,206) relY=20
+  Delivery > 10 days? -> col=5 (830,206) relY=20
+  Demand Penalty -> col=6 (980,206) relY=20
+  Merge After Penalty -> col=6 (980,296) relY=110
+
+[Shipping] Lane bounds: 373-473
+  [Unmask] Fork Shipping -> Y=423: OK
+  [Unmask] Request Courier -> Y=423: OK
+  [Unmask] Pack Products -> Y=423: OK
+  [Unmask] Join Shipping -> Y=423: OK
+  [Unmask] Ship Order -> Y=423: OK
+  [Unmask] End -> Y=423: OK
+  [maxElementBottomRelY=170]
+  Fork Shipping -> col=10 (1580,393) relY=20
+  Request Courier -> col=11 (1730,393) relY=20
+  Pack Products -> col=11 (1730,483) relY=110
+  Join Shipping -> col=12 (1880,393) relY=20
+  Ship Order -> col=13 (2030,393) relY=20
+  End -> col=14 (2180,393) relY=20
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 22 sequence flows
+
+==================================================================
+COMPLETE: StorageManagement_23978
+==================================================================
+Lanes: 3 | Elements: 19 | Flows: 22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 7
+======================================================================

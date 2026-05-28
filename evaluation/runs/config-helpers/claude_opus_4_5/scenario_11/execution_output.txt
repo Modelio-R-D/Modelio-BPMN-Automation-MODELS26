@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SubscriptionLifecycle_91996
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionLifecycle_91996
+[2] Lanes: Customer, System, Support Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] System: 7 elements
+[5] Support Team: 7 elements
+
+  Total: 19 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: SubscriptionLifecycle_91996
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 12: Process Refund=0, Apply Final Charges=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Cancellation Request -> Y=55: OK
+  [Unmask] Submit Cancellation -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Enter Personal Info -> col=1 (230,25) relY=20
+  Enter Payment Info -> col=2 (380,25) relY=20
+  Cancellation Request -> col=8 (1280,25) relY=20
+  Submit Cancellation -> col=9 (1430,25) relY=20
+
+[System] Lane bounds: 125-225
+  [Unmask] Generate Account -> Y=175: OK
+  [Unmask] Assign Access -> Y=175: OK
+  [Unmask] Start Billing Cycle -> Y=175: OK
+  [Unmask] Send Updates -> Y=175: OK
+  [Unmask] Wait for Event -> Y=175: OK
+  [Unmask] Billing Timer -> Y=175: OK
+  [Unmask] Process Billing -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Generate Account -> col=3 (530,145) relY=20
+  Assign Access -> col=4 (680,145) relY=20
+  Start Billing Cycle -> col=5 (830,145) relY=20
+  Send Updates -> col=6 (980,145) relY=20
+  Wait for Event -> col=7 (1130,145) relY=20
+  Billing Timer -> col=8 (1280,145) relY=20
+  Process Billing -> col=9 (1430,145) relY=20
+
+[Support Team] Lane bounds: 252-352
+  [Unmask] Review Cancellation -> Y=302: OK
+  [Unmask] Check Terms -> Y=302: OK
+  [Unmask] Process Refund -> Y=302: OK
+  [Unmask] Apply Final Charges -> Y=302: OK
+  [Unmask] Deactivate Subscription -> Y=302: OK
+  [Unmask] Settle Account Balance -> Y=302: OK
+  [Unmask] End -> Y=302: OK
+  [maxElementBottomRelY=170]
+  Review Cancellation -> col=10 (1580,272) relY=20
+  Check Terms -> col=11 (1730,272) relY=20
+  Process Refund -> col=12 (1880,272) relY=20
+  Apply Final Charges -> col=12 (1880,362) relY=110
+  Deactivate Subscription -> col=13 (2030,272) relY=20
+  Settle Account Balance -> col=14 (2180,272) relY=20
+  End -> col=15 (2330,272) relY=20
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 20 sequence flows
+
+==================================================================
+COMPLETE: SubscriptionLifecycle_91996
+==================================================================
+Lanes: 3 | Elements: 19 | Flows: 20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 2
+======================================================================

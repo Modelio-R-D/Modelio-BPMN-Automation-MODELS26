@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - INTERNSHIP
+==================================================================
+Script Version: v9.1
+Execution ID:   42499
+Process Name:   Internship_42499
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Internship_42499
+[2] Lanes: Intern, Company, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements: 25
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Internship_42499
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for lanes + elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 24/28 | Missing: Prepare Inte, Company Stat, Company Stat, Company Stat
+  [Attempt 2] Found: 24/28 | Missing: Prepare Inte, Company Stat, Company Stat, Company Stat
+  [Attempt 3] Found: 24/28 | Missing: Prepare Inte, Company Stat, Company Stat, Company Stat
+  [Attempt 3] TIMEOUT - 24/28 elements
+
+[8] WARNING: Only 24/28 objects ready after 150ms
+
+[9] Missing element graphics after wait: Prepare Internship, Company Status 1, Company Status 2, Company Status 3
+[10] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [Unmask] Prepare Internship -> Y=202 (Company): OK
+  [Unmask] Company Status 1 -> Y=202 (Company): OK
+  [Unmask] Company Status 2 -> Y=202 (Company): OK
+  [Unmask] Company Status 3 -> Y=202 (Company): OK
+
+[11] Manual unmask done. Newly unmasked: 4
+[12] All elements now available
+
+  Lanes: Intern(5-152); Company(152-259); Twitter(259-485)
+  Elements: Start=Y16, Enter Topic, B=Y20, Wait For Offer=Y25, Review Offer=Y30, Accept Offer?=Y35, Accept Offer=Y40, Deny Offer=Y45, Invalidate Oth=Y50, Prepare Intern=Y202, Updates Split=Y55, Company Status=Y202, Intern Status =Y60, Company Status=Y202, Intern Status =Y65, Company Status=Y202, Intern Status =Y70, Updates Join=Y75, Complete Inter=Y80, Recommend Comp=Y85, Tweets Split=Y270, Tweet Friend A=Y270, Tweet Friend B=Y270, Tweet Friend C=Y270, Tweets Join=Y270, Tweets Sent=Y270
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Intern centerY = 55
+[14] Company centerY = 182
+[15] Twitter centerY = 349
+
+[16] Intern/Start -> (80,55) 33x33
+[17] Intern/Enter Topic, Budget, Experience, Hobbies -> (230,55) 170x60
+[18] Intern/Wait For Offers -> (380,55) 170x60
+[19] Intern/Review Offer -> (530,55) 170x60
+[20] Intern/Accept Offer? -> (680,55) 40x40
+[21] Intern/Accept Offer -> (830,55) 170x60
+[22] Intern/Deny Offer -> (830,55) 170x60
+[23] Intern/Invalidate Other Offers -> (980,55) 170x60
+[24] Company/Prepare Internship -> (1130,182) 170x60
+[25] Intern/Updates Split -> (1280,55) 40x40
+[26] Company/Company Status 1 -> (1430,182) 170x60
+[27] Intern/Intern Status Week 1 -> (1430,55) 170x60
+[28] Company/Company Status 2 -> (1580,182) 170x60
+[29] Intern/Intern Status Week 2 -> (1580,55) 170x60
+[30] Company/Company Status 3 -> (1730,182) 170x60
+[31] Intern/Intern Status Week 3 -> (1730,55) 170x60
+[32] Intern/Updates Join -> (1880,55) 40x40
+[33] Intern/Complete Internship -> (2030,55) 170x60
+[34] Intern/Recommend Company -> (2180,55) 170x60
+[35] Twitter/Tweets Split -> (2330,349) 40x40
+[36] Twitter/Tweet Friend A -> (2480,349) 170x60
+[37] Twitter/Tweet Friend B -> (2630,349) 170x60
+[38] Twitter/Tweet Friend C -> (2780,349) 170x60
+[39] Twitter/Tweets Join -> (2930,349) 40x40
+[40] Twitter/Tweets Sent -> (3080,349) 33x33
+
+  Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[41] Created 28 sequence flows
+[42] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Intern(5-152); Company(152-259); Twitter(259-485)
+  Elements: Start=Y55, Enter Topic, B=Y55, Wait For Offer=Y55, Review Offer=Y55, Accept Offer?=Y55, Accept Offer=Y55, Deny Offer=Y55, Invalidate Oth=Y55, Prepare Intern=Y182, Updates Split=Y55, Company Status=Y182, Intern Status =Y55, Company Status=Y182, Intern Status =Y55, Company Status=Y182, Intern Status =Y55, Updates Join=Y55, Complete Inter=Y55, Recommend Comp=Y55, Tweets Split=Y349, Tweet Friend A=Y349, Tweet Friend B=Y349, Tweet Friend C=Y349, Tweets Join=Y349, Tweets Sent=Y349
+
+[43] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Internship_42499
+Lanes:    3
+Elements: 25 (25 in diagram)
+Flows:    28
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=25,gateways=5,flows=28,data=0,data_assoc=0
+======================================================================

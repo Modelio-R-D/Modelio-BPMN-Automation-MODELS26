@@ -1,0 +1,133 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN USI COURSE REGISTRATION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   22777
+Process Name:   USICourseRegistration_22777
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: USICourseRegistration_22777
+[2] Lanes: Applicant, USI System, External Services
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant lane: 14 elements
+[4] USI System lane: 5 elements
+[5] External Services lane: 2 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: USICourseRegistration_22777
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/21 | Missing: Start Regist, Select Cours, Has Account?, Eligible Uni, Register Acc, Request Acti, Wait for Res, Account Read, Log Into Acc, Split Action, Complete Reg, Provide Paym, Join Actions, Ticket Recei, Show Availab, Check Accoun, Verify Unive, Process Regi, Issue Course, Tweet to Fri, Process Paym
+  [Attempt 2] Found: 0/21 | Missing: Start Regist, Select Cours, Has Account?, Eligible Uni, Register Acc, Request Acti, Wait for Res, Account Read, Log Into Acc, Split Action, Complete Reg, Provide Paym, Join Actions, Ticket Recei, Show Availab, Check Accoun, Verify Unive, Process Regi, Issue Course, Tweet to Fri, Process Paym
+  [Attempt 3] Found: 0/21 | Missing: Start Regist, Select Cours, Has Account?, Eligible Uni, Register Acc, Request Acti, Wait for Res, Account Read, Log Into Acc, Split Action, Complete Reg, Provide Paym, Join Actions, Ticket Recei, Show Availab, Check Accoun, Verify Unive, Process Regi, Issue Course, Tweet to Fri, Process Paym
+  [Attempt 3] TIMEOUT - 0/21 elements
+
+[10] WARNING: 0/21 elements ready after 150ms
+         Missing: Start Registration, Select Course, Has Account?, Eligible Uni?, Register Account, Request Activation, Wait for Response, Account Ready, Log Into Account, Split Actions, Complete Registration, Provide Payment, Join Actions, Ticket Received, Show Available Courses, Check Account Status, Verify University, Process Registration, Issue Course Ticket, Tweet to Friends, Process Payment
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Start Registration -> Y=55 (Applicant): OK
+  [Unmask] Select Course -> Y=55 (Applicant): OK
+  [Unmask] Has Account? -> Y=55 (Applicant): OK
+  [Unmask] Eligible Uni? -> Y=55 (Applicant): OK
+  [Unmask] Register Account -> Y=55 (Applicant): OK
+  [Unmask] Request Activation -> Y=55 (Applicant): OK
+  [Unmask] Wait for Response -> Y=55 (Applicant): OK
+  [Unmask] Account Ready -> Y=55 (Applicant): OK
+  [Unmask] Log Into Account -> Y=55 (Applicant): OK
+  [Unmask] Split Actions -> Y=55 (Applicant): OK
+  [Unmask] Complete Registration -> Y=55 (Applicant): OK
+  [Unmask] Provide Payment -> Y=55 (Applicant): OK
+  [Unmask] Join Actions -> Y=55 (Applicant): OK
+  [Unmask] Ticket Received -> Y=55 (Applicant): OK
+  [Unmask] Show Available Courses -> Y=155 (USI System): OK
+  [Unmask] Check Account Status -> Y=155 (USI System): OK
+  [Unmask] Verify University -> Y=155 (USI System): OK
+  [Unmask] Process Registration -> Y=155 (USI System): OK
+  [Unmask] Issue Course Ticket -> Y=155 (USI System): OK
+  [Unmask] Tweet to Friends -> Y=255 (External Services): OK
+  [Unmask] Process Payment -> Y=255 (External Services): OK
+
+[12] Manual unmask: 21 elements unmasked
+[13] All elements now available
+
+  Lanes: Applicant(5-132); USI System(132-232); External Services(232-332)
+  Elements: Start Regi=Y55, Show Avail=Y155, Select Cou=Y55, Check Acco=Y155, Has Accoun=Y55, Eligible U=Y55, Verify Uni=Y155, Register A=Y55, Request Ac=Y55, Wait for R=Y55, Account Re=Y55, Log Into A=Y55, Split Acti=Y55, Complete R=Y55, Tweet to F=Y255, Process Re=Y155, Provide Pa=Y55, Join Actio=Y55, Process Pa=Y255, Issue Cour=Y155, Ticket Rec=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Applicant centerY = 45
+[15] USI System centerY = 159
+[16] External Services centerY = 259
+
+[17] Applicant/Start Registration -> (80,45) 33x33
+[18] USI System/Show Available Courses -> (220,159) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); USI System(132-232); External Services(232-332)
+         After:  Lanes: Applicant(5-132); USI System(132-236); External Services(236-336)
+[19] Applicant/Select Course -> (360,45) 120x60
+[20] USI System/Check Account Status -> (500,159) 120x60
+[21] Applicant/Has Account? -> (640,45) 40x40
+[22] Applicant/Eligible Uni? -> (780,45) 40x40
+[23] USI System/Verify University -> (780,159) 120x60
+[24] Applicant/Register Account -> (920,45) 120x60
+[25] Applicant/Request Activation -> (1060,45) 120x60
+[26] Applicant/Wait for Response -> (1200,45) 120x60
+[27] Applicant/Account Ready -> (1340,45) 40x40
+[28] Applicant/Log Into Account -> (1480,45) 120x60
+[29] Applicant/Split Actions -> (1620,45) 40x40
+[30] Applicant/Complete Registration -> (1760,45) 120x60
+[31] External Services/Tweet to Friends -> (1760,259) 120x60
+[32] USI System/Process Registration -> (1900,159) 120x60
+[33] Applicant/Provide Payment -> (1900,45) 120x60
+[34] Applicant/Join Actions -> (2040,45) 40x40
+[35] External Services/Process Payment -> (2040,259) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); USI System(132-236); External Services(236-336)
+         After:  Lanes: Applicant(5-132); USI System(132-236); External Services(236-393)
+[36] USI System/Issue Course Ticket -> (2180,159) 120x60
+[37] Applicant/Ticket Received -> (2320,45) 33x33
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[38] Created 24 sequence flows
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(5-132); USI System(132-236); External Services(236-393)
+  Elements: Start Regi=Y45, Show Avail=Y159, Select Cou=Y45, Check Acco=Y159, Has Accoun=Y45, Eligible U=Y45, Verify Uni=Y159, Register A=Y45, Request Ac=Y45, Wait for R=Y45, Account Re=Y45, Log Into A=Y45, Split Acti=Y45, Complete R=Y45, Tweet to F=Y259, Process Re=Y159, Provide Pa=Y45, Join Actio=Y45, Process Pa=Y259, Issue Cour=Y159, Ticket Rec=Y45
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  USICourseRegistration_22777
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=5,flows=24,data=0,data_assoc=0
+======================================================================

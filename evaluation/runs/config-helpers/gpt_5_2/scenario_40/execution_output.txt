@@ -1,0 +1,78 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OEE_45379
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_45379
+[2] Lanes: Monitoring System, Machine, Engineer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Monitoring System: 9 elements
+[4] Machine: 1 elements
+[5] Engineer: 0 elements
+
+  Total: 10 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: OEE_45379
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Monitoring System] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Collect Metrics -> Y=55: OK
+  [Unmask] Machine Connected? -> Y=55: OK
+  [Unmask] Calculate OEE -> Y=55: OK
+  [Unmask] OEE Below Threshold? -> Y=55: OK
+  [Unmask] Wait Sample Interval -> Y=55: OK
+  [Unmask] Send Email to Engineer -> Y=55: OK
+  [Unmask] Wait for Restart -> Y=55: OK
+  [Unmask] Process End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Collect Metrics -> col=1 (230,25) relY=20
+  Machine Connected? -> col=2 (380,25) relY=20
+  Calculate OEE -> col=3 (530,25) relY=20
+  OEE Below Threshold? -> col=4 (680,25) relY=20
+  Wait Sample Interval -> col=5 (830,25) relY=20
+  Send Email to Engineer -> col=6 (980,25) relY=20
+  Wait for Restart -> col=7 (1130,25) relY=20
+  Process End -> col=8 (1280,25) relY=20
+
+[Machine] Lane bounds: 172-272
+  [maxElementBottomRelY=80]
+  Stop Machine -> col=5 (830,192) relY=20
+
+[Engineer] Lane bounds: 272-372
+
+[8] Repositioned: 10/10
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 11 sequence flows
+
+==================================================================
+COMPLETE: OEE_45379
+==================================================================
+Lanes: 3 | Elements: 10 | Flows: 11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=10,gateways=2,flows=11,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,136 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CentralVenousCatheterInsertion_26961
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CentralVenousCatheterInsertion_26961
+[2] Lanes: Doctor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Doctor: 39 elements
+
+  Total: 39 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: CentralVenousCatheterInsertion_26961
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Clean Puncture Area=0, Configure Ultrasound=90
+  [Auto-stack] col 6: Drape Puncture Zone=0, Put Gel on Probe=90
+  [Auto-stack] col 10: Position Probe=0, Position Patient=90
+  [Auto-stack] col 13: Anatomic Identification=0, Doppler Identification=90, Compression Identification=180
+  [Auto-stack] col 24: Check Wire Long Axis=0, Check Wire Short Axis=90
+[Doctor] Lane bounds: 5-205
+  [Unmask] Start -> Y=105: OK
+  [Unmask] Prepare Implements -> Y=105: OK
+  [Unmask] Wash Hands -> Y=105: OK
+  [Unmask] Get Sterile Clothes -> Y=105: OK
+  [Unmask] Sync Prep -> Y=105: OK
+  [Unmask] Clean Puncture Area -> Y=105: OK
+  [Unmask] Drape Puncture Zone -> Y=105: OK
+  [Unmask] Configure Ultrasound -> Y=105: OK
+  [Unmask] Put Gel on Probe -> Y=105: OK
+  [Unmask] Sync Ultrasound -> Y=105: OK
+  [Unmask] Cover Probe -> Y=105: OK
+  [Unmask] Put Sterile Gel -> Y=105: OK
+  [Unmask] Position Probe -> Y=105: OK
+  [Unmask] Position Patient -> Y=105: OK
+  [Unmask] Sync Position -> Y=105: OK
+  [Unmask] Split Identification -> Y=105: OK
+  [Unmask] Anatomic Identification -> Y=105: OK
+  [Unmask] Doppler Identification -> Y=105: OK
+  [Unmask] Compression Identification -> Y=105: OK
+  [Unmask] Join Identification -> Y=105: OK
+  [Unmask] Anesthetize Patient -> Y=105: OK
+  [Unmask] Puncture -> Y=105: OK
+  [Unmask] Check Blood Return -> Y=105: OK
+  [Unmask] Blood Return OK? -> Y=105: OK
+  [Unmask] Drop Probe -> Y=105: OK
+  [Unmask] Remove Syringe -> Y=105: OK
+  [Unmask] Install Guidewire -> Y=105: OK
+  [Unmask] Remove Trocar -> Y=105: OK
+  [Unmask] Split Wire Check -> Y=105: OK
+  [Unmask] Check Wire Long Axis -> Y=105: OK
+  [Unmask] Check Wire Short Axis -> Y=105: OK
+  [Unmask] Join Wire Check -> Y=105: OK
+  [Unmask] Wire Position OK? -> Y=105: OK
+  [Unmask] Widen Pathway -> Y=105: OK
+  [Unmask] Advance Catheter -> Y=105: OK
+  [Unmask] Remove Guidewire -> Y=105: OK
+  [Unmask] Verify Flow and Reflow -> Y=105: OK
+  [Unmask] Check Catheter Position -> Y=105: OK
+  [Unmask] End -> Y=105: OK
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Prepare Implements -> col=1 (230,25) relY=20
+  Wash Hands -> col=2 (380,25) relY=20
+  Get Sterile Clothes -> col=3 (530,25) relY=20
+  Sync Prep -> col=4 (680,25) relY=20
+  Clean Puncture Area -> col=5 (830,25) relY=20
+  Drape Puncture Zone -> col=6 (980,25) relY=20
+  Configure Ultrasound -> col=5 (830,115) relY=110
+  Put Gel on Probe -> col=6 (980,115) relY=110
+  Sync Ultrasound -> col=7 (1130,25) relY=20
+  Cover Probe -> col=8 (1280,25) relY=20
+  Put Sterile Gel -> col=9 (1430,25) relY=20
+  Position Probe -> col=10 (1580,25) relY=20
+  Position Patient -> col=10 (1580,115) relY=110
+  Sync Position -> col=11 (1730,25) relY=20
+  Split Identification -> col=12 (1880,25) relY=20
+  Anatomic Identification -> col=13 (2030,25) relY=20
+  Doppler Identification -> col=13 (2030,115) relY=110
+  Compression Identification -> col=13 (2030,205) relY=200
+  Join Identification -> col=14 (2180,25) relY=20
+  Anesthetize Patient -> col=15 (2330,25) relY=20
+  Puncture -> col=16 (2480,25) relY=20
+  Check Blood Return -> col=17 (2630,25) relY=20
+  Blood Return OK? -> col=18 (2780,25) relY=20
+  Drop Probe -> col=19 (2930,25) relY=20
+  Remove Syringe -> col=20 (3080,25) relY=20
+  Install Guidewire -> col=21 (3230,25) relY=20
+  Remove Trocar -> col=22 (3380,25) relY=20
+  Split Wire Check -> col=23 (3530,25) relY=20
+  Check Wire Long Axis -> col=24 (3680,25) relY=20
+  Check Wire Short Axis -> col=24 (3680,115) relY=110
+  Join Wire Check -> col=25 (3830,25) relY=20
+  Wire Position OK? -> col=26 (3980,25) relY=20
+  Widen Pathway -> col=27 (4130,25) relY=20
+  Advance Catheter -> col=28 (4280,25) relY=20
+  Remove Guidewire -> col=29 (4430,25) relY=20
+  Verify Flow and Reflow -> col=30 (4580,25) relY=20
+  Check Catheter Position -> col=31 (4730,25) relY=20
+  End -> col=32 (4880,25) relY=20
+
+
+[6] Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 45 sequence flows
+
+==================================================================
+COMPLETE: CentralVenousCatheterInsertion_26961
+==================================================================
+Lanes: 1 | Elements: 39 | Flows: 45
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 9
+======================================================================

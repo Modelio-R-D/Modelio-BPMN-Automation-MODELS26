@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: New Application for Registering for an USI course_54522
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: New Application for Registering for an USI course_54522
+[2] Lanes: Applicant, USI System, USI Admin, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 12 elements
+[4] USI System: 7 elements
+[5] USI Admin: 2 elements
+[6] Twitter: 1 elements
+
+  Total: 22 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: New Application for Registering for an USI course_54522
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Applicant] Lane bounds: 5-127
+  [Unmask] Complete course registration -> Y=66: OK
+  [Unmask] Provide payment information -> Y=66: OK
+  [Unmask] Course ticket received -> Y=66: OK
+  [Unmask] Payment details -> Y=66: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Select course -> col=1 (230,25) relY=20
+  Select course date -> col=3 (530,25) relY=20
+  Request activation -> col=8 (1280,25) relY=20
+  Activation response received -> col=11 (1730,25) relY=20
+  Create account -> col=13 (2030,25) relY=20
+  Log in -> col=15 (2330,25) relY=20
+  Tweet friends? -> col=16 (2480,25) relY=20
+  Tweet friends -> col=17 (2630,25) relY=20
+  Complete course registration -> col=20 (3080,25) relY=20
+  Provide payment information -> col=21 (3230,25) relY=20
+  Course ticket received -> col=24 (3680,25) relY=20
+  Payment details (DO from Provide payment information) -> (3320,95) maxBottomRelY=80
+
+[USI System] Lane bounds: 187-287
+  [Unmask] Check slots and show options -> Y=237: OK
+  [Unmask] Check existing account -> Y=237: OK
+  [Unmask] Account exists? -> Y=237: OK
+  [Unmask] Verify university eligibility -> Y=237: OK
+  [Unmask] Eligible university? -> Y=237: OK
+  [Unmask] Process payment -> Y=237: OK
+  [Unmask] Issue course ticket -> Y=237: OK
+  [Unmask] Course ticket -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Check slots and show options -> col=2 (380,207) relY=20
+  Check existing account -> col=4 (680,207) relY=20
+  Account exists? -> col=5 (830,207) relY=20
+  Verify university eligibility -> col=6 (980,207) relY=20
+  Eligible university? -> col=7 (1130,207) relY=20
+  Process payment -> col=22 (3380,207) relY=20
+  Issue course ticket -> col=23 (3530,207) relY=20
+  Course ticket (DO from Issue course ticket) -> (3620,277) maxBottomRelY=80
+
+[USI Admin] Lane bounds: 369-469
+  [maxElementBottomRelY=80]
+  Review activation request -> col=9 (1430,389) relY=20
+  Send activation response -> col=10 (1580,389) relY=20
+
+[Twitter] Lane bounds: 469-569
+  [Unmask] Post tweet -> Y=519: OK
+  [maxElementBottomRelY=80]
+  Post tweet -> col=18 (2780,489) relY=20
+
+
+[10] Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 24 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[12] Data associations: 3
+
+==================================================================
+COMPLETE: New Application for Registering for an USI course_54522
+==================================================================
+Lanes: 4 | Elements: 22 | Data: 2 | Flows: 24 | DataAssoc: 3
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=24,gateways=3,flows=24,data=2,data_assoc=3
+======================================================================

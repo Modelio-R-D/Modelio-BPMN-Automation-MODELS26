@@ -1,0 +1,87 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: EvanstonianRoomService_52954
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EvanstonianRoomService_52954
+[2] Lanes: Guest, Room Service Manager, Kitchen, Sommelier, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest: 1 elements
+[4] Room Service Manager: 5 elements
+[5] Kitchen: 1 elements
+[6] Sommelier: 1 elements
+[7] Waiter: 8 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: EvanstonianRoomService_52954
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Submit order ticket to kitchen=0, Send beverage order to sommelier=90, Assign order to waiter=180
+[Guest] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Call room service -> col=0 (80,25) relY=20
+
+[Room Service Manager] Lane bounds: 105-311
+  [maxElementBottomRelY=260]
+  Take down order -> col=1 (230,125) relY=20
+  Include alcohol? -> col=2 (380,125) relY=20
+  Submit order ticket to kitchen -> col=3 (530,125) relY=20
+  Send beverage order to sommelier -> col=3 (530,215) relY=110
+  Assign order to waiter -> col=3 (530,305) relY=200
+
+[Kitchen] Lane bounds: 376-476
+  [Unmask] Prepare food -> Y=426: OK
+  [maxElementBottomRelY=80]
+  Prepare food -> col=4 (680,396) relY=20
+
+[Sommelier] Lane bounds: 483-583
+  [maxElementBottomRelY=80]
+  Fetch wine and prepare alcohol -> col=4 (680,503) relY=20
+
+[Waiter] Lane bounds: 583-1088
+  [maxElementBottomRelY=80]
+  Ready cart and nonalcoholic drinks -> col=4 (680,603) relY=20
+  All items ready -> col=5 (830,603) relY=20
+  Deliver order to guest room -> col=6 (980,603) relY=20
+  Return to room-service station -> col=7 (1130,603) relY=20
+  Bill now? -> col=8 (1280,603) relY=20
+  Wait until free to bill -> col=9 (1430,603) relY=20
+  Debit guest account -> col=10 (1580,603) relY=20
+  End -> col=11 (1730,603) relY=20
+
+
+[10] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 18 sequence flows
+
+==================================================================
+COMPLETE: EvanstonianRoomService_52954
+==================================================================
+Lanes: 5 | Elements: 16 | Flows: 18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=16,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

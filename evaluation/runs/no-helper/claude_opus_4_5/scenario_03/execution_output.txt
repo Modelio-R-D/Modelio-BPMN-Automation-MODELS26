@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INVENTORY REPLENISHMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   20254
+Process Name:   InventoryReplenishment_20254
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InventoryReplenishment_20254
+[2] Lanes: Warehouse, Procurement, Receiving
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Warehouse lane: 4 elements
+[4] Procurement lane: 5 elements
+[5] Receiving lane: 6 elements
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: InventoryReplenishment_20254
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/15 | Missing: Receive Ship, Inspect Qual, Quality OK?, Report Issue, Record in Sy, Place in Sto
+  [Attempt 2] Found: 9/15 | Missing: Receive Ship, Inspect Qual, Quality OK?, Report Issue, Record in Sy, Place in Sto
+  [Attempt 3] Found: 9/15 | Missing: Receive Ship, Inspect Qual, Quality OK?, Report Issue, Record in Sy, Place in Sto
+  [Attempt 3] TIMEOUT - 9/15 elements
+
+[10] WARNING: 9/15 elements ready after 150ms
+         Missing: Receive Shipment, Inspect Quality, Quality OK?, Report Issue, Record in System, Place in Storage
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Receive Shipment -> Y=271 (Receiving): OK
+  [Unmask] Inspect Quality -> Y=271 (Receiving): OK
+  [Unmask] Quality OK? -> Y=271 (Receiving): OK
+  [Unmask] Report Issue -> Y=271 (Receiving): OK
+  [Unmask] Record in System -> Y=271 (Receiving): OK
+  [Unmask] Place in Storage -> Y=271 (Receiving): OK
+
+[12] Manual unmask: 6 elements unmasked
+[13] All elements now available
+
+  Lanes: Warehouse(5-105); Procurement(105-221); Receiving(221-348)
+  Elements: Monitor St=Y16, Stock Low?=Y20, Continue M=Y25, Reorder Tr=Y116, Evaluate S=Y116, Place Orde=Y116, Update Exp=Y116, Notify War=Y116, Receive Sh=Y271, Inspect Qu=Y271, Quality OK=Y271, Record in =Y271, Report Iss=Y271, Place in S=Y271, Restock Co=Y30
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Warehouse centerY = 32
+[15] Procurement centerY = 140
+[16] Receiving centerY = 261
+
+[17] Warehouse/Monitor Stock Levels -> (80,32) 120x60
+[18] Warehouse/Stock Low? -> (230,32) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Warehouse(5-105); Procurement(105-221); Receiving(221-348)
+         After:  Lanes: Warehouse(5-109); Procurement(109-225); Receiving(225-352)
+[19] Warehouse/Continue Monitoring -> (380,32) 120x60
+[20] Procurement/Reorder Triggered -> (380,140) 33x33
+[21] Procurement/Evaluate Suppliers -> (530,140) 120x60
+[22] Procurement/Place Order -> (680,140) 120x60
+[23] Procurement/Update Expected Delivery -> (830,140) 120x60
+[24] Procurement/Notify Warehouse -> (980,140) 120x60
+[25] Receiving/Receive Shipment -> (980,261) 120x60
+[26] Receiving/Inspect Quality -> (1130,261) 120x60
+[27] Receiving/Quality OK? -> (1280,261) 40x40
+[28] Receiving/Record in System -> (1430,261) 120x60
+[29] Receiving/Report Issue -> (1430,261) 120x60
+[30] Receiving/Place in Storage -> (1580,261) 120x60
+[31] Warehouse/Restock Complete -> (1580,32) 33x33
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 16 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Warehouse(5-109); Procurement(109-225); Receiving(225-352)
+  Elements: Monitor St=Y32, Stock Low?=Y32, Continue M=Y32, Reorder Tr=Y140, Evaluate S=Y140, Place Orde=Y140, Update Exp=Y140, Notify War=Y140, Receive Sh=Y261, Inspect Qu=Y261, Quality OK=Y261, Record in =Y261, Report Iss=Y261, Place in S=Y261, Restock Co=Y32
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  InventoryReplenishment_20254
+Lanes:    3
+Elements: 15 (15 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=2,flows=16,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INVENTORY REORDER PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   63167
+Process Name:   InventoryReorder_63167
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InventoryReorder_63167
+[2] Lanes: Inventory, Procurement, Receiving
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inventory lane: 4 elements
+[4] Procurement lane: 3 elements
+[5] Receiving lane: 6 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: InventoryReorder_63167
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 7/13 | Missing: Receive Stoc, Inspect Qual, Record Recei, Put Away Sto, Update Inven, End
+  [Attempt 2] Found: 7/13 | Missing: Receive Stoc, Inspect Qual, Record Recei, Put Away Sto, Update Inven, End
+  [Attempt 3] Found: 7/13 | Missing: Receive Stoc, Inspect Qual, Record Recei, Put Away Sto, Update Inven, End
+  [Attempt 3] TIMEOUT - 7/13 elements
+
+[10] WARNING: 7/13 elements ready after 150ms
+         Missing: Receive Stock, Inspect Quality, Record Receipt in Inventory System, Put Away Stock (Shelves/Storage), Update Inventory Levels After Restock, End
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Receive Stock -> Y=257 (Receiving): OK
+  [Unmask] Inspect Quality -> Y=257 (Receiving): OK
+  [Unmask] Record Receipt in Inventory System -> Y=257 (Receiving): OK
+  [Unmask] Put Away Stock (Shelves/Storage) -> Y=257 (Receiving): OK
+  [Unmask] Update Inventory Levels After Restock -> Y=257 (Receiving): OK
+  [Unmask] End -> Y=257 (Receiving): OK
+
+[12] Manual unmask: 6 elements unmasked
+[13] All elements now available
+
+  Lanes: Inventory(5-107); Procurement(107-207); Receiving(207-327)
+  Elements: Start=Y16, Monitor Inve=Y20, Alert or Man=Y25, Reorder Need=Y30, Evaluate Sup=Y118, Place Purcha=Y118, Update Expec=Y118, Receive Stoc=Y257, Inspect Qual=Y257, Record Recei=Y257, Put Away Sto=Y257, Update Inven=Y257, End=Y257
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Inventory centerY = 33
+[15] Procurement centerY = 134
+[16] Receiving centerY = 244
+
+[17] Inventory/Start -> (80,33) 40x40
+[18] Inventory/Monitor Inventory Levels -> (240,33) 150x60
+[19] Inventory/Alert or Manual Threshold Check -> (400,33) 150x60
+[20] Inventory/Reorder Needed? -> (560,33) 50x50 *** LANE CHANGED ***
+         Before: Lanes: Inventory(5-107); Procurement(107-207); Receiving(207-327)
+         After:  Lanes: Inventory(5-110); Procurement(110-210); Receiving(210-330)
+[21] Procurement/Evaluate Suppliers (Cost/Time/Reliability) -> (720,134) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Inventory(5-110); Procurement(110-210); Receiving(210-330)
+         After:  Lanes: Inventory(5-110); Procurement(110-226); Receiving(226-346)
+[22] Procurement/Place Purchase Order -> (880,134) 150x60
+[23] Procurement/Update Expected Delivery Date -> (1040,134) 150x60
+[24] Receiving/Receive Stock -> (1200,244) 150x60
+[25] Receiving/Inspect Quality -> (1360,244) 150x60
+[26] Receiving/Record Receipt in Inventory System -> (1520,244) 150x60
+[27] Receiving/Put Away Stock (Shelves/Storage) -> (1680,244) 150x60
+[28] Receiving/Update Inventory Levels After Restock -> (1840,244) 150x60
+[29] Receiving/End -> (2000,244) 40x40
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 13 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Inventory(5-110); Procurement(110-226); Receiving(226-346)
+  Elements: Start=Y33, Monitor Inve=Y33, Alert or Man=Y33, Reorder Need=Y33, Evaluate Sup=Y134, Place Purcha=Y134, Update Expec=Y134, Receive Stoc=Y244, Inspect Qual=Y244, Record Recei=Y244, Put Away Sto=Y244, Update Inven=Y244, End=Y244
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  InventoryReorder_63167
+Lanes:    3
+Elements: 13 (13 in diagram)
+Flows:    13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=1,flows=13,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,106 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ORDER FULFILLMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   99607
+Process Name:   OrderFulfillment_99607
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_99607
+[2] Lanes: Customer, System, Warehouse, Logistics
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 2 elements
+[4] System lane: 4 elements
+[5] Warehouse lane: 3 elements
+[6] Logistics lane: 2 elements
+
+  Total elements: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: OrderFulfillment_99607
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/11 | Missing: Order Placed, Order Comple
+  [Attempt 2] Found: 9/11 | Missing: Order Placed, Order Comple
+  [Attempt 3] Found: 9/11 | Missing: Order Placed, Order Comple
+  [Attempt 3] TIMEOUT - 9/11 elements
+
+[11] WARNING: 9/11 elements ready after 150ms
+         Missing: Order Placed, Order Complete
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Order Placed -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+
+[13] Manual unmask: 2 elements unmasked
+[14] All elements now available
+
+  Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-425)
+  Elements: Order Plac=Y55, Generate C=Y136, Send Confi=Y136, Pick Items=Y236, Pack Items=Y236, Generate L=Y136, Hand to Lo=Y236, Send Track=Y136, Monitor Sh=Y336, Confirm De=Y336, Order Comp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 42
+[16] System centerY = 152
+[17] Warehouse centerY = 252
+[18] Logistics centerY = 352
+
+[19] Customer/Order Placed -> (80,42) 33x33
+[20] System/Generate Confirmation -> (230,152) 120x60
+[21] System/Send Confirmation -> (380,152) 120x60
+[22] Warehouse/Pick Items -> (530,252) 120x60
+[23] Warehouse/Pack Items -> (680,252) 120x60
+[24] System/Generate Label -> (830,152) 120x60
+[25] Warehouse/Hand to Logistics -> (980,252) 120x60
+[26] System/Send Tracking -> (1130,152) 120x60
+[27] Logistics/Monitor Shipment -> (1280,352) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-425)
+         After:  Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-429)
+[28] Logistics/Confirm Delivery -> (1430,352) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-429)
+         After:  Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-443)
+[29] Customer/Order Complete -> (1580,42) 33x33
+
+  Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 10 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); System(125-225); Warehouse(225-325); Logistics(325-443)
+  Elements: Order Plac=Y42, Generate C=Y152, Send Confi=Y152, Pick Items=Y252, Pack Items=Y252, Generate L=Y152, Hand to Lo=Y252, Send Track=Y152, Monitor Sh=Y352, Confirm De=Y352, Order Comp=Y42
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OrderFulfillment_99607
+Lanes:    4
+Elements: 11 (11 in diagram)
+Flows:    10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=11,gateways=0,flows=10,data=0,data_assoc=0
+======================================================================

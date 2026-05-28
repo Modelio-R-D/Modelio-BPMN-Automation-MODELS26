@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <task id="Task_1" name="Select route">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_41</outgoing>
+    </task>
+    <task id="Task_2" name="Send ticket via email">
+      <incoming>SequenceFlow_39</incoming>
+      <outgoing>SequenceFlow_1</outgoing>
+    </task>
+    <task id="Task_3" name="Post-travel feedback or services">
+      <incoming>SequenceFlow_32</incoming>
+      <outgoing>SequenceFlow_37</outgoing>
+    </task>
+    <task id="Task_4" name="Customer completes journey">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_5" name="Provide payment details">
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </task>
+    <task id="Task_6" name="Send reminder">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </task>
+    <task id="Task_7" name="Select date and time">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </task>
+    <task id="Task_8" name="Provide personal information">
+      <incoming>SequenceFlow_34</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <task id="Task_9" name="Generate ticket">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_29</outgoing>
+    </task>
+    <task id="Task_10" name="Update seat inventory">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </task>
+    <task id="Task_11" name="Send instructions">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </task>
+    <task id="Task_12" name="Customer searches for ticket">
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_35</outgoing>
+    </task>
+    <task id="Task_13" name="Send ticket via SMS">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_42</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1">
+      <incoming>SequenceFlow_38</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+      <outgoing>SequenceFlow_31</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_40</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_12</incoming>
+      <incoming>SequenceFlow_37</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_11</incoming>
+      <incoming>SequenceFlow_28</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+      <outgoing>SequenceFlow_32</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+      <outgoing>SequenceFlow_40</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_7">
+      <incoming>SequenceFlow_27</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+      <outgoing>SequenceFlow_39</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_8">
+      <incoming>SequenceFlow_1</incoming>
+      <incoming>SequenceFlow_42</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_9">
+      <incoming>SequenceFlow_5</incoming>
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_10">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_28</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_11">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_23</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_12">
+      <incoming>SequenceFlow_13</incoming>
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_7</incoming>
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+      <outgoing>SequenceFlow_38</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_3">
+      <incoming>SequenceFlow_2</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_25</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_4">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_5">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_41</incoming>
+      <outgoing>SequenceFlow_34</outgoing>
+      <outgoing>SequenceFlow_36</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_6">
+      <incoming>SequenceFlow_29</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_27</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="start">
+      <outgoing>SequenceFlow_33</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="end">
+      <incoming>SequenceFlow_9</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="Task_2" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_8" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_4" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ParallelGateway_2" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_9"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ExclusiveGateway_12" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ExclusiveGateway_8" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ExclusiveGateway_3" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_11"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ExclusiveGateway_11" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ExclusiveGateway_5" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ExclusiveGateway_10" targetRef="ExclusiveGateway_12"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="Task_7" targetRef="ParallelGateway_5"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="Task_10" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="Task_11" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="Task_6" targetRef="ExclusiveGateway_10"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ExclusiveGateway_9" targetRef="Task_11"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ExclusiveGateway_2" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ParallelGateway_2" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ParallelGateway_6" targetRef="Task_10"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ParallelGateway_4" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="ExclusiveGateway_11" targetRef="ExclusiveGateway_12"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="ExclusiveGateway_4" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="ParallelGateway_3" targetRef="Task_9"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="ExclusiveGateway_7" targetRef="Task_13"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="ParallelGateway_6" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="ExclusiveGateway_10" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="Task_9" targetRef="ParallelGateway_6"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="Task_5" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_31" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_9"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="ExclusiveGateway_5" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_33" sourceRef="StartEvent_1" targetRef="Task_12"/>
+    <sequenceFlow id="SequenceFlow_34" sourceRef="ParallelGateway_5" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_35" sourceRef="Task_12" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_36" sourceRef="ParallelGateway_5" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_37" sourceRef="Task_3" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_38" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_39" sourceRef="ExclusiveGateway_7" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_40" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_41" sourceRef="Task_1" targetRef="ParallelGateway_5"/>
+    <sequenceFlow id="SequenceFlow_42" sourceRef="Task_13" targetRef="ExclusiveGateway_8"/>
+  </process>
+</definitions>

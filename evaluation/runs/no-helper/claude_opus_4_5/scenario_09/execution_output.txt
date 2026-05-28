@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN PRODUCT PROTOTYPE DEVELOPMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   32866
+Process Name:   PrototypeDevelopment_32866
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: PrototypeDevelopment_32866
+[2] Lanes: R&D Team, Testing Team, Management
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] R&D Team lane: 6 elements
+[4] Testing Team lane: 3 elements
+[5] Management lane: 3 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: PrototypeDevelopment_32866
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 6/12 | Missing: Idea Identif, Conduct Rese, Draft Design, Select Desig, Build Protot, Refine Proto
+  [Attempt 2] Found: 6/12 | Missing: Idea Identif, Conduct Rese, Draft Design, Select Desig, Build Protot, Refine Proto
+  [Attempt 3] Found: 6/12 | Missing: Idea Identif, Conduct Rese, Draft Design, Select Desig, Build Protot, Refine Proto
+  [Attempt 3] TIMEOUT - 6/12 elements
+
+[10] WARNING: 6/12 elements ready after 150ms
+         Missing: Idea Identified, Conduct Research, Draft Design Concepts, Select Design, Build Prototype, Refine Prototype
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Idea Identified -> Y=55 (R&D Team): OK
+  [Unmask] Conduct Research -> Y=55 (R&D Team): OK
+  [Unmask] Draft Design Concepts -> Y=55 (R&D Team): OK
+  [Unmask] Select Design -> Y=55 (R&D Team): OK
+  [Unmask] Build Prototype -> Y=55 (R&D Team): OK
+  [Unmask] Refine Prototype -> Y=55 (R&D Team): OK
+
+[12] Manual unmask: 6 elements unmasked
+[13] All elements now available
+
+  Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-349)
+  Elements: Idea Ident=Y55, Conduct Re=Y55, Draft Desi=Y55, Select Des=Y55, Build Prot=Y55, Test Proto=Y136, Collect Fe=Y136, Refinement=Y136, Refine Pro=Y55, Approval D=Y260, Approved=Y260, Discarded=Y260
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] R&D Team centerY = 42
+[15] Testing Team centerY = 164
+[16] Management centerY = 276
+
+[17] R&D Team/Idea Identified -> (80,42) 33x33
+[18] R&D Team/Conduct Research -> (230,42) 120x60
+[19] R&D Team/Draft Design Concepts -> (380,42) 120x60
+[20] R&D Team/Select Design -> (530,42) 120x60
+[21] R&D Team/Build Prototype -> (680,42) 120x60
+[22] Testing Team/Test Prototype -> (830,164) 120x60
+[23] Testing Team/Collect Feedback -> (980,164) 120x60
+[24] Testing Team/Refinement Needed? -> (1130,164) 40x40
+[25] R&D Team/Refine Prototype -> (1280,42) 120x60
+[26] Management/Approval Decision -> (1430,276) 40x40 *** LANE CHANGED ***
+         Before: Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-349)
+         After:  Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-364)
+[27] Management/Approved -> (1580,276) 33x33 *** LANE CHANGED ***
+         Before: Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-364)
+         After:  Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-365)
+[28] Management/Discarded -> (1580,326) 33x33 *** LANE CHANGED ***
+         Before: Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-365)
+         After:  Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-396)
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: R&D Team(5-125); Testing Team(125-249); Management(249-396)
+  Elements: Idea Ident=Y42, Conduct Re=Y42, Draft Desi=Y42, Select Des=Y42, Build Prot=Y42, Test Proto=Y164, Collect Fe=Y164, Refinement=Y164, Refine Pro=Y42, Approval D=Y276, Approved=Y276, Discarded=Y326
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  PrototypeDevelopment_32866
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=2,flows=12,data=0,data_assoc=0
+======================================================================

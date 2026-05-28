@@ -1,0 +1,144 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Becoming A Parent
+Script Version: v9.1
+Execution ID:   34448
+Process Name:   Becoming_A_Parent_34448
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Becoming_A_Parent_34448
+[2] Lanes: Parent, Company HR, Social Security
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent lane: elements created
+[4] Company HR lane: elements created
+[5] Social Security lane: elements created
+
+  Total elements: 27
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Becoming A Parent
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements+lanes (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/30 | Missing: Expecting Ch, Fetch Leave , Review Leave, Select Leave, Provide Requ, Notify Parti, Notify Compa, Notify Socia, Confirmation, Review Confi, Start Matern, Decide on Ex, Extend Leave, Request Exte, Notify Exten, Notify Compa, Notify Socia, Extension Co, Review Exten, Return to Wo, Leave Extend, Provide Comp, Confirm Leav, Confirm Exte, Validate Eli, Register Lea, Update Benef
+  [Attempt 2] Found: 3/30 | Missing: Expecting Ch, Fetch Leave , Review Leave, Select Leave, Provide Requ, Notify Parti, Notify Compa, Notify Socia, Confirmation, Review Confi, Start Matern, Decide on Ex, Extend Leave, Request Exte, Notify Exten, Notify Compa, Notify Socia, Extension Co, Review Exten, Return to Wo, Leave Extend, Provide Comp, Confirm Leav, Confirm Exte, Validate Eli, Register Lea, Update Benef
+  [Attempt 3] Found: 3/30 | Missing: Expecting Ch, Fetch Leave , Review Leave, Select Leave, Provide Requ, Notify Parti, Notify Compa, Notify Socia, Confirmation, Review Confi, Start Matern, Decide on Ex, Extend Leave, Request Exte, Notify Exten, Notify Compa, Notify Socia, Extension Co, Review Exten, Return to Wo, Leave Extend, Provide Comp, Confirm Leav, Confirm Exte, Validate Eli, Register Lea, Update Benef
+  [Attempt 3] TIMEOUT - 3/30 elements
+
+[10] WARNING: 3/30 graphics ready after 150ms
+         Missing: Expecting Child, Fetch Leave Models, Review Leave Models, Select Leave Model, Provide Required Details, Notify Parties, Notify Company (Planned Leave), Notify Social Security (Planned Leave), Confirmations Received, Review Confirmations, Start Maternity Leave, Decide on Extension, Extend Leave?, Request Extension, Notify Extension Parties, Notify Company (Extension), Notify Social Security (Extension), Extension Confirmed, Review Extension Confirmations, Return to Work, Leave Extended, Provide Company Policy Info, Confirm Leave Dates, Confirm Extension Dates, Validate Eligibility, Register Leave and Benefits, Update Benefits for Extension
+
+[11] Trying manual unmask for missing BPMN elements (not lanes)...
+
+  [Unmask] Expecting Child -> Y=55 (Parent): OK
+  [Unmask] Fetch Leave Models -> Y=55 (Parent): OK
+  [Unmask] Review Leave Models -> Y=55 (Parent): OK
+  [Unmask] Select Leave Model -> Y=55 (Parent): OK
+  [Unmask] Provide Required Details -> Y=55 (Parent): OK
+  [Unmask] Notify Parties -> Y=55 (Parent): OK
+  [Unmask] Notify Company (Planned Leave) -> Y=55 (Parent): OK
+  [Unmask] Notify Social Security (Planned Leave) -> Y=55 (Parent): OK
+  [Unmask] Confirmations Received -> Y=55 (Parent): OK
+  [Unmask] Review Confirmations -> Y=55 (Parent): OK
+  [Unmask] Start Maternity Leave -> Y=55 (Parent): OK
+  [Unmask] Decide on Extension -> Y=55 (Parent): OK
+  [Unmask] Extend Leave? -> Y=55 (Parent): OK
+  [Unmask] Request Extension -> Y=55 (Parent): OK
+  [Unmask] Notify Extension Parties -> Y=55 (Parent): OK
+  [Unmask] Notify Company (Extension) -> Y=55 (Parent): OK
+  [Unmask] Notify Social Security (Extension) -> Y=55 (Parent): OK
+  [Unmask] Extension Confirmed -> Y=55 (Parent): OK
+  [Unmask] Review Extension Confirmations -> Y=55 (Parent): OK
+  [Unmask] Return to Work -> Y=55 (Parent): OK
+  [Unmask] Leave Extended -> Y=55 (Parent): OK
+  [Unmask] Provide Company Policy Info -> Y=155 (Company HR): FAILED
+  [Unmask] Confirm Leave Dates -> Y=155 (Company HR): FAILED
+  [Unmask] Confirm Extension Dates -> Y=155 (Company HR): FAILED
+  [Unmask] Validate Eligibility -> Y=255 (Social Security): OK
+  [Unmask] Register Leave and Benefits -> Y=255 (Social Security): OK
+  [Unmask] Update Benefits for Extension -> Y=255 (Social Security): OK
+
+[12] Manual unmask: 24 elements unmasked
+
+  Lanes: Parent(5-132); Company HR(132-232); Social Security(232-332)
+  Elements: Expecting Chil=Y55, Fetch Leave Mo=Y55, Review Leave M=Y55, Select Leave M=Y55, Provide Requir=Y55, Notify Parties=Y55, Notify Company=Y55, Notify Social =Y55, Provide Compan=Y143, Validate Eligi=Y255, Confirm Leave =Y143, Register Leave=Y255, Confirmations =Y55, Review Confirm=Y55, Start Maternit=Y55, Decide on Exte=Y55, Extend Leave?=Y55, Request Extens=Y55, Return to Work=Y55, Notify Extensi=Y55, Notify Company=Y55, Notify Social =Y55, Confirm Extens=Y143, Update Benefit=Y255, Extension Conf=Y55, Review Extensi=Y55, Leave Extended=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Parent centerY = 45
+[14] Company HR centerY = 159
+[15] Social Security centerY = 259
+
+[16] Parent/Expecting Child -> (80,45) 33x33
+[17] Parent/Fetch Leave Models -> (230,45) 160x60
+[18] Parent/Review Leave Models -> (380,45) 160x60
+[19] Parent/Select Leave Model -> (530,45) 160x60
+[20] Parent/Provide Required Details -> (680,45) 160x60
+[21] Parent/Notify Parties -> (830,45) 40x40
+[22] Parent/Notify Company (Planned Leave) -> (980,45) 160x60
+[23] Parent/Notify Social Security (Planned Leave) -> (980,45) 160x60
+[24] SKIP Company HR/Provide Company Policy Info: not in diagram graphics
+[25] Social Security/Validate Eligibility -> (1130,259) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Parent(5-132); Company HR(132-232); Social Security(232-332)
+         After:  Lanes: Parent(5-132); Company HR(132-232); Social Security(232-365)
+[26] SKIP Company HR/Confirm Leave Dates: not in diagram graphics
+[27] Social Security/Register Leave and Benefits -> (1280,259) 160x60
+[28] Parent/Confirmations Received -> (1430,45) 40x40
+[29] Parent/Review Confirmations -> (1580,45) 160x60
+[30] Parent/Start Maternity Leave -> (1730,45) 160x60
+[31] Parent/Decide on Extension -> (1880,45) 160x60
+[32] Parent/Extend Leave? -> (2030,45) 40x40
+[33] Parent/Request Extension -> (2180,45) 160x60
+[34] Parent/Return to Work -> (2180,45) 33x33
+[35] Parent/Notify Extension Parties -> (2330,45) 40x40
+[36] Parent/Notify Company (Extension) -> (2480,45) 160x60
+[37] Parent/Notify Social Security (Extension) -> (2480,45) 160x60
+[38] SKIP Company HR/Confirm Extension Dates: not in diagram graphics
+[39] Social Security/Update Benefits for Extension -> (2630,259) 160x60
+[40] Parent/Extension Confirmed -> (2780,45) 40x40
+[41] Parent/Review Extension Confirmations -> (2930,45) 160x60
+[42] Parent/Leave Extended -> (3080,45) 33x33
+
+  Repositioned: 24/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[43] Created 28 sequence flows
+[44] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Parent(5-132); Company HR(132-232); Social Security(232-365)
+  Elements: Expecting Chil=Y45, Fetch Leave Mo=Y45, Review Leave M=Y45, Select Leave M=Y45, Provide Requir=Y45, Notify Parties=Y45, Notify Company=Y45, Notify Social =Y45, Provide Compan=Y143, Validate Eligi=Y259, Confirm Leave =Y143, Register Leave=Y259, Confirmations =Y45, Review Confirm=Y45, Start Maternit=Y45, Decide on Exte=Y45, Extend Leave?=Y45, Request Extens=Y45, Return to Work=Y45, Notify Extensi=Y45, Notify Company=Y45, Notify Social =Y45, Confirm Extens=Y143, Update Benefit=Y259, Extension Conf=Y45, Review Extensi=Y45, Leave Extended=Y45
+
+[45] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Becoming_A_Parent_34448
+Title:    Becoming A Parent
+Lanes:    3
+Elements: 27
+Flows:    28
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=27,gateways=5,flows=28,data=0,data_assoc=0
+======================================================================

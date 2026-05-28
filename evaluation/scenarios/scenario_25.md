@@ -1,0 +1,25 @@
+# Scenario 25
+
+**Complexity:** Complex
+
+## Natural-language description
+
+Title: Find a Job
+
+You have to regularly report, to which companies you wrote job applications.
+Based on your job applications, new potential job offers are sent to you.
+Companies have to confirm that they received job applications and rate the application.
+A job interview can be negotiated.
+When a company wants you to work for them, you enter the probation phase.
+After probation phase, you can rate the company and the company can rate you.
+Reviews for a company can only be seen (by job applicants) after 1 year.
+If a job becomes permanent, the process ends, unless you rated the company C or less, then you continue to receive job offers, but no longer have to report.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 32
+- gateways: 16
+- flows: 39
+- data_objects: 0
+- data_assoc: 0

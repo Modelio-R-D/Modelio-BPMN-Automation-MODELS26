@@ -1,0 +1,92 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: StorageManagement_51099
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: StorageManagement_51099
+[2] Lanes: Order Management, Warehouse, Shipping
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Order Management: 12 elements
+[4] Warehouse: 2 elements
+[5] Shipping: 3 elements
+
+  Total: 17 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: StorageManagement_51099
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Order Management] Lane bounds: 5-175
+  [Unmask] Reorder from Wholesaler -> Y=90: OK
+  [Unmask] Wait for Product -> Y=90: OK
+  [Unmask] Penalty Needed? -> Y=90: OK
+  [Unmask] Demand Penalty -> Y=90: OK
+  [Unmask] Register in Stock -> Y=90: OK
+  [Unmask] Order Ready? -> Y=90: OK
+  [Unmask] Select Next Product -> Y=90: OK
+  [Unmask] Parallel Fork -> Y=90: OK
+  [Unmask] Parallel Join -> Y=90: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Read Order -> col=1 (230,25) relY=20
+  Product in Stock? -> col=2 (380,25) relY=20
+  Reorder from Wholesaler -> col=3 (530,25) relY=20
+  Wait for Product -> col=4 (680,25) relY=20
+  Penalty Needed? -> col=5 (830,25) relY=20
+  Demand Penalty -> col=6 (980,25) relY=20
+  Register in Stock -> col=7 (1130,25) relY=20
+  Order Ready? -> col=8 (1280,25) relY=20
+  Select Next Product -> col=9 (1430,25) relY=20
+  Parallel Fork -> col=10 (1580,25) relY=20
+  Parallel Join -> col=12 (1880,25) relY=20
+
+[Warehouse] Lane bounds: 175-275
+  [Unmask] Withdraw from Warehouse -> Y=225: OK
+  [Unmask] Pack Products -> Y=225: OK
+  [maxElementBottomRelY=80]
+  Withdraw from Warehouse -> col=3 (530,195) relY=20
+  Pack Products -> col=11 (1730,195) relY=20
+
+[Shipping] Lane bounds: 282-382
+  [Unmask] Request Courier -> Y=332: OK
+  [Unmask] Ship -> Y=332: OK
+  [Unmask] End -> Y=332: OK
+  [maxElementBottomRelY=80]
+  Request Courier -> col=11 (1730,302) relY=20
+  Ship -> col=13 (2030,302) relY=20
+  End -> col=14 (2180,302) relY=20
+
+
+[8] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 20 sequence flows
+
+==================================================================
+COMPLETE: StorageManagement_51099
+==================================================================
+Lanes: 3 | Elements: 17 | Flows: 20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=5,flows=20,data=0,data_assoc=0
+======================================================================

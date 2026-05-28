@@ -1,0 +1,128 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPUTER REPAIR PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   7160
+Process Name:   ComputerRepair_7160
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: ComputerRepair_7160
+[2] Lanes: Customer, CRS, Technician
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Customer: Customer arrives | addToLane=True
+  [Element] Customer: Hand in defective computer | addToLane=True
+  [Element] CRS: Check defect | addToLane=True
+  [Element] CRS: Calculate repair costs | addToLane=True
+  [Element] CRS: Provide cost calculation | addToLane=True
+  [Element] Customer: Costs acceptable? | addToLane=True
+  [Element] Customer: Take computer home unrepaired | addToLane=True
+  [Element] Technician: Start repair work | addToLane=True
+  [Element] Technician: Check and repair hardware | addToLane=True
+  [Element] Technician: Test after hardware repair | addToLane=True
+  [Element] Technician: Check and configure software | addToLane=True
+  [Element] Technician: Test after software config | addToLane=True
+  [Element] Technician: Repair activities done | addToLane=True
+  [Element] Technician: Error detected? | addToLane=True
+  [Element] CRS: Return repaired computer | addToLane=True
+  [Element] Customer: Computer returned repaired | addToLane=True
+
+[3] Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: ComputerRepair_7160
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for lanes+elements (max 6 attempts, 80ms interval)...
+
+  [Attempt 1] All 19 elements ready
+
+[8] Wait done in 80ms | Ready: 19/19
+
+  Lanes: Customer(5-105); CRS(105-205); Technician(205-305)
+  Elements: Customer arriv=Y16, Hand in defect=Y20, Check defect=Y116, Calculate repa=Y116, Provide cost c=Y116, Costs acceptab=Y25, Start repair w=Y216, Take computer =Y30, Check and conf=Y216, Check and repa=Y216, Test after har=Y216, Test after sof=Y216, Repair activit=Y216, Error detected=Y216, Return repaire=Y116, Computer retur=Y35
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[9] Customer centerY = 32
+[10] CRS centerY = 132
+[11] Technician centerY = 232
+
+[12] Customer/Customer arrives -> (80,32) 33x33
+[13] Customer/Hand in defective computer -> (240,32) 150x60
+[14] CRS/Check defect -> (400,132) 150x60
+[15] CRS/Calculate repair costs -> (560,132) 150x60
+[16] CRS/Provide cost calculation -> (720,132) 150x60
+[17] Customer/Costs acceptable? -> (880,32) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); CRS(105-205); Technician(205-305)
+         After:  Lanes: Customer(5-109); CRS(109-209); Technician(209-309)
+[18] Technician/Start repair work -> (1040,232) 40x40
+[19] Customer/Take computer home unrepaired -> (1040,32) 33x33
+[20] Technician/Check and configure software -> (1200,232) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-109); CRS(109-209); Technician(209-309)
+         After:  Lanes: Customer(5-109); CRS(109-209); Technician(209-313)
+[21] Technician/Check and repair hardware -> (1200,232) 150x60
+[22] Technician/Test after hardware repair -> (1360,232) 150x60
+[23] Technician/Test after software config -> (1360,232) 150x60
+[24] Technician/Repair activities done -> (1520,232) 40x40
+[25] Technician/Error detected? -> (1680,232) 40x40
+[26] CRS/Return repaired computer -> (1840,132) 150x60
+[27] Customer/Computer returned repaired -> (2000,32) 33x33
+
+[28] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Customer arrives -> Hand in defective computer
+  [Flow] Hand in defective computer -> Check defect
+  [Flow] Check defect -> Calculate repair costs
+  [Flow] Calculate repair costs -> Provide cost calculation
+  [Flow] Provide cost calculation -> Costs acceptable?
+  [Flow] Costs acceptable? -> Take computer home unrepaired | guard=No
+  [Flow] Costs acceptable? -> Start repair work | guard=Yes
+  [Flow] Start repair work -> Check and repair hardware
+  [Flow] Start repair work -> Check and configure software
+  [Flow] Check and repair hardware -> Test after hardware repair
+  [Flow] Check and configure software -> Test after software config
+  [Flow] Test after hardware repair -> Repair activities done
+  [Flow] Test after software config -> Repair activities done
+  [Flow] Repair activities done -> Error detected?
+  [Flow] Error detected? -> Start repair work | guard=Yes
+  [Flow] Error detected? -> Return repaired computer | guard=No
+  [Flow] Return repaired computer -> Computer returned repaired
+
+[29] Created flows: 17
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-109); CRS(109-209); Technician(209-313)
+  Elements: Customer arriv=Y32, Hand in defect=Y32, Check defect=Y136, Calculate repa=Y136, Provide cost c=Y136, Costs acceptab=Y32, Start repair w=Y232, Take computer =Y32, Check and conf=Y232, Check and repa=Y232, Test after har=Y232, Test after sof=Y232, Repair activit=Y232, Error detected=Y232, Return repaire=Y132, Computer retur=Y32
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComputerRepair_7160
+Lanes:    3
+Elements: 16 (16 in diagram graphics)
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=4,flows=17,data=0,data_assoc=0
+======================================================================

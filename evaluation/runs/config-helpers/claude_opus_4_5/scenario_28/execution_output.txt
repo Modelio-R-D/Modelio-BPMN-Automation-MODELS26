@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: InternshipProcess_8318
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InternshipProcess_8318
+[2] Lanes: Applicant, Company, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 20 elements
+[4] Company: 5 elements
+[5] Twitter: 5 elements
+
+  Total: 30 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: InternshipProcess_8318
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Deny Offer=0, Accept Offer=90
+  [Auto-stack] col 7: More Offers?=0, Invalidate Other Offers=90
+  [Auto-stack] col 18: Send Tweet to Friend 1=0, Send Tweet to Friend 2=90, Send Tweet to Friend 3=180
+[Applicant] Lane bounds: 5-217
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Enter Topic and Budget -> col=1 (230,25) relY=20
+  Enter Experience and Hobbies -> col=2 (380,25) relY=20
+  Wait for Offer -> col=3 (530,25) relY=20
+  Review Offer -> col=4 (680,25) relY=20
+  Accept or Deny? -> col=5 (830,25) relY=20
+  Deny Offer -> col=6 (980,25) relY=20
+  More Offers? -> col=7 (1130,25) relY=20
+  Accept Offer -> col=6 (980,115) relY=110
+  Invalidate Other Offers -> col=7 (1130,115) relY=110
+  Start Internship -> col=8 (1280,25) relY=20
+  Write Status Update 1 -> col=9 (1430,25) relY=20
+  Wait 1 Week A1 -> col=10 (1580,25) relY=20
+  Write Status Update 2 -> col=11 (1730,25) relY=20
+  Wait 1 Week A2 -> col=12 (1880,25) relY=20
+  Write Status Update 3 -> col=13 (2030,25) relY=20
+  Complete Internship -> col=14 (2180,25) relY=20
+  Recommend Company? -> col=15 (2330,25) relY=20
+  Select Friends to Notify -> col=16 (2480,25) relY=20
+  End -> col=20 (3080,25) relY=20
+  Application Data (DO from Enter Experience and Hobbies) -> (470,185) maxBottomRelY=170
+  Offer (DO from Review Offer) -> (770,185) maxBottomRelY=170
+  Status Reports (DO from Write Status Update 3) -> (2120,185) maxBottomRelY=170
+
+[Company] Lane bounds: 277-426
+  [maxElementBottomRelY=80]
+  Write Company Update 1 -> col=9 (1430,297) relY=20
+  Wait 1 Week C1 -> col=10 (1580,297) relY=20
+  Write Company Update 2 -> col=11 (1730,297) relY=20
+  Wait 1 Week C2 -> col=12 (1880,297) relY=20
+  Write Company Update 3 -> col=13 (2030,297) relY=20
+  Company Evaluation (DO from Write Company Update 3) -> (2120,367) maxBottomRelY=80
+
+[Twitter] Lane bounds: 459-559
+  [Unmask] Split for Parallel Tweets -> Y=509: OK
+  [Unmask] Send Tweet to Friend 1 -> Y=509: OK
+  [Unmask] Send Tweet to Friend 2 -> Y=509: OK
+  [Unmask] Send Tweet to Friend 3 -> Y=509: OK
+  [Unmask] Join Tweets -> Y=509: OK
+  [maxElementBottomRelY=260]
+  Split for Parallel Tweets -> col=17 (2630,479) relY=20
+  Send Tweet to Friend 1 -> col=18 (2780,479) relY=20
+  Send Tweet to Friend 2 -> col=18 (2780,569) relY=110
+  Send Tweet to Friend 3 -> col=18 (2780,659) relY=200
+  Join Tweets -> col=19 (2930,479) relY=20
+
+
+[9] Repositioned: 34/34
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 35 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 4
+
+==================================================================
+COMPLETE: InternshipProcess_8318
+==================================================================
+Lanes: 3 | Elements: 30 | Data: 4 | Flows: 35 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 7
+======================================================================

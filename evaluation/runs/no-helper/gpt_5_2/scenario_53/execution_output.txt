@@ -1,0 +1,106 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN MSPN -> MSPO DISMISSAL PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   10631
+Process Name:   MSPN_MSPO_Dismissal_10631
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: MSPN_MSPO_Dismissal_10631
+[2] Lanes created: MSPN, MSPO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Element: Start | addToLane=True
+[4] Element: Send dismissal to MSPO | addToLane=True
+[5] Element: Review dismissal | addToLane=True
+[6] Element: Decision | addToLane=True
+[7] Element: Dismissal rejected | addToLane=True
+[8] Element: Dismissal confirmed | addToLane=True
+
+  Total elements: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram created: MSPN_MSPO_Dismissal_10631
+[10] DiagramHandle obtained
+[11] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[12] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/6 | Missing: Start, Send dismiss, Review dismi, Decision, Dismissal re, Dismissal co
+  [Attempt 2] Found: 0/6 | Missing: Start, Send dismiss, Review dismi, Decision, Dismissal re, Dismissal co
+  [Attempt 3] Found: 0/6 | Missing: Start, Send dismiss, Review dismi, Decision, Dismissal re, Dismissal co
+  [Attempt 3] TIMEOUT - 0/6 elements
+
+[13] WARNING: 0/6 elements ready after 150ms
+         Missing: Start, Send dismissal to MSPO, Review dismissal, Decision, Dismissal rejected, Dismissal confirmed
+
+[14] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (MSPN): OK
+  [Unmask] Send dismissal to MSPO -> Y=55 (MSPN): OK
+  [Unmask] Review dismissal -> Y=155 (MSPO): OK
+  [Unmask] Decision -> Y=155 (MSPO): OK
+  [Unmask] Dismissal rejected -> Y=155 (MSPO): OK
+  [Unmask] Dismissal confirmed -> Y=155 (MSPO): OK
+
+[15] Manual unmask: 6 elements unmasked
+[16] All elements now available
+
+  Lanes: MSPN(5-125); MSPO(125-232)
+  Elements: Start=Y55, Send dismiss=Y55, Review dismi=Y155, Decision=Y155, Dismissal re=Y155, Dismissal co=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[17] MSPN centerY = 42
+[18] MSPO centerY = 155
+
+[19] MSPN/Start -> (80,42) 33x33
+[20] MSPN/Send dismissal to MSPO -> (250,42) 140x60
+[21] MSPO/Review dismissal -> (420,155) 140x60
+[22] MSPO/Decision -> (590,155) 40x40
+[23] MSPO/Dismissal rejected -> (760,155) 33x33
+[24] MSPO/Dismissal confirmed -> (930,155) 33x33
+
+  Repositioned: 6/6
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[25] Flow: Start -> Send dismissal to MSPO
+[26] Flow: Send dismissal to MSPO -> Review dismissal
+[27] Flow: Review dismissal -> Decision
+[28] Flow: Decision -> Dismissal rejected [guard=Rejected]
+[29] Flow: Decision -> Dismissal confirmed [guard=Confirmed]
+[30] Created 5 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: MSPN(5-125); MSPO(125-232)
+  Elements: Start=Y42, Send dismiss=Y42, Review dismi=Y155, Decision=Y155, Dismissal re=Y155, Dismissal co=Y155
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  MSPN_MSPO_Dismissal_10631
+Lanes:    2
+Elements: 6 (6 in diagram)
+Flows:    5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=6,gateways=1,flows=5,data=0,data_assoc=0
+======================================================================

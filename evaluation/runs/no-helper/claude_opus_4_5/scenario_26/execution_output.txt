@@ -1,0 +1,104 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN PARENTAL LEAVE PROCESS - Becoming A Parent
+==================================================================
+Script Version: v1.0
+Execution ID:   75585
+Process Name:   ParentalLeave_75585
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ParentalLeave_75585
+[2] Lanes: Parent, HR Department, Social Security, Manager
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent lane: 10 elements
+[4] HR Department lane: 7 elements
+[5] Social Security lane: 4 elements
+[6] Manager lane: 4 elements
+
+  Total elements: 25
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: ParentalLeave_75585
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 25 elements ready
+
+[11] SUCCESS: All 25 elements ready in 50ms
+
+  Lanes: Parent(5-130); HR Department(130-266); Social Security(266-471); Manager(471-856)
+  Elements: Pregnancy =Y16, Fetch Leav=Y20, Review Opt=Y25, Select Lea=Y30, Provide Pe=Y35, Receive Ap=Y141, Validate I=Y141, Notify All=Y141, Notify Man=Y141, Notify Soc=Y141, Receive Le=Y482, Receive No=Y277, Calculate =Y277, Plan Cover=Y482, Sync Respo=Y141, Confirm Ar=Y482, Confirm En=Y277, Leave Peri=Y40, Decide Ext=Y45, Extend Lea=Y50, Submit Ext=Y55, Adjust Cov=Y482, Process Ex=Y141, Update Ext=Y277, Leave Comp=Y60
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Parent centerY = 44
+[13] HR Department centerY = 175
+[14] Social Security centerY = 345
+[15] Manager centerY = 640
+
+[16] Parent/Pregnancy Announced -> (80,44) 33x33
+[17] Parent/Fetch Leave Models -> (220,44) 120x60
+[18] Parent/Review Options -> (360,44) 120x60
+[19] Parent/Select Leave Model -> (500,44) 120x60
+[20] Parent/Provide Personal Info -> (640,44) 120x60
+[21] HR Department/Receive Application -> (780,175) 120x60
+[22] HR Department/Validate Information -> (920,175) 120x60
+[23] HR Department/Notify All -> (1060,175) 40x40
+[24] HR Department/Notify Manager -> (1200,175) 120x60
+[25] HR Department/Notify Social Security -> (1200,175) 120x60
+[26] Manager/Receive Leave Notice -> (1200,640) 120x60
+[27] Social Security/Receive Notification -> (1200,345) 120x60
+[28] Social Security/Calculate Benefits -> (1340,345) 120x60
+[29] Manager/Plan Coverage -> (1340,640) 120x60
+[30] HR Department/Sync Responses -> (1340,175) 40x40
+[31] Manager/Confirm Arrangements -> (1480,640) 120x60
+[32] Social Security/Confirm Entitlement -> (1480,345) 120x60
+[33] Parent/Leave Period Ends -> (1480,44) 33x33
+[34] Parent/Decide Extension -> (1620,44) 120x60
+[35] Parent/Extend Leave? -> (1760,44) 40x40
+[36] Parent/Submit Extension -> (1900,44) 120x60
+[37] Manager/Adjust Coverage -> (2040,640) 120x60
+[38] HR Department/Process Extension -> (2040,175) 120x60
+[39] Social Security/Update Extension -> (2040,345) 120x60
+[40] Parent/Leave Completed -> (2180,44) 33x33
+
+  Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[41] Created 27 sequence flows
+[42] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Parent(5-130); HR Department(130-266); Social Security(266-471); Manager(471-856)
+  Elements: Pregnancy =Y44, Fetch Leav=Y44, Review Opt=Y44, Select Lea=Y44, Provide Pe=Y44, Receive Ap=Y175, Validate I=Y175, Notify All=Y175, Notify Man=Y175, Notify Soc=Y175, Receive Le=Y640, Receive No=Y345, Calculate =Y345, Plan Cover=Y640, Sync Respo=Y175, Confirm Ar=Y640, Confirm En=Y345, Leave Peri=Y44, Decide Ext=Y44, Extend Lea=Y44, Submit Ext=Y44, Adjust Cov=Y640, Process Ex=Y175, Update Ext=Y345, Leave Comp=Y44
+
+[43] Diagram closed
+
+==================================================================
+COMPLETE - Becoming A Parent Process
+==================================================================
+Process:  ParentalLeave_75585
+Lanes:    4
+Elements: 25 (25 in diagram)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=25,gateways=3,flows=27,data=0,data_assoc=0
+======================================================================

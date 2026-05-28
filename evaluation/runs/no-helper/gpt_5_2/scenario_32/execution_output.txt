@@ -1,0 +1,250 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Farming Bot
+Script Version: v1.0
+Execution ID:   56083
+Process Name:   FarmingBot_56083
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: FarmingBot_56083
+[2] Lanes: Player, Farming Bot, Game World, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Player | Start | addToLane=OK
+  [Elem] Player | Select target resources | addToLane=OK
+  [Elem] Player | Set urgency and priorities | addToLane=OK
+  [Elem] Player | Define tool dependencies | addToLane=OK
+  [Elem] Player | Confirm farming plan | addToLane=OK
+  [Elem] Player | View milestone notification | addToLane=OK
+  [Elem] Player | Update target list | addToLane=OK
+  [Elem] Player | See completion notification | addToLane=OK
+  [Elem] Player | Brag to selected friends | addToLane=OK
+  [Elem] Player | Done | addToLane=OK
+  [Elem] Farming Bot | Compile preferences | addToLane=OK
+  [Elem] Farming Bot | Any tool dependencies? | addToLane=OK
+  [Elem] Farming Bot | Plan required tools | addToLane=OK
+  [Elem] Farming Bot | Craft starter tools | addToLane=OK
+  [Elem] Farming Bot | Start farming | addToLane=OK
+  [Elem] Farming Bot | Collect resources (<=10) | addToLane=OK
+  [Elem] Farming Bot | Collect Wood | addToLane=OK
+  [Elem] Farming Bot | Collect Stone | addToLane=OK
+  [Elem] Farming Bot | Base resources collected | addToLane=OK
+  [Elem] Farming Bot | Craft Pickaxe | addToLane=OK
+  [Elem] Farming Bot | Mine resources | addToLane=OK
+  [Elem] Farming Bot | Mine Iron Ore | addToLane=OK
+  [Elem] Farming Bot | Mine Gems | addToLane=OK
+  [Elem] Farming Bot | Resources collected | addToLane=OK
+  [Elem] Farming Bot | Evaluate progress | addToLane=OK
+  [Elem] Farming Bot | Check milestones | addToLane=OK
+  [Elem] Farming Bot | Milestone reached? | addToLane=OK
+  [Elem] Farming Bot | Notify player (milestone) | addToLane=OK
+  [Elem] Farming Bot | Update requested? | addToLane=OK
+  [Elem] Farming Bot | Refresh plan | addToLane=OK
+  [Elem] Farming Bot | More resources needed? | addToLane=OK
+  [Elem] Farming Bot | Finalize inventory | addToLane=OK
+  [Elem] Farming Bot | Notify completion | addToLane=OK
+  [Elem] Farming Bot | Post farm actions | addToLane=OK
+  [Elem] Farming Bot | Send materials to friends | addToLane=OK
+  [Elem] Farming Bot | Post actions done | addToLane=OK
+  [Elem] Game World | Natural disaster? | addToLane=OK
+  [Elem] Game World | Natural disaster setback | addToLane=OK
+  [Elem] Friends | Friends see brag | addToLane=OK
+  [Elem] Friends | Friends receive materials | addToLane=OK
+
+[3] Lane element counts:
+  - Player: 10
+  - Farming Bot: 26
+  - Game World: 2
+  - Friends: 2
+
+  Total elements: 40
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: FarmingBot_56083
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 12/40 | Missing: Compile pref, Any tool dep, Plan require, Craft starte, Start farmin, Collect reso, Collect Wood, Collect Ston, Base resourc, Craft Pickax, Mine resourc, Mine Iron Or, Mine Gems, Resources co, Evaluate pro, Check milest, Milestone re, Notify playe, Update reque, Refresh plan, More resourc, Finalize inv, Notify compl, Post farm ac, Send materia, Post actions, Natural disa, Natural disa
+  [Attempt 2] Found: 12/40 | Missing: Compile pref, Any tool dep, Plan require, Craft starte, Start farmin, Collect reso, Collect Wood, Collect Ston, Base resourc, Craft Pickax, Mine resourc, Mine Iron Or, Mine Gems, Resources co, Evaluate pro, Check milest, Milestone re, Notify playe, Update reque, Refresh plan, More resourc, Finalize inv, Notify compl, Post farm ac, Send materia, Post actions, Natural disa, Natural disa
+  [Attempt 3] Found: 12/40 | Missing: Compile pref, Any tool dep, Plan require, Craft starte, Start farmin, Collect reso, Collect Wood, Collect Ston, Base resourc, Craft Pickax, Mine resourc, Mine Iron Or, Mine Gems, Resources co, Evaluate pro, Check milest, Milestone re, Notify playe, Update reque, Refresh plan, More resourc, Finalize inv, Notify compl, Post farm ac, Send materia, Post actions, Natural disa, Natural disa
+  [Attempt 3] TIMEOUT - 12/40 elements
+
+[8] WARNING: 12/40 elements ready after 150ms
+         Missing: Compile preferences, Any tool dependencies?, Plan required tools, Craft starter tools, Start farming, Collect resources (<=10), Collect Wood, Collect Stone, Base resources collected, Craft Pickaxe, Mine resources, Mine Iron Ore, Mine Gems, Resources collected, Evaluate progress, Check milestones, Milestone reached?, Notify player (milestone), Update requested?, Refresh plan, More resources needed?, Finalize inventory, Notify completion, Post farm actions, Send materials to friends, Post actions done, Natural disaster?, Natural disaster setback
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Compile preferences -> Y=180 (Farming Bot): OK
+  [Unmask] Any tool dependencies? -> Y=180 (Farming Bot): OK
+  [Unmask] Plan required tools -> Y=180 (Farming Bot): OK
+  [Unmask] Craft starter tools -> Y=180 (Farming Bot): OK
+  [Unmask] Start farming -> Y=180 (Farming Bot): OK
+  [Unmask] Collect resources (<=10) -> Y=180 (Farming Bot): OK
+  [Unmask] Collect Wood -> Y=180 (Farming Bot): OK
+  [Unmask] Collect Stone -> Y=180 (Farming Bot): OK
+  [Unmask] Base resources collected -> Y=180 (Farming Bot): OK
+  [Unmask] Craft Pickaxe -> Y=180 (Farming Bot): OK
+  [Unmask] Mine resources -> Y=180 (Farming Bot): OK
+  [Unmask] Mine Iron Ore -> Y=180 (Farming Bot): OK
+  [Unmask] Mine Gems -> Y=180 (Farming Bot): OK
+  [Unmask] Resources collected -> Y=180 (Farming Bot): OK
+  [Unmask] Evaluate progress -> Y=180 (Farming Bot): OK
+  [Unmask] Check milestones -> Y=180 (Farming Bot): OK
+  [Unmask] Milestone reached? -> Y=180 (Farming Bot): OK
+  [Unmask] Notify player (milestone) -> Y=180 (Farming Bot): OK
+  [Unmask] Update requested? -> Y=180 (Farming Bot): OK
+  [Unmask] Refresh plan -> Y=180 (Farming Bot): OK
+  [Unmask] More resources needed? -> Y=180 (Farming Bot): OK
+  [Unmask] Finalize inventory -> Y=180 (Farming Bot): OK
+  [Unmask] Notify completion -> Y=180 (Farming Bot): OK
+  [Unmask] Post farm actions -> Y=180 (Farming Bot): OK
+  [Unmask] Send materials to friends -> Y=180 (Farming Bot): OK
+  [Unmask] Post actions done -> Y=180 (Farming Bot): OK
+  [Unmask] Natural disaster? -> Y=280 (Game World): OK
+  [Unmask] Natural disaster setback -> Y=280 (Game World): OK
+
+[10] Manual unmask: 28 elements unmasked
+[11] All elements now available
+
+  Lanes: Player(5-130); Farming Bot(130-257); Game World(257-357); Friends(357-541)
+  Elements: Start=Y16, Select targe=Y20, Set urgency =Y25, Define tool =Y30, Confirm farm=Y35, Compile pref=Y180, Any tool dep=Y180, Plan require=Y180, Craft starte=Y180, Start farmin=Y180, Collect reso=Y180, Collect Ston=Y180, Collect Wood=Y180, Base resourc=Y180, Craft Pickax=Y180, Mine resourc=Y180, Mine Gems=Y180, Mine Iron Or=Y180, Resources co=Y180, Evaluate pro=Y180, Check milest=Y180, Milestone re=Y180, Notify playe=Y180, View milesto=Y40, Update reque=Y180, Update targe=Y45, Refresh plan=Y180, Natural disa=Y280, Natural disa=Y280, More resourc=Y180, Finalize inv=Y180, Notify compl=Y180, See completi=Y50, Post farm ac=Y180, Brag to sele=Y55, Send materia=Y180, Friends rece=Y368, Friends see =Y368, Post actions=Y180, Done=Y60
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Player centerY = 44
+[13] Farming Bot centerY = 170
+[14] Game World centerY = 284
+[15] Friends centerY = 426
+
+[16] Player/Start -> (80,44) 33x33
+[17] Player/Select target resources -> (250,44) 150x60
+[18] Player/Set urgency and priorities -> (420,44) 150x60
+[19] Player/Define tool dependencies -> (590,44) 150x60
+[20] Player/Confirm farming plan -> (760,44) 150x60
+[21] Farming Bot/Compile preferences -> (930,170) 150x60
+[22] Farming Bot/Any tool dependencies? -> (1100,170) 40x40
+[23] Farming Bot/Plan required tools -> (1270,170) 150x60
+[24] Farming Bot/Craft starter tools -> (1440,170) 150x60
+[25] Farming Bot/Start farming -> (1610,170) 150x60
+[26] Farming Bot/Collect resources (<=10) -> (1780,170) 40x40
+[27] Farming Bot/Collect Stone -> (1950,170) 150x60
+[28] Farming Bot/Collect Wood -> (1950,170) 150x60
+[29] Farming Bot/Base resources collected -> (2120,170) 40x40
+[30] Farming Bot/Craft Pickaxe -> (2290,170) 150x60
+[31] Farming Bot/Mine resources -> (2460,170) 40x40
+[32] Farming Bot/Mine Gems -> (2630,170) 150x60
+[33] Farming Bot/Mine Iron Ore -> (2630,170) 150x60
+[34] Farming Bot/Resources collected -> (2800,170) 40x40
+[35] Farming Bot/Evaluate progress -> (2970,170) 150x60
+[36] Farming Bot/Check milestones -> (3140,170) 150x60
+[37] Farming Bot/Milestone reached? -> (3310,170) 40x40
+[38] Farming Bot/Notify player (milestone) -> (3480,170) 150x60
+[39] Player/View milestone notification -> (3650,44) 150x60
+[40] Farming Bot/Update requested? -> (3820,170) 40x40
+[41] Player/Update target list -> (3990,44) 150x60
+[42] Farming Bot/Refresh plan -> (4160,170) 150x60
+[43] Game World/Natural disaster? -> (4330,284) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Player(5-130); Farming Bot(130-257); Game World(257-357); Friends(357-541)
+         After:  Lanes: Player(5-130); Farming Bot(130-257); Game World(257-367); Friends(367-551)
+[44] Game World/Natural disaster setback -> (4500,284) 150x60
+[45] Farming Bot/More resources needed? -> (4670,170) 40x40
+[46] Farming Bot/Finalize inventory -> (4840,170) 150x60
+[47] Farming Bot/Notify completion -> (5010,170) 150x60
+[48] Player/See completion notification -> (5180,44) 150x60
+[49] Farming Bot/Post farm actions -> (5350,170) 40x40
+[50] Player/Brag to selected friends -> (5520,44) 150x60
+[51] Farming Bot/Send materials to friends -> (5520,170) 150x60
+[52] Friends/Friends receive materials -> (5690,426) 150x60
+[53] Friends/Friends see brag -> (5690,426) 150x60
+[54] Farming Bot/Post actions done -> (5860,170) 40x40
+[55] Player/Done -> (6030,44) 33x33
+
+  Repositioned: 40/40
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Start -> Select target resources
+  [Flow] Select target resources -> Set urgency and priorities
+  [Flow] Set urgency and priorities -> Define tool dependencies
+  [Flow] Define tool dependencies -> Confirm farming plan
+  [Flow] Confirm farming plan -> Compile preferences
+  [Flow] Compile preferences -> Any tool dependencies?
+  [Flow] Any tool dependencies? -> Plan required tools | guard=Yes
+  [Flow] Any tool dependencies? -> Start farming | guard=No
+  [Flow] Plan required tools -> Craft starter tools
+  [Flow] Craft starter tools -> Start farming
+  [Flow] Start farming -> Collect resources (<=10)
+  [Flow] Collect resources (<=10) -> Collect Wood
+  [Flow] Collect resources (<=10) -> Collect Stone
+  [Flow] Collect Wood -> Base resources collected
+  [Flow] Collect Stone -> Base resources collected
+  [Flow] Base resources collected -> Craft Pickaxe
+  [Flow] Craft Pickaxe -> Mine resources
+  [Flow] Mine resources -> Mine Iron Ore
+  [Flow] Mine resources -> Mine Gems
+  [Flow] Mine Iron Ore -> Resources collected
+  [Flow] Mine Gems -> Resources collected
+  [Flow] Resources collected -> Evaluate progress
+  [Flow] Evaluate progress -> Check milestones
+  [Flow] Check milestones -> Milestone reached?
+  [Flow] Milestone reached? -> Notify player (milestone) | guard=Yes
+  [Flow] Milestone reached? -> Update requested? | guard=No
+  [Flow] Notify player (milestone) -> View milestone notification
+  [Flow] View milestone notification -> Update requested?
+  [Flow] Update requested? -> Update target list | guard=Yes
+  [Flow] Update requested? -> Natural disaster? | guard=No
+  [Flow] Update target list -> Refresh plan
+  [Flow] Refresh plan -> Collect resources (<=10)
+  [Flow] Natural disaster? -> Natural disaster setback | guard=Yes
+  [Flow] Natural disaster? -> More resources needed? | guard=No
+  [Flow] Natural disaster setback -> Collect resources (<=10)
+  [Flow] More resources needed? -> Collect resources (<=10) | guard=Yes
+  [Flow] More resources needed? -> Finalize inventory | guard=No
+  [Flow] Finalize inventory -> Notify completion
+  [Flow] Notify completion -> See completion notification
+  [Flow] See completion notification -> Post farm actions
+  [Flow] Post farm actions -> Brag to selected friends
+  [Flow] Post farm actions -> Send materials to friends
+  [Flow] Brag to selected friends -> Friends see brag
+  [Flow] Send materials to friends -> Friends receive materials
+  [Flow] Friends see brag -> Post actions done
+  [Flow] Friends receive materials -> Post actions done
+  [Flow] Post actions done -> Done
+
+[56] Created 47 sequence flows
+[57] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Player(5-130); Farming Bot(130-257); Game World(257-367); Friends(367-551)
+  Elements: Start=Y44, Select targe=Y44, Set urgency =Y44, Define tool =Y44, Confirm farm=Y44, Compile pref=Y170, Any tool dep=Y170, Plan require=Y170, Craft starte=Y170, Start farmin=Y170, Collect reso=Y170, Collect Ston=Y170, Collect Wood=Y170, Base resourc=Y170, Craft Pickax=Y170, Mine resourc=Y170, Mine Gems=Y170, Mine Iron Or=Y170, Resources co=Y170, Evaluate pro=Y170, Check milest=Y170, Milestone re=Y170, Notify playe=Y170, View milesto=Y44, Update reque=Y170, Update targe=Y44, Refresh plan=Y170, Natural disa=Y284, Natural disa=Y284, More resourc=Y170, Finalize inv=Y170, Notify compl=Y170, See completi=Y44, Post farm ac=Y170, Brag to sele=Y44, Send materia=Y170, Friends rece=Y426, Friends see =Y426, Post actions=Y170, Done=Y44
+
+[58] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  FarmingBot_56083
+Lanes:    4
+Elements: 40 (40 in diagram)
+Flows:    47
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=40,gateways=11,flows=47,data=0,data_assoc=0
+======================================================================

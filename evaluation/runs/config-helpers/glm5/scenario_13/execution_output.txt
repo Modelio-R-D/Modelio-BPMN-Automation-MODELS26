@@ -1,0 +1,92 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CustomerComplaintHandling_24282
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CustomerComplaintHandling_24282
+[2] Lanes: Customer, Customer Service, Investigation Team, Financial Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 3 elements
+[4] Customer Service: 3 elements
+[5] Investigation Team: 2 elements
+[6] Financial Team: 1 elements
+
+  Total: 9 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: CustomerComplaintHandling_24282
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Customer] Lane bounds: 5-105
+  [Unmask] Complaint Filed -> Y=55: OK
+  [Unmask] Provide Feedback -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Complaint Filed -> col=0 (80,25) relY=20
+  Provide Feedback -> col=7 (1130,25) relY=20
+  End -> col=8 (1280,25) relY=20
+
+[Customer Service] Lane bounds: 125-225
+  [Unmask] Log & Assign Complaint -> Y=175: OK
+  [Unmask] Notify Customer -> Y=175: OK
+  [Unmask] Mark Resolved -> Y=175: OK
+  [Unmask] Complaint Record -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Log & Assign Complaint -> col=1 (230,145) relY=20
+  Notify Customer -> col=5 (830,145) relY=20
+  Mark Resolved -> col=6 (980,145) relY=20
+  Complaint Record (DO from Log & Assign Complaint) -> (320,215) maxBottomRelY=80
+
+[Investigation Team] Lane bounds: 307-628
+  [maxElementBottomRelY=80]
+  Investigate Complaint -> col=2 (380,327) relY=20
+  Valid & Refund? -> col=3 (530,327) relY=20
+  Investigation Report (DO from Investigate Complaint) -> (470,397) maxBottomRelY=80
+
+[Financial Team] Lane bounds: 628-927
+  [maxElementBottomRelY=80]
+  Process Refund -> col=4 (680,648) relY=20
+  Refund Receipt (DO from Process Refund) -> (770,718) maxBottomRelY=80
+
+
+[10] Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 9 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 4
+
+==================================================================
+COMPLETE: CustomerComplaintHandling_24282
+==================================================================
+Lanes: 4 | Elements: 9 | Data: 3 | Flows: 9 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=12,gateways=1,flows=9,data=3,data_assoc=4
+======================================================================

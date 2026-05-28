@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN FARMING BOT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   90400
+Process Name:   FarmingBot_90400
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FarmingBot_90400
+[2] Lanes: Player, Bot System, Notification
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player lane: 7 elements
+[4] Bot System lane: 13 elements
+[5] Notification lane: 8 elements
+
+  Total elements: 28
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: FarmingBot_90400
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements...
+
+  [Attempt 1] All 28 elements ready
+
+[10] Elements ready: 28/28
+  Lanes: Player(5-115); Bot System(115-219); Notification(219-402)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Player centerY = 37
+[12] Bot System centerY = 144
+[13] Notification centerY = 287
+
+[14] Start Bot Setup -> (60,37)
+[15] Select Resources -> (200,37)
+[16] Set Priorities -> (340,37)
+[17] Check Dependencies -> (480,144)
+[18] Create Tool Queue -> (620,144)
+[19] Split Resources -> (760,144)
+[20] Farm Resource 1 -> (900,99)
+[21] Farm Resource 2 -> (900,144)
+[22] Farm Resource N -> (900,189)
+[23] Check Milestones -> (1040,287)
+[24] Join Resources -> (1040,144)
+[25] Disaster? -> (1180,144)
+[26] Milestone Hit? -> (1180,287)
+[27] Handle Disaster -> (1320,144)
+[28] Send Milestone Ale -> (1320,287)
+[29] Update Materials -> (1320,37)
+[30] Continue Farming -> (1460,144)
+[31] Send Disaster Aler -> (1460,287)
+[32] Update Request? -> (1600,144)
+[33] All Complete? -> (1740,144)
+[34] Finalize Results -> (1880,144)
+[35] Select Friends -> (2020,37)
+[36] Choose Share Type -> (2160,37)
+[37] Share Type? -> (2300,287)
+[38] Post to Brag Board -> (2440,262)
+[39] Send Materials -> (2440,312)
+[40] Bot Complete -> (2580,37)
+[41] Shared Success -> (2580,287)
+
+  Repositioned: 28/28
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[42] Created 34 sequence flows
+[43] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Player(-41-107); Bot System(107-274); Notification(274-476)
+
+[44] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  FarmingBot_90400
+Lanes:    3
+Elements: 28 (28 in diagram)
+Flows:    34
+
+Game Logic Notes:
+  - Resources have dependencies (tools needed first)
+  - Up to 10 parallel farming tasks (3 shown)
+  - Random disasters can interrupt progress
+  - Milestones trigger notifications
+  - Players can update materials anytime during farming
+  - End: Brag to friends OR send materials
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=28,gateways=7,flows=34,data=0,data_assoc=0
+======================================================================

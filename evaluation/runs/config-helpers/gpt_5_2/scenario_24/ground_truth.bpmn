@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <collaboration id="Collaboration_1">
+    <participant id="Participant_1" name="Guest food consumption" processRef="Process_1"/>
+    <participant id="Participant_2" name="Employee order processing" processRef="Process_2"/>
+    <participant id="Participant_3" name="Chef meal preparation" processRef="Process_3"/>
+    <messageFlow id="MessageFlow_1" sourceRef="Task_3" targetRef="StartEvent_2"/>
+    <messageFlow id="MessageFlow_2" sourceRef="Task_9" targetRef="Task_4"/>
+    <messageFlow id="MessageFlow_3" sourceRef="Task_4" targetRef="Task_9"/>
+    <messageFlow id="MessageFlow_4" sourceRef="Task_11" targetRef="Task_5"/>
+    <messageFlow id="MessageFlow_5" sourceRef="Task_13" targetRef="IntermediateCatchEvent_2"/>
+    <messageFlow id="MessageFlow_6" sourceRef="Task_6" targetRef="IntermediateCatchEvent_4"/>
+    <messageFlow id="MessageFlow_7" sourceRef="Task_14" targetRef="Task_6"/>
+    <messageFlow id="MessageFlow_8" sourceRef="Task_12" targetRef="StartEvent_3"/>
+    <messageFlow id="MessageFlow_9" sourceRef="Task_18" targetRef="IntermediateCatchEvent_3"/>
+    <messageFlow id="MessageFlow_10" sourceRef="Task_15" targetRef="Participant_1"/>
+  </collaboration>
+  <process id="Process_1">
+    <task id="Task_1" name="Enter restaurant">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <task id="Task_2" name="Choose dish">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_3" name="Place order">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </task>
+    <task id="Task_4" name="Pay money">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <task id="Task_5" name="Take buzzer">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </task>
+    <task id="Task_6" name="Get meal">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </task>
+    <task id="Task_7" name="Eat meal">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <startEvent id="StartEvent_1" name="Hunger noticed">
+      <conditionalEventDefinition/>
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="Not hungry anymore">
+      <incoming>SequenceFlow_10</incoming>
+    </endEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_1" name="wait for turn">
+      <conditionalEventDefinition/>
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_2" name="Meal ready">
+      <messageEventDefinition/>
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </intermediateCatchEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_2" targetRef="IntermediateCatchEvent_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="IntermediateCatchEvent_1" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="Task_3" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_4" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="Task_5" targetRef="IntermediateCatchEvent_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="IntermediateCatchEvent_2" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="Task_6" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_7" targetRef="EndEvent_1"/>
+  </process>
+  <process id="Process_2">
+    <task id="Task_8" name="Enter order">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </task>
+    <task id="Task_9" name="Collect money">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </task>
+    <task id="Task_10" name="Set up buzzer">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </task>
+    <task id="Task_11" name="Hand over buzzer">
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </task>
+    <task id="Task_12" name="Inform chef">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </task>
+    <task id="Task_13" name="Set off buzzer">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </task>
+    <task id="Task_14" name="Hand over meal">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </task>
+    <task id="Task_15" name="Call guest">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </task>
+    <eventBasedGateway id="EventBasedGateway_1">
+      <incoming>SequenceFlow_18</incoming>
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+      <outgoing>SequenceFlow_22</outgoing>
+    </eventBasedGateway>
+    <startEvent id="StartEvent_2" name="Order received">
+      <messageEventDefinition/>
+      <outgoing>SequenceFlow_11</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_2" name="Order processed">
+      <incoming>SequenceFlow_21</incoming>
+    </endEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_3" name="Meal ready">
+      <messageEventDefinition/>
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_4" name="Guest appears">
+      <messageEventDefinition/>
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_5" name="5 minutes">
+      <timerEventDefinition/>
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </intermediateCatchEvent>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="StartEvent_2" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="Task_8" targetRef="Task_9"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="Task_9" targetRef="Task_10"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="Task_10" targetRef="Task_11"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="Task_11" targetRef="Task_12"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="Task_12" targetRef="IntermediateCatchEvent_3"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="IntermediateCatchEvent_3" targetRef="Task_13"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="Task_13" targetRef="EventBasedGateway_1"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="EventBasedGateway_1" targetRef="IntermediateCatchEvent_4"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="IntermediateCatchEvent_4" targetRef="Task_14"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="Task_14" targetRef="EndEvent_2"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="EventBasedGateway_1" targetRef="IntermediateCatchEvent_5"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="IntermediateCatchEvent_5" targetRef="Task_15"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="Task_15" targetRef="EventBasedGateway_1"/>
+  </process>
+  <process id="Process_3">
+    <task id="Task_16" name="Prepare meal">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+    </task>
+    <task id="Task_17" name="Place meal in hatch">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+    </task>
+    <task id="Task_18" name="Inform employee">
+      <incoming>SequenceFlow_27</incoming>
+      <outgoing>SequenceFlow_28</outgoing>
+    </task>
+    <startEvent id="StartEvent_3" name="Meal needed">
+      <messageEventDefinition/>
+      <outgoing>SequenceFlow_25</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_3" name="Meal prepared">
+      <incoming>SequenceFlow_28</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="StartEvent_3" targetRef="Task_16"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="Task_16" targetRef="Task_17"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="Task_17" targetRef="Task_18"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="Task_18" targetRef="EndEvent_3"/>
+  </process>
+</definitions>

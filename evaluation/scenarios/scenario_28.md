@@ -1,0 +1,26 @@
+# Scenario 28
+
+**Complexity:** Complex
+
+## Natural-language description
+
+Title: Internship
+
+You can enter a topic that interests you, and how much money you want.
+You can also enter experience and hobbies.
+Several offers will arrive (at arbitrary points in time).
+You can accept or deny offers.
+As soon as an offer is accepted, all other offers become invalid.
+You have to write at least 3 status updates about your internship (every week).
+The company has to write 3 status updates about you.
+After the internship is finished you can recommend the company to a list of friends (via twitter).
+Separate tweets are sent in parallel.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 29
+- gateways: 12
+- flows: 35
+- data_objects: 0
+- data_assoc: 0

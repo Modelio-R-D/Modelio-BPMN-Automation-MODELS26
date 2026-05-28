@@ -1,0 +1,79 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CreditScoringProcess_34890
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CreditScoringProcess_34890
+[2] Lanes: Bank Clerk, Banking System, Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Bank Clerk: 4 elements
+[4] Banking System: 6 elements
+[5] Agency: 6 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: CreditScoringProcess_34890
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Receive Immediate Result=0, Receive Delay Notice=90
+  [Auto-stack] col 5: Return Immediate Result=0, Notify Delay=90
+[Bank Clerk] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start: SKIP (no graphics)
+  Request Scoring: SKIP (no graphics)
+  View Result: SKIP (no graphics)
+  End: SKIP (no graphics)
+
+[Banking System] Lane bounds: 105-250
+  [maxElementBottomRelY=150]
+  Send Scoring Request -> col=2 (380,125) relY=20
+  Receive Immediate Result -> col=6 (980,125) relY=20
+  Receive Delay Notice -> col=6 (980,215) relY=110
+  Display Delay Message: SKIP (no graphics)
+  Receive Delayed Result: SKIP (no graphics)
+  Present Result: SKIP (no graphics)
+
+[Agency] Lane bounds: 285-385
+  [maxElementBottomRelY=170]
+  Level 1 Scoring: SKIP (no graphics)
+  Immediate Result?: SKIP (no graphics)
+  Return Immediate Result: SKIP (no graphics)
+  Notify Delay: SKIP (no graphics)
+  Level 2 Scoring: SKIP (no graphics)
+  Return Delayed Result: SKIP (no graphics)
+
+
+[8] Repositioned: 3/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 17 sequence flows
+
+==================================================================
+COMPLETE: CreditScoringProcess_34890
+==================================================================
+Lanes: 3 | Elements: 16 | Flows: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=1,flows=17,data=0,data_assoc=0
+======================================================================

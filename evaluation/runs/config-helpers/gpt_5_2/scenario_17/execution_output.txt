@@ -1,0 +1,130 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OrderFulfillmentProcess_33640
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillmentProcess_33640
+[2] Lanes: Customer, Order System, Payment Service, Inventory System, Warehouse, Shipping, Returns
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 3 elements
+[4] Order System: 9 elements
+[5] Payment Service: 2 elements
+[6] Inventory System: 5 elements
+[7] Warehouse: 6 elements
+[8] Shipping: 5 elements
+[9] Returns: 5 elements
+
+  Total: 35 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[10] Diagram: OrderFulfillmentProcess_33640
+[11] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Order Cancelled=0, Inform Customer of Delay=90
+[Customer] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Place Order -> col=1 (230,25) relY=20
+  Report Delivery Issue -> col=23 (3530,25) relY=20
+
+[Order System] Lane bounds: 105-244
+  [maxElementBottomRelY=170]
+  Record Order Details -> col=2 (380,125) relY=20
+  Notify Payment Failure -> col=7 (1130,125) relY=20
+  Order Cancelled -> col=8 (1280,125) relY=20
+  Inform Customer of Delay -> col=8 (1280,215) relY=110
+  Send Shipping Confirmation -> col=18 (2780,125) relY=20
+  Delivery Confirmed -> col=20 (3080,125) relY=20
+  Send Feedback Request -> col=21 (3230,125) relY=20
+  Issue Reported? -> col=22 (3380,125) relY=20
+  Order Completed -> col=23 (3530,125) relY=20
+
+[Payment Service] Lane bounds: 286-519
+  [maxElementBottomRelY=80]
+  Process Payment -> col=3 (530,306) relY=20
+  Payment Successful? -> col=4 (680,306) relY=20
+
+[Inventory System] Lane bounds: 519-619
+  [Unmask] Check Stock Availability -> Y=569: OK
+  [Unmask] Items In Stock? -> Y=569: OK
+  [Unmask] Initiate Backorder -> Y=569: OK
+  [Unmask] Backorder Received -> Y=569: OK
+  [Unmask] Update Inventory Levels -> Y=569: OK
+  [maxElementBottomRelY=80]
+  Check Stock Availability -> col=5 (830,539) relY=20
+  Items In Stock? -> col=6 (980,539) relY=20
+  Initiate Backorder -> col=7 (1130,539) relY=20
+  Backorder Received -> col=9 (1430,539) relY=20
+  Update Inventory Levels -> col=19 (2930,539) relY=20
+
+[Warehouse] Lane bounds: 677-777
+  [Unmask] Pick Items -> Y=727: OK
+  [Unmask] Quality Control Check -> Y=727: OK
+  [Unmask] Prepare Packaging and Docs -> Y=727: OK
+  [Unmask] Package Items -> Y=727: OK
+  [Unmask] Gift Wrap Requested? -> Y=727: OK
+  [Unmask] Gift Wrap -> Y=727: OK
+  [maxElementBottomRelY=80]
+  Pick Items -> col=10 (1580,697) relY=20
+  Quality Control Check -> col=11 (1730,697) relY=20
+  Prepare Packaging and Docs -> col=12 (1880,697) relY=20
+  Package Items -> col=13 (2030,697) relY=20
+  Gift Wrap Requested? -> col=14 (2180,697) relY=20
+  Gift Wrap -> col=15 (2330,697) relY=20
+
+[Shipping] Lane bounds: 804-904
+  [Unmask] Prepare Shipping Docs/Labels -> Y=854: OK
+  [Unmask] International Order? -> Y=854: OK
+  [Unmask] Prepare Customs Documentation -> Y=854: OK
+  [Unmask] Ready to Dispatch -> Y=854: OK
+  [Unmask] Dispatch Order -> Y=854: OK
+  [maxElementBottomRelY=80]
+  Prepare Shipping Docs/Labels -> col=13 (2030,824) relY=20
+  International Order? -> col=14 (2180,824) relY=20
+  Prepare Customs Documentation -> col=15 (2330,824) relY=20
+  Ready to Dispatch -> col=16 (2480,824) relY=20
+  Dispatch Order -> col=17 (2630,824) relY=20
+
+[Returns] Lane bounds: 931-1587
+  [Unmask] Return Completed -> Y=1259: OK
+  [maxElementBottomRelY=80]
+  Send Return Shipping Label -> col=24 (3680,951) relY=20
+  Receive Returned Items -> col=25 (3830,951) relY=20
+  Inspect Returned Items -> col=26 (3980,951) relY=20
+  Process Refund or Replacement -> col=27 (4130,951) relY=20
+  Return Completed -> col=28 (4280,951) relY=20
+
+
+[12] Repositioned: 35/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[13] Created 38 sequence flows
+
+==================================================================
+COMPLETE: OrderFulfillmentProcess_33640
+==================================================================
+Lanes: 7 | Elements: 35 | Flows: 38
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=7,elements=35,gateways=7,flows=38,data=0,data_assoc=0
+======================================================================

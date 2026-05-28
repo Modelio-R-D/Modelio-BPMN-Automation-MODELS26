@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: FridgeServiceProcess_21463
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FridgeServiceProcess_21463
+[2] Lanes: Customer, Service Center, Local Service Facility, Technician
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 8 elements
+[4] Service Center: 3 elements
+[5] Local Service Facility: 4 elements
+[6] Technician: 8 elements
+
+  Total: 23 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: FridgeServiceProcess_21463
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Receive Assignment=0, Schedule Appointment=90
+  [Auto-stack] col 11: Repair Fridge=0, Order Parts=90
+  [Auto-stack] col 12: Leave Without Repair=0, Repair Complete=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Describe Symptoms -> Y=55: OK
+  [Unmask] Send Service Request -> Y=55: OK
+  [Unmask] Receive Appointment -> Y=55: OK
+  [Unmask] Wait for Technician -> Y=55: OK
+  [Unmask] Confirm Repair OK -> Y=55: OK
+  [Unmask] Rate Service Facility -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Service Request -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Describe Symptoms -> col=1 (210,25) relY=20
+  Send Service Request -> col=2 (340,25) relY=20
+  Receive Appointment -> col=6 (860,25) relY=20
+  Wait for Technician -> col=7 (990,25) relY=20
+  Confirm Repair OK -> col=12 (1640,25) relY=20
+  Rate Service Facility -> col=13 (1770,25) relY=20
+  End -> col=14 (1900,25) relY=20
+  Service Request (DO from Describe Symptoms) -> (430,95) maxBottomRelY=80
+
+[Service Center] Lane bounds: 187-287
+  [maxElementBottomRelY=80]
+  Receive Request -> col=3 (470,207) relY=20
+  Select Local Facility -> col=4 (600,207) relY=20
+  Forward to Facility -> col=5 (730,207) relY=20
+
+[Local Service Facility] Lane bounds: 287-387
+  [Unmask] Appointment Details -> Y=337: OK
+  [maxElementBottomRelY=170]
+  Receive Assignment -> col=5 (730,307) relY=20
+  Schedule Appointment -> col=5 (730,397) relY=110
+  Send Appointment -> col=6 (860,307) relY=20
+  Dispatch Technician -> col=7 (990,307) relY=20
+  Appointment Details (DO from Schedule Appointment) -> (820,467) maxBottomRelY=170
+
+[Technician] Lane bounds: 559-833
+  [maxElementBottomRelY=170]
+  Arrive at Customer -> col=8 (1120,579) relY=20
+  Diagnose Problem -> col=9 (1250,579) relY=20
+  Parts Available? -> col=10 (1380,579) relY=20
+  Repair Fridge -> col=11 (1510,579) relY=20
+  Order Parts -> col=11 (1510,669) relY=110
+  Leave Without Repair -> col=12 (1640,579) relY=20
+  Reschedule Visit -> col=13 (1770,579) relY=20
+  Repair Complete -> col=12 (1640,669) relY=110
+
+
+[10] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 4
+
+==================================================================
+COMPLETE: FridgeServiceProcess_21463
+==================================================================
+Lanes: 4 | Elements: 23 | Data: 2 | Flows: 23 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 2
+======================================================================

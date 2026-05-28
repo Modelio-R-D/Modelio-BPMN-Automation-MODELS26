@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INCIDENT MANAGEMENT PROCESS
+==================================================================
+Script Version: v9.2
+Execution ID:   71718
+Process Name:   IncidentManagement_71718
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IncidentManagement_71718
+[2] Lanes: Reporter, Investigation Team, Operations
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Reporter lane: 1 element
+[4] Investigation Team lane: 5 elements
+[5] Operations lane: 7 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: IncidentManagement_71718
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/13 | Missing: Incident Rep, Log Incident, Assign Inves, Gather Infor, Identify Roo, Propose Corr, Notify Stake, Close Incide, Close and No, Incident Clo
+  [Attempt 2] Found: 3/13 | Missing: Incident Rep, Log Incident, Assign Inves, Gather Infor, Identify Roo, Propose Corr, Notify Stake, Close Incide, Close and No, Incident Clo
+  [Attempt 3] Found: 3/13 | Missing: Incident Rep, Log Incident, Assign Inves, Gather Infor, Identify Roo, Propose Corr, Notify Stake, Close Incide, Close and No, Incident Clo
+  [Attempt 4] Found: 3/13 | Missing: Incident Rep, Log Incident, Assign Inves, Gather Infor, Identify Roo, Propose Corr, Notify Stake, Close Incide, Close and No, Incident Clo
+  [Attempt 5] Found: 3/13 | Missing: Incident Rep, Log Incident, Assign Inves, Gather Infor, Identify Roo, Propose Corr, Notify Stake, Close Incide, Close and No, Incident Clo
+  [Attempt 5] TIMEOUT - 3/13 elements
+
+[10] WARNING: 3/13 elements ready after 250ms
+         Missing: Incident Reported, Log Incident Report, Assign Investigation Team, Gather Information, Identify Root Cause, Propose Corrective Actions, Notify Stakeholders, Close Incident Report, Close and Notify (Join), Incident Closed
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Incident Reported -> Y=55 (Reporter): OK
+  [Unmask] Log Incident Report -> Y=155 (Investigation Team): OK
+  [Unmask] Assign Investigation Team -> Y=155 (Investigation Team): OK
+  [Unmask] Gather Information -> Y=155 (Investigation Team): OK
+  [Unmask] Identify Root Cause -> Y=155 (Investigation Team): OK
+  [Unmask] Propose Corrective Actions -> Y=155 (Investigation Team): OK
+  [Unmask] Notify Stakeholders -> Y=314 (Operations): OK
+  [Unmask] Close Incident Report -> Y=314 (Operations): OK
+  [Unmask] Close and Notify (Join) -> Y=314 (Operations): OK
+  [Unmask] Incident Closed -> Y=314 (Operations): OK
+
+[12] Manual unmask: 10 elements unmasked
+[13] All elements now available
+
+  Lanes: Reporter(5-125); Investigation Team(125-225); Operations(225-444)
+  Elements: Incident Rep=Y55, Log Incident=Y155, Assign Inves=Y155, Gather Infor=Y155, Identify Roo=Y155, Propose Corr=Y155, Implement So=Y236, Follow Up an=Y236, Close and No=Y236, Close Incide=Y314, Notify Stake=Y314, Close and No=Y314, Incident Clo=Y314
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Reporter centerY = 42
+[15] Investigation Team centerY = 152
+[16] Operations centerY = 311
+
+[17] Reporter/Incident Reported -> (80,42) 33x33
+[18] Investigation Team/Log Incident Report -> (230,152) 140x60 *** LANE CHANGED ***
+         Before: Lanes: Reporter(5-125); Investigation Team(125-225); Operations(225-444)
+         After:  Lanes: Reporter(5-125); Investigation Team(125-293); Operations(293-512)
+[19] Investigation Team/Assign Investigation Team -> (380,152) 140x60
+[20] Investigation Team/Gather Information -> (530,152) 140x60
+[21] Investigation Team/Identify Root Cause -> (680,152) 140x60
+[22] Investigation Team/Propose Corrective Actions -> (830,152) 140x60
+[23] Operations/Implement Solution -> (980,311) 140x60
+[24] Operations/Follow Up and Verify -> (1130,311) 140x60
+[25] Operations/Close and Notify (Split) -> (1280,311) 40x40
+[26] Operations/Close Incident Report -> (1430,311) 140x60
+[27] Operations/Notify Stakeholders -> (1430,311) 140x60
+[28] Operations/Close and Notify (Join) -> (1580,311) 40x40
+[29] Operations/Incident Closed -> (1730,311) 33x33
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 13 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Reporter(5-125); Investigation Team(125-293); Operations(293-512)
+  Elements: Incident Rep=Y42, Log Incident=Y152, Assign Inves=Y152, Gather Infor=Y152, Identify Roo=Y152, Propose Corr=Y152, Implement So=Y311, Follow Up an=Y311, Close and No=Y311, Close Incide=Y311, Notify Stake=Y311, Close and No=Y311, Incident Clo=Y311
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  IncidentManagement_71718
+Lanes:    3
+Elements: 13 (13 in diagram)
+Flows:    13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=2,flows=13,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,95 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: 3D Print Process_40885
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: 3D Print Process_40885
+[2] Lanes: Customer, Artist, Printer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 14 elements
+[4] Artist: 2 elements
+[5] Printer: 3 elements
+
+  Total: 19 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: 3D Print Process_40885
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 7: Check quantity=0, Order color=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Tell changes -> Y=55: OK
+  [Unmask] Choose color -> Y=55: OK
+  [Unmask] In stock? -> Y=55: OK
+  [Unmask] Check quantity -> Y=55: OK
+  [Unmask] Order color -> Y=55: OK
+  [Unmask] Under 100g? -> Y=55: OK
+  [Unmask] Add to shopping list -> Y=55: OK
+  [Unmask] Have plastic -> Y=55: OK
+  [Unmask] Fork -> Y=55: OK
+  [Unmask] Generate G-code -> Y=55: OK
+  [Unmask] Join -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send sketches -> col=1 (230,25) relY=20
+  Satisfied? -> col=3 (530,25) relY=20
+  Tell changes -> col=4 (680,25) relY=20
+  Choose color -> col=5 (830,25) relY=20
+  In stock? -> col=6 (980,25) relY=20
+  Check quantity -> col=7 (1130,25) relY=20
+  Order color -> col=7 (1130,115) relY=110
+  Under 100g? -> col=8 (1280,25) relY=20
+  Add to shopping list -> col=9 (1430,25) relY=20
+  Have plastic -> col=10 (1580,25) relY=20
+  Fork -> col=11 (1730,25) relY=20
+  Generate G-code -> col=12 (1880,25) relY=20
+  Join -> col=13 (2030,25) relY=20
+
+[Artist] Lane bounds: 186-286
+  [maxElementBottomRelY=80]
+  Create project -> col=2 (380,206) relY=20
+  Send STL -> col=4 (680,206) relY=20
+
+[Printer] Lane bounds: 286-386
+  [Unmask] Heat up -> Y=336: OK
+  [Unmask] Print model -> Y=336: OK
+  [Unmask] End -> Y=336: OK
+  [maxElementBottomRelY=80]
+  Heat up -> col=12 (1880,306) relY=20
+  Print model -> col=14 (2180,306) relY=20
+  End -> col=15 (2330,306) relY=20
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 22 sequence flows
+
+==================================================================
+COMPLETE: 3D Print Process_40885
+==================================================================
+Lanes: 3 | Elements: 19 | Flows: 22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=19,gateways=6,flows=22,data=0,data_assoc=0
+======================================================================

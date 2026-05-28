@@ -1,0 +1,167 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN EVANSTONIAN ROOM SERVICE - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   22437
+Process Name:   Evanstonian_RoomService_22437
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Evanstonian_RoomService_22437
+[2] Lanes: Guest, Room Service Manager, Kitchen, Sommelier, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Call Room Service | Lane=Guest | addToLane=True
+  [Elem] Take Down Order | Lane=Room Service Manager | addToLane=True
+  [Elem] Submit Order Ticket to Kitchen | Lane=Room Service Manager | addToLane=True
+  [Elem] Alcohol Included? | Lane=Room Service Manager | addToLane=True
+  [Elem] Give Order to Sommelier | Lane=Room Service Manager | addToLane=True
+  [Elem] Assign Order to Waiter | Lane=Room Service Manager | addToLane=True
+  [Elem] Split: Food + Cart | Lane=Room Service Manager | addToLane=True
+  [Elem] Join: Food + Cart | Lane=Room Service Manager | addToLane=True
+  [Elem] Split: Food + Wine + Cart | Lane=Room Service Manager | addToLane=True
+  [Elem] Join: Food + Wine + Cart | Lane=Room Service Manager | addToLane=True
+  [Elem] Ready to Deliver (Merge) | Lane=Room Service Manager | addToLane=True
+  [Elem] Prepare Food | Lane=Kitchen | addToLane=True
+  [Elem] Fetch Wine and Prepare Alcohol | Lane=Sommelier | addToLane=True
+  [Elem] Ready Cart | Lane=Waiter | addToLane=True
+  [Elem] Prepare Nonalcoholic Drinks | Lane=Waiter | addToLane=True
+  [Elem] Deliver Order to Room | Lane=Waiter | addToLane=True
+  [Elem] Return to Room Service Station | Lane=Waiter | addToLane=True
+  [Elem] Bill Now? | Lane=Waiter | addToLane=True
+  [Elem] Prepare or Deliver Another Order | Lane=Waiter | addToLane=True
+  [Elem] Debit Guest Account | Lane=Waiter | addToLane=True
+  [Elem] Order Completed | Lane=Waiter | addToLane=True
+
+[3] Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Evanstonian_RoomService_22437
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/21 | Missing: Call Room Se, Fetch Wine a, Ready Cart, Prepare Nona, Deliver Orde, Return to Ro, Bill Now?, Prepare or D, Debit Guest , Order Comple
+  [Attempt 2] Found: 11/21 | Missing: Call Room Se, Fetch Wine a, Ready Cart, Prepare Nona, Deliver Orde, Return to Ro, Bill Now?, Prepare or D, Debit Guest , Order Comple
+  [Attempt 3] Found: 11/21 | Missing: Call Room Se, Fetch Wine a, Ready Cart, Prepare Nona, Deliver Orde, Return to Ro, Bill Now?, Prepare or D, Debit Guest , Order Comple
+  [Attempt 3] TIMEOUT - 11/21 elements
+
+[8] WARNING: 11/21 elements ready after 150ms
+         Missing: Call Room Service, Fetch Wine and Prepare Alcohol, Ready Cart, Prepare Nonalcoholic Drinks, Deliver Order to Room, Return to Room Service Station, Bill Now?, Prepare or Deliver Another Order, Debit Guest Account, Order Completed
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Call Room Service -> Y=55 (Guest): OK
+  [Unmask] Fetch Wine and Prepare Alcohol -> Y=461 (Sommelier): OK
+  [Unmask] Ready Cart -> Y=561 (Waiter): OK
+  [Unmask] Prepare Nonalcoholic Drinks -> Y=561 (Waiter): OK
+  [Unmask] Deliver Order to Room -> Y=561 (Waiter): OK
+  [Unmask] Return to Room Service Station -> Y=561 (Waiter): OK
+  [Unmask] Bill Now? -> Y=561 (Waiter): OK
+  [Unmask] Prepare or Deliver Another Order -> Y=561 (Waiter): OK
+  [Unmask] Debit Guest Account -> Y=561 (Waiter): OK
+  [Unmask] Order Completed -> Y=561 (Waiter): OK
+
+[10] Manual unmask: 10 elements unmasked
+[11] All elements now available
+
+  Lanes: Guest(5-125); Room Service Manager(125-331); Kitchen(331-431); Sommelier(431-531); Waiter(531-638)
+  Elements: Call Room Serv=Y55, Take Down Orde=Y136, Submit Order T=Y136, Alcohol Includ=Y136, Give Order to =Y136, Assign Order t=Y136, Split: Food + =Y136, Split: Food + =Y136, Fetch Wine and=Y461, Prepare Food=Y342, Ready Cart=Y561, Prepare Nonalc=Y561, Join: Food + C=Y136, Join: Food + W=Y136, Ready to Deliv=Y136, Deliver Order =Y561, Return to Room=Y561, Bill Now?=Y561, Prepare or Del=Y561, Debit Guest Ac=Y561, Order Complete=Y561
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Guest centerY = 42
+[13] Room Service Manager centerY = 205
+[14] Kitchen centerY = 358
+[15] Sommelier centerY = 458
+[16] Waiter centerY = 561
+
+[17] Guest/Call Room Service -> (80,42) 33x33
+[18] Room Service Manager/Take Down Order -> (250,205) 180x60
+[19] Room Service Manager/Submit Order Ticket to Kitchen -> (420,205) 180x60
+[20] Room Service Manager/Alcohol Included? -> (590,205) 40x40
+[21] Room Service Manager/Give Order to Sommelier -> (760,205) 180x60
+[22] Room Service Manager/Assign Order to Waiter -> (930,205) 180x60
+[23] Room Service Manager/Split: Food + Cart -> (1100,205) 40x40
+[24] Room Service Manager/Split: Food + Wine + Cart -> (1100,205) 40x40
+[25] Sommelier/Fetch Wine and Prepare Alcohol -> (1270,458) 180x60
+[26] Kitchen/Prepare Food -> (1270,358) 180x60
+[27] Waiter/Ready Cart -> (1270,561) 180x60
+[28] Waiter/Prepare Nonalcoholic Drinks -> (1440,561) 180x60
+[29] Room Service Manager/Join: Food + Cart -> (1610,205) 40x40
+[30] Room Service Manager/Join: Food + Wine + Cart -> (1610,205) 40x40
+[31] Room Service Manager/Ready to Deliver (Merge) -> (1780,205) 40x40
+[32] Waiter/Deliver Order to Room -> (1950,561) 180x60
+[33] Waiter/Return to Room Service Station -> (2120,561) 180x60
+[34] Waiter/Bill Now? -> (2290,561) 40x40
+[35] Waiter/Prepare or Deliver Another Order -> (2460,561) 180x60
+[36] Waiter/Debit Guest Account -> (2630,561) 180x60
+[37] Waiter/Order Completed -> (2800,561) 33x33
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Call Room Service -> Take Down Order
+  [Flow] Take Down Order -> Submit Order Ticket to Kitchen
+  [Flow] Submit Order Ticket to Kitchen -> Alcohol Included?
+  [Flow] Alcohol Included? -> Give Order to Sommelier | Guard=Yes (80%)
+  [Flow] Alcohol Included? -> Assign Order to Waiter | Guard=No (20%)
+  [Flow] Give Order to Sommelier -> Assign Order to Waiter
+  [Flow] Assign Order to Waiter -> Split: Food + Wine + Cart | Guard=Alcohol order
+  [Flow] Assign Order to Waiter -> Split: Food + Cart | Guard=No alcohol order
+  [Flow] Split: Food + Cart -> Prepare Food
+  [Flow] Split: Food + Cart -> Ready Cart
+  [Flow] Ready Cart -> Prepare Nonalcoholic Drinks
+  [Flow] Prepare Food -> Join: Food + Cart
+  [Flow] Prepare Nonalcoholic Drinks -> Join: Food + Cart
+  [Flow] Split: Food + Wine + Cart -> Prepare Food
+  [Flow] Split: Food + Wine + Cart -> Fetch Wine and Prepare Alcohol
+  [Flow] Split: Food + Wine + Cart -> Ready Cart
+  [Flow] Fetch Wine and Prepare Alcohol -> Join: Food + Wine + Cart
+  [Flow] Prepare Food -> Join: Food + Wine + Cart
+  [Flow] Prepare Nonalcoholic Drinks -> Join: Food + Wine + Cart
+  [Flow] Join: Food + Cart -> Ready to Deliver (Merge)
+  [Flow] Join: Food + Wine + Cart -> Ready to Deliver (Merge)
+  [Flow] Ready to Deliver (Merge) -> Deliver Order to Room
+  [Flow] Deliver Order to Room -> Return to Room Service Station
+  [Flow] Return to Room Service Station -> Bill Now?
+  [Flow] Bill Now? -> Debit Guest Account | Guard=Yes
+  [Flow] Bill Now? -> Prepare or Deliver Another Order | Guard=No
+  [Flow] Prepare or Deliver Another Order -> Debit Guest Account
+  [Flow] Debit Guest Account -> Order Completed
+
+[38] Created 28 sequence flows | Missing refs: 0
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Guest(5-125); Room Service Manager(125-331); Kitchen(331-431); Sommelier(431-531); Waiter(531-638)
+  Elements: Call Room Serv=Y42, Take Down Orde=Y205, Submit Order T=Y205, Alcohol Includ=Y205, Give Order to =Y205, Assign Order t=Y205, Split: Food + =Y205, Split: Food + =Y205, Fetch Wine and=Y458, Prepare Food=Y358, Ready Cart=Y561, Prepare Nonalc=Y561, Join: Food + C=Y205, Join: Food + W=Y205, Ready to Deliv=Y205, Deliver Order =Y561, Return to Room=Y561, Bill Now?=Y561, Prepare or Del=Y561, Debit Guest Ac=Y561, Order Complete=Y561
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Evanstonian_RoomService_22437
+Lanes:    5
+Elements: 21 (21 in diagram)
+Flows:    28
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=21,gateways=7,flows=28,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SupplierSelectionAndOnboarding_10732
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SupplierSelectionAndOnboarding_10732
+[2] Lanes: Company, Procurement, Supplier
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Company: 3 elements
+[4] Procurement: 16 elements
+[5] Supplier: 2 elements
+
+  Total: 21 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: SupplierSelectionAndOnboarding_10732
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Revise Terms=0, Signing Split=90
+  [Auto-stack] col 15: Onboard Supplier=0, Execute Contract=90
+[Company] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Identify Need -> Y=55: OK
+  [Unmask] Company Signs Contract -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Identify Need -> col=1 (230,25) relY=20
+  Company Signs Contract -> col=12 (1880,25) relY=20
+
+[Procurement] Lane bounds: 125-225
+  [Unmask] Issue RFP -> Y=175: OK
+  [Unmask] Receive Proposals -> Y=175: OK
+  [Unmask] Evaluate Proposals -> Y=175: OK
+  [Unmask] Need Site Visit? -> Y=175: OK
+  [Unmask] Conduct Site Visit/Interview -> Y=175: OK
+  [Unmask] Select Supplier -> Y=175: OK
+  [Unmask] Negotiate Contract -> Y=175: OK
+  [Unmask] Terms Agreed? -> Y=175: OK
+  [Unmask] Revise Terms -> Y=175: OK
+  [Unmask] Signing Split -> Y=175: OK
+  [Unmask] Signing Join -> Y=175: OK
+  [Unmask] Onboard and Execute Split -> Y=175: OK
+  [Unmask] Onboard Supplier -> Y=175: OK
+  [Unmask] Execute Contract -> Y=175: OK
+  [Unmask] Onboard and Execute Join -> Y=175: OK
+  [Unmask] End -> Y=175: OK
+  [maxElementBottomRelY=170]
+  Issue RFP -> col=2 (380,145) relY=20
+  Receive Proposals -> col=4 (680,145) relY=20
+  Evaluate Proposals -> col=5 (830,145) relY=20
+  Need Site Visit? -> col=6 (980,145) relY=20
+  Conduct Site Visit/Interview -> col=7 (1130,145) relY=20
+  Select Supplier -> col=8 (1280,145) relY=20
+  Negotiate Contract -> col=9 (1430,145) relY=20
+  Terms Agreed? -> col=10 (1580,145) relY=20
+  Revise Terms -> col=11 (1730,145) relY=20
+  Signing Split -> col=11 (1730,235) relY=110
+  Signing Join -> col=13 (2030,145) relY=20
+  Onboard and Execute Split -> col=14 (2180,145) relY=20
+  Onboard Supplier -> col=15 (2330,145) relY=20
+  Execute Contract -> col=15 (2330,235) relY=110
+  Onboard and Execute Join -> col=16 (2480,145) relY=20
+  End -> col=17 (2630,145) relY=20
+
+[Supplier] Lane bounds: 312-471
+  [maxElementBottomRelY=80]
+  Submit Proposal -> col=3 (530,332) relY=20
+  Supplier Signs Contract -> col=12 (1880,332) relY=20
+
+
+[8] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 24 sequence flows
+
+==================================================================
+COMPLETE: SupplierSelectionAndOnboarding_10732
+==================================================================
+Lanes: 3 | Elements: 21 | Flows: 24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=6,flows=24,data=0,data_assoc=0
+======================================================================

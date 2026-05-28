@@ -1,0 +1,94 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CLAIMS HANDLING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   67895
+Process Name:   ClaimsHandling_67895
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ClaimsHandling_67895
+[2] Lanes: Claims Officer, Senior Claims Officer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Officer lane: 3 elements
+[4] Senior Claims Officer lane: 3 elements
+
+  Total elements: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: ClaimsHandling_67895
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/6 | Missing: Check Recomm, Recommendati, Claim Handli
+  [Attempt 2] Found: 3/6 | Missing: Check Recomm, Recommendati, Claim Handli
+  [Attempt 3] Found: 3/6 | Missing: Check Recomm, Recommendati, Claim Handli
+  [Attempt 3] TIMEOUT - 3/6 elements
+
+[9] WARNING: 3/6 elements ready after 150ms
+         Missing: Check Recommendation, Recommendation OK?, Claim Handling Proceeds
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Check Recommendation -> Y=181 (Senior Claims Officer): OK
+  [Unmask] Recommendation OK? -> Y=181 (Senior Claims Officer): OK
+  [Unmask] Claim Handling Proceeds -> Y=181 (Senior Claims Officer): OK
+
+[11] Manual unmask: 3 elements unmasked
+[12] All elements now available
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regist=Y16, Examine Clai=Y20, Write Settle=Y25, Check Recomm=Y181, Recommendati=Y181, Claim Handli=Y181
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Claims Officer centerY = 45
+[14] Senior Claims Officer centerY = 202
+
+[15] Claims Officer/Claim Registered -> (80,45)
+[16] Claims Officer/Examine Claim -> (240,45)
+[17] Claims Officer/Write Settlement Recommendation -> (400,45)
+[18] Senior Claims Officer/Check Recommendation -> (560,202)
+[19] Senior Claims Officer/Recommendation OK? -> (720,202)
+[20] Senior Claims Officer/Claim Handling Proceeds -> (880,202)
+
+  Repositioned: 6/6
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[21] Created 6 sequence flows
+[22] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Claims Officer(5-131); Senior Claims Officer(131-319)
+  Elements: Claim Regist=Y45, Examine Clai=Y45, Write Settle=Y45, Check Recomm=Y202, Recommendati=Y202, Claim Handli=Y202
+
+[23] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ClaimsHandling_67895
+Lanes:    2
+Elements: 6 (6 in diagram)
+Flows:    6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=6,gateways=1,flows=6,data=0,data_assoc=0
+======================================================================

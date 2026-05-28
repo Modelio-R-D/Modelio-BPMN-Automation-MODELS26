@@ -1,0 +1,223 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ANNUAL AUDIT PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   83150
+Process Name:   AnnualAudit_83150
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: AnnualAudit_83150
+[2] Lanes: Audit Coordinator, Regional Office, Compliance Team, Central Audit Team, Audit Director, Executive Board
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Audit Coordinator / Annual Audit Start | addToLane=True
+  [Element] Audit Coordinator / Send Audit Notification | addToLane=True
+  [Element] Audit Coordinator / Start Prep And Compliance (Split) | addToLane=True
+  [Element] Regional Office / Prepare Financial Statements | addToLane=True
+  [Element] Regional Office / Gather Supporting Documents | addToLane=True
+  [Element] Regional Office / Submit Documents To Central Audit | addToLane=True
+  [Element] Regional Office / Provide Clarifications | addToLane=True
+  [Element] Compliance Team / Check Regulatory Updates | addToLane=True
+  [Element] Compliance Team / Send Regulatory Updates To Audit Team | addToLane=True
+  [Element] Central Audit Team / Prep And Compliance (Join) | addToLane=True
+  [Element] Central Audit Team / Review Submission | addToLane=True
+  [Element] Central Audit Team / Discrepancies Found? | addToLane=True
+  [Element] Central Audit Team / Request Clarifications | addToLane=True
+  [Element] Central Audit Team / Conduct Risk Assessment | addToLane=True
+  [Element] Central Audit Team / Assess Risks (Split) | addToLane=True
+  [Element] Central Audit Team / Evaluate Financial Risks | addToLane=True
+  [Element] Central Audit Team / Evaluate Operational Risks | addToLane=True
+  [Element] Central Audit Team / Evaluate Compliance Risks | addToLane=True
+  [Element] Central Audit Team / Assess Risks (Join) | addToLane=True
+  [Element] Central Audit Team / High Risk Identified? | addToLane=True
+  [Element] Central Audit Team / Launch Detailed Investigation | addToLane=True
+  [Element] Central Audit Team / Investigation (Split) | addToLane=True
+  [Element] Central Audit Team / Perform Data Analysis | addToLane=True
+  [Element] Central Audit Team / Conduct Interviews | addToLane=True
+  [Element] Central Audit Team / Investigation (Join) | addToLane=True
+  [Element] Central Audit Team / Site Visit Needed? | addToLane=True
+  [Element] Central Audit Team / Conduct Site Visit | addToLane=True
+  [Element] Central Audit Team / Site Visit (Merge) | addToLane=True
+  [Element] Central Audit Team / Address Risks | addToLane=True
+  [Element] Central Audit Team / Compile Audit Report | addToLane=True
+  [Element] Central Audit Team / Update Audit Report | addToLane=True
+  [Element] Central Audit Team / Distribute And Archive (Split) | addToLane=True
+  [Element] Central Audit Team / Distribute Final Report | addToLane=True
+  [Element] Central Audit Team / Archive Final Report | addToLane=True
+  [Element] Central Audit Team / Distribute And Archive (Join) | addToLane=True
+  [Element] Central Audit Team / Audit Closed | addToLane=True
+  [Element] Audit Director / Review Audit Report (Director) | addToLane=True
+  [Element] Audit Director / Report Approved? | addToLane=True
+  [Element] Executive Board / Receive Final Report (Board) | addToLane=True
+
+[3] Total elements: 39
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: AnnualAudit_83150
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 33/39 | Missing: Prepare Fina, Gather Suppo, Submit Docum, Provide Clar, Check Regula, Send Regulat
+  [Attempt 2] Found: 33/39 | Missing: Prepare Fina, Gather Suppo, Submit Docum, Provide Clar, Check Regula, Send Regulat
+  [Attempt 3] Found: 33/39 | Missing: Prepare Fina, Gather Suppo, Submit Docum, Provide Clar, Check Regula, Send Regulat
+  [Attempt 3] TIMEOUT - 33/39 elements
+
+[8] WARNING: 33/39 elements ready after 150ms
+         Missing: Prepare Financial Statements, Gather Supporting Documents, Submit Documents To Central Audit, Provide Clarifications, Check Regulatory Updates, Send Regulatory Updates To Audit Team
+
+[9] Trying manual unmask for missing elements (inside lane Y)...
+
+  [Unmask] Prepare Financial Statements -> Y=211 (Regional Office): OK
+  [Unmask] Gather Supporting Documents -> Y=211 (Regional Office): OK
+  [Unmask] Submit Documents To Central Audit -> Y=211 (Regional Office): OK
+  [Unmask] Provide Clarifications -> Y=211 (Regional Office): OK
+  [Unmask] Check Regulatory Updates -> Y=311 (Compliance Team): OK
+  [Unmask] Send Regulatory Updates To Audit Team -> Y=311 (Compliance Team): OK
+
+[10] Manual unmask: 6 elements unmasked
+[11] All elements now available
+
+  Lanes: Audit Coordinator(5-161); Regional Office(161-297); Compliance Team(297-397); Central Audit Team(397-657); Audit Director(657-757); Executive Board(757-1065)
+  Elements: Annual Audit=Y16, Send Audit N=Y20, Start Prep A=Y25, Check Regula=Y311, Prepare Fina=Y211, Gather Suppo=Y211, Send Regulat=Y311, Submit Docum=Y211, Prep And Com=Y408, Review Submi=Y408, Discrepancie=Y408, Request Clar=Y408, Provide Clar=Y211, Conduct Risk=Y408, Assess Risks=Y408, Evaluate Com=Y408, Evaluate Fin=Y408, Evaluate Ope=Y408, Assess Risks=Y408, High Risk Id=Y408, Launch Detai=Y408, Investigatio=Y408, Conduct Inte=Y408, Perform Data=Y408, Investigatio=Y408, Site Visit N=Y408, Conduct Site=Y408, Site Visit (=Y408, Address Risk=Y408, Compile Audi=Y408, Review Audit=Y668, Report Appro=Y668, Update Audit=Y408, Distribute A=Y408, Archive Fina=Y408, Distribute F=Y408, Receive Fina=Y768, Distribute A=Y408, Audit Closed=Y408
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Audit Coordinator centerY = 60
+[13] Regional Office centerY = 206
+[14] Compliance Team centerY = 324
+[15] Central Audit Team centerY = 504
+[16] Audit Director centerY = 684
+[17] Executive Board centerY = 888
+
+[18] Audit Coordinator/Annual Audit Start -> (70,60) 33x33
+[19] Audit Coordinator/Send Audit Notification -> (210,60) 160x60
+[20] Audit Coordinator/Start Prep And Compliance (Split) -> (350,60) 40x40
+[21] Compliance Team/Check Regulatory Updates -> (490,324) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Audit Coordinator(5-161); Regional Office(161-297); Compliance Team(297-397); Central Audit Team(397-657); Audit Director(657-757); Executive Board(757-1065)
+         After:  Lanes: Audit Coordinator(5-161); Regional Office(161-297); Compliance Team(297-456); Central Audit Team(456-716); Audit Director(716-816); Executive Board(816-1124)
+[22] Regional Office/Prepare Financial Statements -> (490,206) 160x60
+[23] Regional Office/Gather Supporting Documents -> (630,206) 160x60
+[24] Compliance Team/Send Regulatory Updates To Audit Team -> (770,324) 160x60
+[25] Regional Office/Submit Documents To Central Audit -> (910,206) 160x60
+[26] Central Audit Team/Prep And Compliance (Join) -> (1050,504) 40x40
+[27] Central Audit Team/Review Submission -> (1190,504) 160x60
+[28] Central Audit Team/Discrepancies Found? -> (1330,504) 40x40
+[29] Central Audit Team/Request Clarifications -> (1470,504) 160x60
+[30] Regional Office/Provide Clarifications -> (1610,206) 160x60
+[31] Central Audit Team/Conduct Risk Assessment -> (1750,504) 160x60
+[32] Central Audit Team/Assess Risks (Split) -> (1890,504) 40x40
+[33] Central Audit Team/Evaluate Compliance Risks -> (2030,504) 160x60
+[34] Central Audit Team/Evaluate Financial Risks -> (2030,504) 160x60
+[35] Central Audit Team/Evaluate Operational Risks -> (2030,504) 160x60
+[36] Central Audit Team/Assess Risks (Join) -> (2170,504) 40x40
+[37] Central Audit Team/High Risk Identified? -> (2310,504) 40x40
+[38] Central Audit Team/Launch Detailed Investigation -> (2450,504) 160x60
+[39] Central Audit Team/Investigation (Split) -> (2590,504) 40x40
+[40] Central Audit Team/Conduct Interviews -> (2730,504) 160x60
+[41] Central Audit Team/Perform Data Analysis -> (2730,504) 160x60
+[42] Central Audit Team/Investigation (Join) -> (2870,504) 40x40
+[43] Central Audit Team/Site Visit Needed? -> (3010,504) 40x40
+[44] Central Audit Team/Conduct Site Visit -> (3150,504) 160x60
+[45] Central Audit Team/Site Visit (Merge) -> (3290,504) 40x40
+[46] Central Audit Team/Address Risks -> (3430,504) 160x60
+[47] Central Audit Team/Compile Audit Report -> (3570,504) 160x60
+[48] Audit Director/Review Audit Report (Director) -> (3710,684) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Audit Coordinator(5-161); Regional Office(161-297); Compliance Team(297-456); Central Audit Team(456-716); Audit Director(716-816); Executive Board(816-1124)
+         After:  Lanes: Audit Coordinator(-38-118); Regional Office(118-254); Compliance Team(254-413); Central Audit Team(413-673); Audit Director(673-816); Executive Board(816-1124)
+[49] Audit Director/Report Approved? -> (3850,684) 40x40
+[50] Central Audit Team/Update Audit Report -> (3990,504) 160x60
+[51] Central Audit Team/Distribute And Archive (Split) -> (4130,504) 40x40
+[52] Central Audit Team/Archive Final Report -> (4270,504) 160x60
+[53] Central Audit Team/Distribute Final Report -> (4270,504) 160x60
+[54] Executive Board/Receive Final Report (Board) -> (4410,888) 160x60
+[55] Central Audit Team/Distribute And Archive (Join) -> (4550,504) 40x40
+[56] Central Audit Team/Audit Closed -> (4690,504) 33x33
+
+  Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Annual Audit Start -> Send Audit Notification
+  [Flow] Send Audit Notification -> Start Prep And Compliance (Split)
+  [Flow] Start Prep And Compliance (Split) -> Prepare Financial Statements
+  [Flow] Prepare Financial Statements -> Gather Supporting Documents
+  [Flow] Gather Supporting Documents -> Submit Documents To Central Audit
+  [Flow] Start Prep And Compliance (Split) -> Check Regulatory Updates
+  [Flow] Check Regulatory Updates -> Send Regulatory Updates To Audit Team
+  [Flow] Submit Documents To Central Audit -> Prep And Compliance (Join)
+  [Flow] Send Regulatory Updates To Audit Team -> Prep And Compliance (Join)
+  [Flow] Prep And Compliance (Join) -> Review Submission
+  [Flow] Review Submission -> Discrepancies Found?
+  [Flow] Discrepancies Found? -> Request Clarifications | guard=Yes
+  [Flow] Request Clarifications -> Provide Clarifications
+  [Flow] Provide Clarifications -> Review Submission
+  [Flow] Discrepancies Found? -> Conduct Risk Assessment | guard=No
+  [Flow] Conduct Risk Assessment -> Assess Risks (Split)
+  [Flow] Assess Risks (Split) -> Evaluate Financial Risks
+  [Flow] Assess Risks (Split) -> Evaluate Operational Risks
+  [Flow] Assess Risks (Split) -> Evaluate Compliance Risks
+  [Flow] Evaluate Financial Risks -> Assess Risks (Join)
+  [Flow] Evaluate Operational Risks -> Assess Risks (Join)
+  [Flow] Evaluate Compliance Risks -> Assess Risks (Join)
+  [Flow] Assess Risks (Join) -> High Risk Identified?
+  [Flow] High Risk Identified? -> Launch Detailed Investigation | guard=Yes
+  [Flow] High Risk Identified? -> Address Risks | guard=No
+  [Flow] Launch Detailed Investigation -> Investigation (Split)
+  [Flow] Investigation (Split) -> Perform Data Analysis
+  [Flow] Investigation (Split) -> Conduct Interviews
+  [Flow] Perform Data Analysis -> Investigation (Join)
+  [Flow] Conduct Interviews -> Investigation (Join)
+  [Flow] Investigation (Join) -> Site Visit Needed?
+  [Flow] Site Visit Needed? -> Conduct Site Visit | guard=Yes
+  [Flow] Site Visit Needed? -> Site Visit (Merge) | guard=No
+  [Flow] Conduct Site Visit -> Site Visit (Merge)
+  [Flow] Site Visit (Merge) -> Address Risks
+  [Flow] Address Risks -> Compile Audit Report
+  [Flow] Compile Audit Report -> Review Audit Report (Director)
+  [Flow] Review Audit Report (Director) -> Report Approved?
+  [Flow] Report Approved? -> Update Audit Report | guard=Revisions Required
+  [Flow] Update Audit Report -> Review Audit Report (Director)
+  [Flow] Report Approved? -> Distribute And Archive (Split) | guard=Approved
+  [Flow] Distribute And Archive (Split) -> Distribute Final Report
+  [Flow] Distribute And Archive (Split) -> Archive Final Report
+  [Flow] Distribute Final Report -> Receive Final Report (Board)
+  [Flow] Receive Final Report (Board) -> Distribute And Archive (Join)
+  [Flow] Archive Final Report -> Distribute And Archive (Join)
+  [Flow] Distribute And Archive (Join) -> Audit Closed
+
+[57] Created 47 sequence flows
+[58] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Audit Coordinator(-38-118); Regional Office(118-254); Compliance Team(254-413); Central Audit Team(413-673); Audit Director(673-816); Executive Board(816-1124)
+  Elements: Annual Audit=Y17, Send Audit N=Y17, Start Prep A=Y17, Check Regula=Y281, Prepare Fina=Y163, Gather Suppo=Y163, Send Regulat=Y281, Submit Docum=Y163, Prep And Com=Y461, Review Submi=Y461, Discrepancie=Y461, Request Clar=Y461, Provide Clar=Y163, Conduct Risk=Y461, Assess Risks=Y461, Evaluate Com=Y461, Evaluate Fin=Y461, Evaluate Ope=Y461, Assess Risks=Y461, High Risk Id=Y461, Launch Detai=Y461, Investigatio=Y461, Conduct Inte=Y461, Perform Data=Y461, Investigatio=Y461, Site Visit N=Y461, Conduct Site=Y461, Site Visit (=Y461, Address Risk=Y461, Compile Audi=Y461, Review Audit=Y684, Report Appro=Y684, Update Audit=Y504, Distribute A=Y504, Archive Fina=Y504, Distribute F=Y504, Receive Fina=Y888, Distribute A=Y504, Audit Closed=Y504
+
+[59] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  AnnualAudit_83150
+Lanes:    6
+Elements: 39 (39 in diagram)
+Flows:    47
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=6,elements=39,gateways=13,flows=47,data=0,data_assoc=0
+======================================================================

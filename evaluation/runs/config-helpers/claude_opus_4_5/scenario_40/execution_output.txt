@@ -1,0 +1,100 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OEE_Monitoring_20439
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_Monitoring_20439
+[2] Lanes: Machine, OEE System, Engineer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Machine: 8 elements
+[4] OEE System: 6 elements
+[5] Engineer: 3 elements
+
+  Total: 17 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: OEE_Monitoring_20439
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 1: Collect Performance=0, Machine Disconnected=90
+  [Auto-stack] col 2: Collect Availability=0, Process Ended=90
+  [Auto-stack] col 6: Log OEE Value=0, Generate Alert=90
+  [Auto-stack] col 7: Wait Interval=0, Send Email=90
+[Machine] Lane bounds: 5-120
+  [maxElementBottomRelY=150]
+  Machine Connected -> col=0 (80,25) relY=20
+  Collect Performance -> col=1 (210,25) relY=20
+  Collect Availability -> col=2 (340,25) relY=20
+  Collect Quality -> col=3 (470,25) relY=20
+  Machine Disconnected -> col=1 (210,115) relY=110
+  Machine Restarted -> col=10 (1380,25) relY=20
+  Stop Machine -> col=6 (860,25) relY=20
+  Process Ended -> col=2 (340,115) relY=110
+
+[OEE System] Lane bounds: 185-285
+  [Unmask] Calculate OEE -> Y=235: OK
+  [Unmask] OEE Threshold? -> Y=235: OK
+  [Unmask] Log OEE Value -> Y=235: OK
+  [Unmask] Wait Interval -> Y=235: OK
+  [Unmask] Generate Alert -> Y=235: OK
+  [Unmask] Send Email -> Y=235: OK
+  [Unmask] OEE Data -> Y=235: OK
+  [Unmask] Alert Report -> Y=235: OK
+  [maxElementBottomRelY=170]
+  Calculate OEE -> col=4 (600,205) relY=20
+  OEE Threshold? -> col=5 (730,205) relY=20
+  Log OEE Value -> col=6 (860,205) relY=20
+  Wait Interval -> col=7 (990,205) relY=20
+  Generate Alert -> col=6 (860,295) relY=110
+  Send Email -> col=7 (990,295) relY=110
+  OEE Data (DO from Calculate OEE) -> (690,365) maxBottomRelY=170
+  Alert Report (DO from Generate Alert) -> (950,365) maxBottomRelY=170
+
+[Engineer] Lane bounds: 457-659
+  [maxElementBottomRelY=80]
+  Receive Alert -> col=8 (1120,477) relY=20
+  Investigate Issue -> col=9 (1250,477) relY=20
+  Restart Machine -> col=10 (1380,477) relY=20
+
+
+[9] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 17 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 4
+
+==================================================================
+COMPLETE: OEE_Monitoring_20439
+==================================================================
+Lanes: 3 | Elements: 17 | Data: 2 | Flows: 17 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

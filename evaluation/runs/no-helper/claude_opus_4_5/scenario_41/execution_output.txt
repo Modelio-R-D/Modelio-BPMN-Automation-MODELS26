@@ -1,0 +1,115 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN BOTTLING MACHINE INSPECTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   13315
+Process Name:   BottlingMachineInspection_13315
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BottlingMachineInspection_13315
+[2] Lanes: Inspector, Application, Machine
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inspector lane: 6 elements
+[4] Application lane: 8 elements
+[5] Machine lane: 3 elements
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: BottlingMachineInspection_13315
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 6/17 | Missing: Validate Mac, Load Inspect, Display Ques, Record Answe, Display Mach, Values OK?, Generate Rep, Inspection C, Connect to M, Read Sensor , Read Pressur
+  [Attempt 2] Found: 6/17 | Missing: Validate Mac, Load Inspect, Display Ques, Record Answe, Display Mach, Values OK?, Generate Rep, Inspection C, Connect to M, Read Sensor , Read Pressur
+  [Attempt 3] Found: 6/17 | Missing: Validate Mac, Load Inspect, Display Ques, Record Answe, Display Mach, Values OK?, Generate Rep, Inspection C, Connect to M, Read Sensor , Read Pressur
+  [Attempt 3] TIMEOUT - 6/17 elements
+
+[10] WARNING: 6/17 elements ready after 150ms
+         Missing: Validate Machine Info, Load Inspection Template, Display Questions, Record Answers, Display Machine Values, Values OK?, Generate Report, Inspection Complete, Connect to Machine, Read Sensor Values, Read Pressure Gauge
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Validate Machine Info -> Y=155 (Application): OK
+  [Unmask] Load Inspection Template -> Y=155 (Application): OK
+  [Unmask] Display Questions -> Y=155 (Application): OK
+  [Unmask] Record Answers -> Y=155 (Application): OK
+  [Unmask] Display Machine Values -> Y=155 (Application): OK
+  [Unmask] Values OK? -> Y=155 (Application): OK
+  [Unmask] Generate Report -> Y=155 (Application): OK
+  [Unmask] Inspection Complete -> Y=155 (Application): OK
+  [Unmask] Connect to Machine -> Y=255 (Machine): OK
+  [Unmask] Read Sensor Values -> Y=255 (Machine): OK
+  [Unmask] Read Pressure Gauge -> Y=255 (Machine): OK
+
+[12] Manual unmask: 11 elements unmasked
+[13] All elements now available
+
+  Lanes: Inspector(5-105); Application(105-232); Machine(232-332)
+  Elements: Start Insp=Y16, Enter Mach=Y20, Enter Seri=Y25, Connect to=Y255, Validate M=Y155, Load Inspe=Y155, Answer Que=Y30, Display Qu=Y155, Press Read=Y35, Record Ans=Y155, Read Press=Y255, Read Senso=Y255, Display Ma=Y155, Answer Add=Y40, Values OK?=Y155, Generate R=Y155, Inspection=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Inspector centerY = 32
+[15] Application centerY = 145
+[16] Machine centerY = 259
+
+[17] Inspector/Start Inspection -> (80,32)
+[18] Inspector/Enter Machine Type -> (220,32)
+[19] Inspector/Enter Serial Number -> (360,32)
+[20] Machine/Connect to Machine -> (500,259)
+[21] Application/Validate Machine Inf -> (500,145)
+[22] Application/Load Inspection Temp -> (640,145)
+[23] Inspector/Answer Questions -> (780,32)
+[24] Application/Display Questions -> (920,145)
+[25] Inspector/Press Read Button -> (1060,32)
+[26] Application/Record Answers -> (1200,145)
+[27] Machine/Read Pressure Gauge -> (1340,259)
+[28] Machine/Read Sensor Values -> (1340,259)
+[29] Application/Display Machine Valu -> (1480,145)
+[30] Inspector/Answer Additional Qu -> (1620,32)
+[31] Application/Values OK? -> (1760,145)
+[32] Application/Generate Report -> (1900,145)
+[33] Application/Inspection Complete -> (2040,145)
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 18 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Inspector(5-105); Application(105-232); Machine(232-332)
+  Elements: Start Insp=Y32, Enter Mach=Y32, Enter Seri=Y32, Connect to=Y259, Validate M=Y145, Load Inspe=Y145, Answer Que=Y32, Display Qu=Y145, Press Read=Y32, Record Ans=Y145, Read Press=Y259, Read Senso=Y259, Display Ma=Y145, Answer Add=Y32, Values OK?=Y145, Generate R=Y145, Inspection=Y145
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  BottlingMachineInspection_13315
+Lanes:    3
+Elements: 17 (17 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=1,flows=18,data=0,data_assoc=0
+======================================================================

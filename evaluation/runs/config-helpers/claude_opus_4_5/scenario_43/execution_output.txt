@@ -1,0 +1,96 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CarServiceProcess_22395
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CarServiceProcess_22395
+[2] Lanes: System, Car Owner, Mechanic
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] System: 8 elements
+[4] Car Owner: 5 elements
+[5] Mechanic: 7 elements
+
+  Total: 20 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: CarServiceProcess_22395
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: End Not Registered=0, Notify Owner=90
+  [Auto-stack] col 5: Service Timeout=0, Arrive at Service=90
+[System] Lane bounds: 5-105
+  [Unmask] Issue Fine -> Y=55: OK
+  [Unmask] End Fined -> Y=55: OK
+  [Unmask] Send Status Update -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Service Completed -> col=0 (80,25) relY=20
+  Check Registration -> col=1 (230,25) relY=20
+  Registered? -> col=2 (380,25) relY=20
+  End Not Registered -> col=3 (530,25) relY=20
+  Notify Owner -> col=3 (530,115) relY=110
+  Issue Fine -> col=6 (980,25) relY=20
+  End Fined -> col=7 (1130,25) relY=20
+  Send Status Update -> col=9 (1430,25) relY=20
+
+[Car Owner] Lane bounds: 186-286
+  [maxElementBottomRelY=170]
+  Wait for Service -> col=4 (680,206) relY=20
+  Service Timeout -> col=5 (830,206) relY=20
+  Arrive at Service -> col=5 (830,296) relY=110
+  Receive Status -> col=10 (1580,206) relY=20
+  Pay via App -> col=13 (2030,206) relY=20
+
+[Mechanic] Lane bounds: 367-561
+  [maxElementBottomRelY=80]
+  Enter Problems -> col=6 (980,387) relY=20
+  Perform Repair -> col=8 (1280,387) relY=20
+  Repair Complete? -> col=11 (1730,387) relY=20
+  Mark Repair Done -> col=12 (1880,387) relY=20
+  Enter Pickerl Success -> col=14 (2180,387) relY=20
+  Enter Next Service Date -> col=15 (2330,387) relY=20
+  End Success -> col=16 (2480,387) relY=20
+  Problem Report (DO from Enter Problems) -> (1220,457) maxBottomRelY=80
+  Service Record (DO from Enter Pickerl Success) -> (1970,457) maxBottomRelY=80
+
+
+[9] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 20 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 4
+
+==================================================================
+COMPLETE: CarServiceProcess_22395
+==================================================================
+Lanes: 3 | Elements: 20 | Data: 2 | Flows: 20 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

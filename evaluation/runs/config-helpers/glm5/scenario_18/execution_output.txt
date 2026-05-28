@@ -1,0 +1,117 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: UniversityEnrollment_29692
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_29692
+[2] Lanes: Student, Admissions Office, Finance Department, IT Department, International Office, Registrar
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Student: 20 elements
+[4] Admissions Office: 14 elements
+[5] Finance Department: 1 elements
+[6] IT Department: 1 elements
+[7] International Office: 1 elements
+[8] Registrar: 2 elements
+
+  Total: 39 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram: UniversityEnrollment_29692
+[10] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 10: Send Rejection Letter=0, Send Acceptance Letter=90
+  [Auto-stack] col 13: Cancel Application=0, Fork Onboarding=90
+  [Auto-stack] col 14: End Cancelled=0, Send Orientation Materials=90
+[Student] Lane bounds: 5-182
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Submit Application -> col=1 (230,25) relY=20
+  Resubmit Documents -> col=5 (830,25) relY=20
+  Confirm Enrollment -> col=11 (1730,25) relY=20
+  Confirmed by Deadline? -> col=12 (1880,25) relY=20
+  Is International? -> col=14 (2180,25) relY=20
+  Join Onboarding -> col=16 (2480,25) relY=20
+  Get Student ID Card -> col=17 (2630,25) relY=20
+  Meet Academic Advisor -> col=18 (2780,25) relY=20
+  Select Courses -> col=19 (2930,25) relY=20
+  Schedule Conflicts? -> col=20 (3080,25) relY=20
+  Resolve Conflicts -> col=21 (3230,25) relY=20
+  Begin Classes -> col=22 (3380,25) relY=20
+  Add Drop Courses -> col=23 (3530,25) relY=20
+  Review Grades -> col=25 (3830,25) relY=20
+  Has Grievance? -> col=26 (3980,25) relY=20
+  Submit Appeal Form -> col=27 (4130,25) relY=20
+  Receive Appeal Decision -> col=29 (4430,25) relY=20
+  Graduated or Withdrawn? -> col=30 (4580,25) relY=20
+  End -> col=31 (4730,25) relY=20
+
+[Admissions Office] Lane bounds: 182-282
+  [maxElementBottomRelY=170]
+  Review Application -> col=2 (380,202) relY=20
+  Documents Complete? -> col=3 (530,202) relY=20
+  Notify Missing Documents -> col=4 (680,202) relY=20
+  Fork Evaluation -> col=6 (980,202) relY=20
+  Evaluate Application -> col=7 (1130,202) relY=20
+  Join Evaluation -> col=8 (1280,202) relY=20
+  Application Accepted? -> col=9 (1430,202) relY=20
+  Send Rejection Letter -> col=10 (1580,202) relY=20
+  End Rejected -> col=11 (1730,202) relY=20
+  Send Acceptance Letter -> col=10 (1580,292) relY=110
+  Cancel Application -> col=13 (2030,202) relY=20
+  End Cancelled -> col=14 (2180,202) relY=20
+  Fork Onboarding -> col=13 (2030,292) relY=110
+  Send Orientation Materials -> col=14 (2180,292) relY=110
+
+[Finance Department] Lane bounds: 369-469
+  [Unmask] Process Fees Waivers -> Y=419: OK
+  [maxElementBottomRelY=80]
+  Process Fees Waivers -> col=7 (1130,389) relY=20
+
+[IT Department] Lane bounds: 548-648
+  [Unmask] Setup Student Accounts -> Y=598: OK
+  [maxElementBottomRelY=80]
+  Setup Student Accounts -> col=14 (2180,568) relY=20
+
+[International Office] Lane bounds: 674-974
+  [maxElementBottomRelY=80]
+  Process Visa -> col=15 (2330,694) relY=20
+
+[Registrar] Lane bounds: 974-1605
+  [maxElementBottomRelY=80]
+  Post Grades -> col=24 (3680,994) relY=20
+  Appeals Committee Review -> col=28 (4280,994) relY=20
+
+
+[11] Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[12] Created 46 sequence flows
+
+==================================================================
+COMPLETE: UniversityEnrollment_29692
+==================================================================
+Lanes: 6 | Elements: 39 | Flows: 46
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=6,elements=39,gateways=11,flows=46,data=0,data_assoc=0
+======================================================================

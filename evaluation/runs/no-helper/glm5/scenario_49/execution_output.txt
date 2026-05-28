@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPUTER REPAIR PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   66944
+Process Name:   ComputerRepair_66944
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComputerRepair_66944
+[2] Lanes: Customer, CRS, Technician
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 3 elements
+[4] CRS lane: 2 elements
+[5] Technician lane: 8 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ComputerRepair_66944
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 5/13 | Missing: Loop Entry, Repair Split, Check and Re, Check and Co, Repairs Done, Test System , Error Detect, Computer Rep
+  [Attempt 2] Found: 5/13 | Missing: Loop Entry, Repair Split, Check and Re, Check and Co, Repairs Done, Test System , Error Detect, Computer Rep
+  [Attempt 3] Found: 5/13 | Missing: Loop Entry, Repair Split, Check and Re, Check and Co, Repairs Done, Test System , Error Detect, Computer Rep
+  [Attempt 3] TIMEOUT - 5/13 elements
+
+[10] WARNING: 5/13 elements ready after 150ms
+         Missing: Loop Entry, Repair Split, Check and Repair Hardware, Check and Configure Software, Repairs Done, Test System Functionality, Error Detected?, Computer Repaired
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Loop Entry -> Y=255 (Technician): OK
+  [Unmask] Repair Split -> Y=255 (Technician): OK
+  [Unmask] Check and Repair Hardware -> Y=255 (Technician): OK
+  [Unmask] Check and Configure Software -> Y=255 (Technician): OK
+  [Unmask] Repairs Done -> Y=255 (Technician): OK
+  [Unmask] Test System Functionality -> Y=255 (Technician): OK
+  [Unmask] Error Detected? -> Y=255 (Technician): OK
+  [Unmask] Computer Repaired -> Y=255 (Technician): OK
+
+[12] Manual unmask: 8 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-105); CRS(105-205); Technician(205-332)
+  Elements: Computer B=Y16, Check Defe=Y116, Hand Out C=Y116, Accept Cos=Y20, Loop Entry=Y255, Computer U=Y25, Repair Spl=Y255, Check and =Y255, Check and =Y255, Repairs Do=Y255, Test Syste=Y255, Error Dete=Y255, Computer R=Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 32
+[15] CRS centerY = 132
+[16] Technician centerY = 245
+
+[17] Customer/Computer Brought In -> (80,32) 33x33
+[18] CRS/Check Defect -> (210,132) 120x60
+[19] CRS/Hand Out Cost Calculation -> (340,132) 120x60
+[20] Customer/Accept Costs? -> (470,32) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); CRS(105-205); Technician(205-332)
+         After:  Lanes: Customer(5-109); CRS(109-209); Technician(209-336)
+[21] Technician/Loop Entry -> (600,245) 40x40
+[22] Customer/Computer Unrepaired -> (730,32) 33x33
+[23] Technician/Repair Split -> (730,245) 40x40
+[24] Technician/Check and Repair Hardware -> (860,245) 120x60
+[25] Technician/Check and Configure Software -> (990,245) 120x60
+[26] Technician/Repairs Done -> (1120,245) 40x40
+[27] Technician/Test System Functionality -> (1250,245) 120x60
+[28] Technician/Error Detected? -> (1380,245) 40x40
+[29] Technician/Computer Repaired -> (1510,245) 33x33
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 14 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-109); CRS(109-209); Technician(209-336)
+  Elements: Computer B=Y32, Check Defe=Y136, Hand Out C=Y136, Accept Cos=Y32, Loop Entry=Y245, Computer U=Y32, Repair Spl=Y245, Check and =Y245, Check and =Y245, Repairs Do=Y245, Test Syste=Y245, Error Dete=Y245, Computer R=Y245
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComputerRepair_66944
+Lanes:    3
+Elements: 13 (13 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=5,flows=14,data=0,data_assoc=0
+======================================================================

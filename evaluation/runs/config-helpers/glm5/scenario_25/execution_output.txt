@@ -1,0 +1,79 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Find a Job_36074
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Find a Job_36074
+[2] Lanes: Applicant, Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 12 elements
+[4] Company: 7 elements
+
+  Total: 19 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: Find a Job_36074
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 13: Continue Offers=0, Permanent Position?=90
+  [Auto-stack] col 14: Not Permanent=0, Job Accepted=90
+  [Auto-stack] col 8: No Offer=0, Probation Phase=90
+[Applicant] Lane bounds: 5-140
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,25) relY=20
+  Report Applications -> col=1 (230,25) relY=20
+  Receive Job Offers -> col=2 (380,25) relY=20
+  Submit Application -> col=3 (530,25) relY=20
+  Schedule Interview -> col=5 (830,25) relY=20
+  Rate Company -> col=10 (1580,25) relY=20
+  Rate Join -> col=11 (1730,25) relY=20
+  Rating Acceptable? -> col=12 (1880,25) relY=20
+  Continue Offers -> col=13 (2030,25) relY=20
+  Permanent Position? -> col=13 (2030,115) relY=110
+  Not Permanent -> col=14 (2180,25) relY=20
+  Job Accepted -> col=14 (2180,115) relY=110
+
+[Company] Lane bounds: 192-321
+  [maxElementBottomRelY=170]
+  Confirm & Rate -> col=4 (680,212) relY=20
+  Confirm Interview -> col=6 (980,212) relY=20
+  Offer Decision -> col=7 (1130,212) relY=20
+  No Offer -> col=8 (1280,212) relY=20
+  Probation Phase -> col=8 (1280,302) relY=110
+  Rate Split -> col=9 (1430,212) relY=20
+  Rate Employee -> col=10 (1580,212) relY=20
+
+
+[7] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 19 sequence flows
+
+==================================================================
+COMPLETE: Find a Job_36074
+==================================================================
+Lanes: 2 | Elements: 19 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=19,gateways=5,flows=19,data=0,data_assoc=0
+======================================================================

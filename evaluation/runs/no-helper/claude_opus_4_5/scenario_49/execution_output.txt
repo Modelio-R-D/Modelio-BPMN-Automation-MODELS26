@@ -1,0 +1,123 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPUTER REPAIR PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   26363
+Process Name:   ComputerRepair_26363
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComputerRepair_26363
+[2] Lanes: Customer, CRS, Technician
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 7 elements
+[4] CRS lane: 4 elements
+[5] Technician lane: 8 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ComputerRepair_26363
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/19 | Missing: Computer Def, Bring Comput, Accept Cost?, Take Home Un, Unrepaired, Receive Comp, Repaired, Start Repair, Repair Hardw, Configure So, Test Hardwar, Test Softwar, HW Test OK?, SW Test OK?, Join Repair
+  [Attempt 2] Found: 4/19 | Missing: Computer Def, Bring Comput, Accept Cost?, Take Home Un, Unrepaired, Receive Comp, Repaired, Start Repair, Repair Hardw, Configure So, Test Hardwar, Test Softwar, HW Test OK?, SW Test OK?, Join Repair
+  [Attempt 3] Found: 4/19 | Missing: Computer Def, Bring Comput, Accept Cost?, Take Home Un, Unrepaired, Receive Comp, Repaired, Start Repair, Repair Hardw, Configure So, Test Hardwar, Test Softwar, HW Test OK?, SW Test OK?, Join Repair
+  [Attempt 3] TIMEOUT - 4/19 elements
+
+[10] WARNING: 4/19 elements ready after 150ms
+         Missing: Computer Defective, Bring Computer, Accept Cost?, Take Home Unrepaired, Unrepaired, Receive Computer, Repaired, Start Repair, Repair Hardware, Configure Software, Test Hardware, Test Software, HW Test OK?, SW Test OK?, Join Repair
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Computer Defective -> Y=55 (Customer): OK
+  [Unmask] Bring Computer -> Y=55 (Customer): OK
+  [Unmask] Accept Cost? -> Y=55 (Customer): OK
+  [Unmask] Take Home Unrepaired -> Y=55 (Customer): OK
+  [Unmask] Unrepaired -> Y=55 (Customer): OK
+  [Unmask] Receive Computer -> Y=55 (Customer): OK
+  [Unmask] Repaired -> Y=55 (Customer): OK
+  [Unmask] Start Repair -> Y=255 (Technician): OK
+  [Unmask] Repair Hardware -> Y=255 (Technician): OK
+  [Unmask] Configure Software -> Y=255 (Technician): OK
+  [Unmask] Test Hardware -> Y=255 (Technician): OK
+  [Unmask] Test Software -> Y=255 (Technician): OK
+  [Unmask] HW Test OK? -> Y=255 (Technician): OK
+  [Unmask] SW Test OK? -> Y=255 (Technician): OK
+  [Unmask] Join Repair -> Y=255 (Technician): OK
+
+[12] Manual unmask: 15 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-132); CRS(132-232); Technician(232-332)
+  Elements: Computer D=Y55, Bring Comp=Y55, Check Defe=Y143, Calculate =Y143, Provide Es=Y143, Accept Cos=Y55, Start Repa=Y255, Take Home =Y55, Repair Har=Y255, Unrepaired=Y55, Configure =Y255, Test Hardw=Y255, Test Softw=Y255, HW Test OK=Y255, Hand Over =Y143, Receive Co=Y55, SW Test OK=Y255, Join Repai=Y255, Repaired=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 45
+[15] CRS centerY = 159
+[16] Technician centerY = 259
+
+[17] Customer/Computer Defective -> (60,45) 33x33
+[18] Customer/Bring Computer -> (200,45) 110x55
+[19] CRS/Check Defect -> (340,159) 110x55
+[20] CRS/Calculate Cost -> (480,159) 110x55
+[21] CRS/Provide Estimate -> (620,159) 110x55
+[22] Customer/Accept Cost? -> (760,45) 40x40
+[23] Technician/Start Repair -> (900,259) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); CRS(132-232); Technician(232-332)
+         After:  Lanes: Customer(5-132); CRS(132-232); Technician(232-336)
+[24] Customer/Take Home Unrepaired -> (900,45) 110x55
+[25] Technician/Repair Hardware -> (1040,259) 110x55
+[26] Customer/Unrepaired -> (1040,45) 33x33
+[27] Technician/Configure Software -> (1180,259) 110x55
+[28] Technician/Test Hardware -> (1320,259) 110x55
+[29] Technician/Test Software -> (1460,259) 110x55
+[30] Technician/HW Test OK? -> (1600,259) 40x40
+[31] CRS/Hand Over Repaired -> (1600,159) 110x55
+[32] Customer/Receive Computer -> (1740,45) 110x55
+[33] Technician/SW Test OK? -> (1740,259) 40x40
+[34] Technician/Join Repair -> (1880,259) 40x40
+[35] Customer/Repaired -> (1880,45) 33x33
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[36] Created 21 sequence flows
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); CRS(132-232); Technician(232-336)
+  Elements: Computer D=Y45, Bring Comp=Y45, Check Defe=Y159, Calculate =Y159, Provide Es=Y159, Accept Cos=Y45, Start Repa=Y259, Take Home =Y45, Repair Har=Y259, Unrepaired=Y45, Configure =Y259, Test Hardw=Y259, Test Softw=Y259, HW Test OK=Y259, Hand Over =Y159, Receive Co=Y45, SW Test OK=Y259, Join Repai=Y259, Repaired=Y45
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComputerRepair_26363
+Lanes:    3
+Elements: 19 (19 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=19,gateways=5,flows=21,data=0,data_assoc=0
+======================================================================

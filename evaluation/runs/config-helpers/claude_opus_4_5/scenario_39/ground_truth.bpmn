@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Select type of hardware Issue">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Select device model">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Write review">
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Upload video of reparation steps">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Get second-hand tools and materials from friends">
+      <incoming>SequenceFlow_42</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+    </userTask>
+    <userTask id="UserTask_6" name="purchase online">
+      <incoming>SequenceFlow_28</incoming>
+      <outgoing>SequenceFlow_29</outgoing>
+    </userTask>
+    <userTask id="UserTask_7" name="Log into account">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </userTask>
+    <userTask id="UserTask_8" name="Create account">
+      <incoming>SequenceFlow_34</incoming>
+      <outgoing>SequenceFlow_32</outgoing>
+    </userTask>
+    <userTask id="UserTask_9" name="Contact friends">
+      <incoming>SequenceFlow_40</incoming>
+      <outgoing>SequenceFlow_42</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="List required materials">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="List required tools">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Offer ordering choices">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="Display repair instructions">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </serviceTask>
+    <manualTask id="ManualTask_1" name="Repair device">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="Send device to an expert">
+      <incoming>SequenceFlow_38</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Is issue fixed?">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_38</outgoing>
+      <outgoing>SequenceFlow_39</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_11</incoming>
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="Have all required items?">
+      <incoming>SequenceFlow_44</incoming>
+      <outgoing>SequenceFlow_36</outgoing>
+      <outgoing>SequenceFlow_41</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_37</incoming>
+      <incoming>SequenceFlow_41</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5" name="Have intention to write a review?">
+      <incoming>SequenceFlow_39</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_7" name="Have intention to upload a video of repair steps?">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_8">
+      <incoming>SequenceFlow_16</incoming>
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_9" name="Have an account?">
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_34</outgoing>
+      <outgoing>SequenceFlow_35</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_10">
+      <incoming>SequenceFlow_25</incoming>
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_11" name="Is login Successful?">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+      <outgoing>SequenceFlow_25</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_12">
+      <incoming>SequenceFlow_32</incoming>
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_13" name="Have intention to get second-hand items?">
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+      <outgoing>SequenceFlow_40</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_14">
+      <incoming>SequenceFlow_27</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_43</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_15" name="Have intention to purchase new items?">
+      <incoming>SequenceFlow_43</incoming>
+      <outgoing>SequenceFlow_28</outgoing>
+      <outgoing>SequenceFlow_31</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_16">
+      <incoming>SequenceFlow_29</incoming>
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_37</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_1</outgoing>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_3</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_4</incoming>
+      <incoming>SequenceFlow_5</incoming>
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_44</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="Hardware issue detected">
+      <outgoing>SequenceFlow_33</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="Hardware issue fixed">
+      <incoming>SequenceFlow_12</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="ParallelGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ParallelGateway_1" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ParallelGateway_1" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ServiceTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ServiceTask_2" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ServiceTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="UserTask_2" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="UserTask_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ServiceTask_4" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="ManualTask_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ManualTask_2" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ExclusiveGateway_2" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ExclusiveGateway_4" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="UserTask_3" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="UserTask_4" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_17" name="No" sourceRef="ExclusiveGateway_7" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_18" name="Yes" sourceRef="ExclusiveGateway_7" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_19" name="Yes" sourceRef="ExclusiveGateway_5" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_20" name="No" sourceRef="ExclusiveGateway_5" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ExclusiveGateway_8" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ExclusiveGateway_10" targetRef="UserTask_7"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="UserTask_7" targetRef="ExclusiveGateway_11"/>
+    <sequenceFlow id="SequenceFlow_24" name="Yes" sourceRef="ExclusiveGateway_11" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_25" name="No" sourceRef="ExclusiveGateway_11" targetRef="ExclusiveGateway_10"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="ExclusiveGateway_12" targetRef="ExclusiveGateway_10"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="UserTask_5" targetRef="ExclusiveGateway_14"/>
+    <sequenceFlow id="SequenceFlow_28" name="Yes" sourceRef="ExclusiveGateway_15" targetRef="UserTask_6"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="UserTask_6" targetRef="ExclusiveGateway_16"/>
+    <sequenceFlow id="SequenceFlow_30" name="No" sourceRef="ExclusiveGateway_13" targetRef="ExclusiveGateway_14"/>
+    <sequenceFlow id="SequenceFlow_31" name="No" sourceRef="ExclusiveGateway_15" targetRef="ExclusiveGateway_16"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="UserTask_8" targetRef="ExclusiveGateway_12"/>
+    <sequenceFlow id="SequenceFlow_33" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_9"/>
+    <sequenceFlow id="SequenceFlow_34" name="No" sourceRef="ExclusiveGateway_9" targetRef="UserTask_8"/>
+    <sequenceFlow id="SequenceFlow_35" name="Yes" sourceRef="ExclusiveGateway_9" targetRef="ExclusiveGateway_12"/>
+    <sequenceFlow id="SequenceFlow_36" name="No" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_13"/>
+    <sequenceFlow id="SequenceFlow_37" sourceRef="ExclusiveGateway_16" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_38" name="No" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_39" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_40" name="Yes" sourceRef="ExclusiveGateway_13" targetRef="UserTask_9"/>
+    <sequenceFlow id="SequenceFlow_41" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_42" sourceRef="UserTask_9" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_43" sourceRef="ExclusiveGateway_14" targetRef="ExclusiveGateway_15"/>
+    <sequenceFlow id="SequenceFlow_44" sourceRef="ParallelGateway_2" targetRef="ExclusiveGateway_3"/>
+  </process>
+</definitions>

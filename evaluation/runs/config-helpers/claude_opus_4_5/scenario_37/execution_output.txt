@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ContractPartsProcurement_17811
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ContractPartsProcurement_17811
+[2] Lanes: Procurement, Inventory, Building, Communication
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement: 6 elements
+[4] Inventory: 9 elements
+[5] Building: 5 elements
+[6] Communication: 1 elements
+
+  Total: 21 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: ContractPartsProcurement_17811
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 10: Stock OK=0, Below 5 - Reorder Cheap=90, Below 3 - Reorder Fast=180, Zero Stock=270
+[Procurement] Lane bounds: 5-147
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Query All Web Shops -> col=1 (210,25) relY=20
+  Collect Quotes -> col=2 (340,25) relY=20
+  Analyze Availability -> col=3 (470,25) relY=20
+  Create Order Lists -> col=4 (600,25) relY=20
+  Place Orders -> col=5 (730,25) relY=20
+  Parts List (DO from Start) -> (170,95) maxBottomRelY=80
+  Quotes (DO from Collect Quotes) -> (430,95) maxBottomRelY=80
+  Order Lists (DO from Create Order Lists) -> (690,95) maxBottomRelY=80
+
+[Inventory] Lane bounds: 187-287
+  [Unmask] Wait for Delivery -> Y=237: OK
+  [Unmask] Receive Batch -> Y=237: OK
+  [Unmask] Update Stock -> Y=237: OK
+  [Unmask] Check Stock Level -> Y=237: OK
+  [Unmask] Stock OK -> Y=237: OK
+  [Unmask] Below 5 - Reorder Cheap -> Y=237: OK
+  [Unmask] Below 3 - Reorder Fast -> Y=237: OK
+  [Unmask] Zero Stock -> Y=237: OK
+  [Unmask] More Deliveries? -> Y=237: OK
+  [Unmask] Stock Register -> Y=237: OK
+  [maxElementBottomRelY=350]
+  Wait for Delivery -> col=6 (860,207) relY=20
+  Receive Batch -> col=7 (990,207) relY=20
+  Update Stock -> col=8 (1120,207) relY=20
+  Check Stock Level -> col=9 (1250,207) relY=20
+  Stock OK -> col=10 (1380,207) relY=20
+  Below 5 - Reorder Cheap -> col=10 (1380,297) relY=110
+  Below 3 - Reorder Fast -> col=10 (1380,387) relY=200
+  Zero Stock -> col=10 (1380,477) relY=290
+  More Deliveries? -> col=12 (1640,207) relY=20
+  Stock Register (DO from Update Stock) -> (1210,547) maxBottomRelY=350
+
+[Building] Lane bounds: 639-855
+  [maxElementBottomRelY=80]
+  First Parts Arrived? -> col=13 (1770,659) relY=20
+  Start Building -> col=14 (1900,659) relY=20
+  Continue Building -> col=15 (2030,659) relY=20
+  Building Complete? -> col=16 (2160,659) relY=20
+  Project Complete -> col=17 (2290,659) relY=20
+
+[Communication] Lane bounds: 855-1201
+  [maxElementBottomRelY=80]
+  Complain to Friends -> col=11 (1510,875) relY=20
+  Complaint Email (DO from Complain to Friends) -> (1600,945) maxBottomRelY=80
+
+
+[10] Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 26 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setStartingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[12] Data associations: 7
+
+==================================================================
+COMPLETE: ContractPartsProcurement_17811
+==================================================================
+Lanes: 4 | Elements: 21 | Data: 5 | Flows: 26 | DataAssoc: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 4
+======================================================================

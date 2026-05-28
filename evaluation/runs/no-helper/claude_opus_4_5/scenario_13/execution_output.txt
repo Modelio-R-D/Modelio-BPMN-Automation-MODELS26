@@ -1,0 +1,109 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CUSTOMER COMPLAINT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   40792
+Process Name:   CustomerComplaint_40792
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CustomerComplaint_40792
+[2] Lanes: Customer, Customer Service, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 3 elements
+[4] Customer Service lane: 7 elements
+[5] Finance lane: 1 element
+
+  Total elements: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: CustomerComplaint_40792
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 10/11 | Missing: Process Refu
+  [Attempt 2] Found: 10/11 | Missing: Process Refu
+  [Attempt 3] Found: 10/11 | Missing: Process Refu
+  [Attempt 3] TIMEOUT - 10/11 elements
+
+[10] WARNING: 10/11 elements ready after 150ms
+         Missing: Process Refund
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Process Refund -> Y=255 (Finance): OK
+
+[12] Manual unmask: 1 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-105); Customer Service(105-205); Finance(205-312)
+  Elements: Complaint =Y16, Log Compla=Y116, Assign to =Y116, Investigat=Y116, Refund Jus=Y116, Notify App=Y116, Notify Rej=Y116, Process Re=Y255, Mark Resol=Y116, Provide Fe=Y20, Process Co=Y25
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 32
+[15] Customer Service centerY = 132
+[16] Finance centerY = 235
+
+[17] Customer/Complaint Filed -> (80,32) 33x33
+[18] Customer Service/Log Complaint -> (230,132) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Customer Service(105-205); Finance(205-312)
+         After:  Lanes: Customer(5-105); Customer Service(105-265); Finance(265-372)
+[19] Customer Service/Assign to Department -> (380,132) 120x60
+[20] Customer Service/Investigate Complaint -> (530,132) 120x60
+[21] Customer Service/Refund Justified? -> (680,132) 40x40
+[22] Customer Service/Notify Approval -> (830,62) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Customer Service(105-265); Finance(265-372)
+         After:  Lanes: Customer(-49-51); Customer Service(51-265); Finance(265-372)
+[23] Customer Service/Notify Rejection -> (830,202) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-49-51); Customer Service(51-265); Finance(265-372)
+         After:  Lanes: Customer(-49-51); Customer Service(51-273); Finance(273-380)
+[24] Finance/Process Refund -> (980,235) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-49-51); Customer Service(51-273); Finance(273-380)
+         After:  Lanes: Customer(-98-2); Customer Service(2-224); Finance(224-380)
+[25] Customer Service/Mark Resolved -> (1130,132) 120x60
+[26] Customer/Provide Feedback -> (1280,32) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-98-2); Customer Service(2-224); Finance(224-380)
+         After:  Lanes: Customer(-98-103); Customer Service(103-325); Finance(325-481)
+[27] Customer/Process Complete -> (1430,32) 33x33
+
+  Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[28] Created 11 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-98-103); Customer Service(103-325); Finance(325-481)
+  Elements: Complaint =Y-71, Log Compla=Y130, Assign to =Y130, Investigat=Y130, Refund Jus=Y130, Notify App=Y114, Notify Rej=Y254, Process Re=Y336, Mark Resol=Y233, Provide Fe=Y32, Process Co=Y32
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CustomerComplaint_40792
+Lanes:    3
+Elements: 11 (11 in diagram)
+Flows:    11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=11,gateways=1,flows=11,data=0,data_assoc=0
+======================================================================

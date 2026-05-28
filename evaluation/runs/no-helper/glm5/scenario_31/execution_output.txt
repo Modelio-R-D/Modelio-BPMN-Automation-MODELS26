@@ -1,0 +1,121 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN BLIZZARD CHARACTER GENERATOR
+==================================================================
+Script Version: v1.0
+Execution ID:   44655
+Process Name:   WoWCharacterCreator_44655
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WoWCharacterCreator_44655
+[2] Lanes: Player, Blizzard System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player lane: 12 elements
+[4] Blizzard System lane: 8 elements
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: WoWCharacterCreator_44655
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/20 | Missing: Start, Fork, Brainstorm N, Enter Accoun, Click Confir, Select Payme, Enter Credit, Enter IBAN a, Join, Log into Gam, Select Realm, Enter Charac, Create Chara, Send Confirm, Wait for Exp, Expansion No
+  [Attempt 2] Found: 4/20 | Missing: Start, Fork, Brainstorm N, Enter Accoun, Click Confir, Select Payme, Enter Credit, Enter IBAN a, Join, Log into Gam, Select Realm, Enter Charac, Create Chara, Send Confirm, Wait for Exp, Expansion No
+  [Attempt 3] Found: 4/20 | Missing: Start, Fork, Brainstorm N, Enter Accoun, Click Confir, Select Payme, Enter Credit, Enter IBAN a, Join, Log into Gam, Select Realm, Enter Charac, Create Chara, Send Confirm, Wait for Exp, Expansion No
+  [Attempt 3] TIMEOUT - 4/20 elements
+
+[9] WARNING: 4/20 elements ready after 150ms
+         Missing: Start, Fork, Brainstorm Names, Enter Account Info, Click Confirmation Link, Select Payment Method, Enter Credit Card Info, Enter IBAN and BIC, Join, Log into Game, Select Realm, Race, Class, Enter Character Name, Create Character, Send Confirmation & Selfies, Wait for Expansion, Expansion Notification
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (Player): OK
+  [Unmask] Fork -> Y=55 (Player): OK
+  [Unmask] Brainstorm Names -> Y=55 (Player): OK
+  [Unmask] Enter Account Info -> Y=55 (Player): OK
+  [Unmask] Click Confirmation Link -> Y=55 (Player): OK
+  [Unmask] Select Payment Method -> Y=55 (Player): OK
+  [Unmask] Enter Credit Card Info -> Y=55 (Player): OK
+  [Unmask] Enter IBAN and BIC -> Y=55 (Player): OK
+  [Unmask] Join -> Y=55 (Player): OK
+  [Unmask] Log into Game -> Y=55 (Player): OK
+  [Unmask] Select Realm, Race, Class -> Y=55 (Player): OK
+  [Unmask] Enter Character Name -> Y=55 (Player): OK
+  [Unmask] Create Character -> Y=176 (Blizzard System): OK
+  [Unmask] Send Confirmation & Selfies -> Y=176 (Blizzard System): OK
+  [Unmask] Wait for Expansion -> Y=176 (Blizzard System): OK
+  [Unmask] Expansion Notification -> Y=176 (Blizzard System): OK
+
+[11] Manual unmask: 16 elements unmasked
+[12] All elements now available
+
+  Lanes: Player(5-132); Blizzard System(132-275)
+  Elements: Start=Y55, Fork=Y55, Brainstorm=Y55, Check Batt=Y143, Enter Acco=Y55, Click Conf=Y55, Check WoW =Y143, Select Pay=Y55, Enter Cred=Y55, Enter IBAN=Y55, Join=Y55, Log into G=Y55, Select Rea=Y55, Enter Char=Y55, Check Name=Y143, Name Avail=Y143, Create Cha=Y176, Send Confi=Y176, Wait for E=Y176, Expansion =Y176
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Player centerY = 45
+[14] Blizzard System centerY = 180
+
+[15] Player/Start -> (80,45) 33x33
+[16] Player/Fork -> (210,45) 40x40
+[17] Player/Brainstorm Names -> (340,45) 110x55
+[18] Blizzard System/Check Battle.net Account -> (340,180) 40x40
+[19] Player/Enter Account Info -> (470,45) 110x55
+[20] Player/Click Confirmation Link -> (600,45) 110x55
+[21] Blizzard System/Check WoW Subscription -> (730,180) 40x40
+[22] Player/Select Payment Method -> (860,45) 40x40
+[23] Player/Enter Credit Card Info -> (990,45) 110x55
+[24] Player/Enter IBAN and BIC -> (1120,45) 110x55
+[25] Player/Join -> (1250,45) 40x40
+[26] Player/Log into Game -> (1380,45) 110x55
+[27] Player/Select Realm, Race, Class -> (1510,45) 110x55
+[28] Player/Enter Character Name -> (1640,45) 110x55
+[29] Blizzard System/Check Name Availability -> (1770,180) 110x55
+[30] Blizzard System/Name Available? -> (1900,180) 40x40
+[31] Blizzard System/Create Character -> (2030,180) 110x55
+[32] Blizzard System/Send Confirmation & Selfies -> (2160,180) 110x55
+[33] Blizzard System/Wait for Expansion -> (2290,180) 33x33
+[34] Blizzard System/Expansion Notification -> (2420,180) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 24 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Player(5-132); Blizzard System(132-275)
+  Elements: Start=Y45, Fork=Y45, Brainstorm=Y45, Check Batt=Y180, Enter Acco=Y45, Click Conf=Y45, Check WoW =Y180, Select Pay=Y45, Enter Cred=Y45, Enter IBAN=Y45, Join=Y45, Log into G=Y45, Select Rea=Y45, Enter Char=Y45, Check Name=Y180, Name Avail=Y180, Create Cha=Y180, Send Confi=Y180, Wait for E=Y180, Expansion =Y180
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  WoWCharacterCreator_44655
+Lanes:    2
+Elements: 20 (20 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=20,gateways=6,flows=24,data=0,data_assoc=0
+======================================================================

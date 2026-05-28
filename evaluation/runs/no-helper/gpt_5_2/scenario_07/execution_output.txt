@@ -1,0 +1,174 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TRAVEL TICKET BOOKING - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   69119
+Process Name:   TravelTicketBooking_69119
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TravelTicketBooking_69119
+[2] Lanes: Customer, Booking System, Travel Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Creating elements...
+  [Element] Search Ticket | Lane=Customer | addToLane=True
+  [Element] Select Route Date Time | Lane=Customer | addToLane=True
+  [Element] Provide Personal Info | Lane=Customer | addToLane=True
+  [Element] Provide Payment Details | Lane=Customer | addToLane=True
+  [Element] Check In Or Board | Lane=Customer | addToLane=True
+  [Element] Confirm Journey Completed | Lane=Customer | addToLane=True
+  [Element] Provide Feedback | Lane=Customer | addToLane=True
+  [Element] Process Complete | Lane=Customer | addToLane=True
+  [Element] Retrieve Options | Lane=Booking System | addToLane=True
+  [Element] Process Payment | Lane=Booking System | addToLane=True
+  [Element] Generate Ticket | Lane=Booking System | addToLane=True
+  [Element] Send Ticket Via? | Lane=Booking System | addToLane=True
+  [Element] Send Ticket Email | Lane=Booking System | addToLane=True
+  [Element] Send Ticket SMS | Lane=Booking System | addToLane=True
+  [Element] Ticket Sent Merge | Lane=Booking System | addToLane=True
+  [Element] Post Ticket Split | Lane=Booking System | addToLane=True
+  [Element] Post Ticket Join | Lane=Booking System | addToLane=True
+  [Element] Send Pre Travel Reminder | Lane=Booking System | addToLane=True
+  [Element] Request Post Travel Service? | Lane=Booking System | addToLane=True
+  [Element] Send Thank You Or Offer | Lane=Booking System | addToLane=True
+  [Element] Post Travel Merge | Lane=Booking System | addToLane=True
+  [Element] Update Seat Inventory | Lane=Travel Company | addToLane=True
+  [Element] Deliver Journey Service | Lane=Travel Company | addToLane=True
+  [Element] Handle Feedback Or Support | Lane=Travel Company | addToLane=True
+[4] Total elements: 24
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: TravelTicketBooking_69119
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 13/24 | Missing: Search Ticke, Select Route, Provide Pers, Provide Paym, Check In Or , Confirm Jour, Provide Feed, Process Comp, Update Seat , Deliver Jour, Handle Feedb
+  [Attempt 2] Found: 13/24 | Missing: Search Ticke, Select Route, Provide Pers, Provide Paym, Check In Or , Confirm Jour, Provide Feed, Process Comp, Update Seat , Deliver Jour, Handle Feedb
+  [Attempt 3] Found: 13/24 | Missing: Search Ticke, Select Route, Provide Pers, Provide Paym, Check In Or , Confirm Jour, Provide Feed, Process Comp, Update Seat , Deliver Jour, Handle Feedb
+  [Attempt 3] TIMEOUT - 13/24 elements
+
+[9] WARNING: 13/24 elements ready after 150ms
+         Missing: Search Ticket, Select Route Date Time, Provide Personal Info, Provide Payment Details, Check In Or Board, Confirm Journey Completed, Provide Feedback, Process Complete, Update Seat Inventory, Deliver Journey Service, Handle Feedback Or Support
+
+[10] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [LaneY] Travel Company centerY=301
+  [LaneY] Customer centerY=55
+  [LaneY] Booking System centerY=178
+  [Unmask] Search Ticket -> Y=55 (Customer): OK
+  [Unmask] Select Route Date Time -> Y=55 (Customer): OK
+  [Unmask] Provide Personal Info -> Y=55 (Customer): OK
+  [Unmask] Provide Payment Details -> Y=55 (Customer): OK
+  [Unmask] Check In Or Board -> Y=55 (Customer): OK
+  [Unmask] Confirm Journey Completed -> Y=55 (Customer): OK
+  [Unmask] Provide Feedback -> Y=55 (Customer): OK
+  [Unmask] Process Complete -> Y=55 (Customer): OK
+  [Unmask] Update Seat Inventory -> Y=301 (Travel Company): OK
+  [Unmask] Deliver Journey Service -> Y=301 (Travel Company): OK
+  [Unmask] Handle Feedback Or Support -> Y=301 (Travel Company): OK
+
+[11] Manual unmask: 11 elements unmasked
+[12] All elements now available
+
+  Lanes: Customer(5-125); Booking System(125-271); Travel Company(271-371)
+  Elements: Search Ticke=Y55, Retrieve Opt=Y136, Select Route=Y55, Provide Pers=Y55, Provide Paym=Y55, Process Paym=Y136, Generate Tic=Y136, Post Ticket =Y136, Send Ticket =Y136, Send Ticket =Y136, Send Ticket =Y136, Update Seat =Y301, Check In Or =Y55, Ticket Sent =Y136, Deliver Jour=Y301, Post Ticket =Y136, Confirm Jour=Y55, Send Pre Tra=Y136, Request Post=Y136, Provide Feed=Y55, Handle Feedb=Y301, Send Thank Y=Y136, Post Travel =Y140, Process Comp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Customer centerY = 42
+[14] Booking System centerY = 175
+[15] Travel Company centerY = 298
+
+[16] Customer/Search Ticket -> (80,42) 33x33
+[17] Booking System/Retrieve Options -> (240,175) 150x60
+[18] Customer/Select Route Date Time -> (400,42) 150x60
+[19] Customer/Provide Personal Info -> (560,42) 150x60
+[20] Customer/Provide Payment Details -> (720,42) 150x60
+[21] Booking System/Process Payment -> (880,175) 150x60
+[22] Booking System/Generate Ticket -> (1040,175) 150x60
+[23] Booking System/Post Ticket Split -> (1200,175) 40x40
+[24] Booking System/Send Ticket Via? -> (1360,175) 40x40
+[25] Booking System/Send Ticket Email -> (1520,175) 150x60
+[26] Booking System/Send Ticket SMS -> (1520,175) 150x60
+[27] Travel Company/Update Seat Inventory -> (1520,298) 150x60
+[28] Customer/Check In Or Board -> (1680,42) 150x60
+[29] Booking System/Ticket Sent Merge -> (1680,175) 40x40
+[30] Travel Company/Deliver Journey Service -> (1840,298) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); Booking System(125-271); Travel Company(271-371)
+         After:  Lanes: Customer(5-125); Booking System(125-271); Travel Company(271-416)
+[31] Booking System/Post Ticket Join -> (1840,175) 40x40
+[32] Customer/Confirm Journey Completed -> (2000,42) 150x60
+[33] Booking System/Send Pre Travel Reminder -> (2000,175) 150x60
+[34] Booking System/Request Post Travel Service? -> (2160,175) 40x40
+[35] Customer/Provide Feedback -> (2320,42) 150x60
+[36] Travel Company/Handle Feedback Or Support -> (2480,298) 150x60
+[37] Booking System/Send Thank You Or Offer -> (2480,175) 150x60
+[38] Booking System/Post Travel Merge -> (2640,175) 40x40
+[39] Customer/Process Complete -> (2640,42) 33x33
+
+  Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Search Ticket -> Retrieve Options
+  [Flow] Retrieve Options -> Select Route Date Time
+  [Flow] Select Route Date Time -> Provide Personal Info
+  [Flow] Provide Personal Info -> Provide Payment Details
+  [Flow] Provide Payment Details -> Process Payment
+  [Flow] Process Payment -> Generate Ticket
+  [Flow] Generate Ticket -> Post Ticket Split
+  [Flow] Post Ticket Split -> Send Ticket Via?
+  [Flow] Post Ticket Split -> Update Seat Inventory
+  [Flow] Send Ticket Via? -> Send Ticket Email | Guard=Email
+  [Flow] Send Ticket Via? -> Send Ticket SMS | Guard=SMS
+  [Flow] Send Ticket Email -> Ticket Sent Merge
+  [Flow] Send Ticket SMS -> Ticket Sent Merge
+  [Flow] Ticket Sent Merge -> Post Ticket Join
+  [Flow] Update Seat Inventory -> Post Ticket Join
+  [Flow] Post Ticket Join -> Send Pre Travel Reminder
+  [Flow] Send Pre Travel Reminder -> Check In Or Board
+  [Flow] Check In Or Board -> Deliver Journey Service
+  [Flow] Deliver Journey Service -> Confirm Journey Completed
+  [Flow] Confirm Journey Completed -> Request Post Travel Service?
+  [Flow] Request Post Travel Service? -> Send Thank You Or Offer | Guard=Yes
+  [Flow] Request Post Travel Service? -> Post Travel Merge | Guard=No
+  [Flow] Send Thank You Or Offer -> Post Travel Merge
+  [Flow] Post Travel Merge -> Provide Feedback | Guard=If Requested
+  [Flow] Provide Feedback -> Handle Feedback Or Support
+  [Flow] Handle Feedback Or Support -> Process Complete
+[40] Created 26 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); Booking System(125-271); Travel Company(271-416)
+  Elements: Search Ticke=Y42, Retrieve Opt=Y175, Select Route=Y42, Provide Pers=Y42, Provide Paym=Y42, Process Paym=Y175, Generate Tic=Y175, Post Ticket =Y175, Send Ticket =Y175, Send Ticket =Y175, Send Ticket =Y175, Update Seat =Y298, Check In Or =Y42, Ticket Sent =Y175, Deliver Jour=Y298, Post Ticket =Y175, Confirm Jour=Y42, Send Pre Tra=Y175, Request Post=Y175, Provide Feed=Y42, Handle Feedb=Y298, Send Thank Y=Y175, Post Travel =Y175, Process Comp=Y42
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TravelTicketBooking_69119
+Lanes:    3
+Elements: 24 (24 in diagram)
+Flows:    26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=24,gateways=6,flows=26,data=0,data_assoc=0
+======================================================================

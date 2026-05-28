@@ -1,0 +1,86 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Contract_44338
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Contract_44338
+[2] Lanes: Purchaser, Warehouse
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Purchaser: 10 elements
+[4] Warehouse: 7 elements
+
+  Total: 17 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Contract_44338
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Order from Cheapest=0, Order from Multiple=90
+  [Auto-stack] col 10: Reorder Cheapest=0, Reorder Fastest=90, Complain to Friends=180
+[Purchaser] Lane bounds: 5-157
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Query Web Shops -> col=1 (230,25) relY=20
+  Analyze Offers -> col=2 (380,25) relY=20
+  Single Shop OK? -> col=3 (530,25) relY=20
+  Order from Cheapest -> col=4 (680,25) relY=20
+  Order from Multiple -> col=4 (680,115) relY=110
+  Orders Merged -> col=5 (830,25) relY=20
+  Reorder Cheapest -> col=10 (1580,25) relY=20
+  Reorder Fastest -> col=10 (1580,115) relY=110
+  Complain to Friends -> col=10 (1580,205) relY=200
+  Parts List (DO from Query Web Shops) -> (470,275) maxBottomRelY=260
+
+[Warehouse] Lane bounds: 367-471
+  [maxElementBottomRelY=80]
+  Wait for Parts -> col=6 (980,387) relY=20
+  Start Building -> col=7 (1130,387) relY=20
+  Check Stock -> col=8 (1280,387) relY=20
+  Stock Level? -> col=9 (1430,387) relY=20
+  Continue Building -> col=10 (1580,387) relY=20
+  Building Complete? -> col=11 (1730,387) relY=20
+  End -> col=12 (1880,387) relY=20
+  Stock Status (DO from Check Stock) -> (1370,457) maxBottomRelY=80
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 21 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 3
+
+==================================================================
+COMPLETE: Contract_44338
+==================================================================
+Lanes: 2 | Elements: 17 | Data: 2 | Flows: 21 | DataAssoc: 3
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=19,gateways=4,flows=21,data=2,data_assoc=3
+======================================================================

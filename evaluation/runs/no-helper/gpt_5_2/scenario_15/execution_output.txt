@@ -1,0 +1,141 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPLIANCE AUDIT AND CERTIFICATION - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   81649
+Process Name:   ComplianceAuditCertification_81649
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: ComplianceAuditCertification_81649
+[2] Lanes: Company, Auditor, Certification Body
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Audit Scheduled | Lane=Company | addToLane=True
+  [Element] Prepare Documentation | Lane=Company | addToLane=True
+  [Element] Gather Evidence | Lane=Company | addToLane=True
+  [Element] Conduct Self-Assessment | Lane=Company | addToLane=True
+  [Element] Implement Corrections | Lane=Company | addToLane=True
+  [Element] Improve Processes | Lane=Company | addToLane=True
+  [Element] Review Company Processes | Lane=Auditor | addToLane=True
+  [Element] Identify Gaps and Issues | Lane=Auditor | addToLane=True
+  [Element] Gaps Found? | Lane=Auditor | addToLane=True
+  [Element] Conduct Final Audit | Lane=Auditor | addToLane=True
+  [Element] Criteria Met? | Lane=Auditor | addToLane=True
+  [Element] Award Certification | Lane=Certification Body | addToLane=True
+  [Element] Issue Official Documents | Lane=Certification Body | addToLane=True
+  [Element] Certification Issued | Lane=Certification Body | addToLane=True
+
+[3] Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: ComplianceAuditCertification_81649
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/14 | Missing: Conduct Self, Implement Co, Improve Proc, Review Compa, Identify Gap, Gaps Found?, Conduct Fina, Criteria Met, Award Certif, Issue Offici, Certificatio
+  [Attempt 2] Found: 3/14 | Missing: Conduct Self, Implement Co, Improve Proc, Review Compa, Identify Gap, Gaps Found?, Conduct Fina, Criteria Met, Award Certif, Issue Offici, Certificatio
+  [Attempt 3] Found: 3/14 | Missing: Conduct Self, Implement Co, Improve Proc, Review Compa, Identify Gap, Gaps Found?, Conduct Fina, Criteria Met, Award Certif, Issue Offici, Certificatio
+  [Attempt 3] TIMEOUT - 3/14 elements
+
+[8] WARNING: 3/14 elements ready after 150ms
+         Missing: Conduct Self-Assessment, Implement Corrections, Improve Processes, Review Company Processes, Identify Gaps and Issues, Gaps Found?, Conduct Final Audit, Criteria Met?, Award Certification, Issue Official Documents, Certification Issued
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Conduct Self-Assessment -> Y=55 (Company): OK
+  [Unmask] Implement Corrections -> Y=55 (Company): OK
+  [Unmask] Improve Processes -> Y=55 (Company): OK
+  [Unmask] Review Company Processes -> Y=155 (Auditor): OK
+  [Unmask] Identify Gaps and Issues -> Y=155 (Auditor): OK
+  [Unmask] Gaps Found? -> Y=155 (Auditor): OK
+  [Unmask] Conduct Final Audit -> Y=155 (Auditor): OK
+  [Unmask] Criteria Met? -> Y=155 (Auditor): OK
+  [Unmask] Award Certification -> Y=255 (Certification Body): OK
+  [Unmask] Issue Official Documents -> Y=255 (Certification Body): OK
+  [Unmask] Certification Issued -> Y=255 (Certification Body): OK
+
+[10] Manual unmask: 11 elements unmasked
+[11] All elements now available
+
+  Lanes: Company(5-112); Auditor(112-232); Certification Body(232-332)
+  Elements: Audit Schedule=Y16, Prepare Docume=Y20, Gather Evidenc=Y25, Conduct Self-A=Y55, Review Company=Y155, Identify Gaps =Y155, Gaps Found?=Y155, Implement Corr=Y55, Conduct Final =Y155, Criteria Met?=Y155, Improve Proces=Y55, Award Certific=Y255, Issue Official=Y255, Certification =Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Company centerY = 35
+[13] Auditor centerY = 149
+[14] Certification Body centerY = 259
+
+[15] Company/Audit Scheduled -> (80,35) 33x33
+[16] Company/Prepare Documentation -> (230,35) 160x60
+[17] Company/Gather Evidence -> (380,35) 160x60
+[18] Company/Conduct Self-Assessment -> (530,35) 160x60
+[19] Auditor/Review Company Processes -> (680,149) 160x60
+[20] Auditor/Identify Gaps and Issues -> (830,149) 160x60
+[21] Auditor/Gaps Found? -> (980,149) 40x40
+[22] Company/Implement Corrections -> (1130,35) 160x60
+[23] Auditor/Conduct Final Audit -> (1280,149) 160x60
+[24] Auditor/Criteria Met? -> (1430,149) 40x40
+[25] Company/Improve Processes -> (1580,35) 160x60
+[26] Certification Body/Award Certification -> (1730,259) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Company(5-112); Auditor(112-232); Certification Body(232-332)
+         After:  Lanes: Company(5-112); Auditor(112-232); Certification Body(232-391)
+[27] Certification Body/Issue Official Documents -> (1880,259) 160x60
+[28] Certification Body/Certification Issued -> (2030,259) 33x33
+
+[29] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Audit Scheduled -> Prepare Documentation
+  [Flow] Prepare Documentation -> Gather Evidence
+  [Flow] Gather Evidence -> Conduct Self-Assessment
+  [Flow] Conduct Self-Assessment -> Review Company Processes
+  [Flow] Review Company Processes -> Identify Gaps and Issues
+  [Flow] Identify Gaps and Issues -> Gaps Found?
+  [Flow] Gaps Found? -> Implement Corrections | Guard=Yes
+  [Flow] Gaps Found? -> Conduct Final Audit | Guard=No
+  [Flow] Implement Corrections -> Conduct Final Audit
+  [Flow] Conduct Final Audit -> Criteria Met?
+  [Flow] Criteria Met? -> Award Certification | Guard=Yes
+  [Flow] Criteria Met? -> Improve Processes | Guard=No
+  [Flow] Improve Processes -> Conduct Final Audit
+  [Flow] Award Certification -> Issue Official Documents
+  [Flow] Issue Official Documents -> Certification Issued
+
+[30] Created 15 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Company(5-112); Auditor(112-232); Certification Body(232-391)
+  Elements: Audit Schedule=Y35, Prepare Docume=Y35, Gather Evidenc=Y35, Conduct Self-A=Y35, Review Company=Y149, Identify Gaps =Y149, Gaps Found?=Y149, Implement Corr=Y35, Conduct Final =Y149, Criteria Met?=Y149, Improve Proces=Y35, Award Certific=Y259, Issue Official=Y259, Certification =Y259
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComplianceAuditCertification_81649
+Lanes:    3
+Elements: 14 (14 in diagram)
+Flows:    15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=2,flows=15,data=0,data_assoc=0
+======================================================================

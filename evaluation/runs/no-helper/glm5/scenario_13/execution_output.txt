@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN COMPLAINT HANDLING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   10338
+Process Name:   ComplaintHandling_10338
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplaintHandling_10338
+[2] Lanes: Customer, Customer Service, Investigation, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 3 elements
+[4] Customer Service lane: 3 elements
+[5] Investigation lane: 6 elements
+[6] Finance lane: 1 element
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: ComplaintHandling_10338
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/13 | Missing: Complaint Fi, Provide Feed, Case Closed, Log Complain, Assign to De, Mark Resolve, Review Detai, Valid Compla, Refund Justi, Notify - Rej, Notify - No , Notify - App, Process Refu
+  [Attempt 2] Found: 0/13 | Missing: Complaint Fi, Provide Feed, Case Closed, Log Complain, Assign to De, Mark Resolve, Review Detai, Valid Compla, Refund Justi, Notify - Rej, Notify - No , Notify - App, Process Refu
+  [Attempt 3] Found: 0/13 | Missing: Complaint Fi, Provide Feed, Case Closed, Log Complain, Assign to De, Mark Resolve, Review Detai, Valid Compla, Refund Justi, Notify - Rej, Notify - No , Notify - App, Process Refu
+  [Attempt 3] TIMEOUT - 0/13 elements
+
+[11] WARNING: 0/13 elements ready after 150ms
+         Missing: Complaint Filed, Provide Feedback, Case Closed, Log Complaint, Assign to Department, Mark Resolved, Review Details, Valid Complaint?, Refund Justified?, Notify - Rejected, Notify - No Refund, Notify - Approved, Process Refund
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Complaint Filed -> Y=55 (Customer): FAILED
+  [Unmask] Provide Feedback -> Y=55 (Customer): FAILED
+  [Unmask] Case Closed -> Y=55 (Customer): FAILED
+  [Unmask] Log Complaint -> Y=155 (Customer Service): FAILED
+  [Unmask] Assign to Department -> Y=155 (Customer Service): FAILED
+  [Unmask] Mark Resolved -> Y=155 (Customer Service): FAILED
+  [Unmask] Review Details -> Y=255 (Investigation): FAILED
+  [Unmask] Valid Complaint? -> Y=255 (Investigation): FAILED
+  [Unmask] Refund Justified? -> Y=255 (Investigation): FAILED
+  [Unmask] Notify - Rejected -> Y=255 (Investigation): FAILED
+  [Unmask] Notify - No Refund -> Y=255 (Investigation): FAILED
+  [Unmask] Notify - Approved -> Y=255 (Investigation): FAILED
+  [Unmask] Process Refund -> Y=355 (Finance): FAILED
+[13] Still missing: Complaint Filed, Provide Feedback, Case Closed, Log Complaint, Assign to Department, Mark Resolved, Review Details, Valid Complaint?, Refund Justified?, Notify - Rejected, Notify - No Refund, Notify - Approved, Process Refund
+
+  Lanes: Customer(5-105); Customer Service(105-205); Investigation(205-305); Finance(305-405)
+  Elements: Complaint =--, Log Compla=--, Assign to =--, Review Det=--, Valid Comp=--, Notify - R=--, Refund Jus=--, Notify - N=--, Notify - A=--, Process Re=--, Mark Resol=--, Provide Fe=--, Case Close=--
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 32
+[15] Customer Service centerY = 132
+[16] Investigation centerY = 232
+[17] Finance centerY = 332
+
+[18] SKIP Complaint Filed: not in diagram
+[19] SKIP Log Complaint: not in diagram
+[20] SKIP Assign to Department: not in diagram
+[21] SKIP Review Details: not in diagram
+[22] SKIP Valid Complaint?: not in diagram
+[23] SKIP Notify - Rejected: not in diagram
+[24] SKIP Refund Justified?: not in diagram
+[25] SKIP Notify - No Refund: not in diagram
+[26] SKIP Notify - Approved: not in diagram
+[27] SKIP Process Refund: not in diagram
+[28] SKIP Mark Resolved: not in diagram
+[29] SKIP Provide Feedback: not in diagram
+[30] SKIP Case Closed: not in diagram
+
+  Repositioned: 0/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Created 14 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-105); Customer Service(105-205); Investigation(205-305); Finance(305-405)
+  Elements: Complaint =--, Log Compla=--, Assign to =--, Review Det=--, Valid Comp=--, Notify - R=--, Refund Jus=--, Notify - N=--, Notify - A=--, Process Re=--, Mark Resol=--, Provide Fe=--, Case Close=--
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComplaintHandling_10338
+Lanes:    4
+Elements: 13 (0 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=13,gateways=2,flows=14,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Check if passport is up to date">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Prepare Documents for r-w-r card">
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Send documentation to relevant agency">
+      <incoming>SequenceFlow_41</incoming>
+      <outgoing>SequenceFlow_37</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Rules engine automaticly checks if documentations fullfilles requirements">
+      <incoming>SequenceFlow_37</incoming>
+      <outgoing>SequenceFlow_38</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Bank Systems creates bank account and sends E-Mail confirmation">
+      <incoming>SequenceFlow_44</incoming>
+      <outgoing>SequenceFlow_39</outgoing>
+    </serviceTask>
+    <manualTask id="ManualTask_1" name="Check requirements and point for particularly highly qualified people">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="Check requirements for independent key employees">
+      <incoming>SequenceFlow_48</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_3" name="Check requirements and point for start-up founders">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_4" name="Check requirements for Graduates of an Austrian higher education institution">
+      <incoming>SequenceFlow_49</incoming>
+      <outgoing>SequenceFlow_50</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_5" name="Check requirements and point for other key employees">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_6" name="Check requirements and point for skilled workers in shortage occupations">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_7" name="Request new passport">
+      <incoming>SequenceFlow_34</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_8" name="Make passport photo">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_9" name="Prepare birth certificate">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_29</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_10" name="Search and find suited apartment">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_11" name="Negotiate rent with landlord">
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_12" name="Sign contract">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_32</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_13" name="Request Austrian health insurance coverage incl. documentation">
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_36</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_14" name="Gather documentation to prove financial indepence">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_15" name="Application for a residence permit">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_31</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_16" name="Request Bank Account on Bank website">
+      <incoming>SequenceFlow_45</incoming>
+      <outgoing>SequenceFlow_44</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1">
+      <incoming>SequenceFlow_1</incoming>
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_3</outgoing>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_5</outgoing>
+      <outgoing>SequenceFlow_48</outgoing>
+      <outgoing>SequenceFlow_49</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Fullfiles the requirements or point?">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_7</incoming>
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_9</incoming>
+      <incoming>SequenceFlow_10</incoming>
+      <incoming>SequenceFlow_50</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_47</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_34</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_13</incoming>
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_28</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5">
+      <incoming>SequenceFlow_21</incoming>
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6" name="Negotitation successful?">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+      <outgoing>SequenceFlow_24</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_7">
+      <incoming>SequenceFlow_43</incoming>
+      <incoming>SequenceFlow_47</incoming>
+      <outgoing>SequenceFlow_33</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_8" name="Additional documentation needed?">
+      <incoming>SequenceFlow_38</incoming>
+      <outgoing>SequenceFlow_42</outgoing>
+      <outgoing>SequenceFlow_43</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_9">
+      <incoming>SequenceFlow_39</incoming>
+      <incoming>SequenceFlow_46</incoming>
+      <outgoing>SequenceFlow_40</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_10" name="Agency approves right to stay?">
+      <incoming>SequenceFlow_42</incoming>
+      <outgoing>SequenceFlow_45</outgoing>
+      <outgoing>SequenceFlow_46</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+      <outgoing>SequenceFlow_17</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_25</outgoing>
+      <outgoing>SequenceFlow_26</outgoing>
+      <outgoing>SequenceFlow_35</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_27</incoming>
+      <incoming>SequenceFlow_28</incoming>
+      <incoming>SequenceFlow_29</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <incoming>SequenceFlow_31</incoming>
+      <incoming>SequenceFlow_32</incoming>
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_41</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_40</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_6"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_5"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_3"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ManualTask_6" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ManualTask_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="ManualTask_5" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ManualTask_3" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="ManualTask_2" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_11" name="No" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="UserTask_1" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_13" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="ManualTask_7" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="UserTask_2" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ParallelGateway_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ParallelGateway_1" targetRef="ManualTask_8"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ParallelGateway_1" targetRef="ManualTask_9"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ManualTask_10" targetRef="ManualTask_11"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ExclusiveGateway_5" targetRef="ManualTask_10"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ManualTask_11" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_23" name="No" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_24" name="Yes" sourceRef="ExclusiveGateway_6" targetRef="ManualTask_12"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="ParallelGateway_1" targetRef="ManualTask_14"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="ParallelGateway_1" targetRef="ManualTask_15"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="ManualTask_8" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="ExclusiveGateway_4" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="ManualTask_9" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="ManualTask_14" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_31" sourceRef="ManualTask_15" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="ManualTask_12" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_33" sourceRef="ExclusiveGateway_7" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_34" name="No" sourceRef="ExclusiveGateway_3" targetRef="ManualTask_7"/>
+    <sequenceFlow id="SequenceFlow_35" sourceRef="ParallelGateway_1" targetRef="ManualTask_13"/>
+    <sequenceFlow id="SequenceFlow_36" sourceRef="ManualTask_13" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_37" sourceRef="ServiceTask_1" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_38" sourceRef="ServiceTask_2" targetRef="ExclusiveGateway_8"/>
+    <sequenceFlow id="SequenceFlow_39" sourceRef="ServiceTask_3" targetRef="ExclusiveGateway_9"/>
+    <sequenceFlow id="SequenceFlow_40" sourceRef="ExclusiveGateway_9" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_41" sourceRef="ParallelGateway_2" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_42" name="No" sourceRef="ExclusiveGateway_8" targetRef="ExclusiveGateway_10"/>
+    <sequenceFlow id="SequenceFlow_43" name="Yes" sourceRef="ExclusiveGateway_8" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_44" sourceRef="ManualTask_16" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_45" name="Yes" sourceRef="ExclusiveGateway_10" targetRef="ManualTask_16"/>
+    <sequenceFlow id="SequenceFlow_46" name="No" sourceRef="ExclusiveGateway_10" targetRef="ExclusiveGateway_9"/>
+    <sequenceFlow id="SequenceFlow_47" name="Yes" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_48" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_49" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_4"/>
+    <sequenceFlow id="SequenceFlow_50" sourceRef="ManualTask_4" targetRef="ExclusiveGateway_2"/>
+  </process>
+</definitions>

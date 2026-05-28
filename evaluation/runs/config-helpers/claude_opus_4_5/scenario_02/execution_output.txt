@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: HiringProcess_86578
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: HiringProcess_86578
+[2] Lanes: Department, HR, Hiring Manager, New Hire
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department: 2 elements
+[4] HR: 12 elements
+[5] Hiring Manager: 6 elements
+[6] New Hire: 5 elements
+
+  Total: 25 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: HiringProcess_86578
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 15: Negotiate Salary=0, Prepare Onboarding=90
+  [Auto-stack] col 8: In-Person Interview=0, Virtual Interview=90
+[Department] Lane bounds: 5-105
+  [Unmask] Identify Hiring Need -> Y=55: OK
+  [Unmask] Start -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Identify Hiring Need -> col=1 (230,25) relY=20
+  Start -> col=0 (80,25) relY=20
+
+[HR] Lane bounds: 125-225
+  [Unmask] Create Job Description -> Y=175: OK
+  [Unmask] Post on Job Boards -> Y=175: OK
+  [Unmask] Collect Resumes -> Y=175: OK
+  [Unmask] Screen Resumes -> Y=175: OK
+  [Unmask] Conduct Phone Interviews -> Y=175: OK
+  [Unmask] Prepare Offer -> Y=175: OK
+  [Unmask] Extend Offer -> Y=175: OK
+  [Unmask] Negotiate Salary -> Y=175: OK
+  [Unmask] Prepare Onboarding -> Y=175: OK
+  [Unmask] Conduct Orientation -> Y=175: OK
+  [Unmask] Arrange Training -> Y=175: OK
+  [Unmask] End -> Y=175: OK
+  [maxElementBottomRelY=170]
+  Create Job Description -> col=2 (380,145) relY=20
+  Post on Job Boards -> col=3 (530,145) relY=20
+  Collect Resumes -> col=4 (680,145) relY=20
+  Screen Resumes -> col=5 (830,145) relY=20
+  Conduct Phone Interviews -> col=6 (980,145) relY=20
+  Prepare Offer -> col=11 (1730,145) relY=20
+  Extend Offer -> col=12 (1880,145) relY=20
+  Negotiate Salary -> col=15 (2330,145) relY=20
+  Prepare Onboarding -> col=15 (2330,235) relY=110
+  Conduct Orientation -> col=17 (2630,145) relY=20
+  Arrange Training -> col=19 (2930,145) relY=20
+  End -> col=22 (3380,145) relY=20
+
+[Hiring Manager] Lane bounds: 306-449
+  [Unmask] Virtual Interview -> Y=377: OK
+  [Unmask] Evaluate Candidates -> Y=377: OK
+  [Unmask] Select Candidate? -> Y=377: OK
+  [Unmask] Confirm Integration -> Y=377: OK
+  [maxElementBottomRelY=170]
+  Interview Preference? -> col=7 (1130,326) relY=20
+  In-Person Interview -> col=8 (1280,326) relY=20
+  Virtual Interview -> col=8 (1280,416) relY=110
+  Evaluate Candidates -> col=9 (1430,326) relY=20
+  Select Candidate? -> col=10 (1580,326) relY=20
+  Confirm Integration -> col=21 (3230,326) relY=20
+
+[New Hire] Lane bounds: 487-587
+  [maxElementBottomRelY=80]
+  Review Offer -> col=13 (2030,507) relY=20
+  Offer Accepted? -> col=14 (2180,507) relY=20
+  Complete Paperwork -> col=16 (2480,507) relY=20
+  Attend Orientation -> col=18 (2780,507) relY=20
+  Complete Training -> col=20 (3080,507) relY=20
+
+
+[9] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 27 sequence flows
+
+==================================================================
+COMPLETE: HiringProcess_86578
+==================================================================
+Lanes: 4 | Elements: 25 | Flows: 27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

@@ -1,0 +1,99 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: InventoryReorderRestock_8574
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InventoryReorderRestock_8574
+[2] Lanes: Inventory System, Procurement, Warehouse
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inventory System: 8 elements
+[4] Procurement: 2 elements
+[5] Warehouse: 3 elements
+
+  Total: 13 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: InventoryReorderRestock_8574
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Inventory System] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Monitor Inventory Levels -> Y=55: OK
+  [Unmask] Stock At Reorder Threshold? -> Y=55: OK
+  [Unmask] Continue Monitoring -> Y=55: OK
+  [Unmask] Update Expected Delivery Dates -> Y=55: OK
+  [Unmask] Record Receipt -> Y=55: OK
+  [Unmask] Update Inventory Levels -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Expected Delivery Dates -> Y=55: OK
+  [Unmask] Stock Receipt Record -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Monitor Inventory Levels -> col=1 (230,25) relY=20
+  Stock At Reorder Threshold? -> col=2 (380,25) relY=20
+  Continue Monitoring -> col=3 (530,25) relY=20
+  Update Expected Delivery Dates -> col=5 (830,25) relY=20
+  Record Receipt -> col=8 (1280,25) relY=20
+  Update Inventory Levels -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+  Expected Delivery Dates (DO from Update Expected Delivery Dates) -> (920,95) maxBottomRelY=80
+  Stock Receipt Record (DO from Record Receipt) -> (1370,95) maxBottomRelY=80
+
+[Procurement] Lane bounds: 187-287
+  [Unmask] Evaluate Suppliers -> Y=237: OK
+  [Unmask] Place Order -> Y=237: OK
+  [Unmask] Purchase Order -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Evaluate Suppliers -> col=3 (530,207) relY=20
+  Place Order -> col=4 (680,207) relY=20
+  Purchase Order (DO from Place Order) -> (770,277) maxBottomRelY=80
+
+[Warehouse] Lane bounds: 369-630
+  [maxElementBottomRelY=80]
+  Receive Stock -> col=6 (980,389) relY=20
+  Inspect Quality -> col=7 (1130,389) relY=20
+  Put Away Stock -> col=9 (1430,389) relY=20
+  Inspection Report (DO from Inspect Quality) -> (1220,459) maxBottomRelY=80
+
+
+[9] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 13 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 8
+
+==================================================================
+COMPLETE: InventoryReorderRestock_8574
+==================================================================
+Lanes: 3 | Elements: 13 | Data: 4 | Flows: 13 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=1,flows=13,data=4,data_assoc=8
+======================================================================

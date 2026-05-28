@@ -1,0 +1,20 @@
+# Scenario 15
+
+**Complexity:** Complex
+
+## Natural-language description
+
+The process starts when a company schedules a compliance audit for regulations such as ISO standards, safety protocols, or environmental guidelines.
+Internal teams prepare documentation, gather evidence, and conduct a self-assessment before the external audit.
+Auditors review the company's processes and identify any gaps or issues.
+After making the necessary corrections or improvements, the company undergoes a final audit.
+If all criteria are met, the company is awarded certification, and the process concludes with the issuance of official documents.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 16
+- gateways: 4
+- flows: 18
+- data_objects: 0
+- data_assoc: 0

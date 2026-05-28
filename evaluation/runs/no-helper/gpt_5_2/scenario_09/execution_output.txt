@@ -1,0 +1,126 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN PRODUCT PROTOTYPE PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   73097
+Process Name:   ProductPrototype_73097
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ProductPrototype_73097
+[2] Lanes: R&D, Testing, Management
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] R&D / Idea Identified | addToLane=True
+  [Elem] R&D / Initial Research and Feasibility | addToLane=True
+  [Elem] R&D / Draft Design Concepts | addToLane=True
+  [Elem] R&D / Select Promising Design | addToLane=True
+  [Elem] R&D / Build Prototype | addToLane=True
+  [Elem] R&D / Refine Prototype | addToLane=True
+[3] R&D lane: 6 elements
+  [Elem] Testing / Test Prototype | addToLane=True
+  [Elem] Testing / Collect Test Feedback | addToLane=True
+  [Elem] Testing / Refinement Needed? | addToLane=True
+[4] Testing lane: 3 elements
+  [Elem] Management / Approved for Further Development? | addToLane=True
+  [Elem] Management / Approved for Development | addToLane=True
+  [Elem] Management / Discard Prototype | addToLane=True
+[5] Management lane: 3 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ProductPrototype_73097
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/12 | Missing: Approved for, Approved for, Discard Prot
+  [Attempt 2] Found: 9/12 | Missing: Approved for, Approved for, Discard Prot
+  [Attempt 3] Found: 9/12 | Missing: Approved for, Approved for, Discard Prot
+  [Attempt 3] TIMEOUT - 9/12 elements
+
+[10] WARNING: 9/12 elements ready after 150ms
+         Missing: Approved for Further Development?, Approved for Development, Discard Prototype
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Approved for Further Development? -> Y=279 (Management): OK
+  [Unmask] Approved for Development -> Y=279 (Management): OK
+  [Unmask] Discard Prototype -> Y=279 (Management): OK
+
+[12] Manual unmask: 3 elements unmasked
+[13] All elements now available
+
+  Lanes: R&D(5-105); Testing(105-229); Management(229-356)
+  Elements: Idea Identifie=Y16, Initial Resear=Y20, Draft Design C=Y25, Select Promisi=Y30, Build Prototyp=Y35, Test Prototype=Y116, Collect Test F=Y116, Refinement Nee=Y116, Refine Prototy=Y40, Approved for F=Y279, Approved for D=Y279, Discard Protot=Y279
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] R&D centerY = 32
+[15] Testing centerY = 144
+[16] Management centerY = 269
+
+[17] R&D/Idea Identified -> (80,32) 33x33
+[18] R&D/Initial Research and Feasibility -> (240,32) 150x60
+[19] R&D/Draft Design Concepts -> (400,32) 150x60
+[20] R&D/Select Promising Design -> (560,32) 150x60
+[21] R&D/Build Prototype -> (720,32) 150x60
+[22] Testing/Test Prototype -> (880,144) 150x60
+[23] Testing/Collect Test Feedback -> (1040,144) 150x60
+[24] Testing/Refinement Needed? -> (1200,144) 40x40
+[25] R&D/Refine Prototype -> (1360,32) 150x60
+[26] Management/Approved for Further Development? -> (1520,269) 40x40
+[27] Management/Approved for Development -> (1680,269) 33x33
+[28] Management/Discard Prototype -> (1840,269) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Idea Identified -> Initial Research a
+  [Flow] Initial Research a -> Draft Design Conce
+  [Flow] Draft Design Conce -> Select Promising D
+  [Flow] Select Promising D -> Build Prototype
+  [Flow] Build Prototype -> Test Prototype
+  [Flow] Test Prototype -> Collect Test Feedb
+  [Flow] Collect Test Feedb -> Refinement Needed?
+  [Flow] Refinement Needed? -> Refine Prototype | Guard=Yes
+  [Flow] Refinement Needed? -> Approved for Furth | Guard=No
+  [Flow] Refine Prototype -> Test Prototype
+  [Flow] Approved for Furth -> Approved for Devel | Guard=Approved
+  [Flow] Approved for Furth -> Discard Prototype | Guard=Discarded
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: R&D(5-105); Testing(105-229); Management(229-356)
+  Elements: Idea Identifie=Y32, Initial Resear=Y32, Draft Design C=Y32, Select Promisi=Y32, Build Prototyp=Y32, Test Prototype=Y144, Collect Test F=Y144, Refinement Nee=Y144, Refine Prototy=Y32, Approved for F=Y269, Approved for D=Y269, Discard Protot=Y269
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ProductPrototype_73097
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=2,flows=12,data=0,data_assoc=0
+======================================================================

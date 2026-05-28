@@ -1,0 +1,69 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OEE_47072
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_47072
+[2] Lanes: Machine, System, Engineer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Machine: 3 elements
+[4] System: 6 elements
+[5] Engineer: 0 elements
+
+  Total: 9 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: OEE_47072
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Calculate OEE=0, End Process=90
+[Machine] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Collect Machine Data -> col=1 (230,25) relY=20
+  Stop Machine -> col=5 (830,25) relY=20
+  Wait for Restart -> col=7 (1130,25) relY=20
+
+[System] Lane bounds: 105-262
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,125) relY=20
+  Machine Connected? -> col=2 (380,125) relY=20
+  Calculate OEE -> col=3 (530,125) relY=20
+  End Process -> col=3 (530,215) relY=110
+  OEE Below Threshold? -> col=4 (680,125) relY=20
+  Notify Engineer -> col=6 (980,125) relY=20
+
+[Engineer] Lane bounds: 285-385
+
+[8] Repositioned: 9/9
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 10 sequence flows
+
+==================================================================
+COMPLETE: OEE_47072
+==================================================================
+Lanes: 3 | Elements: 9 | Flows: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=9,gateways=2,flows=10,data=0,data_assoc=0
+======================================================================

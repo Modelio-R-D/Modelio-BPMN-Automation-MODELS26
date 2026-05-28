@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DIYSmartphoneRepair_19503
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DIYSmartphoneRepair_19503
+[2] Lanes: User, DIY Tool, Friends, Expert
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] User: 18 elements
+[4] DIY Tool: 3 elements
+[5] Friends: 1 elements
+[6] Expert: 2 elements
+
+  Total: 24 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: DIYSmartphoneRepair_19503
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 18: Send Review=0, Send to Expert=90
+[User] Lane bounds: 5-197
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Enter Model and Issue -> col=1 (230,25) relY=20
+  Review Materials List -> col=4 (680,25) relY=20
+  Review Tools List -> col=5 (830,25) relY=20
+  Review Ordering Options -> col=6 (980,25) relY=20
+  Check Inventory -> col=7 (1130,25) relY=20
+  Have Everything? -> col=8 (1280,25) relY=20
+  Contact Friends -> col=9 (1430,25) relY=20
+  Can Borrow/Buy? -> col=11 (1730,25) relY=20
+  Get from Friends -> col=12 (1880,25) relY=20
+  Buy Remaining Items -> col=13 (2030,25) relY=20
+  Receive Items -> col=14 (2180,25) relY=20
+  Follow Repair Steps -> col=16 (2480,25) relY=20
+  Repair Successful? -> col=17 (2630,25) relY=20
+  Send Review -> col=18 (2780,25) relY=20
+  Upload Video -> col=19 (2930,25) relY=20
+  End Success -> col=20 (3080,25) relY=20
+  Send to Expert -> col=18 (2780,115) relY=110
+  Device Info (DO from Enter Model and Issue) -> (320,185) maxBottomRelY=170
+
+[DIY Tool] Lane bounds: 277-377
+  [Unmask] Analyze Device -> Y=327: OK
+  [Unmask] Generate Requirements -> Y=327: OK
+  [Unmask] Generate Instructions -> Y=327: OK
+  [Unmask] Materials List -> Y=327: OK
+  [Unmask] Tools List -> Y=327: OK
+  [Unmask] Ordering Options -> Y=327: OK
+  [Unmask] Repair Instructions -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Analyze Device -> col=2 (380,297) relY=20
+  Generate Requirements -> col=3 (530,297) relY=20
+  Generate Instructions -> col=15 (2330,297) relY=20
+  Materials List (DO from Generate Requirements) -> (620,367) maxBottomRelY=80
+  Tools List (DO from Generate Requirements) -> (620,367) maxBottomRelY=80
+  Ordering Options (DO from Generate Requirements) -> (620,367) maxBottomRelY=80
+  Repair Instructions (DO from Generate Instructions) -> (2420,367) maxBottomRelY=80
+
+[Friends] Lane bounds: 459-634
+  [maxElementBottomRelY=80]
+  Check Availability -> col=10 (1580,479) relY=20
+
+[Expert] Lane bounds: 634-734
+  [Unmask] Repair by Expert -> Y=684: OK
+  [Unmask] End Expert -> Y=684: OK
+  [maxElementBottomRelY=80]
+  Repair by Expert -> col=19 (2930,654) relY=20
+  End Expert -> col=20 (3080,654) relY=20
+
+
+[10] Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 25 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 10
+
+==================================================================
+COMPLETE: DIYSmartphoneRepair_19503
+==================================================================
+Lanes: 4 | Elements: 24 | Data: 5 | Flows: 25 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

@@ -1,0 +1,101 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DISMISSAL PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   30181
+Process Name:   DismissalProcess_30181
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DismissalProcess_30181
+[2] Lanes: MSPN, MSPO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] MSPN lane: 2 elements
+[4] MSPO lane: 5 elements
+
+  Total elements: 7
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: DismissalProcess_30181
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/7 | Missing: Review Dismi, Decision, Reject Dismi, Confirm Dism, End
+  [Attempt 2] Found: 2/7 | Missing: Review Dismi, Decision, Reject Dismi, Confirm Dism, End
+  [Attempt 3] Found: 2/7 | Missing: Review Dismi, Decision, Reject Dismi, Confirm Dism, End
+  [Attempt 3] TIMEOUT - 2/7 elements
+
+[9] WARNING: 2/7 elements ready after 150ms
+         Missing: Review Dismissal, Decision, Reject Dismissal, Confirm Dismissal, End
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Review Dismissal -> Y=155 (MSPO): OK
+  [Unmask] Decision -> Y=155 (MSPO): OK
+  [Unmask] Reject Dismissal -> Y=155 (MSPO): OK
+  [Unmask] Confirm Dismissal -> Y=155 (MSPO): OK
+  [Unmask] End -> Y=155 (MSPO): OK
+
+[11] Manual unmask: 5 elements unmasked
+[12] All elements now available
+
+  Lanes: MSPN(5-105); MSPO(105-232)
+  Elements: Start=Y16, Send Dismi=Y20, Review Dis=Y155, Decision=Y155, Confirm Di=Y155, Reject Dis=Y155, End=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] MSPN centerY = 32
+[14] MSPO centerY = 145
+
+[15] MSPN/Start -> (80,32) 33x33
+[16] MSPN/Send Dismissal -> (230,32) 120x60
+[17] MSPO/Review Dismissal -> (380,145) 120x60
+[18] MSPO/Decision -> (530,145) 40x40
+[19] MSPO/Confirm Dismissal -> (680,185) 120x60 *** LANE CHANGED ***
+         Before: Lanes: MSPN(5-105); MSPO(105-232)
+         After:  Lanes: MSPN(5-105); MSPO(105-256)
+[20] MSPO/Reject Dismissal -> (680,105) 120x60 *** LANE CHANGED ***
+         Before: Lanes: MSPN(5-105); MSPO(105-256)
+         After:  Lanes: MSPN(-6-94); MSPO(94-256)
+[21] MSPO/End -> (830,145) 33x33
+
+  Repositioned: 7/7
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[22] Created 7 sequence flows
+[23] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: MSPN(-6-94); MSPO(94-256)
+  Elements: Start=Y21, Send Dismi=Y21, Review Dis=Y134, Decision=Y134, Confirm Di=Y174, Reject Dis=Y105, End=Y145
+
+[24] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  DismissalProcess_30181
+Lanes:    2
+Elements: 7 (7 in diagram)
+Flows:    7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=7,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

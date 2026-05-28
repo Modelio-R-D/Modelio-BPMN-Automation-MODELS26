@@ -1,0 +1,82 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: InventoryReorderProcess_17116
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InventoryReorderProcess_17116
+[2] Lanes: Inventory System, Procurement Team, Warehouse Staff
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inventory System: 6 elements
+[4] Procurement Team: 3 elements
+[5] Warehouse Staff: 3 elements
+
+  Total: 12 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: InventoryReorderProcess_17116
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Inventory System] Lane bounds: 5-105
+  [Unmask] Monitor Stock -> Y=55: OK
+  [Unmask] Check Threshold -> Y=55: OK
+  [Unmask] Update Expected Delivery -> Y=55: OK
+  [Unmask] Record Receipt -> Y=55: OK
+  [Unmask] Update Inventory Levels -> Y=55: OK
+  [Unmask] Process Complete -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Monitor Stock -> col=0 (80,25) relY=20
+  Check Threshold -> col=1 (230,25) relY=20
+  Update Expected Delivery -> col=5 (830,25) relY=20
+  Record Receipt -> col=8 (1280,25) relY=20
+  Update Inventory Levels -> col=10 (1580,25) relY=20
+  Process Complete -> col=11 (1730,25) relY=20
+
+[Procurement Team] Lane bounds: 163-263
+  [Unmask] Review Reorder Alert -> Y=213: OK
+  [Unmask] Select Supplier -> Y=213: OK
+  [Unmask] Place Order -> Y=213: OK
+  [maxElementBottomRelY=80]
+  Review Reorder Alert -> col=2 (380,183) relY=20
+  Select Supplier -> col=3 (530,183) relY=20
+  Place Order -> col=4 (680,183) relY=20
+
+[Warehouse Staff] Lane bounds: 332-432
+  [maxElementBottomRelY=80]
+  Receive Stock -> col=6 (980,352) relY=20
+  Inspect Quality -> col=7 (1130,352) relY=20
+  Store Items -> col=9 (1430,352) relY=20
+
+
+[8] Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 12 sequence flows
+
+==================================================================
+COMPLETE: InventoryReorderProcess_17116
+==================================================================
+Lanes: 3 | Elements: 12 | Flows: 12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=1,flows=12,data=0,data_assoc=0
+======================================================================

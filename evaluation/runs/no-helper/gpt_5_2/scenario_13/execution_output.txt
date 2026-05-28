@@ -1,0 +1,105 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CUSTOMER COMPLAINT AND REFUND PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   78748
+Process Name:   ComplaintRefund_78748
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplaintRefund_78748
+[2] Lanes: Customer, Customer Service, Investigation, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: ComplaintRefund_78748
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/13 | Missing: Provide feed, Process reim, Feedback pro, Case closed
+  [Attempt 2] Found: 9/13 | Missing: Provide feed, Process reim, Feedback pro, Case closed
+  [Attempt 3] Found: 9/13 | Missing: Provide feed, Process reim, Feedback pro, Case closed
+  [Attempt 3] TIMEOUT - 9/13 elements
+
+[8] WARNING: 9/13 elements ready after 150ms
+         Missing: Provide feedback, Process reimbursement, Feedback provided?, Case closed
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Provide feedback -> Y=55 (Customer): FAILED
+  [Unmask] Process reimbursement -> Y=355 (Finance): FAILED
+  [Unmask] Feedback provided? -> Y=55 (Customer): FAILED
+  [Unmask] Case closed -> Y=55 (Customer): FAILED
+[10] Still missing: Provide feedback, Process reimbursement, Feedback provided?, Case closed
+
+  Lanes: Customer(5-105); Customer Service(105-205); Investigation(205-305); Finance(305-405)
+  Elements: Complaint fi=Y16, Log complain=Y116, Assign to de=Y116, Investigate =Y216, Assess valid=Y216, Refund appro=Y216, Notify custo=Y116, Process reim=--, Receive refu=Y20, Mark complai=Y116, Feedback pro=--, Provide feed=--, Case closed=--
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Customer centerY = 32
+[12] Customer Service centerY = 132
+[13] Investigation centerY = 232
+[14] Finance centerY = 332
+
+[15] Customer/Complaint filed -> (80,32) 33x33
+[16] Customer Service/Log complaint -> (235,132) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Customer Service(105-205); Investigation(205-305); Finance(305-405)
+         After:  Lanes: Customer(5-105); Customer Service(105-265); Investigation(265-365); Finance(365-465)
+[17] Customer Service/Assign to department -> (390,132) 150x60
+[18] Investigation/Investigate complaint -> (545,232) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Customer Service(105-265); Investigation(265-365); Finance(365-465)
+         After:  Lanes: Customer(-39-61); Customer Service(61-221); Investigation(221-365); Finance(365-465)
+[19] Investigation/Assess validity and refund -> (700,232) 150x60
+[20] Investigation/Refund approved? -> (855,232) 40x40
+[21] Customer Service/Notify customer -> (1010,132) 150x60
+[22] SKIP Process reimbursement: not in diagram
+[23] Customer/Receive refund -> (1320,32) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(-39-61); Customer Service(61-221); Investigation(221-365); Finance(365-465)
+         After:  Lanes: Customer(-39-103); Customer Service(103-263); Investigation(263-407); Finance(407-507)
+[24] Customer Service/Mark complaint resolved -> (1475,132) 150x60
+[25] SKIP Feedback provided?: not in diagram
+[26] SKIP Provide feedback: not in diagram
+[27] SKIP Case closed: not in diagram
+
+  Repositioned: 9/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[28] Created 14 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-39-103); Customer Service(103-263); Investigation(263-407); Finance(407-507)
+  Elements: Complaint fi=Y-12, Log complain=Y130, Assign to de=Y130, Investigate =Y274, Assess valid=Y274, Refund appro=Y274, Notify custo=Y174, Process reim=--, Receive refu=Y32, Mark complai=Y132, Feedback pro=--, Provide feed=--, Case closed=--
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ComplaintRefund_78748
+Lanes:    4
+Elements: 13 (9 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=13,gateways=2,flows=14,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN LEGO MACHINE BUILD PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   94824
+Process Name:   LegoMachineBuild_94824
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LegoMachineBuild_94824
+[2] Lanes: Designer, Children, Builder
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Designer lane: 4 elements
+[4] Children lane: 1 element
+[5] Builder lane: 9 elements
+
+  Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: LegoMachineBuild_94824
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/14 | Missing: Redesign Com, Sort Parts, Build Subcom, Parts Availa, Reorder Part, Test Subcomp, Test Passed?, All Done?, Assemble Mac, Machine Comp, Rebuild Comp
+  [Attempt 2] Found: 3/14 | Missing: Redesign Com, Sort Parts, Build Subcom, Parts Availa, Reorder Part, Test Subcomp, Test Passed?, All Done?, Assemble Mac, Machine Comp, Rebuild Comp
+  [Attempt 3] Found: 3/14 | Missing: Redesign Com, Sort Parts, Build Subcom, Parts Availa, Reorder Part, Test Subcomp, Test Passed?, All Done?, Assemble Mac, Machine Comp, Rebuild Comp
+  [Attempt 3] TIMEOUT - 3/14 elements
+
+[10] WARNING: 3/14 elements ready after 150ms
+         Missing: Redesign Component, Sort Parts, Build Subcomponent, Parts Available?, Reorder Parts, Test Subcomponent, Test Passed?, All Done?, Assemble Machine, Machine Complete, Rebuild Component
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Redesign Component -> Y=55 (Designer): OK
+  [Unmask] Sort Parts -> Y=155 (Children): OK
+  [Unmask] Build Subcomponent -> Y=255 (Builder): OK
+  [Unmask] Parts Available? -> Y=255 (Builder): OK
+  [Unmask] Reorder Parts -> Y=255 (Builder): OK
+  [Unmask] Test Subcomponent -> Y=255 (Builder): OK
+  [Unmask] Test Passed? -> Y=255 (Builder): OK
+  [Unmask] All Done? -> Y=255 (Builder): OK
+  [Unmask] Assemble Machine -> Y=255 (Builder): OK
+  [Unmask] Machine Complete -> Y=255 (Builder): OK
+  [Unmask] Rebuild Component -> Y=255 (Builder): OK
+
+[12] Manual unmask: 11 elements unmasked
+[13] All elements now available
+
+  Lanes: Designer(5-112); Children(112-212); Builder(212-332)
+  Elements: Project St=Y16, Develop De=Y20, Order Bric=Y25, Sort Parts=Y155, Build Subc=Y255, Parts Avai=Y255, Reorder Pa=Y255, Test Subco=Y255, Redesign C=Y55, Test Passe=Y255, Rebuild Co=Y255, All Done?=Y255, Assemble M=Y255, Machine Co=Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Designer centerY = 35
+[15] Children centerY = 139
+[16] Builder centerY = 249
+
+[17] Designer/Project Started -> (80,35) 33x33
+[18] Designer/Develop Design -> (230,35) 120x60
+[19] Designer/Order Brick Sets -> (380,35) 120x60
+[20] Children/Sort Parts -> (530,139) 120x60
+[21] Builder/Build Subcomponent -> (680,249) 120x60
+[22] Builder/Parts Available? -> (830,249) 40x40
+[23] Builder/Reorder Parts -> (980,249) 120x60
+[24] Builder/Test Subcomponent -> (1130,249) 120x60
+[25] Designer/Redesign Component -> (1280,35) 120x60
+[26] Builder/Test Passed? -> (1280,249) 40x40
+[27] Builder/Rebuild Component -> (1430,249) 120x60
+[28] Builder/All Done? -> (1580,249) 40x40
+[29] Builder/Assemble Machine -> (1730,249) 120x60
+[30] Builder/Machine Complete -> (1880,249) 33x33
+
+  Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Created 16 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Designer(5-112); Children(112-212); Builder(212-332)
+  Elements: Project St=Y35, Develop De=Y35, Order Bric=Y35, Sort Parts=Y139, Build Subc=Y249, Parts Avai=Y249, Reorder Pa=Y249, Test Subco=Y249, Redesign C=Y35, Test Passe=Y249, Rebuild Co=Y249, All Done?=Y249, Assemble M=Y249, Machine Co=Y249
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LegoMachineBuild_94824
+Lanes:    3
+Elements: 14 (14 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=3,flows=16,data=0,data_assoc=0
+======================================================================

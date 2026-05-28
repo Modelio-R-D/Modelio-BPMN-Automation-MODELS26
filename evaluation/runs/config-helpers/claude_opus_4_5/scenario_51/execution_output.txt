@@ -1,0 +1,74 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: VacationRequest_26111
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: VacationRequest_26111
+[2] Lanes: Employee, Supervisor, HR Representative
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee: 3 elements
+[4] Supervisor: 2 elements
+[5] HR Representative: 3 elements
+
+  Total: 8 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: VacationRequest_26111
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Employee] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Submit Vacation Request -> col=1 (230,25) relY=20
+  Review Rejection -> col=4 (680,25) relY=20
+
+[Supervisor] Lane bounds: 105-205
+  [Unmask] Receive Request -> Y=155: OK
+  [Unmask] Approved? -> Y=155: OK
+  [maxElementBottomRelY=80]
+  Receive Request -> col=2 (380,125) relY=20
+  Approved? -> col=3 (530,125) relY=20
+
+[HR Representative] Lane bounds: 232-332
+  [Unmask] Receive Notification -> Y=282: OK
+  [Unmask] Complete HR Procedures -> Y=282: OK
+  [Unmask] End -> Y=282: OK
+  [maxElementBottomRelY=80]
+  Receive Notification -> col=4 (680,252) relY=20
+  Complete HR Procedures -> col=5 (830,252) relY=20
+  End -> col=6 (980,252) relY=20
+
+
+[8] Repositioned: 8/8
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 8 sequence flows
+
+==================================================================
+COMPLETE: VacationRequest_26111
+==================================================================
+Lanes: 3 | Elements: 8 | Flows: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

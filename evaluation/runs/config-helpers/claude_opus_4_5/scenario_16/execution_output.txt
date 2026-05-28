@@ -1,0 +1,156 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: AnnualAuditProcess_95086
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: AnnualAuditProcess_95086
+[2] Lanes: Audit Coordinator, Regional Office, Compliance Team, Central Audit Team, Audit Director, Executive Board
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Audit Coordinator: 3 elements
+[4] Regional Office: 6 elements
+[5] Compliance Team: 1 elements
+[6] Central Audit Team: 16 elements
+[7] Audit Director: 5 elements
+[8] Executive Board: 1 elements
+
+  Total: 32 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[9] Data Objects: 7
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[10] Diagram: AnnualAuditProcess_95086
+[11] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Evaluate Financial Risks=0, Evaluate Operational Risks=90, Evaluate Compliance Risks=180
+  [Auto-stack] col 15: Data Analysis=0, Conduct Interviews=90, Site Visits=180
+[Audit Coordinator] Lane bounds: 5-161
+  [maxElementBottomRelY=80]
+  Start Audit -> col=0 (60,25) relY=20
+  Send Notification -> col=1 (200,25) relY=20
+  Close Audit -> col=23 (3280,25) relY=20
+
+[Regional Office] Lane bounds: 161-261
+  [Unmask] Fork Preparation -> Y=211: OK
+  [Unmask] Prepare Financial Statements -> Y=211: OK
+  [Unmask] Gather Documents -> Y=211: OK
+  [Unmask] Join Preparation -> Y=211: OK
+  [Unmask] Submit Documents -> Y=211: OK
+  [Unmask] Provide Clarifications -> Y=211: OK
+  [Unmask] Financial Statements -> Y=211: OK
+  [Unmask] Supporting Documents -> Y=211: OK
+  [maxElementBottomRelY=80]
+  Fork Preparation -> col=2 (340,181) relY=20
+  Prepare Financial Statements -> col=3 (480,181) relY=20
+  Gather Documents -> col=4 (620,181) relY=20
+  Join Preparation -> col=5 (760,181) relY=20
+  Submit Documents -> col=6 (900,181) relY=20
+  Provide Clarifications -> col=9 (1320,181) relY=20
+  Financial Statements (DO from Prepare Financial Statements) -> (570,251) maxBottomRelY=80
+  Supporting Documents (DO from Gather Documents) -> (710,251) maxBottomRelY=80
+
+[Compliance Team] Lane bounds: 343-443
+  [maxElementBottomRelY=80]
+  Check Regulatory Updates -> col=3 (480,363) relY=20
+
+[Central Audit Team] Lane bounds: 443-788
+  [Unmask] Fork Risk Assessment -> Y=615: OK
+  [Unmask] Evaluate Financial Risks -> Y=615: OK
+  [Unmask] Evaluate Operational Risks -> Y=615: OK
+  [Unmask] Evaluate Compliance Risks -> Y=615: OK
+  [Unmask] Join Risk Assessment -> Y=615: OK
+  [Unmask] High Risk? -> Y=615: OK
+  [Unmask] Fork Investigation -> Y=615: OK
+  [Unmask] Data Analysis -> Y=615: OK
+  [Unmask] Conduct Interviews -> Y=615: OK
+  [Unmask] Site Visits -> Y=615: OK
+  [Unmask] Join Investigation -> Y=615: OK
+  [Unmask] Compile Audit Report -> Y=615: OK
+  [Unmask] Update Report -> Y=615: OK
+  [Unmask] Clarification Request -> Y=615: OK
+  [Unmask] Risk Assessment Report -> Y=615: OK
+  [Unmask] Investigation Findings -> Y=615: OK
+  [Unmask] Audit Report -> Y=615: OK
+  [maxElementBottomRelY=260]
+  Review Submission -> col=7 (1040,463) relY=20
+  Discrepancies Found? -> col=8 (1180,463) relY=20
+  Request Clarifications -> col=9 (1320,463) relY=20
+  Fork Risk Assessment -> col=10 (1460,463) relY=20
+  Evaluate Financial Risks -> col=11 (1600,463) relY=20
+  Evaluate Operational Risks -> col=11 (1600,553) relY=110
+  Evaluate Compliance Risks -> col=11 (1600,643) relY=200
+  Join Risk Assessment -> col=12 (1740,463) relY=20
+  High Risk? -> col=13 (1880,463) relY=20
+  Fork Investigation -> col=14 (2020,463) relY=20
+  Data Analysis -> col=15 (2160,463) relY=20
+  Conduct Interviews -> col=15 (2160,553) relY=110
+  Site Visits -> col=15 (2160,643) relY=200
+  Join Investigation -> col=16 (2300,463) relY=20
+  Compile Audit Report -> col=17 (2440,463) relY=20
+  Update Report -> col=19 (2720,463) relY=20
+  Clarification Request (DO from Request Clarifications) -> (1270,713) maxBottomRelY=260
+  Risk Assessment Report (DO from Join Risk Assessment) -> (1970,713) maxBottomRelY=260
+  Investigation Findings (DO from Join Investigation) -> (2530,713) maxBottomRelY=260
+  Audit Report (DO from Compile Audit Report) -> (2670,713) maxBottomRelY=260
+
+[Audit Director] Lane bounds: 805-905
+  [Unmask] Review Report -> Y=855: OK
+  [Unmask] Report Approved? -> Y=855: OK
+  [Unmask] Fork Distribution -> Y=855: OK
+  [Unmask] Archive Report -> Y=855: OK
+  [Unmask] Join Distribution -> Y=855: OK
+  [Unmask] Final Report -> Y=855: OK
+  [maxElementBottomRelY=80]
+  Review Report -> col=18 (2580,825) relY=20
+  Report Approved? -> col=19 (2720,825) relY=20
+  Fork Distribution -> col=20 (2860,825) relY=20
+  Archive Report -> col=21 (3000,825) relY=20
+  Join Distribution -> col=22 (3140,825) relY=20
+  Final Report (DO from Review Report) -> (3090,895) maxBottomRelY=80
+
+[Executive Board] Lane bounds: 987-1596
+  [maxElementBottomRelY=80]
+  Distribute to Board -> col=21 (3000,1007) relY=20
+
+
+[12] Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[13] Created 40 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setStartingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+ERROR creating data association: setStartingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[14] Data associations: 12
+
+==================================================================
+COMPLETE: AnnualAuditProcess_95086
+==================================================================
+Lanes: 6 | Elements: 32 | Data: 7 | Flows: 40 | DataAssoc: 12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 11
+======================================================================

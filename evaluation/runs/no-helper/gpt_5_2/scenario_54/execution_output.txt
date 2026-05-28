@@ -1,0 +1,123 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INQ -> IP TRANSACTION DATA REQUEST - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   11166
+Process Name:   INQ_IP_DataRequest_11166
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: INQ_IP_DataRequest_11166
+[2] Lanes created: INQ, IP
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Start | Lane=INQ | addToLane=True
+  [Element] Send transaction data request | Lane=INQ | addToLane=True
+  [Element] Receive data | Lane=INQ | addToLane=True
+  [Element] End - Data received | Lane=INQ | addToLane=True
+  [Element] Receive rejection | Lane=INQ | addToLane=True
+  [Element] End - Rejection received | Lane=INQ | addToLane=True
+  [Element] Check request | Lane=IP | addToLane=True
+  [Element] Request valid? | Lane=IP | addToLane=True
+  [Element] Transmit data | Lane=IP | addToLane=True
+  [Element] Send rejection | Lane=IP | addToLane=True
+
+[3] Total elements created: 10
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: INQ_IP_DataRequest_11166
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/10 | Missing: Start, Send transac, Receive data, End - Data r, Receive reje, End - Reject, Check reques, Request vali, Transmit dat, Send rejecti
+  [Attempt 2] Found: 0/10 | Missing: Start, Send transac, Receive data, End - Data r, Receive reje, End - Reject, Check reques, Request vali, Transmit dat, Send rejecti
+  [Attempt 3] Found: 0/10 | Missing: Start, Send transac, Receive data, End - Data r, Receive reje, End - Reject, Check reques, Request vali, Transmit dat, Send rejecti
+  [Attempt 3] TIMEOUT - 0/10 elements
+
+[8] WARNING: 0/10 elements ready after 150ms
+         Missing: Start, Send transaction data request, Receive data, End - Data received, Receive rejection, End - Rejection received, Check request, Request valid?, Transmit data, Send rejection
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (INQ): OK
+  [Unmask] Send transaction data request -> Y=55 (INQ): OK
+  [Unmask] Receive data -> Y=55 (INQ): OK
+  [Unmask] End - Data received -> Y=55 (INQ): OK
+  [Unmask] Receive rejection -> Y=55 (INQ): OK
+  [Unmask] End - Rejection received -> Y=55 (INQ): OK
+  [Unmask] Check request -> Y=155 (IP): OK
+  [Unmask] Request valid? -> Y=155 (IP): OK
+  [Unmask] Transmit data -> Y=155 (IP): OK
+  [Unmask] Send rejection -> Y=155 (IP): OK
+
+[10] Manual unmask attempted, newly unmasked: 10
+[11] All elements now available
+
+  Lanes: INQ(5-125); IP(125-232)
+  Elements: Start=Y55, Send transacti=Y55, Check request=Y155, Request valid?=Y155, Transmit data=Y155, Receive data=Y55, Send rejection=Y155, End - Data rec=Y55, Receive reject=Y55, End - Rejectio=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] INQ centerY = 42
+[13] IP centerY = 155
+
+[14] INQ/Start -> (80,42) 33x33
+[15] INQ/Send transaction data request -> (230,42) 160x60
+[16] IP/Check request -> (380,155) 160x60
+[17] IP/Request valid? -> (530,155) 40x40
+[18] IP/Transmit data -> (680,155) 160x60
+[19] INQ/Receive data -> (830,42) 160x60
+[20] IP/Send rejection -> (830,155) 160x60
+[21] INQ/End - Data received -> (980,42) 33x33
+[22] INQ/Receive rejection -> (1130,42) 160x60
+[23] INQ/End - Rejection received -> (1280,42) 33x33
+
+[24] Repositioned: 10/10
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Start -> Send transaction data request
+  [Flow] Send transaction data request -> Check request
+  [Flow] Check request -> Request valid?
+  [Flow] Request valid? -> Transmit data | Guard=Valid
+  [Flow] Request valid? -> Send rejection | Guard=Invalid
+  [Flow] Transmit data -> Receive data
+  [Flow] Receive data -> End - Data received
+  [Flow] Send rejection -> Receive rejection
+  [Flow] Receive rejection -> End - Rejection received
+
+[25] Created 9 sequence flows
+[26] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: INQ(5-125); IP(125-232)
+  Elements: Start=Y42, Send transacti=Y42, Check request=Y155, Request valid?=Y155, Transmit data=Y155, Receive data=Y42, Send rejection=Y155, End - Data rec=Y42, Receive reject=Y42, End - Rejectio=Y42
+
+[27] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  INQ_IP_DataRequest_11166
+Lanes:    2
+Elements: 10 (10 in diagram)
+Flows:    9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=10,gateways=1,flows=9,data=0,data_assoc=0
+======================================================================

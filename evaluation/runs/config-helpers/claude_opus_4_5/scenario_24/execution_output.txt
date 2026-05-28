@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: RestaurantOrderProcess_5314
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RestaurantOrderProcess_5314
+[2] Lanes: Guest, Employee, Chef
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest: 10 elements
+[4] Employee: 13 elements
+[5] Chef: 5 elements
+
+  Total: 28 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: RestaurantOrderProcess_5314
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 12: Hand Over Meal=0, Wait 5 Minutes=90
+[Guest] Lane bounds: 5-105
+  [Unmask] Place Order -> Y=55: OK
+  [Unmask] Pay -> Y=55: OK
+  [Unmask] Receive Buzzer -> Y=55: OK
+  [Unmask] Wait for Buzzer -> Y=55: OK
+  [Unmask] Pick Up Meal -> Y=55: OK
+  [Unmask] Eat Meal -> Y=55: OK
+  [Unmask] End Guest -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Feeling Hungry -> col=0 (80,25) relY=20
+  Choose Dish -> col=1 (210,25) relY=20
+  Wait for Turn -> col=2 (340,25) relY=20
+  Place Order -> col=3 (470,25) relY=20
+  Pay -> col=4 (600,25) relY=20
+  Receive Buzzer -> col=5 (730,25) relY=20
+  Wait for Buzzer -> col=6 (860,25) relY=20
+  Pick Up Meal -> col=10 (1380,25) relY=20
+  Eat Meal -> col=11 (1510,25) relY=20
+  End Guest -> col=12 (1640,25) relY=20
+
+[Employee] Lane bounds: 125-252
+  [maxElementBottomRelY=150]
+  Receive Order -> col=3 (470,145) relY=20
+  Enter in POS -> col=4 (600,145) relY=20
+  Collect Payment -> col=5 (730,145) relY=20
+  Setup Buzzer -> col=6 (860,145) relY=20
+  Give Buzzer to Guest -> col=7 (990,145) relY=20
+  Inform Chef -> col=8 (1120,145) relY=20
+  Wait for Meal Ready -> col=9 (1250,145) relY=20
+  Trigger Buzzer -> col=10 (1380,145) relY=20
+  Guest Responded? -> col=11 (1510,145) relY=20
+  Hand Over Meal -> col=12 (1640,145) relY=20
+  Wait 5 Minutes -> col=12 (1640,235) relY=110
+  Call for Guest -> col=13 (1770,145) relY=20
+  End Employee -> col=14 (1900,145) relY=20
+  Order Info (DO from Enter in POS) -> (690,285) maxBottomRelY=150
+  Buzzer (DO from Setup Buzzer) -> (820,285) maxBottomRelY=150
+
+[Chef] Lane bounds: 377-541
+  [maxElementBottomRelY=80]
+  Receive Meal Order -> col=8 (1120,397) relY=20
+  Prepare Meal -> col=9 (1250,397) relY=20
+  Place in Service Hatch -> col=10 (1380,397) relY=20
+  Notify Meal Ready -> col=11 (1510,397) relY=20
+  End Chef -> col=12 (1640,397) relY=20
+
+
+[9] Repositioned: 30/30
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 26 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 4
+
+==================================================================
+COMPLETE: RestaurantOrderProcess_5314
+==================================================================
+Lanes: 3 | Elements: 28 | Data: 2 | Flows: 26 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

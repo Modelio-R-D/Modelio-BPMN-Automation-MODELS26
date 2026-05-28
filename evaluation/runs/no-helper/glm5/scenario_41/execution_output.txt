@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN MACHINE INSPECTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   57574
+Process Name:   MachineInspection_57574
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: MachineInspection_57574
+[2] Lanes: Inspector, Application
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inspector lane: 8 elements
+[4] Application lane: 7 elements
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: MachineInspection_57574
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/15 | Missing: Enter Machin, Enter Serial, Input Measur, Press Data C, Answer Addit, Review Inspe, Inspection C, Collect Mach, Results OK?, Queue Follow, Calculate Ov, Generate Ins
+  [Attempt 2] Found: 3/15 | Missing: Enter Machin, Enter Serial, Input Measur, Press Data C, Answer Addit, Review Inspe, Inspection C, Collect Mach, Results OK?, Queue Follow, Calculate Ov, Generate Ins
+  [Attempt 3] Found: 3/15 | Missing: Enter Machin, Enter Serial, Input Measur, Press Data C, Answer Addit, Review Inspe, Inspection C, Collect Mach, Results OK?, Queue Follow, Calculate Ov, Generate Ins
+  [Attempt 3] TIMEOUT - 3/15 elements
+
+[9] WARNING: 3/15 elements ready after 150ms
+         Missing: Enter Machine Type, Enter Serial Number, Input Measurement Values, Press Data Collection Button, Answer Additional Questions, Review Inspection Report, Inspection Complete, Collect Machine Data, Results OK?, Queue Follow-up Questions, Calculate Overall Status, Generate Inspection Report
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Enter Machine Type -> Y=55 (Inspector): OK
+  [Unmask] Enter Serial Number -> Y=55 (Inspector): OK
+  [Unmask] Input Measurement Values -> Y=55 (Inspector): OK
+  [Unmask] Press Data Collection Button -> Y=55 (Inspector): OK
+  [Unmask] Answer Additional Questions -> Y=55 (Inspector): OK
+  [Unmask] Review Inspection Report -> Y=55 (Inspector): OK
+  [Unmask] Inspection Complete -> Y=55 (Inspector): OK
+  [Unmask] Collect Machine Data -> Y=155 (Application): OK
+  [Unmask] Results OK? -> Y=155 (Application): OK
+  [Unmask] Queue Follow-up Questions -> Y=155 (Application): OK
+  [Unmask] Calculate Overall Status -> Y=155 (Application): OK
+  [Unmask] Generate Inspection Report -> Y=155 (Application): OK
+
+[11] Manual unmask: 12 elements unmasked
+[12] All elements now available
+
+  Lanes: Inspector(5-125); Application(125-245)
+  Elements: Inspection S=Y16, Enter Machin=Y55, Enter Serial=Y55, Load Inspect=Y136, Display Next=Y136, Input Measur=Y55, Collect Mach=Y155, Press Data C=Y55, Results OK?=Y155, Answer Addit=Y55, Queue Follow=Y155, Calculate Ov=Y155, Generate Ins=Y155, Review Inspe=Y55, Inspection C=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Inspector centerY = 42
+[14] Application centerY = 162
+
+[15] Inspector/Inspection Started -> (80,42) 33x33
+[16] Inspector/Enter Machine Type -> (220,42) 130x60
+[17] Inspector/Enter Serial Number -> (360,42) 130x60
+[18] Application/Load Inspection Protocol -> (360,162) 130x60
+[19] Application/Display Next Question -> (640,162) 130x60 *** LANE CHANGED ***
+         Before: Lanes: Inspector(5-125); Application(125-245)
+         After:  Lanes: Inspector(5-125); Application(125-246)
+[20] Inspector/Input Measurement Values -> (780,42) 130x60
+[21] Application/Collect Machine Data -> (920,162) 130x60
+[22] Inspector/Press Data Collection Button -> (1060,42) 130x60
+[23] Application/Results OK? -> (1200,162) 40x40
+[24] Inspector/Answer Additional Questions -> (1340,42) 130x60
+[25] Application/Queue Follow-up Questions -> (1340,162) 130x60
+[26] Application/Calculate Overall Status -> (1480,162) 130x60
+[27] Application/Generate Inspection Report -> (1620,162) 130x60
+[28] Inspector/Review Inspection Report -> (1760,42) 130x60
+[29] Inspector/Inspection Complete -> (1900,42) 33x33
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 16 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Inspector(5-125); Application(125-246)
+  Elements: Inspection S=Y42, Enter Machin=Y42, Enter Serial=Y42, Load Inspect=Y162, Display Next=Y162, Input Measur=Y42, Collect Mach=Y162, Press Data C=Y42, Results OK?=Y162, Answer Addit=Y42, Queue Follow=Y162, Calculate Ov=Y162, Generate Ins=Y162, Review Inspe=Y42, Inspection C=Y42
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  MachineInspection_57574
+Lanes:    2
+Elements: 15 (15 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=15,gateways=1,flows=16,data=0,data_assoc=0
+======================================================================

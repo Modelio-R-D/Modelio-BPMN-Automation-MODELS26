@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Service for Your Fridge_48179
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Service for Your Fridge_48179
+[2] Lanes: Customer, Central Service Center, Service Facility
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 7 elements
+[4] Central Service Center: 3 elements
+[5] Service Facility: 9 elements
+
+  Total: 19 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Service for Your Fridge_48179
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Repair Fridge=0, Order Parts=90
+  [Auto-stack] col 10: Reschedule Appointment=0, Service Completed=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Receive Appointment -> Y=55: OK
+  [Unmask] Confirm Fridge OK -> Y=55: OK
+  [Unmask] Rate Service Facility -> Y=55: OK
+  [Unmask] Process Complete -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Fridge Noise Detected -> col=0 (80,25) relY=20
+  Describe Symptoms -> col=1 (230,25) relY=20
+  Send Symptoms & Fridge Type -> col=2 (380,25) relY=20
+  Receive Appointment -> col=4 (680,25) relY=20
+  Confirm Fridge OK -> col=5 (830,25) relY=20
+  Rate Service Facility -> col=6 (980,25) relY=20
+  Process Complete -> col=7 (1130,25) relY=20
+
+[Central Service Center] Lane bounds: 125-225
+  [Unmask] Receive Service Request -> Y=175: OK
+  [Unmask] Select Service Facility -> Y=175: OK
+  [Unmask] Assign to Facility -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Receive Service Request -> col=2 (380,145) relY=20
+  Select Service Facility -> col=3 (530,145) relY=20
+  Assign to Facility -> col=4 (680,145) relY=20
+
+[Service Facility] Lane bounds: 326-426
+  [Unmask] Receive Assignment -> Y=376: OK
+  [Unmask] Make Appointment -> Y=376: OK
+  [Unmask] Notify Customer -> Y=376: OK
+  [Unmask] Arrive at Location -> Y=376: OK
+  [Unmask] Parts Available? -> Y=376: OK
+  [Unmask] Repair Fridge -> Y=376: OK
+  [Unmask] Order Parts -> Y=376: OK
+  [Unmask] Reschedule Appointment -> Y=376: OK
+  [Unmask] Service Completed -> Y=376: OK
+  [maxElementBottomRelY=170]
+  Receive Assignment -> col=4 (680,346) relY=20
+  Make Appointment -> col=5 (830,346) relY=20
+  Notify Customer -> col=6 (980,346) relY=20
+  Arrive at Location -> col=7 (1130,346) relY=20
+  Parts Available? -> col=8 (1280,346) relY=20
+  Repair Fridge -> col=9 (1430,346) relY=20
+  Order Parts -> col=9 (1430,436) relY=110
+  Reschedule Appointment -> col=10 (1580,346) relY=20
+  Service Completed -> col=10 (1580,436) relY=110
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 19 sequence flows
+
+==================================================================
+COMPLETE: Service for Your Fridge_48179
+==================================================================
+Lanes: 3 | Elements: 19 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=19,gateways=1,flows=19,data=0,data_assoc=0
+======================================================================

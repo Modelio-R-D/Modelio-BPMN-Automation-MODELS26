@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Register for internship">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Enter topic">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_28</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Enter expected income">
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Enter experience">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Enter hobbies">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </userTask>
+    <userTask id="UserTask_6" name="Accept offer">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </userTask>
+    <userTask id="UserTask_7" name="Deny offer">
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </userTask>
+    <userTask id="UserTask_8" name="Publish your application">
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </userTask>
+    <userTask id="UserTask_9" name="Begin internship">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </userTask>
+    <userTask id="UserTask_10" name="Write at least 3 status updates every week">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </userTask>
+    <userTask id="UserTask_11" name="End internship">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Recieve offer">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Invalidate all other offers">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Recommend company to a list of friends via twitter api">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_35</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="Recieve 3 status updates from the company">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Accept offer?">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_31</outgoing>
+      <outgoing>SequenceFlow_32</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="Recommend company?">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_33</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_33</incoming>
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_34</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_10</incoming>
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_32</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+      <outgoing>SequenceFlow_9</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_3">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_4">
+      <incoming>SequenceFlow_19</incoming>
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_25</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_5">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+      <outgoing>SequenceFlow_29</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_6">
+      <incoming>SequenceFlow_27</incoming>
+      <incoming>SequenceFlow_28</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </parallelGateway>
+    <inclusiveGateway id="InclusiveGateway_1">
+      <incoming>SequenceFlow_29</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_14</outgoing>
+    </inclusiveGateway>
+    <inclusiveGateway id="InclusiveGateway_2">
+      <incoming>SequenceFlow_3</incoming>
+      <incoming>SequenceFlow_15</incoming>
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+    </inclusiveGateway>
+    <startEvent id="StartEvent_1" name="Internship process is started">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="Internship succesful">
+      <incoming>SequenceFlow_34</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="InclusiveGateway_1" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="UserTask_5" targetRef="InclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ServiceTask_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_2" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="UserTask_7" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="UserTask_8" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="ParallelGateway_2" targetRef="UserTask_6"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ParallelGateway_2" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="UserTask_6" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ServiceTask_2" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="UserTask_9" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="InclusiveGateway_1" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="InclusiveGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="UserTask_4" targetRef="InclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="UserTask_3" targetRef="InclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ParallelGateway_3" targetRef="UserTask_10"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ParallelGateway_3" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ServiceTask_4" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="UserTask_10" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_21" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ParallelGateway_1" targetRef="UserTask_9"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="UserTask_11" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="UserTask_1" targetRef="ParallelGateway_5"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="ParallelGateway_4" targetRef="UserTask_11"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="ParallelGateway_5" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="InclusiveGateway_2" targetRef="ParallelGateway_6"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="UserTask_2" targetRef="ParallelGateway_6"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="ParallelGateway_5" targetRef="InclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="ParallelGateway_6" targetRef="UserTask_8"/>
+    <sequenceFlow id="SequenceFlow_31" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_7"/>
+    <sequenceFlow id="SequenceFlow_32" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_33" name="No" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_34" sourceRef="ExclusiveGateway_4" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_35" sourceRef="ServiceTask_3" targetRef="ExclusiveGateway_4"/>
+  </process>
+</definitions>

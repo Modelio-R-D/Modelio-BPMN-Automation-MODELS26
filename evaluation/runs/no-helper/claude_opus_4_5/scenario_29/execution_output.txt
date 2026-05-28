@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN WORK AND LIVE IN AUSTRIA PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   83762
+Process Name:   WorkLiveAustria_83762
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkLiveAustria_83762
+[2] Lanes: Applicant, Austrian Repr., Accom./Bank, Employer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant lane: 15 elements
+[4] Austrian Repr. lane: 9 elements
+[5] Accom./Bank lane: 6 elements
+[6] Employer lane: 5 elements
+
+  Total elements: 35
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: WorkLiveAustria_83762
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 20/35 | Missing: Receive Ap, Verify Doc, Documents , Request Mo, Process RW
+  [Attempt 2] Found: 20/35 | Missing: Receive Ap, Verify Doc, Documents , Request Mo, Process RW
+  [Attempt 3] Found: 20/35 | Missing: Receive Ap, Verify Doc, Documents , Request Mo, Process RW
+  [Attempt 4] Found: 20/35 | Missing: Receive Ap, Verify Doc, Documents , Request Mo, Process RW
+  [Attempt 5] Found: 20/35 | Missing: Receive Ap, Verify Doc, Documents , Request Mo, Process RW
+  [Attempt 5] TIMEOUT - 20/35 elements
+
+[11] WARNING: 20/35 elements ready
+
+[12] Trying manual unmask...
+
+  [Unmask] Receive Applica -> Y=205: FAILED
+  [Unmask] Verify Document -> Y=205: FAILED
+  [Unmask] Documents OK? -> Y=205: FAILED
+  [Unmask] Request More Do -> Y=205: FAILED
+  [Unmask] Process RWR Car -> Y=205: FAILED
+  [Unmask] Visa Approved? -> Y=205: FAILED
+  [Unmask] Issue RWR Card -> Y=205: FAILED
+  [Unmask] Visa Rejected -> Y=205: FAILED
+  [Unmask] Process Renewal -> Y=205: FAILED
+  [Unmask] Search Accommod -> Y=305: OK
+  [Unmask] Negotiate Lease -> Y=305: OK
+  [Unmask] Sign Lease Cont -> Y=305: OK
+  [Unmask] Open Bank Accou -> Y=305: OK
+  [Unmask] Bank Verificati -> Y=305: OK
+  [Unmask] Join Accom/Bank -> Y=305: OK
+
+[13] Manual unmask: 6 elements
+
+  Lanes: Applican(5-155); Austrian(155-255); Accom./B(255-382); Employer(382-646)
+  Elements: Decision=Y16, Research=Y20, Identify=Y25, Review A=Y393, Hire Dec=Y393, Start Pa=Y30, Fill Vis=Y35, Issue Jo=Y393, ...
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Applicant centerY = 57
+[15] Austrian Repr. centerY = 182
+[16] Accom./Bank centerY = 295
+[17] Employer centerY = 491
+
+[18] Repositioned: 26/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[19] Created 36 sequence flows
+[20] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applican(5-155); Austrian(155-255); Accom./B(255-382); Employer(382-646)
+  Elements: Decision=Y57, Research=Y57, Identify=Y57, Review A=Y491, Hire Dec=Y491, Start Pa=Y57, Fill Vis=Y57, Issue Jo=Y491, ...
+
+[21] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  WorkLiveAustria_83762
+Lanes:    4
+Elements: 35 (26 in diagram)
+Flows:    36
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=35,gateways=6,flows=36,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,119 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CONTRACT PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   51132
+Process Name:   Contract_51132
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Contract_51132
+[2] Lanes: Contract Manager, Web Shops, Production
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Contract Manager lane: 8 elements
+[4] Web Shops lane: 6 elements
+[5] Production lane: 8 elements
+
+  Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Contract_51132
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 14/22 | Missing: Contract Sta, Identify Par, Select Cheap, Single Shop , Order from S, Order from M, Write Compla, Contract Com
+  [Attempt 2] Found: 14/22 | Missing: Contract Sta, Identify Par, Select Cheap, Single Shop , Order from S, Order from M, Write Compla, Contract Com
+  [Attempt 3] Found: 14/22 | Missing: Contract Sta, Identify Par, Select Cheap, Single Shop , Order from S, Order from M, Write Compla, Contract Com
+  [Attempt 3] TIMEOUT - 14/22 elements
+
+[10] WARNING: 14/22 elements ready after 150ms
+         Missing: Contract Started, Identify Parts Needed, Select Cheapest Suppliers, Single Shop Enough?, Order from Single Shop, Order from Multiple Shops, Write Complaint Mail, Contract Complete
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Contract Started -> Y=55 (Contract Manager): OK
+  [Unmask] Identify Parts Needed -> Y=55 (Contract Manager): OK
+  [Unmask] Select Cheapest Suppliers -> Y=55 (Contract Manager): OK
+  [Unmask] Single Shop Enough? -> Y=55 (Contract Manager): OK
+  [Unmask] Order from Single Shop -> Y=55 (Contract Manager): OK
+  [Unmask] Order from Multiple Shops -> Y=55 (Contract Manager): OK
+  [Unmask] Write Complaint Mail -> Y=55 (Contract Manager): OK
+  [Unmask] Contract Complete -> Y=55 (Contract Manager): OK
+
+[12] Manual unmask: 8 elements unmasked
+[13] All elements now available
+
+  Lanes: Contract Manager(5-161); Web Shops(161-262); Production(262-451)
+  Elements: Contract S=Y55, Identify P=Y55, Query All =Y172, Query Shop=Y172, Query Shop=Y172, Query Shop=Y172, Quotes Rec=Y172, Compile Qu=Y172, Select Che=Y55, Single Sho=Y55, Order from=Y55, Order from=Y55, Receive Pa=Y273, Update Sto=Y273, Start Buil=Y273, Stock Leve=Y273, Reorder Ch=Y273, Reorder Fa=Y273, Write Comp=Y55, Continue B=Y273, Parts Comp=Y273, Contract C=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Contract Manager centerY = 60
+[15] Web Shops centerY = 188
+[16] Production centerY = 333
+
+[17] Contract Manager/Contract Started -> (80,60) 33x33
+[18] Contract Manager/Identify Parts Needed -> (200,60) 120x60
+[19] Web Shops/Query All Shops -> (320,188) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Contract Manager(5-161); Web Shops(161-262); Production(262-451)
+         After:  Lanes: Contract Manager(5-161); Web Shops(161-265); Production(265-454)
+[20] Web Shops/Query Shop A -> (440,188) 120x60
+[21] Web Shops/Query Shop B -> (560,188) 120x60
+[22] Web Shops/Query Shop C -> (680,188) 120x60
+[23] Web Shops/Quotes Received -> (800,188) 40x40
+[24] Web Shops/Compile Quotes -> (920,188) 120x60
+[25] Contract Manager/Select Cheapest Suppliers -> (1040,60) 120x60
+[26] Contract Manager/Single Shop Enough? -> (1160,60) 40x40
+[27] Contract Manager/Order from Single Shop -> (1280,60) 120x60
+[28] Contract Manager/Order from Multiple Shops -> (1400,60) 120x60
+[29] Production/Receive Parts Batch -> (1520,333) 120x60
+[30] Production/Update Stock -> (1640,333) 120x60
+[31] Production/Start Building -> (1760,333) 120x60
+[32] Production/Stock Level? -> (1880,333) 40x40
+[33] Production/Reorder Cheapest -> (2000,333) 120x60
+[34] Production/Reorder Fastest -> (2120,333) 120x60
+[35] Contract Manager/Write Complaint Mail -> (2120,60) 120x60
+[36] Production/Continue Building -> (2240,333) 120x60
+[37] Production/Parts Complete? -> (2360,333) 40x40
+[38] Contract Manager/Contract Complete -> (2480,60) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[39] Created 28 sequence flows
+[40] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Contract Manager(5-161); Web Shops(161-265); Production(265-454)
+  Elements: Contract S=Y60, Identify P=Y60, Query All =Y188, Query Shop=Y188, Query Shop=Y188, Query Shop=Y188, Quotes Rec=Y188, Compile Qu=Y188, Select Che=Y60, Single Sho=Y60, Order from=Y60, Order from=Y60, Receive Pa=Y333, Update Sto=Y333, Start Buil=Y333, Stock Leve=Y333, Reorder Ch=Y333, Reorder Fa=Y333, Write Comp=Y60, Continue B=Y333, Parts Comp=Y333, Contract C=Y60
+
+[41] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Contract_51132
+Lanes:    3
+Elements: 22 (22 in diagram)
+Flows:    28
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=22,gateways=5,flows=28,data=0,data_assoc=0
+======================================================================

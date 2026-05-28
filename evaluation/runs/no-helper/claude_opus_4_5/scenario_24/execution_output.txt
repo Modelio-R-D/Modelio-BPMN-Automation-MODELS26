@@ -1,0 +1,138 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN RESTAURANT ORDER PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   69412
+Process Name:   RestaurantOrder_69412
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RestaurantOrder_69412
+[2] Lanes: Guest, Employee, Chef
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest lane: 10 elements
+[4] Employee lane: 12 elements
+[5] Chef lane: 4 elements
+
+  Total elements: 26
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: RestaurantOrder_69412
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/26 | Missing: Feeling Hung, Enter Restau, Choose Dish, Wait for Tur, Place Order
+  [Attempt 2] Found: 0/26 | Missing: Feeling Hung, Enter Restau, Choose Dish, Wait for Tur, Place Order
+  [Attempt 3] Found: 0/26 | Missing: Feeling Hung, Enter Restau, Choose Dish, Wait for Tur, Place Order
+  [Attempt 3] TIMEOUT - 0/26 elements
+
+[10] WARNING: 0/26 elements ready
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Feeling Hungry -> Y=55 (Guest): OK
+  [Unmask] Enter Restaurant -> Y=55 (Guest): OK
+  [Unmask] Choose Dish -> Y=55 (Guest): OK
+  [Unmask] Wait for Turn -> Y=55 (Guest): OK
+  [Unmask] Place Order -> Y=55 (Guest): OK
+  [Unmask] Receive Buzzer -> Y=55 (Guest): OK
+  [Unmask] Wait for Buzzer -> Y=55 (Guest): OK
+  [Unmask] Pick Up Meal -> Y=55 (Guest): OK
+  [Unmask] Eat Meal -> Y=55 (Guest): OK
+  [Unmask] Meal Finished -> Y=55 (Guest): OK
+  [Unmask] Take Order -> Y=155 (Employee): OK
+  [Unmask] Enter Order POS -> Y=155 (Employee): OK
+  [Unmask] Collect Payment -> Y=155 (Employee): OK
+  [Unmask] Setup Buzzer -> Y=155 (Employee): OK
+  [Unmask] Give Buzzer -> Y=155 (Employee): OK
+  [Unmask] Inform Chef -> Y=155 (Employee): OK
+  [Unmask] Wait Meal Ready -> Y=155 (Employee): OK
+  [Unmask] Trigger Buzzer -> Y=155 (Employee): OK
+  [Unmask] Guest Responds? -> Y=155 (Employee): OK
+  [Unmask] Wait 5 min -> Y=155 (Employee): OK
+  [Unmask] Call Guest -> Y=155 (Employee): OK
+  [Unmask] Hand Over Meal -> Y=155 (Employee): OK
+  [Unmask] Receive Order -> Y=255 (Chef): OK
+  [Unmask] Prepare Meal -> Y=255 (Chef): OK
+  [Unmask] Place in Hatch -> Y=255 (Chef): OK
+  [Unmask] Notify Employee -> Y=255 (Chef): OK
+
+[12] Manual unmask: 26 elements unmasked
+[13] All elements now available
+
+  Lanes: Guest(5-125); Employee(125-232); Chef(232-332)
+  Elements: Feeling Hu=Y55, Enter Rest=Y55, Choose Dis=Y55, Wait for T=Y55, Place Orde=Y55, Take Order=Y155, Enter Orde=Y155, Collect Pa=Y155, ...
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Guest centerY = 42
+[15] Employee centerY = 155
+[16] Chef centerY = 259
+
+[17] Guest/Feeling Hungry -> (80,42)
+[18] Guest/Enter Restaurant -> (210,42)
+[19] Guest/Choose Dish -> (340,42)
+[20] Guest/Wait for Turn -> (470,42)
+[21] Guest/Place Order -> (600,42)
+[22] Employee/Take Order -> (600,155)
+[23] Employee/Enter Order POS -> (730,155)
+[24] Employee/Collect Payment -> (860,155)
+[25] Employee/Give Buzzer -> (990,155)
+[26] Guest/Receive Buzzer -> (990,42)
+[27] Employee/Setup Buzzer -> (990,155)
+[28] Employee/Inform Chef -> (1120,155)
+[29] Chef/Receive Order -> (1120,259)
+[30] Guest/Wait for Buzzer -> (1120,42)
+[31] Chef/Prepare Meal -> (1250,259)
+[32] Employee/Wait Meal Ready -> (1250,155)
+[33] Chef/Place in Hatch -> (1380,259)
+[34] Employee/Trigger Buzzer -> (1380,155)
+[35] Employee/Guest Responds? -> (1510,155)
+[36] Chef/Notify Employee -> (1510,259)
+[37] Employee/Hand Over Meal -> (1640,155)
+[38] Guest/Pick Up Meal -> (1640,42)
+[39] Employee/Wait 5 min -> (1640,155)
+[40] Employee/Call Guest -> (1770,155)
+[41] Guest/Eat Meal -> (1770,42)
+[42] Guest/Meal Finished -> (1900,42)
+
+  Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[43] Created 27 sequence flows
+[44] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Guest(5-125); Employee(125-232); Chef(232-332)
+  Elements: Feeling Hu=Y42, Enter Rest=Y42, Choose Dis=Y42, Wait for T=Y42, Place Orde=Y42, Take Order=Y155, Enter Orde=Y155, Collect Pa=Y155, ...
+
+[45] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RestaurantOrder_69412
+Lanes:    3
+Elements: 26 (26 in diagram)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=26,gateways=1,flows=27,data=0,data_assoc=0
+======================================================================

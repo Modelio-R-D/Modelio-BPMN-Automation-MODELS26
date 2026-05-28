@@ -1,0 +1,82 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OnlineShopPurchase_32745
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopPurchase_32745
+[2] Lanes: Customer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 15 elements
+
+  Total: 15 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: OnlineShopPurchase_32745
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Select Items=0, Set Payment Method=90
+  [Auto-stack] col 4: Select Reward=0, Payment Choice=90
+  [Auto-stack] col 5: Pay=0, Installment Agreement=90
+  [Auto-stack] col 10: Return Items=0, End=90
+[Customer] Lane bounds: 5-205
+  [Unmask] Set Payment Method -> Y=105: OK
+  [Unmask] Payment Choice -> Y=105: OK
+  [Unmask] Pay -> Y=105: OK
+  [Unmask] Installment Agreement -> Y=105: OK
+  [Unmask] Payment Merge -> Y=105: OK
+  [Unmask] Join -> Y=105: OK
+  [Unmask] Delivery -> Y=105: OK
+  [Unmask] Return? -> Y=105: OK
+  [Unmask] Return Items -> Y=105: OK
+  [Unmask] End -> Y=105: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Login -> col=1 (230,25) relY=20
+  Fork -> col=2 (380,25) relY=20
+  Select Items -> col=3 (530,25) relY=20
+  Select Reward -> col=4 (680,25) relY=20
+  Set Payment Method -> col=3 (530,115) relY=110
+  Payment Choice -> col=4 (680,115) relY=110
+  Pay -> col=5 (830,25) relY=20
+  Installment Agreement -> col=5 (830,115) relY=110
+  Payment Merge -> col=6 (980,25) relY=20
+  Join -> col=7 (1130,25) relY=20
+  Delivery -> col=8 (1280,25) relY=20
+  Return? -> col=9 (1430,25) relY=20
+  Return Items -> col=10 (1580,25) relY=20
+  End -> col=10 (1580,115) relY=110
+
+
+[6] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 17 sequence flows
+
+==================================================================
+COMPLETE: OnlineShopPurchase_32745
+==================================================================
+Lanes: 1 | Elements: 15 | Flows: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=15,gateways=5,flows=17,data=0,data_assoc=0
+======================================================================

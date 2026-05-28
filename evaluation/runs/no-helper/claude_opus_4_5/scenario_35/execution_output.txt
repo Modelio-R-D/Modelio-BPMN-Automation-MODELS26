@@ -1,0 +1,172 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CUSTOM CHAINSAW PRODUCTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   96068
+Process Name:   ChainsawProduction_96068
+==================================================================
+
+Chainsaw Properties:
+  - Guide Bar Length (Schwertlaenge)
+  - Chain Width
+  - Power Type (Electric/Motor)
+  - Handle Type
+  - Safety Features
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ChainsawProduction_96068
+[2] Lanes: Customer, Sales, Procurement, Production
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 5 elements
+[4] Sales lane: 3 elements
+[5] Procurement lane: 7 elements
+[6] Production lane: 8 elements
+
+  Total elements: 23
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: ChainsawProduction_96068
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/23 | Missing: Order Initia, Specify Prop, Receive Prot, Approved?, Order Comple, Split Orders, Order Guide , Order Chain, Order Motor/, Order Handle, Order Safety, Join Parts, Inspect Part, Assemble Cha, Send Update, Quality Test, Ship Prototy, Request Chan, Produce Rema, Ship Final O
+  [Attempt 2] Found: 3/23 | Missing: Order Initia, Specify Prop, Receive Prot, Approved?, Order Comple, Split Orders, Order Guide , Order Chain, Order Motor/, Order Handle, Order Safety, Join Parts, Inspect Part, Assemble Cha, Send Update, Quality Test, Ship Prototy, Request Chan, Produce Rema, Ship Final O
+  [Attempt 3] Found: 3/23 | Missing: Order Initia, Specify Prop, Receive Prot, Approved?, Order Comple, Split Orders, Order Guide , Order Chain, Order Motor/, Order Handle, Order Safety, Join Parts, Inspect Part, Assemble Cha, Send Update, Quality Test, Ship Prototy, Request Chan, Produce Rema, Ship Final O
+  [Attempt 3] TIMEOUT - 3/23 elements
+
+[11] WARNING: 3/23 elements ready after 150ms
+         Missing: Order Initiated, Specify Properties, Receive Prototype, Approved?, Order Complete, Split Orders, Order Guide Bar, Order Chain, Order Motor/Elec, Order Handle, Order Safety Parts, Join Parts, Inspect Parts, Assemble Chainsaw, Send Update, Quality Test, Ship Prototype, Request Changes, Produce Remaining, Ship Final Order
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Order Initiated -> Y=55 (Customer): OK
+  [Unmask] Specify Properties -> Y=55 (Customer): OK
+  [Unmask] Receive Prototype -> Y=55 (Customer): OK
+  [Unmask] Approved? -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+  [Unmask] Split Orders -> Y=255 (Procurement): OK
+  [Unmask] Order Guide Bar -> Y=255 (Procurement): OK
+  [Unmask] Order Chain -> Y=255 (Procurement): OK
+  [Unmask] Order Motor/Elec -> Y=255 (Procurement): OK
+  [Unmask] Order Handle -> Y=255 (Procurement): OK
+  [Unmask] Order Safety Parts -> Y=255 (Procurement): OK
+  [Unmask] Join Parts -> Y=255 (Procurement): OK
+  [Unmask] Inspect Parts -> Y=355 (Production): OK
+  [Unmask] Assemble Chainsaw -> Y=355 (Production): OK
+  [Unmask] Send Update -> Y=355 (Production): OK
+  [Unmask] Quality Test -> Y=355 (Production): OK
+  [Unmask] Ship Prototype -> Y=355 (Production): OK
+  [Unmask] Request Changes -> Y=355 (Production): OK
+  [Unmask] Produce Remaining -> Y=355 (Production): OK
+  [Unmask] Ship Final Order -> Y=355 (Production): OK
+
+[13] Manual unmask: 20 elements unmasked
+[14] All elements now available
+
+  Lanes: Customer(5-132); Sales(132-232); Procurement(232-332); Production(332-432)
+  Elements: Order Init=Y55, Specify Pr=Y55, Receive Or=Y143, Confirm Sp=Y143, Create Wor=Y143, Split Orde=Y255, Order Chai=Y255, Order Guid=Y255, Order Hand=Y255, Order Moto=Y255, Order Safe=Y255, Join Parts=Y255, Inspect Pa=Y355, Assemble C=Y355, Send Updat=Y355, Quality Te=Y355, Receive Pr=Y55, Ship Proto=Y355, Approved?=Y55, Produce Re=Y355, Request Ch=Y355, Order Comp=Y55, Ship Final=Y355
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 45
+[16] Sales centerY = 159
+[17] Procurement centerY = 259
+[18] Production centerY = 359
+
+[19] Customer/Order Initiated -> (60,45)
+[20] Customer/Specify Properties -> (190,45)
+[21] Sales/Receive Order -> (320,159)
+[22] Sales/Confirm Specs -> (450,159)
+[23] Sales/Create Work Order -> (580,159)
+[24] Procurement/Split Orders -> (710,259) *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); Sales(132-232); Procurement(232-332); Production(332-432)
+         After:  Lanes: Customer(5-132); Sales(132-232); Procurement(232-348); Production(348-448)
+[25] Procurement/Order Chain -> (840,234) *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); Sales(132-232); Procurement(232-348); Production(348-448)
+         After:  Lanes: Customer(-4-123); Sales(123-223); Procurement(223-348); Production(348-448)
+[26] Procurement/Order Guide Bar -> (840,209) *** LANE CHANGED ***
+         Before: Lanes: Customer(-4-123); Sales(123-223); Procurement(223-348); Production(348-448)
+         After:  Lanes: Customer(-29-98); Sales(98-198); Procurement(198-348); Production(348-448)
+[27] Procurement/Order Handle -> (840,284) *** LANE CHANGED ***
+         Before: Lanes: Customer(-29-98); Sales(98-198); Procurement(198-348); Production(348-448)
+         After:  Lanes: Customer(-29-98); Sales(98-198); Procurement(198-350); Production(350-450)
+[28] Procurement/Order Motor/Elec -> (840,259)
+[29] Procurement/Order Safety Parts -> (840,309) *** LANE CHANGED ***
+         Before: Lanes: Customer(-29-98); Sales(98-198); Procurement(198-350); Production(350-450)
+         After:  Lanes: Customer(-29-98); Sales(98-198); Procurement(198-375); Production(375-475)
+[30] Procurement/Join Parts -> (970,259)
+[31] Production/Inspect Parts -> (1100,359) *** LANE CHANGED ***
+         Before: Lanes: Customer(-29-98); Sales(98-198); Procurement(198-375); Production(375-475)
+         After:  Lanes: Customer(-56-71); Sales(71-171); Procurement(171-348); Production(348-475)
+[32] Production/Assemble Chainsaw -> (1230,359)
+[33] Production/Send Update -> (1230,394)
+[34] Production/Quality Test -> (1360,359)
+[35] Customer/Receive Prototype -> (1490,45) *** LANE CHANGED ***
+         Before: Lanes: Customer(-56-71); Sales(71-171); Procurement(171-348); Production(348-475)
+         After:  Lanes: Customer(-56-111); Sales(111-211); Procurement(211-388); Production(388-515)
+[36] Production/Ship Prototype -> (1490,359) *** LANE CHANGED ***
+         Before: Lanes: Customer(-56-111); Sales(111-211); Procurement(211-388); Production(388-515)
+         After:  Lanes: Customer(-96-71); Sales(71-171); Procurement(171-348); Production(348-515)
+[37] Customer/Approved? -> (1620,45) *** LANE CHANGED ***
+         Before: Lanes: Customer(-96-71); Sales(71-171); Procurement(171-348); Production(348-515)
+         After:  Lanes: Customer(-96-122); Sales(122-222); Procurement(222-399); Production(399-566)
+[38] Production/Produce Remaining -> (1750,359) *** LANE CHANGED ***
+         Before: Lanes: Customer(-96-122); Sales(122-222); Procurement(222-399); Production(399-566)
+         After:  Lanes: Customer(-147-71); Sales(71-171); Procurement(171-348); Production(348-566)
+[39] Production/Request Changes -> (1750,359)
+[40] Customer/Order Complete -> (1880,45) *** LANE CHANGED ***
+         Before: Lanes: Customer(-147-71); Sales(71-171); Procurement(171-348); Production(348-566)
+         After:  Lanes: Customer(-147-115); Sales(115-215); Procurement(215-392); Production(392-610)
+[41] Production/Ship Final Order -> (1880,359) *** LANE CHANGED ***
+         Before: Lanes: Customer(-147-115); Sales(115-215); Procurement(215-392); Production(392-610)
+         After:  Lanes: Customer(-191-71); Sales(71-171); Procurement(171-348); Production(348-610)
+
+  Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[42] Created 27 sequence flows
+[43] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-191-71); Sales(71-171); Procurement(171-348); Production(348-610)
+  Elements: Order Init=Y-151, Specify Pr=Y-151, Receive Or=Y98, Confirm Sp=Y98, Create Wor=Y98, Split Orde=Y198, Order Chai=Y182, Order Guid=Y182, Order Hand=Y257, Order Moto=Y232, Order Safe=Y282, Join Parts=Y232, Inspect Pa=Y359, Assemble C=Y359, Send Updat=Y359, Quality Te=Y359, Receive Pr=Y-90, Ship Proto=Y359, Approved?=Y-50, Produce Re=Y359, Request Ch=Y359, Order Comp=Y1, Ship Final=Y359
+
+[44] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ChainsawProduction_96068
+Lanes:    4
+Elements: 23 (23 in diagram)
+Flows:    27
+==================================================================
+
+Chainsaw Configuration Options:
+  1. Guide Bar Length (30-90 cm)
+  2. Chain Width (1.1-2.0 mm)
+  3. Power Type (Electric/Gasoline Motor)
+  4. Handle Type (Standard/Anti-Vibration/Heated)
+  5. Safety Features (Chain Brake/Kickback Guard/Hand Guard)
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=23,gateways=3,flows=27,data=0,data_assoc=0
+======================================================================

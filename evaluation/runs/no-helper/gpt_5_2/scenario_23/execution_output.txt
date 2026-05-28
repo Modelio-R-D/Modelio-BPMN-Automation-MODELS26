@@ -1,0 +1,136 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CREDIT SCORING REQUEST - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   27835
+Process Name:   CreditScoring_27835
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CreditScoring_27835
+[2] Lanes: Sales Clerk, Banking System, Scoring Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Banking System: Scoring request received | addToLane=OK
+  [Add] Banking System: Send scoring request to agency | addToLane=OK
+  [Add] Banking System: Receive delay notification | addToLane=OK
+  [Add] Banking System: Merge results | addToLane=OK
+  [Add] Banking System: Receive scoring result | addToLane=OK
+  [Add] Banking System: Present result to frontend | addToLane=OK
+  [Add] Scoring Agency: Level 1 quick scoring | addToLane=OK
+  [Add] Scoring Agency: Immediate result? | addToLane=OK
+  [Add] Scoring Agency: Send scoring result (L1) | addToLane=OK
+  [Add] Scoring Agency: Inform delay | addToLane=OK
+  [Add] Scoring Agency: Level 2 scoring | addToLane=OK
+  [Add] Scoring Agency: Send scoring result (L2) | addToLane=OK
+  [Add] Sales Clerk: Show delay message (check later) | addToLane=OK
+  [Add] Sales Clerk: View scoring result in frontend | addToLane=OK
+  [Add] Sales Clerk: Scoring visible | addToLane=OK
+
+[3] Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: CreditScoring_27835
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 12/18 | Missing: Level 1 quic, Immediate re, Send scoring, Inform delay, Level 2 scor, Send scoring
+  [Attempt 2] Found: 12/18 | Missing: Level 1 quic, Immediate re, Send scoring, Inform delay, Level 2 scor, Send scoring
+  [Attempt 3] Found: 12/18 | Missing: Level 1 quic, Immediate re, Send scoring, Inform delay, Level 2 scor, Send scoring
+  [Attempt 3] TIMEOUT - 12/18 elements
+
+[8] Ready graphics: 12/18 after 150ms
+[9] WARNING: Missing node graphics: Level 1 quick scoring, Immediate result?, Send scoring result (L1), Inform delay, Level 2 scoring, Send scoring result (L2)
+
+[10] Trying manual unmask fallback (inside lane Y)...
+
+  [Unmask] Level 1 quick scoring -> Y=301 (Scoring Agency): OK
+  [Unmask] Immediate result? -> Y=301 (Scoring Agency): OK
+  [Unmask] Send scoring result (L1) -> Y=301 (Scoring Agency): OK
+  [Unmask] Inform delay -> Y=301 (Scoring Agency): OK
+  [Unmask] Level 2 scoring -> Y=301 (Scoring Agency): OK
+  [Unmask] Send scoring result (L2) -> Y=301 (Scoring Agency): OK
+
+[11] Manual unmask count: 6
+[12] All elements now available
+
+  Lanes: Sales Clerk(5-106); Banking System(106-251); Scoring Agency(251-391)
+  Elements: Scoring reques=Y117, Send scoring r=Y117, Level 1 quick =Y301, Immediate resu=Y301, Inform delay=Y301, Send scoring r=Y301, Receive delay =Y117, Show delay mes=Y16, Level 2 scorin=Y301, Send scoring r=Y301, Merge results=Y117, Receive scorin=Y117, Present result=Y117, View scoring r=Y20, Scoring visibl=Y25
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Sales Clerk centerY = 32
+[14] Banking System centerY = 155
+[15] Scoring Agency centerY = 298
+
+[16] Banking System/Scoring request received -> (70,155) 33x33
+[17] Banking System/Send scoring request to agency -> (225,155) 150x60
+[18] Scoring Agency/Level 1 quick scoring -> (380,298) 150x60
+[19] Scoring Agency/Immediate result? -> (535,298) 40x40
+[20] Scoring Agency/Inform delay -> (690,298) 150x60
+[21] Scoring Agency/Send scoring result (L1) -> (690,298) 150x60
+[22] Banking System/Receive delay notification -> (845,155) 150x60
+[23] Sales Clerk/Show delay message (check later) -> (1000,32) 150x60
+[24] Scoring Agency/Level 2 scoring -> (1155,298) 150x60
+[25] Scoring Agency/Send scoring result (L2) -> (1310,298) 150x60
+[26] Banking System/Merge results -> (1465,155) 40x40
+[27] Banking System/Receive scoring result -> (1620,155) 150x60
+[28] Banking System/Present result to frontend -> (1775,155) 150x60
+[29] Sales Clerk/View scoring result in frontend -> (1930,32) 150x60
+[30] Sales Clerk/Scoring visible -> (2085,32) 33x33
+
+[31] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Scoring request received -> Send scoring request to agency
+  [Flow] Send scoring request to agency -> Level 1 quick scoring
+  [Flow] Level 1 quick scoring -> Immediate result?
+  [Flow] Immediate result? -> Send scoring result (L1) | guard=Yes
+  [Flow] Immediate result? -> Inform delay | guard=No
+  [Flow] Send scoring result (L1) -> Merge results
+  [Flow] Inform delay -> Receive delay notification
+  [Flow] Receive delay notification -> Show delay message (check later)
+  [Flow] Show delay message (check later) -> Level 2 scoring
+  [Flow] Level 2 scoring -> Send scoring result (L2)
+  [Flow] Send scoring result (L2) -> Merge results
+  [Flow] Merge results -> Receive scoring result
+  [Flow] Receive scoring result -> Present result to frontend
+  [Flow] Present result to frontend -> View scoring result in frontend
+  [Flow] View scoring result in frontend -> Scoring visible
+
+[32] Created 15 sequence flows
+[33] Save
+
+== FINAL STATE ===================================================
+
+  Lanes: Sales Clerk(5-106); Banking System(106-251); Scoring Agency(251-391)
+  Elements: Scoring reques=Y155, Send scoring r=Y155, Level 1 quick =Y298, Immediate resu=Y298, Inform delay=Y298, Send scoring r=Y298, Receive delay =Y155, Show delay mes=Y32, Level 2 scorin=Y298, Send scoring r=Y298, Merge results=Y155, Receive scorin=Y155, Present result=Y155, View scoring r=Y32, Scoring visibl=Y32
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CreditScoring_27835
+Lanes:    3
+Elements: 15
+Flows:    15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=2,flows=15,data=0,data_assoc=0
+======================================================================

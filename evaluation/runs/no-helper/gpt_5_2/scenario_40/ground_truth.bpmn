@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <serviceTask id="ServiceTask_1" name="Stop the machine">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Send email to an engineer">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Get availability data">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="Get quality data">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_5" name="Get performance data">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_6" name="Calculate OEE">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </serviceTask>
+    <manualTask id="ManualTask_1" name="Continue measuring">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="Repair the issue">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_3" name="Restart the machine">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_4" name="Disconnect the machine">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="OEE below 50%?">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+      <outgoing>SequenceFlow_24</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_17</incoming>
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="Machine worth repairing?">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_18</incoming>
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5" name="Remaining issues?">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_23</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6">
+      <incoming>SequenceFlow_20</incoming>
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_1</outgoing>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_3</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_4</incoming>
+      <incoming>SequenceFlow_5</incoming>
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="OEE data required">
+      <outgoing>SequenceFlow_10</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="Machine operating normally / Machine disconnected">
+      <incoming>SequenceFlow_14</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="ParallelGateway_1" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ParallelGateway_1" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ParallelGateway_1" targetRef="ServiceTask_5"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ServiceTask_4" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ServiceTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ServiceTask_5" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ParallelGateway_2" targetRef="ServiceTask_6"/>
+    <sequenceFlow id="SequenceFlow_8" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ServiceTask_1" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="StartEvent_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ServiceTask_2" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ManualTask_2" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ManualTask_3" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="ExclusiveGateway_2" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ServiceTask_6" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_16" name="No" sourceRef="ExclusiveGateway_3" targetRef="ManualTask_4"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ExclusiveGateway_4" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ManualTask_4" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ManualTask_1" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_20" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_21" name="No" sourceRef="ExclusiveGateway_5" targetRef="ManualTask_3"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ExclusiveGateway_6" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_23" name="Yes" sourceRef="ExclusiveGateway_5" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_24" name="No" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_2"/>
+  </process>
+</definitions>

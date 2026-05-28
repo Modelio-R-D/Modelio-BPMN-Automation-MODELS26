@@ -1,0 +1,115 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SubscriptionLifecycle_19157
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionLifecycle_19157
+[2] Lanes: Customer, System, Support
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 4 elements
+[4] System: 10 elements
+[5] Support: 4 elements
+
+  Total: 18 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: SubscriptionLifecycle_19157
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 10: Apply Refund=0, Apply Final Charge=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Sign Up Start -> Y=55: OK
+  [Unmask] Enter Personal Info -> Y=55: OK
+  [Unmask] Enter Payment Info -> Y=55: OK
+  [Unmask] Submit Cancellation Request -> Y=55: OK
+  [Unmask] Personal Info -> Y=55: OK
+  [Unmask] Payment Details -> Y=55: OK
+  [Unmask] Cancellation Request -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Sign Up Start -> col=0 (80,25) relY=20
+  Enter Personal Info -> col=1 (230,25) relY=20
+  Enter Payment Info -> col=2 (380,25) relY=20
+  Submit Cancellation Request -> col=7 (1130,25) relY=20
+  Personal Info (DO from Enter Personal Info) -> (320,95) maxBottomRelY=80
+  Payment Details (DO from Enter Payment Info) -> (470,95) maxBottomRelY=80
+  Cancellation Request (DO from Submit Cancellation Request) -> (1220,95) maxBottomRelY=80
+
+[System] Lane bounds: 187-287
+  [Unmask] Activate Subscription -> Y=237: OK
+  [Unmask] Cancel Requested? -> Y=237: OK
+  [Unmask] Billing Cycle Due -> Y=237: OK
+  [Unmask] Run Automated Billing -> Y=237: OK
+  [Unmask] Send Update or Renewal Notice -> Y=237: OK
+  [Unmask] Apply Refund -> Y=237: OK
+  [Unmask] Apply Final Charge -> Y=237: OK
+  [Unmask] Settle Final Balance -> Y=237: OK
+  [Unmask] Subscription Account -> Y=237: OK
+  [Unmask] Final Statement -> Y=237: OK
+  [maxElementBottomRelY=170]
+  Create Account -> col=3 (530,207) relY=20
+  Assign Access -> col=4 (680,207) relY=20
+  Activate Subscription -> col=5 (830,207) relY=20
+  Cancel Requested? -> col=6 (980,207) relY=20
+  Billing Cycle Due -> col=7 (1130,207) relY=20
+  Run Automated Billing -> col=8 (1280,207) relY=20
+  Send Update or Renewal Notice -> col=9 (1430,207) relY=20
+  Apply Refund -> col=10 (1580,207) relY=20
+  Apply Final Charge -> col=10 (1580,297) relY=110
+  Settle Final Balance -> col=12 (1880,207) relY=20
+  Subscription Account (DO from Create Account) -> (620,367) maxBottomRelY=170
+  Final Statement (DO from Settle Final Balance) -> (1970,367) maxBottomRelY=170
+
+[Support] Lane bounds: 459-559
+  [Unmask] Process Cancellation -> Y=509: OK
+  [Unmask] Refund or Charge? -> Y=509: OK
+  [Unmask] Deactivate Subscription -> Y=509: OK
+  [Unmask] Subscription Closed -> Y=509: OK
+  [maxElementBottomRelY=80]
+  Process Cancellation -> col=8 (1280,479) relY=20
+  Refund or Charge? -> col=9 (1430,479) relY=20
+  Deactivate Subscription -> col=11 (1730,479) relY=20
+  Subscription Closed -> col=13 (2030,479) relY=20
+
+
+[9] Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 19 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[11] Data associations: 7
+
+==================================================================
+COMPLETE: SubscriptionLifecycle_19157
+==================================================================
+Lanes: 3 | Elements: 18 | Data: 5 | Flows: 19 | DataAssoc: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=23,gateways=2,flows=19,data=5,data_assoc=7
+======================================================================

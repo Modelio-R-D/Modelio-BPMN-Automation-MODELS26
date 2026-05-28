@@ -1,0 +1,90 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: RoomService_33240
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RoomService_33240
+[2] Lanes: Guest, Manager, Kitchen, Sommelier, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Guest: 1 elements
+[4] Manager: 2 elements
+[5] Kitchen: 1 elements
+[6] Sommelier: 1 elements
+[7] Waiter: 5 elements
+
+  Total: 10 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[8] Data Objects: 1
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram: RoomService_33240
+[10] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Guest] Lane bounds: 5-105
+  [Unmask] Guest Calls -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Guest Calls -> col=0 (80,25) relY=20
+
+[Manager] Lane bounds: 125-279
+  [maxElementBottomRelY=80]
+  Take Order -> col=1 (230,145) relY=20
+  Distribute Order -> col=2 (380,145) relY=20
+  Order Ticket (DO from Take Order) -> (320,215) maxBottomRelY=80
+
+[Kitchen] Lane bounds: 307-407
+  [Unmask] Prepare Food -> Y=357: OK
+  [maxElementBottomRelY=80]
+  Prepare Food -> col=3 (530,327) relY=20
+
+[Sommelier] Lane bounds: 414-514
+  [maxElementBottomRelY=80]
+  Prepare Alcohol -> col=3 (530,434) relY=20
+
+[Waiter] Lane bounds: 514-614
+  [maxElementBottomRelY=80]
+  Ready Cart and Drinks -> col=3 (530,534) relY=20
+  All Ready -> col=4 (680,534) relY=20
+  Deliver to Room -> col=5 (830,534) relY=20
+  Debit Account -> col=6 (980,534) relY=20
+  End -> col=7 (1130,534) relY=20
+
+
+[11] Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[12] Created 11 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[13] Data associations: 4
+
+==================================================================
+COMPLETE: RoomService_33240
+==================================================================
+Lanes: 5 | Elements: 10 | Data: 1 | Flows: 11 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=11,gateways=2,flows=11,data=1,data_assoc=4
+======================================================================

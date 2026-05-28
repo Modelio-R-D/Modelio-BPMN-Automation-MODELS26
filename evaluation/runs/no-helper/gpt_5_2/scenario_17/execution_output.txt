@@ -1,0 +1,200 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN E-COMMERCE ORDER FULFILLMENT - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   91035
+Process Name:   ECommerceOrderFulfillment_91035
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ECommerceOrderFulfillment_91035
+[2] Lanes: Customer, Order System, Payment, Inventory, Warehouse, Quality Control, Packaging, Shipping, Customs, Returns
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  - Create: Order Placed | Lane=Customer | addToLane=True
+  - Create: Record Order Details | Lane=Order System | addToLane=True
+  - Create: Process Payment | Lane=Payment | addToLane=True
+  - Create: Payment Successful? | Lane=Payment | addToLane=True
+  - Create: Notify Payment Failure | Lane=Order System | addToLane=True
+  - Create: Order End (Payment Failed) | Lane=Customer | addToLane=True
+  - Create: Check Stock Availability | Lane=Inventory | addToLane=True
+  - Create: All Items In Stock? | Lane=Inventory | addToLane=True
+  - Create: Initiate Backorder | Lane=Inventory | addToLane=True
+  - Create: Inform Backorder Delay | Lane=Order System | addToLane=True
+  - Create: Backorder Received | Lane=Inventory | addToLane=True
+  - Create: Pick Items | Lane=Warehouse | addToLane=True
+  - Create: Quality Control Check | Lane=Quality Control | addToLane=True
+  - Create: Fulfillment Split | Lane=Order System | addToLane=True
+  - Create: Package Items | Lane=Packaging | addToLane=True
+  - Create: Gift Wrap Requested? | Lane=Packaging | addToLane=True
+  - Create: Gift Wrap Items | Lane=Packaging | addToLane=True
+  - Create: Packaging Merge | Lane=Packaging | addToLane=True
+  - Create: Prepare Shipping Docs and Labels | Lane=Shipping | addToLane=True
+  - Create: International Order? | Lane=Shipping | addToLane=True
+  - Create: Prepare Customs Documentation | Lane=Customs | addToLane=True
+  - Create: Docs Merge | Lane=Shipping | addToLane=True
+  - Create: Ready to Dispatch | Lane=Order System | addToLane=True
+  - Create: Dispatch Order | Lane=Shipping | addToLane=True
+  - Create: Send Shipping Confirmation | Lane=Order System | addToLane=True
+  - Create: Update Inventory Levels | Lane=Inventory | addToLane=True
+  - Create: Confirm Successful Delivery | Lane=Order System | addToLane=True
+  - Create: Issues Reported Upon Delivery? | Lane=Order System | addToLane=True
+  - Create: Send Feedback Request Email | Lane=Order System | addToLane=True
+  - Create: Order Complete | Lane=Customer | addToLane=True
+  - Create: Send Return Shipping Label | Lane=Returns | addToLane=True
+  - Create: Receive Returned Items | Lane=Returns | addToLane=True
+  - Create: Inspect Returned Items | Lane=Returns | addToLane=True
+  - Create: Refund or Replacement? | Lane=Returns | addToLane=True
+  - Create: Process Refund | Lane=Returns | addToLane=True
+  - Create: Send Replacement | Lane=Shipping | addToLane=True
+  - Create: Return Merge | Lane=Returns | addToLane=True
+  - Create: Return Completed | Lane=Customer | addToLane=True
+
+[3] Total flow elements: 38
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: ECommerceOrderFulfillment_91035
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 22/48 | Missing: Order Placed, Record Order, Process Paym, Payment Succ, Notify Payme, Order End (P, Check Stock , All Items In, Initiate Bac, Inform Backo, Backorder Re, Fulfillment , Ready to Dis, Send Shippin, Update Inven, Confirm Succ, Issues Repor, Send Feedbac, Order Comple, Send Return , Receive Retu, Inspect Retu, Refund or Re, Process Refu, Return Merge, Return Compl
+  [Attempt 2] Found: 22/48 | Missing: Order Placed, Record Order, Process Paym, Payment Succ, Notify Payme, Order End (P, Check Stock , All Items In, Initiate Bac, Inform Backo, Backorder Re, Fulfillment , Ready to Dis, Send Shippin, Update Inven, Confirm Succ, Issues Repor, Send Feedbac, Order Comple, Send Return , Receive Retu, Inspect Retu, Refund or Re, Process Refu, Return Merge, Return Compl
+  [Attempt 3] Found: 22/48 | Missing: Order Placed, Record Order, Process Paym, Payment Succ, Notify Payme, Order End (P, Check Stock , All Items In, Initiate Bac, Inform Backo, Backorder Re, Fulfillment , Ready to Dis, Send Shippin, Update Inven, Confirm Succ, Issues Repor, Send Feedbac, Order Comple, Send Return , Receive Retu, Inspect Retu, Refund or Re, Process Refu, Return Merge, Return Compl
+  [Attempt 4] Found: 22/48 | Missing: Order Placed, Record Order, Process Paym, Payment Succ, Notify Payme, Order End (P, Check Stock , All Items In, Initiate Bac, Inform Backo, Backorder Re, Fulfillment , Ready to Dis, Send Shippin, Update Inven, Confirm Succ, Issues Repor, Send Feedbac, Order Comple, Send Return , Receive Retu, Inspect Retu, Refund or Re, Process Refu, Return Merge, Return Compl
+  [Attempt 5] Found: 22/48 | Missing: Order Placed, Record Order, Process Paym, Payment Succ, Notify Payme, Order End (P, Check Stock , All Items In, Initiate Bac, Inform Backo, Backorder Re, Fulfillment , Ready to Dis, Send Shippin, Update Inven, Confirm Succ, Issues Repor, Send Feedbac, Order Comple, Send Return , Receive Retu, Inspect Retu, Refund or Re, Process Refu, Return Merge, Return Compl
+  [Attempt 5] TIMEOUT - 22/48 elements
+
+[8] Wait complete in ~250ms (found 22/48)
+
+[9] WARNING: Missing flow elements after wait: 26
+         Missing: Order Placed, Record Order Details, Process Payment, Payment Successful?, Notify Payment Failure, Order End (Payment Failed), Check Stock Availability, All Items In Stock?, Initiate Backorder, Inform Backorder Delay, Backorder Received, Fulfillment Split, Ready to Dispatch, Send Shipping Confirmation, Update Inventory Levels, Confirm Successful Delivery, Issues Reported Upon Delivery?, Send Feedback Request Email, Order Complete, Send Return Shipping Label, Receive Returned Items, Inspect Returned Items, Refund or Replacement?, Process Refund, Return Merge, Return Completed
+
+[10] Trying manual unmask for missing flow elements (inside lane Y)...
+
+  [Unmask] Order Placed -> Y=55 (Customer): OK
+  [Unmask] Record Order Details -> Y=155 (Order System): OK
+  [Unmask] Process Payment -> Y=255 (Payment): OK
+  [Unmask] Payment Successful? -> Y=255 (Payment): OK
+  [Unmask] Notify Payment Failure -> Y=155 (Order System): OK
+  [Unmask] Order End (Payment Failed) -> Y=55 (Customer): OK
+  [Unmask] Check Stock Availability -> Y=355 (Inventory): OK
+  [Unmask] All Items In Stock? -> Y=355 (Inventory): OK
+  [Unmask] Initiate Backorder -> Y=355 (Inventory): OK
+  [Unmask] Inform Backorder Delay -> Y=155 (Order System): OK
+  [Unmask] Backorder Received -> Y=355 (Inventory): OK
+  [Unmask] Fulfillment Split -> Y=155 (Order System): OK
+  [Unmask] Ready to Dispatch -> Y=155 (Order System): OK
+  [Unmask] Send Shipping Confirmation -> Y=155 (Order System): OK
+  [Unmask] Update Inventory Levels -> Y=355 (Inventory): FAILED
+  [Unmask] Confirm Successful Delivery -> Y=155 (Order System): OK
+  [Unmask] Issues Reported Upon Delivery? -> Y=155 (Order System): OK
+  [Unmask] Send Feedback Request Email -> Y=155 (Order System): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+  [Unmask] Send Return Shipping Label -> Y=5811 (Returns): FAILED
+  [Unmask] Receive Returned Items -> Y=5811 (Returns): FAILED
+  [Unmask] Inspect Returned Items -> Y=5811 (Returns): FAILED
+  [Unmask] Refund or Replacement? -> Y=5811 (Returns): FAILED
+  [Unmask] Process Refund -> Y=5811 (Returns): FAILED
+  [Unmask] Return Merge -> Y=5811 (Returns): FAILED
+  [Unmask] Return Completed -> Y=55 (Customer): OK
+
+[11] Manual unmask done: 19 newly unmasked
+
+  Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-456); Warehouse(456-759); Quality Control(759-859); Packaging(859-1586); Shipping(1586-3020); Customs(3020-5812); Returns(5812-5912)
+  Elements: Order Placed=Y55, Record Order=Y155, Process Paym=Y279, Payment Succ=Y279, Check Stock =Y379, Notify Payme=Y155, All Items In=Y379, Order End (P=Y55, Initiate Bac=Y379, Inform Backo=Y155, Backorder Re=Y379, Pick Items=Y467, Quality Cont=Y770, Fulfillment =Y155, Package Item=Y870, Prepare Ship=Y1597, Gift Wrap Re=Y870, Internationa=Y1597, Gift Wrap It=Y870, Prepare Cust=Y3031, Docs Merge=Y1597, Packaging Me=Y870, Ready to Dis=Y155, Dispatch Ord=Y1597, Send Shippin=Y155, Update Inven=--, Confirm Succ=Y155, Issues Repor=Y155, Send Feedbac=Y155, Send Return =--, Order Comple=Y55, Receive Retu=--, Inspect Retu=--, Refund or Re=--, Process Refu=--, Send Replace=Y1597, Return Merge=--, Return Compl=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 42
+[13] Order System centerY = 164
+[14] Payment centerY = 279
+[15] Inventory centerY = 383
+[16] Warehouse centerY = 584
+[17] Quality Control centerY = 786
+[18] Packaging centerY = 1199
+[19] Shipping centerY = 2280
+[20] Customs centerY = 4393
+[21] Returns centerY = 5839
+
+[22] Customer/Order Placed -> (80,42) 33x33
+[23] Order System/Record Order Details -> (250,164) 150x60
+[24] Payment/Process Payment -> (420,279) 150x60
+[25] Payment/Payment Successful? -> (590,279) 40x40
+[26] Inventory/Check Stock Availability -> (760,383) 150x60
+[27] Order System/Notify Payment Failure -> (760,164) 150x60
+[28] Inventory/All Items In Stock? -> (930,383) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-456); Warehouse(456-759); Quality Control(759-859); Packaging(859-1586); Shipping(1586-3020); Customs(3020-5812); Returns(5812-5912)
+         After:  Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-460); Warehouse(460-763); Quality Control(763-863); Packaging(863-1590); Shipping(1590-3024); Customs(3024-5816); Returns(5816-5916)
+[29] Customer/Order End (Payment Failed) -> (930,42) 33x33
+[30] Inventory/Initiate Backorder -> (1100,383) 150x60
+[31] Order System/Inform Backorder Delay -> (1270,164) 150x60
+[32] Inventory/Backorder Received -> (1440,383) 150x60
+[33] Warehouse/Pick Items -> (1610,584) 150x60
+[34] Quality Control/Quality Control Check -> (1780,786) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-460); Warehouse(460-763); Quality Control(763-863); Packaging(863-1590); Shipping(1590-3024); Customs(3024-5816); Returns(5816-5916)
+         After:  Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-460); Warehouse(460-763); Quality Control(763-896); Packaging(896-1623); Shipping(1623-3057); Customs(3057-5849); Returns(5849-5949)
+[35] Order System/Fulfillment Split -> (1950,164) 40x40
+[36] Packaging/Package Items -> (2120,1199) 150x60
+[37] Shipping/Prepare Shipping Docs and Labels -> (2120,2280) 150x60
+[38] Packaging/Gift Wrap Requested? -> (2290,1199) 40x40
+[39] Shipping/International Order? -> (2290,2280) 40x40
+[40] Packaging/Gift Wrap Items -> (2460,1199) 150x60
+[41] Customs/Prepare Customs Documentation -> (2460,4393) 150x60
+[42] Shipping/Docs Merge -> (2630,2280) 40x40
+[43] Packaging/Packaging Merge -> (2630,1199) 40x40
+[44] Order System/Ready to Dispatch -> (2800,164) 40x40
+[45] Shipping/Dispatch Order -> (2970,2280) 150x60
+[46] Order System/Send Shipping Confirmation -> (3140,164) 150x60
+[47] SKIP Update Inventory Levels: not in diagram graphics
+[48] Order System/Confirm Successful Delivery -> (3480,164) 150x60
+[49] Order System/Issues Reported Upon Delivery? -> (3650,164) 40x40
+[50] Order System/Send Feedback Request Email -> (3820,164) 150x60
+[51] SKIP Send Return Shipping Label: not in diagram graphics
+[52] Customer/Order Complete -> (3990,42) 33x33
+[53] SKIP Receive Returned Items: not in diagram graphics
+[54] SKIP Inspect Returned Items: not in diagram graphics
+[55] SKIP Refund or Replacement?: not in diagram graphics
+[56] SKIP Process Refund: not in diagram graphics
+[57] Shipping/Send Replacement -> (4500,2280) 150x60
+[58] SKIP Return Merge: not in diagram graphics
+[59] Customer/Return Completed -> (4840,42) 33x33
+
+[60] Repositioned: 31/38
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[61] Created 42 sequence flows
+[62] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); Order System(125-249); Payment(249-356); Inventory(356-460); Warehouse(460-763); Quality Control(763-896); Packaging(896-1623); Shipping(1623-3057); Customs(3057-5849); Returns(5849-5949)
+  Elements: Order Placed=Y42, Record Order=Y164, Process Paym=Y279, Payment Succ=Y279, Check Stock =Y383, Notify Payme=Y164, All Items In=Y383, Order End (P=Y42, Initiate Bac=Y383, Inform Backo=Y164, Backorder Re=Y383, Pick Items=Y584, Quality Cont=Y786, Fulfillment =Y164, Package Item=Y1199, Prepare Ship=Y2280, Gift Wrap Re=Y1199, Internationa=Y2280, Gift Wrap It=Y1199, Prepare Cust=Y4393, Docs Merge=Y2280, Packaging Me=Y1199, Ready to Dis=Y164, Dispatch Ord=Y2280, Send Shippin=Y164, Update Inven=--, Confirm Succ=Y164, Issues Repor=Y164, Send Feedbac=Y164, Send Return =--, Order Comple=Y42, Receive Retu=--, Inspect Retu=--, Refund or Re=--, Process Refu=--, Send Replace=Y2280, Return Merge=--, Return Compl=Y42
+
+[63] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ECommerceOrderFulfillment_91035
+Lanes:    10
+Elements: 38
+Flows:    42
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=10,elements=38,gateways=11,flows=42,data=0,data_assoc=0
+======================================================================

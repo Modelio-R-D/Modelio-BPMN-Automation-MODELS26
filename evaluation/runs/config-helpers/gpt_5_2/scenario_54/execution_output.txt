@@ -1,0 +1,76 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: INQ_IP_TransactionDataRequest_61970
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: INQ_IP_TransactionDataRequest_61970
+[2] Lanes: INQ, IP
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] INQ: 5 elements
+[4] IP: 4 elements
+
+  Total: 9 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: INQ_IP_TransactionDataRequest_61970
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Receive data=0, Receive rejection=90
+  [Auto-stack] col 4: Transmit data=0, Reject request=90
+[INQ] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Send data request -> Y=55: OK
+  [Unmask] Receive data -> Y=55: OK
+  [Unmask] Receive rejection -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send data request -> col=1 (230,25) relY=20
+  Receive data -> col=5 (830,25) relY=20
+  Receive rejection -> col=5 (830,115) relY=110
+  End -> col=6 (980,25) relY=20
+
+[IP] Lane bounds: 186-286
+  [Unmask] Request valid? -> Y=236: OK
+  [Unmask] Transmit data -> Y=236: OK
+  [Unmask] Reject request -> Y=236: OK
+  [maxElementBottomRelY=170]
+  Check request -> col=2 (380,206) relY=20
+  Request valid? -> col=3 (530,206) relY=20
+  Transmit data -> col=4 (680,206) relY=20
+  Reject request -> col=4 (680,296) relY=110
+
+
+[7] Repositioned: 9/9
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 9 sequence flows
+
+==================================================================
+COMPLETE: INQ_IP_TransactionDataRequest_61970
+==================================================================
+Lanes: 2 | Elements: 9 | Flows: 9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=9,gateways=1,flows=9,data=0,data_assoc=0
+======================================================================

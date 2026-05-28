@@ -1,0 +1,109 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN VIENNA NIGHT RUN APP PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   65365
+Process Name:   ViennaNightRun_65365
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ViennaNightRun_65365
+[2] Lanes: App User, Fitness Gadget, App System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] App User lane: 14 elements
+[4] Fitness Gadget lane: 2 elements
+[5] App System lane: 1 element
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ViennaNightRun_65365
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 14/17 | Missing: Measure Trai, Track Final , Assign Start
+  [Attempt 2] Found: 14/17 | Missing: Measure Trai, Track Final , Assign Start
+  [Attempt 3] Found: 14/17 | Missing: Measure Trai, Track Final , Assign Start
+  [Attempt 3] TIMEOUT - 14/17 elements
+
+[10] WARNING: 14/17 elements ready after 150ms
+         Missing: Measure Training Time, Track Final Time, Assign Starting Number
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Measure Training Time -> Y=202 (Fitness Gadget): OK
+  [Unmask] Track Final Time -> Y=202 (Fitness Gadget): OK
+  [Unmask] Assign Starting Number -> Y=302 (App System): OK
+
+[12] Manual unmask: 3 elements unmasked
+[13] All elements now available
+
+  Lanes: App User(5-152); Fitness Gadget(152-286); App System(286-386)
+  Elements: Start=Y16, Select Sta=Y20, Run 5km Tr=Y25, Measure Tr=Y202, Time < 25 =Y60, Train More=Y30, Assign Sta=Y302, Enter Work=Y35, More than =Y65, Go from Ho=Y40, Go from Wo=Y45, Parallel S=Y70, Run Night =Y50, Drink Wate=Y55, Parallel J=Y75, Track Fina=Y202, Final Time=Y80
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] App User centerY = 55
+[15] Fitness Gadget centerY = 196
+[16] App System centerY = 313
+
+[17] App User/Start -> (80,55)
+[18] App User/Select Starting Block -> (220,55)
+[19] App User/Run 5km Training -> (360,55)
+[20] Fitness Gadget/Measure Training Time -> (500,196)
+[21] App User/Time < 25 min? -> (640,55)
+[22] App User/Train More -> (780,55)
+[23] App System/Assign Starting Number -> (920,313) *** LANE CHANGED ***
+         Before: Lanes: App User(5-152); Fitness Gadget(152-286); App System(286-386)
+         After:  Lanes: App User(5-152); Fitness Gadget(152-286); App System(286-395)
+[24] App User/Enter Work Schedule -> (1060,55)
+[25] App User/More than 1h Free? -> (1200,55)
+[26] App User/Go from Home -> (1340,55)
+[27] App User/Go from Work -> (1480,55)
+[28] App User/Parallel Split -> (1620,55)
+[29] App User/Run Night Run -> (1760,55)
+[30] App User/Drink Water -> (1900,55)
+[31] App User/Parallel Join -> (2040,55)
+[32] Fitness Gadget/Track Final Time -> (2180,196)
+[33] App User/Final Time Received -> (2320,55)
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 19 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: App User(5-152); Fitness Gadget(152-286); App System(286-395)
+  Elements: Start=Y55, Select Sta=Y55, Run 5km Tr=Y55, Measure Tr=Y196, Time < 25 =Y55, Train More=Y55, Assign Sta=Y313, Enter Work=Y55, More than =Y55, Go from Ho=Y55, Go from Wo=Y55, Parallel S=Y55, Run Night =Y55, Drink Wate=Y55, Parallel J=Y55, Track Fina=Y196, Final Time=Y55
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ViennaNightRun_65365
+Lanes:    3
+Elements: 17 (17 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=4,flows=19,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,66 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ClaimHandlingProcess_25945
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ClaimHandlingProcess_25945
+[2] Lanes: Claims Officer, Senior Claims Officer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Officer: 3 elements
+[4] Senior Claims Officer: 3 elements
+
+  Total: 6 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ClaimHandlingProcess_25945
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Claims Officer] Lane bounds: 5-131
+  [maxElementBottomRelY=80]
+  Claim Registered -> col=0 (80,25) relY=20
+  Examine Claim -> col=1 (230,25) relY=20
+  Write Settlement Recommendation -> col=2 (380,25) relY=20
+
+[Senior Claims Officer] Lane bounds: 131-231
+  [Unmask] Check Recommendation -> Y=181: OK
+  [Unmask] Claim OK? -> Y=181: OK
+  [Unmask] Claim Handling Proceeds -> Y=181: OK
+  [maxElementBottomRelY=80]
+  Check Recommendation -> col=3 (530,151) relY=20
+  Claim OK? -> col=4 (680,151) relY=20
+  Claim Handling Proceeds -> col=5 (830,151) relY=20
+
+
+[7] Repositioned: 6/6
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 6 sequence flows
+
+==================================================================
+COMPLETE: ClaimHandlingProcess_25945
+==================================================================
+Lanes: 2 | Elements: 6 | Flows: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

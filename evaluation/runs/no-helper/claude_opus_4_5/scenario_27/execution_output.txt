@@ -1,0 +1,139 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN WORK ACCIDENT REPORTING PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   78375
+Process Name:   WorkAccident_78375
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAccident_78375
+[2] Lanes: Employee, Employer, Insurance, Authorities
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee lane: 7 elements
+[4] Employer lane: 7 elements
+[5] Insurance lane: 7 elements
+[6] Authorities lane: 4 elements
+
+  Total elements: 25
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: WorkAccident_78375
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/25 | Missing: Accident Occ, Assess Situa, Accident Typ, Document Inc, Seek Medical, Notify Emplo, Provide Deta, Record Near-, Investigate , Fatal/Seriou, Prepare Repo, Submit to In, Receive Clai, Validate Cla, Claim Valid?, Request More, Process Clai, Issue Decisi, Claim Proces, Receive Aler, Conduct Insp, Issue Findin, Case Closed
+  [Attempt 2] Found: 2/25 | Missing: Accident Occ, Assess Situa, Accident Typ, Document Inc, Seek Medical, Notify Emplo, Provide Deta, Record Near-, Investigate , Fatal/Seriou, Prepare Repo, Submit to In, Receive Clai, Validate Cla, Claim Valid?, Request More, Process Clai, Issue Decisi, Claim Proces, Receive Aler, Conduct Insp, Issue Findin, Case Closed
+  [Attempt 3] Found: 2/25 | Missing: Accident Occ, Assess Situa, Accident Typ, Document Inc, Seek Medical, Notify Emplo, Provide Deta, Record Near-, Investigate , Fatal/Seriou, Prepare Repo, Submit to In, Receive Clai, Validate Cla, Claim Valid?, Request More, Process Clai, Issue Decisi, Claim Proces, Receive Aler, Conduct Insp, Issue Findin, Case Closed
+  [Attempt 3] TIMEOUT - 2/25 elements
+
+[11] WARNING: 2/25 elements ready after 150ms
+         Missing: Accident Occurs, Assess Situation, Accident Type?, Document Incident, Seek Medical Help, Notify Employer, Provide Details, Record Near-Miss, Investigate Accident, Fatal/Serious?, Prepare Report, Submit to Insurance, Receive Claim, Validate Claim, Claim Valid?, Request More Info, Process Claim, Issue Decision, Claim Processed, Receive Alert, Conduct Inspection, Issue Findings, Case Closed
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Accident Occurs -> Y=55 (Employee): OK
+  [Unmask] Assess Situation -> Y=55 (Employee): OK
+  [Unmask] Accident Type? -> Y=55 (Employee): OK
+  [Unmask] Document Incident -> Y=55 (Employee): OK
+  [Unmask] Seek Medical Help -> Y=55 (Employee): OK
+  [Unmask] Notify Employer -> Y=55 (Employee): OK
+  [Unmask] Provide Details -> Y=55 (Employee): OK
+  [Unmask] Record Near-Miss -> Y=155 (Employer): OK
+  [Unmask] Investigate Accident -> Y=155 (Employer): OK
+  [Unmask] Fatal/Serious? -> Y=155 (Employer): OK
+  [Unmask] Prepare Report -> Y=155 (Employer): OK
+  [Unmask] Submit to Insurance -> Y=155 (Employer): OK
+  [Unmask] Receive Claim -> Y=255 (Insurance): OK
+  [Unmask] Validate Claim -> Y=255 (Insurance): OK
+  [Unmask] Claim Valid? -> Y=255 (Insurance): OK
+  [Unmask] Request More Info -> Y=255 (Insurance): OK
+  [Unmask] Process Claim -> Y=255 (Insurance): OK
+  [Unmask] Issue Decision -> Y=255 (Insurance): OK
+  [Unmask] Claim Processed -> Y=255 (Insurance): OK
+  [Unmask] Receive Alert -> Y=355 (Authorities): OK
+  [Unmask] Conduct Inspection -> Y=355 (Authorities): OK
+  [Unmask] Issue Findings -> Y=355 (Authorities): OK
+  [Unmask] Case Closed -> Y=355 (Authorities): OK
+
+[13] Manual unmask: 23 elements unmasked
+[14] All elements now available
+
+  Lanes: Employee(5-132); Employer(132-232); Insurance(232-332); Authorities(332-432)
+  Elements: Accident O=Y55, Assess Sit=Y55, Accident T=Y55, Document I=Y55, Seek Medic=Y55, Notify Emp=Y55, Receive Re=Y143, Severity?=Y143, Investigat=Y155, Record Nea=Y155, Fatal/Seri=Y155, Prepare Re=Y155, Receive Al=Y355, Conduct In=Y355, Provide De=Y55, Issue Find=Y355, Submit to =Y155, Case Close=Y355, Receive Cl=Y255, Validate C=Y255, Claim Vali=Y255, Request Mo=Y255, Process Cl=Y255, Issue Deci=Y255, Claim Proc=Y255
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Employee centerY = 45
+[16] Employer centerY = 159
+[17] Insurance centerY = 259
+[18] Authorities centerY = 359
+
+[19] Employee/Accident Occurs -> (80,45) 33x33
+[20] Employee/Assess Situation -> (220,45) 120x60
+[21] Employee/Accident Type? -> (360,45) 40x40
+[22] Employee/Document Incident -> (500,45) 120x60
+[23] Employee/Seek Medical Help -> (640,45) 120x60
+[24] Employee/Notify Employer -> (780,45) 120x60
+[25] Employer/Receive Report -> (920,159) 120x60
+[26] Employer/Severity? -> (1060,159) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Employee(5-132); Employer(132-232); Insurance(232-332); Authorities(332-432)
+         After:  Lanes: Employee(5-132); Employer(132-236); Insurance(236-336); Authorities(336-436)
+[27] Employer/Investigate Accident -> (1200,159) 120x60
+[28] Employer/Record Near-Miss -> (1200,159) 120x60
+[29] Employer/Fatal/Serious? -> (1340,159) 40x40
+[30] Employer/Prepare Report -> (1480,159) 120x60
+[31] Authorities/Receive Alert -> (1480,359) 120x60
+[32] Authorities/Conduct Inspection -> (1620,359) 120x60
+[33] Employee/Provide Details -> (1620,45) 120x60
+[34] Authorities/Issue Findings -> (1760,359) 120x60
+[35] Employer/Submit to Insurance -> (1760,159) 120x60
+[36] Authorities/Case Closed -> (1900,359) 33x33
+[37] Insurance/Receive Claim -> (1900,259) 120x60
+[38] Insurance/Validate Claim -> (2040,259) 120x60
+[39] Insurance/Claim Valid? -> (2180,259) 40x40
+[40] Insurance/Request More Info -> (2320,259) 120x60
+[41] Insurance/Process Claim -> (2460,259) 120x60
+[42] Insurance/Issue Decision -> (2600,259) 120x60
+[43] Insurance/Claim Processed -> (2740,259) 33x33
+
+  Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[44] Created 27 sequence flows
+[45] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-132); Employer(132-236); Insurance(236-336); Authorities(336-436)
+  Elements: Accident O=Y45, Assess Sit=Y45, Accident T=Y45, Document I=Y45, Seek Medic=Y45, Notify Emp=Y45, Receive Re=Y159, Severity?=Y159, Investigat=Y159, Record Nea=Y159, Fatal/Seri=Y159, Prepare Re=Y159, Receive Al=Y359, Conduct In=Y359, Provide De=Y45, Issue Find=Y359, Submit to =Y159, Case Close=Y359, Receive Cl=Y259, Validate C=Y259, Claim Vali=Y259, Request Mo=Y259, Process Cl=Y259, Issue Deci=Y259, Claim Proc=Y259
+
+[46] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  WorkAccident_78375
+Lanes:    4
+Elements: 25 (25 in diagram)
+Flows:    27
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=25,gateways=4,flows=27,data=0,data_assoc=0
+======================================================================

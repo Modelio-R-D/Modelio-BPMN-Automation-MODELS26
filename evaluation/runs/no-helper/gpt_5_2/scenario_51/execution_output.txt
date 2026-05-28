@@ -1,0 +1,119 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN VACATION REQUEST PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   9024
+Process Name:   VacationRequest_9024
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: VacationRequest_9024
+[2] Lanes: Employee, Supervisor, HR Representative
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Employee: Vacation Request Submitted (addToLane=True)
+  [Add] Employee: Submit Vacation Request (addToLane=True)
+  [Add] Employee: Review Rejection Reasons (addToLane=True)
+  [Add] Employee: Request Rejected (addToLane=True)
+  [Add] Supervisor: Register Vacation Request (addToLane=True)
+  [Add] Supervisor: Receive Request (addToLane=True)
+  [Add] Supervisor: Evaluate Request (addToLane=True)
+  [Add] Supervisor: Approved? (addToLane=True)
+  [Add] Supervisor: Generate HR Notification (addToLane=True)
+  [Add] HR Representative: Complete Management Procedures (addToLane=True)
+  [Add] HR Representative: Vacation Approved (addToLane=True)
+
+[3] Total elements: 11
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: VacationRequest_9024
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/11 | Missing: Approved?, Generate HR 
+  [Attempt 2] Found: 9/11 | Missing: Approved?, Generate HR 
+  [Attempt 3] Found: 9/11 | Missing: Approved?, Generate HR 
+  [Attempt 3] TIMEOUT - 9/11 elements
+
+[8] WARNING: 9/11 elements ready after 150ms
+         Missing: Approved?, Generate HR Notification
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Approved? -> Y=155 (Supervisor): OK
+  [Unmask] Generate HR Notification -> Y=155 (Supervisor): OK
+
+[10] Manual unmask: 2 elements unmasked
+[11] All elements now available
+
+  Lanes: Employee(5-105); Supervisor(105-232); HR Representative(232-441)
+  Elements: Vacation Reque=Y16, Submit Vacatio=Y20, Register Vacat=Y116, Receive Reques=Y116, Evaluate Reque=Y116, Approved?=Y155, Generate HR No=Y155, Review Rejecti=Y25, Complete Manag=Y243, Request Reject=Y30, Vacation Appro=Y243
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Employee centerY = 32
+[13] Supervisor centerY = 145
+[14] HR Representative centerY = 313
+
+[15] Employee/Vacation Request Submitted -> (80,32) 33x33
+[16] Employee/Submit Vacation Request -> (230,32) 140x60
+[17] Supervisor/Register Vacation Request -> (380,145) 140x60
+[18] Supervisor/Receive Request -> (530,145) 140x60
+[19] Supervisor/Evaluate Request -> (680,145) 140x60
+[20] Supervisor/Approved? -> (830,145) 40x40
+[21] Supervisor/Generate HR Notification -> (980,145) 140x60
+[22] Employee/Review Rejection Reasons -> (980,32) 140x60
+[23] HR Representative/Complete Management Procedures -> (1130,313) 140x60
+[24] Employee/Request Rejected -> (1130,32) 33x33
+[25] HR Representative/Vacation Approved -> (1280,313) 33x33
+
+  Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Vacation Request S -> Submit Vacation Re
+  [Flow] Submit Vacation Re -> Register Vacation 
+  [Flow] Register Vacation  -> Receive Request
+  [Flow] Receive Request -> Evaluate Request
+  [Flow] Evaluate Request -> Approved?
+  [Flow] Approved? -> Review Rejection R (guard=Rejected)
+  [Flow] Approved? -> Generate HR Notifi (guard=Approved)
+  [Flow] Review Rejection R -> Request Rejected
+  [Flow] Generate HR Notifi -> Complete Managemen
+  [Flow] Complete Managemen -> Vacation Approved
+
+[26] Created 10 sequence flows
+[27] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-105); Supervisor(105-232); HR Representative(232-441)
+  Elements: Vacation Reque=Y32, Submit Vacatio=Y32, Register Vacat=Y145, Receive Reques=Y145, Evaluate Reque=Y145, Approved?=Y145, Generate HR No=Y145, Review Rejecti=Y32, Complete Manag=Y313, Request Reject=Y32, Vacation Appro=Y313
+
+[28] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  VacationRequest_9024
+Lanes:    3
+Elements: 11 (11 in diagram)
+Flows:    10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=11,gateways=1,flows=10,data=0,data_assoc=0
+======================================================================

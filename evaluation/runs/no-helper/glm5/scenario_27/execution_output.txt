@@ -1,0 +1,131 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN WORK ACCIDENT REPORTING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   40924
+Process Name:   WorkAccident_40924
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkAccident_40924
+[2] Lanes: Employee/Insured, Employer, Insurance/Authorities
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee/Insured lane: 10 elements
+[4] Employer lane: 12 elements
+[5] Insurance/Authorities lane: 5 elements
+
+  Total elements: 27
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: WorkAccident_40924
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 12/27 | Missing: Accident Occ, Notify Emplo, Document Acc, Person Type?, Report as Se, Report to Sc, Seek Medical, Report Submi, Report Submi, Cooperate wi, Process Insp, Process Insu, Investigate , Determine Co, Case Closed
+  [Attempt 2] Found: 12/27 | Missing: Accident Occ, Notify Emplo, Document Acc, Person Type?, Report as Se, Report to Sc, Seek Medical, Report Submi, Report Submi, Cooperate wi, Process Insp, Process Insu, Investigate , Determine Co, Case Closed
+  [Attempt 3] Found: 12/27 | Missing: Accident Occ, Notify Emplo, Document Acc, Person Type?, Report as Se, Report to Sc, Seek Medical, Report Submi, Report Submi, Cooperate wi, Process Insp, Process Insu, Investigate , Determine Co, Case Closed
+  [Attempt 3] TIMEOUT - 12/27 elements
+
+[10] WARNING: 12/27 elements ready after 150ms
+         Missing: Accident Occurs, Notify Employer Immediately, Document Accident Details, Person Type?, Report as Self-Employed, Report to School Directorate, Seek Medical Attention, Report Submitted (Self), Report Submitted (Student), Cooperate with Investigation, Process Inspectorate Report, Process Insurance Claim, Investigate Accident, Determine Compensation, Case Closed
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Accident Occurs -> Y=55 (Employee/Insured): OK
+  [Unmask] Notify Employer Immediately -> Y=55 (Employee/Insured): OK
+  [Unmask] Document Accident Details -> Y=55 (Employee/Insured): OK
+  [Unmask] Person Type? -> Y=55 (Employee/Insured): OK
+  [Unmask] Report as Self-Employed -> Y=55 (Employee/Insured): OK
+  [Unmask] Report to School Directorate -> Y=55 (Employee/Insured): OK
+  [Unmask] Seek Medical Attention -> Y=55 (Employee/Insured): OK
+  [Unmask] Report Submitted (Self) -> Y=55 (Employee/Insured): OK
+  [Unmask] Report Submitted (Student) -> Y=55 (Employee/Insured): OK
+  [Unmask] Cooperate with Investigation -> Y=55 (Employee/Insured): OK
+  [Unmask] Process Inspectorate Report -> Y=259 (Insurance/Authorities): OK
+  [Unmask] Process Insurance Claim -> Y=259 (Insurance/Authorities): OK
+  [Unmask] Investigate Accident -> Y=259 (Insurance/Authorities): OK
+  [Unmask] Determine Compensation -> Y=259 (Insurance/Authorities): OK
+  [Unmask] Case Closed -> Y=259 (Insurance/Authorities): OK
+
+[12] Manual unmask: 15 elements unmasked
+[13] All elements now available
+
+  Lanes: Employee/Insured(5-167); Employer(167-329); Insurance/Authorities(329-429)
+  Elements: Accident O=Y55, Notify Emp=Y55, Document A=Y55, Person Typ=Y55, Report as =Y55, Report Sub=Y55, Report to =Y55, Receive Ac=Y178, Report Sub=Y55, Seek Medic=Y55, Assess Inc=Y178, Incident T=Y178, Document N=Y178, Severity?=Y178, Address Sa=Y178, Report Fat=Y178, Work Incap=Y178, Document f=Y182, Process In=Y259, Report to =Y178, Report to =Y178, Cooperate =Y55, Incident D=Y187, Process In=Y259, Investigat=Y259, Determine =Y259, Case Close=Y259
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Employee/Insured centerY = 63
+[15] Employer centerY = 225
+[16] Insurance/Authorities centerY = 356
+
+[17] Employee/Insured/Accident Occurs -> (80,63) 33x33
+[18] Employee/Insured/Notify Employer Immediately -> (230,63) 120x60
+[19] Employee/Insured/Document Accident Details -> (380,63) 120x60
+[20] Employee/Insured/Person Type? -> (530,63) 40x40
+[21] Employee/Insured/Report as Self-Employed -> (680,63) 120x60
+[22] Employee/Insured/Report Submitted (Self) -> (830,63) 33x33
+[23] Employee/Insured/Report to School Directorate -> (830,63) 120x60
+[24] Employer/Receive Accident Report -> (980,225) 120x60
+[25] Employee/Insured/Report Submitted (Student) -> (980,63) 33x33
+[26] Employee/Insured/Seek Medical Attention -> (980,63) 120x60
+[27] Employer/Assess Incident -> (1130,225) 120x60
+[28] Employer/Incident Type? -> (1280,225) 40x40
+[29] Employer/Document Near Miss -> (1430,225) 120x60
+[30] Employer/Severity? -> (1430,225) 40x40
+[31] Employer/Address Safety Risk -> (1580,225) 120x60
+[32] Employer/Report Fatality to Inspectorate -> (1580,225) 120x60
+[33] Employer/Work Incapacity? -> (1580,225) 40x40
+[34] Employer/Document for Records -> (1730,225) 120x60
+[35] Insurance/Authorities/Process Inspectorate Report -> (1730,356) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Employee/Insured(5-167); Employer(167-329); Insurance/Authorities(329-429)
+         After:  Lanes: Employee/Insured(5-167); Employer(167-427); Insurance/Authorities(427-527)
+[36] Employer/Report to Insurance (3 days) -> (1730,225) 120x60
+[37] Employer/Report to Insurance (5 days) -> (1730,225) 120x60
+[38] Employee/Insured/Cooperate with Investigation -> (1880,63) 120x60
+[39] Employer/Incident Documented -> (1880,225) 33x33
+[40] Insurance/Authorities/Process Insurance Claim -> (1880,356) 120x60
+[41] Insurance/Authorities/Investigate Accident -> (2030,356) 120x60
+[42] Insurance/Authorities/Determine Compensation -> (2180,356) 120x60
+[43] Insurance/Authorities/Case Closed -> (2330,356) 33x33
+
+  Repositioned: 27/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[44] Created 30 sequence flows
+[45] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee/Insured(5-167); Employer(167-427); Insurance/Authorities(427-527)
+  Elements: Accident O=Y63, Notify Emp=Y63, Document A=Y63, Person Typ=Y63, Report as =Y63, Report Sub=Y63, Report to =Y63, Receive Ac=Y225, Report Sub=Y63, Seek Medic=Y63, Assess Inc=Y225, Incident T=Y225, Document N=Y225, Severity?=Y225, Address Sa=Y225, Report Fat=Y225, Work Incap=Y225, Document f=Y225, Process In=Y356, Report to =Y225, Report to =Y225, Cooperate =Y63, Incident D=Y225, Process In=Y356, Investigat=Y356, Determine =Y356, Case Close=Y356
+
+[46] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  WorkAccident_40924
+Lanes:    3
+Elements: 27 (27 in diagram)
+Flows:    30
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=27,gateways=4,flows=30,data=0,data_assoc=0
+======================================================================

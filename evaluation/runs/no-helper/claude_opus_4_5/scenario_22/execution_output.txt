@@ -1,0 +1,106 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUBROGATION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   66711
+Process Name:   Subrogation_66711
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Subrogation_66711
+[2] Lanes: Claims Handler, System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Handler lane: 10 elements
+[4] System lane: 5 elements
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: Subrogation_66711
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/15 | Missing: Reasoning Va, Forward to C, Close Case, Case Closed
+  [Attempt 2] Found: 11/15 | Missing: Reasoning Va, Forward to C, Close Case, Case Closed
+  [Attempt 3] Found: 11/15 | Missing: Reasoning Va, Forward to C, Close Case, Case Closed
+  [Attempt 4] Found: 11/15 | Missing: Reasoning Va, Forward to C, Close Case, Case Closed
+  [Attempt 5] Found: 11/15 | Missing: Reasoning Va, Forward to C, Close Case, Case Closed
+  [Attempt 5] TIMEOUT - 11/15 elements
+
+[9] WARNING: 11/15 elements ready
+         Missing: Reasoning Valid?, Forward to Collection, Close Case, Case Closed
+
+[10] Trying manual unmask...
+
+  [Unmask] Reasoning Valid? -> Y=72 (Claims Handler): OK
+  [Unmask] Forward to Collection -> Y=72 (Claims Handler): OK
+  [Unmask] Close Case -> Y=72 (Claims Handler): OK
+  [Unmask] Case Closed -> Y=72 (Claims Handler): OK
+
+[11] Manual unmask: 4 elements unmasked
+[12] All elements now available
+
+  Lanes: Claims Handler(5-149); System(149-266)
+  Elements: Subrogatio=Y16, Check Subr=Y20, Subrogatio=Y25, Send Payme=Y30, Set Remind=Y160, Wait for R=Y35, Payment Re=Y160, Disagreeme=Y160, Check Disa=Y40, Deadline R=Y160, Book Payme=Y160, Reasoning =Y72, Forward to=Y72, Close Case=Y72, Case Close=Y72
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Claims Handler centerY = 54
+[14] System centerY = 184
+
+[15] Claims Handler/Subrogation Info Rec -> (60,54)
+[16] Claims Handler/Check Subrogation Po -> (200,54)
+[17] Claims Handler/Subrogation Possible -> (340,54)
+[18] Claims Handler/Send Payment Request -> (480,54)
+[19] System/Set Reminder -> (620,184)
+[20] Claims Handler/Wait for Response -> (760,54)
+[21] System/Payment Received -> (900,184)
+[22] System/Disagreement Receive -> (970,184)
+[23] Claims Handler/Check Disagreement -> (1040,54)
+[24] System/Deadline Reached -> (1040,184)
+[25] System/Book Payment -> (1180,184)
+[26] Claims Handler/Reasoning Valid? -> (1180,54)
+[27] Claims Handler/Forward to Collectio -> (1320,54)
+[28] Claims Handler/Close Case -> (1460,54)
+[29] Claims Handler/Case Closed -> (1600,54)
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[30] Created 18 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Claims Handler(5-149); System(149-266)
+  Elements: Subrogatio=Y54, Check Subr=Y54, Subrogatio=Y54, Send Payme=Y54, Set Remind=Y184, Wait for R=Y54, Payment Re=Y184, Disagreeme=Y184, Check Disa=Y54, Deadline R=Y184, Book Payme=Y184, Reasoning =Y54, Forward to=Y54, Close Case=Y54, Case Close=Y54
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Subrogation_66711
+Lanes:    2
+Elements: 15 (15 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=15,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

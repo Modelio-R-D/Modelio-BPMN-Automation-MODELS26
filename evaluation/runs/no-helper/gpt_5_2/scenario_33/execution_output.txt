@@ -1,0 +1,137 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   62464
+Process Name:   Artist3DPrint_62464
+Title:          Instruct an artist to create a 3D model, print it
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Artist3DPrint_62464
+[2] Lanes: Customer, Artist, 3D Printer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 16 elements
+[4] Artist lane:   3 elements
+[5] 3D Printer:   2 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Artist3DPrint_62464
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 18/21 | Missing: Create 3D mo, Apply reques, Send STL fil
+  [Attempt 2] Found: 18/21 | Missing: Create 3D mo, Apply reques, Send STL fil
+  [Attempt 3] Found: 18/21 | Missing: Create 3D mo, Apply reques, Send STL fil
+  [Attempt 3] TIMEOUT - 18/21 elements
+
+[10] WARNING: 18/21 elements ready after 150ms
+         Missing: Create 3D model project, Apply requested changes, Send STL file
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Create 3D model project -> Y=212 (Artist): OK
+  [Unmask] Apply requested changes -> Y=212 (Artist): OK
+  [Unmask] Send STL file -> Y=212 (Artist): OK
+
+[12] Manual unmask: 3 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-162); Artist(162-269); 3D Printer(269-428)
+  Elements: Crave custom=Y16, Send sketche=Y20, Create 3D mo=Y212, Review model=Y25, Satisfied?=Y30, Send STL fil=Y212, Tell changes=Y35, Apply reques=Y212, Choose plast=Y40, Color in sto=Y45, Check remain=Y50, Order plasti=Y65, Under 100g?=Y55, Add to shopp=Y60, Prepare for =Y70, Turn printer=Y75, Generate gco=Y80, Heat bed and=Y280, Ready to pri=Y85, Print model=Y280, 3D model pri=Y90
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 60
+[15] Artist centerY = 192
+[16] 3D Printer centerY = 325
+
+[17] Customer/Crave custom 3D model -> (80,60) 33x33
+[18] Customer/Send sketches to artist -> (230,60) 160x60
+[19] Artist/Create 3D model project -> (380,192) 160x60
+[20] Customer/Review model preview -> (530,60) 160x60
+[21] Customer/Satisfied? -> (680,60) 40x40
+[22] Artist/Send STL file -> (830,192) 160x60
+[23] Customer/Tell changes -> (830,60) 160x60
+[24] Artist/Apply requested changes -> (980,192) 160x60
+[25] Customer/Choose plastic color -> (1130,60) 160x60
+[26] Customer/Color in stock? -> (1280,60) 40x40
+[27] Customer/Check remaining grams -> (1430,60) 160x60
+[28] Customer/Order plastic -> (1430,60) 160x60
+[29] Customer/Under 100g? -> (1580,60) 40x40
+[30] Customer/Add to shopping list -> (1730,60) 160x60
+[31] Customer/Prepare for printing -> (1880,60) 40x40
+[32] Customer/Turn printer on -> (2030,60) 160x60
+[33] Customer/Generate gcode from STL -> (2180,60) 160x60
+[34] 3D Printer/Heat bed and extruder (status) -> (2180,325) 160x60
+[35] Customer/Ready to print -> (2330,60) 40x40
+[36] 3D Printer/Print model -> (2480,325) 160x60
+[37] Customer/3D model printed -> (2630,60) 33x33
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[38] Flow: Crave custom 3D model -> Send sketches to artist
+[39] Flow: Send sketches to artist -> Create 3D model project
+[40] Flow: Create 3D model project -> Review model preview
+[41] Flow: Review model preview -> Satisfied?
+[42] Flow: Satisfied? -> Tell changes [guard=No]
+[43] Flow: Tell changes -> Apply requested changes
+[44] Flow: Apply requested changes -> Review model preview
+[45] Flow: Satisfied? -> Send STL file [guard=Yes]
+[46] Flow: Send STL file -> Choose plastic color
+[47] Flow: Choose plastic color -> Color in stock?
+[48] Flow: Color in stock? -> Check remaining grams [guard=Yes]
+[49] Flow: Color in stock? -> Order plastic [guard=No]
+[50] Flow: Check remaining grams -> Under 100g?
+[51] Flow: Under 100g? -> Add to shopping list [guard=Yes]
+[52] Flow: Under 100g? -> Prepare for printing [guard=No]
+[53] Flow: Add to shopping list -> Prepare for printing
+[54] Flow: Order plastic -> Prepare for printing
+[55] Flow: Prepare for printing -> Turn printer on
+[56] Flow: Turn printer on -> Heat bed and extruder (st
+[57] Flow: Prepare for printing -> Generate gcode from STL
+[58] Flow: Heat bed and extruder (st -> Ready to print
+[59] Flow: Generate gcode from STL -> Ready to print
+[60] Flow: Ready to print -> Print model
+[61] Flow: Print model -> 3D model printed
+
+[62] Created 24 sequence flows
+[63] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-162); Artist(162-269); 3D Printer(269-428)
+  Elements: Crave custom=Y60, Send sketche=Y60, Create 3D mo=Y192, Review model=Y60, Satisfied?=Y60, Send STL fil=Y192, Tell changes=Y60, Apply reques=Y192, Choose plast=Y60, Color in sto=Y60, Check remain=Y60, Order plasti=Y60, Under 100g?=Y60, Add to shopp=Y60, Prepare for =Y60, Turn printer=Y60, Generate gco=Y60, Heat bed and=Y325, Ready to pri=Y60, Print model=Y325, 3D model pri=Y60
+
+[64] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Artist3DPrint_62464
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=5,flows=24,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,143 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN EMPLOYEE DEVELOPMENT AND PROMOTION - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   77483
+Process Name:   EmployeeDevelopmentAndPromotion_77483
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EmployeeDevelopmentAndPromotion_77483
+[2] Lanes: Employee, Manager, HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Employee: Identify Development Needs | addToLane=True
+  [Element] Employee: Share Career Aspirations | addToLane=True
+  [Element] Manager: Review Needs and Aspirations | addToLane=True
+  [Element] Manager: Plan Work Split | addToLane=True
+  [Element] Manager: Define Mentorship and Responsibilities | addToLane=True
+  [Element] HR: Arrange Training Programs | addToLane=True
+  [Element] Manager: Plan Consolidated | addToLane=True
+  [Element] Employee: Work on Skill Enhancement | addToLane=True
+  [Element] Manager: Provide Feedback and Evaluation | addToLane=True
+  [Element] Manager: Milestones Reached? | addToLane=True
+  [Element] Manager: Adjust Personal Development Plan | addToLane=True
+  [Element] HR: Formal Performance Review | addToLane=True
+  [Element] HR: Promotion Approved? | addToLane=True
+  [Element] HR: Finalize Promotion and Compensation | addToLane=True
+  [Element] Employee: Promoted and Transitioned | addToLane=True
+
+[3] Total elements (flow nodes): 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: EmployeeDevelopmentAndPromotion_77483
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements and lanes (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 7/18 | Missing: Identify Dev, Share Career, Review Needs, Plan Work Sp, Define Mento, Plan Consoli, Work on Skil, Provide Feed, Milestones R, Adjust Perso, Promoted and
+  [Attempt 2] Found: 7/18 | Missing: Identify Dev, Share Career, Review Needs, Plan Work Sp, Define Mento, Plan Consoli, Work on Skil, Provide Feed, Milestones R, Adjust Perso, Promoted and
+  [Attempt 3] Found: 7/18 | Missing: Identify Dev, Share Career, Review Needs, Plan Work Sp, Define Mento, Plan Consoli, Work on Skil, Provide Feed, Milestones R, Adjust Perso, Promoted and
+  [Attempt 3] TIMEOUT - 7/18 elements
+
+[8] WARNING: 7/18 graphics ready after 150ms
+         Missing: Identify Development Needs, Share Career Aspirations, Review Needs and Aspirations, Plan Work Split, Define Mentorship and Responsibilities, Plan Consolidated, Work on Skill Enhancement, Provide Feedback and Evaluation, Milestones Reached?, Adjust Personal Development Plan, Promoted and Transitioned
+
+[9] Trying manual unmask for missing flow nodes...
+
+  [Unmask] Identify Development Needs -> Y=55 (Employee): OK
+  [Unmask] Share Career Aspirations -> Y=55 (Employee): OK
+  [Unmask] Review Needs and Aspirations -> Y=155 (Manager): OK
+  [Unmask] Plan Work Split -> Y=155 (Manager): OK
+  [Unmask] Define Mentorship and Responsibilities -> Y=155 (Manager): OK
+  [Unmask] Plan Consolidated -> Y=155 (Manager): OK
+  [Unmask] Work on Skill Enhancement -> Y=55 (Employee): OK
+  [Unmask] Provide Feedback and Evaluation -> Y=155 (Manager): OK
+  [Unmask] Milestones Reached? -> Y=155 (Manager): OK
+  [Unmask] Adjust Personal Development Plan -> Y=155 (Manager): OK
+  [Unmask] Promoted and Transitioned -> Y=55 (Employee): OK
+
+[10] Manual unmask: 11 elements unmasked
+[11] All flow nodes now available
+
+  Lanes: Employee(5-125); Manager(125-232); HR(232-426)
+  Elements: Identify D=Y55, Share Care=Y55, Review Nee=Y155, Plan Work =Y155, Arrange Tr=Y243, Define Men=Y155, Plan Conso=Y155, Work on Sk=Y55, Provide Fe=Y155, Milestones=Y155, Adjust Per=Y155, Formal Per=Y243, Promotion =Y243, Finalize P=Y243, Promoted a=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Employee centerY = 42
+[13] Manager centerY = 155
+[14] HR centerY = 306
+
+[15] Employee/Identify Development Needs -> (80,42) 33x33
+[16] Employee/Share Career Aspirations -> (250,42) 150x60
+[17] Manager/Review Needs and Aspirations -> (420,155) 150x60
+[18] Manager/Plan Work Split -> (590,155) 40x40
+[19] HR/Arrange Training Programs -> (760,306) 150x60
+[20] Manager/Define Mentorship and Responsibilities -> (760,155) 150x60
+[21] Manager/Plan Consolidated -> (930,155) 40x40
+[22] Employee/Work on Skill Enhancement -> (1100,42) 150x60
+[23] Manager/Provide Feedback and Evaluation -> (1270,155) 150x60
+[24] Manager/Milestones Reached? -> (1440,155) 40x40
+[25] Manager/Adjust Personal Development Plan -> (1610,155) 150x60
+[26] HR/Formal Performance Review -> (1780,306) 150x60
+[27] HR/Promotion Approved? -> (1950,306) 40x40
+[28] HR/Finalize Promotion and Compensation -> (2120,306) 150x60
+[29] Employee/Promoted and Transitioned -> (2290,42) 33x33
+
+[30] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Identify Developme -> Share Career Aspir
+  [Flow] Share Career Aspir -> Review Needs and A
+  [Flow] Review Needs and A -> Plan Work Split
+  [Flow] Plan Work Split -> Define Mentorship 
+  [Flow] Plan Work Split -> Arrange Training P
+  [Flow] Define Mentorship  -> Plan Consolidated
+  [Flow] Arrange Training P -> Plan Consolidated
+  [Flow] Plan Consolidated -> Work on Skill Enha
+  [Flow] Work on Skill Enha -> Provide Feedback a
+  [Flow] Provide Feedback a -> Milestones Reached
+  [Flow] Milestones Reached -> Formal Performance | guard=Yes
+  [Flow] Milestones Reached -> Adjust Personal De | guard=No
+  [Flow] Adjust Personal De -> Work on Skill Enha
+  [Flow] Formal Performance -> Promotion Approved
+  [Flow] Promotion Approved -> Finalize Promotion | guard=Approved
+  [Flow] Promotion Approved -> Adjust Personal De | guard=Not Approved
+  [Flow] Finalize Promotion -> Promoted and Trans
+
+[31] Created 17 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Employee(5-125); Manager(125-232); HR(232-426)
+  Elements: Identify D=Y42, Share Care=Y42, Review Nee=Y155, Plan Work =Y155, Arrange Tr=Y306, Define Men=Y155, Plan Conso=Y155, Work on Sk=Y42, Provide Fe=Y155, Milestones=Y155, Adjust Per=Y155, Formal Per=Y306, Promotion =Y306, Finalize P=Y306, Promoted a=Y42
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  EmployeeDevelopmentAndPromotion_77483
+Lanes:    3
+Elements: 15
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=4,flows=17,data=0,data_assoc=0
+======================================================================

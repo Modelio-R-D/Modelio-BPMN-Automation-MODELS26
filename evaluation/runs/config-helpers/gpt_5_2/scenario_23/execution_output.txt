@@ -1,0 +1,86 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CreditScoringRequest_57384
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CreditScoringRequest_57384
+[2] Lanes: Sales Clerk, Banking System, Credit Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Sales Clerk: 4 elements
+[4] Banking System: 7 elements
+[5] Credit Agency: 7 elements
+
+  Total: 18 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: CreditScoringRequest_57384
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Receive result=0, Receive delay notice=90
+  [Auto-stack] col 7: Send result=0, Send delay notice=90
+[Sales Clerk] Lane bounds: 5-106
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Request credit scoring -> col=1 (230,25) relY=20
+  View scoring result -> col=12 (1880,25) relY=20
+  End -> col=13 (2030,25) relY=20
+
+[Banking System] Lane bounds: 106-206
+  [Unmask] Receive result -> Y=156: OK
+  [Unmask] Receive delay notice -> Y=156: OK
+  [Unmask] Display delay message -> Y=156: OK
+  [Unmask] Wait for final result -> Y=156: OK
+  [Unmask] Update frontend with result -> Y=156: OK
+  [maxElementBottomRelY=170]
+  Start scoring process -> col=2 (380,126) relY=20
+  Send scoring request -> col=3 (530,126) relY=20
+  Receive result -> col=8 (1280,126) relY=20
+  Receive delay notice -> col=8 (1280,216) relY=110
+  Display delay message -> col=9 (1430,126) relY=20
+  Wait for final result -> col=10 (1580,126) relY=20
+  Update frontend with result -> col=11 (1730,126) relY=20
+
+[Credit Agency] Lane bounds: 287-563
+  [maxElementBottomRelY=170]
+  Receive scoring request -> col=4 (680,307) relY=20
+  Quick scoring L1 -> col=5 (830,307) relY=20
+  Result available? -> col=6 (980,307) relY=20
+  Send result -> col=7 (1130,307) relY=20
+  Send delay notice -> col=7 (1130,397) relY=110
+  Level 2 scoring -> col=9 (1430,307) relY=20
+  Send final result -> col=10 (1580,307) relY=20
+
+
+[8] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 19 sequence flows
+
+==================================================================
+COMPLETE: CreditScoringRequest_57384
+==================================================================
+Lanes: 3 | Elements: 18 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=18,gateways=1,flows=19,data=0,data_assoc=0
+======================================================================

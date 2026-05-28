@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: IT_Solution_Request_Process_91559
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IT_Solution_Request_Process_91559
+[2] Lanes: Requester, IT Department
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Requester: 5 elements
+[4] IT Department: 11 elements
+
+  Total: 16 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: IT_Solution_Request_Process_91559
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Notify Rejection=90, Procure Tools=90
+  [Auto-stack] col 6: Test Solution=0, Fix Issues=90
+[Requester] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Receive Solution -> Y=55: OK
+  [Unmask] Attend Training -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Request Form -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Submit Request -> col=1 (230,25) relY=20
+  Start -> col=0 (80,25) relY=20
+  Receive Solution -> col=8 (1280,25) relY=20
+  Attend Training -> col=9 (1430,25) relY=20
+  End -> col=10 (1580,25) relY=20
+  Request Form (DO from Submit Request) -> (320,95) maxBottomRelY=80
+
+[IT Department] Lane bounds: 187-398
+  [maxElementBottomRelY=170]
+  Assess Request -> col=2 (380,207) relY=20
+  Approved? -> col=3 (530,207) relY=20
+  Notify Rejection -> col=4 (680,297) relY=110
+  Procure Tools -> col=4 (680,297) relY=110
+  Install Solution -> col=5 (830,207) relY=20
+  Test Solution -> col=6 (980,207) relY=20
+  Testing OK? -> col=7 (1130,207) relY=20
+  Fix Issues -> col=6 (980,297) relY=110
+  Deploy to Requester -> col=8 (1280,207) relY=20
+  Provide Training -> col=9 (1430,207) relY=20
+  Provide Support -> col=10 (1580,207) relY=20
+  Assessment Report (DO from Assess Request) -> (470,367) maxBottomRelY=170
+  Training Materials (DO from Provide Training) -> (1520,367) maxBottomRelY=170
+
+
+[8] Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 17 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 5
+
+==================================================================
+COMPLETE: IT_Solution_Request_Process_91559
+==================================================================
+Lanes: 2 | Elements: 16 | Data: 3 | Flows: 17 | DataAssoc: 5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 2
+======================================================================

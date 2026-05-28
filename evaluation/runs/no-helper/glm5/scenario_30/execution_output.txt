@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN LAN PARTY PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   43766
+Process Name:   LANParty_43766
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LANParty_43766
+[2] Lanes: Host
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Host lane: 14 elements
+
+  Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: LANParty_43766
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/14 | Missing: Party Planne, Send Invitat, Collect Game, Appoint Date, 8+ Available, Appoint New , Check Game A, Games Availa, Download Gam, Determine Be, Enough Beer?, Buy Beer, Enjoy LAN Pa, Party Comple
+  [Attempt 2] Found: 0/14 | Missing: Party Planne, Send Invitat, Collect Game, Appoint Date, 8+ Available, Appoint New , Check Game A, Games Availa, Download Gam, Determine Be, Enough Beer?, Buy Beer, Enjoy LAN Pa, Party Comple
+  [Attempt 3] Found: 0/14 | Missing: Party Planne, Send Invitat, Collect Game, Appoint Date, 8+ Available, Appoint New , Check Game A, Games Availa, Download Gam, Determine Be, Enough Beer?, Buy Beer, Enjoy LAN Pa, Party Comple
+  [Attempt 3] TIMEOUT - 0/14 elements
+
+[8] WARNING: 0/14 elements ready after 150ms
+         Missing: Party Planned, Send Invitations, Collect Game Preferences, Appoint Date, 8+ Available?, Appoint New Date, Check Game Availability, Games Available?, Download Games, Determine Beer Needs, Enough Beer?, Buy Beer, Enjoy LAN Party, Party Complete
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Party Planned -> Y=105 (Host): OK
+  [Unmask] Send Invitations -> Y=105 (Host): OK
+  [Unmask] Collect Game Preferences -> Y=105 (Host): OK
+  [Unmask] Appoint Date -> Y=105 (Host): OK
+  [Unmask] 8+ Available? -> Y=105 (Host): OK
+  [Unmask] Appoint New Date -> Y=105 (Host): OK
+  [Unmask] Check Game Availability -> Y=105 (Host): OK
+  [Unmask] Games Available? -> Y=105 (Host): OK
+  [Unmask] Download Games -> Y=105 (Host): OK
+  [Unmask] Determine Beer Needs -> Y=105 (Host): OK
+  [Unmask] Enough Beer? -> Y=105 (Host): OK
+  [Unmask] Buy Beer -> Y=105 (Host): OK
+  [Unmask] Enjoy LAN Party -> Y=105 (Host): OK
+  [Unmask] Party Complete -> Y=105 (Host): OK
+
+[10] Manual unmask: 14 elements unmasked
+[11] All elements now available
+
+  Lanes: Host(5-205)
+  Elements: Party Plan=Y105, Send Invit=Y105, Collect Ga=Y105, Appoint Da=Y105, 8+ Availab=Y105, Appoint Ne=Y105, Check Game=Y105, Games Avai=Y105, Download G=Y105, Determine =Y105, Enough Bee=Y105, Buy Beer=Y105, Enjoy LAN =Y105, Party Comp=Y105
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Host centerY = 82
+
+[13] Host/Party Planned -> (80,82) 33x33
+[14] Host/Send Invitations -> (220,82) 120x60
+[15] Host/Collect Game Preferences -> (360,82) 120x60
+[16] Host/Appoint Date -> (500,82) 120x60
+[17] Host/8+ Available? -> (640,82) 40x40
+[18] Host/Appoint New Date -> (780,82) 120x60
+[19] Host/Check Game Availability -> (920,82) 120x60
+[20] Host/Games Available? -> (1060,82) 40x40
+[21] Host/Download Games -> (1200,82) 120x60
+[22] Host/Determine Beer Needs -> (1340,82) 120x60
+[23] Host/Enough Beer? -> (1480,82) 40x40
+[24] Host/Buy Beer -> (1620,82) 120x60
+[25] Host/Enjoy LAN Party -> (1760,82) 120x60
+[26] Host/Party Complete -> (1900,82) 33x33
+
+  Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[27] Created 16 sequence flows
+[28] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Host(5-205)
+  Elements: Party Plan=Y82, Send Invit=Y82, Collect Ga=Y82, Appoint Da=Y82, 8+ Availab=Y82, Appoint Ne=Y82, Check Game=Y82, Games Avai=Y82, Download G=Y82, Determine =Y82, Enough Bee=Y82, Buy Beer=Y82, Enjoy LAN =Y82, Party Comp=Y82
+
+[29] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LANParty_43766
+Lanes:    1
+Elements: 14 (14 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=14,gateways=3,flows=16,data=0,data_assoc=0
+======================================================================

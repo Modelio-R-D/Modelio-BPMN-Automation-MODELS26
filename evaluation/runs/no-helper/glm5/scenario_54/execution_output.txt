@@ -1,0 +1,79 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN INQ-IP TRANSACTION REQUEST PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   69832
+Process Name:   INQ_IP_Request_69832
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: INQ_IP_Request_69832
+[2] Lanes: INQ, IP
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] INQ lane: 2 elements
+[4] IP lane: 4 elements
+
+  Total elements: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: INQ_IP_Request_69832
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements...
+
+  [Attempt 1] All 6 elements ready
+
+  Lanes: INQ(5-105); IP(105-269)
+  Elements: Request Init=Y16, Transmit Dat=Y20, Check Reques=Y116, Valid?=Y116, Data Transmi=Y116, Rejection=Y116
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[9] INQ centerY = 32
+[10] IP centerY = 164
+
+[11] INQ/Request Initiated -> (80,32)
+[12] INQ/Transmit Data Request -> (230,32)
+[13] IP/Check Request -> (380,164)
+[14] IP/Valid? -> (530,164)
+[15] IP/Data Transmitted -> (680,164)
+[16] IP/Rejection -> (830,164)
+
+  Repositioned: 6/6
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[17] Created 5 sequence flows
+[18] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: INQ(5-105); IP(105-269)
+  Elements: Request Init=Y32, Transmit Dat=Y32, Check Reques=Y164, Valid?=Y164, Data Transmi=Y164, Rejection=Y164
+
+[19] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  INQ_IP_Request_69832
+Lanes:    2
+Elements: 6
+Flows:    5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=6,gateways=1,flows=5,data=0,data_assoc=0
+======================================================================

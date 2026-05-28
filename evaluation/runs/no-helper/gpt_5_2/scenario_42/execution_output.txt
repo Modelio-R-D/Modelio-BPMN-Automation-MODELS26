@@ -1,0 +1,138 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Service for Your Fridge
+Script Version: v9.1
+Execution ID:   91763
+Process Name:   ServiceForYourFridge_91763
+Diagram Name:   Service for Your Fridge_91763
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ServiceForYourFridge_91763
+[2] Lanes: Customer, Fridge Service Center, Service Facility
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Customer: Fridge makes strange noises | addToLane=True
+  [Add] Customer: Describe symptoms | addToLane=True
+  [Add] Customer: Send symptoms and fridge type | addToLane=True
+  [Add] Customer: Confirm fridge is OK | addToLane=True
+  [Add] Customer: Rate service facility | addToLane=True
+  [Add] Fridge Service Center: Register request | addToLane=True
+  [Add] Fridge Service Center: Select local service facility | addToLane=True
+  [Add] Fridge Service Center: Forward request to facility | addToLane=True
+  [Add] Service Facility: Make appointment | addToLane=True
+  [Add] Service Facility: Arrive at customer (random time) | addToLane=True
+  [Add] Service Facility: Have required parts? | addToLane=True
+  [Add] Service Facility: Order additional parts | addToLane=True
+  [Add] Service Facility: Repair fridge | addToLane=True
+  [Add] Customer: Fridge OK? | addToLane=True
+  [Add] Customer: Service completed | addToLane=True
+
+[3] Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Service for Your Fridge_91763
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 13/18 | Missing: Make appoint, Arrive at cu, Have require, Order additi, Repair fridg
+  [Attempt 2] Found: 13/18 | Missing: Make appoint, Arrive at cu, Have require, Order additi, Repair fridg
+  [Attempt 3] Found: 13/18 | Missing: Make appoint, Arrive at cu, Have require, Order additi, Repair fridg
+  [Attempt 3] TIMEOUT - 13/18 elements
+
+[8] WARNING: 13/18 graphics ready after 150ms
+         Missing: Make appointment, Arrive at customer (random time), Have required parts?, Order additional parts, Repair fridge
+
+[9] Trying manual unmask for missing FLOW NODES...
+
+  [Unmask] Make appointment -> Y=267 (Service Facility): FAILED
+  [Unmask] Arrive at customer (random time) -> Y=267 (Service Facility): FAILED
+  [Unmask] Have required parts? -> Y=267 (Service Facility): FAILED
+  [Unmask] Order additional parts -> Y=267 (Service Facility): FAILED
+  [Unmask] Repair fridge -> Y=267 (Service Facility): FAILED
+
+  Lanes: Customer(5-117); Fridge Service Center(117-217); Service Facility(217-317)
+  Elements: Fridge makes=Y16, Describe sym=Y20, Send symptom=Y25, Register req=Y128, Select local=Y128, Forward requ=Y128, Make appoint=--, Arrive at cu=--, Have require=--, Order additi=--, Confirm frid=Y30, Repair fridg=--, Fridge OK?=Y40, Rate service=Y35, Service comp=Y45
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[10] Customer centerY = 38
+[11] Fridge Service Center centerY = 144
+[12] Service Facility centerY = 244
+
+[13] Customer/Fridge makes strange noises -> (80,38) 33x33
+[14] Customer/Describe symptoms -> (240,38) 150x60
+[15] Customer/Send symptoms and fridge type -> (400,38) 150x60
+[16] Fridge Service Center/Register request -> (560,144) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-117); Fridge Service Center(117-217); Service Facility(217-317)
+         After:  Lanes: Customer(5-117); Fridge Service Center(117-311); Service Facility(311-411)
+[17] Fridge Service Center/Select local service facility -> (720,144) 150x60
+[18] Fridge Service Center/Forward request to facility -> (880,144) 150x60
+[19] SKIP Make appointment: not in diagram graphics
+[20] SKIP Arrive at customer (random time): not in diagram graphics
+[21] SKIP Have required parts?: not in diagram graphics
+[22] SKIP Order additional parts: not in diagram graphics
+[23] Customer/Confirm fridge is OK -> (1680,38) 150x60
+[24] SKIP Repair fridge: not in diagram graphics
+[25] Customer/Fridge OK? -> (1840,38) 40x40
+[26] Customer/Rate service facility -> (2000,38) 150x60
+[27] Customer/Service completed -> (2160,38) 33x33
+
+  Repositioned: 10/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Fridge makes strange nois -> Describe symptoms
+  [Flow] Describe symptoms -> Send symptoms and fridge 
+  [Flow] Send symptoms and fridge  -> Register request
+  [Flow] Register request -> Select local service faci
+  [Flow] Select local service faci -> Forward request to facili
+  [Flow] Forward request to facili -> Make appointment
+  [Flow] Make appointment -> Arrive at customer (rando
+  [Flow] Arrive at customer (rando -> Have required parts?
+  [Flow] Have required parts? -> Repair fridge | guard=Yes
+  [Flow] Have required parts? -> Order additional parts | guard=No
+  [Flow] Order additional parts -> Arrive at customer (rando
+  [Flow] Repair fridge -> Confirm fridge is OK
+  [Flow] Confirm fridge is OK -> Fridge OK?
+  [Flow] Fridge OK? -> Rate service facility | guard=Yes
+  [Flow] Fridge OK? -> Repair fridge | guard=No
+  [Flow] Rate service facility -> Service completed
+
+[28] Created 16 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-117); Fridge Service Center(117-311); Service Facility(311-411)
+  Elements: Fridge makes=Y38, Describe sym=Y38, Send symptom=Y38, Register req=Y144, Select local=Y144, Forward requ=Y144, Make appoint=--, Arrive at cu=--, Have require=--, Order additi=--, Confirm frid=Y38, Repair fridg=--, Fridge OK?=Y38, Rate service=Y38, Service comp=Y38
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ServiceForYourFridge_91763
+Diagram:  Service for Your Fridge_91763
+Lanes:    3
+Elements: 15
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=2,flows=16,data=0,data_assoc=0
+======================================================================

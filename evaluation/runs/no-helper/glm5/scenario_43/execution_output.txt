@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CAR SERVICE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   59764
+Process Name:   CarService_59764
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CarService_59764
+[2] Lanes: Police App, Customer, Mechanic
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Police App lane: 14 elements
+[4] Customer lane: 1 element
+[5] Mechanic lane: 3 elements
+
+  Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: CarService_59764
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 15/18 | Missing: Enter Car Pr, Confirm Repa, Schedule Nex
+  [Attempt 2] Found: 15/18 | Missing: Enter Car Pr, Confirm Repa, Schedule Nex
+  [Attempt 3] Found: 15/18 | Missing: Enter Car Pr, Confirm Repa, Schedule Nex
+  [Attempt 3] TIMEOUT - 15/18 elements
+
+[10] WARNING: 15/18 elements ready after 150ms
+         Missing: Enter Car Problems, Confirm Repair + Pickerl, Schedule Next Service
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Enter Car Problems -> Y=300 (Mechanic): OK
+  [Unmask] Confirm Repair + Pickerl -> Y=300 (Mechanic): OK
+  [Unmask] Schedule Next Service -> Y=300 (Mechanic): OK
+
+[12] Manual unmask: 3 elements unmasked
+[13] All elements now available
+
+  Lanes: Police App(5-150); Customer(150-250); Mechanic(250-357)
+  Elements: Service Ch=Y16, Check Serv=Y20, No Service=Y70, Service Ne=Y25, Check Regi=Y30, Car Regist=Y35, Not Regist=Y75, Notify Cus=Y40, Enter Car =Y300, Goes to Se=Y45, 30 Days=Y50, Issue Fine=Y55, Fine Issue=Y60, Send Statu=Y65, Pay via Ap=Y161, Confirm Re=Y300, Schedule N=Y300, Service Co=Y80
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Police App centerY = 54
+[15] Customer centerY = 177
+[16] Mechanic centerY = 280
+
+[17] Police App/Service Check -> (80,54) 33x33
+[18] Police App/Check Service Due -> (210,54) 110x55
+[19] Police App/No Service Needed -> (340,54) 33x33
+[20] Police App/Service Needed? -> (340,54) 40x40
+[21] Police App/Check Registration -> (470,54) 110x55
+[22] Police App/Car Registered? -> (600,54) 40x40
+[23] Police App/Not Registered -> (600,54) 33x33
+[24] Police App/Notify Customer -> (730,54) 110x55
+[25] Mechanic/Enter Car Problems -> (860,280) 110x55
+[26] Police App/Goes to Service? -> (860,54) 40x40
+[27] Police App/30 Days -> (990,54) 33x33
+[28] Police App/Issue Fine -> (1120,54) 110x55
+[29] Police App/Fine Issued -> (1250,54) 33x33
+[30] Police App/Send Status Updates -> (1250,54) 110x55
+[31] Customer/Pay via App -> (1380,177) 110x55
+[32] Mechanic/Confirm Repair + Pickerl -> (1510,280) 110x55
+[33] Mechanic/Schedule Next Service -> (1640,280) 110x55
+[34] Police App/Service Complete -> (1770,54) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 17 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Police App(5-150); Customer(150-250); Mechanic(250-357)
+  Elements: Service Ch=Y54, Check Serv=Y54, No Service=Y54, Service Ne=Y54, Check Regi=Y54, Car Regist=Y54, Not Regist=Y54, Notify Cus=Y54, Enter Car =Y280, Goes to Se=Y54, 30 Days=Y54, Issue Fine=Y54, Fine Issue=Y54, Send Statu=Y54, Pay via Ap=Y177, Confirm Re=Y280, Schedule N=Y280, Service Co=Y54
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CarService_59764
+Lanes:    3
+Elements: 18 (18 in diagram)
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=18,gateways=3,flows=17,data=0,data_assoc=0
+======================================================================

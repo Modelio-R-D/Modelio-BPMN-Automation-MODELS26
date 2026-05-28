@@ -1,0 +1,143 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ORDER FULFILLMENT PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   66988
+Process Name:   OrderFulfillment_66988
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_66988
+[2] Lanes: Customer, Order System, Warehouse, Logistics, Customer Service
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: Order Placed
+[4] Order System: Generate Order Confirmation
+[5] Order System: Send Order Confirmation
+[6] Order System: Send Tracking Information
+[7] Warehouse: Pick Items
+[8] Warehouse: Pack Items
+[9] Warehouse: Generate Shipping Label
+[10] Logistics: Hand Over to Logistics Provider
+[11] Logistics: Monitor Shipment
+[12] Logistics: Delivered?
+[13] Logistics: Confirm Delivery
+[14] Customer: Customer Action?
+[15] Customer: Order Completed
+[16] Customer: Provide Feedback
+[17] Customer: Feedback Received
+[18] Customer: Request Return
+[19] Customer Service: Process Return
+[20] Customer Service: Return Closed
+
+  Lane 'Customer': 6 elements
+  Lane 'Order System': 3 elements
+  Lane 'Warehouse': 3 elements
+  Lane 'Logistics': 4 elements
+  Lane 'Customer Service': 2 elements
+
+  Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[21] Diagram created: OrderFulfillment_66988
+[22] DiagramHandle obtained
+[23] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[24] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 18 elements ready
+
+[25] SUCCESS: All 18 elements ready in 50ms
+
+  Lanes: Customer(5-105); Order System(105-205); Warehouse(205-305); Logistics(305-604); Customer Service(604-1126)
+  Elements: Order Placed=Y16, Generate Order=Y116, Send Order Con=Y116, Pick Items=Y216, Pack Items=Y216, Generate Shipp=Y216, Hand Over to L=Y316, Send Tracking =Y116, Monitor Shipme=Y316, Delivered?=Y316, Confirm Delive=Y316, Customer Actio=Y20, Order Complete=Y25, Provide Feedba=Y30, Request Return=Y40, Feedback Recei=Y35, Process Return=Y615, Return Closed=Y615
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[26] Customer centerY = 32
+[27] Order System centerY = 132
+[28] Warehouse centerY = 232
+[29] Logistics centerY = 431
+[30] Customer Service centerY = 842
+
+[31] Customer/Order Placed -> (80,32) 33x33
+[32] Order System/Generate Order Confirmation -> (230,132) 140x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Order System(105-205); Warehouse(205-305); Logistics(305-604); Customer Service(604-1126)
+         After:  Lanes: Customer(5-105); Order System(105-229); Warehouse(229-329); Logistics(329-628); Customer Service(628-1150)
+[33] Order System/Send Order Confirmation -> (380,132) 140x60
+[34] Warehouse/Pick Items -> (530,232) 140x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Order System(105-229); Warehouse(229-329); Logistics(329-628); Customer Service(628-1150)
+         After:  Lanes: Customer(-3-97); Order System(97-221); Warehouse(221-329); Logistics(329-628); Customer Service(628-1150)
+[35] Warehouse/Pack Items -> (680,232) 140x60
+[36] Warehouse/Generate Shipping Label -> (830,232) 140x60
+[37] Logistics/Hand Over to Logistics Provider -> (980,431) 140x60
+[38] Order System/Send Tracking Information -> (1130,132) 140x60
+[39] Logistics/Monitor Shipment -> (1280,431) 140x60
+[40] Logistics/Delivered? -> (1430,431) 40x40
+[41] Logistics/Confirm Delivery -> (1580,431) 140x60
+[42] Customer/Customer Action? -> (1730,32) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Customer(-3-97); Order System(97-221); Warehouse(221-329); Logistics(329-628); Customer Service(628-1150)
+         After:  Lanes: Customer(-3-109); Order System(109-233); Warehouse(233-341); Logistics(341-640); Customer Service(640-1162)
+[43] Customer/Order Completed -> (1880,32) 33x33
+[44] Customer/Provide Feedback -> (1880,32) 140x60
+[45] Customer/Request Return -> (1880,32) 140x60
+[46] Customer/Feedback Received -> (2030,32) 33x33
+[47] Customer Service/Process Return -> (2030,842) 140x60
+[48] Customer Service/Return Closed -> (2180,842) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[49] Flow: Order Placed -> Generate Order Confirmation
+[50] Flow: Generate Order Confirmation -> Send Order Confirmation
+[51] Flow: Send Order Confirmation -> Pick Items
+[52] Flow: Pick Items -> Pack Items
+[53] Flow: Pack Items -> Generate Shipping Label
+[54] Flow: Generate Shipping Label -> Hand Over to Logistics Provider
+[55] Flow: Hand Over to Logistics Provider -> Send Tracking Information
+[56] Flow: Send Tracking Information -> Monitor Shipment
+[57] Flow: Monitor Shipment -> Delivered?
+[58] Flow: Delivered? -> Monitor Shipment [guard=No]
+[59] Flow: Delivered? -> Confirm Delivery [guard=Yes]
+[60] Flow: Confirm Delivery -> Customer Action?
+[61] Flow: Customer Action? -> Order Completed [guard=None]
+[62] Flow: Customer Action? -> Provide Feedback [guard=Feedback]
+[63] Flow: Provide Feedback -> Feedback Received
+[64] Flow: Customer Action? -> Request Return [guard=Return]
+[65] Flow: Request Return -> Process Return
+[66] Flow: Process Return -> Return Closed
+
+[67] Created 18 sequence flows
+[68] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-3-109); Order System(109-233); Warehouse(233-341); Logistics(341-640); Customer Service(640-1162)
+  Elements: Order Placed=Y24, Generate Order=Y136, Send Order Con=Y136, Pick Items=Y244, Pack Items=Y244, Generate Shipp=Y244, Hand Over to L=Y443, Send Tracking =Y144, Monitor Shipme=Y443, Delivered?=Y443, Confirm Delive=Y443, Customer Actio=Y32, Order Complete=Y32, Provide Feedba=Y32, Request Return=Y32, Feedback Recei=Y32, Process Return=Y842, Return Closed=Y842
+
+[69] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OrderFulfillment_66988
+Lanes:    5
+Elements: 18 (18 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=18,gateways=2,flows=18,data=0,data_assoc=0
+======================================================================

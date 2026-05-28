@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Check desired airplane type">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Select number of seats">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Select seat color">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Introduce amount of water in the toilets">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Update flight protocol">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Display bar type">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </serviceTask>
+    <sendTask id="SendTask_1" name="Send customizing options">
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_2" name="Send requirements to the russian team">
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_3" name="Send requirements to the irish team">
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_4" name="Send requirements to french team">
+      <incoming>SequenceFlow_37</incoming>
+      <outgoing>SequenceFlow_28</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_5" name="Send requirements to the american team">
+      <incoming>SequenceFlow_38</incoming>
+      <outgoing>SequenceFlow_29</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_6" name="Send requirements to the italian team">
+      <incoming>SequenceFlow_39</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </sendTask>
+    <sendTask id="SendTask_7" name="Send protocol to customer">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_25</outgoing>
+    </sendTask>
+    <receiveTask id="ReceiveTask_1" name="Receive customizing requirements">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </receiveTask>
+    <receiveTask id="ReceiveTask_2" name="Receive customer confirmation">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </receiveTask>
+    <manualTask id="ManualTask_1" name="Receive bar components">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="Assemble interior">
+      <incoming>SequenceFlow_17</incoming>
+      <incoming>SequenceFlow_34</incoming>
+      <outgoing>SequenceFlow_31</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_3" name="Flight test">
+      <incoming>SequenceFlow_21</incoming>
+      <incoming>SequenceFlow_32</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_4" name="Sent plane to customer">
+      <incoming>SequenceFlow_27</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_5" name="Ajdust errors">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_32</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Individual customizing?">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_33</outgoing>
+      <outgoing>SequenceFlow_34</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Bar type">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_35</outgoing>
+      <outgoing>SequenceFlow_36</outgoing>
+      <outgoing>SequenceFlow_37</outgoing>
+      <outgoing>SequenceFlow_38</outgoing>
+      <outgoing>SequenceFlow_39</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_13</incoming>
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_28</incoming>
+      <incoming>SequenceFlow_29</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4" name="Test succesful">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+      <outgoing>SequenceFlow_26</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_5</outgoing>
+      <outgoing>SequenceFlow_6</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_9</incoming>
+      <incoming>SequenceFlow_10</incoming>
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_3">
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_23</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_4">
+      <incoming>SequenceFlow_25</incoming>
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="Get airplane request">
+      <messageEventDefinition id="message_1"/>
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_19</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="UserTask_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ParallelGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ParallelGateway_1" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ParallelGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ParallelGateway_1" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ServiceTask_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="UserTask_2" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="UserTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="UserTask_4" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="SendTask_1" targetRef="ReceiveTask_1"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ReceiveTask_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="SendTask_2" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="SendTask_3" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ExclusiveGateway_3" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ManualTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ParallelGateway_2" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ManualTask_4" targetRef="ReceiveTask_2"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ReceiveTask_2" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_20" name="No" sourceRef="ExclusiveGateway_4" targetRef="ManualTask_5"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ParallelGateway_3" targetRef="ManualTask_3"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ManualTask_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="ParallelGateway_3" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="UserTask_5" targetRef="SendTask_7"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="SendTask_7" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_26" name="Yes" sourceRef="ExclusiveGateway_4" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="ParallelGateway_4" targetRef="ManualTask_4"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="SendTask_4" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="SendTask_5" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="SendTask_6" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_31" sourceRef="ManualTask_2" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="ManualTask_5" targetRef="ManualTask_3"/>
+    <sequenceFlow id="SequenceFlow_33" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="SendTask_1"/>
+    <sequenceFlow id="SequenceFlow_34" name="No" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_35" name="Vodka bar" sourceRef="ExclusiveGateway_2" targetRef="SendTask_2"/>
+    <sequenceFlow id="SequenceFlow_36" name="Whiskey bar" sourceRef="ExclusiveGateway_2" targetRef="SendTask_3"/>
+    <sequenceFlow id="SequenceFlow_37" name="Wine bar" sourceRef="ExclusiveGateway_2" targetRef="SendTask_4"/>
+    <sequenceFlow id="SequenceFlow_38" name="Cocktail bar" sourceRef="ExclusiveGateway_2" targetRef="SendTask_5"/>
+    <sequenceFlow id="SequenceFlow_39" name="Aperol bar" sourceRef="ExclusiveGateway_2" targetRef="SendTask_6"/>
+  </process>
+</definitions>

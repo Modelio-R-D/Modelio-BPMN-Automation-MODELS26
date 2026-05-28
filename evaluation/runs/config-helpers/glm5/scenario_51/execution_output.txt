@@ -1,0 +1,73 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: VacationRequest_54416
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: VacationRequest_54416
+[2] Lanes: Employee, Supervisor, Human Resources
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee: 5 elements
+[4] Supervisor: 3 elements
+[5] Human Resources: 2 elements
+
+  Total: 10 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: VacationRequest_54416
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Employee] Lane bounds: 5-105
+  [Unmask] Review Rejection -> Y=55: OK
+  [Unmask] End Rejected -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Submit Vacation Request -> col=1 (230,25) relY=20
+  Register Request -> col=2 (380,25) relY=20
+  Review Rejection -> col=5 (830,25) relY=20
+  End Rejected -> col=6 (980,25) relY=20
+
+[Supervisor] Lane bounds: 125-259
+  [maxElementBottomRelY=80]
+  Review Request -> col=3 (530,145) relY=20
+  Approved? -> col=4 (680,145) relY=20
+  Notify HR -> col=5 (830,145) relY=20
+
+[Human Resources] Lane bounds: 259-507
+  [maxElementBottomRelY=80]
+  Complete Procedures -> col=6 (980,279) relY=20
+  End Approved -> col=7 (1130,279) relY=20
+
+
+[8] Repositioned: 10/10
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 9 sequence flows
+
+==================================================================
+COMPLETE: VacationRequest_54416
+==================================================================
+Lanes: 3 | Elements: 10 | Flows: 9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=10,gateways=1,flows=9,data=0,data_assoc=0
+======================================================================

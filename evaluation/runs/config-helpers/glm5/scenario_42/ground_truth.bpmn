@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Send a report to the fridge service center">
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Rate Service Facility">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_1</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Describe the symptoms">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Schedule an appointment for fridge repair">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Select local service facility">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </serviceTask>
+    <manualTask id="ManualTask_1" name="Confirm that fridge is okay">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="Repair the fridge">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_3" name="Collect fridge type data">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Submit a rating?">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+      <outgoing>SequenceFlow_17</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Additional parts needed?">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_7</incoming>
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+      <outgoing>SequenceFlow_10</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_13</incoming>
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="Fridge makes strange noises">
+      <outgoing>SequenceFlow_16</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="Repair process over">
+      <incoming>SequenceFlow_1</incoming>
+      <incoming>SequenceFlow_17</incoming>
+    </endEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_1" name="Wait until service facility arrives">
+      <timerEventDefinition id="timer_1"/>
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </intermediateCatchEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="UserTask_2" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ManualTask_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="UserTask_1" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ServiceTask_1" targetRef="IntermediateCatchEvent_1"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="IntermediateCatchEvent_1" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ManualTask_2" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ServiceTask_2" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="ExclusiveGateway_3" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ParallelGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="ParallelGateway_1" targetRef="ManualTask_3"/>
+    <sequenceFlow id="SequenceFlow_11" name="No. Fridge is repaired" sourceRef="ExclusiveGateway_2" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_12" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ManualTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="ParallelGateway_2" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="UserTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="StartEvent_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_17" name="No" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_18" name="Yes. Fridge is not repaired" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_3"/>
+  </process>
+</definitions>

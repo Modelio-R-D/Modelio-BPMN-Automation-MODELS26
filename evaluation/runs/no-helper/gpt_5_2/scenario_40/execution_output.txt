@@ -1,0 +1,94 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - OEE
+==================================================================
+Script Version: v9.1
+Execution ID:   89544
+Process Name:   OEE_89544
+Diagram Name:   OEE_89544
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_89544
+[2] Lanes: Machine, OEE Monitor, Engineer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements: 9
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: OEE_89544
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/9 | Missing: Stop Machine
+  [Attempt 2] Found: 8/9 | Missing: Stop Machine
+  [Attempt 3] Found: 8/9 | Missing: Stop Machine
+  [Attempt 3] TIMEOUT - 8/9 elements
+
+[8] WARNING: 8/9 elements ready after 150ms
+         Missing: Stop Machine
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Stop Machine -> Y=55 (Machine): OK
+
+[10] Manual unmask: 1 elements unmasked
+[11] All elements now available
+
+  Lanes: Machine(5-112); OEE Monitor(112-274); Engineer(274-374)
+  Elements: Start Monito=Y123, Read Machine=Y123, Machine Conn=Y123, Calculate OE=Y123, Machine Disc=Y123, OEE Below Th=Y123, Stop Machine=Y55, Send Email t=Y123, Restart Mach=Y285
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Machine centerY = 35
+[13] OEE Monitor centerY = 170
+[14] Engineer centerY = 301
+
+[15] OEE Monitor/Start Monitoring -> (80,170) 33x33
+[16] OEE Monitor/Read Machine Counters -> (250,170) 150x60
+[17] OEE Monitor/Machine Connected? -> (420,170) 40x40
+[18] OEE Monitor/Calculate OEE -> (590,170) 150x60
+[19] OEE Monitor/Machine Disconnected - Stop -> (590,170) 33x33
+[20] OEE Monitor/OEE Below Threshold? -> (760,170) 40x40
+[21] Machine/Stop Machine -> (930,35) 150x60
+[22] OEE Monitor/Send Email to Engineer -> (1100,170) 150x60
+[23] Engineer/Restart Machine -> (1270,301) 150x60
+
+  Repositioned: 9/9
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[24] Created 10 sequence flows
+[25] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Machine(5-112); OEE Monitor(112-274); Engineer(274-374)
+  Elements: Start Monito=Y170, Read Machine=Y170, Machine Conn=Y170, Calculate OE=Y170, Machine Disc=Y170, OEE Below Th=Y170, Stop Machine=Y35, Send Email t=Y170, Restart Mach=Y301
+
+[26] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OEE_89544
+Lanes:    3
+Elements: 9 (9 in diagram)
+Flows:    10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=9,gateways=2,flows=10,data=0,data_assoc=0
+======================================================================

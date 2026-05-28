@@ -1,0 +1,70 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DismissalProcess_60937
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DismissalProcess_60937
+[2] Lanes: MPON, MPOO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] MPON: 2 elements
+[4] MPOO: 6 elements
+
+  Total: 8 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: DismissalProcess_60937
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Oppose dismissal=0, Confirm dismissal=90
+[MPON] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Send dismissal -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Send dismissal -> col=1 (230,25) relY=20
+
+[MPOO] Lane bounds: 125-274
+  [Unmask] Merge -> Y=199: OK
+  [Unmask] End -> Y=199: OK
+  [maxElementBottomRelY=170]
+  Review dismissal -> col=2 (380,145) relY=20
+  Oppose or confirm? -> col=3 (530,145) relY=20
+  Oppose dismissal -> col=4 (680,145) relY=20
+  Confirm dismissal -> col=4 (680,235) relY=110
+  Merge -> col=5 (830,145) relY=20
+  End -> col=6 (980,145) relY=20
+
+
+[7] Repositioned: 8/8
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 8 sequence flows
+
+==================================================================
+COMPLETE: DismissalProcess_60937
+==================================================================
+Lanes: 2 | Elements: 8 | Flows: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=8,gateways=2,flows=8,data=0,data_assoc=0
+======================================================================

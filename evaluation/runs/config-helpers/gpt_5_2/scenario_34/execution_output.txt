@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Building a custom machine out of Lego bricks_84284
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Building a custom machine out of Lego bricks_84284
+[2] Lanes: Builder, Children
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Builder: 13 elements
+[4] Children: 1 elements
+
+  Total: 14 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Building a custom machine out of Lego bricks_84284
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 7: Reorder individual parts=0, Test subcomponent=90
+  [Auto-stack] col 9: Redesign subcomponent=0, Assemble subcomponents=90
+[Builder] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Develop basic design -> Y=55: OK
+  [Unmask] Order LEGO sets -> Y=55: OK
+  [Unmask] Give sets to children -> Y=55: OK
+  [Unmask] Build subcomponent -> Y=55: OK
+  [Unmask] Parts available? -> Y=55: OK
+  [Unmask] Reorder individual parts -> Y=55: OK
+  [Unmask] Test subcomponent -> Y=55: OK
+  [Unmask] Test successful? -> Y=55: OK
+  [Unmask] Redesign subcomponent -> Y=55: OK
+  [Unmask] Assemble subcomponents -> Y=55: OK
+  [Unmask] More subcomponents? -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Basic design -> Y=55: OK
+  [Unmask] LEGO sets -> Y=55: OK
+  [Unmask] Reordered parts -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Develop basic design -> col=1 (230,25) relY=20
+  Order LEGO sets -> col=2 (380,25) relY=20
+  Give sets to children -> col=3 (530,25) relY=20
+  Build subcomponent -> col=5 (830,25) relY=20
+  Parts available? -> col=6 (980,25) relY=20
+  Reorder individual parts -> col=7 (1130,25) relY=20
+  Test subcomponent -> col=7 (1130,115) relY=110
+  Test successful? -> col=8 (1280,25) relY=20
+  Redesign subcomponent -> col=9 (1430,25) relY=20
+  Assemble subcomponents -> col=9 (1430,115) relY=110
+  More subcomponents? -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+  Basic design (DO from Develop basic design) -> (320,185) maxBottomRelY=170
+  LEGO sets (DO from Order LEGO sets) -> (470,185) maxBottomRelY=170
+  Reordered parts (DO from Reorder individual parts) -> (1220,185) maxBottomRelY=170
+
+[Children] Lane bounds: 277-377
+  [Unmask] Sort parts into containers -> Y=327: OK
+  [Unmask] Sorted containers -> Y=327: OK
+  [maxElementBottomRelY=80]
+  Sort parts into containers -> col=4 (680,297) relY=20
+  Sorted containers (DO from Sort parts into containers) -> (770,367) maxBottomRelY=80
+
+
+[8] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 16 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 8
+
+==================================================================
+COMPLETE: Building a custom machine out of Lego bricks_84284
+==================================================================
+Lanes: 2 | Elements: 14 | Data: 4 | Flows: 16 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=18,gateways=3,flows=16,data=4,data_assoc=8
+======================================================================

@@ -1,0 +1,136 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN MARKETING CAMPAIGN PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   64500
+Process Name:   MarketingCampaign_64500
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: MarketingCampaign_64500
+[2] Lanes: Marketing, System, Sales
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Creating elements...
+  - Add: Marketing/Start | addToLane=True
+  - Add: Marketing/Define Objectives | addToLane=True
+  - Add: Marketing/Create Content | addToLane=True
+  - Add: Marketing/Design Visuals | addToLane=True
+  - Add: Marketing/Select Channels | addToLane=True
+  - Add: Marketing/Launch Campaign | addToLane=True
+  - Add: Marketing/Campaign Period Ends | addToLane=True
+  - Add: Marketing/Analyze Performance | addToLane=True
+[4] Marketing lane elements: 8
+  - Add: System/Track Metrics (Real-time) | addToLane=True
+  - Add: System/Collect Leads in CRM | addToLane=True
+[5] System lane elements: 2
+  - Add: Sales/Sales Follow-up | addToLane=True
+  - Add: Sales/End | addToLane=True
+[6] Sales lane elements: 2
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: MarketingCampaign_64500
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/12 | Missing: Start, Define Objec, Create Conte, Design Visua, Select Chann, Launch Campa, Campaign Per, Analyze Perf
+  [Attempt 2] Found: 4/12 | Missing: Start, Define Objec, Create Conte, Design Visua, Select Chann, Launch Campa, Campaign Per, Analyze Perf
+  [Attempt 3] Found: 4/12 | Missing: Start, Define Objec, Create Conte, Design Visua, Select Chann, Launch Campa, Campaign Per, Analyze Perf
+  [Attempt 3] TIMEOUT - 4/12 elements
+
+[11] WARNING: 4/12 elements ready after 150ms
+         Missing: Start, Define Objectives, Create Content, Design Visuals, Select Channels, Launch Campaign, Campaign Period Ends, Analyze Performance
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (Marketing): OK
+  [Unmask] Define Objectives -> Y=55 (Marketing): OK
+  [Unmask] Create Content -> Y=55 (Marketing): OK
+  [Unmask] Design Visuals -> Y=55 (Marketing): OK
+  [Unmask] Select Channels -> Y=55 (Marketing): OK
+  [Unmask] Launch Campaign -> Y=55 (Marketing): OK
+  [Unmask] Campaign Period Ends -> Y=55 (Marketing): OK
+  [Unmask] Analyze Performance -> Y=55 (Marketing): OK
+
+[13] Manual unmask: 8 elements unmasked
+[14] All elements now available
+
+  Lanes: Marketing(5-125); System(125-225); Sales(225-325)
+  Elements: Start=Y55, Define Objec=Y55, Create Conte=Y55, Design Visua=Y55, Select Chann=Y55, Launch Campa=Y55, Track Metric=Y136, Collect Lead=Y136, Sales Follow=Y236, Campaign Per=Y55, Analyze Perf=Y55, End=Y236
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Marketing centerY = 42
+[16] System centerY = 152
+[17] Sales centerY = 252
+
+[18] Marketing/Start -> (80,42) 33x33
+[19] Marketing/Define Objectives -> (230,42) 160x60
+[20] Marketing/Create Content -> (380,42) 160x60
+[21] Marketing/Design Visuals -> (530,42) 160x60
+[22] Marketing/Select Channels -> (680,42) 160x60
+[23] Marketing/Launch Campaign -> (830,42) 160x60
+[24] System/Track Metrics (Real-time) -> (980,152) 160x60
+[25] System/Collect Leads in CRM -> (1130,152) 160x60
+[26] Sales/Sales Follow-up -> (1280,252) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Marketing(5-125); System(125-225); Sales(225-325)
+         After:  Lanes: Marketing(5-125); System(125-225); Sales(225-328)
+[27] Marketing/Campaign Period Ends -> (1430,42) 160x60
+[28] Marketing/Analyze Performance -> (1580,42) 160x60
+[29] Sales/End -> (1730,252) 33x33 *** LANE CHANGED ***
+         Before: Lanes: Marketing(5-125); System(125-225); Sales(225-328)
+         After:  Lanes: Marketing(5-125); System(125-225); Sales(225-342)
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  - Flow: Start -> Define Objectives
+  - Flow: Define Objectives -> Create Content
+  - Flow: Create Content -> Design Visuals
+  - Flow: Design Visuals -> Select Channels
+  - Flow: Select Channels -> Launch Campaign
+  - Flow: Launch Campaign -> Track Metrics (Real-time)
+  - Flow: Track Metrics (Real-time) -> Collect Leads in CRM
+  - Flow: Collect Leads in CRM -> Sales Follow-up
+  - Flow: Sales Follow-up -> Campaign Period Ends
+  - Flow: Campaign Period Ends -> Analyze Performance
+  - Flow: Analyze Performance -> End
+
+[30] Created 11 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Marketing(5-125); System(125-225); Sales(225-342)
+  Elements: Start=Y42, Define Objec=Y42, Create Conte=Y42, Design Visua=Y42, Select Chann=Y42, Launch Campa=Y42, Track Metric=Y152, Collect Lead=Y152, Sales Follow=Y252, Campaign Per=Y42, Analyze Perf=Y42, End=Y252
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  MarketingCampaign_64500
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=0,flows=11,data=0,data_assoc=0
+======================================================================

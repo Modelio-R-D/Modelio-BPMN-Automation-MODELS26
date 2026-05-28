@@ -1,0 +1,104 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN GOODS SHIPPING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   33443
+Process Name:   ShippingProcess_33443
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ShippingProcess_33443
+[2] Lanes: Secretary, Logistics Head, Warehousemen
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Secretary lane: 9 elements
+[4] Logistics Head lane: 1 element
+[5] Warehousemen lane: 3 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ShippingProcess_33443
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements...
+
+  [Attempt 1] Found: 4/13 | Missing: Goods to Shi, Clarify Ship, Parallel Spl, Large Amount, Invite Compa, Select Compa, Write Label, Shipping Joi, Parallel Joi
+  [Attempt 2] Found: 4/13 | Missing: Goods to Shi, Clarify Ship, Parallel Spl, Large Amount, Invite Compa, Select Compa, Write Label, Shipping Joi, Parallel Joi
+  [Attempt 3] Found: 4/13 | Missing: Goods to Shi, Clarify Ship, Parallel Spl, Large Amount, Invite Compa, Select Compa, Write Label, Shipping Joi, Parallel Joi
+  [Attempt 3] TIMEOUT - 4/13 elements
+
+[10] WARNING: Missing elements, trying manual unmask...
+
+  [Unmask] Goods to Ship -> Y=55 (Secretary): OK
+  [Unmask] Clarify Shipping -> Y=55 (Secretary): OK
+  [Unmask] Parallel Split -> Y=55 (Secretary): OK
+  [Unmask] Large Amount? -> Y=55 (Secretary): OK
+  [Unmask] Invite Companies -> Y=55 (Secretary): OK
+  [Unmask] Select Company -> Y=55 (Secretary): OK
+  [Unmask] Write Label -> Y=55 (Secretary): OK
+  [Unmask] Shipping Join -> Y=55 (Secretary): OK
+  [Unmask] Parallel Join -> Y=55 (Secretary): OK
+[11] Manual unmask: 9 elements
+
+  Lanes: Secretary(5-132); Logistics Head(132-232); Warehousemen(232-431)
+  Elements: Goods to S=Y55, Clarify Sh=Y55, Parallel S=Y55, Large Amou=Y55, Package Go=Y243, Invite Com=Y55, Write Labe=Y55, Select Com=Y55, Take Insur=Y143, Shipping J=Y55, Parallel J=Y55, Prepare fo=Y243, Goods Read=Y243
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Secretary centerY = 45
+[13] Logistics Head centerY = 159
+[14] Warehousemen centerY = 308
+
+[15] Secretary/Goods to Ship -> (80,45)
+[16] Secretary/Clarify Shipping -> (220,45)
+[17] Secretary/Parallel Split -> (360,45)
+[18] Secretary/Large Amount? -> (500,45)
+[19] Warehousemen/Package Goods -> (500,308)
+[20] Secretary/Invite Companies -> (640,45)
+[21] Secretary/Write Label -> (640,45)
+[22] Secretary/Select Company -> (780,45)
+[23] Logistics Head/Take Insurance -> (780,159)
+[24] Secretary/Shipping Join -> (920,45)
+[25] Secretary/Parallel Join -> (1060,45)
+[26] Warehousemen/Prepare for Pickup -> (1200,308)
+[27] Warehousemen/Goods Ready -> (1340,308)
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[28] Created 14 sequence flows
+[29] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Secretary(5-132); Logistics Head(132-232); Warehousemen(232-431)
+  Elements: Goods to S=Y45, Clarify Sh=Y45, Parallel S=Y45, Large Amou=Y45, Package Go=Y308, Invite Com=Y45, Write Labe=Y45, Select Com=Y45, Take Insur=Y159, Shipping J=Y45, Parallel J=Y45, Prepare fo=Y308, Goods Read=Y308
+
+[30] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ShippingProcess_33443
+Lanes:    3
+Elements: 13 (13 in diagram)
+Flows:    14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=13,gateways=4,flows=14,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BecomingAParent_6861
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BecomingAParent_6861
+[2] Lanes: Parent, HR System, External Parties
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent: 8 elements
+[4] HR System: 11 elements
+[5] External Parties: 3 elements
+
+  Total: 22 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: BecomingAParent_6861
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Notify Social Security=0, Notify Employer=90
+[Parent] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Request Leave Info -> Y=55: OK
+  [Unmask] Review Leave Models -> Y=55: OK
+  [Unmask] Select Leave Model -> Y=55: OK
+  [Unmask] Provide Personal Info -> Y=55: OK
+  [Unmask] Decide on Extension -> Y=55: OK
+  [Unmask] Extend Leave? -> Y=55: OK
+  [Unmask] Select Extension Period -> Y=55: OK
+  [Unmask] Selected Model -> Y=55: OK
+  [Unmask] Personal Details -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Request Leave Info -> col=1 (240,25) relY=20
+  Review Leave Models -> col=3 (560,25) relY=20
+  Select Leave Model -> col=4 (720,25) relY=20
+  Provide Personal Info -> col=5 (880,25) relY=20
+  Decide on Extension -> col=15 (2480,25) relY=20
+  Extend Leave? -> col=16 (2640,25) relY=20
+  Select Extension Period -> col=17 (2800,25) relY=20
+  Selected Model (DO from Select Leave Model) -> (810,95) maxBottomRelY=80
+  Personal Details (DO from Provide Personal Info) -> (970,95) maxBottomRelY=80
+
+[HR System] Lane bounds: 187-287
+  [Unmask] Fetch Leave Models -> Y=237: OK
+  [Unmask] Validate Selection -> Y=237: OK
+  [Unmask] Prepare Notifications -> Y=237: OK
+  [Unmask] Send Notifications -> Y=237: OK
+  [Unmask] Collect Responses -> Y=237: OK
+  [Unmask] Start Leave Period -> Y=237: OK
+  [Unmask] Monitor Leave End -> Y=237: OK
+  [Unmask] Request Extension Decision -> Y=237: OK
+  [Unmask] Process Extension -> Y=237: OK
+  [Unmask] Notify Extension -> Y=237: OK
+  [Unmask] End Leave -> Y=237: OK
+  [Unmask] Leave Models -> Y=237: OK
+  [Unmask] Notification Package -> Y=237: OK
+  [Unmask] Confirmation Records -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Fetch Leave Models -> col=2 (400,207) relY=20
+  Validate Selection -> col=6 (1040,207) relY=20
+  Prepare Notifications -> col=7 (1200,207) relY=20
+  Send Notifications -> col=8 (1360,207) relY=20
+  Collect Responses -> col=11 (1840,207) relY=20
+  Start Leave Period -> col=12 (2000,207) relY=20
+  Monitor Leave End -> col=13 (2160,207) relY=20
+  Request Extension Decision -> col=14 (2320,207) relY=20
+  Process Extension -> col=18 (2960,207) relY=20
+  Notify Extension -> col=19 (3120,207) relY=20
+  End Leave -> col=17 (2800,207) relY=20
+  Leave Models (DO from Fetch Leave Models) -> (490,277) maxBottomRelY=80
+  Notification Package (DO from Prepare Notifications) -> (1290,277) maxBottomRelY=80
+  Confirmation Records (DO from Collect Responses) -> (1770,277) maxBottomRelY=80
+
+[External Parties] Lane bounds: 369-469
+  [Unmask] Notify Social Security -> Y=419: OK
+  [Unmask] Notify Employer -> Y=419: OK
+  [Unmask] Receive Confirmations -> Y=419: OK
+  [maxElementBottomRelY=170]
+  Notify Social Security -> col=9 (1520,389) relY=20
+  Notify Employer -> col=9 (1520,479) relY=110
+  Receive Confirmations -> col=10 (1680,389) relY=20
+
+
+[9] Repositioned: 27/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 10
+
+==================================================================
+COMPLETE: BecomingAParent_6861
+==================================================================
+Lanes: 3 | Elements: 22 | Data: 5 | Flows: 23 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

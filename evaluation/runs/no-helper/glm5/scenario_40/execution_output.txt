@@ -1,0 +1,102 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN OEE MONITORING PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   56587
+Process Name:   OEE_56587
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OEE_56587
+[2] Lanes: Machine, System, Engineer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Machine lane: 4 elements
+[4] System lane: 5 elements
+[5] Engineer lane: 3 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: OEE_56587
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/12 | Missing: Investigate , Restart Mach, Monitoring C
+  [Attempt 2] Found: 9/12 | Missing: Investigate , Restart Mach, Monitoring C
+  [Attempt 3] Found: 9/12 | Missing: Investigate , Restart Mach, Monitoring C
+  [Attempt 3] TIMEOUT - 9/12 elements
+
+[10] WARNING: 9/12 elements ready after 150ms
+         Missing: Investigate Issue, Restart Machine, Monitoring Complete
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Investigate Issue -> Y=294 (Engineer): OK
+  [Unmask] Restart Machine -> Y=294 (Engineer): OK
+  [Unmask] Monitoring Complete -> Y=294 (Engineer): OK
+
+[12] Manual unmask: 3 elements unmasked
+[13] All elements now available
+
+  Lanes: Machine(5-105); System(105-244); Engineer(244-364)
+  Elements: Machine Co=Y16, Collect Ma=Y20, Calculate =Y116, OEE Below =Y116, Process Te=Y116, Stop Machi=Y25, Send Alert=Y116, Log Incide=Y116, Investigat=Y294, Restart Ma=Y294, Resume Pro=Y30, Monitoring=Y294
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Machine centerY = 32
+[15] System centerY = 151
+[16] Engineer centerY = 281
+
+[17] Machine/Machine Connected -> (80,32) 33x33
+[18] Machine/Collect Machine Data -> (230,32) 120x60
+[19] System/Calculate OEE -> (380,151) 120x60
+[20] System/OEE Below Threshold? -> (530,151) 40x40
+[21] System/Process Terminated -> (680,151) 33x33
+[22] Machine/Stop Machine -> (830,32) 120x60
+[23] System/Send Alert Email -> (980,151) 120x60
+[24] System/Log Incident -> (1130,151) 120x60
+[25] Engineer/Investigate Issue -> (1280,281) 120x60
+[26] Engineer/Restart Machine -> (1430,281) 120x60
+[27] Machine/Resume Production -> (1430,32) 120x60
+[28] Engineer/Monitoring Complete -> (1580,281) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Machine(5-105); System(105-244); Engineer(244-364)
+  Elements: Machine Co=Y32, Collect Ma=Y32, Calculate =Y151, OEE Below =Y151, Process Te=Y151, Stop Machi=Y32, Send Alert=Y151, Log Incide=Y151, Investigat=Y281, Restart Ma=Y281, Resume Pro=Y32, Monitoring=Y281
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OEE_56587
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=1,flows=12,data=0,data_assoc=0
+======================================================================

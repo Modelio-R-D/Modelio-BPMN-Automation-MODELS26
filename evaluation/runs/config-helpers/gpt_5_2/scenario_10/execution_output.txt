@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: IT_Solution_Request_Process_18423
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IT_Solution_Request_Process_18423
+[2] Lanes: Requestor, IT
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Requestor: 4 elements
+[4] IT: 12 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: IT_Solution_Request_Process_18423
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Procure tools or licenses=0, Notify requestor of rejection=90
+  [Auto-stack] col 8: Resolve issues and adjust=0, Roll out solution to department=90
+[Requestor] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Submit IT solution request -> Y=55: OK
+  [Unmask] Review rejection -> Y=55: OK
+  [Unmask] End (Rejected) -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Submit IT solution request -> col=1 (230,25) relY=20
+  Review rejection -> col=5 (830,25) relY=20
+  End (Rejected) -> col=6 (980,25) relY=20
+
+[IT] Lane bounds: 125-225
+  [Unmask] Assess request (compatibility, cost, resources) -> Y=175: OK
+  [Unmask] Approve request? -> Y=175: OK
+  [Unmask] Procure tools or licenses -> Y=175: OK
+  [Unmask] Notify requestor of rejection -> Y=175: OK
+  [Unmask] Install solution -> Y=175: OK
+  [Unmask] Test in controlled environment -> Y=175: OK
+  [Unmask] Test successful? -> Y=175: OK
+  [Unmask] Resolve issues and adjust -> Y=175: OK
+  [Unmask] Roll out solution to department -> Y=175: OK
+  [Unmask] Provide training (if needed) -> Y=175: OK
+  [Unmask] Provide support / troubleshooting -> Y=175: OK
+  [Unmask] End (Completed) -> Y=175: OK
+  [maxElementBottomRelY=170]
+  Assess request (compatibility, cost, resources) -> col=2 (380,145) relY=20
+  Approve request? -> col=3 (530,145) relY=20
+  Procure tools or licenses -> col=4 (680,145) relY=20
+  Notify requestor of rejection -> col=4 (680,235) relY=110
+  Install solution -> col=5 (830,145) relY=20
+  Test in controlled environment -> col=6 (980,145) relY=20
+  Test successful? -> col=7 (1130,145) relY=20
+  Resolve issues and adjust -> col=8 (1280,145) relY=20
+  Roll out solution to department -> col=8 (1280,235) relY=110
+  Provide training (if needed) -> col=9 (1430,145) relY=20
+  Provide support / troubleshooting -> col=10 (1580,145) relY=20
+  End (Completed) -> col=11 (1730,145) relY=20
+
+
+[7] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 16 sequence flows
+
+==================================================================
+COMPLETE: IT_Solution_Request_Process_18423
+==================================================================
+Lanes: 2 | Elements: 16 | Flows: 16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=16,gateways=2,flows=16,data=0,data_assoc=0
+======================================================================

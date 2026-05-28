@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <task id="Task_1" name="Prepare implements">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <task id="Task_2" name="Hand washing">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_3" name="Get in sterile clothes">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </task>
+    <task id="Task_4" name="Clean puncture area">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </task>
+    <task id="Task_5" name="Drap puncture zone">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <task id="Task_6" name="Ultrasound configuration">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </task>
+    <task id="Task_7" name="Gel in probe">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </task>
+    <task id="Task_8" name="Cover probe">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </task>
+    <task id="Task_9" name="Put sterile gel">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <task id="Task_10" name="Position probe">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </task>
+    <task id="Task_11" name="Position patient">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </task>
+    <task id="Task_12" name="Doppler identification">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </task>
+    <task id="Task_13" name="Anatomic identification">
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </task>
+    <task id="Task_14" name="Compression identification">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </task>
+    <task id="Task_15" name="Anesthetize patient">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </task>
+    <task id="Task_16" name="Puncture patient">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </task>
+    <task id="Task_17" name="Check blood return">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_32</outgoing>
+    </task>
+    <task id="Task_18" name="Drop probe">
+      <incoming>SequenceFlow_36</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </task>
+    <task id="Task_19" name="Remove syringe">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </task>
+    <task id="Task_20" name="Guidewire install">
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_25</outgoing>
+    </task>
+    <task id="Task_21" name="Remove trocar">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+    </task>
+    <task id="Task_22" name="Check wire in long axis">
+      <incoming>SequenceFlow_27</incoming>
+      <outgoing>SequenceFlow_29</outgoing>
+    </task>
+    <task id="Task_23" name="Check wire in short axis">
+      <incoming>SequenceFlow_28</incoming>
+      <outgoing>SequenceFlow_30</outgoing>
+    </task>
+    <task id="Task_24" name="Check wire position">
+      <incoming>SequenceFlow_31</incoming>
+      <outgoing>SequenceFlow_33</outgoing>
+    </task>
+    <task id="Task_25" name="Widen pathway">
+      <incoming>SequenceFlow_37</incoming>
+      <outgoing>SequenceFlow_38</outgoing>
+    </task>
+    <task id="Task_26" name="Advance catheter">
+      <incoming>SequenceFlow_38</incoming>
+      <outgoing>SequenceFlow_39</outgoing>
+    </task>
+    <task id="Task_27" name="Remove guidewire">
+      <incoming>SequenceFlow_39</incoming>
+      <outgoing>SequenceFlow_40</outgoing>
+    </task>
+    <task id="Task_28" name="Check flow and reflow">
+      <incoming>SequenceFlow_40</incoming>
+      <outgoing>SequenceFlow_41</outgoing>
+    </task>
+    <task id="Task_29" name="Check catheter position">
+      <incoming>SequenceFlow_41</incoming>
+      <outgoing>SequenceFlow_42</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Vein identification method">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_14</outgoing>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_16</incoming>
+      <incoming>SequenceFlow_17</incoming>
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_19</incoming>
+      <incoming>SequenceFlow_34</incoming>
+      <incoming>SequenceFlow_35</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_27</outgoing>
+      <outgoing>SequenceFlow_28</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5">
+      <incoming>SequenceFlow_29</incoming>
+      <incoming>SequenceFlow_30</incoming>
+      <outgoing>SequenceFlow_31</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6" name="Blood return correct ?">
+      <incoming>SequenceFlow_32</incoming>
+      <outgoing>SequenceFlow_34</outgoing>
+      <outgoing>SequenceFlow_36</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_7" name="Wire in good position ?">
+      <incoming>SequenceFlow_33</incoming>
+      <outgoing>SequenceFlow_35</outgoing>
+      <outgoing>SequenceFlow_37</outgoing>
+    </exclusiveGateway>
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_42</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_2" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="Task_3" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="Task_4" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_5" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="Task_6" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="Task_7" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="Task_8" targetRef="Task_9"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_9" targetRef="Task_10"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="Task_10" targetRef="Task_11"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="Task_11" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ExclusiveGateway_1" targetRef="Task_12"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="ExclusiveGateway_1" targetRef="Task_13"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ExclusiveGateway_1" targetRef="Task_14"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="Task_12" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="Task_13" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="Task_14" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="Task_15" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ExclusiveGateway_3" targetRef="Task_16"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="Task_16" targetRef="Task_17"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ExclusiveGateway_2" targetRef="Task_15"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="Task_18" targetRef="Task_19"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="Task_19" targetRef="Task_20"/>
+    <sequenceFlow id="SequenceFlow_25" sourceRef="Task_20" targetRef="Task_21"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="Task_21" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_27" sourceRef="ExclusiveGateway_4" targetRef="Task_22"/>
+    <sequenceFlow id="SequenceFlow_28" sourceRef="ExclusiveGateway_4" targetRef="Task_23"/>
+    <sequenceFlow id="SequenceFlow_29" sourceRef="Task_22" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_30" sourceRef="Task_23" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_31" sourceRef="ExclusiveGateway_5" targetRef="Task_24"/>
+    <sequenceFlow id="SequenceFlow_32" sourceRef="Task_17" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_33" sourceRef="Task_24" targetRef="ExclusiveGateway_7"/>
+    <sequenceFlow id="SequenceFlow_34" name="No" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_35" name="No" sourceRef="ExclusiveGateway_7" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_36" name="Yes" sourceRef="ExclusiveGateway_6" targetRef="Task_18"/>
+    <sequenceFlow id="SequenceFlow_37" name="Yes" sourceRef="ExclusiveGateway_7" targetRef="Task_25"/>
+    <sequenceFlow id="SequenceFlow_38" sourceRef="Task_25" targetRef="Task_26"/>
+    <sequenceFlow id="SequenceFlow_39" sourceRef="Task_26" targetRef="Task_27"/>
+    <sequenceFlow id="SequenceFlow_40" sourceRef="Task_27" targetRef="Task_28"/>
+    <sequenceFlow id="SequenceFlow_41" sourceRef="Task_28" targetRef="Task_29"/>
+    <sequenceFlow id="SequenceFlow_42" sourceRef="Task_29" targetRef="EndEvent_1"/>
+  </process>
+</definitions>

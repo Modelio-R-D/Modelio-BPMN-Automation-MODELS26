@@ -1,0 +1,87 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: CustomerComplaintProcess_93050
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CustomerComplaintProcess_93050
+[2] Lanes: Customer, Customer Service, Investigation Team, Finance
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] Customer Service: 4 elements
+[5] Investigation Team: 4 elements
+[6] Finance: 1 elements
+
+  Total: 14 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: CustomerComplaintProcess_93050
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Notify Approved=0, Notify Rejected=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Receive Refund -> Y=55: OK
+  [Unmask] Provide Feedback -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  File Complaint -> col=0 (80,25) relY=20
+  Receive Decision -> col=6 (980,25) relY=20
+  Receive Refund -> col=7 (1130,25) relY=20
+  Provide Feedback -> col=9 (1430,25) relY=20
+  End -> col=10 (1580,25) relY=20
+
+[Customer Service] Lane bounds: 125-225
+  [Unmask] Start -> Y=175: OK
+  [Unmask] Log Complaint -> Y=175: OK
+  [Unmask] Assign to Dept -> Y=175: OK
+  [Unmask] Mark Resolved -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,145) relY=20
+  Log Complaint -> col=1 (230,145) relY=20
+  Assign to Dept -> col=2 (380,145) relY=20
+  Mark Resolved -> col=8 (1280,145) relY=20
+
+[Investigation Team] Lane bounds: 285-574
+  [maxElementBottomRelY=170]
+  Review Details -> col=3 (530,305) relY=20
+  Refund Justified? -> col=4 (680,305) relY=20
+  Notify Approved -> col=5 (830,305) relY=20
+  Notify Rejected -> col=5 (830,395) relY=110
+
+[Finance] Lane bounds: 574-674
+  [maxElementBottomRelY=80]
+  Process Refund -> col=6 (980,594) relY=20
+
+
+[9] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 13 sequence flows
+
+==================================================================
+COMPLETE: CustomerComplaintProcess_93050
+==================================================================
+Lanes: 4 | Elements: 14 | Flows: 13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

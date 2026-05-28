@@ -1,0 +1,141 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   64443
+Process Name:   Building a custom machine out of Lego bricks_64443
+Title:          Building a custom machine out of Lego bricks
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Building a custom machine out of Lego bricks_64443
+[2] Lanes: Builder, Children, Supplier
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Elem] Start | Lane=Builder | addToLane=True
+  [Elem] Develop basic design | Lane=Builder | addToLane=True
+  [Elem] Place order for Lego sets | Lane=Builder | addToLane=True
+  [Elem] Give sets to children | Lane=Builder | addToLane=True
+  [Elem] More subcomponents? | Lane=Builder | addToLane=True
+  [Elem] Build subcomponent | Lane=Builder | addToLane=True
+  [Elem] Parts available? | Lane=Builder | addToLane=True
+  [Elem] Reorder individual parts | Lane=Builder | addToLane=True
+  [Elem] Test subcomponent | Lane=Builder | addToLane=True
+  [Elem] Test successful? | Lane=Builder | addToLane=True
+  [Elem] Redesign and rebuild subcomponent | Lane=Builder | addToLane=True
+  [Elem] Assemble subcomponent into machine | Lane=Builder | addToLane=True
+  [Elem] End | Lane=Builder | addToLane=True
+[3] Builder lane: created
+  [Elem] Sort parts into containers | Lane=Children | addToLane=True
+[4] Children lane: created
+  [Elem] Provide Lego sets | Lane=Supplier | addToLane=True
+  [Elem] Provide individual parts | Lane=Supplier | addToLane=True
+[5] Supplier lane: created
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Building a custom machine out of Lego bricks_64443
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 14/16 | Missing: Provide Lego, Provide indi
+  [Attempt 2] Found: 14/16 | Missing: Provide Lego, Provide indi
+  [Attempt 3] Found: 14/16 | Missing: Provide Lego, Provide indi
+  [Attempt 3] TIMEOUT - 14/16 elements
+
+[10] WARNING: 14/16 elements ready after 150ms
+         Missing: Provide Lego sets, Provide individual parts
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Provide Lego sets -> Y=295 (Supplier): OK
+  [Unmask] Provide individual parts -> Y=295 (Supplier): OK
+
+[12] Manual unmask: 2 elements unmasked
+[13] All elements now available
+
+  Lanes: Builder(5-145); Children(145-245); Supplier(245-352)
+  Elements: Start=Y16, Develop basi=Y20, Place order =Y25, Provide Lego=Y295, Give sets to=Y30, Sort parts i=Y156, More subcomp=Y35, Build subcom=Y40, Parts availa=Y45, Reorder indi=Y50, Provide indi=Y295, Test subcomp=Y55, Test success=Y60, Redesign and=Y65, Assemble sub=Y70, End=Y75
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Builder centerY = 52
+[15] Children centerY = 172
+[16] Supplier centerY = 275
+
+[17] Builder/Start -> (80,52) 33x33
+[18] Builder/Develop basic design -> (235,52) 170x60
+[19] Builder/Place order for Lego sets -> (390,52) 170x60
+[20] Supplier/Provide Lego sets -> (545,275) 170x60
+[21] Builder/Give sets to children -> (700,52) 170x60
+[22] Children/Sort parts into containers -> (855,172) 170x60
+[23] Builder/More subcomponents? -> (1010,52) 40x40
+[24] Builder/Build subcomponent -> (1165,52) 170x60
+[25] Builder/Parts available? -> (1320,52) 40x40
+[26] Builder/Reorder individual parts -> (1475,52) 170x60
+[27] Supplier/Provide individual parts -> (1630,275) 170x60
+[28] Builder/Test subcomponent -> (1785,52) 170x60
+[29] Builder/Test successful? -> (1940,52) 40x40
+[30] Builder/Redesign and rebuild subcomponent -> (2095,52) 170x60
+[31] Builder/Assemble subcomponent into machine -> (2250,52) 170x60
+[32] Builder/End -> (2405,52) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Start -> Develop basic design
+  [Flow] Develop basic design -> Place order for Lego sets
+  [Flow] Place order for Lego sets -> Provide Lego sets
+  [Flow] Provide Lego sets -> Give sets to children
+  [Flow] Give sets to children -> Sort parts into containers
+  [Flow] Sort parts into containers -> More subcomponents?
+  [Flow] More subcomponents? -> Build subcomponent | Guard=Yes
+  [Flow] More subcomponents? -> End | Guard=No
+  [Flow] Build subcomponent -> Parts available?
+  [Flow] Parts available? -> Test subcomponent | Guard=Yes
+  [Flow] Parts available? -> Reorder individual parts | Guard=No
+  [Flow] Reorder individual parts -> Provide individual parts
+  [Flow] Provide individual parts -> Build subcomponent
+  [Flow] Test subcomponent -> Test successful?
+  [Flow] Test successful? -> Assemble subcomponent into machine | Guard=Yes
+  [Flow] Test successful? -> Redesign and rebuild subcomponent | Guard=No
+  [Flow] Redesign and rebuild subcomponent -> Build subcomponent
+  [Flow] Assemble subcomponent into machine -> More subcomponents?
+
+[33] Created 18 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Builder(5-145); Children(145-245); Supplier(245-352)
+  Elements: Start=Y52, Develop basi=Y52, Place order =Y52, Provide Lego=Y275, Give sets to=Y52, Sort parts i=Y172, More subcomp=Y52, Build subcom=Y52, Parts availa=Y52, Reorder indi=Y52, Provide indi=Y275, Test subcomp=Y52, Test success=Y52, Redesign and=Y52, Assemble sub=Y52, End=Y52
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Building a custom machine out of Lego bricks_64443
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

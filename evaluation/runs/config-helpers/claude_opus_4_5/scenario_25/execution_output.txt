@@ -1,0 +1,129 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: FindAJob_5894
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FindAJob_5894
+[2] Lanes: Job Seeker, Job Platform, Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Job Seeker: 16 elements
+[4] Job Platform: 7 elements
+[5] Company: 11 elements
+
+  Total: 34 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: FindAJob_5894
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 15: End Employed=0, Continue No Report=90
+  [Auto-stack] col 14: Store Seeker Rating=0, Wait 1 Year=90
+  [Auto-stack] col 9: Make Decision=0, Send Offer=90, Reject Candidate=180
+[Job Seeker] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Submit Applications -> Y=55: OK
+  [Unmask] Report Applications -> Y=55: OK
+  [Unmask] Receive Job Offers -> Y=55: OK
+  [Unmask] Review Offers -> Y=55: OK
+  [Unmask] Interested? -> Y=55: OK
+  [Unmask] Negotiate Interview -> Y=55: OK
+  [Unmask] Attend Interview -> Y=55: OK
+  [Unmask] Offer Received? -> Y=55: OK
+  [Unmask] Start Probation -> Y=55: OK
+  [Unmask] Complete Probation -> Y=55: OK
+  [Unmask] Rate Company -> Y=55: OK
+  [Unmask] Permanent? -> Y=55: OK
+  [Unmask] Rating C or Less? -> Y=55: OK
+  [Unmask] End Employed -> Y=55: OK
+  [Unmask] Continue No Report -> Y=55: OK
+  [Unmask] Application Report -> Y=55: OK
+  [Unmask] Company Review -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Submit Applications -> col=1 (210,25) relY=20
+  Report Applications -> col=2 (340,25) relY=20
+  Receive Job Offers -> col=4 (600,25) relY=20
+  Review Offers -> col=5 (730,25) relY=20
+  Interested? -> col=6 (860,25) relY=20
+  Negotiate Interview -> col=7 (990,25) relY=20
+  Attend Interview -> col=8 (1120,25) relY=20
+  Offer Received? -> col=9 (1250,25) relY=20
+  Start Probation -> col=10 (1380,25) relY=20
+  Complete Probation -> col=11 (1510,25) relY=20
+  Rate Company -> col=12 (1640,25) relY=20
+  Permanent? -> col=13 (1770,25) relY=20
+  Rating C or Less? -> col=14 (1900,25) relY=20
+  End Employed -> col=15 (2030,25) relY=20
+  Continue No Report -> col=15 (2030,115) relY=110
+  Application Report (DO from Report Applications) -> (430,185) maxBottomRelY=170
+  Company Review (DO from Rate Company) -> (1730,185) maxBottomRelY=170
+
+[Job Platform] Lane bounds: 277-409
+  [maxElementBottomRelY=150]
+  Process Reports -> col=2 (340,297) relY=20
+  Match Job Offers -> col=3 (470,297) relY=20
+  Send Offers -> col=4 (600,297) relY=20
+  Store Seeker Rating -> col=14 (1900,297) relY=20
+  Store Company Rating -> col=13 (1770,297) relY=20
+  Wait 1 Year -> col=14 (1900,387) relY=110
+  Publish Review -> col=15 (2030,297) relY=20
+  Job Offers List (DO from Match Job Offers) -> (690,437) maxBottomRelY=150
+
+[Company] Lane bounds: 529-685
+  [maxElementBottomRelY=260]
+  Receive Application -> col=1 (210,549) relY=20
+  Confirm Receipt -> col=2 (340,549) relY=20
+  Rate Application -> col=3 (470,549) relY=20
+  Schedule Interview -> col=7 (990,549) relY=20
+  Conduct Interview -> col=8 (1120,549) relY=20
+  Make Decision -> col=9 (1250,549) relY=20
+  Send Offer -> col=9 (1250,639) relY=110
+  Reject Candidate -> col=9 (1250,729) relY=200
+  Manage Probation -> col=11 (1510,549) relY=20
+  Rate Employee -> col=13 (1770,549) relY=20
+  Confirm Permanent -> col=12 (1640,549) relY=20
+  Application Record (DO from Submit Applications) -> (300,799) maxBottomRelY=260
+  Employee Review (DO from Rate Employee) -> (1860,799) maxBottomRelY=260
+
+
+[9] Repositioned: 39/39
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 42 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 10
+
+==================================================================
+COMPLETE: FindAJob_5894
+==================================================================
+Lanes: 3 | Elements: 34 | Data: 5 | Flows: 42 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 5
+======================================================================

@@ -1,0 +1,161 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Farming Bot_78174
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Farming Bot_78174
+[2] Lanes: Player, Farming Bot, Game World, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player: 14 elements
+[4] Farming Bot: 20 elements
+[5] Game World: 1 elements
+[6] Friends: 2 elements
+
+  Total: 37 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: Farming Bot_78174
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 23: Brag to friends=0, Send materials to friends=90
+  [Auto-stack] col 11: Update request received=0, Disaster detected=90, Next farming tick=180
+  [Auto-stack] col 12: Replan farming queue=0, Recover from disaster=90
+  [Auto-stack] col 14: Collect batch A=0, Collect batch B=90, Collect batch C=180
+  [Auto-stack] col 24: Friends receive brag=0, Friends receive materials=90
+[Player] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Choose target resources -> Y=55: OK
+  [Unmask] Set priorities (urgent first) -> Y=55: OK
+  [Unmask] Define dependency rules -> Y=55: OK
+  [Unmask] Confirm bot configuration -> Y=55: OK
+  [Unmask] Receive milestone notification -> Y=55: OK
+  [Unmask] Review results -> Y=55: OK
+  [Unmask] Share results? -> Y=55: OK
+  [Unmask] Split share actions -> Y=55: OK
+  [Unmask] Brag to friends -> Y=55: OK
+  [Unmask] Send materials to friends -> Y=55: OK
+  [Unmask] Join share actions -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Request update to materials list -> Y=55: OK
+  [Unmask] Resource list -> Y=55: OK
+  [Unmask] Priority list -> Y=55: OK
+  [Unmask] Dependency rules doc -> Y=55: OK
+  [Unmask] Gift materials -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Choose target resources -> col=1 (230,25) relY=20
+  Set priorities (urgent first) -> col=2 (380,25) relY=20
+  Define dependency rules -> col=3 (530,25) relY=20
+  Confirm bot configuration -> col=4 (680,25) relY=20
+  Receive milestone notification -> col=17 (2630,25) relY=20
+  Review results -> col=20 (3080,25) relY=20
+  Share results? -> col=21 (3230,25) relY=20
+  Split share actions -> col=22 (3380,25) relY=20
+  Brag to friends -> col=23 (3530,25) relY=20
+  Send materials to friends -> col=23 (3530,115) relY=110
+  Join share actions -> col=24 (3680,25) relY=20
+  End -> col=25 (3830,25) relY=20
+  Request update to materials list -> col=10 (1580,25) relY=20
+  Resource list (DO from Choose target resources) -> (320,185) maxBottomRelY=170
+  Priority list (DO from Set priorities (urgent first)) -> (470,185) maxBottomRelY=170
+  Dependency rules doc (DO from Define dependency rules) -> (620,185) maxBottomRelY=170
+  Gift materials (DO from Review results) -> (3620,185) maxBottomRelY=170
+
+[Farming Bot] Lane bounds: 277-377
+  [Unmask] Analyze resource dependencies -> Y=327: OK
+  [Unmask] Plan tools and route -> Y=327: OK
+  [Unmask] Tools needed? -> Y=327: OK
+  [Unmask] Craft required tools -> Y=327: OK
+  [Unmask] Start farming -> Y=327: OK
+  [Unmask] Farming event hub -> Y=327: OK
+  [Unmask] Update request received -> Y=327: OK
+  [Unmask] Disaster detected -> Y=327: OK
+  [Unmask] Next farming tick -> Y=327: OK
+  [Unmask] Replan farming queue -> Y=327: OK
+  [Unmask] Recover from disaster -> Y=327: OK
+  [Unmask] Split collectors (max 10) -> Y=327: OK
+  [Unmask] Collect batch A -> Y=327: OK
+  [Unmask] Collect batch B -> Y=327: OK
+  [Unmask] Collect batch C -> Y=327: OK
+  [Unmask] Join collectors -> Y=327: OK
+  [Unmask] Milestone reached? -> Y=327: OK
+  [Unmask] Notify milestone -> Y=327: OK
+  [Unmask] More resources needed? -> Y=327: OK
+  [Unmask] Finish farming -> Y=327: OK
+  [Unmask] Tool plan -> Y=327: OK
+  [Unmask] Collected materials -> Y=327: OK
+  [maxElementBottomRelY=260]
+  Analyze resource dependencies -> col=5 (830,297) relY=20
+  Plan tools and route -> col=6 (980,297) relY=20
+  Tools needed? -> col=7 (1130,297) relY=20
+  Craft required tools -> col=8 (1280,297) relY=20
+  Start farming -> col=9 (1430,297) relY=20
+  Farming event hub -> col=10 (1580,297) relY=20
+  Update request received -> col=11 (1730,297) relY=20
+  Disaster detected -> col=11 (1730,387) relY=110
+  Next farming tick -> col=11 (1730,477) relY=200
+  Replan farming queue -> col=12 (1880,297) relY=20
+  Recover from disaster -> col=12 (1880,387) relY=110
+  Split collectors (max 10) -> col=13 (2030,297) relY=20
+  Collect batch A -> col=14 (2180,297) relY=20
+  Collect batch B -> col=14 (2180,387) relY=110
+  Collect batch C -> col=14 (2180,477) relY=200
+  Join collectors -> col=15 (2330,297) relY=20
+  Milestone reached? -> col=16 (2480,297) relY=20
+  Notify milestone -> col=17 (2630,297) relY=20
+  More resources needed? -> col=18 (2780,297) relY=20
+  Finish farming -> col=19 (2930,297) relY=20
+  Tool plan (DO from Plan tools and route) -> (1070,547) maxBottomRelY=260
+  Collected materials (DO from Collect batch C) -> (2270,547) maxBottomRelY=260
+
+[Game World] Lane bounds: 639-749
+  [maxElementBottomRelY=80]
+  Natural disaster strikes -> col=9 (1430,659) relY=20
+
+[Friends] Lane bounds: 749-849
+  [maxElementBottomRelY=170]
+  Friends receive brag -> col=24 (3680,769) relY=20
+  Friends receive materials -> col=24 (3680,859) relY=110
+
+
+[10] Repositioned: 43/43
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 47 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 14
+
+==================================================================
+COMPLETE: Farming Bot_78174
+==================================================================
+Lanes: 4 | Elements: 37 | Data: 6 | Flows: 47 | DataAssoc: 14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=43,gateways=9,flows=47,data=6,data_assoc=14
+======================================================================

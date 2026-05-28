@@ -1,0 +1,102 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: WoWCharacterGenerator_40105
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WoWCharacterGenerator_40105
+[2] Lanes: User, Blizzard System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] User: 15 elements
+[4] Blizzard System: 7 elements
+
+  Total: 22 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: WoWCharacterGenerator_40105
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Enter Credit Card Info=0, Enter IBAN/BIC=90
+[User] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Fork -> Y=55: OK
+  [Unmask] Has Battle.net Account? -> Y=55: OK
+  [Unmask] Enter Account Info -> Y=55: OK
+  [Unmask] Click Confirmation Link -> Y=55: OK
+  [Unmask] Has WoW Subscription? -> Y=55: OK
+  [Unmask] Select Payment Method -> Y=55: OK
+  [Unmask] Enter Credit Card Info -> Y=55: OK
+  [Unmask] Enter IBAN/BIC -> Y=55: OK
+  [Unmask] Brainstorm Names -> Y=55: OK
+  [Unmask] Join -> Y=55: OK
+  [Unmask] Log Into Game -> Y=55: OK
+  [Unmask] Select Character Options -> Y=55: OK
+  [Unmask] Enter Character Name -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Fork -> col=1 (230,25) relY=20
+  Has Battle.net Account? -> col=2 (380,25) relY=20
+  Enter Account Info -> col=3 (530,25) relY=20
+  Click Confirmation Link -> col=5 (830,25) relY=20
+  Has WoW Subscription? -> col=6 (980,25) relY=20
+  Select Payment Method -> col=7 (1130,25) relY=20
+  Enter Credit Card Info -> col=8 (1280,25) relY=20
+  Enter IBAN/BIC -> col=8 (1280,115) relY=110
+  Brainstorm Names -> col=4 (680,25) relY=20
+  Join -> col=10 (1580,25) relY=20
+  Log Into Game -> col=11 (1730,25) relY=20
+  Select Character Options -> col=12 (1880,25) relY=20
+  Enter Character Name -> col=13 (2030,25) relY=20
+  End -> col=19 (2930,25) relY=20
+
+[Blizzard System] Lane bounds: 186-286
+  [Unmask] Send Confirmation Email -> Y=236: OK
+  [Unmask] Process Payment -> Y=236: OK
+  [Unmask] Name Available? -> Y=236: OK
+  [Unmask] Send Confirmation -> Y=236: OK
+  [Unmask] Generate Selfies -> Y=236: OK
+  [Unmask] Wait for Expansion Release -> Y=236: OK
+  [Unmask] Send Expansion Message -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Send Confirmation Email -> col=4 (680,206) relY=20
+  Process Payment -> col=9 (1430,206) relY=20
+  Name Available? -> col=14 (2180,206) relY=20
+  Send Confirmation -> col=15 (2330,206) relY=20
+  Generate Selfies -> col=16 (2480,206) relY=20
+  Wait for Expansion Release -> col=17 (2630,206) relY=20
+  Send Expansion Message -> col=18 (2780,206) relY=20
+
+
+[7] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 26 sequence flows
+
+==================================================================
+COMPLETE: WoWCharacterGenerator_40105
+==================================================================
+Lanes: 2 | Elements: 22 | Flows: 26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=22,gateways=6,flows=26,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN GOODS SHIPPING PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   24794
+Process Name:   GoodsShipping_24794
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: GoodsShipping_24794
+[2] Lanes: Secretary, Logistics Head, Warehouseman, Logistics Company
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements created: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: GoodsShipping_24794
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for lanes + elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 18/21 | Missing: Package good, Join: ready , Prepare for 
+  [Attempt 2] Found: 18/21 | Missing: Package good, Join: ready , Prepare for 
+  [Attempt 3] Found: 18/21 | Missing: Package good, Join: ready , Prepare for 
+  [Attempt 3] TIMEOUT - 18/21 elements
+
+[8] WARNING: 18/21 graphics ready after 150ms
+         Missing: Package goods, Join: ready to hand over, Prepare for pickup
+
+[9] Trying manual unmask for missing NON-LANE elements...
+
+  [Unmask] Package goods -> Y=292 (Warehouseman): OK
+  [Unmask] Join: ready to hand over -> Y=292 (Warehouseman): OK
+  [Unmask] Prepare for pickup -> Y=292 (Warehouseman): OK
+
+[10] Manual unmask: 3 elements unmasked
+
+  Lanes: Secretary(5-142); Logistics Head(142-242); Warehouseman(242-380); Logistics Company(380-480)
+  Elements: Goods ready=Y16, Ship goods?=Y20, Clarify who sh=Y30, No shipment=Y25, Split: arrange=Y35, Large amount?=Y40, Package goods=Y292, Invite 3 logis=Y45, Write package =Y55, Insurance need=Y60, Select logisti=Y50, Take parcel in=Y153, Merge: shippin=Y65, Join: ready to=Y292, Prepare for pi=Y292, Pick up goods=Y391, Goods handed o=Y391
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Secretary centerY = 50
+[12] Logistics Head centerY = 169
+[13] Warehouseman centerY = 288
+[14] Logistics Company centerY = 407
+
+[15] Secretary/Goods ready -> (80,50) 33x33
+[16] Secretary/Ship goods? -> (240,50) 40x40
+[17] Secretary/Clarify who ships -> (400,50) 150x60
+[18] Secretary/No shipment -> (400,50) 33x33
+[19] Secretary/Split: arrange and pack -> (560,50) 40x40
+[20] Secretary/Large amount? -> (720,50) 40x40
+[21] Warehouseman/Package goods -> (720,288) 150x60
+[22] Secretary/Invite 3 logistics companies -> (880,50) 150x60
+[23] Secretary/Write package label -> (880,50) 150x60
+[24] Secretary/Insurance needed? -> (1040,50) 40x40
+[25] Secretary/Select logistics company -> (1040,50) 150x60
+[26] Logistics Head/Take parcel insurance -> (1200,169) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Secretary(5-142); Logistics Head(142-242); Warehouseman(242-380); Logistics Company(380-480)
+         After:  Lanes: Secretary(5-142); Logistics Head(142-273); Warehouseman(273-411); Logistics Company(411-511)
+[27] Secretary/Merge: shipping prepared -> (1360,50) 40x40
+[28] Warehouseman/Join: ready to hand over -> (1520,288) 40x40
+[29] Warehouseman/Prepare for pickup -> (1680,288) 150x60
+[30] Logistics Company/Pick up goods -> (1840,407) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Secretary(5-142); Logistics Head(142-273); Warehouseman(273-411); Logistics Company(411-511)
+         After:  Lanes: Secretary(-65-72); Logistics Head(72-203); Warehouseman(203-341); Logistics Company(341-511)
+[31] Logistics Company/Goods handed over -> (2000,407) 33x33
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 19 sequence flows (missing 0)
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Secretary(-65-72); Logistics Head(72-203); Warehouseman(203-341); Logistics Company(341-511)
+  Elements: Goods ready=Y-20, Ship goods?=Y-20, Clarify who sh=Y-20, No shipment=Y-20, Split: arrange=Y-20, Large amount?=Y-20, Package goods=Y249, Invite 3 logis=Y-20, Write package =Y-20, Insurance need=Y-20, Select logisti=Y-20, Take parcel in=Y99, Merge: shippin=Y-20, Join: ready to=Y218, Prepare for pi=Y218, Pick up goods=Y352, Goods handed o=Y407
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  GoodsShipping_24794
+Lanes:    4
+Elements: 17
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=17,gateways=6,flows=19,data=0,data_assoc=0
+======================================================================

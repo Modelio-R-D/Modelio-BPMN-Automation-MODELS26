@@ -1,0 +1,186 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:         Work Accident
+Script Version: v9.1
+Execution ID:   37627
+Process Name:   WorkAccident_37627
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: WorkAccident_37627
+[2] Lanes: Reporter, Employer or Institution, Accident Insurance, Labour Inspectorate, Other Bodies
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Reporter :: Incident Occurs (addToLane=True)
+  [Add] Reporter :: Provide First Aid / Secure Area (addToLane=True)
+  [Add] Reporter :: Emergency? (addToLane=True)
+  [Add] Reporter :: Call Emergency Services (addToLane=True)
+  [Add] Reporter :: Notify Employer Immediately (addToLane=True)
+  [Add] Employer or Institution :: Record Incident (addToLane=True)
+  [Add] Employer or Institution :: Collect Facts and Evidence (addToLane=True)
+  [Add] Employer or Institution :: Injury or Near Miss? (addToLane=True)
+  [Add] Employer or Institution :: Log Near Miss / Safety Risk (addToLane=True)
+  [Add] Employer or Institution :: Investigate and Corrective Actions (addToLane=True)
+  [Add] Employer or Institution :: Closed - Prevention Actions (addToLane=True)
+  [Add] Employer or Institution :: Work Accident or Equivalent? (addToLane=True)
+  [Add] Employer or Institution :: Handle as Non-Work Incident (addToLane=True)
+  [Add] Employer or Institution :: Closed - Not Work Accident (addToLane=True)
+  [Add] Employer or Institution :: Determine Reporting Obligations (addToLane=True)
+  [Add] Employer or Institution :: Fatal or Serious Injury? (addToLane=True)
+  [Add] Labour Inspectorate :: Report to Labour Inspectorate Immediately (addToLane=True)
+  [Add] Employer or Institution :: Accident Insurance Report Needed? (addToLane=True)
+  [Add] Accident Insurance :: Submit Report to Accident Insurance (<=5 days) (addToLane=True)
+  [Add] Employer or Institution :: Document No-Report Justification (addToLane=True)
+  [Add] Employer or Institution :: Student/Schoolchild? (addToLane=True)
+  [Add] Employer or Institution :: Student Reporting Split (addToLane=True)
+  [Add] Other Bodies :: Report Accident to Directorate (addToLane=True)
+  [Add] Employer or Institution :: School Sends Insurance Report (<=5 days) (addToLane=True)
+  [Add] Employer or Institution :: Student Reporting Join (addToLane=True)
+  [Add] Employer or Institution :: Private Insurance? (addToLane=True)
+  [Add] Other Bodies :: Notify Private Insurer in Writing (addToLane=True)
+  [Add] Employer or Institution :: Confirm Reports Sent and Archive (addToLane=True)
+  [Add] Employer or Institution :: Case Closed (addToLane=True)
+
+[3] Total elements: 29
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Work Accident
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 24/29 | Missing: Incident Occ, Provide Firs, Emergency?, Call Emergen, Notify Emplo
+  [Attempt 2] Found: 24/29 | Missing: Incident Occ, Provide Firs, Emergency?, Call Emergen, Notify Emplo
+  [Attempt 3] Found: 24/29 | Missing: Incident Occ, Provide Firs, Emergency?, Call Emergen, Notify Emplo
+  [Attempt 3] TIMEOUT - 24/29 elements
+
+[8] WARNING: 24/29 elements ready after 150ms
+         Missing: Incident Occurs, Provide First Aid / Secure Area, Emergency?, Call Emergency Services, Notify Employer Immediately
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Incident Occurs -> Y=55 (Reporter): OK
+  [Unmask] Provide First Aid / Secure Area -> Y=55 (Reporter): OK
+  [Unmask] Emergency? -> Y=55 (Reporter): OK
+  [Unmask] Call Emergency Services -> Y=55 (Reporter): OK
+  [Unmask] Notify Employer Immediately -> Y=55 (Reporter): OK
+
+[10] Manual unmask: 5 elements unmasked
+[11] All elements now available
+
+  Lanes: Reporter(5-132); Employer or Institution(132-334); Accident Insurance(334-504); Labour Inspectorate(504-752); Other Bodies(752-1279)
+  Elements: Incident Occur=Y55, Provide First =Y55, Emergency?=Y55, Call Emergency=Y55, Notify Employe=Y55, Record Inciden=Y143, Collect Facts =Y143, Injury or Near=Y143, Log Near Miss =Y143, Investigate an=Y143, Closed - Preve=Y143, Work Accident =Y143, Determine Repo=Y143, Handle as Non-=Y143, Closed - Not W=Y143, Fatal or Serio=Y143, Report to Labo=Y515, Accident Insur=Y143, Document No-Re=Y143, Submit Report =Y345, Student/School=Y143, Student Report=Y143, Report Acciden=Y763, School Sends I=Y147, Student Report=Y152, Private Insura=Y157, Notify Private=Y763, Confirm Report=Y162, Case Closed=Y167
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Reporter centerY = 45
+[13] Employer or Institution centerY = 210
+[14] Accident Insurance centerY = 396
+[15] Labour Inspectorate centerY = 605
+[16] Other Bodies centerY = 992
+
+[17] Reporter/Incident Occurs -> (80,45) 33x33
+[18] Reporter/Provide First Aid / Secure Area -> (230,45) 170x60
+[19] Reporter/Emergency? -> (380,45) 40x40
+[20] Reporter/Call Emergency Services -> (530,45) 170x60
+[21] Reporter/Notify Employer Immediately -> (680,45) 170x60
+[22] Employer or Institution/Record Incident -> (830,210) 170x60
+[23] Employer or Institution/Collect Facts and Evidence -> (980,210) 170x60
+[24] Employer or Institution/Injury or Near Miss? -> (1130,210) 40x40
+[25] Employer or Institution/Log Near Miss / Safety Risk -> (1280,210) 170x60
+[26] Employer or Institution/Investigate and Corrective Actions -> (1430,210) 170x60
+[27] Employer or Institution/Closed - Prevention Actions -> (1580,210) 33x33
+[28] Employer or Institution/Work Accident or Equivalent? -> (1580,210) 40x40
+[29] Employer or Institution/Determine Reporting Obligations -> (1730,210) 170x60
+[30] Employer or Institution/Handle as Non-Work Incident -> (1730,210) 170x60
+[31] Employer or Institution/Closed - Not Work Accident -> (1880,210) 33x33
+[32] Employer or Institution/Fatal or Serious Injury? -> (1880,210) 40x40
+[33] Labour Inspectorate/Report to Labour Inspectorate Immediately -> (2030,605) 170x60
+[34] Employer or Institution/Accident Insurance Report Needed? -> (2180,210) 40x40
+[35] Employer or Institution/Document No-Report Justification -> (2330,210) 170x60
+[36] Accident Insurance/Submit Report to Accident Insurance (<=5 days) -> (2330,396) 170x60
+[37] Employer or Institution/Student/Schoolchild? -> (2480,210) 40x40
+[38] Employer or Institution/Student Reporting Split -> (2630,210) 40x40
+[39] Other Bodies/Report Accident to Directorate -> (2780,992) 170x60
+[40] Employer or Institution/School Sends Insurance Report (<=5 days) -> (2780,210) 170x60
+[41] Employer or Institution/Student Reporting Join -> (2930,210) 40x40
+[42] Employer or Institution/Private Insurance? -> (3080,210) 40x40
+[43] Other Bodies/Notify Private Insurer in Writing -> (3230,992) 170x60
+[44] Employer or Institution/Confirm Reports Sent and Archive -> (3380,210) 170x60
+[45] Employer or Institution/Case Closed -> (3530,210) 33x33
+
+  Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Incident Occurs -> Provide First Aid / Secure Are
+  [Flow] Provide First Aid / Secure Are -> Emergency?
+  [Flow] Emergency? -> Call Emergency Services [guard=Yes]
+  [Flow] Emergency? -> Notify Employer Immediately [guard=No]
+  [Flow] Call Emergency Services -> Notify Employer Immediately
+  [Flow] Notify Employer Immediately -> Record Incident
+  [Flow] Record Incident -> Collect Facts and Evidence
+  [Flow] Collect Facts and Evidence -> Injury or Near Miss?
+  [Flow] Injury or Near Miss? -> Log Near Miss / Safety Risk [guard=Near miss]
+  [Flow] Log Near Miss / Safety Risk -> Investigate and Corrective Act
+  [Flow] Investigate and Corrective Act -> Closed - Prevention Actions
+  [Flow] Injury or Near Miss? -> Work Accident or Equivalent? [guard=Injury]
+  [Flow] Work Accident or Equivalent? -> Handle as Non-Work Incident [guard=No]
+  [Flow] Handle as Non-Work Incident -> Closed - Not Work Accident
+  [Flow] Work Accident or Equivalent? -> Determine Reporting Obligation [guard=Yes]
+  [Flow] Determine Reporting Obligation -> Fatal or Serious Injury?
+  [Flow] Fatal or Serious Injury? -> Report to Labour Inspectorate  [guard=Yes]
+  [Flow] Fatal or Serious Injury? -> Accident Insurance Report Need [guard=No]
+  [Flow] Report to Labour Inspectorate  -> Accident Insurance Report Need
+  [Flow] Accident Insurance Report Need -> Submit Report to Accident Insu [guard=Yes]
+  [Flow] Accident Insurance Report Need -> Document No-Report Justificati [guard=No]
+  [Flow] Submit Report to Accident Insu -> Student/Schoolchild?
+  [Flow] Document No-Report Justificati -> Student/Schoolchild?
+  [Flow] Student/Schoolchild? -> Student Reporting Split [guard=Yes]
+  [Flow] Student/Schoolchild? -> Private Insurance? [guard=No]
+  [Flow] Student Reporting Split -> Report Accident to Directorate
+  [Flow] Student Reporting Split -> School Sends Insurance Report 
+  [Flow] Report Accident to Directorate -> Student Reporting Join
+  [Flow] School Sends Insurance Report  -> Student Reporting Join
+  [Flow] Student Reporting Join -> Private Insurance?
+  [Flow] Private Insurance? -> Notify Private Insurer in Writ [guard=Yes]
+  [Flow] Private Insurance? -> Confirm Reports Sent and Archi [guard=No]
+  [Flow] Notify Private Insurer in Writ -> Confirm Reports Sent and Archi
+  [Flow] Confirm Reports Sent and Archi -> Case Closed
+
+[46] Created 34 sequence flows
+[47] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Reporter(5-132); Employer or Institution(132-334); Accident Insurance(334-504); Labour Inspectorate(504-752); Other Bodies(752-1279)
+  Elements: Incident Occur=Y45, Provide First =Y45, Emergency?=Y45, Call Emergency=Y45, Notify Employe=Y45, Record Inciden=Y210, Collect Facts =Y210, Injury or Near=Y210, Log Near Miss =Y210, Investigate an=Y210, Closed - Preve=Y210, Work Accident =Y210, Determine Repo=Y210, Handle as Non-=Y210, Closed - Not W=Y210, Fatal or Serio=Y210, Report to Labo=Y605, Accident Insur=Y210, Document No-Re=Y210, Submit Report =Y396, Student/School=Y210, Student Report=Y210, Report Acciden=Y992, School Sends I=Y210, Student Report=Y210, Private Insura=Y210, Notify Private=Y992, Confirm Report=Y210, Case Closed=Y210
+
+[48] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Work Accident
+Process:  WorkAccident_37627
+Lanes:    5
+Elements: 29 (29 in diagram)
+Flows:    34
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=29,gateways=9,flows=34,data=0,data_assoc=0
+======================================================================

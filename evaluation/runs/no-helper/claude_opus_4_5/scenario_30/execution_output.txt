@@ -1,0 +1,107 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN LAN PARTY PLANNING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   87530
+Process Name:   LANParty_87530
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LANParty_87530
+[2] Lanes: Organizer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Created 17 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: LANParty_87530
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements...
+
+  [Attempt 1] Found: 0/17 | Missing: Start Planni, Send Invitat, Collect Game, Propose Date, 8+ Agree?, Split, Check Games, Games Missin, Download Gam, Merge Games, Check Beer, Beer Missing, Buy Beer, Merge Beer, Join, Enjoy LAN Pa, Party Comple
+  [Attempt 2] Found: 0/17 | Missing: Start Planni, Send Invitat, Collect Game, Propose Date, 8+ Agree?, Split, Check Games, Games Missin, Download Gam, Merge Games, Check Beer, Beer Missing, Buy Beer, Merge Beer, Join, Enjoy LAN Pa, Party Comple
+  [Attempt 3] Found: 0/17 | Missing: Start Planni, Send Invitat, Collect Game, Propose Date, 8+ Agree?, Split, Check Games, Games Missin, Download Gam, Merge Games, Check Beer, Beer Missing, Buy Beer, Merge Beer, Join, Enjoy LAN Pa, Party Comple
+  [Attempt 3] TIMEOUT - 0/17 elements
+
+[8] Trying manual unmask...
+
+  [Unmask] Start Planning -> Y=105 (Organizer): FAILED
+  [Unmask] Send Invitations -> Y=105 (Organizer): FAILED
+  [Unmask] Collect Game List -> Y=105 (Organizer): FAILED
+  [Unmask] Propose Date -> Y=105 (Organizer): FAILED
+  [Unmask] 8+ Agree? -> Y=105 (Organizer): FAILED
+  [Unmask] Split -> Y=105 (Organizer): FAILED
+  [Unmask] Check Games -> Y=105 (Organizer): FAILED
+  [Unmask] Games Missing? -> Y=105 (Organizer): FAILED
+  [Unmask] Download Games -> Y=105 (Organizer): FAILED
+  [Unmask] Merge Games -> Y=105 (Organizer): FAILED
+  [Unmask] Check Beer -> Y=105 (Organizer): FAILED
+  [Unmask] Beer Missing? -> Y=105 (Organizer): FAILED
+  [Unmask] Buy Beer -> Y=105 (Organizer): FAILED
+  [Unmask] Merge Beer -> Y=105 (Organizer): FAILED
+  [Unmask] Join -> Y=105 (Organizer): FAILED
+  [Unmask] Enjoy LAN Party -> Y=105 (Organizer): FAILED
+  [Unmask] Party Complete -> Y=105 (Organizer): FAILED
+
+  Lanes: Organizer(5-205)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[9] Organizer centerY = 82
+
+[10] SKIP Merge Beer: not in diagram
+[11] SKIP Download Games: not in diagram
+[12] SKIP Merge Games: not in diagram
+[13] SKIP Send Invitations: not in diagram
+[14] SKIP Games Missing?: not in diagram
+[15] SKIP Party Complete: not in diagram
+[16] SKIP Collect Game List: not in diagram
+[17] SKIP Buy Beer: not in diagram
+[18] SKIP Join: not in diagram
+[19] SKIP Beer Missing?: not in diagram
+[20] SKIP Start Planning: not in diagram
+[21] SKIP Check Beer: not in diagram
+[22] SKIP Check Games: not in diagram
+[23] SKIP Enjoy LAN Party: not in diagram
+[24] SKIP Split: not in diagram
+[25] SKIP 8+ Agree?: not in diagram
+[26] SKIP Propose Date: not in diagram
+
+  Repositioned: 0/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[27] Created 20 sequence flows
+[28] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Organizer(5-205)
+
+[29] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  LANParty_87530
+Lanes:    1
+Elements: 17 (0 in diagram)
+Flows:    20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=17,gateways=7,flows=20,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,117 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN BUDGET PLANNING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   42066
+Process Name:   BudgetPlanning_42066
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BudgetPlanning_42066
+[2] Lanes: Department, Strategy Team, Finance, Stakeholders
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department lane: 6 elements
+[4] Strategy Team lane: 2 elements
+[5] Finance lane: 2 elements
+[6] Stakeholders lane: 4 elements
+
+  Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: BudgetPlanning_42066
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 2/14 | Missing: Planning Ini, Outline Obje, Draft Budget, Revise Plan, Receive Allo, Implementati, Feasibility , Feasible?, Document Adj, Approve Adju, Final Approv, Allocate Bud
+  [Attempt 2] Found: 2/14 | Missing: Planning Ini, Outline Obje, Draft Budget, Revise Plan, Receive Allo, Implementati, Feasibility , Feasible?, Document Adj, Approve Adju, Final Approv, Allocate Bud
+  [Attempt 3] Found: 2/14 | Missing: Planning Ini, Outline Obje, Draft Budget, Revise Plan, Receive Allo, Implementati, Feasibility , Feasible?, Document Adj, Approve Adju, Final Approv, Allocate Bud
+  [Attempt 3] TIMEOUT - 2/14 elements
+
+[11] WARNING: 2/14 elements ready after 150ms
+         Missing: Planning Initiated, Outline Objectives, Draft Budget Plan, Revise Plan, Receive Allocation, Implementation Started, Feasibility Review, Feasible?, Document Adjustment, Approve Adjustment, Final Approval, Allocate Budget
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Planning Initiated -> Y=55 (Department): OK
+  [Unmask] Outline Objectives -> Y=55 (Department): OK
+  [Unmask] Draft Budget Plan -> Y=55 (Department): OK
+  [Unmask] Revise Plan -> Y=55 (Department): OK
+  [Unmask] Receive Allocation -> Y=55 (Department): OK
+  [Unmask] Implementation Started -> Y=55 (Department): OK
+  [Unmask] Feasibility Review -> Y=284 (Finance): OK
+  [Unmask] Feasible? -> Y=284 (Finance): OK
+  [Unmask] Document Adjustment -> Y=384 (Stakeholders): OK
+  [Unmask] Approve Adjustment -> Y=384 (Stakeholders): OK
+  [Unmask] Final Approval -> Y=384 (Stakeholders): OK
+  [Unmask] Allocate Budget -> Y=384 (Stakeholders): OK
+
+[13] Manual unmask: 12 elements unmasked
+[14] All elements now available
+
+  Lanes: Department(5-125); Strategy Team(125-254); Finance(254-361); Stakeholders(361-461)
+  Elements: Planning I=Y55, Outline Ob=Y55, Draft Budg=Y55, Strategic =Y136, Aligned?=Y136, Feasibilit=Y284, Revise Pla=Y55, Feasible?=Y284, Document A=Y384, Approve Ad=Y384, Final Appr=Y384, Allocate B=Y384, Receive Al=Y55, Implementa=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Department centerY = 42
+[16] Strategy Team centerY = 166
+[17] Finance centerY = 284
+[18] Stakeholders centerY = 388
+
+[19] Department/Planning Initiated -> (80,42) 33x33
+[20] Department/Outline Objectives -> (220,42) 120x60
+[21] Department/Draft Budget Plan -> (360,42) 120x60
+[22] Strategy Team/Strategic Review -> (500,166) 120x60
+[23] Strategy Team/Aligned? -> (640,166) 40x40
+[24] Finance/Feasibility Review -> (780,284) 120x60
+[25] Department/Revise Plan -> (780,42) 120x60
+[26] Finance/Feasible? -> (920,284) 40x40
+[27] Stakeholders/Document Adjustment -> (1060,388) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Department(5-125); Strategy Team(125-254); Finance(254-361); Stakeholders(361-461)
+         After:  Lanes: Department(5-125); Strategy Team(125-254); Finance(254-361); Stakeholders(361-478)
+[28] Stakeholders/Approve Adjustment -> (1200,388) 120x60
+[29] Stakeholders/Final Approval -> (1340,388) 120x60
+[30] Stakeholders/Allocate Budget -> (1480,388) 120x60
+[31] Department/Receive Allocation -> (1480,42) 120x60
+[32] Department/Implementation Started -> (1620,42) 33x33
+
+  Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 15 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(5-125); Strategy Team(125-254); Finance(254-361); Stakeholders(361-478)
+  Elements: Planning I=Y42, Outline Ob=Y42, Draft Budg=Y42, Strategic =Y166, Aligned?=Y166, Feasibilit=Y284, Revise Pla=Y42, Feasible?=Y284, Document A=Y388, Approve Ad=Y388, Final Appr=Y388, Allocate B=Y388, Receive Al=Y42, Implementa=Y42
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  BudgetPlanning_42066
+Lanes:    4
+Elements: 14 (14 in diagram)
+Flows:    15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=14,gateways=2,flows=15,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="select a starting block">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="get your starting number">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="measure the time">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="receive your final running time">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="calculate time between starting time and the end of workday">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="measure the time">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </serviceTask>
+    <manualTask id="ManualTask_1" name="run for 5km">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_2" name="train">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_3" name="go to home">
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_4" name="run">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </manualTask>
+    <manualTask id="ManualTask_5" name="drink">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="time less than 25 minutes?">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_7</incoming>
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="time more than 1 hour?">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+      <outgoing>SequenceFlow_25</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_3</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_4</incoming>
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_3">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_21</outgoing>
+      <outgoing>SequenceFlow_22</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_4">
+      <incoming>SequenceFlow_16</incoming>
+      <incoming>SequenceFlow_17</incoming>
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_13</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ParallelGateway_1" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ParallelGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ManualTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ServiceTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ParallelGateway_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ManualTask_2" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_8" name="No" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="UserTask_2" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="ExclusiveGateway_4" targetRef="ParallelGateway_3"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ParallelGateway_3" targetRef="ManualTask_4"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ParallelGateway_4" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ServiceTask_2" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_14" name="No" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ServiceTask_3" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ManualTask_4" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ManualTask_5" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_18" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="UserTask_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ExclusiveGateway_2" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ParallelGateway_3" targetRef="ManualTask_5"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ParallelGateway_3" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="ServiceTask_4" targetRef="ParallelGateway_4"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="ManualTask_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_25" name="Yes" sourceRef="ExclusiveGateway_3" targetRef="ManualTask_3"/>
+  </process>
+</definitions>

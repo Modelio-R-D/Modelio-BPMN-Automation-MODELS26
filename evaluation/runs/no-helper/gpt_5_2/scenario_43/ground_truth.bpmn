@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Mechanic check a car and enter problems">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Pay per App">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Save repair infos">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Make appointment for next service">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Make new appointment">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Check if car is still registered?">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="User fined">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Receive updates while waiting">
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="Send 'Pickerl'">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_5" name="Check appointment for service">
+      <incoming>SequenceFlow_22</incoming>
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </serviceTask>
+    <sendTask id="SendTask_1" name="Send reminder notification to user">
+      <incoming>SequenceFlow_21</incoming>
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </sendTask>
+    <receiveTask id="ReceiveTask_1" name="Received a notificiation">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </receiveTask>
+    <manualTask id="ManualTask_1" name="Bring Documents for Registration">
+      <incoming>SequenceFlow_1</incoming>
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </manualTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Registered?">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_22</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Gone to service?">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+      <outgoing>SequenceFlow_17</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3" name="&gt; 30 days?">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+      <outgoing>SequenceFlow_25</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4" name="Repair done?">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+      <outgoing>SequenceFlow_13</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_19</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ManualTask_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ServiceTask_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_4" name="no" sourceRef="ExclusiveGateway_1" targetRef="ManualTask_1"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="SendTask_1" targetRef="ReceiveTask_1"/>
+    <sequenceFlow id="SequenceFlow_6" name="yes" sourceRef="ExclusiveGateway_2" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_7" name="yes" sourceRef="ExclusiveGateway_3" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="UserTask_1" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="ServiceTask_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_10" name="yes" sourceRef="ExclusiveGateway_4" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="UserTask_2" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ParallelGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ParallelGateway_1" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="UserTask_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ServiceTask_4" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ParallelGateway_2" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_17" name="no" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_18" name="no" sourceRef="ExclusiveGateway_4" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="UserTask_4" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ReceiveTask_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ServiceTask_5" targetRef="SendTask_1"/>
+    <sequenceFlow id="SequenceFlow_22" name="yes" sourceRef="ExclusiveGateway_1" targetRef="ServiceTask_5"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="ServiceTask_2" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="UserTask_5" targetRef="ServiceTask_5"/>
+    <sequenceFlow id="SequenceFlow_25" name="no" sourceRef="ExclusiveGateway_3" targetRef="SendTask_1"/>
+  </process>
+</definitions>

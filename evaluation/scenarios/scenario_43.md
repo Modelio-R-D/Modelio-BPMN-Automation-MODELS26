@@ -1,0 +1,27 @@
+# Scenario 43
+
+**Complexity:** Complex
+
+## Natural-language description
+
+Title: Car Service
+
+The police has a new app to remind you of your car service.
+The process is started after a successful service.
+When a service is necessary, the system checks if your car is still registered.
+If it is registered, you are notified.
+If you do not go to the service, you are fined after 30 days.
+At the car service facility the mechanic enters the problems of your car for reference.
+While you wait (can take several days), you get status updates via email.
+You can pay through the app, when the repair is done.
+The mechanic enters that the repair was successful and you got your "Pickerl".
+The mechanic enters the time for you next service.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 21
+- gateways: 6
+- flows: 25
+- data_objects: 0
+- data_assoc: 0

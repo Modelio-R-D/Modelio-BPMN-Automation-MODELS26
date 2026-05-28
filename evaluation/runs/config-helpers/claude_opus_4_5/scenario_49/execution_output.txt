@@ -1,0 +1,78 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComputerRepairProcess_25560
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComputerRepairProcess_25560
+[2] Lanes: Customer, CRS
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 7 elements
+[4] CRS: 11 elements
+
+  Total: 18 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ComputerRepairProcess_25560
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Check Repair Hardware=0, Check Configure Software=90
+  [Auto-stack] col 7: Test Hardware=0, Test Software=90
+  [Auto-stack] col 8: Hardware OK?=0, Software OK?=90
+[Customer] Lane bounds: 5-115
+  [maxElementBottomRelY=80]
+  Bring Computer -> col=0 (80,25) relY=20
+  Receive Calculation -> col=3 (530,25) relY=20
+  Costs Acceptable? -> col=4 (680,25) relY=20
+  Take Computer Home -> col=5 (830,25) relY=20
+  End Unrepaired -> col=6 (980,25) relY=20
+  Receive Repaired PC -> col=10 (1580,25) relY=20
+  End Repaired -> col=11 (1730,25) relY=20
+
+[CRS] Lane bounds: 115-234
+  [maxElementBottomRelY=170]
+  Check Defect -> col=1 (230,135) relY=20
+  Calculate Repair Cost -> col=2 (380,135) relY=20
+  Start Parallel Repair -> col=5 (830,135) relY=20
+  Check Repair Hardware -> col=6 (980,135) relY=20
+  Check Configure Software -> col=6 (980,225) relY=110
+  Test Hardware -> col=7 (1130,135) relY=20
+  Test Software -> col=7 (1130,225) relY=110
+  Hardware OK? -> col=8 (1280,135) relY=20
+  Software OK? -> col=8 (1280,225) relY=110
+  Join Parallel -> col=9 (1430,135) relY=20
+  Hand Over Computer -> col=10 (1580,135) relY=20
+
+
+[7] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 20 sequence flows
+
+==================================================================
+COMPLETE: ComputerRepairProcess_25560
+==================================================================
+Lanes: 2 | Elements: 18 | Flows: 20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 5
+======================================================================

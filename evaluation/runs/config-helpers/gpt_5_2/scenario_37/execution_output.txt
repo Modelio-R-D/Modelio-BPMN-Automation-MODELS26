@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Contract_37472
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Contract_37472
+[2] Lanes: Procurement, Build, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement: 9 elements
+[4] Build: 15 elements
+[5] Friends: 1 elements
+
+  Total: 25 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Contract_37472
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Query Shop 1 (qty, price, lead time)=0, Query Shop 2 (qty, price, lead time)=90, Query Shop 3 (qty, price, lead time)=180
+  [Auto-stack] col 10: Start building=0, Continue building=90
+  [Auto-stack] col 15: Stock is zero?=0, Reorder cheapest=90
+[Procurement] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Define required parts -> Y=55: OK
+  [Unmask] Query all web shops -> Y=55: OK
+  [Unmask] Query Shop 1 (qty, price, lead time) -> Y=55: OK
+  [Unmask] Query Shop 2 (qty, price, lead time) -> Y=55: OK
+  [Unmask] Query Shop 3 (qty, price, lead time) -> Y=55: OK
+  [Unmask] All quotes received -> Y=55: OK
+  [Unmask] Select cheapest and split orders -> Y=55: OK
+  [Unmask] Place purchase orders per shop -> Y=55: OK
+  [maxElementBottomRelY=260]
+  Start -> col=0 (80,25) relY=20
+  Define required parts -> col=1 (230,25) relY=20
+  Query all web shops -> col=2 (380,25) relY=20
+  Query Shop 1 (qty, price, lead time) -> col=3 (530,25) relY=20
+  Query Shop 2 (qty, price, lead time) -> col=3 (530,115) relY=110
+  Query Shop 3 (qty, price, lead time) -> col=3 (530,205) relY=200
+  All quotes received -> col=4 (680,25) relY=20
+  Select cheapest and split orders -> col=5 (830,25) relY=20
+  Place purchase orders per shop -> col=6 (980,25) relY=20
+
+[Build] Lane bounds: 276-376
+  [Unmask] Reorder cheapest -> Y=326: OK
+  [Unmask] Reorder fastest -> Y=326: OK
+  [Unmask] All parts installed? -> Y=326: OK
+  [Unmask] Assembly complete -> Y=326: OK
+  [Unmask] End -> Y=326: OK
+  [maxElementBottomRelY=170]
+  Wait for delivery batch (+/-2 days) -> col=7 (1130,296) relY=20
+  Update stock from delivered batch -> col=8 (1280,296) relY=20
+  First batch? -> col=9 (1430,296) relY=20
+  Start building -> col=10 (1580,296) relY=20
+  Continue building -> col=10 (1580,386) relY=110
+  Build with available parts -> col=11 (1730,296) relY=20
+  Check stock levels -> col=12 (1880,296) relY=20
+  Stock below 5? -> col=13 (2030,296) relY=20
+  Stock below 3? -> col=14 (2180,296) relY=20
+  Stock is zero? -> col=15 (2330,296) relY=20
+  Reorder cheapest -> col=15 (2330,386) relY=110
+  Reorder fastest -> col=16 (2480,296) relY=20
+  All parts installed? -> col=17 (2630,296) relY=20
+  Assembly complete -> col=18 (2780,296) relY=20
+  End -> col=19 (2930,296) relY=20
+
+[Friends] Lane bounds: 457-557
+  [maxElementBottomRelY=80]
+  Email friends complaining -> col=16 (2480,477) relY=20
+
+
+[8] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 31 sequence flows
+
+==================================================================
+COMPLETE: Contract_37472
+==================================================================
+Lanes: 3 | Elements: 25 | Flows: 31
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=25,gateways=7,flows=31,data=0,data_assoc=0
+======================================================================

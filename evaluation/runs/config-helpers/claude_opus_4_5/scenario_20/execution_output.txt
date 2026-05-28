@@ -1,0 +1,80 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: EvanstonianRoomService_3445
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EvanstonianRoomService_3445
+[2] Lanes: Room Service Manager, Sommelier, Kitchen, Waiter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Room Service Manager: 3 elements
+[4] Sommelier: 3 elements
+[5] Kitchen: 1 elements
+[6] Waiter: 8 elements
+
+  Total: 15 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: EvanstonianRoomService_3445
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Room Service Manager] Lane bounds: 5-211
+  [maxElementBottomRelY=80]
+  Guest Calls -> col=0 (80,25) relY=20
+  Take Down Order -> col=1 (230,25) relY=20
+  Distribute Tasks -> col=2 (380,25) relY=20
+
+[Sommelier] Lane bounds: 211-311
+  [maxElementBottomRelY=80]
+  Alcohol Ordered? -> col=3 (530,231) relY=20
+  Fetch Wine and Prepare Beverages -> col=4 (680,231) relY=20
+  Skip Sommelier -> col=5 (830,231) relY=20
+
+[Kitchen] Lane bounds: 311-411
+  [maxElementBottomRelY=80]
+  Prepare Food -> col=3 (530,331) relY=20
+
+[Waiter] Lane bounds: 411-831
+  [maxElementBottomRelY=80]
+  Ready Cart -> col=3 (530,431) relY=20
+  Prepare Non-Alcoholic Drinks -> col=4 (680,431) relY=20
+  All Ready -> col=6 (980,431) relY=20
+  Deliver to Room -> col=7 (1130,431) relY=20
+  Return to Station -> col=8 (1280,431) relY=20
+  Another Order Waiting? -> col=9 (1430,431) relY=20
+  Debit Guest Account -> col=10 (1580,431) relY=20
+  End -> col=11 (1730,431) relY=20
+
+
+[9] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 18 sequence flows
+
+==================================================================
+COMPLETE: EvanstonianRoomService_3445
+==================================================================
+Lanes: 4 | Elements: 15 | Flows: 18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 5
+======================================================================

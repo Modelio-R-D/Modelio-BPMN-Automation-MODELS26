@@ -1,0 +1,94 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OrderFulfillment_11808
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_11808
+[2] Lanes: Customer, Order System, Warehouse, Logistics Provider
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 7 elements
+[4] Order System: 7 elements
+[5] Warehouse: 4 elements
+[6] Logistics Provider: 2 elements
+
+  Total: 20 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: OrderFulfillment_11808
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 12: Submit Feedback=0, Initiate Return=90
+  [Auto-stack] col 13: Record Feedback=0, Authorize Return=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Further Action? -> Y=55: OK
+  [Unmask] Submit Feedback -> Y=55: OK
+  [Unmask] Initiate Return -> Y=55: OK
+  [Unmask] Close Out -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Place Order -> col=1 (230,25) relY=20
+  Further Action? -> col=11 (1730,25) relY=20
+  Submit Feedback -> col=12 (1880,25) relY=20
+  Initiate Return -> col=12 (1880,115) relY=110
+  Close Out -> col=16 (2480,25) relY=20
+  End -> col=17 (2630,25) relY=20
+
+[Order System] Lane bounds: 186-286
+  [maxElementBottomRelY=170]
+  Capture Order -> col=2 (380,206) relY=20
+  Send Order Confirmation -> col=3 (530,206) relY=20
+  Generate Shipping Label -> col=6 (980,206) relY=20
+  Send Tracking Info -> col=8 (1280,206) relY=20
+  Record Feedback -> col=13 (2030,206) relY=20
+  Authorize Return -> col=13 (2030,296) relY=110
+  Refund Customer -> col=15 (2330,206) relY=20
+
+[Warehouse] Lane bounds: 367-546
+  [maxElementBottomRelY=80]
+  Pick Items -> col=4 (680,387) relY=20
+  Pack Items -> col=5 (830,387) relY=20
+  Handover to Logistics -> col=7 (1130,387) relY=20
+  Receive Returned Items -> col=14 (2180,387) relY=20
+
+[Logistics Provider] Lane bounds: 546-646
+  [Unmask] Monitor Shipment -> Y=596: OK
+  [Unmask] Deliver Shipment -> Y=596: OK
+  [maxElementBottomRelY=80]
+  Monitor Shipment -> col=9 (1430,566) relY=20
+  Deliver Shipment -> col=10 (1580,566) relY=20
+
+
+[9] Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 21 sequence flows
+
+==================================================================
+COMPLETE: OrderFulfillment_11808
+==================================================================
+Lanes: 4 | Elements: 20 | Flows: 21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=20,gateways=2,flows=21,data=0,data_assoc=0
+======================================================================

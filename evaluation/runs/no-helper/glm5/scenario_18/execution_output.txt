@@ -1,0 +1,161 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN UNIVERSITY ENROLLMENT PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   25505
+Process Name:   UniversityEnrollment_25505
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_25505
+[2] Lanes: Student, Admissions, Finance, Support Services, Academic
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Student lane: 12 elements
+[4] Admissions lane: 10 elements
+[5] Finance lane: 3 elements
+[6] Support Services lane: 4 elements
+[7] Academic lane: 9 elements
+
+  Total elements: 40
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: UniversityEnrollment_25505
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 12/40 | Missing: Resolve Conf, Attend Class, Add/Drop Cou, Review Grade, Review Appli, Docs Complet, Notify Missi, Fork Eval & , Evaluate App, Accepted?, Send Accept , Send Reject , Confirmed?, Cancel Appli, Process Fee/, Join Eval & , Int'l Studen, Advise Stude, Register Cou, Post Grades, Grievance?, Submit Appea, Appeals Meet, Appeal OK?, Continue?, Graduate/Wit, Rejection En, Cancel End
+  [Attempt 2] Found: 12/40 | Missing: Resolve Conf, Attend Class, Add/Drop Cou, Review Grade, Review Appli, Docs Complet, Notify Missi, Fork Eval & , Evaluate App, Accepted?, Send Accept , Send Reject , Confirmed?, Cancel Appli, Process Fee/, Join Eval & , Int'l Studen, Advise Stude, Register Cou, Post Grades, Grievance?, Submit Appea, Appeals Meet, Appeal OK?, Continue?, Graduate/Wit, Rejection En, Cancel End
+  [Attempt 3] Found: 12/40 | Missing: Resolve Conf, Attend Class, Add/Drop Cou, Review Grade, Review Appli, Docs Complet, Notify Missi, Fork Eval & , Evaluate App, Accepted?, Send Accept , Send Reject , Confirmed?, Cancel Appli, Process Fee/, Join Eval & , Int'l Studen, Advise Stude, Register Cou, Post Grades, Grievance?, Submit Appea, Appeals Meet, Appeal OK?, Continue?, Graduate/Wit, Rejection En, Cancel End
+  [Attempt 3] TIMEOUT - 12/40 elements
+
+[12] WARNING: 12/40 elements ready after 150ms
+         Missing: Resolve Conflicts, Attend Classes, Add/Drop Courses, Review Grades, Review Application, Docs Complete?, Notify Missing Docs, Fork Eval & Fee, Evaluate Application, Accepted?, Send Accept Letter, Send Reject Letter, Confirmed?, Cancel Application, Process Fee/Waiver, Join Eval & Fee, Int'l Student?, Advise Student, Register Courses, Post Grades, Grievance?, Submit Appeal, Appeals Meeting, Appeal OK?, Continue?, Graduate/Withdraw, Rejection End, Cancel End
+
+[13] Trying manual unmask for missing elements...
+
+  [Unmask] Resolve Conflicts -> Y=56 (Student): OK
+  [Unmask] Attend Classes -> Y=56 (Student): OK
+  [Unmask] Add/Drop Courses -> Y=56 (Student): OK
+  [Unmask] Review Grades -> Y=56 (Student): OK
+  [Unmask] Review Application -> Y=157 (Admissions): OK
+  [Unmask] Docs Complete? -> Y=157 (Admissions): OK
+  [Unmask] Notify Missing Docs -> Y=157 (Admissions): OK
+  [Unmask] Fork Eval & Fee -> Y=157 (Admissions): OK
+  [Unmask] Evaluate Application -> Y=157 (Admissions): OK
+  [Unmask] Accepted? -> Y=157 (Admissions): OK
+  [Unmask] Send Accept Letter -> Y=157 (Admissions): OK
+  [Unmask] Send Reject Letter -> Y=157 (Admissions): OK
+  [Unmask] Confirmed? -> Y=157 (Admissions): OK
+  [Unmask] Cancel Application -> Y=157 (Admissions): OK
+  [Unmask] Process Fee/Waiver -> Y=257 (Finance): OK
+  [Unmask] Join Eval & Fee -> Y=257 (Finance): OK
+  [Unmask] Int'l Student? -> Y=257 (Finance): OK
+  [Unmask] Advise Student -> Y=573 (Academic): OK
+  [Unmask] Register Courses -> Y=573 (Academic): OK
+  [Unmask] Post Grades -> Y=573 (Academic): OK
+  [Unmask] Grievance? -> Y=573 (Academic): OK
+  [Unmask] Submit Appeal -> Y=573 (Academic): OK
+  [Unmask] Appeals Meeting -> Y=573 (Academic): OK
+  [Unmask] Appeal OK? -> Y=573 (Academic): OK
+  [Unmask] Continue? -> Y=573 (Academic): OK
+  [Unmask] Graduate/Withdraw -> Y=573 (Academic): OK
+  [Unmask] Rejection End -> Y=56 (Student): OK
+  [Unmask] Cancel End -> Y=56 (Student): OK
+
+[14] Manual unmask: 28 elements unmasked
+[15] All elements now available
+
+  Lanes: Student(5-126); Admissions(126-247); Finance(247-347); Support Services(347-563); Academic(563-663)
+  Elements: Start=Y16, Submit App=Y20, Review App=Y170, Docs Compl=Y170, Provide Mi=Y25, Notify Mis=Y170, Fork Eval =Y170, Evaluate A=Y170, Process Fe=Y270, Accepted?=Y170, Rejection =Y56, Join Eval =Y270, Send Accep=Y170, Send Rejec=Y170, Confirm En=Y30, Confirmed?=Y170, Int'l Stud=Y270, Cancel App=Y170, Cancel End=Y56, Setup Acco=Y358, Receive Or=Y35, Send Orien=Y358, Visa Proce=Y358, Issue Stud=Y358, Obtain Stu=Y40, Advise Stu=Y586, Meet Advis=Y45, Register C=Y586, Select Cou=Y50, Resolve Co=Y56, Attend Cla=Y56, Add/Drop C=Y56, Post Grade=Y586, Review Gra=Y56, Grievance?=Y586, Submit App=Y586, Appeals Me=Y586, Appeal OK?=Y586, Continue?=Y586, Graduate/W=Y586
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[16] Student centerY = 42
+[17] Admissions centerY = 163
+[18] Finance centerY = 274
+[19] Support Services centerY = 432
+[20] Academic centerY = 590
+
+[21] Student/Start -> (80,42)
+[22] Student/Submit Application -> (210,42)
+[23] Admissions/Review Application -> (340,163)
+[24] Admissions/Docs Complete? -> (470,163)
+[25] Student/Provide Missing Docs -> (470,42)
+[26] Admissions/Notify Missing Docs -> (600,163)
+[27] Admissions/Fork Eval & Fee -> (730,163)
+[28] Admissions/Evaluate Application -> (860,163)
+[29] Finance/Process Fee/Waiver -> (860,274)
+[30] Admissions/Accepted? -> (990,163)
+[31] Student/Rejection End -> (990,42)
+[32] Finance/Join Eval & Fee -> (1120,274) *** LANE CHANGED ***
+         Before: Lanes: Student(5-126); Admissions(126-247); Finance(247-347); Support Services(347-563); Academic(563-663)
+         After:  Lanes: Student(5-126); Admissions(126-247); Finance(247-351); Support Services(351-567); Academic(567-667)
+[33] Admissions/Send Accept Letter -> (1120,163)
+[34] Admissions/Send Reject Letter -> (1120,163)
+[35] Student/Confirm Enrollment -> (1250,42)
+[36] Admissions/Confirmed? -> (1380,163)
+[37] Finance/Int'l Student? -> (1380,274)
+[38] Admissions/Cancel Application -> (1510,163)
+[39] Student/Cancel End -> (1510,42)
+[40] Support Services/Setup Accounts -> (1510,432)
+[41] Student/Receive Orientation -> (1640,42)
+[42] Support Services/Send Orientation -> (1640,432)
+[43] Support Services/Visa Processing -> (1640,432)
+[44] Support Services/Issue Student ID -> (1770,432)
+[45] Student/Obtain Student ID -> (1900,42)
+[46] Academic/Advise Student -> (2030,590)
+[47] Student/Meet Advisor -> (2030,42)
+[48] Academic/Register Courses -> (2160,590)
+[49] Student/Select Courses -> (2160,42)
+[50] Student/Resolve Conflicts -> (2290,42)
+[51] Student/Attend Classes -> (2420,42)
+[52] Student/Add/Drop Courses -> (2550,42)
+[53] Academic/Post Grades -> (2680,590)
+[54] Student/Review Grades -> (2810,42)
+[55] Academic/Grievance? -> (2940,590)
+[56] Academic/Submit Appeal -> (3070,590)
+[57] Academic/Appeals Meeting -> (3200,590)
+[58] Academic/Appeal OK? -> (3330,590)
+[59] Academic/Continue? -> (3460,590)
+[60] Academic/Graduate/Withdraw -> (3590,590)
+
+  Repositioned: 40/40
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[61] Created 44 sequence flows
+[62] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Student(5-126); Admissions(126-247); Finance(247-351); Support Services(351-567); Academic(567-667)
+  Elements: Start=Y42, Submit App=Y42, Review App=Y163, Docs Compl=Y163, Provide Mi=Y42, Notify Mis=Y163, Fork Eval =Y163, Evaluate A=Y163, Process Fe=Y274, Accepted?=Y163, Rejection =Y42, Join Eval =Y274, Send Accep=Y163, Send Rejec=Y163, Confirm En=Y42, Confirmed?=Y163, Int'l Stud=Y274, Cancel App=Y163, Cancel End=Y42, Setup Acco=Y432, Receive Or=Y42, Send Orien=Y432, Visa Proce=Y432, Issue Stud=Y432, Obtain Stu=Y42, Advise Stu=Y590, Meet Advis=Y42, Register C=Y590, Select Cou=Y42, Resolve Co=Y42, Attend Cla=Y42, Add/Drop C=Y42, Post Grade=Y590, Review Gra=Y42, Grievance?=Y590, Submit App=Y590, Appeals Me=Y590, Appeal OK?=Y590, Continue?=Y590, Graduate/W=Y590
+
+[63] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  UniversityEnrollment_25505
+Lanes:    5
+Elements: 40 (40 in diagram)
+Flows:    44
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=40,gateways=9,flows=44,data=0,data_assoc=0
+======================================================================

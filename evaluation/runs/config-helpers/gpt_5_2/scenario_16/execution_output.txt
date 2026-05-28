@@ -1,0 +1,136 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: AnnualAuditProcess_26369
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: AnnualAuditProcess_26369
+[2] Lanes: Audit Coordinator, Regional Office, Compliance Team, Central Audit Team, Audit Director, Executive Board
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Audit Coordinator: 5 elements
+[4] Regional Office: 6 elements
+[5] Compliance Team: 1 elements
+[6] Central Audit Team: 21 elements
+[7] Audit Director: 6 elements
+[8] Executive Board: 1 elements
+
+  Total: 40 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram: AnnualAuditProcess_26369
+[10] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 9: Request Clarifications=0, Conduct Risk Assessment=90
+  [Auto-stack] col 11: Evaluate Financial Risks=0, Evaluate Operational Risks=90, Evaluate Compliance Risks=180
+  [Auto-stack] col 16: Data Analysis=0, Conduct Interviews=90
+[Audit Coordinator] Lane bounds: 5-161
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Send Audit Notification -> col=1 (230,25) relY=20
+  Parallel Split -> col=2 (380,25) relY=20
+  Close Audit Process -> col=30 (4580,25) relY=20
+  End -> col=31 (4730,25) relY=20
+
+[Regional Office] Lane bounds: 161-346
+  [maxElementBottomRelY=80]
+  Prepare Financial Statements -> col=3 (530,181) relY=20
+  Gather Supporting Documents -> col=4 (680,181) relY=20
+  Parallel Join -> col=5 (830,181) relY=20
+  Submit Documents -> col=6 (980,181) relY=20
+  Provide Clarifications -> col=10 (1580,181) relY=20
+  Resubmit Clarifications -> col=11 (1730,181) relY=20
+
+[Compliance Team] Lane bounds: 346-446
+  [maxElementBottomRelY=80]
+  Check Regulatory Updates -> col=3 (530,366) relY=20
+
+[Central Audit Team] Lane bounds: 446-886
+  [Unmask] Evaluate Compliance Risks -> Y=666: OK
+  [Unmask] Risk Join -> Y=666: OK
+  [Unmask] High Risk? -> Y=666: OK
+  [Unmask] Launch Detailed Investigation -> Y=666: OK
+  [Unmask] Investigation Split -> Y=666: OK
+  [Unmask] Data Analysis -> Y=666: OK
+  [Unmask] Conduct Interviews -> Y=666: OK
+  [Unmask] Investigation Join -> Y=666: OK
+  [Unmask] Need Site Visit? -> Y=666: OK
+  [Unmask] Conduct Site Visit -> Y=666: OK
+  [Unmask] Compile Audit Report -> Y=666: OK
+  [Unmask] Update Report -> Y=666: OK
+  [Unmask] Resubmit Updated Report -> Y=666: OK
+  [Unmask] Archive Report -> Y=666: OK
+  [maxElementBottomRelY=260]
+  Review Submission -> col=7 (1130,466) relY=20
+  Discrepancies Found? -> col=8 (1280,466) relY=20
+  Request Clarifications -> col=9 (1430,466) relY=20
+  Conduct Risk Assessment -> col=9 (1430,556) relY=110
+  Risk Split -> col=10 (1580,466) relY=20
+  Evaluate Financial Risks -> col=11 (1730,466) relY=20
+  Evaluate Operational Risks -> col=11 (1730,556) relY=110
+  Evaluate Compliance Risks -> col=11 (1730,646) relY=200
+  Risk Join -> col=12 (1880,466) relY=20
+  High Risk? -> col=13 (2030,466) relY=20
+  Launch Detailed Investigation -> col=14 (2180,466) relY=20
+  Investigation Split -> col=15 (2330,466) relY=20
+  Data Analysis -> col=16 (2480,466) relY=20
+  Conduct Interviews -> col=16 (2480,556) relY=110
+  Investigation Join -> col=17 (2630,466) relY=20
+  Need Site Visit? -> col=18 (2780,466) relY=20
+  Conduct Site Visit -> col=19 (2930,466) relY=20
+  Compile Audit Report -> col=20 (3080,466) relY=20
+  Update Report -> col=24 (3680,466) relY=20
+  Resubmit Updated Report -> col=25 (3830,466) relY=20
+  Archive Report -> col=27 (4130,466) relY=20
+
+[Audit Director] Lane bounds: 886-986
+  [Unmask] Review Report -> Y=936: OK
+  [Unmask] Approve Report? -> Y=936: OK
+  [Unmask] Request Revisions -> Y=936: OK
+  [Unmask] Distribution Split -> Y=936: OK
+  [Unmask] Send Final Report -> Y=936: OK
+  [Unmask] Distribution Join -> Y=936: OK
+  [maxElementBottomRelY=80]
+  Review Report -> col=21 (3230,906) relY=20
+  Approve Report? -> col=22 (3380,906) relY=20
+  Request Revisions -> col=23 (3530,906) relY=20
+  Distribution Split -> col=26 (3980,906) relY=20
+  Send Final Report -> col=27 (4130,906) relY=20
+  Distribution Join -> col=29 (4430,906) relY=20
+
+[Executive Board] Lane bounds: 1013-1797
+  [maxElementBottomRelY=80]
+  Receive Final Report -> col=28 (4280,1033) relY=20
+
+
+[11] Repositioned: 40/40
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[12] Created 48 sequence flows
+
+==================================================================
+COMPLETE: AnnualAuditProcess_26369
+==================================================================
+Lanes: 6 | Elements: 40 | Flows: 48
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=6,elements=40,gateways=12,flows=48,data=0,data_assoc=0
+======================================================================

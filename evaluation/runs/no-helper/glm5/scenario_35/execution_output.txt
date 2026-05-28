@@ -1,0 +1,123 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CHAINSAW PRODUCTION PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   48854
+Process Name:   Chainsaw_48854
+==================================================================
+
+Properties configured:
+  1. Guide Bar Length (Schwertlaenge)
+  2. Chain Width
+  3. Power Type (Electric/Motor)
+  4. Handle Type
+  5. Safety Guard Type
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Chainsaw_48854
+[2] Lanes: Customer, Production, Suppliers
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 7 elements
+[4] Production lane: 14 elements
+[5] Suppliers lane: 5 elements
+
+  Total elements: 26
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Chainsaw_48854
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 26 elements ready
+
+[10] SUCCESS: All 26 elements ready in 50ms
+
+  Lanes: Customer(5-115); Production(115-239); Suppliers(239-412)
+  Elements: Order Requ=Y16, Specify Pr=Y20, Process Or=Y126, Order Part=Y126, Deliver Gu=Y250, Order Guid=Y126, Deliver Ch=Y250, Order Chai=Y126, Deliver En=Y250, Order Engi=Y126, Deliver Ha=Y250, Order Hand=Y126, Deliver Sa=Y250, Order Safe=Y126, Parts Arri=Y126, Inspect Al=Y126, Assemble F=Y126, Receive Up=Y25, Send Updat=Y126, Ship First=Y126, Evaluate F=Y30, Approved?=Y35, Order Reje=Y45, Produce Re=Y126, Final Upda=Y130, Order Comp=Y40
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Customer centerY = 37
+[12] Production centerY = 154
+[13] Suppliers centerY = 302
+
+[14] Customer/Order Request -> (80,37) 33x33
+[15] Customer/Specify Properties -> (210,37) 110x55
+[16] Production/Process Order -> (340,154) 110x55
+[17] Production/Order Parts -> (470,154) 40x40
+[18] Suppliers/Deliver Guide Bar -> (600,302) 110x55
+[19] Production/Order Guide Bar -> (600,154) 110x55
+[20] Suppliers/Deliver Chain -> (730,302) 110x55
+[21] Production/Order Chain -> (730,154) 110x55
+[22] Suppliers/Deliver Engine -> (860,302) 110x55
+[23] Production/Order Engine -> (860,154) 110x55
+[24] Suppliers/Deliver Handle -> (990,302) 110x55
+[25] Production/Order Handle -> (990,154) 110x55
+[26] Suppliers/Deliver Safety Guard -> (1120,302) 110x55
+[27] Production/Order Safety Guard -> (1120,154) 110x55
+[28] Production/Parts Arrived -> (1250,154) 40x40
+[29] Production/Inspect All Parts -> (1380,154) 110x55
+[30] Production/Assemble First Saw -> (1510,154) 110x55
+[31] Customer/Receive Updates -> (1640,37) 110x55
+[32] Production/Send Update -> (1640,154) 110x55
+[33] Production/Ship First Saw -> (1770,154) 110x55
+[34] Customer/Evaluate First Saw -> (1900,37) 110x55
+[35] Customer/Approved? -> (2030,37) 40x40
+[36] Customer/Order Rejected -> (2160,37) 33x33
+[37] Production/Produce Remaining -> (2160,154) 110x55
+[38] Production/Final Update -> (2290,154) 110x55
+[39] Customer/Order Complete -> (2420,37) 33x33
+
+  Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[40] Created 29 sequence flows
+[41] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-115); Production(115-239); Suppliers(239-412)
+  Elements: Order Requ=Y37, Specify Pr=Y37, Process Or=Y154, Order Part=Y154, Deliver Gu=Y302, Order Guid=Y154, Deliver Ch=Y302, Order Chai=Y154, Deliver En=Y302, Order Engi=Y154, Deliver Ha=Y302, Order Hand=Y154, Deliver Sa=Y302, Order Safe=Y154, Parts Arri=Y154, Inspect Al=Y154, Assemble F=Y154, Receive Up=Y37, Send Updat=Y154, Ship First=Y154, Evaluate F=Y37, Approved?=Y37, Order Reje=Y37, Produce Re=Y154, Final Upda=Y154, Order Comp=Y37
+
+[42] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Chainsaw_48854
+Lanes:    3
+Elements: 26 (26 in diagram)
+Flows:    29
+==================================================================
+
+Workflow Summary:
+  1. Customer requests and specifies chainsaw properties
+  2. Production orders 5 parts in parallel from suppliers
+  3. Suppliers deliver all parts
+  4. Manual inspection of all parts
+  5. Assembly of first saw
+  6. Production update sent to customer
+  7. First saw shipped for evaluation
+  8. If approved -> produce remaining order
+  9. If rejected -> order cancelled
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=26,gateways=3,flows=29,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,24 @@
+# Scenario 19
+
+**Complexity:** Complex
+
+## Natural-language description
+
+Consider a process for purchasing items from an online shop.
+The user starts an order by logging in to their account.
+Then, the user simultaneously selects the items to purchase and sets a payment method.
+Afterward, the user either pays or completes an installment agreement.
+After selecting the items, the user chooses between multiple options for a free reward.
+Since the reward value depends on the purchase value, this step is done after selecting the items, but it is independent of the payment activities.
+Finally, the items are delivered.
+The user has the right to return items for exchange.
+Every time items are returned, a new delivery is made.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 18
+- gateways: 8
+- flows: 21
+- data_objects: 0
+- data_assoc: 0

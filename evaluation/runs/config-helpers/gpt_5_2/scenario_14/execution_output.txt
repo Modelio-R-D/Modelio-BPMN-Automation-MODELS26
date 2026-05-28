@@ -1,0 +1,79 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DepartmentBudgetPlanning_23691
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DepartmentBudgetPlanning_23691
+[2] Lanes: Department, Strategy, Finance, Stakeholders
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department: 7 elements
+[4] Strategy: 1 elements
+[5] Finance: 4 elements
+[6] Stakeholders: 2 elements
+
+  Total: 14 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: DepartmentBudgetPlanning_23691
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Department] Lane bounds: 5-115
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Outline Objectives -> col=1 (230,25) relY=20
+  Draft Budget Plan -> col=2 (380,25) relY=20
+  Revise Plan -> col=6 (980,25) relY=20
+  Document Adjustments -> col=7 (1130,25) relY=20
+  Begin Implementation -> col=9 (1430,25) relY=20
+  End -> col=10 (1580,25) relY=20
+
+[Strategy] Lane bounds: 115-215
+  [maxElementBottomRelY=80]
+  Strategic Alignment Review -> col=3 (530,135) relY=20
+
+[Finance] Lane bounds: 215-429
+  [maxElementBottomRelY=80]
+  Finance Detailed Review -> col=4 (680,235) relY=20
+  Changes Needed? -> col=5 (830,235) relY=20
+  Allocate Budget -> col=7 (1130,235) relY=20
+  Distribute Budget -> col=8 (1280,235) relY=20
+
+[Stakeholders] Lane bounds: 429-529
+  [maxElementBottomRelY=80]
+  Approve Adjustments -> col=8 (1280,449) relY=20
+  Approve Final Budget -> col=6 (980,449) relY=20
+
+
+[9] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 14 sequence flows
+
+==================================================================
+COMPLETE: DepartmentBudgetPlanning_23691
+==================================================================
+Lanes: 4 | Elements: 14 | Flows: 14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=14,gateways=1,flows=14,data=0,data_assoc=0
+======================================================================

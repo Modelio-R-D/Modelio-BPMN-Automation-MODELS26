@@ -1,0 +1,112 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN MARKETING CAMPAIGN PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   22072
+Process Name:   MarketingCampaign_22072
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: MarketingCampaign_22072
+[2] Lanes: Marketing Team, Digital Channels, Sales Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Marketing Team lane: 8 elements
+[4] Digital Channels lane: 5 elements
+[5] Sales Team lane: 3 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: MarketingCampaign_22072
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/16 | Missing: Launch Campa, Track Metric, Collect Lead, Campaign End, Continue Tra
+  [Attempt 2] Found: 11/16 | Missing: Launch Campa, Track Metric, Collect Lead, Campaign End, Continue Tra
+  [Attempt 3] Found: 11/16 | Missing: Launch Campa, Track Metric, Collect Lead, Campaign End, Continue Tra
+  [Attempt 3] TIMEOUT - 11/16 elements
+
+[10] WARNING: 11/16 elements ready after 150ms
+         Missing: Launch Campaign, Track Metrics, Collect Leads, Campaign Ended?, Continue Tracking
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Launch Campaign -> Y=196 (Digital Channels): OK
+  [Unmask] Track Metrics -> Y=196 (Digital Channels): OK
+  [Unmask] Collect Leads -> Y=196 (Digital Channels): OK
+  [Unmask] Campaign Ended? -> Y=196 (Digital Channels): OK
+  [Unmask] Continue Tracking -> Y=196 (Digital Channels): OK
+
+[12] Manual unmask: 5 elements unmasked
+[13] All elements now available
+
+  Lanes: Marketing Team(5-146); Digital Channels(146-290); Sales Team(290-390)
+  Elements: Campaign I=Y16, Define Obj=Y20, Identify T=Y25, Create Con=Y30, Design Vis=Y35, Select Cha=Y40, Launch Cam=Y196, Track Metr=Y196, Collect Le=Y196, Continue T=Y196, Store Lead=Y301, Campaign E=Y196, Follow Up =Y301, Analyze Pe=Y45, Qualify Le=Y301, Campaign C=Y50
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Marketing Team centerY = 52
+[15] Digital Channels centerY = 195
+[16] Sales Team centerY = 317
+
+[17] Marketing Team/Campaign Initiated -> (80,52) 33x33
+[18] Marketing Team/Define Objectives -> (230,52) 120x60
+[19] Marketing Team/Identify Target Audience -> (380,52) 120x60
+[20] Marketing Team/Create Content -> (530,52) 120x60
+[21] Marketing Team/Design Visuals -> (680,52) 120x60
+[22] Marketing Team/Select Channels -> (830,52) 120x60
+[23] Digital Channels/Launch Campaign -> (980,195) 120x60
+[24] Digital Channels/Track Metrics -> (1130,195) 120x60
+[25] Digital Channels/Collect Leads -> (1280,195) 120x60
+[26] Digital Channels/Continue Tracking -> (1280,245) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Marketing Team(5-146); Digital Channels(146-290); Sales Team(290-390)
+         After:  Lanes: Marketing Team(5-146); Digital Channels(146-316); Sales Team(316-416)
+[27] Sales Team/Store Leads in CRM -> (1280,317) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Marketing Team(5-146); Digital Channels(146-316); Sales Team(316-416)
+         After:  Lanes: Marketing Team(-5-136); Digital Channels(136-306); Sales Team(306-416)
+[28] Digital Channels/Campaign Ended? -> (1430,195) 40x40
+[29] Sales Team/Follow Up Leads -> (1430,317) 120x60
+[30] Marketing Team/Analyze Performance -> (1580,52) 120x60
+[31] Sales Team/Qualify Leads -> (1580,317) 120x60
+[32] Marketing Team/Campaign Complete -> (1730,52) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[33] Created 16 sequence flows
+[34] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Marketing Team(-5-136); Digital Channels(136-306); Sales Team(306-416)
+  Elements: Campaign I=Y42, Define Obj=Y42, Identify T=Y42, Create Con=Y42, Design Vis=Y42, Select Cha=Y42, Launch Cam=Y185, Track Metr=Y185, Collect Le=Y185, Continue T=Y235, Store Lead=Y317, Campaign E=Y195, Follow Up =Y317, Analyze Pe=Y52, Qualify Le=Y317, Campaign C=Y52
+
+[35] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  MarketingCampaign_22072
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=1,flows=16,data=0,data_assoc=0
+======================================================================

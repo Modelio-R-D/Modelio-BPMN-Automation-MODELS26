@@ -1,0 +1,176 @@
+#
+# Process_1.py
+#
+# Auto-generated from BPMN XML: Process_1
+# Compatible with BPMN_Helpers.py v3.2
+#
+# Applicable on: Package
+#
+
+from org.modelio.metamodel.uml.statik import Package
+
+# Load helper library
+execfile(".modelio/5.4/macros/BPMN_Helpers.py")
+
+
+CONFIG = {
+    "name": "Process_1",
+
+    "lanes": ["Process 1"],
+
+    "elements": [
+        ("Process payment", USER_TASK, "Process 1"),
+        ("Confirm delivery", USER_TASK, "Process 1"),
+        ("Receive back-order", USER_TASK, "Process 1"),
+        ("Prepare documentation for international orders", USER_TASK, "Process 1"),
+        ("Initiate back-order", USER_TASK, "Process 1"),
+        ("Customer reports issue", USER_TASK, "Process 1"),
+        ("Perform quality control checks", USER_TASK, "Process 1"),
+        ("Dispatch order", USER_TASK, "Process 1"),
+        ("Check stock availability", USER_TASK, "Process 1"),
+        ("Prepare shipping documents and labels", USER_TASK, "Process 1"),
+        ("Process refund", USER_TASK, "Process 1"),
+        ("Inspect returned items", USER_TASK, "Process 1"),
+        ("Notify about failed payment", USER_TASK, "Process 1"),
+        ("Update inventory levels", USER_TASK, "Process 1"),
+        ("Gift wrap items", USER_TASK, "Process 1"),
+        ("Inform customer about delay", USER_TASK, "Process 1"),
+        ("Send return shipping label", USER_TASK, "Process 1"),
+        ("Process replacement", USER_TASK, "Process 1"),
+        ("Pick items from warehouse", USER_TASK, "Process 1"),
+        ("Send shipping confirmation to customer", USER_TASK, "Process 1"),
+        ("Package items", USER_TASK, "Process 1"),
+        ("Send follow-up email", USER_TASK, "Process 1"),
+        ("Record order details", USER_TASK, "Process 1"),
+        ("Receive returned items", USER_TASK, "Process 1"),
+        ("Place order", USER_TASK, "Process 1"),
+        ("ExclusiveGateway_1", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_2", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_3", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_4", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_5", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_6", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_7", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_8", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_9", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_10", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_11", EXCLUSIVE_GW, "Process 1"),
+        ("ExclusiveGateway_12", EXCLUSIVE_GW, "Process 1"),
+        ("ParallelGateway_1", PARALLEL_GW, "Process 1"),
+        ("ParallelGateway_2", PARALLEL_GW, "Process 1"),
+        ("ParallelGateway_3", PARALLEL_GW, "Process 1"),
+        ("ParallelGateway_4", PARALLEL_GW, "Process 1"),
+        ("Start", START, "Process 1"),
+        ("End", END, "Process 1"),
+    ],
+
+    "flows": [
+        ("ExclusiveGateway_5", "Process refund", ""),
+        ("Process refund", "ExclusiveGateway_6", ""),
+        ("ExclusiveGateway_6", "ExclusiveGateway_10", ""),
+        ("Check stock availability", "ExclusiveGateway_9", ""),
+        ("ParallelGateway_2", "Package items", ""),
+        ("Receive back-order", "ExclusiveGateway_3", ""),
+        ("ExclusiveGateway_11", "Check stock availability", ""),
+        ("ExclusiveGateway_10", "ExclusiveGateway_1", ""),
+        ("ExclusiveGateway_7", "ParallelGateway_3", ""),
+        ("Send return shipping label", "Receive returned items", ""),
+        ("Confirm delivery", "Send follow-up email", ""),
+        ("ExclusiveGateway_12", "Customer reports issue", ""),
+        ("ExclusiveGateway_12", "ExclusiveGateway_10", ""),
+        ("ParallelGateway_1", "Update inventory levels", ""),
+        ("Customer reports issue", "Send return shipping label", ""),
+        ("ExclusiveGateway_11", "Notify about failed payment", ""),
+        ("ParallelGateway_4", "Confirm delivery", ""),
+        ("Inspect returned items", "ExclusiveGateway_5", ""),
+        ("Perform quality control checks", "ParallelGateway_2", ""),
+        ("Update inventory levels", "ParallelGateway_4", ""),
+        ("Start", "Place order", ""),
+        ("Package items", "ExclusiveGateway_2", ""),
+        ("ExclusiveGateway_4", "ExclusiveGateway_8", ""),
+        ("Send shipping confirmation to customer", "ParallelGateway_4", ""),
+        ("Notify about failed payment", "ExclusiveGateway_1", ""),
+        ("ExclusiveGateway_3", "Pick items from warehouse", ""),
+        ("Pick items from warehouse", "Perform quality control checks", ""),
+        ("Dispatch order", "ParallelGateway_1", ""),
+        ("ExclusiveGateway_1", "End", ""),
+        ("ParallelGateway_1", "Send shipping confirmation to customer", ""),
+        ("ParallelGateway_3", "Dispatch order", ""),
+        ("ExclusiveGateway_2", "ExclusiveGateway_7", ""),
+        ("ExclusiveGateway_2", "Gift wrap items", ""),
+        ("ExclusiveGateway_4", "Prepare documentation for international orders", ""),
+        ("Gift wrap items", "ExclusiveGateway_7", ""),
+        ("ExclusiveGateway_8", "ParallelGateway_3", ""),
+        ("Process payment", "ExclusiveGateway_11", ""),
+        ("Initiate back-order", "Inform customer about delay", ""),
+        ("ParallelGateway_2", "Prepare shipping documents and labels", ""),
+        ("Record order details", "Process payment", ""),
+        ("Receive returned items", "Inspect returned items", ""),
+        ("Process replacement", "ExclusiveGateway_6", ""),
+        ("ExclusiveGateway_9", "Initiate back-order", ""),
+        ("ExclusiveGateway_9", "ExclusiveGateway_3", ""),
+        ("ParallelGateway_2", "ExclusiveGateway_4", ""),
+        ("ExclusiveGateway_5", "Process replacement", ""),
+        ("Prepare shipping documents and labels", "ParallelGateway_3", ""),
+        ("Inform customer about delay", "Receive back-order", ""),
+        ("Prepare documentation for international orders", "ExclusiveGateway_8", ""),
+        ("Place order", "Record order details", ""),
+        ("Send follow-up email", "ExclusiveGateway_12", ""),
+    ],
+
+    "layout": {
+        "Start": 0,
+        "Place order": 1,
+        "Record order details": 2,
+        "Process payment": 3,
+        "ExclusiveGateway_11": 4,
+        "Check stock availability": 5,
+        "Notify about failed payment": 5,
+        "ExclusiveGateway_9": 6,
+        "Initiate back-order": 7,
+        "End": 7,
+        "Inform customer about delay": 8,
+        "Pick items from warehouse": 8,
+        "Receive back-order": 9,
+        "Perform quality control checks": 9,
+        "ExclusiveGateway_3": 10,
+        "ParallelGateway_2": 10,
+        "Package items": 11,
+        "Prepare shipping documents and labels": 11,
+        "ExclusiveGateway_4": 11,
+        "ExclusiveGateway_2": 12,
+        "Prepare documentation for international orders": 12,
+        "ExclusiveGateway_8": 13,
+        "Gift wrap items": 13,
+        "Dispatch order": 13,
+        "ParallelGateway_3": 14,
+        "ExclusiveGateway_7": 14,
+        "ParallelGateway_1": 14,
+        "Update inventory levels": 15,
+        "Send shipping confirmation to customer": 15,
+        "ParallelGateway_4": 16,
+        "Confirm delivery": 17,
+        "Send follow-up email": 18,
+        "ExclusiveGateway_12": 19,
+        "Customer reports issue": 20,
+        "ExclusiveGateway_1": 21,
+        "Send return shipping label": 21,
+        "Receive returned items": 22,
+        "Inspect returned items": 23,
+        "ExclusiveGateway_5": 24,
+        "Process refund": 25,
+        "Process replacement": 25,
+        "ExclusiveGateway_6": 26,
+        "ExclusiveGateway_10": 27,
+    },
+}
+
+# Entry point
+if (selectedElements.size > 0):
+    element = selectedElements.get(0)
+    if (isinstance(element, Package)):
+        createBPMNFromConfig(element, CONFIG)
+    else:
+        print "ERROR: Please select a Package."
+else:
+    print "ERROR: Please select a Package first."

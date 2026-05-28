@@ -1,0 +1,118 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ONLINE SHOP PURCHASE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   30982
+Process Name:   OnlineShopPurchase_30982
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopPurchase_30982
+[2] Lanes: Customer, Shop
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 17 elements
+[4] Shop lane: 1 element
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: OnlineShopPurchase_30982
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 1/17 | Missing: Login, Fork, Select Items, Reward Choic, Get Free Gif, Get Discount, Reward Join, Set Payment , Payment Choi, Pay Now, Installment , Payment Join, Join, Return Items, Exchange Ite, Order Comple
+  [Attempt 2] Found: 1/17 | Missing: Login, Fork, Select Items, Reward Choic, Get Free Gif, Get Discount, Reward Join, Set Payment , Payment Choi, Pay Now, Installment , Payment Join, Join, Return Items, Exchange Ite, Order Comple
+  [Attempt 3] Found: 1/17 | Missing: Login, Fork, Select Items, Reward Choic, Get Free Gif, Get Discount, Reward Join, Set Payment , Payment Choi, Pay Now, Installment , Payment Join, Join, Return Items, Exchange Ite, Order Comple
+  [Attempt 3] TIMEOUT - 1/17 elements
+
+[9] WARNING: 1/17 elements ready after 150ms
+         Missing: Login, Fork, Select Items, Reward Choice, Get Free Gift, Get Discount Coupon, Reward Join, Set Payment Method, Payment Choice, Pay Now, Installment Agreement, Payment Join, Join, Return Items?, Exchange Items, Order Complete
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Login -> Y=55 (Customer): OK
+  [Unmask] Fork -> Y=55 (Customer): OK
+  [Unmask] Select Items -> Y=55 (Customer): OK
+  [Unmask] Reward Choice -> Y=55 (Customer): OK
+  [Unmask] Get Free Gift -> Y=55 (Customer): OK
+  [Unmask] Get Discount Coupon -> Y=55 (Customer): OK
+  [Unmask] Reward Join -> Y=55 (Customer): OK
+  [Unmask] Set Payment Method -> Y=55 (Customer): OK
+  [Unmask] Payment Choice -> Y=55 (Customer): OK
+  [Unmask] Pay Now -> Y=55 (Customer): OK
+  [Unmask] Installment Agreement -> Y=55 (Customer): OK
+  [Unmask] Payment Join -> Y=55 (Customer): OK
+  [Unmask] Join -> Y=55 (Customer): OK
+  [Unmask] Return Items? -> Y=55 (Customer): OK
+  [Unmask] Exchange Items -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+
+[11] Manual unmask: 16 elements unmasked
+[12] All elements now available
+
+  Lanes: Customer(5-132); Shop(132-232)
+  Elements: Login=Y55, Fork=Y55, Select Ite=Y55, Set Paymen=Y55, Payment Ch=Y55, Reward Cho=Y55, Get Discou=Y55, Get Free G=Y55, Installmen=Y55, Pay Now=Y55, Payment Jo=Y55, Reward Joi=Y55, Join=Y55, Deliver It=Y143, Return Ite=Y55, Exchange I=Y55, Order Comp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Customer centerY = 45
+[14] Shop centerY = 159
+
+[15] Customer/Login -> (80,45) 33x33
+[16] Customer/Fork -> (220,45) 40x40
+[17] Customer/Select Items -> (360,45) 120x60
+[18] Customer/Set Payment Method -> (360,45) 120x60
+[19] Customer/Payment Choice -> (500,45) 40x40
+[20] Customer/Reward Choice -> (500,45) 40x40
+[21] Customer/Get Discount Coupon -> (640,45) 120x60
+[22] Customer/Get Free Gift -> (640,45) 120x60
+[23] Customer/Installment Agreement -> (640,45) 120x60
+[24] Customer/Pay Now -> (640,45) 120x60
+[25] Customer/Payment Join -> (780,45) 40x40
+[26] Customer/Reward Join -> (780,45) 40x40
+[27] Customer/Join -> (920,45) 40x40
+[28] Shop/Deliver Items -> (1060,159) 120x60
+[29] Customer/Return Items? -> (1200,45) 40x40
+[30] Customer/Exchange Items -> (1340,45) 120x60
+[31] Customer/Order Complete -> (1340,45) 33x33
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 20 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Shop(132-232)
+  Elements: Login=Y45, Fork=Y45, Select Ite=Y45, Set Paymen=Y45, Payment Ch=Y45, Reward Cho=Y45, Get Discou=Y45, Get Free G=Y45, Installmen=Y45, Pay Now=Y45, Payment Jo=Y45, Reward Joi=Y45, Join=Y45, Deliver It=Y159, Return Ite=Y45, Exchange I=Y45, Order Comp=Y45
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OnlineShopPurchase_30982
+Lanes:    2
+Elements: 17 (17 in diagram)
+Flows:    20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=17,gateways=7,flows=20,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,89 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CONTRACT PARTS PROCUREMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   4321
+Process Name:   Contract_4321
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Contract_4321
+[2] Lanes: Procurement, Warehouse, Assembly, Communication
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement lane: 9 elements
+[4] Warehouse lane: 6 elements
+[5] Assembly lane: 7 elements
+[6] Communication lane: 2 elements
+
+  Total elements: 24
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: Contract_4321
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements...
+
+  [Attempt 1] Found: 18/24 | Missing: 6
+  [Attempt 2] Found: 18/24 | Missing: 6
+  [Attempt 3] Found: 18/24 | Missing: 6
+  [Attempt 4] Found: 18/24 | Missing: 6
+  [Attempt 5] Found: 18/24 | Missing: 6
+  [Attempt 5] TIMEOUT
+
+[11] Trying manual unmask...
+
+  [Unmask] Parts Arrive -> Y=171: OK
+  [Unmask] Receive Batch -> Y=171: OK
+  [Unmask] Update Stock -> Y=171: OK
+  [Unmask] Stock Level? -> Y=171: OK
+  [Unmask] Check Complete -> Y=171: OK
+  [Unmask] More Batches? -> Y=171: OK
+[12] Manual unmask: 6 elements
+
+  Lanes: Procurement(5-121); Warehouse(121-248); Assembly(248-463); Communication(463-792)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Procurement centerY = 40
+[14] Warehouse centerY = 161
+[15] Assembly centerY = 332
+[16] Communication centerY = 604
+
+[17] Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[18] Created 30 sequence flows
+[19] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Procurement(5-121); Warehouse(121-248); Assembly(248-463); Communication(463-792)
+
+[20] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Contract_4321
+Lanes:    4
+Elements: 24 (24 in diagram)
+Flows:    30
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=24,gateways=6,flows=30,data=0,data_assoc=0
+======================================================================

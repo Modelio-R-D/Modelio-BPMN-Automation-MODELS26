@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComputerRepair_52992
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComputerRepair_52992
+[2] Lanes: Customer, CRS
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 6 elements
+[4] CRS: 10 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ComputerRepair_52992
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Hardware Repair=0, Software Repair=90
+  [Auto-stack] col 7: Test Hardware=0, Test Software=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Bring Defective Computer -> Y=55: OK
+  [Unmask] Decide Acceptable? -> Y=55: OK
+  [Unmask] Take Computer Home -> Y=55: OK
+  [Unmask] End Rejected -> Y=55: OK
+  [Unmask] End Success -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Bring Defective Computer -> col=1 (230,25) relY=20
+  Decide Acceptable? -> col=4 (680,25) relY=20
+  Take Computer Home -> col=5 (830,25) relY=20
+  End Rejected -> col=6 (980,25) relY=20
+  End Success -> col=10 (1580,25) relY=20
+
+[CRS] Lane bounds: 132-232
+  [Unmask] Check Defect -> Y=182: OK
+  [Unmask] Hand Out Cost Calculation -> Y=182: OK
+  [Unmask] Parallel Fork -> Y=182: OK
+  [Unmask] Hardware Repair -> Y=182: OK
+  [Unmask] Test Hardware -> Y=182: OK
+  [Unmask] Software Repair -> Y=182: OK
+  [Unmask] Test Software -> Y=182: OK
+  [Unmask] Parallel Join -> Y=182: OK
+  [Unmask] Error Detected? -> Y=182: OK
+  [Unmask] Hand Back Repaired -> Y=182: OK
+  [maxElementBottomRelY=170]
+  Check Defect -> col=2 (380,152) relY=20
+  Hand Out Cost Calculation -> col=3 (530,152) relY=20
+  Parallel Fork -> col=5 (830,152) relY=20
+  Hardware Repair -> col=6 (980,152) relY=20
+  Test Hardware -> col=7 (1130,152) relY=20
+  Software Repair -> col=6 (980,242) relY=110
+  Test Software -> col=7 (1130,242) relY=110
+  Parallel Join -> col=8 (1280,152) relY=20
+  Error Detected? -> col=9 (1430,152) relY=20
+  Hand Back Repaired -> col=10 (1580,152) relY=20
+
+
+[7] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 17 sequence flows
+
+==================================================================
+COMPLETE: ComputerRepair_52992
+==================================================================
+Lanes: 2 | Elements: 16 | Flows: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=16,gateways=4,flows=17,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,111 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUBSCRIPTION SERVICE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   7164
+Process Name:   SubscriptionService_7164
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionService_7164
+[2] Lanes: Customer, System, Support
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 6 elements
+[4] System lane: 8 elements
+[5] Support lane: 5 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SubscriptionService_7164
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 14/19 | Missing: Send Notific, Process Refu, Apply Final , Deactivate S, Settle Balan
+  [Attempt 2] Found: 14/19 | Missing: Send Notific, Process Refu, Apply Final , Deactivate S, Settle Balan
+  [Attempt 3] Found: 14/19 | Missing: Send Notific, Process Refu, Apply Final , Deactivate S, Settle Balan
+  [Attempt 3] TIMEOUT - 14/19 elements
+
+[10] WARNING: 14/19 elements ready after 150ms
+         Missing: Send Notifications, Process Refund, Apply Final Charges, Deactivate Subscription, Settle Balance
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Send Notifications -> Y=160 (System): OK
+  [Unmask] Process Refund -> Y=160 (System): OK
+  [Unmask] Apply Final Charges -> Y=160 (System): OK
+  [Unmask] Deactivate Subscription -> Y=160 (System): OK
+  [Unmask] Settle Balance -> Y=160 (System): OK
+
+[12] Manual unmask: 5 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-110); System(110-217); Support(217-411)
+  Elements: Subscripti=Y16, Enter Pers=Y20, Enter Paym=Y25, Generate A=Y121, Assign Acc=Y121, Initialize=Y121, Send Notif=Y160, Receive Up=Y30, Submit Can=Y35, Review Can=Y228, Approved?=Y228, Process Ca=Y228, Subscripti=Y40, Refund Due=Y228, Apply Fina=Y160, Process Re=Y160, Deactivate=Y160, Settle Bal=Y160, Subscripti=Y228
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 34
+[15] System centerY = 140
+[16] Support centerY = 291
+
+[17] Customer/Subscription Sign-Up -> (80,34) 33x33
+[18] Customer/Enter Personal Info -> (210,34) 110x55
+[19] Customer/Enter Payment Details -> (340,34) 110x55
+[20] System/Generate Account -> (470,140) 110x55
+[21] System/Assign Access -> (600,140) 110x55
+[22] System/Initialize Billing -> (730,140) 110x55
+[23] System/Send Notifications -> (860,140) 110x55
+[24] Customer/Receive Updates -> (990,34) 110x55
+[25] Customer/Submit Cancellation -> (1120,34) 110x55
+[26] Support/Review Cancellation -> (1250,291) 110x55
+[27] Support/Approved? -> (1380,291) 40x40
+[28] Support/Process Cancellation -> (1510,291) 110x55
+[29] Customer/Subscription Continues -> (1510,34) 33x33
+[30] Support/Refund Due? -> (1640,291) 40x40
+[31] System/Apply Final Charges -> (1770,140) 110x55
+[32] System/Process Refund -> (1770,140) 110x55
+[33] System/Deactivate Subscription -> (1900,140) 110x55
+[34] System/Settle Balance -> (2030,140) 110x55
+[35] Support/Subscription Closed -> (2160,291) 33x33
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[36] Created 19 sequence flows
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-110); System(110-217); Support(217-411)
+  Elements: Subscripti=Y34, Enter Pers=Y34, Enter Paym=Y34, Generate A=Y140, Assign Acc=Y140, Initialize=Y140, Send Notif=Y140, Receive Up=Y34, Submit Can=Y34, Review Can=Y291, Approved?=Y291, Process Ca=Y291, Subscripti=Y34, Refund Due=Y291, Apply Fina=Y140, Process Re=Y140, Deactivate=Y140, Settle Bal=Y140, Subscripti=Y291
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SubscriptionService_7164
+Lanes:    3
+Elements: 19 (19 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=19,gateways=2,flows=19,data=0,data_assoc=0
+======================================================================

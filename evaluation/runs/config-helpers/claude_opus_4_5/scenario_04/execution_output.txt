@@ -1,0 +1,89 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: MarketingCampaignProcess_87962
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: MarketingCampaignProcess_87962
+[2] Lanes: Marketing Team, Sales Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Marketing Team: 14 elements
+[4] Sales Team: 2 elements
+
+  Total: 16 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: MarketingCampaignProcess_87962
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Marketing Team] Lane bounds: 5-192
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Define Campaign Objectives -> col=1 (240,25) relY=20
+  Identify Target Audience -> col=2 (400,25) relY=20
+  Set Campaign Goals -> col=3 (560,25) relY=20
+  Create Content -> col=4 (720,25) relY=20
+  Design Visuals -> col=5 (880,25) relY=20
+  Select Promotion Channels -> col=6 (1040,25) relY=20
+  Launch Campaign -> col=7 (1200,25) relY=20
+  Track Performance Metrics -> col=8 (1360,25) relY=20
+  Campaign Active? -> col=9 (1520,25) relY=20
+  Continue Monitoring -> col=10 (1680,25) relY=20
+  Analyze Campaign Results -> col=11 (1840,25) relY=20
+  Document Learnings -> col=12 (2000,25) relY=20
+  End -> col=13 (2160,25) relY=20
+  Campaign Brief (DO from Define Campaign Objectives) -> (330,95) maxBottomRelY=80
+  Content Assets (DO from Create Content) -> (810,95) maxBottomRelY=80
+  Performance Data (DO from Track Performance Metrics) -> (1450,95) maxBottomRelY=80
+  Campaign Report (DO from Analyze Campaign Results) -> (1930,95) maxBottomRelY=80
+
+[Sales Team] Lane bounds: 192-292
+  [Unmask] Collect Leads in CRM -> Y=242: OK
+  [Unmask] Follow Up with Leads -> Y=242: OK
+  [Unmask] Lead List -> Y=242: OK
+  [maxElementBottomRelY=80]
+  Collect Leads in CRM -> col=9 (1520,212) relY=20
+  Follow Up with Leads -> col=10 (1680,212) relY=20
+  Lead List (DO from Collect Leads in CRM) -> (1610,282) maxBottomRelY=80
+
+
+[8] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 16 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 9
+
+==================================================================
+COMPLETE: MarketingCampaignProcess_87962
+==================================================================
+Lanes: 2 | Elements: 16 | Data: 5 | Flows: 16 | DataAssoc: 9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

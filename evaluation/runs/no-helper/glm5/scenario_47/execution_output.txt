@@ -1,0 +1,117 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN USI COURSE REGISTRATION
+==================================================================
+Script Version: v9.1
+Execution ID:   64083
+Process Name:   USI_Course_Registration_64083
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: USI_Course_Registration_64083
+[2] Lanes: Applicant, System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant lane: 13 elements
+[4] System lane: 4 elements
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: USI_Course_Registration_64083
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/17 | Missing: Start, Select Cours, Choose Cours, Have Account, University R, Create Accou, Request Acti, Wait for Res, Log In, Tweet to Fri, Complete Reg, Provide Paym, Receive Cour
+  [Attempt 2] Found: 4/17 | Missing: Start, Select Cours, Choose Cours, Have Account, University R, Create Accou, Request Acti, Wait for Res, Log In, Tweet to Fri, Complete Reg, Provide Paym, Receive Cour
+  [Attempt 3] Found: 4/17 | Missing: Start, Select Cours, Choose Cours, Have Account, University R, Create Accou, Request Acti, Wait for Res, Log In, Tweet to Fri, Complete Reg, Provide Paym, Receive Cour
+  [Attempt 3] TIMEOUT - 4/17 elements
+
+[9] WARNING: 4/17 elements ready after 150ms
+         Missing: Start, Select Course, Choose Course Date, Have Account?, University Registered?, Create Account, Request Activation, Wait for Response, Log In, Tweet to Friends, Complete Registration, Provide Payment Info, Receive Course Ticket
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (Applicant): OK
+  [Unmask] Select Course -> Y=55 (Applicant): OK
+  [Unmask] Choose Course Date -> Y=55 (Applicant): OK
+  [Unmask] Have Account? -> Y=55 (Applicant): OK
+  [Unmask] University Registered? -> Y=55 (Applicant): OK
+  [Unmask] Create Account -> Y=55 (Applicant): OK
+  [Unmask] Request Activation -> Y=55 (Applicant): OK
+  [Unmask] Wait for Response -> Y=55 (Applicant): OK
+  [Unmask] Log In -> Y=55 (Applicant): OK
+  [Unmask] Tweet to Friends -> Y=55 (Applicant): OK
+  [Unmask] Complete Registration -> Y=55 (Applicant): OK
+  [Unmask] Provide Payment Info -> Y=55 (Applicant): OK
+  [Unmask] Receive Course Ticket -> Y=55 (Applicant): OK
+
+[11] Manual unmask: 13 elements unmasked
+[12] All elements now available
+
+  Lanes: Applicant(5-132); System(132-246)
+  Elements: Start=Y55, Select Cou=Y55, Slots Free=Y143, No Slots A=Y143, Display Co=Y143, Choose Cou=Y55, Have Accou=Y55, University=Y55, Create Acc=Y55, Request Ac=Y55, Wait for R=Y55, Log In=Y55, Tweet to F=Y55, Complete R=Y55, Provide Pa=Y55, Send Cours=Y143, Receive Co=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Applicant centerY = 45
+[14] System centerY = 166
+
+[15] Applicant/Start -> (80,45) 33x33
+[16] Applicant/Select Course -> (220,45) 120x60
+[17] System/Slots Free? -> (360,166) 40x40
+[18] System/No Slots Available -> (500,166) 33x33 *** LANE CHANGED ***
+         Before: Lanes: Applicant(5-132); System(132-246)
+         After:  Lanes: Applicant(5-132); System(132-250)
+[19] System/Display Courses and Dates -> (640,166) 120x60
+[20] Applicant/Choose Course Date -> (780,45) 120x60
+[21] Applicant/Have Account? -> (920,45) 40x40
+[22] Applicant/University Registered? -> (1060,45) 40x40
+[23] Applicant/Create Account -> (1200,45) 120x60
+[24] Applicant/Request Activation -> (1340,45) 120x60
+[25] Applicant/Wait for Response -> (1480,45) 120x60
+[26] Applicant/Log In -> (1620,45) 120x60
+[27] Applicant/Tweet to Friends -> (1760,45) 120x60
+[28] Applicant/Complete Registration -> (1900,45) 120x60
+[29] Applicant/Provide Payment Info -> (2040,45) 120x60
+[30] System/Send Course Ticket -> (2180,166) 120x60
+[31] Applicant/Receive Course Ticket -> (2320,45) 33x33
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 18 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Applicant(5-132); System(132-250)
+  Elements: Start=Y45, Select Cou=Y45, Slots Free=Y166, No Slots A=Y166, Display Co=Y166, Choose Cou=Y45, Have Accou=Y45, University=Y45, Create Acc=Y45, Request Ac=Y45, Wait for R=Y45, Log In=Y45, Tweet to F=Y45, Complete R=Y45, Provide Pa=Y45, Send Cours=Y166, Receive Co=Y45
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  USI_Course_Registration_64083
+Lanes:    2
+Elements: 17 (17 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=17,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

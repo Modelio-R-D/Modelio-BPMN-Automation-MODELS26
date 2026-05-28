@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN TREE HOUSE BUILDING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   7101
+Process Name:   TreeHouseBuilding_7101
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: TreeHouseBuilding_7101
+[2] Lanes: Owner, Architect, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Owner lane: 16 elements
+[4] Architect lane: 2 elements
+[5] Friends lane: 3 elements
+
+  Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: TreeHouseBuilding_7101
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/21 | Missing: Order Hardwa, Order Paint, Join Orders, Invite Build, Create Atten, Buy Party Sn, Party Ready, Build Tree H, Send Party I, Confirm Atte
+  [Attempt 2] Found: 11/21 | Missing: Order Hardwa, Order Paint, Join Orders, Invite Build, Create Atten, Buy Party Sn, Party Ready, Build Tree H, Send Party I, Confirm Atte
+  [Attempt 3] Found: 11/21 | Missing: Order Hardwa, Order Paint, Join Orders, Invite Build, Create Atten, Buy Party Sn, Party Ready, Build Tree H, Send Party I, Confirm Atte
+  [Attempt 3] TIMEOUT - 11/21 elements
+
+[10] WARNING: 11/21 elements ready after 150ms
+         Missing: Order Hardware, Order Paint, Join Orders, Invite Build Help, Create Attendee List, Buy Party Snacks, Party Ready, Build Tree House, Send Party Invites, Confirm Attendance
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Order Hardware -> Y=66 (Owner): OK
+  [Unmask] Order Paint -> Y=66 (Owner): OK
+  [Unmask] Join Orders -> Y=66 (Owner): OK
+  [Unmask] Invite Build Help -> Y=66 (Owner): OK
+  [Unmask] Create Attendee List -> Y=66 (Owner): OK
+  [Unmask] Buy Party Snacks -> Y=66 (Owner): OK
+  [Unmask] Party Ready -> Y=66 (Owner): OK
+  [Unmask] Build Tree House -> Y=277 (Friends): OK
+  [Unmask] Send Party Invites -> Y=277 (Friends): OK
+  [Unmask] Confirm Attendance -> Y=277 (Friends): OK
+
+[12] Manual unmask: 10 elements unmasked
+[13] All elements now available
+
+  Lanes: Owner(5-143); Architect(143-243); Friends(243-343)
+  Elements: Want Tree =Y16, Collect Re=Y20, Send to Ar=Y25, Create Dra=Y154, Review Dra=Y30, Send Draft=Y154, Draft OK?=Y35, Add Requir=Y40, Create Mat=Y45, Split Orde=Y50, Order Hard=Y66, Order Pain=Y66, Order Wood=Y55, Join Order=Y66, Invite Bui=Y66, Build Tree=Y277, Send Party=Y277, Confirm At=Y277, Create Att=Y66, Buy Party =Y66, Party Read=Y66
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Owner centerY = 51
+[15] Architect centerY = 170
+[16] Friends centerY = 270
+
+[17] Owner/Want Tree House -> (80,51) 33x33
+[18] Owner/Collect Requirements -> (220,51) 120x60
+[19] Owner/Send to Architect -> (360,51) 120x60
+[20] Architect/Create Draft -> (500,170) 120x60
+[21] Owner/Review Draft -> (640,51) 120x60
+[22] Architect/Send Draft -> (640,170) 120x60
+[23] Owner/Draft OK? -> (780,51) 40x40
+[24] Owner/Add Requirements -> (920,51) 120x60
+[25] Owner/Create Materials List -> (1060,51) 120x60
+[26] Owner/Split Orders -> (1200,51) 40x40
+[27] Owner/Order Hardware -> (1340,51) 120x60
+[28] Owner/Order Paint -> (1340,101) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Owner(5-143); Architect(143-243); Friends(243-343)
+         After:  Lanes: Owner(5-172); Architect(172-272); Friends(272-372)
+[29] Owner/Order Wood -> (1340,1) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Owner(5-172); Architect(172-272); Friends(272-372)
+         After:  Lanes: Owner(-10-172); Architect(172-272); Friends(272-372)
+[30] Owner/Join Orders -> (1480,51) 40x40
+[31] Owner/Invite Build Help -> (1620,51) 120x60
+[32] Friends/Build Tree House -> (1760,270) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Owner(-10-172); Architect(172-272); Friends(272-372)
+         After:  Lanes: Owner(-23-159); Architect(159-259); Friends(259-372)
+[33] Friends/Send Party Invites -> (1900,270) 120x60
+[34] Friends/Confirm Attendance -> (2040,270) 120x60
+[35] Owner/Create Attendee List -> (2040,51) 120x60
+[36] Owner/Buy Party Snacks -> (2180,51) 120x60
+[37] Owner/Party Ready -> (2320,51) 33x33
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[38] Created 23 sequence flows
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Owner(-23-159); Architect(159-259); Friends(259-372)
+  Elements: Want Tree =Y23, Collect Re=Y23, Send to Ar=Y23, Create Dra=Y186, Review Dra=Y23, Send Draft=Y186, Draft OK?=Y23, Add Requir=Y23, Create Mat=Y23, Split Orde=Y23, Order Hard=Y23, Order Pain=Y73, Order Wood=Y-12, Join Order=Y38, Invite Bui=Y38, Build Tree=Y270, Send Party=Y270, Confirm At=Y270, Create Att=Y51, Buy Party =Y51, Party Read=Y51
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  TreeHouseBuilding_7101
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=3,flows=23,data=0,data_assoc=0
+======================================================================

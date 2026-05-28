@@ -1,0 +1,145 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Work Accident_66506
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Work Accident_66506
+[2] Lanes: Reporter, Organization, Accident Insurer, Inspectorate or Private Insurer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Reporter: 8 elements
+[4] Organization: 19 elements
+[5] Accident Insurer: 4 elements
+[6] Inspectorate or Private Insurer: 2 elements
+
+  Total: 33 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: Work Accident_66506
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Log near miss / dangerous occurrence=0, Log serious and immediate risk=90, Log defect in protection systems=180, Assess work-accident coverage circumstances=270
+  [Auto-stack] col 7: Implement corrective actions=0, Covered as work accident/equivalent?=90
+  [Auto-stack] col 8: End - Corrective actions completed=0, Record as non-covered incident=90, Fatality or serious injury?=180
+  [Auto-stack] col 9: End - Not covered=0, Report immediately to Labour Inspectorate=90
+  [Auto-stack] col 12: Employer drafts accident report=0, School/university drafts report (3 copies)=90, Responsible body drafts report=180
+  [Auto-stack] col 13: Employer submits report to accident insurance provider=0, School submits report to accident insurance provider=90, Responsible body submits report to accident insurance provider=180
+[Reporter] Lane bounds: 5-105
+  [Unmask] Get medical assessment (if needed) -> Y=55: OK
+  [Unmask] Notify employer or responsible body immediately -> Y=55: OK
+  [Unmask] Collect incident information (who/where/when/what) -> Y=55: OK
+  [Unmask] Self-employed drafts accident report -> Y=55: OK
+  [Unmask] Self-employed submits report to accident insurance provider -> Y=55: OK
+  [Unmask] Insured reports to private insurer (written, immediately) -> Y=55: OK
+  [Unmask] Medical Certificate -> Y=55: OK
+  [Unmask] Incident Info -> Y=55: OK
+  [Unmask] Accident Report (Self-employed) -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Secure scene and provide first aid -> col=1 (230,25) relY=20
+  Get medical assessment (if needed) -> col=2 (380,25) relY=20
+  Notify employer or responsible body immediately -> col=3 (530,25) relY=20
+  Collect incident information (who/where/when/what) -> col=4 (680,25) relY=20
+  Self-employed drafts accident report -> col=12 (1880,25) relY=20
+  Self-employed submits report to accident insurance provider -> col=13 (2030,25) relY=20
+  Insured reports to private insurer (written, immediately) -> col=17 (2630,25) relY=20
+  Medical Certificate (DO from Get medical assessment (if needed)) -> (470,95) maxBottomRelY=80
+  Incident Info (DO from Collect incident information (who/where/when/what)) -> (770,95) maxBottomRelY=80
+  Accident Report (Self-employed) (DO from Self-employed drafts accident report) -> (1970,95) maxBottomRelY=80
+
+[Organization] Lane bounds: 187-287
+  [Unmask] Incident type? -> Y=237: OK
+  [Unmask] Log near miss / dangerous occurrence -> Y=237: OK
+  [Unmask] Log serious and immediate risk -> Y=237: OK
+  [Unmask] Log defect in protection systems -> Y=237: OK
+  [Unmask] Implement corrective actions -> Y=237: OK
+  [Unmask] End - Corrective actions completed -> Y=237: OK
+  [Unmask] Assess work-accident coverage circumstances -> Y=237: OK
+  [Unmask] Covered as work accident/equivalent? -> Y=237: OK
+  [Unmask] Record as non-covered incident -> Y=237: OK
+  [Unmask] End - Not covered -> Y=237: OK
+  [Unmask] Fatality or serious injury? -> Y=237: OK
+  [Unmask] Report immediately to Labour Inspectorate -> Y=237: OK
+  [Unmask] Person group? -> Y=237: OK
+  [Unmask] Employer drafts accident report -> Y=237: OK
+  [Unmask] Employer submits report to accident insurance provider -> Y=237: OK
+  [Unmask] School/university drafts report (3 copies) -> Y=237: OK
+  [Unmask] School submits report to accident insurance provider -> Y=237: OK
+  [Unmask] Responsible body drafts report -> Y=237: OK
+  [Unmask] Responsible body submits report to accident insurance provider -> Y=237: OK
+  [Unmask] Accident Report (Org) -> Y=237: OK
+  [maxElementBottomRelY=350]
+  Incident type? -> col=5 (830,207) relY=20
+  Log near miss / dangerous occurrence -> col=6 (980,207) relY=20
+  Log serious and immediate risk -> col=6 (980,297) relY=110
+  Log defect in protection systems -> col=6 (980,387) relY=200
+  Implement corrective actions -> col=7 (1130,207) relY=20
+  End - Corrective actions completed -> col=8 (1280,207) relY=20
+  Assess work-accident coverage circumstances -> col=6 (980,477) relY=290
+  Covered as work accident/equivalent? -> col=7 (1130,297) relY=110
+  Record as non-covered incident -> col=8 (1280,297) relY=110
+  End - Not covered -> col=9 (1430,207) relY=20
+  Fatality or serious injury? -> col=8 (1280,387) relY=200
+  Report immediately to Labour Inspectorate -> col=9 (1430,297) relY=110
+  Person group? -> col=11 (1730,207) relY=20
+  Employer drafts accident report -> col=12 (1880,207) relY=20
+  Employer submits report to accident insurance provider -> col=13 (2030,207) relY=20
+  School/university drafts report (3 copies) -> col=12 (1880,297) relY=110
+  School submits report to accident insurance provider -> col=13 (2030,297) relY=110
+  Responsible body drafts report -> col=12 (1880,387) relY=200
+  Responsible body submits report to accident insurance provider -> col=13 (2030,387) relY=200
+  Accident Report (Org) (DO from Responsible body drafts report) -> (1970,547) maxBottomRelY=350
+
+[Accident Insurer] Lane bounds: 639-785
+  [maxElementBottomRelY=80]
+  Accident insurer receives report -> col=14 (2180,659) relY=20
+  Register claim and request missing info -> col=15 (2330,659) relY=20
+  Private insurance also involved? -> col=16 (2480,659) relY=20
+  End - Report completed -> col=19 (2930,659) relY=20
+
+[Inspectorate or Private Insurer] Lane bounds: 785-885
+  [maxElementBottomRelY=80]
+  Labour Inspectorate receives report -> col=10 (1580,805) relY=20
+  Private insurer opens claim -> col=18 (2780,805) relY=20
+
+
+[10] Repositioned: 37/37
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 39 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 12
+
+==================================================================
+COMPLETE: Work Accident_66506
+==================================================================
+Lanes: 4 | Elements: 33 | Data: 4 | Flows: 39 | DataAssoc: 12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=37,gateways=5,flows=39,data=4,data_assoc=12
+======================================================================

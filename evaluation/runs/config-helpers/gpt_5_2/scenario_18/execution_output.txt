@@ -1,0 +1,149 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: UniversityEnrollment_39733
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_39733
+[2] Lanes: Prospective Student, Admissions Office, Admissions Committee, Finance Dept, IT Dept, International Office, Academic Advisor, Registrar, Appeals Committee
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Prospective Student: 17 elements
+[4] Admissions Office: 15 elements
+[5] Admissions Committee: 1 elements
+[6] Finance Dept: 1 elements
+[7] IT Dept: 1 elements
+[8] International Office: 1 elements
+[9] Academic Advisor: 1 elements
+[10] Registrar: 2 elements
+[11] Appeals Committee: 1 elements
+
+  Total: 40 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[12] Diagram: UniversityEnrollment_39733
+[13] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 13: Confirmation received=0, Deadline reached=90
+  [Auto-stack] col 10: Send acceptance letter=0, Send rejection letter=90
+  [Auto-stack] col 14: Cancel application=0, Parallel split: onboarding=90
+  [Auto-stack] col 15: End canceled=0, Send orientation materials=90
+[Prospective Student] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Submit application online -> Y=55: OK
+  [Unmask] Provide missing items -> Y=55: OK
+  [Unmask] Wait for enrollment confirmation -> Y=55: OK
+  [Unmask] Confirmation received -> Y=55: OK
+  [Unmask] Deadline reached -> Y=55: OK
+  [Unmask] Obtain student ID card -> Y=55: OK
+  [Unmask] Select courses -> Y=55: OK
+  [Unmask] Attend classes -> Y=55: OK
+  [Unmask] Add or drop courses (period) -> Y=55: OK
+  [Unmask] Review grades online -> Y=55: OK
+  [Unmask] Any grievances? -> Y=55: OK
+  [Unmask] Submit appeal form -> Y=55: OK
+  [Unmask] Await appeal decision -> Y=55: OK
+  [Unmask] Graduate or withdraw? -> Y=55: OK
+  [Unmask] End graduated or withdrawn -> Y=55: OK
+  [Unmask] Start next semester -> Y=55: OK
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,25) relY=20
+  Submit application online -> col=1 (230,25) relY=20
+  Provide missing items -> col=5 (830,25) relY=20
+  Wait for enrollment confirmation -> col=12 (1880,25) relY=20
+  Confirmation received -> col=13 (2030,25) relY=20
+  Deadline reached -> col=13 (2030,115) relY=110
+  Obtain student ID card -> col=19 (2930,25) relY=20
+  Select courses -> col=21 (3230,25) relY=20
+  Attend classes -> col=23 (3530,25) relY=20
+  Add or drop courses (period) -> col=24 (3680,25) relY=20
+  Review grades online -> col=26 (3980,25) relY=20
+  Any grievances? -> col=27 (4130,25) relY=20
+  Submit appeal form -> col=28 (4280,25) relY=20
+  Await appeal decision -> col=30 (4580,25) relY=20
+  Graduate or withdraw? -> col=31 (4730,25) relY=20
+  End graduated or withdrawn -> col=32 (4880,25) relY=20
+  Start next semester -> col=33 (5030,25) relY=20
+
+[Admissions Office] Lane bounds: 185-347
+  [maxElementBottomRelY=170]
+  Review application and documents -> col=2 (380,205) relY=20
+  Documents complete? -> col=3 (530,205) relY=20
+  Notify missing documents -> col=4 (680,205) relY=20
+  Parallel split: eval and fees -> col=6 (980,205) relY=20
+  Parallel join: eval and fees -> col=8 (1280,205) relY=20
+  Accepted? -> col=9 (1430,205) relY=20
+  Send acceptance letter -> col=10 (1580,205) relY=20
+  Send rejection letter -> col=10 (1580,295) relY=110
+  End rejected -> col=11 (1730,205) relY=20
+  Cancel application -> col=14 (2180,205) relY=20
+  End canceled -> col=15 (2330,205) relY=20
+  Parallel split: onboarding -> col=14 (2180,295) relY=110
+  Send orientation materials -> col=15 (2330,295) relY=110
+  Parallel join: onboarding -> col=16 (2480,205) relY=20
+  International student? -> col=17 (2630,205) relY=20
+
+[Admissions Committee] Lane bounds: 372-472
+  [maxElementBottomRelY=80]
+  Evaluate application -> col=7 (1130,392) relY=20
+
+[Finance Dept] Lane bounds: 472-572
+  [maxElementBottomRelY=80]
+  Process application fee or waiver -> col=7 (1130,492) relY=20
+
+[IT Dept] Lane bounds: 572-867
+  [maxElementBottomRelY=80]
+  Set up student accounts -> col=15 (2330,592) relY=20
+
+[International Office] Lane bounds: 867-967
+  [Unmask] Assist visa processing -> Y=917: OK
+  [maxElementBottomRelY=80]
+  Assist visa processing -> col=18 (2780,887) relY=20
+
+[Academic Advisor] Lane bounds: 1035-1135
+  [Unmask] Meet academic advisor -> Y=1085: OK
+  [maxElementBottomRelY=80]
+  Meet academic advisor -> col=20 (3080,1055) relY=20
+
+[Registrar] Lane bounds: 1196-1997
+  [maxElementBottomRelY=80]
+  Resolve schedule conflicts -> col=22 (3380,1216) relY=20
+  Post grades -> col=25 (3830,1216) relY=20
+
+[Appeals Committee] Lane bounds: 1997-2097
+  [Unmask] Meet appeals committee -> Y=2047: OK
+  [maxElementBottomRelY=80]
+  Meet appeals committee -> col=29 (4430,2017) relY=20
+
+
+[14] Repositioned: 40/40
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[15] Created 45 sequence flows
+
+==================================================================
+COMPLETE: UniversityEnrollment_39733
+==================================================================
+Lanes: 9 | Elements: 40 | Flows: 45
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=9,elements=40,gateways=10,flows=45,data=0,data_assoc=0
+======================================================================

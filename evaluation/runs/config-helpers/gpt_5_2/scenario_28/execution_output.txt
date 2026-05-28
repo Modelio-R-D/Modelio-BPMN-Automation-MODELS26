@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Internship_70634
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Internship_70634
+[2] Lanes: Student, Company, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Student: 18 elements
+[4] Company: 3 elements
+[5] Twitter: 5 elements
+
+  Total: 26 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: Internship_70634
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Accept offer=0, Deny offer=90
+  [Auto-stack] col 17: Tweet to friend 1=0, Tweet to friend 2=90, Tweet to friend 3=180
+[Student] Lane bounds: 5-170
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Enter preferences -> col=1 (230,25) relY=20
+  Publish profile -> col=2 (380,25) relY=20
+  Wait for offer -> col=3 (530,25) relY=20
+  Review offer -> col=4 (680,25) relY=20
+  Accept offer? -> col=5 (830,25) relY=20
+  Accept offer -> col=6 (980,25) relY=20
+  Deny offer -> col=6 (980,115) relY=110
+  Invalidate other offers -> col=7 (1130,25) relY=20
+  Begin internship -> col=8 (1280,25) relY=20
+  Parallel updates -> col=9 (1430,25) relY=20
+  Student status update 1 -> col=10 (1580,25) relY=20
+  Student status update 2 -> col=11 (1730,25) relY=20
+  Student status update 3 -> col=12 (1880,25) relY=20
+  Join updates -> col=13 (2030,25) relY=20
+  Finish internship -> col=14 (2180,25) relY=20
+  Recommend company -> col=15 (2330,25) relY=20
+  End -> col=19 (2930,25) relY=20
+
+[Company] Lane bounds: 186-286
+  [Unmask] Company status update 1 -> Y=236: OK
+  [Unmask] Company status update 2 -> Y=236: OK
+  [Unmask] Company status update 3 -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Company status update 1 -> col=10 (1580,206) relY=20
+  Company status update 2 -> col=11 (1730,206) relY=20
+  Company status update 3 -> col=12 (1880,206) relY=20
+
+[Twitter] Lane bounds: 293-393
+  [Unmask] Parallel tweets -> Y=343: OK
+  [Unmask] Tweet to friend 1 -> Y=343: OK
+  [Unmask] Tweet to friend 2 -> Y=343: OK
+  [Unmask] Tweet to friend 3 -> Y=343: OK
+  [Unmask] Join tweets -> Y=343: OK
+  [maxElementBottomRelY=260]
+  Parallel tweets -> col=16 (2480,313) relY=20
+  Tweet to friend 1 -> col=17 (2630,313) relY=20
+  Tweet to friend 2 -> col=17 (2630,403) relY=110
+  Tweet to friend 3 -> col=17 (2630,493) relY=200
+  Join tweets -> col=18 (2780,313) relY=20
+
+
+[8] Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 29 sequence flows
+
+==================================================================
+COMPLETE: Internship_70634
+==================================================================
+Lanes: 3 | Elements: 26 | Flows: 29
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=26,gateways=5,flows=29,data=0,data_assoc=0
+======================================================================

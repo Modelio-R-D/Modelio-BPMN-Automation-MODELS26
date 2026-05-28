@@ -1,0 +1,138 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN BLIZZARD CHARACTER GENERATOR
+==================================================================
+Script Version: v1.0
+Execution ID:   88043
+Process Name:   BlizzardCharGen_88043
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BlizzardCharGen_88043
+[2] Lanes: Player, Blizzard System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player lane: 18 elements
+[4] Blizzard System lane: 8 elements
+
+  Total elements: 26
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: BlizzardCharGen_88043
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/26 | Missing: Start Charac, Split Activi, Check Battle, Has Account?, Enter Accoun, Click Confir, Check WoW Su, Has Subscrip, Payment Meth, Enter Credit, Enter IBAN a, Merge Paymen, Log Into Gam, Select Realm, Think of Cha, Join Activit, Enter Charac, Name Availab, Create Chara, Send Confirm, Send Charact, Send Expansi, Character Re
+  [Attempt 2] Found: 3/26 | Missing: Start Charac, Split Activi, Check Battle, Has Account?, Enter Accoun, Click Confir, Check WoW Su, Has Subscrip, Payment Meth, Enter Credit, Enter IBAN a, Merge Paymen, Log Into Gam, Select Realm, Think of Cha, Join Activit, Enter Charac, Name Availab, Create Chara, Send Confirm, Send Charact, Send Expansi, Character Re
+  [Attempt 3] Found: 3/26 | Missing: Start Charac, Split Activi, Check Battle, Has Account?, Enter Accoun, Click Confir, Check WoW Su, Has Subscrip, Payment Meth, Enter Credit, Enter IBAN a, Merge Paymen, Log Into Gam, Select Realm, Think of Cha, Join Activit, Enter Charac, Name Availab, Create Chara, Send Confirm, Send Charact, Send Expansi, Character Re
+  [Attempt 3] TIMEOUT - 3/26 elements
+
+[9] WARNING: 3/26 elements ready after 150ms
+         Missing: Start Character Creation, Split Activities, Check Battle.net Account, Has Account?, Enter Account Info, Click Confirmation Link, Check WoW Subscription, Has Subscription?, Payment Method?, Enter Credit Card Info, Enter IBAN and BIC, Merge Payment, Log Into Game, Select Realm Race Class, Think of Character Names, Join Activities, Enter Character Name, Name Available?, Create Character, Send Confirmation, Send Character Selfies, Send Expansion Message, Character Ready
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Start Character Creation -> Y=55 (Player): OK
+  [Unmask] Split Activities -> Y=55 (Player): OK
+  [Unmask] Check Battle.net Account -> Y=55 (Player): OK
+  [Unmask] Has Account? -> Y=55 (Player): OK
+  [Unmask] Enter Account Info -> Y=55 (Player): OK
+  [Unmask] Click Confirmation Link -> Y=55 (Player): OK
+  [Unmask] Check WoW Subscription -> Y=55 (Player): OK
+  [Unmask] Has Subscription? -> Y=55 (Player): OK
+  [Unmask] Payment Method? -> Y=55 (Player): OK
+  [Unmask] Enter Credit Card Info -> Y=55 (Player): OK
+  [Unmask] Enter IBAN and BIC -> Y=55 (Player): OK
+  [Unmask] Merge Payment -> Y=55 (Player): OK
+  [Unmask] Log Into Game -> Y=55 (Player): OK
+  [Unmask] Select Realm Race Class -> Y=55 (Player): OK
+  [Unmask] Think of Character Names -> Y=55 (Player): OK
+  [Unmask] Join Activities -> Y=55 (Player): OK
+  [Unmask] Enter Character Name -> Y=55 (Player): OK
+  [Unmask] Name Available? -> Y=55 (Player): OK
+  [Unmask] Create Character -> Y=176 (Blizzard System): OK
+  [Unmask] Send Confirmation -> Y=176 (Blizzard System): OK
+  [Unmask] Send Character Selfies -> Y=176 (Blizzard System): OK
+  [Unmask] Send Expansion Message -> Y=176 (Blizzard System): OK
+  [Unmask] Character Ready -> Y=176 (Blizzard System): OK
+
+[11] Manual unmask: 23 elements unmasked
+[12] All elements now available
+
+  Lanes: Player(5-132); Blizzard System(132-275)
+  Elements: Start Char=Y55, Split Acti=Y55, Check Batt=Y55, Think of C=Y55, Has Accoun=Y55, Enter Acco=Y55, Send Confi=Y143, Click Conf=Y55, Check WoW =Y55, Has Subscr=Y55, Payment Me=Y55, Enter Cred=Y55, Enter IBAN=Y55, Activate S=Y143, Merge Paym=Y55, Log Into G=Y55, Select Rea=Y55, Join Activ=Y55, Enter Char=Y55, Check Name=Y143, Name Avail=Y55, Create Cha=Y176, Send Confi=Y176, Send Chara=Y176, Send Expan=Y176, Character =Y176
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Player centerY = 45
+[14] Blizzard System centerY = 180
+
+[15] Player/Start Character Crea -> (60,45)
+[16] Player/Split Activities -> (200,45)
+[17] Player/Check Battle.net Acc -> (340,5) *** LANE CHANGED ***
+         Before: Lanes: Player(5-132); Blizzard System(132-275)
+         After:  Lanes: Player(-6-132); Blizzard System(132-275)
+[18] Player/Think of Character N -> (340,95) *** LANE CHANGED ***
+         Before: Lanes: Player(-6-132); Blizzard System(132-275)
+         After:  Lanes: Player(-6-166); Blizzard System(166-309)
+[19] Player/Has Account? -> (480,5)
+[20] Player/Enter Account Info -> (620,5)
+[21] Blizzard/Send Confirmation Em -> (620,180)
+[22] Player/Click Confirmation L -> (760,5)
+[23] Player/Check WoW Subscripti -> (900,5)
+[24] Player/Has Subscription? -> (1040,5)
+[25] Player/Payment Method? -> (1180,5)
+[26] Player/Enter Credit Card In -> (1320,5)
+[27] Player/Enter IBAN and BIC -> (1460,5)
+[28] Blizzard/Activate Subscriptio -> (1600,180)
+[29] Player/Merge Payment -> (1600,5)
+[30] Player/Log Into Game -> (1740,5)
+[31] Player/Select Realm Race Cl -> (1880,5)
+[32] Player/Join Activities -> (2020,45)
+[33] Player/Enter Character Name -> (2160,45)
+[34] Blizzard/Check Name Availabil -> (2300,180)
+[35] Player/Name Available? -> (2300,45)
+[36] Blizzard/Create Character -> (2440,180)
+[37] Blizzard/Send Confirmation -> (2580,180)
+[38] Blizzard/Send Character Selfi -> (2720,180)
+[39] Blizzard/Send Expansion Messa -> (2860,180)
+[40] Blizzard/Character Ready -> (3000,180)
+
+  Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[41] Created 30 sequence flows
+[42] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Player(-6-166); Blizzard System(166-309)
+  Elements: Start Char=Y34, Split Acti=Y34, Check Batt=Y5, Think of C=Y95, Has Accoun=Y5, Enter Acco=Y5, Send Confi=Y180, Click Conf=Y5, Check WoW =Y5, Has Subscr=Y5, Payment Me=Y5, Enter Cred=Y5, Enter IBAN=Y5, Activate S=Y180, Merge Paym=Y5, Log Into G=Y5, Select Rea=Y5, Join Activ=Y45, Enter Char=Y45, Check Name=Y180, Name Avail=Y45, Create Cha=Y180, Send Confi=Y180, Send Chara=Y180, Send Expan=Y180, Character =Y180
+
+[43] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  BlizzardCharGen_88043
+Lanes:    2
+Elements: 26 (26 in diagram)
+Flows:    30
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=26,gateways=7,flows=30,data=0,data_assoc=0
+======================================================================

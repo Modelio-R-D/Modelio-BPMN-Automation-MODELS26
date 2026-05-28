@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <task id="Task_1" name="Resolve complaint">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_2" name="Approve and notify customer">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+    </task>
+    <task id="Task_3" name="Process reimbursement">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </task>
+    <task id="Task_4" name="Provide feedback">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </task>
+    <task id="Task_5" name="Log complaint">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </task>
+    <task id="Task_6" name="Assign complaint to relevant department">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </task>
+    <task id="Task_7" name="File complaint">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </task>
+    <task id="Task_8" name="Reject and notify customer">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </task>
+    <task id="Task_9" name="Review complaint details">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+      <outgoing>SequenceFlow_13</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_8</incoming>
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_6</outgoing>
+    </exclusiveGateway>
+    <startEvent id="StartEvent_1" name="start">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="end">
+      <incoming>SequenceFlow_5</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ExclusiveGateway_3" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_1" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ExclusiveGateway_4" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ExclusiveGateway_4" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ExclusiveGateway_2" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="Task_8" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="Task_5" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_9" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="Task_4" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="Task_7" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ExclusiveGateway_2" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="Task_3" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="Task_2" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="Task_6" targetRef="Task_9"/>
+  </process>
+</definitions>

@@ -1,0 +1,73 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: DismissalProcess_55556
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DismissalProcess_55556
+[2] Lanes: MSPN, MSPO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] MSPN: 2 elements
+[4] MSPO: 6 elements
+
+  Total: 8 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: DismissalProcess_55556
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Reject Dismissal=0, Confirm Dismissal=90
+  [Auto-stack] col 5: End Rejected=0, End Confirmed=90
+[MSPN] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Send Dismissal -> col=1 (230,25) relY=20
+
+[MSPO] Lane bounds: 105-205
+  [Unmask] Review Dismissal -> Y=155: OK
+  [Unmask] Dismissal Valid? -> Y=155: OK
+  [Unmask] Reject Dismissal -> Y=155: OK
+  [Unmask] Confirm Dismissal -> Y=155: OK
+  [Unmask] End Rejected -> Y=155: OK
+  [Unmask] End Confirmed -> Y=155: OK
+  [maxElementBottomRelY=170]
+  Review Dismissal -> col=2 (380,125) relY=20
+  Dismissal Valid? -> col=3 (530,125) relY=20
+  Reject Dismissal -> col=4 (680,125) relY=20
+  Confirm Dismissal -> col=4 (680,215) relY=110
+  End Rejected -> col=5 (830,125) relY=20
+  End Confirmed -> col=5 (830,215) relY=110
+
+
+[7] Repositioned: 8/8
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 7 sequence flows
+
+==================================================================
+COMPLETE: DismissalProcess_55556
+==================================================================
+Lanes: 2 | Elements: 8 | Flows: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=8,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,99 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SubrogationProcess_4429
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubrogationProcess_4429
+[2] Lanes: Recourse Handler
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Recourse Handler: 20 elements
+
+  Total: 20 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: SubrogationProcess_4429
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Close Case - No Recourse=120, Send Payment Request=90
+  [Auto-stack] col 4: End - No Recourse=120, Set Reminder=90
+  [Auto-stack] col 6: Payment Received=0, Disagreement Received=90, Deadline Reached=180
+  [Auto-stack] col 7: Make Booking=0, Check Disagreement Reasoning=90
+  [Auto-stack] col 8: Close Case - Paid=0, Insurant Right?=90
+  [Auto-stack] col 9: End - Paid=0, Close Case - Accepted=90, Forward to Collection Agency=180
+[Recourse Handler] Lane bounds: 5-205
+  [Unmask] Receive Subrogation Info -> Y=105: OK
+  [Unmask] Check Recourse Possibility -> Y=105: OK
+  [Unmask] Recourse Possible? -> Y=105: OK
+  [Unmask] Close Case - No Recourse -> Y=105: OK
+  [Unmask] End - No Recourse -> Y=105: OK
+  [Unmask] Send Payment Request -> Y=105: OK
+  [Unmask] Set Reminder -> Y=105: OK
+  [Unmask] Await Response -> Y=105: OK
+  [Unmask] Payment Received -> Y=105: OK
+  [Unmask] Make Booking -> Y=105: OK
+  [Unmask] Close Case - Paid -> Y=105: OK
+  [Unmask] End - Paid -> Y=105: OK
+  [Unmask] Disagreement Received -> Y=105: OK
+  [Unmask] Check Disagreement Reasoning -> Y=105: OK
+  [Unmask] Insurant Right? -> Y=105: OK
+  [Unmask] Close Case - Accepted -> Y=105: OK
+  [Unmask] End - Accepted -> Y=105: OK
+  [Unmask] Forward to Collection Agency -> Y=105: OK
+  [Unmask] End - Collection -> Y=105: OK
+  [Unmask] Deadline Reached -> Y=105: OK
+  [maxElementBottomRelY=260]
+  Receive Subrogation Info -> col=0 (80,25) relY=20
+  Check Recourse Possibility -> col=1 (230,25) relY=20
+  Recourse Possible? -> col=2 (380,25) relY=20
+  Close Case - No Recourse -> col=3 (530,145) relY=140
+  End - No Recourse -> col=4 (680,145) relY=140
+  Send Payment Request -> col=3 (530,115) relY=110
+  Set Reminder -> col=4 (680,115) relY=110
+  Await Response -> col=5 (830,25) relY=20
+  Payment Received -> col=6 (980,25) relY=20
+  Make Booking -> col=7 (1130,25) relY=20
+  Close Case - Paid -> col=8 (1280,25) relY=20
+  End - Paid -> col=9 (1430,25) relY=20
+  Disagreement Received -> col=6 (980,115) relY=110
+  Check Disagreement Reasoning -> col=7 (1130,115) relY=110
+  Insurant Right? -> col=8 (1280,115) relY=110
+  Close Case - Accepted -> col=9 (1430,115) relY=110
+  End - Accepted -> col=10 (1580,115) relY=110
+  Forward to Collection Agency -> col=9 (1430,205) relY=200
+  End - Collection -> col=10 (1580,205) relY=200
+  Deadline Reached -> col=6 (980,205) relY=200
+
+
+[6] Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 20 sequence flows
+
+==================================================================
+COMPLETE: SubrogationProcess_4429
+==================================================================
+Lanes: 1 | Elements: 20 | Flows: 20
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

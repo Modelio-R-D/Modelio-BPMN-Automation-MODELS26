@@ -1,0 +1,116 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Blizzard Online Character Generator_76809
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Blizzard Online Character Generator_76809
+[2] Lanes: Player, Blizzard
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player: 16 elements
+[4] Blizzard: 13 elements
+
+  Total: 29 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: Blizzard Online Character Generator_76809
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Enter credit card information=0, Enter IBAN and BIC=90
+[Player] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Setup and naming in parallel -> Y=55: OK
+  [Unmask] Brainstorm character names -> Y=55: OK
+  [Unmask] Names ready -> Y=55: OK
+  [Unmask] Enter battle.net account information -> Y=55: OK
+  [Unmask] Click confirmation link -> Y=55: OK
+  [Unmask] Select payment method -> Y=55: OK
+  [Unmask] Payment method? -> Y=55: OK
+  [Unmask] Enter credit card information -> Y=55: OK
+  [Unmask] Enter IBAN and BIC -> Y=55: OK
+  [Unmask] Payment complete -> Y=55: OK
+  [Unmask] Log into game -> Y=55: OK
+  [Unmask] Select realm, race and class -> Y=55: OK
+  [Unmask] Ready to create character -> Y=55: OK
+  [Unmask] Enter character name -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Setup and naming in parallel -> col=1 (230,25) relY=20
+  Brainstorm character names -> col=2 (380,25) relY=20
+  Names ready -> col=3 (530,25) relY=20
+  Enter battle.net account information -> col=4 (680,25) relY=20
+  Click confirmation link -> col=6 (980,25) relY=20
+  Select payment method -> col=9 (1430,25) relY=20
+  Payment method? -> col=10 (1580,25) relY=20
+  Enter credit card information -> col=11 (1730,25) relY=20
+  Enter IBAN and BIC -> col=11 (1730,115) relY=110
+  Payment complete -> col=12 (1880,25) relY=20
+  Log into game -> col=14 (2180,25) relY=20
+  Select realm, race and class -> col=15 (2330,25) relY=20
+  Ready to create character -> col=16 (2480,25) relY=20
+  Enter character name -> col=17 (2630,25) relY=20
+  End -> col=25 (3830,25) relY=20
+
+[Blizzard] Lane bounds: 186-286
+  [Unmask] Check battle.net account -> Y=236: OK
+  [Unmask] Battle.net account? -> Y=236: OK
+  [Unmask] Send confirmation email -> Y=236: OK
+  [Unmask] Check WoW subscription -> Y=236: OK
+  [Unmask] Active subscription? -> Y=236: OK
+  [Unmask] Activate subscription -> Y=236: OK
+  [Unmask] Check name availability -> Y=236: OK
+  [Unmask] Name available? -> Y=236: OK
+  [Unmask] Create character -> Y=236: OK
+  [Unmask] Send confirmation -> Y=236: OK
+  [Unmask] Generate character selfies -> Y=236: OK
+  [Unmask] Wait for expansion release -> Y=236: OK
+  [Unmask] Send expansion release message -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Check battle.net account -> col=2 (380,206) relY=20
+  Battle.net account? -> col=3 (530,206) relY=20
+  Send confirmation email -> col=5 (830,206) relY=20
+  Check WoW subscription -> col=7 (1130,206) relY=20
+  Active subscription? -> col=8 (1280,206) relY=20
+  Activate subscription -> col=13 (2030,206) relY=20
+  Check name availability -> col=18 (2780,206) relY=20
+  Name available? -> col=19 (2930,206) relY=20
+  Create character -> col=20 (3080,206) relY=20
+  Send confirmation -> col=21 (3230,206) relY=20
+  Generate character selfies -> col=22 (3380,206) relY=20
+  Wait for expansion release -> col=23 (3530,206) relY=20
+  Send expansion release message -> col=24 (3680,206) relY=20
+
+
+[7] Repositioned: 29/29
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 33 sequence flows
+
+==================================================================
+COMPLETE: Blizzard Online Character Generator_76809
+==================================================================
+Lanes: 2 | Elements: 29 | Flows: 33
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=29,gateways=7,flows=33,data=0,data_assoc=0
+======================================================================

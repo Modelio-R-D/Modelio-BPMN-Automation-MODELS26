@@ -1,0 +1,127 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN PARENTAL LEAVE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   39351
+Process Name:   BecomingAParent_39351
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BecomingAParent_39351
+[2] Lanes: Parent, HR Department, Social Security
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent lane: 8 elements
+[4] HR Department lane: 7 elements
+[5] Social Security lane: 3 elements
+
+  Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: BecomingAParent_39351
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/18 | Missing: Pregnancy Co, Review Leave, Select Leave, Provide Pers, Provide Empl, Provide Miss, Decide on Ex, Leave Comple, Fetch Leave , Gather Compa, Verify Infor, Info Complet, Notify Compa, Notify Socia, Process Exte, Process Leav, Claim Approv, Extension Gr
+  [Attempt 2] Found: 0/18 | Missing: Pregnancy Co, Review Leave, Select Leave, Provide Pers, Provide Empl, Provide Miss, Decide on Ex, Leave Comple, Fetch Leave , Gather Compa, Verify Infor, Info Complet, Notify Compa, Notify Socia, Process Exte, Process Leav, Claim Approv, Extension Gr
+  [Attempt 3] Found: 0/18 | Missing: Pregnancy Co, Review Leave, Select Leave, Provide Pers, Provide Empl, Provide Miss, Decide on Ex, Leave Comple, Fetch Leave , Gather Compa, Verify Infor, Info Complet, Notify Compa, Notify Socia, Process Exte, Process Leav, Claim Approv, Extension Gr
+  [Attempt 3] TIMEOUT - 0/18 elements
+
+[10] WARNING: 0/18 elements ready after 150ms
+         Missing: Pregnancy Confirmed, Review Leave Models, Select Leave Model, Provide Personal Info, Provide Employment Details, Provide Missing Info, Decide on Extension, Leave Completed, Fetch Leave Models, Gather Company Info, Verify Information, Info Complete?, Notify Company, Notify Social Security, Process Extension, Process Leave Claim, Claim Approved?, Extension Granted
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Pregnancy Confirmed -> Y=55 (Parent): OK
+  [Unmask] Review Leave Models -> Y=55 (Parent): OK
+  [Unmask] Select Leave Model -> Y=55 (Parent): OK
+  [Unmask] Provide Personal Info -> Y=55 (Parent): OK
+  [Unmask] Provide Employment Details -> Y=55 (Parent): OK
+  [Unmask] Provide Missing Info -> Y=55 (Parent): OK
+  [Unmask] Decide on Extension -> Y=55 (Parent): OK
+  [Unmask] Leave Completed -> Y=55 (Parent): OK
+  [Unmask] Fetch Leave Models -> Y=155 (HR Department): OK
+  [Unmask] Gather Company Info -> Y=155 (HR Department): OK
+  [Unmask] Verify Information -> Y=155 (HR Department): OK
+  [Unmask] Info Complete? -> Y=155 (HR Department): OK
+  [Unmask] Notify Company -> Y=155 (HR Department): OK
+  [Unmask] Notify Social Security -> Y=155 (HR Department): OK
+  [Unmask] Process Extension -> Y=155 (HR Department): OK
+  [Unmask] Process Leave Claim -> Y=255 (Social Security): OK
+  [Unmask] Claim Approved? -> Y=255 (Social Security): OK
+  [Unmask] Extension Granted -> Y=255 (Social Security): OK
+
+[12] Manual unmask: 18 elements unmasked
+[13] All elements now available
+
+  Lanes: Parent(5-125); HR Department(125-332); Social Security(332-432)
+  Elements: Pregnancy =Y55, Fetch Leav=Y155, Review Lea=Y55, Select Lea=Y55, Provide Pe=Y55, Provide Em=Y55, Gather Com=Y155, Provide Mi=Y55, Verify Inf=Y155, Info Compl=Y155, Notify Com=Y155, Notify Soc=Y155, Process Le=Y255, Claim Appr=Y255, Decide on =Y55, Process Ex=Y155, Extension =Y255, Leave Comp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Parent centerY = 42
+[15] HR Department centerY = 205
+[16] Social Security centerY = 359
+
+[17] Parent/Pregnancy Confirmed -> (80,42) 33x33
+[18] HR Department/Fetch Leave Models -> (220,205) 120x60
+[19] Parent/Review Leave Models -> (220,42) 120x60
+[20] Parent/Select Leave Model -> (360,42) 120x60
+[21] Parent/Provide Personal Info -> (500,42) 120x60
+[22] Parent/Provide Employment Details -> (640,42) 120x60
+[23] HR Department/Gather Company Info -> (780,205) 120x60
+[24] Parent/Provide Missing Info -> (780,42) 120x60
+[25] HR Department/Verify Information -> (920,205) 120x60
+[26] HR Department/Info Complete? -> (1060,205) 40x40
+[27] HR Department/Notify Company -> (1200,205) 120x60
+[28] HR Department/Notify Social Security -> (1340,205) 120x60
+[29] Social Security/Process Leave Claim -> (1480,359) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Parent(5-125); HR Department(125-332); Social Security(332-432)
+         After:  Lanes: Parent(5-125); HR Department(125-430); Social Security(430-530)
+[30] Social Security/Claim Approved? -> (1620,359) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Parent(5-125); HR Department(125-430); Social Security(430-530)
+         After:  Lanes: Parent(5-125); HR Department(125-436); Social Security(436-536)
+[31] Parent/Decide on Extension -> (1620,42) 120x60
+[32] HR Department/Process Extension -> (1760,205) 120x60
+[33] Social Security/Extension Granted -> (1900,359) 33x33
+[34] Parent/Leave Completed -> (1900,42) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 18 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Parent(5-125); HR Department(125-436); Social Security(436-536)
+  Elements: Pregnancy =Y42, Fetch Leav=Y205, Review Lea=Y42, Select Lea=Y42, Provide Pe=Y42, Provide Em=Y42, Gather Com=Y205, Provide Mi=Y42, Verify Inf=Y205, Info Compl=Y205, Notify Com=Y205, Notify Soc=Y205, Process Le=Y359, Claim Appr=Y359, Decide on =Y42, Process Ex=Y205, Extension =Y359, Leave Comp=Y42
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  BecomingAParent_39351
+Lanes:    3
+Elements: 18 (18 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=18,gateways=2,flows=18,data=0,data_assoc=0
+======================================================================

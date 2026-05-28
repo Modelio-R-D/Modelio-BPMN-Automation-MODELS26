@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LAN Party_75835
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LAN Party_75835
+[2] Lanes: Host, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Host: 18 elements
+[4] Friends: 2 elements
+
+  Total: 20 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: LAN Party_75835
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Propose Date=0, Check Games Availability=90
+  [Auto-stack] col 7: 8 Or More Free?=0, Download Missing Games=90
+  [Auto-stack] col 8: Date Ready=0, Games Ready=90
+[Host] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Send Invitations -> Y=55: OK
+  [Unmask] Receive Game List -> Y=55: OK
+  [Unmask] Plan In Parallel -> Y=55: OK
+  [Unmask] Propose Date -> Y=55: OK
+  [Unmask] 8 Or More Free? -> Y=55: OK
+  [Unmask] Date Ready -> Y=55: OK
+  [Unmask] Check Games Availability -> Y=55: OK
+  [Unmask] Any Games Missing? -> Y=55: OK
+  [Unmask] Download Missing Games -> Y=55: OK
+  [Unmask] Games Ready -> Y=55: OK
+  [Unmask] Planning Complete -> Y=55: OK
+  [Unmask] Estimate Beer Needed -> Y=55: OK
+  [Unmask] Check Beer Stock -> Y=55: OK
+  [Unmask] Enough Beer? -> Y=55: OK
+  [Unmask] Buy Missing Beer -> Y=55: OK
+  [Unmask] Enjoy LAN Party -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send Invitations -> col=1 (230,25) relY=20
+  Receive Game List -> col=3 (530,25) relY=20
+  Plan In Parallel -> col=4 (680,25) relY=20
+  Propose Date -> col=5 (830,25) relY=20
+  8 Or More Free? -> col=7 (1130,25) relY=20
+  Date Ready -> col=8 (1280,25) relY=20
+  Check Games Availability -> col=5 (830,115) relY=110
+  Any Games Missing? -> col=6 (980,25) relY=20
+  Download Missing Games -> col=7 (1130,115) relY=110
+  Games Ready -> col=8 (1280,115) relY=110
+  Planning Complete -> col=9 (1430,25) relY=20
+  Estimate Beer Needed -> col=10 (1580,25) relY=20
+  Check Beer Stock -> col=11 (1730,25) relY=20
+  Enough Beer? -> col=12 (1880,25) relY=20
+  Buy Missing Beer -> col=13 (2030,25) relY=20
+  Enjoy LAN Party -> col=14 (2180,25) relY=20
+  End -> col=15 (2330,25) relY=20
+
+[Friends] Lane bounds: 186-286
+  [maxElementBottomRelY=80]
+  Send Game Requests -> col=2 (380,206) relY=20
+  Confirm Availability -> col=6 (980,206) relY=20
+
+
+[7] Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 23 sequence flows
+
+==================================================================
+COMPLETE: LAN Party_75835
+==================================================================
+Lanes: 2 | Elements: 20 | Flows: 23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=20,gateways=5,flows=23,data=0,data_assoc=0
+======================================================================

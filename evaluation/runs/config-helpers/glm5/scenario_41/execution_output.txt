@@ -1,0 +1,77 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: InspectionEnergyDrinkBottlingMachine_47591
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InspectionEnergyDrinkBottlingMachine_47591
+[2] Lanes: Inspector, Application
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inspector: 5 elements
+[4] Application: 4 elements
+
+  Total: 9 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: InspectionEnergyDrinkBottlingMachine_47591
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Inspector] Lane bounds: 5-132
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Enter Machine Details -> col=1 (230,25) relY=20
+  Answer Questions -> col=3 (530,25) relY=20
+  Ask Additional Questions -> col=6 (980,25) relY=20
+  End -> col=8 (1280,25) relY=20
+  Machine Info (DO from Enter Machine Details) -> (320,95) maxBottomRelY=80
+
+[Application] Lane bounds: 187-338
+  [maxElementBottomRelY=80]
+  Display Inspection Questions -> col=2 (380,207) relY=20
+  Collect Machine Values -> col=4 (680,207) relY=20
+  Results Satisfactory? -> col=5 (830,207) relY=20
+  Complete Inspection -> col=7 (1130,207) relY=20
+  Inspection Data (DO from Collect Machine Values) -> (770,277) maxBottomRelY=80
+  Inspection Report (DO from Complete Inspection) -> (1220,277) maxBottomRelY=80
+
+
+[8] Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 9 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 5
+
+==================================================================
+COMPLETE: InspectionEnergyDrinkBottlingMachine_47591
+==================================================================
+Lanes: 2 | Elements: 9 | Data: 3 | Flows: 9 | DataAssoc: 5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=12,gateways=1,flows=9,data=3,data_assoc=5
+======================================================================

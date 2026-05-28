@@ -1,0 +1,119 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CREDIT SCORING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   68045
+Process Name:   CreditScoring_68045
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CreditScoring_68045
+[2] Lanes: Sales Clerk, Banking System, Credit Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Sales Clerk lane: 4 elements
+[4] Banking System lane: 5 elements
+[5] Credit Agency lane: 5 elements
+
+  Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: CreditScoring_68045
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/14 | Missing: Request Scor, View Delay M, View Score R, Score Displa, Send Score R, Response Typ, Display Resu, Display Dela, Receive L2 R, Receive Requ, Level 1 Scor, Immediate Re, Send Delay N, Level 2 Scor
+  [Attempt 2] Found: 0/14 | Missing: Request Scor, View Delay M, View Score R, Score Displa, Send Score R, Response Typ, Display Resu, Display Dela, Receive L2 R, Receive Requ, Level 1 Scor, Immediate Re, Send Delay N, Level 2 Scor
+  [Attempt 3] Found: 0/14 | Missing: Request Scor, View Delay M, View Score R, Score Displa, Send Score R, Response Typ, Display Resu, Display Dela, Receive L2 R, Receive Requ, Level 1 Scor, Immediate Re, Send Delay N, Level 2 Scor
+  [Attempt 3] TIMEOUT - 0/14 elements
+
+[10] WARNING: 0/14 elements ready after 150ms
+         Missing: Request Score, View Delay Message, View Score Result, Score Displayed, Send Score Request, Response Type?, Display Result, Display Delay Msg, Receive L2 Result, Receive Request, Level 1 Scoring, Immediate Result?, Send Delay Notice, Level 2 Scoring
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Request Score -> Y=55 (Sales Clerk): OK
+  [Unmask] View Delay Message -> Y=55 (Sales Clerk): OK
+  [Unmask] View Score Result -> Y=55 (Sales Clerk): OK
+  [Unmask] Score Displayed -> Y=55 (Sales Clerk): OK
+  [Unmask] Send Score Request -> Y=155 (Banking System): OK
+  [Unmask] Response Type? -> Y=155 (Banking System): OK
+  [Unmask] Display Result -> Y=155 (Banking System): OK
+  [Unmask] Display Delay Msg -> Y=155 (Banking System): OK
+  [Unmask] Receive L2 Result -> Y=155 (Banking System): OK
+  [Unmask] Receive Request -> Y=255 (Credit Agency): OK
+  [Unmask] Level 1 Scoring -> Y=255 (Credit Agency): OK
+  [Unmask] Immediate Result? -> Y=255 (Credit Agency): OK
+  [Unmask] Send Delay Notice -> Y=255 (Credit Agency): OK
+  [Unmask] Level 2 Scoring -> Y=255 (Credit Agency): OK
+
+[12] Manual unmask: 14 elements unmasked
+[13] All elements now available
+
+  Lanes: Sales Clerk(5-125); Banking System(125-332); Credit Agency(332-432)
+  Elements: Request Sc=Y55, Receive Re=Y255, Send Score=Y155, Level 1 Sc=Y255, Immediate =Y255, Response T=Y155, Display Re=Y155, Send Delay=Y255, Display De=Y155, Level 2 Sc=Y255, View Delay=Y55, Receive L2=Y155, View Score=Y55, Score Disp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Sales Clerk centerY = 42
+[15] Banking System centerY = 205
+[16] Credit Agency centerY = 359
+
+[17] Sales Clerk/Request Score -> (80,42) 33x33
+[18] Credit Agency/Receive Request -> (220,359) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Sales Clerk(5-125); Banking System(125-332); Credit Agency(332-432)
+         After:  Lanes: Sales Clerk(5-125); Banking System(125-430); Credit Agency(430-530)
+[19] Banking System/Send Score Request -> (220,205) 120x60
+[20] Credit Agency/Level 1 Scoring -> (360,359) 120x60
+[21] Credit Agency/Immediate Result? -> (500,359) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Sales Clerk(5-125); Banking System(125-430); Credit Agency(430-530)
+         After:  Lanes: Sales Clerk(5-125); Banking System(125-436); Credit Agency(436-536)
+[22] Banking System/Response Type? -> (500,205) 40x40
+[23] Banking System/Display Result -> (640,205) 120x60
+[24] Credit Agency/Send Delay Notice -> (640,359) 120x60
+[25] Banking System/Display Delay Msg -> (780,205) 120x60
+[26] Credit Agency/Level 2 Scoring -> (780,359) 120x60
+[27] Sales Clerk/View Delay Message -> (780,42) 120x60
+[28] Banking System/Receive L2 Result -> (920,205) 120x60
+[29] Sales Clerk/View Score Result -> (1060,42) 120x60
+[30] Sales Clerk/Score Displayed -> (1200,42) 33x33
+
+  Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Created 15 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Sales Clerk(5-125); Banking System(125-436); Credit Agency(436-536)
+  Elements: Request Sc=Y42, Receive Re=Y359, Send Score=Y205, Level 1 Sc=Y359, Immediate =Y359, Response T=Y205, Display Re=Y205, Send Delay=Y359, Display De=Y205, Level 2 Sc=Y359, View Delay=Y42, Receive L2=Y205, View Score=Y42, Score Disp=Y42
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CreditScoring_68045
+Lanes:    3
+Elements: 14 (14 in diagram)
+Flows:    15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=2,flows=15,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <collaboration id="Collaboration_1">
+    <participant id="Participant_1" name="Recourse Clerk" processRef="Process_1"/>
+  </collaboration>
+  <process id="Process_1">
+    <task id="Task_1" name="check case">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <task id="Task_2" name="send request for payment">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <task id="Task_3" name="close case">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </task>
+    <task id="Task_4" name="send reminder">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </task>
+    <task id="Task_5" name="check reasoning">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <task id="Task_6" name="close case">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </task>
+    <task id="Task_7" name="hand over to collection agency">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </task>
+    <task id="Task_8" name="make booking">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </task>
+    <task id="Task_9" name="close case">
+      <incoming>SequenceFlow_19</incoming>
+      <outgoing>SequenceFlow_20</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1" name="recourse possible?">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+      <outgoing>SequenceFlow_4</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="OK?">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <eventBasedGateway id="EventBasedGateway_1">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_17</outgoing>
+    </eventBasedGateway>
+    <startEvent id="StartEvent_1" name="probable recourse detected">
+      <messageEventDefinition/>
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="case closed">
+      <incoming>SequenceFlow_5</incoming>
+    </endEvent>
+    <endEvent id="EndEvent_2" name="case closed">
+      <incoming>SequenceFlow_12</incoming>
+    </endEvent>
+    <endEvent id="EndEvent_3" name="case open">
+      <incoming>SequenceFlow_16</incoming>
+    </endEvent>
+    <endEvent id="EndEvent_4" name="case closed">
+      <incoming>SequenceFlow_20</incoming>
+    </endEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_1" name="disagreement letter received">
+      <messageEventDefinition/>
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_2" name="Reminder is due">
+      <timerEventDefinition/>
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_3" name="Money received">
+      <messageEventDefinition/>
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </intermediateCatchEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_3" name="yes" sourceRef="ExclusiveGateway_1" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_4" name="no" sourceRef="ExclusiveGateway_1" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="Task_3" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_2" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="Task_4" targetRef="EventBasedGateway_1"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="EventBasedGateway_1" targetRef="IntermediateCatchEvent_1"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="IntermediateCatchEvent_1" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_5" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_11" name="yes" sourceRef="ExclusiveGateway_2" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="Task_6" targetRef="EndEvent_2"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="EventBasedGateway_1" targetRef="IntermediateCatchEvent_2"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="IntermediateCatchEvent_2" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_15" name="no" sourceRef="ExclusiveGateway_2" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="Task_7" targetRef="EndEvent_3"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="EventBasedGateway_1" targetRef="IntermediateCatchEvent_3"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="IntermediateCatchEvent_3" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="Task_8" targetRef="Task_9"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="Task_9" targetRef="EndEvent_4"/>
+  </process>
+</definitions>

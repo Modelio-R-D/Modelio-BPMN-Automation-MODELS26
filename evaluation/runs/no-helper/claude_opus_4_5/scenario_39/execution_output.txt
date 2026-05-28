@@ -1,0 +1,132 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIY SMARTPHONE REPAIR PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   8927
+Process Name:   DIYSmartphoneRepair_8927
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DIYSmartphoneRepair_8927
+[2] Lanes: User, Online Tool, Friends, Expert
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] User lane: 15 elements
+[4] Online Tool lane: 6 elements
+[5] Friends lane: 3 elements
+[6] Expert lane: 3 elements
+
+  Total elements: 27
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram created: DIYSmartphoneRepair_8927
+[8] DiagramHandle obtained
+[9] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[10] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/27 | Missing: Review Items, Have Item?, Mark as Owne, Can Borrow?, Contact Frie, Order Online, All Items Re, Perform Repa, Repair Succe, Submit Revie, Upload Video, Phone Repair, Send to Expe, Check Availa, Available?, Lend/Sell It
+  [Attempt 2] Found: 11/27 | Missing: Review Items, Have Item?, Mark as Owne, Can Borrow?, Contact Frie, Order Online, All Items Re, Perform Repa, Repair Succe, Submit Revie, Upload Video, Phone Repair, Send to Expe, Check Availa, Available?, Lend/Sell It
+  [Attempt 3] Found: 11/27 | Missing: Review Items, Have Item?, Mark as Owne, Can Borrow?, Contact Frie, Order Online, All Items Re, Perform Repa, Repair Succe, Submit Revie, Upload Video, Phone Repair, Send to Expe, Check Availa, Available?, Lend/Sell It
+  [Attempt 3] TIMEOUT - 11/27 elements
+
+[11] WARNING: 11/27 elements ready after 150ms
+         Missing: Review Items List, Have Item?, Mark as Owned, Can Borrow?, Contact Friend, Order Online, All Items Ready?, Perform Repair, Repair Success?, Submit Review, Upload Video, Phone Repaired, Send to Expert, Check Availability, Available?, Lend/Sell Item
+
+[12] Trying manual unmask for missing elements...
+
+  [Unmask] Review Items List -> Y=55 (User): OK
+  [Unmask] Have Item? -> Y=55 (User): OK
+  [Unmask] Mark as Owned -> Y=55 (User): OK
+  [Unmask] Can Borrow? -> Y=55 (User): OK
+  [Unmask] Contact Friend -> Y=55 (User): OK
+  [Unmask] Order Online -> Y=55 (User): OK
+  [Unmask] All Items Ready? -> Y=55 (User): OK
+  [Unmask] Perform Repair -> Y=55 (User): OK
+  [Unmask] Repair Success? -> Y=55 (User): OK
+  [Unmask] Submit Review -> Y=55 (User): OK
+  [Unmask] Upload Video -> Y=55 (User): OK
+  [Unmask] Phone Repaired -> Y=55 (User): OK
+  [Unmask] Send to Expert -> Y=55 (User): OK
+  [Unmask] Check Availability -> Y=256 (Friends): OK
+  [Unmask] Available? -> Y=256 (Friends): OK
+  [Unmask] Lend/Sell Item -> Y=256 (Friends): OK
+
+[13] Manual unmask: 16 elements unmasked
+[14] All elements now available
+
+  Lanes: User(5-132); Online Tool(132-233); Friends(233-333); Expert(333-563)
+  Elements: Screen Bro=Y16, Enter Mode=Y20, Analyze De=Y143, Generate M=Y143, Generate T=Y143, Show Order=Y143, Lists Read=Y143, Review Ite=Y55, Have Item?=Y55, Mark as Ow=Y55, Can Borrow=Y55, Check Avai=Y256, Contact Fr=Y55, Available?=Y256, Order Onli=Y55, All Items =Y55, Lend/Sell =Y256, Provide In=Y147, Perform Re=Y55, Repair Suc=Y55, Send to Ex=Y55, Submit Rev=Y55, Receive De=Y344, Upload Vid=Y55, Phone Repa=Y55, Profession=Y344, Expert Rep=Y344
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] User centerY = 45
+[16] Online Tool centerY = 159
+[17] Friends centerY = 260
+[18] Expert centerY = 425
+
+[19] User/Screen Broken -> (80,45)
+[20] User/Enter Model & Issue -> (220,45)
+[21] Online Tool/Analyze Device -> (360,159)
+[22] Online Tool/Generate Materials List -> (500,119) *** LANE CHANGED ***
+[23] Online Tool/Generate Tools List -> (500,159)
+[24] Online Tool/Show Order Options -> (500,199) *** LANE CHANGED ***
+[25] Online Tool/Lists Ready -> (640,159)
+[26] User/Review Items List -> (640,45) *** LANE CHANGED ***
+[27] User/Have Item? -> (780,45) *** LANE CHANGED ***
+[28] User/Mark as Owned -> (920,45)
+[29] User/Can Borrow? -> (1060,45)
+[30] Friends/Check Availability -> (1200,260) *** LANE CHANGED ***
+[31] User/Contact Friend -> (1200,45) *** LANE CHANGED ***
+[32] Friends/Available? -> (1340,260) *** LANE CHANGED ***
+[33] User/Order Online -> (1340,45) *** LANE CHANGED ***
+[34] User/All Items Ready? -> (1480,45) *** LANE CHANGED ***
+[35] Friends/Lend/Sell Item -> (1480,260) *** LANE CHANGED ***
+[36] Online Tool/Provide Instructions -> (1620,159)
+[37] User/Perform Repair -> (1760,45) *** LANE CHANGED ***
+[38] User/Repair Success? -> (1900,45) *** LANE CHANGED ***
+[39] User/Send to Expert -> (2040,95) *** LANE CHANGED ***
+[40] User/Submit Review -> (2040,45)
+[41] Expert/Receive Device -> (2180,425) *** LANE CHANGED ***
+[42] User/Upload Video -> (2180,45) *** LANE CHANGED ***
+[43] User/Phone Repaired -> (2320,45) *** LANE CHANGED ***
+[44] Expert/Professional Repair -> (2320,425) *** LANE CHANGED ***
+[45] Expert/Expert Repaired -> (2460,425)
+
+  Repositioned: 27/27
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[46] Created 32 sequence flows
+[47] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: User(-218-78); Online Tool(78-235); Friends(235-414); Expert(414-764)
+  Elements: Screen Bro=Y-178, Enter Mode=Y-178, Analyze De=Y105, Generate M=Y89, Generate T=Y129, Show Order=Y169, Lists Read=Y129, Review Ite=Y-154, Have Item?=Y-154, Mark as Ow=Y-154, Can Borrow=Y-154, Check Avai=Y246, Contact Fr=Y-124, Available?=Y246, Order Onli=Y-105, All Items =Y-105, Lend/Sell =Y246, Provide In=Y145, Perform Re=Y-75, Repair Suc=Y-75, Send to Ex=Y-25, Submit Rev=Y-75, Receive De=Y425, Upload Vid=Y8, Phone Repa=Y8, Profession=Y425, Expert Rep=Y425
+
+[48] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  DIYSmartphoneRepair_8927
+Lanes:    4
+Elements: 27 (27 in diagram)
+Flows:    32
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=27,gateways=6,flows=32,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,141 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LuxuryAirplaneProcess_15079
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LuxuryAirplaneProcess_15079
+[2] Lanes: Customer, Sales, Russian Team, Irish Team, Scottish Team, Japanese Team, German Team, Assembly, Test Pilot
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 9 elements
+[4] Sales: 6 elements
+[5] Russian Team: 1 elements
+[6] Irish Team: 1 elements
+[7] Scottish Team: 1 elements
+[8] Japanese Team: 3 elements
+[9] German Team: 2 elements
+[10] Assembly: 4 elements
+[11] Test Pilot: 2 elements
+
+  Total: 29 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[12] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[13] Diagram: LuxuryAirplaneProcess_15079
+[14] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Make Sake Bar=0, Make Toilet System=90, Make Entertainment=180
+  [Auto-stack] col 8: Make Beer Bar=0, Make Seats=90
+[Customer] Lane bounds: 5-125
+  [maxElementBottomRelY=80]
+  Order Request -> col=0 (80,25) relY=20
+  Select Bar Type -> col=1 (210,25) relY=20
+  Configure Seats -> col=2 (340,25) relY=20
+  Choose Extras -> col=3 (470,25) relY=20
+  Submit Configuration -> col=4 (600,25) relY=20
+  Receive Test Protocol -> col=11 (1510,25) relY=20
+  Receive Airplane -> col=12 (1640,25) relY=20
+  Confirm Delivery -> col=13 (1770,25) relY=20
+  Order Complete -> col=14 (1900,25) relY=20
+
+[Sales] Lane bounds: 125-225
+  [Unmask] Receive Specs -> Y=175: OK
+  [Unmask] Which Bar? -> Y=175: OK
+  [Unmask] Dispatch to Teams -> Y=175: OK
+  [Unmask] Collect All Parts -> Y=175: OK
+  [Unmask] Forward to Assembly -> Y=175: OK
+  [Unmask] Send Protocol -> Y=175: OK
+  [Unmask] Specifications -> Y=175: OK
+  [maxElementBottomRelY=80]
+  Receive Specs -> col=5 (730,145) relY=20
+  Which Bar? -> col=6 (860,145) relY=20
+  Dispatch to Teams -> col=7 (990,145) relY=20
+  Collect All Parts -> col=8 (1120,145) relY=20
+  Forward to Assembly -> col=9 (1250,145) relY=20
+  Send Protocol -> col=11 (1510,145) relY=20
+  Specifications (DO from Receive Specs) -> (430,215) maxBottomRelY=80
+
+[Russian Team] Lane bounds: 307-407
+  [Unmask] Make Vodka Bar -> Y=357: OK
+  [maxElementBottomRelY=80]
+  Make Vodka Bar -> col=8 (1120,327) relY=20
+
+[Irish Team] Lane bounds: 432-655
+  [maxElementBottomRelY=80]
+  Make Whiskey Bar -> col=8 (1120,452) relY=20
+
+[Scottish Team] Lane bounds: 655-755
+  [Unmask] Make Scotch Bar -> Y=705: OK
+  [maxElementBottomRelY=80]
+  Make Scotch Bar -> col=8 (1120,675) relY=20
+
+[Japanese Team] Lane bounds: 781-1348
+  [maxElementBottomRelY=260]
+  Make Sake Bar -> col=8 (1120,801) relY=20
+  Make Toilet System -> col=8 (1120,891) relY=110
+  Make Entertainment -> col=8 (1120,981) relY=200
+
+[German Team] Lane bounds: 1348-1448
+  [Unmask] Make Beer Bar -> Y=1398: OK
+  [Unmask] Make Seats -> Y=1398: OK
+  [maxElementBottomRelY=170]
+  Make Beer Bar -> col=8 (1120,1368) relY=20
+  Make Seats -> col=8 (1120,1458) relY=110
+
+[Assembly] Lane bounds: 1529-2728
+  [maxElementBottomRelY=80]
+  Assemble Interior -> col=9 (1250,1549) relY=20
+  Quality Check -> col=10 (1380,1549) relY=20
+  Prepare for Test -> col=11 (1510,1549) relY=20
+  Deliver to Customer -> col=12 (1640,1549) relY=20
+
+[Test Pilot] Lane bounds: 2728-2828
+  [Unmask] Conduct Test Flight -> Y=2778: OK
+  [Unmask] Create Test Protocol -> Y=2778: OK
+  [Unmask] Test Protocol -> Y=2778: OK
+  [maxElementBottomRelY=80]
+  Conduct Test Flight -> col=9 (1250,2748) relY=20
+  Create Test Protocol -> col=10 (1380,2748) relY=20
+  Test Protocol (DO from Create Test Protocol) -> (1470,2818) maxBottomRelY=80
+
+
+[15] Repositioned: 31/31
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[16] Created 36 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[17] Data associations: 3
+
+==================================================================
+COMPLETE: LuxuryAirplaneProcess_15079
+==================================================================
+Lanes: 9 | Elements: 29 | Data: 2 | Flows: 36 | DataAssoc: 3
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

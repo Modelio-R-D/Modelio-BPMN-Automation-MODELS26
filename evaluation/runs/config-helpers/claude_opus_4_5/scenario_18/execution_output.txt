@@ -1,0 +1,170 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: UniversityEnrollment_238
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_238
+[2] Lanes: Applicant/Student, Admissions Office, Finance Department, IT Department, International Office, Academic Services
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant/Student: 27 elements
+[4] Admissions Office: 13 elements
+[5] Finance Department: 1 elements
+[6] IT Department: 1 elements
+[7] International Office: 1 elements
+[8] Academic Services: 5 elements
+
+  Total: 48 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[9] Data Objects: 7
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[10] Diagram: UniversityEnrollment_238
+[11] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 26: Add Drop Courses=0, Continue Semester=90
+  [Auto-stack] col 30: Submit Appeal=0, No Appeal=90
+  [Auto-stack] col 9: Send Rejection=0, Send Acceptance=90
+[Applicant/Student] Lane bounds: 5-162
+  [Unmask] Submit Application -> Y=83: OK
+  [Unmask] Provide Missing Docs -> Y=83: OK
+  [Unmask] Wait Confirmation -> Y=83: OK
+  [Unmask] Confirmed? -> Y=83: OK
+  [Unmask] Confirm Enrollment -> Y=83: OK
+  [Unmask] Start Onboarding -> Y=83: OK
+  [Unmask] International? -> Y=83: OK
+  [Unmask] Skip Visa -> Y=83: OK
+  [Unmask] Sync Onboarding -> Y=83: OK
+  [Unmask] Get Student ID -> Y=83: OK
+  [Unmask] Create Study Plan -> Y=83: OK
+  [Unmask] Select Courses -> Y=83: OK
+  [Unmask] Plan Complete -> Y=83: OK
+  [Unmask] Attend Classes -> Y=83: OK
+  [Unmask] Add Drop Period -> Y=83: OK
+  [Unmask] Modify Courses? -> Y=83: OK
+  [Unmask] Add Drop Courses -> Y=83: OK
+  [Unmask] Continue Semester -> Y=83: OK
+  [Unmask] Review Grades -> Y=83: OK
+  [Unmask] Has Grievance? -> Y=83: OK
+  [Unmask] Submit Appeal -> Y=83: OK
+  [Unmask] Await Decision -> Y=83: OK
+  [Unmask] No Appeal -> Y=83: OK
+  [Unmask] Sync After Appeals -> Y=83: OK
+  [Unmask] Graduate or Continue? -> Y=83: OK
+  [Unmask] End Graduated -> Y=83: OK
+  [Unmask] Application Form -> Y=83: OK
+  [Unmask] Supporting Docs -> Y=83: OK
+  [Unmask] Study Plan Doc -> Y=83: OK
+  [Unmask] Appeal Form -> Y=83: OK
+  [maxElementBottomRelY=200]
+  Start -> col=0 (80,25) relY=20
+  Submit Application -> col=1 (210,25) relY=20
+  Provide Missing Docs -> col=4 (600,25) relY=20
+  Wait Confirmation -> col=10 (1380,25) relY=20
+  Confirmed? -> col=11 (1510,25) relY=20
+  Confirm Enrollment -> col=12 (1640,25) relY=20
+  Start Onboarding -> col=13 (1770,25) relY=20
+  International? -> col=14 (1900,25) relY=20
+  Skip Visa -> col=15 (2030,25) relY=20
+  Sync Onboarding -> col=16 (2160,25) relY=20
+  Get Student ID -> col=17 (2290,25) relY=20
+  Create Study Plan -> col=18 (2420,25) relY=20
+  Select Courses -> col=20 (2680,25) relY=20
+  Plan Complete -> col=22 (2940,145) relY=140
+  Attend Classes -> col=23 (3070,25) relY=20
+  Add Drop Period -> col=24 (3200,25) relY=20
+  Modify Courses? -> col=25 (3330,25) relY=20
+  Add Drop Courses -> col=26 (3460,25) relY=20
+  Continue Semester -> col=26 (3460,115) relY=110
+  Review Grades -> col=28 (3720,25) relY=20
+  Has Grievance? -> col=29 (3850,25) relY=20
+  Submit Appeal -> col=30 (3980,25) relY=20
+  Await Decision -> col=32 (4240,25) relY=20
+  No Appeal -> col=30 (3980,115) relY=110
+  Sync After Appeals -> col=33 (4370,25) relY=20
+  Graduate or Continue? -> col=34 (4500,25) relY=20
+  End Graduated -> col=35 (4630,25) relY=20
+  Application Form (DO from Submit Application) -> (300,215) maxBottomRelY=200
+  Supporting Docs (DO from Review Application) -> (430,215) maxBottomRelY=200
+  Study Plan Doc (DO from Create Study Plan) -> (2510,215) maxBottomRelY=200
+  Appeal Form (DO from Submit Appeal) -> (4070,215) maxBottomRelY=200
+
+[Admissions Office] Lane bounds: 307-477
+  [maxElementBottomRelY=170]
+  Review Application -> col=2 (340,327) relY=20
+  Documents Complete? -> col=3 (470,327) relY=20
+  Notify Missing Docs -> col=4 (600,327) relY=20
+  All Docs Received -> col=5 (730,327) relY=20
+  Evaluate Application -> col=6 (860,327) relY=20
+  Sync After Eval -> col=7 (990,327) relY=20
+  Accepted? -> col=8 (1120,327) relY=20
+  Send Rejection -> col=9 (1250,327) relY=20
+  End Rejected -> col=10 (1380,327) relY=20
+  Send Acceptance -> col=9 (1250,417) relY=110
+  Cancel Application -> col=12 (1640,327) relY=20
+  End Cancelled -> col=13 (1770,327) relY=20
+  Send Orientation -> col=14 (1900,327) relY=20
+  Acceptance Letter (DO from Send Acceptance) -> (1340,487) maxBottomRelY=170
+
+[Finance Department] Lane bounds: 579-758
+  [maxElementBottomRelY=80]
+  Process Fees -> col=6 (860,599) relY=20
+
+[IT Department] Lane bounds: 758-1083
+  [maxElementBottomRelY=80]
+  Setup Accounts -> col=14 (1900,778) relY=20
+  Student Account (DO from Setup Accounts) -> (1990,848) maxBottomRelY=80
+
+[International Office] Lane bounds: 1083-1183
+  [Unmask] Process Visa -> Y=1133: OK
+  [maxElementBottomRelY=80]
+  Process Visa -> col=15 (2030,1103) relY=20
+
+[Academic Services] Lane bounds: 1251-1766
+  [maxElementBottomRelY=80]
+  Meet Advisor -> col=19 (2550,1271) relY=20
+  Conflicts? -> col=21 (2810,1271) relY=20
+  Resolve Conflicts -> col=22 (2940,1271) relY=20
+  Post Grades -> col=27 (3590,1271) relY=20
+  Meet Appeals Committee -> col=31 (4110,1271) relY=20
+  Grade Report (DO from Post Grades) -> (3680,1341) maxBottomRelY=80
+
+
+[12] Repositioned: 55/55
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[13] Created 56 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[14] Data associations: 11
+
+==================================================================
+COMPLETE: UniversityEnrollment_238
+==================================================================
+Lanes: 6 | Elements: 48 | Data: 7 | Flows: 56 | DataAssoc: 11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 13
+======================================================================

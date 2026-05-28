@@ -1,0 +1,148 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ONLINE PURCHASE PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   20468
+Process Name:   OnlinePurchase_20468
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlinePurchase_20468
+[2] Lanes: Customer, Shop System, Logistics
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Customer: Start
+  [Element] Customer: Log in
+  [Element] Customer: Parallel Split
+  [Element] Customer: Select items
+  [Element] Customer: Reward option?
+  [Element] Customer: Select Reward A
+  [Element] Customer: Select Reward B
+  [Element] Customer: Select Reward C
+  [Element] Customer: Reward chosen
+  [Element] Customer: Set payment method
+  [Element] Customer: Payment type?
+  [Element] Customer: Pay now
+  [Element] Customer: Installment agreement
+  [Element] Customer: Payment done
+  [Element] Customer: Parallel Join
+  [Element] Logistics: Deliver items
+  [Element] Customer: Return for exchange?
+  [Element] Customer: Return items
+  [Element] Shop System: Process exchange
+  [Element] Logistics: Deliver replacement
+  [Element] Customer: End
+
+[3] Total elements: 21
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: OnlinePurchase_20468
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 5 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 4/24 | Missing: Start, Log in, Parallel Spl, Select items, Reward optio, Select Rewar, Select Rewar, Select Rewar, Reward chose, Set payment , Payment type, Pay now, Installment , Payment done, Parallel Joi, Deliver item, Return for e, Return items, Deliver repl, End
+  [Attempt 2] Found: 4/24 | Missing: Start, Log in, Parallel Spl, Select items, Reward optio, Select Rewar, Select Rewar, Select Rewar, Reward chose, Set payment , Payment type, Pay now, Installment , Payment done, Parallel Joi, Deliver item, Return for e, Return items, Deliver repl, End
+  [Attempt 3] Found: 4/24 | Missing: Start, Log in, Parallel Spl, Select items, Reward optio, Select Rewar, Select Rewar, Select Rewar, Reward chose, Set payment , Payment type, Pay now, Installment , Payment done, Parallel Joi, Deliver item, Return for e, Return items, Deliver repl, End
+  [Attempt 4] Found: 4/24 | Missing: Start, Log in, Parallel Spl, Select items, Reward optio, Select Rewar, Select Rewar, Select Rewar, Reward chose, Set payment , Payment type, Pay now, Installment , Payment done, Parallel Joi, Deliver item, Return for e, Return items, Deliver repl, End
+  [Attempt 5] Found: 4/24 | Missing: Start, Log in, Parallel Spl, Select items, Reward optio, Select Rewar, Select Rewar, Select Rewar, Reward chose, Set payment , Payment type, Pay now, Installment , Payment done, Parallel Joi, Deliver item, Return for e, Return items, Deliver repl, End
+  [Attempt 5] TIMEOUT - 4/24 elements
+
+[8] WARNING: 1/21 elements ready after 250ms
+         Missing: Start, Log in, Parallel Split, Select items, Reward option?, Select Reward A, Select Reward B, Select Reward C, Reward chosen, Set payment method, Payment type?, Pay now, Installment agreement, Payment done, Parallel Join, Deliver items, Return for exchange?, Return items, Deliver replacement, End
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=55 (Customer): OK
+  [Unmask] Log in -> Y=55 (Customer): OK
+  [Unmask] Parallel Split -> Y=55 (Customer): OK
+  [Unmask] Select items -> Y=55 (Customer): OK
+  [Unmask] Reward option? -> Y=55 (Customer): OK
+  [Unmask] Select Reward A -> Y=55 (Customer): OK
+  [Unmask] Select Reward B -> Y=55 (Customer): OK
+  [Unmask] Select Reward C -> Y=55 (Customer): OK
+  [Unmask] Reward chosen -> Y=55 (Customer): OK
+  [Unmask] Set payment method -> Y=55 (Customer): OK
+  [Unmask] Payment type? -> Y=55 (Customer): OK
+  [Unmask] Pay now -> Y=55 (Customer): OK
+  [Unmask] Installment agreement -> Y=55 (Customer): OK
+  [Unmask] Payment done -> Y=55 (Customer): OK
+  [Unmask] Parallel Join -> Y=55 (Customer): OK
+  [Unmask] Deliver items -> Y=274 (Logistics): OK
+  [Unmask] Return for exchange? -> Y=55 (Customer): OK
+  [Unmask] Return items -> Y=55 (Customer): OK
+  [Unmask] Deliver replacement -> Y=274 (Logistics): OK
+  [Unmask] End -> Y=55 (Customer): OK
+
+[10] Manual unmask: 20 elements unmasked
+[11] All elements now available
+
+  Lanes: Customer(5-132); Shop System(132-251); Logistics(251-351)
+  Elements: Start=Y55, Log in=Y55, Parallel Spl=Y55, Select items=Y55, Set payment =Y55, Payment type=Y55, Reward optio=Y55, Installment =Y55, Pay now=Y55, Select Rewar=Y55, Select Rewar=Y55, Select Rewar=Y55, Payment done=Y55, Reward chose=Y55, Parallel Joi=Y55, Deliver item=Y274, Return for e=Y55, Return items=Y55, Process exch=Y143, Deliver repl=Y274, End=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 45
+[13] Shop System centerY = 168
+[14] Logistics centerY = 278
+
+[15] Customer/Start -> (80,45) 33x33
+[16] Customer/Log in -> (250,45) 150x60
+[17] Customer/Parallel Split -> (420,45) 40x40
+[18] Customer/Select items -> (590,45) 150x60
+[19] Customer/Set payment method -> (590,45) 150x60
+[20] Customer/Payment type? -> (760,45) 40x40
+[21] Customer/Reward option? -> (760,45) 40x40
+[22] Customer/Installment agreement -> (930,45) 150x60
+[23] Customer/Pay now -> (930,45) 150x60
+[24] Customer/Select Reward A -> (930,45) 150x60
+[25] Customer/Select Reward B -> (930,45) 150x60
+[26] Customer/Select Reward C -> (930,45) 150x60
+[27] Customer/Payment done -> (1100,45) 40x40
+[28] Customer/Reward chosen -> (1100,45) 40x40
+[29] Customer/Parallel Join -> (1270,45) 40x40
+[30] Logistics/Deliver items -> (1440,278) 150x60
+[31] Customer/Return for exchange? -> (1610,45) 40x40
+[32] Customer/Return items -> (1780,45) 150x60
+[33] Shop System/Process exchange -> (1950,168) 150x60
+[34] Logistics/Deliver replacement -> (2120,278) 150x60
+[35] Customer/End -> (2290,45) 33x33
+
+  Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[36] Created 25 sequence flows
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Shop System(132-251); Logistics(251-351)
+  Elements: Start=Y45, Log in=Y45, Parallel Spl=Y45, Select items=Y45, Set payment =Y45, Payment type=Y45, Reward optio=Y45, Installment =Y45, Pay now=Y45, Select Rewar=Y45, Select Rewar=Y45, Select Rewar=Y45, Payment done=Y45, Reward chose=Y45, Parallel Joi=Y45, Deliver item=Y278, Return for e=Y45, Return items=Y45, Process exch=Y168, Deliver repl=Y278, End=Y45
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OnlinePurchase_20468
+Lanes:    3
+Elements: 21 (21 in diagram)
+Flows:    25
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=21,gateways=7,flows=25,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,93 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: OnlineShopOrdering_50438
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopOrdering_50438
+[2] Lanes: Customer, E-Shop System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 15 elements
+[4] E-Shop System: 5 elements
+
+  Total: 20 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: OnlineShopOrdering_50438
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 10: Enter Payment Data=0, Enter Shipping Address=90
+  [Auto-stack] col 11: Bank Confirmation=0, Different Billing?=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Login -> Y=55: OK
+  [Unmask] End Login Failed -> Y=55: OK
+  [Unmask] Select Product -> Y=55: OK
+  [Unmask] Add to Cart -> Y=55: OK
+  [Unmask] All Selected? -> Y=55: OK
+  [Unmask] Split -> Y=55: OK
+  [Unmask] Enter Payment Data -> Y=55: OK
+  [Unmask] Bank Confirmation -> Y=55: OK
+  [Unmask] Enter Shipping Address -> Y=55: OK
+  [Unmask] Different Billing? -> Y=55: OK
+  [Unmask] Enter Billing Address -> Y=55: OK
+  [Unmask] Shipping Merge -> Y=55: OK
+  [Unmask] Join -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Login -> col=1 (230,25) relY=20
+  End Login Failed -> col=4 (680,25) relY=20
+  Select Product -> col=5 (830,25) relY=20
+  Add to Cart -> col=6 (980,25) relY=20
+  All Selected? -> col=8 (1280,25) relY=20
+  Split -> col=9 (1430,25) relY=20
+  Enter Payment Data -> col=10 (1580,25) relY=20
+  Bank Confirmation -> col=11 (1730,25) relY=20
+  Enter Shipping Address -> col=10 (1580,115) relY=110
+  Different Billing? -> col=11 (1730,115) relY=110
+  Enter Billing Address -> col=12 (1880,25) relY=20
+  Shipping Merge -> col=13 (2030,25) relY=20
+  Join -> col=14 (2180,25) relY=20
+  End -> col=16 (2480,25) relY=20
+
+[E-Shop System] Lane bounds: 192-329
+  [maxElementBottomRelY=80]
+  Check Credentials -> col=2 (380,212) relY=20
+  Login Successful? -> col=3 (530,212) relY=20
+  Save Product -> col=7 (1130,212) relY=20
+  Prepare Order -> col=10 (1580,212) relY=20
+  Finish Order -> col=15 (2330,212) relY=20
+
+
+[7] Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 23 sequence flows
+
+==================================================================
+COMPLETE: OnlineShopOrdering_50438
+==================================================================
+Lanes: 2 | Elements: 20 | Flows: 23
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=20,gateways=6,flows=23,data=0,data_assoc=0
+======================================================================

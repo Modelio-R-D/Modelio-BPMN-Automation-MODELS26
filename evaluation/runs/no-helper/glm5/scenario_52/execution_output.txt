@@ -1,0 +1,98 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DISMISSAL PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   68884
+Process Name:   DismissalProcess_68884
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DismissalProcess_68884
+[2] Lanes: MPON, MPOO
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] MPON lane: 3 elements
+[4] MPOO lane: 4 elements
+
+  Total elements: 7
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: DismissalProcess_68884
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts)...
+
+  [Attempt 1] Found: 0/7 | Missing: Start, Send Dismiss, Dismissal Op, Review Dismi, Decision, Confirm Dism, Dismissal Co
+  [Attempt 2] Found: 0/7 | Missing: Start, Send Dismiss, Dismissal Op, Review Dismi, Decision, Confirm Dism, Dismissal Co
+  [Attempt 3] Found: 0/7 | Missing: Start, Send Dismiss, Dismissal Op, Review Dismi, Decision, Confirm Dism, Dismissal Co
+  [Attempt 3] TIMEOUT - 0/7 elements
+
+[9] WARNING: Missing 7 elements
+         Missing: Start, Send Dismissal, Dismissal Opposed, Review Dismissal, Decision, Confirm Dismissal, Dismissal Confirmed
+
+[10] Trying manual unmask...
+
+  [Unmask] Start -> Y=55 (MPON): OK
+  [Unmask] Send Dismissal -> Y=55 (MPON): OK
+  [Unmask] Dismissal Opposed -> Y=55 (MPON): OK
+  [Unmask] Review Dismissal -> Y=155 (MPOO): OK
+  [Unmask] Decision -> Y=155 (MPOO): OK
+  [Unmask] Confirm Dismissal -> Y=155 (MPOO): OK
+  [Unmask] Dismissal Confirmed -> Y=155 (MPOO): OK
+
+[11] Manual unmask: 7 elements
+
+  Lanes: MPON(5-125); MPOO(125-232)
+  Elements: Start=Y55, Send Dismiss=Y55, Review Dismi=Y155, Decision=Y155, Dismissal Op=Y55, Confirm Dism=Y155, Dismissal Co=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] MPON centerY = 42
+[13] MPOO centerY = 155
+
+[14] MPON/Start -> (80,42)
+[15] MPON/Send Dismissal -> (230,42)
+[16] MPOO/Review Dismissal -> (380,155)
+[17] MPOO/Decision -> (530,155)
+[18] MPON/Dismissal Opposed -> (680,42)
+[19] MPOO/Confirm Dismissal -> (830,155)
+[20] MPOO/Dismissal Confirmed -> (980,155)
+
+  Repositioned: 7/7
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[21] Created 6 sequence flows
+[22] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: MPON(5-125); MPOO(125-232)
+  Elements: Start=Y42, Send Dismiss=Y42, Review Dismi=Y155, Decision=Y155, Dismissal Op=Y42, Confirm Dism=Y155, Dismissal Co=Y155
+
+[23] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  DismissalProcess_68884
+Lanes:    2
+Elements: 7 (7 in diagram)
+Flows:    6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=7,gateways=1,flows=6,data=0,data_assoc=0
+======================================================================

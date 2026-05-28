@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BecomingAParent_36779
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BecomingAParent_36779
+[2] Lanes: Parent, HR System, Social Security, Employer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent: 6 elements
+[4] HR System: 5 elements
+[5] Social Security: 1 elements
+[6] Employer: 2 elements
+
+  Total: 14 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: BecomingAParent_36779
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Submit Extension Request=0, End=90
+[Parent] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Select Leave Model -> Y=55: OK
+  [Unmask] Collect Documents -> Y=55: OK
+  [Unmask] Extend Leave? -> Y=55: OK
+  [Unmask] Submit Extension Request -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Selected Model -> Y=55: OK
+  [Unmask] Documents -> Y=55: OK
+  [maxElementBottomRelY=150]
+  Start -> col=0 (80,25) relY=20
+  Select Leave Model -> col=2 (380,25) relY=20
+  Collect Documents -> col=3 (530,25) relY=20
+  Extend Leave? -> col=10 (1580,25) relY=20
+  Submit Extension Request -> col=11 (1730,25) relY=20
+  End -> col=11 (1730,115) relY=110
+  Selected Model (DO from Select Leave Model) -> (470,165) maxBottomRelY=150
+  Documents (DO from Collect Documents) -> (620,165) maxBottomRelY=150
+
+[HR System] Lane bounds: 257-357
+  [Unmask] Fetch Leave Models -> Y=307: OK
+  [Unmask] Notify Social Security -> Y=307: OK
+  [Unmask] Notify Employer -> Y=307: OK
+  [Unmask] End of Leave Period -> Y=307: OK
+  [Unmask] Process Extension -> Y=307: OK
+  [Unmask] Leave Models -> Y=307: OK
+  [maxElementBottomRelY=80]
+  Fetch Leave Models -> col=1 (230,277) relY=20
+  Notify Social Security -> col=4 (680,277) relY=20
+  Notify Employer -> col=6 (980,277) relY=20
+  End of Leave Period -> col=9 (1430,277) relY=20
+  Process Extension -> col=12 (1880,277) relY=20
+  Leave Models (DO from Fetch Leave Models) -> (320,347) maxBottomRelY=80
+
+[Social Security] Lane bounds: 439-539
+  [Unmask] Process Registration -> Y=489: OK
+  [maxElementBottomRelY=80]
+  Process Registration -> col=5 (830,459) relY=20
+
+[Employer] Lane bounds: 572-672
+  [Unmask] Gather Company Info -> Y=622: OK
+  [Unmask] Prepare Handover -> Y=622: OK
+  [maxElementBottomRelY=80]
+  Gather Company Info -> col=7 (1130,592) relY=20
+  Prepare Handover -> col=8 (1280,592) relY=20
+
+
+[10] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 14 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 6
+
+==================================================================
+COMPLETE: BecomingAParent_36779
+==================================================================
+Lanes: 4 | Elements: 14 | Data: 3 | Flows: 14 | DataAssoc: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=17,gateways=1,flows=14,data=3,data_assoc=6
+======================================================================

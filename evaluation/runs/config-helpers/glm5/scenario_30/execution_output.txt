@@ -1,0 +1,80 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LAN_Party_39595
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LAN_Party_39595
+[2] Lanes: Organizer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Organizer: 13 elements
+
+  Total: 13 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: LAN_Party_39595
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: 8+ Confirmed?=0, Find New Date=90
+[Organizer] Lane bounds: 5-205
+  [Unmask] Start -> Y=105: OK
+  [Unmask] Send Invitations -> Y=105: OK
+  [Unmask] Get Game Preferences -> Y=105: OK
+  [Unmask] Appoint Date -> Y=105: OK
+  [Unmask] 8+ Confirmed? -> Y=105: OK
+  [Unmask] Find New Date -> Y=105: OK
+  [Unmask] Games Available? -> Y=105: OK
+  [Unmask] Download Games -> Y=105: OK
+  [Unmask] Get Beer Requirements -> Y=105: OK
+  [Unmask] Enough Beer? -> Y=105: OK
+  [Unmask] Buy Beer -> Y=105: OK
+  [Unmask] Enjoy LAN Party -> Y=105: OK
+  [Unmask] End -> Y=105: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send Invitations -> col=1 (230,25) relY=20
+  Get Game Preferences -> col=2 (380,25) relY=20
+  Appoint Date -> col=3 (530,25) relY=20
+  8+ Confirmed? -> col=4 (680,25) relY=20
+  Find New Date -> col=4 (680,115) relY=110
+  Games Available? -> col=5 (830,25) relY=20
+  Download Games -> col=6 (980,25) relY=20
+  Get Beer Requirements -> col=7 (1130,25) relY=20
+  Enough Beer? -> col=8 (1280,25) relY=20
+  Buy Beer -> col=9 (1430,25) relY=20
+  Enjoy LAN Party -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+
+
+[6] Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 15 sequence flows
+
+==================================================================
+COMPLETE: LAN_Party_39595
+==================================================================
+Lanes: 1 | Elements: 13 | Flows: 15
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=13,gateways=3,flows=15,data=0,data_assoc=0
+======================================================================

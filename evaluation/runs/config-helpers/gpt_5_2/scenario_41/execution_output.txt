@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Inspection of an Energy Drink Bottling Machine_46087
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Inspection of an Energy Drink Bottling Machine_46087
+[2] Lanes: Inspector, Inspection App, Bottling Machine
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inspector: 8 elements
+[4] Inspection App: 11 elements
+[5] Bottling Machine: 1 elements
+
+  Total: 20 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: Inspection of an Energy Drink Bottling Machine_46087
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Inspector] Lane bounds: 5-105
+  [Unmask] Input answers -> Y=55: OK
+  [Unmask] Press test button -> Y=55: OK
+  [Unmask] Answer additional questions -> Y=55: OK
+  [Unmask] Confirm inspection complete -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Input values -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Enter machine type -> col=1 (230,25) relY=20
+  Enter serial number -> col=2 (380,25) relY=20
+  Input answers -> col=5 (830,25) relY=20
+  Press test button -> col=7 (1130,25) relY=20
+  Answer additional questions -> col=14 (2180,25) relY=20
+  Confirm inspection complete -> col=18 (2780,25) relY=20
+  End -> col=19 (2930,25) relY=20
+  Input values (DO from Input answers) -> (920,95) maxBottomRelY=80
+
+[Inspection App] Lane bounds: 187-287
+  [Unmask] Load inspection checklist -> Y=237: OK
+  [Unmask] Display questions -> Y=237: OK
+  [Unmask] Validate inputs -> Y=237: OK
+  [Unmask] Request machine values -> Y=237: OK
+  [Unmask] Collect machine values -> Y=237: OK
+  [Unmask] Evaluate results -> Y=237: OK
+  [Unmask] Additional questions needed? -> Y=237: OK
+  [Unmask] Display additional questions -> Y=237: OK
+  [Unmask] Validate additional inputs -> Y=237: OK
+  [Unmask] Store inspection record -> Y=237: OK
+  [Unmask] Show inspection summary -> Y=237: OK
+  [Unmask] Checklist -> Y=237: OK
+  [Unmask] Machine readings -> Y=237: OK
+  [Unmask] Inspection record -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Load inspection checklist -> col=3 (530,207) relY=20
+  Display questions -> col=4 (680,207) relY=20
+  Validate inputs -> col=6 (980,207) relY=20
+  Request machine values -> col=8 (1280,207) relY=20
+  Collect machine values -> col=10 (1580,207) relY=20
+  Evaluate results -> col=11 (1730,207) relY=20
+  Additional questions needed? -> col=12 (1880,207) relY=20
+  Display additional questions -> col=13 (2030,207) relY=20
+  Validate additional inputs -> col=15 (2330,207) relY=20
+  Store inspection record -> col=16 (2480,207) relY=20
+  Show inspection summary -> col=17 (2630,207) relY=20
+  Checklist (DO from Load inspection checklist) -> (620,277) maxBottomRelY=80
+  Machine readings (DO from Collect machine values) -> (1670,277) maxBottomRelY=80
+  Inspection record (DO from Store inspection record) -> (2570,277) maxBottomRelY=80
+
+[Bottling Machine] Lane bounds: 369-517
+  [maxElementBottomRelY=80]
+  Provide sensor values -> col=9 (1430,389) relY=20
+
+
+[9] Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 20 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 7
+
+==================================================================
+COMPLETE: Inspection of an Energy Drink Bottling Machine_46087
+==================================================================
+Lanes: 3 | Elements: 20 | Data: 4 | Flows: 20 | DataAssoc: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=24,gateways=1,flows=20,data=4,data_assoc=7
+======================================================================

@@ -1,0 +1,122 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CUSTOMER INQUIRY TO ORDER - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   56702
+Process Name:   CustomerInquiryToOrder_56702
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CustomerInquiryToOrder_56702
+[2] Lanes: Customer, Sales, System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 5 elements
+[4] Sales lane: 6 elements
+[5] System lane: 3 elements
+
+  Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: CustomerInquiryToOrder_56702
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/14 | Missing: Customer Inq, Review Quote, Quote Approv, Quote Reject, Not Interest
+  [Attempt 2] Found: 9/14 | Missing: Customer Inq, Review Quote, Quote Approv, Quote Reject, Not Interest
+  [Attempt 3] Found: 9/14 | Missing: Customer Inq, Review Quote, Quote Approv, Quote Reject, Not Interest
+  [Attempt 3] TIMEOUT - 9/14 elements
+
+[10] WARNING: 9/14 elements ready after 150ms
+         Missing: Customer Inquiry, Review Quote, Quote Approved?, Quote Rejected, Not Interested
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Customer Inquiry -> Y=55 (Customer): OK
+  [Unmask] Review Quote -> Y=55 (Customer): OK
+  [Unmask] Quote Approved? -> Y=55 (Customer): OK
+  [Unmask] Quote Rejected -> Y=55 (Customer): OK
+  [Unmask] Not Interested -> Y=55 (Customer): OK
+
+[12] Manual unmask: 5 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-132); Sales(132-261); System(261-361)
+  Elements: Customer Inq=Y55, Collect Info=Y143, Address Ques=Y143, Interested?=Y143, Guide Select=Y143, Not Interest=Y55, Provide Quot=Y143, Review Quote=Y55, Quote Approv=Y55, Place Order=Y143, Quote Reject=Y55, Record Order=Y272, Send Confirm=Y272, Order Confir=Y272
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 45
+[15] Sales centerY = 173
+[16] System centerY = 288
+
+[17] Customer/Customer Inquiry -> (80,45) 33x33
+[18] Sales/Collect Information -> (230,173) 150x60
+[19] Sales/Address Questions -> (380,173) 150x60
+[20] Sales/Interested? -> (530,173) 40x40
+[21] Sales/Guide Selection -> (680,173) 150x60
+[22] Customer/Not Interested -> (680,45) 33x33
+[23] Sales/Provide Quote -> (830,173) 150x60
+[24] Customer/Review Quote -> (980,45) 150x60
+[25] Customer/Quote Approved? -> (1130,45) 40x40
+[26] Sales/Place Order -> (1280,173) 150x60
+[27] Customer/Quote Rejected -> (1280,45) 33x33
+[28] System/Record Order -> (1430,288) 150x60
+[29] System/Send Confirmation -> (1580,288) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-132); Sales(132-261); System(261-361)
+         After:  Lanes: Customer(5-132); Sales(132-261); System(261-366)
+[30] System/Order Confirmed -> (1730,288) 33x33
+
+  Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Flow: Customer Inquiry -> Collect Information
+[32] Flow: Collect Information -> Address Questions
+[33] Flow: Address Questions -> Interested?
+[34] Flow: Interested? -> Guide Selection [guard=Yes]
+[35] Flow: Interested? -> Not Interested [guard=No]
+[36] Flow: Guide Selection -> Provide Quote
+[37] Flow: Provide Quote -> Review Quote
+[38] Flow: Review Quote -> Quote Approved?
+[39] Flow: Quote Approved? -> Place Order [guard=Yes]
+[40] Flow: Quote Approved? -> Quote Rejected [guard=No]
+[41] Flow: Place Order -> Record Order
+[42] Flow: Record Order -> Send Confirmation
+[43] Flow: Send Confirmation -> Order Confirmed
+
+[44] Created 13 sequence flows
+[45] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Sales(132-261); System(261-366)
+  Elements: Customer Inq=Y45, Collect Info=Y173, Address Ques=Y173, Interested?=Y173, Guide Select=Y173, Not Interest=Y45, Provide Quot=Y173, Review Quote=Y45, Quote Approv=Y45, Place Order=Y173, Quote Reject=Y45, Record Order=Y288, Send Confirm=Y288, Order Confir=Y288
+
+[46] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CustomerInquiryToOrder_56702
+Lanes:    3
+Elements: 14 (14 in diagram)
+Flows:    13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=14,gateways=2,flows=13,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,86 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: GoodsShipping_54653
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: GoodsShipping_54653
+[2] Lanes: Secretary, Logistics Dept Head, Warehouseman, Logistics Companies
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Secretary: 12 elements
+[4] Logistics Dept Head: 1 elements
+[5] Warehouseman: 3 elements
+[6] Logistics Companies: 1 elements
+
+  Total: 17 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: GoodsShipping_54653
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Invite 3 logistic companies=0, Write package label=90
+  [Auto-stack] col 5: Receive offers=0, Insurance needed?=90
+[Secretary] Lane bounds: 5-142
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Clarify who ships -> col=1 (230,25) relY=20
+  Parallel work -> col=2 (380,25) relY=20
+  Large amount? -> col=3 (530,25) relY=20
+  Invite 3 logistic companies -> col=4 (680,25) relY=20
+  Receive offers -> col=5 (830,25) relY=20
+  Select logistic company -> col=6 (980,25) relY=20
+  Write package label -> col=4 (680,115) relY=110
+  Insurance needed? -> col=5 (830,115) relY=110
+  Insurance done -> col=7 (1130,25) relY=20
+  Shipping arranged -> col=8 (1280,25) relY=20
+  End -> col=12 (1880,25) relY=20
+
+[Logistics Dept Head] Lane bounds: 192-292
+  [Unmask] Take parcel insurance -> Y=242: OK
+  [maxElementBottomRelY=80]
+  Take parcel insurance -> col=6 (980,212) relY=20
+
+[Warehouseman] Lane bounds: 369-469
+  [maxElementBottomRelY=80]
+  Package goods -> col=3 (530,389) relY=20
+  All ready? -> col=9 (1430,389) relY=20
+  Prepare goods for pickup -> col=10 (1580,389) relY=20
+
+[Logistics Companies] Lane bounds: 469-569
+  [Unmask] Pickup by logistic company -> Y=519: OK
+  [maxElementBottomRelY=80]
+  Pickup by logistic company -> col=11 (1730,489) relY=20
+
+
+[9] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 19 sequence flows
+
+==================================================================
+COMPLETE: GoodsShipping_54653
+==================================================================
+Lanes: 4 | Elements: 17 | Flows: 19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=17,gateways=6,flows=19,data=0,data_assoc=0
+======================================================================

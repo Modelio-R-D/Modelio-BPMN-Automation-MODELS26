@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN RECRUITMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   95623
+Process Name:   RecruitmentProcess_95623
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RecruitmentProcess_95623
+[2] Lanes: Department, HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department lane: 6 elements
+[4] HR lane: 13 elements
+
+  Total elements: 19
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: RecruitmentProcess_95623
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 9/19 | Missing: Conduct Phon, Interview Pr, In-Person In, Virtual Inte, Extend Offer, Offer Accept, Negotiate Sa, Complete Pap, Conduct Orie, Provide Trai
+  [Attempt 2] Found: 9/19 | Missing: Conduct Phon, Interview Pr, In-Person In, Virtual Inte, Extend Offer, Offer Accept, Negotiate Sa, Complete Pap, Conduct Orie, Provide Trai
+  [Attempt 3] Found: 9/19 | Missing: Conduct Phon, Interview Pr, In-Person In, Virtual Inte, Extend Offer, Offer Accept, Negotiate Sa, Complete Pap, Conduct Orie, Provide Trai
+  [Attempt 3] TIMEOUT - 9/19 elements
+
+[9] WARNING: 9/19 elements ready after 150ms
+         Missing: Conduct Phone Interviews, Interview Preference?, In-Person Interview, Virtual Interview, Extend Offer, Offer Accepted?, Negotiate Salary, Complete Paperwork, Conduct Orientation, Provide Training
+
+[10] Trying manual unmask for missing elements...
+
+  [Unmask] Conduct Phone Interviews -> Y=162 (HR): OK
+  [Unmask] Interview Preference? -> Y=162 (HR): OK
+  [Unmask] In-Person Interview -> Y=162 (HR): OK
+  [Unmask] Virtual Interview -> Y=162 (HR): OK
+  [Unmask] Extend Offer -> Y=162 (HR): OK
+  [Unmask] Offer Accepted? -> Y=162 (HR): OK
+  [Unmask] Negotiate Salary -> Y=162 (HR): OK
+  [Unmask] Complete Paperwork -> Y=162 (HR): OK
+  [Unmask] Conduct Orientation -> Y=162 (HR): OK
+  [Unmask] Provide Training -> Y=162 (HR): OK
+
+[11] Manual unmask: 10 elements unmasked
+[12] All elements now available
+
+  Lanes: Department(5-112); HR(112-241)
+  Elements: Hiring Need =Y16, Define Job R=Y20, Create Job D=Y123, Post on Job =Y123, Screen Resum=Y123, Conduct Phon=Y162, Evaluate Can=Y25, Interview Pr=Y162, In-Person In=Y162, Virtual Inte=Y162, Select Candi=Y30, Candidate Se=Y35, Extend Offer=Y162, Offer Accept=Y162, Negotiate Sa=Y162, Complete Pap=Y162, Conduct Orie=Y162, New Hire Int=Y40, Provide Trai=Y162
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Department centerY = 35
+[14] HR centerY = 153
+
+[15] Department/Hiring Need Identified -> (80,35) 33x33
+[16] Department/Define Job Requirements -> (210,35) 110x55
+[17] HR/Create Job Description -> (340,153) 110x55
+[18] HR/Post on Job Boards -> (470,153) 110x55
+[19] HR/Screen Resumes -> (600,153) 110x55
+[20] HR/Conduct Phone Interviews -> (730,153) 110x55
+[21] Department/Evaluate Candidates -> (860,35) 110x55
+[22] HR/Interview Preference? -> (990,153) 40x40
+[23] HR/In-Person Interview -> (1120,153) 110x55
+[24] HR/Virtual Interview -> (1250,153) 110x55
+[25] Department/Select Candidate -> (1380,35) 110x55
+[26] Department/Candidate Selected? -> (1510,35) 40x40
+[27] HR/Extend Offer -> (1640,153) 110x55
+[28] HR/Offer Accepted? -> (1770,153) 40x40
+[29] HR/Negotiate Salary -> (1900,153) 110x55
+[30] HR/Complete Paperwork -> (2030,153) 110x55
+[31] HR/Conduct Orientation -> (2160,153) 110x55
+[32] Department/New Hire Integrated -> (2160,35) 33x33
+[33] HR/Provide Training -> (2290,153) 110x55
+
+  Repositioned: 19/19
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 21 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(5-112); HR(112-241)
+  Elements: Hiring Need =Y35, Define Job R=Y35, Create Job D=Y153, Post on Job =Y153, Screen Resum=Y153, Conduct Phon=Y153, Evaluate Can=Y35, Interview Pr=Y153, In-Person In=Y153, Virtual Inte=Y153, Select Candi=Y35, Candidate Se=Y35, Extend Offer=Y153, Offer Accept=Y153, Negotiate Sa=Y153, Complete Pap=Y153, Conduct Orie=Y153, New Hire Int=Y35, Provide Trai=Y153
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RecruitmentProcess_95623
+Lanes:    2
+Elements: 19 (19 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=19,gateways=3,flows=21,data=0,data_assoc=0
+======================================================================

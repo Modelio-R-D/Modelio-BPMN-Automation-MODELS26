@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ROBOTIC BURGER SELLER - UNIVERSITY OF VIENNA
+==================================================================
+Script Version: v1.0
+Execution ID:   61204
+Process Name:   RoboticBurgerSeller_61204
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: RoboticBurgerSeller_61204
+[2] Lane: Robot
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Robot lane: 13 elements
+
+  Total elements: 13
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: RoboticBurgerSeller_61204
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 13 elements ready
+
+[8] SUCCESS: All 13 elements ready in 50ms
+
+  Lanes: Robot(5-205)
+  Elements: Order Rece=Y16, Receive Or=Y20, Menu or Bu=Y25, Prepare Dr=Y30, Ask Fries =Y35, Fries or W=Y40, Prepare Fr=Y45, Prepare We=Y50, Merge Path=Y55, Prepare Bu=Y60, Give Statu=Y65, Deliver vi=Y70, Order Comp=Y75
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[9] Robot centerY = 82
+
+[10] Robot/Order Received -> (80,82) 33x33
+[11] Robot/Receive Order -> (220,82) 120x60
+[12] Robot/Menu or Burger Only? -> (360,82) 40x40
+[13] Robot/Prepare Drink -> (500,82) 120x60
+[14] Robot/Ask Fries or Wedges -> (640,82) 120x60
+[15] Robot/Fries or Wedges? -> (780,82) 40x40
+[16] Robot/Prepare Fries -> (920,82) 120x60
+[17] Robot/Prepare Wedges -> (1060,82) 120x60
+[18] Robot/Merge Paths -> (1200,82) 40x40
+[19] Robot/Prepare Burger -> (1340,82) 120x60
+[20] Robot/Give Status Updates -> (1480,82) 120x60
+[21] Robot/Deliver via Conveyor -> (1620,82) 120x60
+[22] Robot/Order Complete -> (1760,82) 33x33
+
+  Repositioned: 13/13
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[23] Created 14 sequence flows
+[24] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Robot(5-205)
+  Elements: Order Rece=Y82, Receive Or=Y82, Menu or Bu=Y82, Prepare Dr=Y82, Ask Fries =Y82, Fries or W=Y82, Prepare Fr=Y82, Prepare We=Y82, Merge Path=Y82, Prepare Bu=Y82, Give Statu=Y82, Deliver vi=Y82, Order Comp=Y82
+
+[25] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  RoboticBurgerSeller_61204
+Lane:     Robot
+Elements: 13 (13 in diagram)
+Flows:    14
+==================================================================
+
+PROCESS FLOW SUMMARY:
+  1. Order Received -> Robot receives order
+  2. Menu or Burger Only?
+     - Burger Only: Skip to burger preparation
+     - Menu: Prepare drink -> Ask fries/wedges
+  3. Fries or Wedges? -> Prepare selected side
+  4. Merge paths -> Prepare Burger
+  5. Give Status Updates (every 30 seconds)
+  6. Deliver via Conveyor -> Order Complete
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=13,gateways=3,flows=14,data=0,data_assoc=0
+======================================================================

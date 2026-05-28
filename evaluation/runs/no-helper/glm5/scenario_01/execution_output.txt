@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SALES INQUIRY TO ORDER PROCESS
+==================================================================
+Script Version: v9.1
+Execution ID:   94367
+Process Name:   SalesInquiry_94367
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SalesInquiry_94367
+[2] Lanes: Customer, Sales Staff, System
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 4 elements
+[4] Sales Staff lane: 5 elements
+[5] System lane: 3 elements
+
+  Total elements: 12
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SalesInquiry_94367
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/12 | Missing: Customer Inq, Interested?, Quote Approv, Not Interest, Collect Info, Address Conc, Guide Produc, Provide Quot, Negotiate Qu
+  [Attempt 2] Found: 3/12 | Missing: Customer Inq, Interested?, Quote Approv, Not Interest, Collect Info, Address Conc, Guide Produc, Provide Quot, Negotiate Qu
+  [Attempt 3] Found: 3/12 | Missing: Customer Inq, Interested?, Quote Approv, Not Interest, Collect Info, Address Conc, Guide Produc, Provide Quot, Negotiate Qu
+  [Attempt 3] TIMEOUT - 3/12 elements
+
+[10] WARNING: 3/12 elements ready after 150ms
+         Missing: Customer Inquiry, Interested?, Quote Approved?, Not Interested, Collect Information, Address Concerns, Guide Product Selection, Provide Quote, Negotiate Quote
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Customer Inquiry -> Y=55 (Customer): OK
+  [Unmask] Interested? -> Y=55 (Customer): OK
+  [Unmask] Quote Approved? -> Y=55 (Customer): OK
+  [Unmask] Not Interested -> Y=55 (Customer): OK
+  [Unmask] Collect Information -> Y=155 (Sales Staff): OK
+  [Unmask] Address Concerns -> Y=155 (Sales Staff): OK
+  [Unmask] Guide Product Selection -> Y=155 (Sales Staff): OK
+  [Unmask] Provide Quote -> Y=155 (Sales Staff): OK
+  [Unmask] Negotiate Quote -> Y=155 (Sales Staff): OK
+
+[12] Manual unmask: 9 elements unmasked
+[13] All elements now available
+
+  Lanes: Customer(5-132); Sales Staff(132-232); System(232-436)
+  Elements: Customer I=Y55, Collect In=Y155, Address Co=Y155, Interested=Y55, Guide Prod=Y155, Not Intere=Y55, Provide Qu=Y155, Quote Appr=Y55, Negotiate =Y155, Record Ord=Y243, Send Confi=Y243, Order Conf=Y243
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 45
+[15] Sales Staff centerY = 159
+[16] System centerY = 311
+
+[17] Customer/Customer Inquiry -> (80,45) 33x33
+[18] Sales Staff/Collect Information -> (220,159) 120x60
+[19] Sales Staff/Address Concerns -> (360,159) 120x60
+[20] Customer/Interested? -> (500,45) 40x40
+[21] Sales Staff/Guide Product Selection -> (640,159) 120x60
+[22] Customer/Not Interested -> (640,45) 33x33
+[23] Sales Staff/Provide Quote -> (780,159) 120x60
+[24] Customer/Quote Approved? -> (920,45) 40x40
+[25] Sales Staff/Negotiate Quote -> (1060,159) 120x60
+[26] System/Record Order -> (1200,311) 120x60
+[27] System/Send Confirmation -> (1340,311) 120x60
+[28] System/Order Confirmed -> (1480,311) 33x33
+
+  Repositioned: 12/12
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[29] Created 12 sequence flows
+[30] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Sales Staff(132-232); System(232-436)
+  Elements: Customer I=Y45, Collect In=Y159, Address Co=Y159, Interested=Y45, Guide Prod=Y159, Not Intere=Y45, Provide Qu=Y159, Quote Appr=Y45, Negotiate =Y159, Record Ord=Y311, Send Confi=Y311, Order Conf=Y311
+
+[31] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SalesInquiry_94367
+Lanes:    3
+Elements: 12 (12 in diagram)
+Flows:    12
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=12,gateways=2,flows=12,data=0,data_assoc=0
+======================================================================

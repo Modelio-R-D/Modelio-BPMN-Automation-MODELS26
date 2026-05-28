@@ -1,0 +1,154 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Script Version: v9.2
+Execution ID:   4530
+Title:          App For Participating at the Vienna Night Run
+Process Name:   ViennaNightRunApp_4530
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ViennaNightRunApp_4530
+[2] Lanes: Runner, App, Fitness Gadget, Event Support
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  + Element: Decide to Participate | Lane=Runner | addToLane=True
+  + Element: Select Starting Block (enter in app) | Lane=Runner | addToLane=True
+  + Element: Save Starting Block | Lane=App | addToLane=True
+  + Element: Run 5km Test | Lane=Runner | addToLane=True
+  + Element: Measure Test Time | Lane=Fitness Gadget | addToLane=True
+  + Element: Check Time < 25min | Lane=App | addToLane=True
+  + Element: Qualified? | Lane=App | addToLane=True
+  + Element: Train | Lane=Runner | addToLane=True
+  + Element: Get Starting Number | Lane=Runner | addToLane=True
+  + Element: Store Starting Number | Lane=App | addToLane=True
+  + Element: Enter Workday End and Start Time (app) | Lane=Runner | addToLane=True
+  + Element: Compute Time Buffer | Lane=App | addToLane=True
+  + Element: More than 1h? | Lane=App | addToLane=True
+  + Element: Go to Event from Home | Lane=Runner | addToLane=True
+  + Element: Go to Event from Work | Lane=Runner | addToLane=True
+  + Element: Travel Merge | Lane=App | addToLane=True
+  + Element: Arrive at Night Run | Lane=Runner | addToLane=True
+  + Element: Run+Drink Split | Lane=App | addToLane=True
+  + Element: Run Night Run 5km | Lane=Runner | addToLane=True
+  + Element: Drink Water | Lane=Event Support | addToLane=True
+  + Element: Run+Drink Join | Lane=App | addToLane=True
+  + Element: Measure Final Time | Lane=Fitness Gadget | addToLane=True
+  + Element: Display Final Time | Lane=App | addToLane=True
+  + Element: Final Time Received | Lane=Runner | addToLane=True
+
+[3] Total elements: 24
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: App For Participating at the Vienna Night Run (4530)
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 24 elements ready
+
+[8] SUCCESS: All 24 elements ready in 50ms
+
+  Lanes: Runner(5-135); App(135-235); Fitness Gadget(235-386); Event Support(386-632)
+  Elements: Decide to Pa=Y16, Select Start=Y20, Save Startin=Y146, Run 5km Test=Y25, Measure Test=Y246, Check Time <=Y146, Qualified?=Y146, Train=Y30, Get Starting=Y35, Store Starti=Y146, Enter Workda=Y40, Compute Time=Y146, More than 1h=Y146, Go to Event =Y45, Go to Event =Y50, Travel Merge=Y146, Arrive at Ni=Y55, Run+Drink Sp=Y146, Drink Water=Y397, Run Night Ru=Y60, Run+Drink Jo=Y146, Measure Fina=Y246, Display Fina=Y148, Final Time R=Y65
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[9] Runner centerY = 47
+[10] App centerY = 162
+[11] Fitness Gadget centerY = 287
+[12] Event Support centerY = 486
+
+[13] Runner/Decide to Participate -> (60,47) 33x33
+[14] Runner/Select Starting Block (enter in app) -> (220,47) 160x60
+[15] App/Save Starting Block -> (380,162) 160x60
+[16] Runner/Run 5km Test -> (540,47) 160x60
+[17] Fitness Gadget/Measure Test Time -> (700,287) 160x60
+[18] App/Check Time < 25min -> (860,162) 160x60
+[19] App/Qualified? -> (1020,162) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Runner(5-135); App(135-235); Fitness Gadget(235-386); Event Support(386-632)
+         After:  Lanes: Runner(5-135); App(135-239); Fitness Gadget(239-390); Event Support(390-636)
+[20] Runner/Train -> (1180,47) 160x60
+[21] Runner/Get Starting Number -> (1340,47) 160x60
+[22] App/Store Starting Number -> (1500,162) 160x60
+[23] Runner/Enter Workday End and Start Time (app) -> (1660,47) 160x60
+[24] App/Compute Time Buffer -> (1820,162) 160x60
+[25] App/More than 1h? -> (1980,162) 40x40
+[26] Runner/Go to Event from Home -> (2140,47) 160x60
+[27] Runner/Go to Event from Work -> (2300,47) 160x60
+[28] App/Travel Merge -> (2460,162) 40x40
+[29] Runner/Arrive at Night Run -> (2620,47) 160x60
+[30] App/Run+Drink Split -> (2780,162) 40x40
+[31] Event Support/Drink Water -> (2940,486) 160x60
+[32] Runner/Run Night Run 5km -> (2940,47) 160x60
+[33] App/Run+Drink Join -> (3100,162) 40x40
+[34] Fitness Gadget/Measure Final Time -> (3260,287) 160x60
+[35] App/Display Final Time -> (3420,162) 160x60
+[36] Runner/Final Time Received -> (3580,47) 33x33
+
+  Repositioned: 24/24
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  + Flow: Decide to Particip -> Select Starting Bl
+  + Flow: Select Starting Bl -> Save Starting Bloc
+  + Flow: Save Starting Bloc -> Run 5km Test
+  + Flow: Run 5km Test -> Measure Test Time
+  + Flow: Measure Test Time -> Check Time < 25min
+  + Flow: Check Time < 25min -> Qualified?
+  + Flow: Qualified? -> Get Starting Numbe | Guard=Yes
+  + Flow: Qualified? -> Train | Guard=No
+  + Flow: Train -> Run 5km Test
+  + Flow: Get Starting Numbe -> Store Starting Num
+  + Flow: Store Starting Num -> Enter Workday End 
+  + Flow: Enter Workday End  -> Compute Time Buffe
+  + Flow: Compute Time Buffe -> More than 1h?
+  + Flow: More than 1h? -> Go to Event from H | Guard=> 1 hour
+  + Flow: More than 1h? -> Go to Event from W | Guard=<= 1 hour
+  + Flow: Go to Event from H -> Travel Merge
+  + Flow: Go to Event from W -> Travel Merge
+  + Flow: Travel Merge -> Arrive at Night Ru
+  + Flow: Arrive at Night Ru -> Run+Drink Split
+  + Flow: Run+Drink Split -> Run Night Run 5km
+  + Flow: Run+Drink Split -> Drink Water
+  + Flow: Run Night Run 5km -> Run+Drink Join
+  + Flow: Drink Water -> Run+Drink Join
+  + Flow: Run+Drink Join -> Measure Final Time
+  + Flow: Measure Final Time -> Display Final Time
+  + Flow: Display Final Time -> Final Time Receive
+
+[37] Created 26 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Runner(5-135); App(135-239); Fitness Gadget(239-390); Event Support(390-636)
+  Elements: Decide to Pa=Y47, Select Start=Y47, Save Startin=Y162, Run 5km Test=Y47, Measure Test=Y291, Check Time <=Y162, Qualified?=Y162, Train=Y47, Get Starting=Y47, Store Starti=Y162, Enter Workda=Y47, Compute Time=Y162, More than 1h=Y162, Go to Event =Y47, Go to Event =Y47, Travel Merge=Y162, Arrive at Ni=Y47, Run+Drink Sp=Y162, Drink Water=Y486, Run Night Ru=Y47, Run+Drink Jo=Y162, Measure Fina=Y287, Display Fina=Y162, Final Time R=Y47
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ViennaNightRunApp_4530
+Diagram:  App For Participating at the Vienna Night Run (4530)
+Lanes:    4
+Elements: 24 (24 in diagram)
+Flows:    26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=24,gateways=5,flows=26,data=0,data_assoc=0
+======================================================================

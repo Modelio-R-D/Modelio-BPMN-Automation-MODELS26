@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: IncidentManagementProcess_90430
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: IncidentManagementProcess_90430
+[2] Lanes: Reporter, Support Team, Investigation Team, Management
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Reporter: 2 elements
+[4] Support Team: 5 elements
+[5] Investigation Team: 4 elements
+[6] Management: 4 elements
+
+  Total: 15 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: IncidentManagementProcess_90430
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Reporter] Lane bounds: 5-117
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Report Incident -> col=1 (230,25) relY=20
+  Incident Report (DO from Report Incident) -> (320,95) maxBottomRelY=80
+
+[Support Team] Lane bounds: 187-287
+  [maxElementBottomRelY=80]
+  Log in Tracking System -> col=2 (380,207) relY=20
+  Assign to Team -> col=3 (530,207) relY=20
+  Notify Stakeholders -> col=10 (1580,207) relY=20
+  Close Incident Report -> col=11 (1730,207) relY=20
+  End -> col=12 (1880,207) relY=20
+
+[Investigation Team] Lane bounds: 311-522
+  [maxElementBottomRelY=80]
+  Gather Information -> col=4 (680,331) relY=20
+  Identify Root Cause -> col=5 (830,331) relY=20
+  Propose Corrective Actions -> col=6 (980,331) relY=20
+  Implement Solution -> col=7 (1130,331) relY=20
+  Investigation Notes (DO from Identify Root Cause) -> (770,401) maxBottomRelY=80
+
+[Management] Lane bounds: 522-939
+  [maxElementBottomRelY=80]
+  Review Solution -> col=8 (1280,542) relY=20
+  Solution Effective? -> col=9 (1430,542) relY=20
+  Conduct Follow-up -> col=10 (1580,542) relY=20
+  Approve Closure -> col=11 (1730,542) relY=20
+  Closure Report (DO from Approve Closure) -> (1520,612) maxBottomRelY=80
+
+
+[10] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 15 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 6
+
+==================================================================
+COMPLETE: IncidentManagementProcess_90430
+==================================================================
+Lanes: 4 | Elements: 15 | Data: 3 | Flows: 15 | DataAssoc: 6
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

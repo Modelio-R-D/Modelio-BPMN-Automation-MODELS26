@@ -1,0 +1,138 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CREDIT SCORING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   35325
+Process Name:   CreditScoring_35325
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CreditScoring_35325
+[2] Lanes: Bank Clerk, Banking System, Credit Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Bank Clerk lane: 6 elements
+[4] Banking System lane: 8 elements
+[5] Credit Agency lane: 8 elements
+
+  Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: CreditScoring_35325
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 7/22 | Missing: Scoring Requ, Enter Custom, View Scoring, See Check La, View Final R, Result Recei, Present Fina, Receive Requ, Level 1 Quic, Immediate Re, Return Immed, Notify Delay, Split Parall, Level 2 Deta, Return Delay
+  [Attempt 2] Found: 7/22 | Missing: Scoring Requ, Enter Custom, View Scoring, See Check La, View Final R, Result Recei, Present Fina, Receive Requ, Level 1 Quic, Immediate Re, Return Immed, Notify Delay, Split Parall, Level 2 Deta, Return Delay
+  [Attempt 3] Found: 7/22 | Missing: Scoring Requ, Enter Custom, View Scoring, See Check La, View Final R, Result Recei, Present Fina, Receive Requ, Level 1 Quic, Immediate Re, Return Immed, Notify Delay, Split Parall, Level 2 Deta, Return Delay
+  [Attempt 3] TIMEOUT - 7/22 elements
+
+[10] WARNING: 7/22 elements ready after 150ms
+         Missing: Scoring Requested, Enter Customer Data, View Scoring Result, See Check Later Msg, View Final Result, Result Received, Present Final Result, Receive Request, Level 1 Quick Scoring, Immediate Result?, Return Immediate Result, Notify Delay, Split Parallel, Level 2 Detailed Scoring, Return Delayed Result
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Scoring Requested -> Y=55 (Bank Clerk): OK
+  [Unmask] Enter Customer Data -> Y=55 (Bank Clerk): OK
+  [Unmask] View Scoring Result -> Y=55 (Bank Clerk): OK
+  [Unmask] See Check Later Msg -> Y=55 (Bank Clerk): OK
+  [Unmask] View Final Result -> Y=55 (Bank Clerk): OK
+  [Unmask] Result Received -> Y=55 (Bank Clerk): OK
+  [Unmask] Present Final Result -> Y=155 (Banking System): OK
+  [Unmask] Receive Request -> Y=255 (Credit Agency): OK
+  [Unmask] Level 1 Quick Scoring -> Y=255 (Credit Agency): OK
+  [Unmask] Immediate Result? -> Y=255 (Credit Agency): OK
+  [Unmask] Return Immediate Result -> Y=255 (Credit Agency): OK
+  [Unmask] Notify Delay -> Y=255 (Credit Agency): OK
+  [Unmask] Split Parallel -> Y=255 (Credit Agency): OK
+  [Unmask] Level 2 Detailed Scoring -> Y=255 (Credit Agency): OK
+  [Unmask] Return Delayed Result -> Y=255 (Credit Agency): OK
+
+[12] Manual unmask: 15 elements unmasked
+[13] All elements now available
+
+  Lanes: Bank Clerk(5-125); Banking System(125-225); Credit Agency(225-351)
+  Elements: Scoring Re=Y55, Enter Cust=Y55, Process Re=Y136, Send Scori=Y136, Receive Re=Y255, Level 1 Qu=Y255, Immediate =Y255, Return Imm=Y255, Notify Del=Y255, Receive Im=Y136, Present Re=Y136, Split Para=Y255, View Scori=Y55, Level 2 De=Y255, Receive De=Y136, Notify Cle=Y136, See Check =Y55, Return Del=Y255, Receive De=Y136, Present Fi=Y155, View Final=Y55, Result Rec=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Bank Clerk centerY = 42
+[15] Banking System centerY = 152
+[16] Credit Agency centerY = 265
+
+[17] Bank Clerk/Scoring Requested -> (80,42) 33x33
+[18] Bank Clerk/Enter Customer Data -> (220,42) 120x60
+[19] Banking System/Process Request -> (360,152) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(5-125); Banking System(125-225); Credit Agency(225-351)
+         After:  Lanes: Bank Clerk(5-125); Banking System(125-270); Credit Agency(270-396)
+[20] Banking System/Send Scoring Request -> (500,152) 120x60
+[21] Credit Agency/Receive Request -> (640,265) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(5-125); Banking System(125-270); Credit Agency(270-396)
+         After:  Lanes: Bank Clerk(-11-109); Banking System(109-254); Credit Agency(254-396)
+[22] Credit Agency/Level 1 Quick Scoring -> (780,265) 120x60
+[23] Credit Agency/Immediate Result? -> (920,265) 40x40
+[24] Credit Agency/Return Immediate Result -> (1060,265) 120x60
+[25] Credit Agency/Notify Delay -> (1200,265) 120x60
+[26] Banking System/Receive Immediate Result -> (1200,152) 120x60
+[27] Banking System/Present Result to Clerk -> (1340,152) 120x60
+[28] Credit Agency/Split Parallel -> (1340,265) 40x40
+[29] Bank Clerk/View Scoring Result -> (1480,42) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(-11-109); Banking System(109-254); Credit Agency(254-396)
+         After:  Lanes: Bank Clerk(-11-113); Banking System(113-258); Credit Agency(258-400)
+[30] Credit Agency/Level 2 Detailed Scoring -> (1620,265) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(-11-113); Banking System(113-258); Credit Agency(258-400)
+         After:  Lanes: Bank Clerk(-15-109); Banking System(109-254); Credit Agency(254-400)
+[31] Banking System/Receive Delay Notice -> (1620,152) 120x60
+[32] Banking System/Notify Clerk to Wait -> (1760,152) 120x60
+[33] Bank Clerk/See Check Later Msg -> (1900,42) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(-15-109); Banking System(109-254); Credit Agency(254-400)
+         After:  Lanes: Bank Clerk(-15-113); Banking System(113-258); Credit Agency(258-404)
+[34] Credit Agency/Return Delayed Result -> (2040,265) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(-15-113); Banking System(113-258); Credit Agency(258-404)
+         After:  Lanes: Bank Clerk(-19-109); Banking System(109-254); Credit Agency(254-404)
+[35] Banking System/Receive Delayed Result -> (2180,152) 120x60
+[36] Banking System/Present Final Result -> (2320,152) 120x60
+[37] Bank Clerk/View Final Result -> (2460,42) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Bank Clerk(-19-109); Banking System(109-254); Credit Agency(254-404)
+         After:  Lanes: Bank Clerk(-19-113); Banking System(113-258); Credit Agency(258-408)
+[38] Bank Clerk/Result Received -> (2600,42) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[39] Created 22 sequence flows
+[40] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Bank Clerk(-19-113); Banking System(113-258); Credit Agency(258-408)
+  Elements: Scoring Re=Y18, Enter Cust=Y18, Process Re=Y140, Send Scori=Y140, Receive Re=Y269, Level 1 Qu=Y269, Immediate =Y269, Return Imm=Y269, Notify Del=Y269, Receive Im=Y156, Present Re=Y156, Split Para=Y269, View Scori=Y34, Level 2 De=Y269, Receive De=Y156, Notify Cle=Y156, See Check =Y38, Return Del=Y269, Receive De=Y156, Present Fi=Y156, View Final=Y42, Result Rec=Y42
+
+[41] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CreditScoring_35325
+Lanes:    3
+Elements: 22 (22 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=22,gateways=2,flows=22,data=0,data_assoc=0
+======================================================================

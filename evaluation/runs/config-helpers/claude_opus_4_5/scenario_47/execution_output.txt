@@ -1,0 +1,108 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: USI_Course_Registration_24451
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: USI_Course_Registration_24451
+[2] Lanes: Applicant, USI System, Twitter
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 14 elements
+[4] USI System: 5 elements
+[5] Twitter: 1 elements
+
+  Total: 20 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 1
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: USI_Course_Registration_24451
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 8: Register Account=0, Request Activation=90
+[Applicant] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Select Course -> Y=55: OK
+  [Unmask] Choose Course and Date -> Y=55: OK
+  [Unmask] Register Account -> Y=55: OK
+  [Unmask] Request Activation -> Y=55: OK
+  [Unmask] Wait for Response -> Y=55: OK
+  [Unmask] Account Ready -> Y=55: OK
+  [Unmask] Log Into Account -> Y=55: OK
+  [Unmask] Split -> Y=55: OK
+  [Unmask] Complete Registration -> Y=55: OK
+  [Unmask] Provide Payment Info -> Y=55: OK
+  [Unmask] Join -> Y=55: OK
+  [Unmask] Receive Course Ticket -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Course Ticket -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Select Course -> col=1 (230,25) relY=20
+  Choose Course and Date -> col=5 (830,25) relY=20
+  Register Account -> col=8 (1280,25) relY=20
+  Request Activation -> col=8 (1280,115) relY=110
+  Wait for Response -> col=9 (1430,25) relY=20
+  Account Ready -> col=10 (1580,25) relY=20
+  Log Into Account -> col=7 (1130,25) relY=20
+  Split -> col=11 (1730,25) relY=20
+  Complete Registration -> col=12 (1880,25) relY=20
+  Provide Payment Info -> col=13 (2030,25) relY=20
+  Join -> col=14 (2180,25) relY=20
+  Receive Course Ticket -> col=15 (2330,25) relY=20
+  End -> col=16 (2480,25) relY=20
+  Course Ticket (DO from Receive Course Ticket) -> (2420,185) maxBottomRelY=170
+
+[USI System] Lane bounds: 277-381
+  [Unmask] Has Account? -> Y=329: OK
+  [Unmask] Registered at University? -> Y=329: OK
+  [maxElementBottomRelY=80]
+  Check Availability -> col=2 (380,297) relY=20
+  Slots Available? -> col=3 (530,297) relY=20
+  Display Courses and Dates -> col=4 (680,297) relY=20
+  Has Account? -> col=6 (980,297) relY=20
+  Registered at University? -> col=7 (1130,297) relY=20
+
+[Twitter] Lane bounds: 406-523
+  [maxElementBottomRelY=80]
+  Tweet to Friends -> col=12 (1880,426) relY=20
+
+
+[9] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 1
+
+==================================================================
+COMPLETE: USI_Course_Registration_24451
+==================================================================
+Lanes: 3 | Elements: 20 | Data: 1 | Flows: 23 | DataAssoc: 1
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 6
+======================================================================

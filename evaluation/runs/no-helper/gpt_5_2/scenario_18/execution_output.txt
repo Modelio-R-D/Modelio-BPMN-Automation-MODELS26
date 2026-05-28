@@ -1,0 +1,170 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN UNIVERSITY ENROLLMENT PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   9167
+Process Name:   UniversityEnrollment_9167
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: UniversityEnrollment_9167
+[2] Lanes: Student, Admissions Office, Admissions Committee, Finance, IT, International Office, Registrar, Academic Advisor, Appeals Committee
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Student lane: 19 elements
+[4] Admissions Office lane: 7 elements
+[5] Admissions Committee lane: 2 elements
+[6] Finance lane: 1 elements
+[7] IT lane: 1 elements
+[8] International Office lane: 2 elements
+[9] Registrar lane: 2 elements
+[10] Academic Advisor lane: 1 elements
+[11] Appeals Committee lane: 1 elements
+
+  Total elements: 36
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[12] Diagram created: UniversityEnrollment_9167
+[13] DiagramHandle obtained
+[14] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[15] Waiting for elements (max 6 attempts, 100ms interval)...
+
+  [Attempt 1] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 2] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 3] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 4] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 5] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 6] Found: 26/36 | Missing: Evaluate App, Accepted?, Send Accepta, Rejection Le, Set Up Stude, Internationa, Assist with , Issue Studen, Meet Academi, Post Grades
+  [Attempt 6] TIMEOUT - 26/36 elements
+
+[16] WARNING: 26/36 elements ready after 600ms
+         Missing: Evaluate Application, Accepted?, Send Acceptance Letter, Rejection Letter Sent, Set Up Student Accounts, International Student?, Assist with Visa Processing, Issue Student ID Card, Meet Academic Advisor, Post Grades
+
+[17] Trying manual unmask for missing elements...
+
+  [Unmask] Evaluate Application -> Y=387 (Admissions Committee): OK
+  [Unmask] Accepted? -> Y=387 (Admissions Committee): OK
+  [Unmask] Send Acceptance Letter -> Y=256 (Admissions Office): OK
+  [Unmask] Rejection Letter Sent -> Y=256 (Admissions Office): OK
+  [Unmask] Set Up Student Accounts -> Y=717 (IT): OK
+  [Unmask] International Student? -> Y=817 (International Office): OK
+  [Unmask] Assist with Visa Processing -> Y=817 (International Office): OK
+  [Unmask] Issue Student ID Card -> Y=917 (Registrar): OK
+  [Unmask] Meet Academic Advisor -> Y=1017 (Academic Advisor): OK
+  [Unmask] Post Grades -> Y=917 (Registrar): OK
+
+[18] Manual unmask: 10 elements unmasked
+[19] All elements now available
+
+  Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-774); IT(774-894); International Office(894-994); Registrar(994-1094); Academic Advisor(1094-1194); Appeals Committee(1194-1994)
+  Elements: Application =Y16, Review Appli=Y186, Documents Co=Y190, Notify Missi=Y195, Provide Miss=Y20, Eval+Fee Spl=Y200, Evaluate App=Y387, Process Appl=Y555, Eval+Fee Joi=Y205, Accepted?=Y387, Rejection Le=Y256, Send Accepta=Y256, Confirm Enro=Y25, Confirmed By=Y30, Application =Y35, Onboarding S=Y40, Internationa=Y817, Receive Orie=Y45, Set Up Stude=Y717, Assist with =Y817, Onboarding J=Y50, Issue Studen=Y917, Meet Academi=Y1017, Select Cours=Y55, Resolve Sche=Y60, Attend Class=Y65, Add/Drop Cou=Y70, Post Grades=Y917, Review Grade=Y75, Grievance?=Y80, Submit Appea=Y85, Meet Appeals=Y1205, Await Appeal=Y90, Continue Stu=Y95, Graduated=Y100, Withdrawn=Y105
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[20] Student centerY = 67
+[21] Admissions Office centerY = 233
+[22] Admissions Committee centerY = 417
+[23] Finance centerY = 636
+[24] IT centerY = 811
+[25] International Office centerY = 921
+[26] Registrar centerY = 1021
+[27] Academic Advisor centerY = 1121
+[28] Appeals Committee centerY = 1571
+
+[29] Student/Application Submitted -> (80,67) 33x33
+[30] Admissions Office/Review Application -> (240,233) 150x60
+[31] Admissions Office/Documents Complete? -> (400,233) 40x40
+[32] Admissions Office/Notify Missing Documents -> (560,233) 150x60
+[33] Student/Provide Missing Documents -> (720,67) 150x60
+[34] Admissions Office/Eval+Fee Split -> (880,233) 40x40
+[35] Admissions Committee/Evaluate Application -> (1040,417) 150x60
+[36] Finance/Process Application Fee/Waiver -> (1040,636) 150x60
+[37] Admissions Office/Eval+Fee Join -> (1200,233) 40x40
+[38] Admissions Committee/Accepted? -> (1360,417) 40x40
+[39] Admissions Office/Rejection Letter Sent -> (1520,233) 33x33
+[40] Admissions Office/Send Acceptance Letter -> (1520,233) 150x60
+[41] Student/Confirm Enrollment -> (1680,67) 150x60
+[42] Student/Confirmed By Deadline? -> (1840,67) 40x40
+[43] Student/Application Canceled -> (2000,67) 33x33
+[44] Student/Onboarding Split -> (2000,67) 40x40
+[45] International Office/International Student? -> (2160,921) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-774); IT(774-894); International Office(894-994); Registrar(994-1094); Academic Advisor(1094-1194); Appeals Committee(1194-1994)
+         After:  Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-774); IT(774-998); International Office(998-1098); Registrar(1098-1198); Academic Advisor(1198-1298); Appeals Committee(1298-2098)
+[46] Student/Receive Orientation Materials -> (2160,67) 150x60
+[47] IT/Set Up Student Accounts -> (2160,811) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-774); IT(774-998); International Office(998-1098); Registrar(1098-1198); Academic Advisor(1198-1298); Appeals Committee(1298-2098)
+         After:  Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-882); IT(882-1106); International Office(1106-1206); Registrar(1206-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+[48] International Office/Assist with Visa Processing -> (2320,921) 150x60
+[49] Student/Onboarding Join -> (2480,67) 40x40
+[50] Registrar/Issue Student ID Card -> (2640,1021) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(5-175); Admissions Office(175-337); Admissions Committee(337-544); Finance(544-882); IT(882-1106); International Office(1106-1206); Registrar(1206-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+         After:  Lanes: Student(-91-79); Admissions Office(79-241); Admissions Committee(241-448); Finance(448-786); IT(786-1010); International Office(1010-1206); Registrar(1206-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+[51] Academic Advisor/Meet Academic Advisor -> (2800,1121) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-91-79); Admissions Office(79-241); Admissions Committee(241-448); Finance(448-786); IT(786-1010); International Office(1010-1206); Registrar(1206-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+         After:  Lanes: Student(-187--17); Admissions Office(-17-145); Admissions Committee(145-352); Finance(352-690); IT(690-914); International Office(914-1110); Registrar(1110-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+[52] Student/Select Courses -> (2960,67) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-187--17); Admissions Office(-17-145); Admissions Committee(145-352); Finance(352-690); IT(690-914); International Office(914-1110); Registrar(1110-1306); Academic Advisor(1306-1406); Appeals Committee(1406-2206)
+         After:  Lanes: Student(-187-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1265); Registrar(1265-1461); Academic Advisor(1461-1561); Appeals Committee(1561-2361)
+[53] Student/Resolve Schedule Conflicts -> (3120,67) 150x60
+[54] Student/Attend Classes -> (3280,67) 150x60
+[55] Student/Add/Drop Courses -> (3440,67) 150x60
+[56] Registrar/Post Grades -> (3600,1021) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-187-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1265); Registrar(1265-1461); Academic Advisor(1461-1561); Appeals Committee(1561-2361)
+         After:  Lanes: Student(-246-79); Admissions Office(79-241); Admissions Committee(241-448); Finance(448-786); IT(786-1010); International Office(1010-1265); Registrar(1265-1461); Academic Advisor(1461-1561); Appeals Committee(1561-2361)
+[57] Student/Review Grades Online -> (3760,67) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-246-79); Admissions Office(79-241); Admissions Committee(241-448); Finance(448-786); IT(786-1010); International Office(1010-1265); Registrar(1265-1461); Academic Advisor(1461-1561); Appeals Committee(1561-2361)
+         After:  Lanes: Student(-246-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1324); Registrar(1324-1520); Academic Advisor(1520-1620); Appeals Committee(1620-2420)
+[58] Student/Grievance? -> (3920,67) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Student(-246-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1324); Registrar(1324-1520); Academic Advisor(1520-1620); Appeals Committee(1620-2420)
+         After:  Lanes: Student(-246-144); Admissions Office(144-306); Admissions Committee(306-513); Finance(513-851); IT(851-1075); International Office(1075-1330); Registrar(1330-1526); Academic Advisor(1526-1626); Appeals Committee(1626-2426)
+[59] Student/Submit Appeal Form -> (4080,67) 150x60
+[60] Appeals Committee/Meet Appeals Committee -> (4240,1571) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-246-144); Admissions Office(144-306); Admissions Committee(306-513); Finance(513-851); IT(851-1075); International Office(1075-1330); Registrar(1330-1526); Academic Advisor(1526-1626); Appeals Committee(1626-2426)
+         After:  Lanes: Student(-312-78); Admissions Office(78-240); Admissions Committee(240-447); Finance(447-785); IT(785-1009); International Office(1009-1264); Registrar(1264-1460); Academic Advisor(1460-1560); Appeals Committee(1560-2426)
+[61] Student/Await Appeal Decision -> (4400,67) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Student(-312-78); Admissions Office(78-240); Admissions Committee(240-447); Finance(447-785); IT(785-1009); International Office(1009-1264); Registrar(1264-1460); Academic Advisor(1460-1560); Appeals Committee(1560-2426)
+         After:  Lanes: Student(-312-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1324); Registrar(1324-1520); Academic Advisor(1520-1620); Appeals Committee(1620-2486)
+[62] Student/Continue Studies? -> (4560,67) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Student(-312-138); Admissions Office(138-300); Admissions Committee(300-507); Finance(507-845); IT(845-1069); International Office(1069-1324); Registrar(1324-1520); Academic Advisor(1520-1620); Appeals Committee(1620-2486)
+         After:  Lanes: Student(-312-144); Admissions Office(144-306); Admissions Committee(306-513); Finance(513-851); IT(851-1075); International Office(1075-1330); Registrar(1330-1526); Academic Advisor(1526-1626); Appeals Committee(1626-2492)
+[63] Student/Graduated -> (4720,67) 33x33
+[64] Student/Withdrawn -> (4720,67) 33x33
+
+  Repositioned: 36/36
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[65] Created 42 sequence flows
+[66] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Student(-312-144); Admissions Office(144-306); Admissions Committee(306-513); Finance(513-851); IT(851-1075); International Office(1075-1330); Registrar(1330-1526); Academic Advisor(1526-1626); Appeals Committee(1626-2492)
+  Elements: Application =Y-250, Review Appli=Y202, Documents Co=Y202, Notify Missi=Y202, Provide Miss=Y-250, Eval+Fee Spl=Y202, Evaluate App=Y386, Process Appl=Y605, Eval+Fee Joi=Y202, Accepted?=Y386, Rejection Le=Y202, Send Accepta=Y202, Confirm Enro=Y-250, Confirmed By=Y-250, Application =Y-250, Onboarding S=Y-250, Internationa=Y998, Receive Orie=Y-250, Set Up Stude=Y780, Assist with =Y890, Onboarding J=Y-250, Issue Studen=Y1086, Meet Academi=Y1341, Select Cours=Y-58, Resolve Sche=Y-58, Attend Class=Y-58, Add/Drop Cou=Y-58, Post Grades=Y1086, Review Grade=Y1, Grievance?=Y1, Submit Appea=Y1, Meet Appeals=Y1637, Await Appeal=Y67, Continue Stu=Y67, Graduated=Y67, Withdrawn=Y67
+
+[67] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  UniversityEnrollment_9167
+Lanes:    9
+Elements: 36 (36 in diagram)
+Flows:    42
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=9,elements=36,gateways=10,flows=42,data=0,data_assoc=0
+======================================================================

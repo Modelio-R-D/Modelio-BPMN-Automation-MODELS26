@@ -1,0 +1,102 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: MarketingCampaignProcess_9834
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: MarketingCampaignProcess_9834
+[2] Lanes: Marketing, Sales
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Marketing: 10 elements
+[4] Sales: 2 elements
+
+  Total: 12 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[5] Data Objects: 9
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: MarketingCampaignProcess_9834
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Marketing] Lane bounds: 5-105
+  [Unmask] Define Objectives -> Y=55: OK
+  [Unmask] Create Content -> Y=55: OK
+  [Unmask] Design Visuals -> Y=55: OK
+  [Unmask] Select Promotion Channels -> Y=55: OK
+  [Unmask] Launch Campaign -> Y=55: OK
+  [Unmask] Track Performance -> Y=55: OK
+  [Unmask] End Campaign Period -> Y=55: OK
+  [Unmask] Analyze Performance -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Campaign Brief -> Y=55: OK
+  [Unmask] Content Draft -> Y=55: OK
+  [Unmask] Visual Assets -> Y=55: OK
+  [Unmask] Channel Plan -> Y=55: OK
+  [Unmask] Campaign Instance -> Y=55: OK
+  [Unmask] Performance Metrics -> Y=55: OK
+  [Unmask] Performance Report -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Define Objectives -> col=1 (230,25) relY=20
+  Create Content -> col=2 (380,25) relY=20
+  Design Visuals -> col=3 (530,25) relY=20
+  Select Promotion Channels -> col=4 (680,25) relY=20
+  Launch Campaign -> col=5 (830,25) relY=20
+  Track Performance -> col=6 (980,25) relY=20
+  End Campaign Period -> col=9 (1430,25) relY=20
+  Analyze Performance -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+  Campaign Brief (DO from Define Objectives) -> (320,95) maxBottomRelY=80
+  Content Draft (DO from Create Content) -> (470,95) maxBottomRelY=80
+  Visual Assets (DO from Design Visuals) -> (620,95) maxBottomRelY=80
+  Channel Plan (DO from Select Promotion Channels) -> (770,95) maxBottomRelY=80
+  Campaign Instance (DO from Launch Campaign) -> (920,95) maxBottomRelY=80
+  Performance Metrics (DO from Track Performance) -> (1070,95) maxBottomRelY=80
+  Performance Report (DO from Analyze Performance) -> (1670,95) maxBottomRelY=80
+
+[Sales] Lane bounds: 187-338
+  [maxElementBottomRelY=80]
+  Collect Leads in CRM -> col=7 (1130,207) relY=20
+  Sales Follow Up -> col=8 (1280,207) relY=20
+  Leads (CRM) (DO from Collect Leads in CRM) -> (1220,277) maxBottomRelY=80
+  Follow Up Notes (DO from Sales Follow Up) -> (1370,277) maxBottomRelY=80
+
+
+[8] Repositioned: 21/21
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 11 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[10] Data associations: 10
+
+==================================================================
+COMPLETE: MarketingCampaignProcess_9834
+==================================================================
+Lanes: 2 | Elements: 12 | Data: 9 | Flows: 11 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=21,gateways=0,flows=11,data=9,data_assoc=10
+======================================================================

@@ -1,0 +1,25 @@
+# Scenario 34
+
+**Complexity:** Complex
+
+## Natural-language description
+
+Title: Building a custom machine out of Lego bricks
+
+When building a custom machine out of Lego bricks, you first need to develop the basic design.
+After that, you order certain Lego brick sets.
+You give the lego sets to a group of children which should sort the parts for you (into a number of containers).
+Your machine is built out of a number of subcomponents.
+You build them individually, using parts from the sorted containers.
+If there are no more parts in a container, you reorder individual parts.
+After building each subcomponent, you have to test them individually and (if each test is successful) assemble them.
+If subcomponents are not tested successfully, you have to redesign and rebuild them.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 23
+- gateways: 10
+- flows: 29
+- data_objects: 0
+- data_assoc: 0

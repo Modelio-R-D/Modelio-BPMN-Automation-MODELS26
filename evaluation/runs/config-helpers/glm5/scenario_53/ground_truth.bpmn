@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <task id="Task_1" name="MSPN sends a dismissal to MSPO">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <task id="Task_2" name="MSPO reviews the dismissal">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_3" name="MSPO rejects the dismissal of the MSPN">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <task id="Task_4" name="MSPO confirms the dismissal of the MSPN">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_5</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </exclusiveGateway>
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1">
+      <incoming>SequenceFlow_8</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ExclusiveGateway_1" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ExclusiveGateway_1" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_3" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="Task_4" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="ExclusiveGateway_2" targetRef="EndEvent_1"/>
+  </process>
+</definitions>

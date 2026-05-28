@@ -1,0 +1,103 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: InstructArtist_Create3DModel_3DPrint_82955
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: InstructArtist_Create3DModel_3DPrint_82955
+[2] Lanes: Customer, Artist, 3D Printer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 13 elements
+[4] Artist: 4 elements
+[5] 3D Printer: 6 elements
+
+  Total: 23 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: InstructArtist_Create3DModel_3DPrint_82955
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Send change requests=0, Select plastic color=90
+  [Auto-stack] col 8: Check filament amount=0, Order filament=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Send sketches -> Y=55: OK
+  [Unmask] Review STL -> Y=55: OK
+  [Unmask] Satisfied? -> Y=55: OK
+  [Unmask] Send change requests -> Y=55: OK
+  [Unmask] Select plastic color -> Y=55: OK
+  [Unmask] Color in stock? -> Y=55: OK
+  [Unmask] Check filament amount -> Y=55: OK
+  [Unmask] Under 100g? -> Y=55: OK
+  [Unmask] Add filament to shopping list -> Y=55: OK
+  [Unmask] Order filament -> Y=55: OK
+  [Unmask] Filament available -> Y=55: OK
+  [Unmask] Generate G-code -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Send sketches -> col=1 (230,25) relY=20
+  Review STL -> col=4 (680,25) relY=20
+  Satisfied? -> col=5 (830,25) relY=20
+  Send change requests -> col=6 (980,25) relY=20
+  Select plastic color -> col=6 (980,115) relY=110
+  Color in stock? -> col=7 (1130,25) relY=20
+  Check filament amount -> col=8 (1280,25) relY=20
+  Under 100g? -> col=9 (1430,25) relY=20
+  Add filament to shopping list -> col=10 (1580,25) relY=20
+  Order filament -> col=8 (1280,115) relY=110
+  Filament available -> col=11 (1730,25) relY=20
+  Generate G-code -> col=14 (2180,25) relY=20
+
+[Artist] Lane bounds: 186-286
+  [Unmask] Create 3D model -> Y=236: OK
+  [Unmask] Send STL -> Y=236: OK
+  [Unmask] Revise model -> Y=236: OK
+  [Unmask] Send revised STL -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Create 3D model -> col=2 (380,206) relY=20
+  Send STL -> col=3 (530,206) relY=20
+  Revise model -> col=7 (1130,206) relY=20
+  Send revised STL -> col=8 (1280,206) relY=20
+
+[3D Printer] Lane bounds: 293-393
+  [maxElementBottomRelY=80]
+  Turn on printer -> col=12 (1880,313) relY=20
+  Prep in parallel -> col=13 (2030,313) relY=20
+  Heat bed and extruder -> col=14 (2180,313) relY=20
+  Ready to print -> col=15 (2330,313) relY=20
+  Print model -> col=16 (2480,313) relY=20
+  End -> col=17 (2630,313) relY=20
+
+
+[8] Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 26 sequence flows
+
+==================================================================
+COMPLETE: InstructArtist_Create3DModel_3DPrint_82955
+==================================================================
+Lanes: 3 | Elements: 23 | Flows: 26
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=23,gateways=5,flows=26,data=0,data_assoc=0
+======================================================================

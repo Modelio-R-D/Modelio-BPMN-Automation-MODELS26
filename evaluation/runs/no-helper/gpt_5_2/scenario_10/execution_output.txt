@@ -1,0 +1,148 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN IT SOLUTION REQUEST PROCESS - DEBUG LOG
+==================================================================
+Script Version: v9.1
+Execution ID:   74151
+Process Name:   ITSolutionRequest_74151
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ITSolutionRequest_74151
+[2] Lanes: Requester, IT, Procurement
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Need IT Solution | Lane=Requester | addToLane=True
+  [Element] Submit IT Solution Request | Lane=Requester | addToLane=True
+  [Element] Assess Compatibility and Needs | Lane=IT | addToLane=True
+  [Element] Estimate Cost and Resources | Lane=IT | addToLane=True
+  [Element] Request Approved? | Lane=IT | addToLane=True
+  [Element] Request Rejected | Lane=IT | addToLane=True
+  [Element] Procure Tools or Licenses | Lane=Procurement | addToLane=True
+  [Element] Install Solution | Lane=IT | addToLane=True
+  [Element] Test in Controlled Environment | Lane=IT | addToLane=True
+  [Element] Testing Successful? | Lane=IT | addToLane=True
+  [Element] Fix Issues and Retest | Lane=IT | addToLane=True
+  [Element] Roll Out to Requesting Department | Lane=IT | addToLane=True
+  [Element] Training Needed? | Lane=IT | addToLane=True
+  [Element] Provide Training | Lane=IT | addToLane=True
+  [Element] Provide Ongoing IT Support | Lane=IT | addToLane=True
+  [Element] Solution Operational | Lane=IT | addToLane=True
+
+[3] Total elements (excluding lanes): 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: ITSolutionRequest_74151
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for lanes+elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 7/19 | Missing: Estimate Cos, Request Appr, Request Reje, Install Solu, Test in Cont, Testing Succ, Fix Issues a, Roll Out to , Training Nee, Provide Trai, Provide Ongo, Solution Ope
+  [Attempt 2] Found: 7/19 | Missing: Estimate Cos, Request Appr, Request Reje, Install Solu, Test in Cont, Testing Succ, Fix Issues a, Roll Out to , Training Nee, Provide Trai, Provide Ongo, Solution Ope
+  [Attempt 3] Found: 7/19 | Missing: Estimate Cos, Request Appr, Request Reje, Install Solu, Test in Cont, Testing Succ, Fix Issues a, Roll Out to , Training Nee, Provide Trai, Provide Ongo, Solution Ope
+  [Attempt 3] TIMEOUT - 7/19 elements
+
+[8] WARNING: 4/16 nodes ready after 150ms
+         Missing: Estimate Cost and Resources, Request Approved?, Request Rejected, Install Solution, Test in Controlled Environment, Testing Successful?, Fix Issues and Retest, Roll Out to Requesting Department, Training Needed?, Provide Training, Provide Ongoing IT Support, Solution Operational
+
+[9] Trying manual unmask for missing nodes (inside lane Y)...
+
+  [Unmask] Estimate Cost and Resources -> Y=155 (IT): OK
+  [Unmask] Request Approved? -> Y=155 (IT): OK
+  [Unmask] Request Rejected -> Y=155 (IT): OK
+  [Unmask] Install Solution -> Y=155 (IT): OK
+  [Unmask] Test in Controlled Environment -> Y=155 (IT): OK
+  [Unmask] Testing Successful? -> Y=155 (IT): OK
+  [Unmask] Fix Issues and Retest -> Y=155 (IT): OK
+  [Unmask] Roll Out to Requesting Department -> Y=155 (IT): OK
+  [Unmask] Training Needed? -> Y=155 (IT): OK
+  [Unmask] Provide Training -> Y=155 (IT): OK
+  [Unmask] Provide Ongoing IT Support -> Y=155 (IT): OK
+  [Unmask] Solution Operational -> Y=155 (IT): OK
+
+[10] Manual unmask: 12 nodes unmasked
+[11] All nodes now available
+
+  Lanes: Requester(5-105); IT(105-232); Procurement(232-332)
+  Elements: Need IT Solu=Y16, Submit IT So=Y20, Assess Compa=Y116, Estimate Cos=Y155, Request Appr=Y155, Procure Tool=Y243, Request Reje=Y155, Install Solu=Y155, Test in Cont=Y155, Testing Succ=Y155, Fix Issues a=Y155, Roll Out to =Y155, Training Nee=Y155, Provide Trai=Y155, Provide Ongo=Y155, Solution Ope=Y155
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Requester centerY = 32
+[13] IT centerY = 145
+[14] Procurement centerY = 259
+
+[15] Requester/Need IT Solution -> (80,32) 33x33
+[16] Requester/Submit IT Solution Request -> (230,32) 160x60
+[17] IT/Assess Compatibility and Needs -> (380,145) 160x60
+[18] IT/Estimate Cost and Resources -> (530,145) 160x60
+[19] IT/Request Approved? -> (680,145) 40x40
+[20] Procurement/Procure Tools or Licenses -> (830,259) 160x60 *** LANE CHANGED ***
+         Before: Lanes: Requester(5-105); IT(105-232); Procurement(232-332)
+         After:  Lanes: Requester(5-105); IT(105-232); Procurement(232-348)
+[21] IT/Request Rejected -> (830,145) 33x33
+[22] IT/Install Solution -> (980,145) 160x60
+[23] IT/Test in Controlled Environment -> (1130,145) 160x60
+[24] IT/Testing Successful? -> (1280,145) 40x40
+[25] IT/Fix Issues and Retest -> (1430,145) 160x60
+[26] IT/Roll Out to Requesting Department -> (1580,145) 160x60
+[27] IT/Training Needed? -> (1730,145) 40x40
+[28] IT/Provide Training -> (1880,145) 160x60
+[29] IT/Provide Ongoing IT Support -> (2030,145) 160x60
+[30] IT/Solution Operational -> (2180,145) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Need IT Solution -> Submit IT Solution
+  [Flow] Submit IT Solution -> Assess Compatibili
+  [Flow] Assess Compatibili -> Estimate Cost and 
+  [Flow] Estimate Cost and  -> Request Approved?
+  [Flow] Request Approved? -> Request Rejected | Guard=Rejected
+  [Flow] Request Approved? -> Procure Tools or L | Guard=Approved
+  [Flow] Procure Tools or L -> Install Solution
+  [Flow] Install Solution -> Test in Controlled
+  [Flow] Test in Controlled -> Testing Successful
+  [Flow] Testing Successful -> Roll Out to Reques | Guard=Yes
+  [Flow] Testing Successful -> Fix Issues and Ret | Guard=No
+  [Flow] Fix Issues and Ret -> Test in Controlled
+  [Flow] Roll Out to Reques -> Training Needed?
+  [Flow] Training Needed? -> Provide Training | Guard=Yes
+  [Flow] Training Needed? -> Provide Ongoing IT | Guard=No
+  [Flow] Provide Training -> Provide Ongoing IT
+  [Flow] Provide Ongoing IT -> Solution Operation
+
+[31] Created 17 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Requester(5-105); IT(105-232); Procurement(232-348)
+  Elements: Need IT Solu=Y32, Submit IT So=Y32, Assess Compa=Y145, Estimate Cos=Y145, Request Appr=Y145, Procure Tool=Y259, Request Reje=Y145, Install Solu=Y145, Test in Cont=Y145, Testing Succ=Y145, Fix Issues a=Y145, Roll Out to =Y145, Training Nee=Y145, Provide Trai=Y145, Provide Ongo=Y145, Solution Ope=Y145
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ITSolutionRequest_74151
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=3,flows=17,data=0,data_assoc=0
+======================================================================

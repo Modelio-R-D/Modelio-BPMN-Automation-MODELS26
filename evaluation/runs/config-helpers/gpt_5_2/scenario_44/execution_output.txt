@@ -1,0 +1,95 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Robotic Burger Seller near the University of Vienna_50433
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Robotic Burger Seller near the University of Vienna_50433
+[2] Lanes: Robot
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Robot: 22 elements
+
+  Total: 22 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram: Robotic Burger Seller near the University of Vienna_50433
+[5] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Prepare drink=0, Ask fries or wedges=90
+  [Auto-stack] col 6: Prepare fries=0, Prepare wedges=90
+  [Auto-stack] col 10: Prepare burger=0, Wait 30s=90
+[Robot] Lane bounds: 5-205
+  [Unmask] Ask fries or wedges -> Y=105: OK
+  [Unmask] Side choice? -> Y=105: OK
+  [Unmask] Prepare fries -> Y=105: OK
+  [Unmask] Prepare wedges -> Y=105: OK
+  [Unmask] Side ready -> Y=105: OK
+  [Unmask] Menu prep join -> Y=105: OK
+  [Unmask] Burger prep split -> Y=105: OK
+  [Unmask] Prepare burger -> Y=105: OK
+  [Unmask] Wait 30s -> Y=105: OK
+  [Unmask] Send update 1 -> Y=105: OK
+  [Unmask] Wait 30s 2 -> Y=105: OK
+  [Unmask] Send update 2 -> Y=105: OK
+  [Unmask] Wait 30s 3 -> Y=105: OK
+  [Unmask] Send update 3 -> Y=105: OK
+  [Unmask] Burger ready -> Y=105: OK
+  [Unmask] Deliver via conveyor belt -> Y=105: OK
+  [Unmask] Order complete -> Y=105: OK
+  [maxElementBottomRelY=170]
+  Order received -> col=0 (80,25) relY=20
+  Ask menu or burger -> col=1 (230,25) relY=20
+  Menu? -> col=2 (380,25) relY=20
+  Menu prep split -> col=3 (530,25) relY=20
+  Prepare drink -> col=4 (680,25) relY=20
+  Ask fries or wedges -> col=4 (680,115) relY=110
+  Side choice? -> col=5 (830,25) relY=20
+  Prepare fries -> col=6 (980,25) relY=20
+  Prepare wedges -> col=6 (980,115) relY=110
+  Side ready -> col=7 (1130,25) relY=20
+  Menu prep join -> col=8 (1280,25) relY=20
+  Burger prep split -> col=9 (1430,25) relY=20
+  Prepare burger -> col=10 (1580,25) relY=20
+  Wait 30s -> col=10 (1580,115) relY=110
+  Send update 1 -> col=11 (1730,25) relY=20
+  Wait 30s 2 -> col=12 (1880,25) relY=20
+  Send update 2 -> col=13 (2030,25) relY=20
+  Wait 30s 3 -> col=14 (2180,25) relY=20
+  Send update 3 -> col=15 (2330,25) relY=20
+  Burger ready -> col=16 (2480,25) relY=20
+  Deliver via conveyor belt -> col=17 (2630,25) relY=20
+  Order complete -> col=18 (2780,25) relY=20
+
+
+[6] Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[7] Created 25 sequence flows
+
+==================================================================
+COMPLETE: Robotic Burger Seller near the University of Vienna_50433
+==================================================================
+Lanes: 1 | Elements: 22 | Flows: 25
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=22,gateways=7,flows=25,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Determine properties">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Check delivery of ordered parts">
+      <incoming>SequenceFlow_7</incoming>
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Perform Inspection">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Send first saw">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Cancel production of the remaining order">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </userTask>
+    <userTask id="UserTask_6" name="Send the remaining order">
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Order parts">
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Order parts">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Order parts">
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_4" name="Assemble the parts">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_5" name="Send updates">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_6" name="Produce the remaining order">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="Parts arrived ?">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+      <outgoing>SequenceFlow_10</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Customer Approval ?">
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+      <outgoing>SequenceFlow_17</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+      <outgoing>SequenceFlow_4</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_5</incoming>
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="Start">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="End">
+      <incoming>SequenceFlow_16</incoming>
+      <incoming>SequenceFlow_19</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="UserTask_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="ParallelGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="ParallelGateway_1" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ServiceTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ServiceTask_2" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ParallelGateway_2" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="UserTask_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_9" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_10" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="UserTask_3" targetRef="ServiceTask_4"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="ServiceTask_4" targetRef="ServiceTask_5"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="ServiceTask_5" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="UserTask_4" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_15" name="No" sourceRef="ExclusiveGateway_2" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="UserTask_5" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_17" name="Yes" sourceRef="ExclusiveGateway_2" targetRef="ServiceTask_6"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ServiceTask_6" targetRef="UserTask_6"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="UserTask_6" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ParallelGateway_1" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ServiceTask_3" targetRef="ParallelGateway_2"/>
+  </process>
+</definitions>

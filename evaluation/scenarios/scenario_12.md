@@ -1,0 +1,21 @@
+# Scenario 12
+
+**Complexity:** Complex
+
+## Natural-language description
+
+This process begins with identifying an employee's development needs or career aspirations.
+The manager and HR create a personal development plan, which may include training programs, mentorship, or additional responsibilities.
+The employee keeps working on skill enhancement while receiving feedback and evaluation from supervisors.
+Once certain milestones are reached, the employee is considered for a promotion or new role.
+HR conducts a formal review of performance, and if approved, the promotion is finalized with new responsibilities and compensation adjustments.
+The process ends when the employee is promoted and transitions into the new role.
+
+## Ground-truth structural metrics
+
+- lanes: 1
+- elements: 22
+- gateways: 10
+- flows: 26
+- data_objects: 0
+- data_assoc: 0

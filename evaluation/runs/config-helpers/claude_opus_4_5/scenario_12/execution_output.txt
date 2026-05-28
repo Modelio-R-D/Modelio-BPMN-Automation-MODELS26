@@ -1,0 +1,92 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: EmployeeDevelopmentPromotion_92597
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: EmployeeDevelopmentPromotion_92597
+[2] Lanes: Employee, Manager, HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Employee: 5 elements
+[4] Manager: 4 elements
+[5] HR: 5 elements
+
+  Total: 14 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: EmployeeDevelopmentPromotion_92597
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Employee] Lane bounds: 5-105
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Identify Development Needs -> col=1 (230,25) relY=20
+  Work on Skill Enhancement -> col=4 (680,25) relY=20
+  Transition to New Role -> col=12 (1880,25) relY=20
+  End -> col=13 (2030,25) relY=20
+
+[Manager] Lane bounds: 105-205
+  [Unmask] Create Development Plan -> Y=155: OK
+  [Unmask] Provide Feedback -> Y=155: OK
+  [Unmask] Milestone Reached? -> Y=155: OK
+  [Unmask] Consider for Promotion -> Y=155: OK
+  [Unmask] Development Plan -> Y=155: OK
+  [maxElementBottomRelY=80]
+  Create Development Plan -> col=2 (380,125) relY=20
+  Provide Feedback -> col=5 (830,125) relY=20
+  Milestone Reached? -> col=6 (980,125) relY=20
+  Consider for Promotion -> col=7 (1130,125) relY=20
+  Development Plan (DO from Create Development Plan) -> (470,195) maxBottomRelY=80
+
+[HR] Lane bounds: 287-486
+  [maxElementBottomRelY=80]
+  Review and Approve Plan -> col=3 (530,307) relY=20
+  Conduct Performance Review -> col=8 (1280,307) relY=20
+  Promotion Approved? -> col=9 (1430,307) relY=20
+  Finalize Promotion -> col=10 (1580,307) relY=20
+  Adjust Compensation -> col=11 (1730,307) relY=20
+  Performance Report (DO from Conduct Performance Review) -> (1220,377) maxBottomRelY=80
+  Promotion Letter (DO from Finalize Promotion) -> (1670,377) maxBottomRelY=80
+
+
+[9] Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 15 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR creating data association: setEndingActivity(): 1st arg can't be coerced to org.modelio.metamodel.bpmn.activities.BpmnActivity
+[11] Data associations: 5
+
+==================================================================
+COMPLETE: EmployeeDevelopmentPromotion_92597
+==================================================================
+Lanes: 3 | Elements: 14 | Data: 3 | Flows: 15 | DataAssoc: 5
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 2
+======================================================================

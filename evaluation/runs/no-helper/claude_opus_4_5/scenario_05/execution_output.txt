@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUPPLIER SELECTION PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   24116
+Process Name:   SupplierSelection_24116
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SupplierSelection_24116
+[2] Lanes: Procurement, Evaluation, Legal
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Procurement lane: 5 elements
+[4] Evaluation lane: 6 elements
+[5] Legal lane: 6 elements
+
+  Total elements: 17
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: SupplierSelection_24116
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 11/17 | Missing: Negotiate Co, Terms Agreed, Revise Terms, Sign Contrac, Onboard Supp, Contract Exe
+  [Attempt 2] Found: 11/17 | Missing: Negotiate Co, Terms Agreed, Revise Terms, Sign Contrac, Onboard Supp, Contract Exe
+  [Attempt 3] Found: 11/17 | Missing: Negotiate Co, Terms Agreed, Revise Terms, Sign Contrac, Onboard Supp, Contract Exe
+  [Attempt 3] TIMEOUT - 11/17 elements
+
+[10] WARNING: 11/17 elements ready after 150ms
+         Missing: Negotiate Contract, Terms Agreed?, Revise Terms, Sign Contract, Onboard Supplier, Contract Executed
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Negotiate Contract -> Y=305 (Legal): OK
+  [Unmask] Terms Agreed? -> Y=305 (Legal): OK
+  [Unmask] Revise Terms -> Y=305 (Legal): OK
+  [Unmask] Sign Contract -> Y=305 (Legal): OK
+  [Unmask] Onboard Supplier -> Y=305 (Legal): OK
+  [Unmask] Contract Executed -> Y=305 (Legal): OK
+
+[12] Manual unmask: 6 elements unmasked
+[13] All elements now available
+
+  Lanes: Procuremen(5-121); Evaluation(121-255); Legal(255-382)
+  Elements: Need Ide=Y16, Create R=Y20, Issue RF=Y25, Receive =Y30, Review P=Y132, Due Dili=Y132, Conduct =Y132, Evaluate=Y132, Merge Re=Y132, Rank Sup=Y132, Select S=Y35, Negotiat=Y305, Terms Ag=Y305, Revise T=Y305, Sign Con=Y305, Onboard =Y305, Contract=Y305
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Procurement centerY = 40
+[15] Evaluation centerY = 165
+[16] Legal centerY = 295
+
+[17] Procurement/Need Identified -> (80,40)
+[18] Procurement/Create RFP -> (230,40)
+[19] Procurement/Issue RFP -> (380,40)
+[20] Procurement/Receive Proposals -> (530,40)
+[21] Evaluation/Review Proposals -> (680,165)
+[22] Evaluation/Due Diligence -> (830,165)
+[23] Evaluation/Conduct Site Visit -> (980,200) *** LANE CHANGED ***
+         Before: Lanes: Procuremen(5-121); Evaluation(121-255); Legal(255-382)
+         After:  Lanes: Procuremen(5-121); Evaluation(121-271); Legal(271-398)
+[24] Evaluation/Evaluate Criteria -> (980,130) *** LANE CHANGED ***
+         Before: Lanes: Procuremen(5-121); Evaluation(121-271); Legal(271-398)
+         After:  Lanes: Procuremen(3-119); Evaluation(119-271); Legal(271-398)
+[25] Evaluation/Merge Results -> (1130,165)
+[26] Evaluation/Rank Suppliers -> (1280,165)
+[27] Procurement/Select Supplier -> (1280,40)
+[28] Legal/Negotiate Contract -> (1430,295)
+[29] Legal/Terms Agreed? -> (1580,295)
+[30] Legal/Revise Terms -> (1730,295)
+[31] Legal/Sign Contract -> (1880,295)
+[32] Legal/Onboard Supplier -> (2030,295)
+[33] Legal/Contract Executed -> (2180,295)
+
+  Repositioned: 17/17
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 18 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Procuremen(3-119); Evaluation(119-271); Legal(271-398)
+  Elements: Need Ide=Y38, Create R=Y38, Issue RF=Y38, Receive =Y38, Review P=Y163, Due Dili=Y163, Conduct =Y198, Evaluate=Y130, Merge Re=Y165, Rank Sup=Y165, Select S=Y40, Negotiat=Y295, Terms Ag=Y295, Revise T=Y295, Sign Con=Y295, Onboard =Y295, Contract=Y295
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SupplierSelection_24116
+Lanes:    3
+Elements: 17 (17 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=17,gateways=3,flows=18,data=0,data_assoc=0
+======================================================================

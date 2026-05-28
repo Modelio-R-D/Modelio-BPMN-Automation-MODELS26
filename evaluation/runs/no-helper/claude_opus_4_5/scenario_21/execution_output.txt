@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SHIPPING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   65463
+Process Name:   ShippingProcess_65463
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ShippingProcess_65463
+[2] Lanes: Secretary, Logistics Head, Warehousemen
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Secretary lane: 11 elements
+[4] Logistics Head lane: 3 elements
+[5] Warehousemen lane: 1 element
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ShippingProcess_65463
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/15 | Missing: Goods to Shi, Clarify Ship, Amount Size?, Invite 3 Off, Select Compa, Split Tasks, Write Label, Join Tasks, Join All, Prepare Pick, Ready for Pi, Package Good
+  [Attempt 2] Found: 3/15 | Missing: Goods to Shi, Clarify Ship, Amount Size?, Invite 3 Off, Select Compa, Split Tasks, Write Label, Join Tasks, Join All, Prepare Pick, Ready for Pi, Package Good
+  [Attempt 3] Found: 3/15 | Missing: Goods to Shi, Clarify Ship, Amount Size?, Invite 3 Off, Select Compa, Split Tasks, Write Label, Join Tasks, Join All, Prepare Pick, Ready for Pi, Package Good
+  [Attempt 3] TIMEOUT - 3/15 elements
+
+[10] WARNING: 3/15 elements ready after 150ms
+         Missing: Goods to Ship, Clarify Shipping, Amount Size?, Invite 3 Offers, Select Company, Split Tasks, Write Label, Join Tasks, Join All, Prepare Pickup, Ready for Pickup, Package Goods
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Goods to Ship -> Y=55 (Secretary): OK
+  [Unmask] Clarify Shipping -> Y=55 (Secretary): OK
+  [Unmask] Amount Size? -> Y=55 (Secretary): OK
+  [Unmask] Invite 3 Offers -> Y=55 (Secretary): OK
+  [Unmask] Select Company -> Y=55 (Secretary): OK
+  [Unmask] Split Tasks -> Y=55 (Secretary): OK
+  [Unmask] Write Label -> Y=55 (Secretary): OK
+  [Unmask] Join Tasks -> Y=55 (Secretary): OK
+  [Unmask] Join All -> Y=55 (Secretary): OK
+  [Unmask] Prepare Pickup -> Y=55 (Secretary): OK
+  [Unmask] Ready for Pickup -> Y=55 (Secretary): OK
+  [Unmask] Package Goods -> Y=286 (Warehousemen): OK
+
+[12] Manual unmask: 12 elements unmasked
+[13] All elements now available
+
+  Lanes: Secretar(5-132); Logistic(132-263); Warehous(263-363)
+  Elements: Goods to=Y55, Clarify =Y55, Amount S=Y55, Invite 3=Y55, Split Ta=Y55, Insuranc=Y143, Select C=Y55, Write La=Y55, Package =Y286, Take Ins=Y143, Insuranc=Y143, Join Tas=Y55, Join All=Y55, Prepare =Y55, Ready fo=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Secretary centerY = 45
+[15] Logistics Head centerY = 174
+[16] Warehousemen centerY = 290
+
+[17] Secretar/Goods to Ship -> (80,45)
+[18] Secretar/Clarify Shipping -> (220,45)
+[19] Secretar/Amount Size? -> (360,45)
+[20] Secretar/Invite 3 Offers -> (500,10) *** LANE CHANGED ***
+         Before: Lanes: Secretar(5-132); Logistic(132-263); Warehous(263-363)
+         After:  Lanes: Secretar(-1-132); Logistic(132-263); Warehous(263-363)
+[21] Secretar/Split Tasks -> (500,80) *** LANE CHANGED ***
+         Before: Lanes: Secretar(-1-132); Logistic(132-263); Warehous(263-363)
+         After:  Lanes: Secretar(-1-157); Logistic(157-288); Warehous(288-388)
+[22] Logistic/Insurance? -> (640,174)
+[23] Secretar/Select Company -> (640,10)
+[24] Secretar/Write Label -> (640,80)
+[25] Warehous/Package Goods -> (780,290) *** LANE CHANGED ***
+         Before: Lanes: Secretar(-1-157); Logistic(157-288); Warehous(288-388)
+         After:  Lanes: Secretar(-40-118); Logistic(118-249); Warehous(249-388)
+[26] Logistic/Take Insurance -> (780,174)
+[27] Logistic/Insurance Done -> (920,174) *** LANE CHANGED ***
+         Before: Lanes: Secretar(-40-118); Logistic(118-249); Warehous(249-388)
+         After:  Lanes: Secretar(-40-118); Logistic(118-251); Warehous(251-390)
+[28] Secretar/Join Tasks -> (920,80) *** LANE CHANGED ***
+         Before: Lanes: Secretar(-40-118); Logistic(118-251); Warehous(251-390)
+         After:  Lanes: Secretar(-40-157); Logistic(157-290); Warehous(290-429)
+[29] Secretar/Join All -> (1060,45)
+[30] Secretar/Prepare Pickup -> (1200,45)
+[31] Secretar/Ready for Pickup -> (1340,45)
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 18 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Secretar(-40-157); Logistic(157-290); Warehous(290-429)
+  Elements: Goods to=Y0, Clarify =Y0, Amount S=Y0, Invite 3=Y-29, Split Ta=Y41, Insuranc=Y174, Select C=Y-29, Write La=Y41, Package =Y301, Take Ins=Y213, Insuranc=Y213, Join Tas=Y80, Join All=Y45, Prepare =Y45, Ready fo=Y45
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ShippingProcess_65463
+Lanes:    3
+Elements: 15 (15 in diagram)
+Flows:    18
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=6,flows=18,data=0,data_assoc=0
+======================================================================

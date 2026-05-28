@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: SubscriptionService_23506
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: SubscriptionService_23506
+[2] Lanes: Customer, System, Support Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 5 elements
+[4] System: 8 elements
+[5] Support Team: 3 elements
+
+  Total: 16 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram: SubscriptionService_23506
+[7] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 11: Apply Refund=0, Apply Charges=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Subscription Signup -> Y=55: OK
+  [Unmask] Enter Personal Info -> Y=55: OK
+  [Unmask] Enter Payment Info -> Y=55: OK
+  [Unmask] Cancel Request? -> Y=55: OK
+  [Unmask] Submit Cancellation -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Subscription Signup -> col=0 (80,25) relY=20
+  Enter Personal Info -> col=1 (230,25) relY=20
+  Enter Payment Info -> col=2 (380,25) relY=20
+  Cancel Request? -> col=7 (1130,25) relY=20
+  Submit Cancellation -> col=8 (1280,25) relY=20
+
+[System] Lane bounds: 132-232
+  [Unmask] Generate Account -> Y=182: OK
+  [Unmask] Assign Access -> Y=182: OK
+  [Unmask] Trigger Billing -> Y=182: OK
+  [Unmask] Send Updates -> Y=182: OK
+  [Unmask] Refund or Charge? -> Y=182: OK
+  [Unmask] Apply Refund -> Y=182: OK
+  [Unmask] Apply Charges -> Y=182: OK
+  [Unmask] Settle Balance -> Y=182: OK
+  [maxElementBottomRelY=170]
+  Generate Account -> col=3 (530,152) relY=20
+  Assign Access -> col=4 (680,152) relY=20
+  Trigger Billing -> col=5 (830,152) relY=20
+  Send Updates -> col=6 (980,152) relY=20
+  Refund or Charge? -> col=10 (1580,152) relY=20
+  Apply Refund -> col=11 (1730,152) relY=20
+  Apply Charges -> col=11 (1730,242) relY=110
+  Settle Balance -> col=13 (2030,152) relY=20
+
+[Support Team] Lane bounds: 313-497
+  [maxElementBottomRelY=80]
+  Process Cancellation -> col=9 (1430,333) relY=20
+  Deactivate Subscription -> col=12 (1880,333) relY=20
+  Subscription Ended -> col=14 (2180,333) relY=20
+
+
+[8] Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[9] Created 17 sequence flows
+
+==================================================================
+COMPLETE: SubscriptionService_23506
+==================================================================
+Lanes: 3 | Elements: 16 | Flows: 17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=2,flows=17,data=0,data_assoc=0
+======================================================================

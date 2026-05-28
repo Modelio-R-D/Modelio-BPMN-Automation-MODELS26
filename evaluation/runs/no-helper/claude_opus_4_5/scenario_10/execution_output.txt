@@ -1,0 +1,124 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN IT SOLUTION PROCUREMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   34137
+Process Name:   ITProcurement_34137
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ITProcurement_34137
+[2] Lanes: Requester, IT Department, Vendor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Requester lane: 5 elements
+[4] IT Department lane: 12 elements
+[5] Vendor lane: 3 elements
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: ITProcurement_34137
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 3/20 | Missing: Solution Nee, Submit IT Re, Receive Solu, Attend Train, Request Comp, Review Reque, Check Compat, Evaluate Cos, Approved?, Notify Rejec, Request Reje, Create Purch, Install Solu, Test Solutio, Tests Passed, Rollout Solu, Provide Trai
+  [Attempt 2] Found: 3/20 | Missing: Solution Nee, Submit IT Re, Receive Solu, Attend Train, Request Comp, Review Reque, Check Compat, Evaluate Cos, Approved?, Notify Rejec, Request Reje, Create Purch, Install Solu, Test Solutio, Tests Passed, Rollout Solu, Provide Trai
+  [Attempt 3] Found: 3/20 | Missing: Solution Nee, Submit IT Re, Receive Solu, Attend Train, Request Comp, Review Reque, Check Compat, Evaluate Cos, Approved?, Notify Rejec, Request Reje, Create Purch, Install Solu, Test Solutio, Tests Passed, Rollout Solu, Provide Trai
+  [Attempt 3] TIMEOUT - 3/20 elements
+
+[10] WARNING: 3/20 elements ready after 150ms
+         Missing: Solution Needed, Submit IT Request, Receive Solution, Attend Training, Request Complete, Review Request, Check Compatibility, Evaluate Cost, Approved?, Notify Rejection, Request Rejected, Create Purchase Order, Install Solution, Test Solution, Tests Passed?, Rollout Solution, Provide Training
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Solution Needed -> Y=55 (Requester): OK
+  [Unmask] Submit IT Request -> Y=55 (Requester): OK
+  [Unmask] Receive Solution -> Y=55 (Requester): OK
+  [Unmask] Attend Training -> Y=55 (Requester): OK
+  [Unmask] Request Complete -> Y=55 (Requester): OK
+  [Unmask] Review Request -> Y=155 (IT Department): OK
+  [Unmask] Check Compatibility -> Y=155 (IT Department): OK
+  [Unmask] Evaluate Cost -> Y=155 (IT Department): OK
+  [Unmask] Approved? -> Y=155 (IT Department): OK
+  [Unmask] Notify Rejection -> Y=155 (IT Department): OK
+  [Unmask] Request Rejected -> Y=155 (IT Department): OK
+  [Unmask] Create Purchase Order -> Y=155 (IT Department): OK
+  [Unmask] Install Solution -> Y=155 (IT Department): OK
+  [Unmask] Test Solution -> Y=155 (IT Department): OK
+  [Unmask] Tests Passed? -> Y=155 (IT Department): OK
+  [Unmask] Rollout Solution -> Y=155 (IT Department): OK
+  [Unmask] Provide Training -> Y=155 (IT Department): OK
+
+[12] Manual unmask: 17 elements unmasked
+[13] All elements now available
+
+  Lanes: Requester(5-125); IT Department(125-251); Vendor(251-420)
+  Elements: Solution N=Y55, Submit IT =Y55, Review Req=Y155, Check Comp=Y155, Evaluate C=Y155, Approved?=Y155, Create Pur=Y155, Notify Rej=Y155, Receive Or=Y262, Request Re=Y155, Deliver So=Y262, Install So=Y155, Provide Li=Y262, Test Solut=Y155, Tests Pass=Y155, Receive So=Y55, Rollout So=Y155, Attend Tra=Y55, Provide Tr=Y155, Request Co=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Requester centerY = 42
+[15] IT Department centerY = 165
+[16] Vendor centerY = 312
+
+[17] Requester/Solution Needed -> (80,42) 33x33
+[18] Requester/Submit IT Request -> (230,42) 120x60
+[19] IT Department/Review Request -> (380,165) 120x60
+[20] IT Department/Check Compatibility -> (530,165) 120x60
+[21] IT Department/Evaluate Cost -> (680,165) 120x60
+[22] IT Department/Approved? -> (830,165) 40x40
+[23] IT Department/Create Purchase Order -> (980,165) 120x60
+[24] IT Department/Notify Rejection -> (980,165) 120x60
+[25] Vendor/Receive Order -> (1130,312) 120x60
+[26] IT Department/Request Rejected -> (1130,165) 33x33
+[27] Vendor/Deliver Solution -> (1280,312) 120x60
+[28] IT Department/Install Solution -> (1280,165) 120x60
+[29] Vendor/Provide License -> (1430,312) 120x60
+[30] IT Department/Test Solution -> (1430,165) 120x60
+[31] IT Department/Tests Passed? -> (1580,165) 40x40
+[32] Requester/Receive Solution -> (1730,42) 120x60
+[33] IT Department/Rollout Solution -> (1730,165) 120x60
+[34] Requester/Attend Training -> (1880,42) 120x60
+[35] IT Department/Provide Training -> (1880,165) 120x60
+[36] Requester/Request Complete -> (2030,42) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[37] Created 21 sequence flows
+[38] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Requester(5-125); IT Department(125-251); Vendor(251-420)
+  Elements: Solution N=Y42, Submit IT =Y42, Review Req=Y165, Check Comp=Y165, Evaluate C=Y165, Approved?=Y165, Create Pur=Y165, Notify Rej=Y165, Receive Or=Y312, Request Re=Y165, Deliver So=Y312, Install So=Y165, Provide Li=Y312, Test Solut=Y165, Tests Pass=Y165, Receive So=Y42, Rollout So=Y165, Attend Tra=Y42, Provide Tr=Y165, Request Co=Y42
+
+[39] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  ITProcurement_34137
+Lanes:    3
+Elements: 20 (20 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=2,flows=21,data=0,data_assoc=0
+======================================================================

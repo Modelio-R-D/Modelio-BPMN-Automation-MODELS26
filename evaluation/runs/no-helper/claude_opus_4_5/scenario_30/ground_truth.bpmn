@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <userTask id="UserTask_1" name="Send invites to 10 people">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </userTask>
+    <userTask id="UserTask_2" name="Ask which games do they want to play">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </userTask>
+    <userTask id="UserTask_3" name="Appoint a date">
+      <incoming>SequenceFlow_5</incoming>
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </userTask>
+    <userTask id="UserTask_4" name="Ask friends how much beer they would like">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </userTask>
+    <userTask id="UserTask_5" name="Order beer for that date">
+      <incoming>SequenceFlow_13</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </userTask>
+    <userTask id="UserTask_6" name="Find where can you download the games">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+    </userTask>
+    <serviceTask id="ServiceTask_1" name="Reserve that day">
+      <incoming>SequenceFlow_10</incoming>
+      <outgoing>SequenceFlow_18</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_2" name="Download the missing games">
+      <incoming>SequenceFlow_16</incoming>
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_26</outgoing>
+    </serviceTask>
+    <serviceTask id="ServiceTask_3" name="Send a notification that the LAN party will be held on that date">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="ExclusiveGateway_1" name="How many people can play on that date?">
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+      <outgoing>SequenceFlow_10</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2" name="Do we have all the games?">
+      <incoming>SequenceFlow_6</incoming>
+      <outgoing>SequenceFlow_15</outgoing>
+      <outgoing>SequenceFlow_25</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_19</incoming>
+      <incoming>SequenceFlow_25</incoming>
+      <outgoing>SequenceFlow_24</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4" name="Do you have enough beer?">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+      <outgoing>SequenceFlow_23</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5">
+      <incoming>SequenceFlow_14</incoming>
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6" name="Download successful?">
+      <incoming>SequenceFlow_26</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+      <outgoing>SequenceFlow_6</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_18</incoming>
+      <incoming>SequenceFlow_24</incoming>
+      <outgoing>SequenceFlow_11</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="Wish for a LAN gameparty">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="LAN party done">
+      <incoming>SequenceFlow_17</incoming>
+    </endEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_1" name="Few hours, until the user has all the games that they want to play">
+      <timerEventDefinition id="timer_1"/>
+      <incoming>SequenceFlow_3</incoming>
+      <outgoing>SequenceFlow_4</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_2" name="Few hours, until all people reply if they can play on that date">
+      <timerEventDefinition id="timer_2"/>
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="IntermediateCatchEvent_3" name="Few hours, until all people reply with t he amount of beer">
+      <timerEventDefinition id="timer_3"/>
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </intermediateCatchEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="UserTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="UserTask_1" targetRef="UserTask_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="UserTask_2" targetRef="IntermediateCatchEvent_1"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="IntermediateCatchEvent_1" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="ParallelGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="UserTask_3" targetRef="IntermediateCatchEvent_2"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="IntermediateCatchEvent_2" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_9" name="Less then 8 people can play on that date" sourceRef="ExclusiveGateway_1" targetRef="UserTask_3"/>
+    <sequenceFlow id="SequenceFlow_10" name="8 or more people can play on that date" sourceRef="ExclusiveGateway_1" targetRef="ServiceTask_1"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ParallelGateway_2" targetRef="UserTask_4"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="UserTask_4" targetRef="IntermediateCatchEvent_3"/>
+    <sequenceFlow id="SequenceFlow_13" name="No" sourceRef="ExclusiveGateway_4" targetRef="UserTask_5"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="UserTask_5" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_15" name="No" sourceRef="ExclusiveGateway_2" targetRef="UserTask_6"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="UserTask_6" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ServiceTask_3" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ServiceTask_1" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_19" name="Yes" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_20" name="No" sourceRef="ExclusiveGateway_6" targetRef="ServiceTask_2"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ExclusiveGateway_5" targetRef="ServiceTask_3"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="IntermediateCatchEvent_3" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_23" name="Yes" sourceRef="ExclusiveGateway_4" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_24" sourceRef="ExclusiveGateway_3" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_25" name="Yes" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_26" sourceRef="ServiceTask_2" targetRef="ExclusiveGateway_6"/>
+  </process>
+</definitions>

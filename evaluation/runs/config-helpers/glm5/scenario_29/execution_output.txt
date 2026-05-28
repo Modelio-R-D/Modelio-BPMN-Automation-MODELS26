@@ -1,0 +1,117 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: WorkLiveAustria_38324
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: WorkLiveAustria_38324
+[2] Lanes: Applicant, Austrian Embassy, Service Provider, Municipal Authority
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Applicant: 11 elements
+[4] Austrian Embassy: 7 elements
+[5] Service Provider: 4 elements
+[6] Municipal Authority: 1 elements
+
+  Total: 23 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 9
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: WorkLiveAustria_38324
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 16: Issue Rot-Weiss-Rot Card=0, Application Rejected=90
+[Applicant] Lane bounds: 5-182
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Gather Required Documents -> col=1 (230,25) relY=20
+  Documents Complete? -> col=2 (380,25) relY=20
+  Obtain Missing Documents -> col=3 (530,25) relY=20
+  Purchase Travel Insurance -> col=4 (680,25) relY=20
+  Search Accommodation -> col=5 (830,25) relY=20
+  Submit Visa Application -> col=10 (1580,25) relY=20
+  Provide Additional Documents -> col=13 (2030,25) relY=20
+  Receive Card -> col=17 (2630,25) relY=20
+  Enter Austria -> col=18 (2780,25) relY=20
+  Live and Work in Austria -> col=20 (3080,25) relY=20
+  Valid Passport (DO from Gather Required Documents) -> (320,95) maxBottomRelY=80
+  Passport Photo (DO from Gather Required Documents) -> (320,95) maxBottomRelY=80
+  Application Form (DO) -> (1370,95)
+  Health Insurance (DO from Purchase Travel Insurance) -> (770,95) maxBottomRelY=80
+  Proof of Means (DO) -> (1370,95)
+
+[Austrian Embassy] Lane bounds: 187-287
+  [Unmask] Application Rejected -> Y=237: OK
+  [Unmask] Rot-Weiss-Rot Card -> Y=237: OK
+  [maxElementBottomRelY=150]
+  Review Application -> col=11 (1730,207) relY=20
+  Application Complete? -> col=12 (1880,207) relY=20
+  Request Additional Documents -> col=13 (2030,207) relY=20
+  Process Application -> col=14 (2180,207) relY=20
+  Visa Approved? -> col=15 (2330,207) relY=20
+  Issue Rot-Weiss-Rot Card -> col=16 (2480,207) relY=20
+  Application Rejected -> col=16 (2480,297) relY=110
+  Rot-Weiss-Rot Card (DO from Issue Rot-Weiss-Rot Card) -> (2270,347) maxBottomRelY=150
+
+[Service Provider] Lane bounds: 439-539
+  [Unmask] Negotiate Terms -> Y=489: OK
+  [Unmask] Accommodation Available? -> Y=489: OK
+  [Unmask] Sign Rental Contract -> Y=489: OK
+  [Unmask] Open Bank Account -> Y=489: OK
+  [Unmask] Rental Contract -> Y=489: OK
+  [Unmask] Bank Account Details -> Y=489: OK
+  [maxElementBottomRelY=80]
+  Negotiate Terms -> col=6 (980,459) relY=20
+  Accommodation Available? -> col=7 (1130,459) relY=20
+  Sign Rental Contract -> col=8 (1280,459) relY=20
+  Open Bank Account -> col=9 (1430,459) relY=20
+  Rental Contract (DO from Sign Rental Contract) -> (1220,529) maxBottomRelY=80
+  Bank Account Details (DO from Open Bank Account) -> (1370,529) maxBottomRelY=80
+
+[Municipal Authority] Lane bounds: 621-721
+  [Unmask] Register Residence -> Y=671: OK
+  [Unmask] Residence Registration -> Y=671: OK
+  [maxElementBottomRelY=80]
+  Register Residence -> col=19 (2930,641) relY=20
+  Residence Registration (DO from Register Residence) -> (2720,711) maxBottomRelY=80
+
+
+[10] Repositioned: 32/32
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 25 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+ERROR: Both source and target are DataObjects
+[12] Data associations: 13
+
+==================================================================
+COMPLETE: WorkLiveAustria_38324
+==================================================================
+Lanes: 4 | Elements: 23 | Data: 9 | Flows: 25 | DataAssoc: 13
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=32,gateways=4,flows=25,data=9,data_assoc=13
+======================================================================

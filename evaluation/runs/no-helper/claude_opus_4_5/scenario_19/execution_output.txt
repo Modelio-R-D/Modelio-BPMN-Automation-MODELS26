@@ -1,0 +1,122 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ONLINE SHOP PURCHASE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   62158
+Process Name:   OnlineShopPurchase_62158
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopPurchase_62158
+[2] Lanes: Customer, Items Path, Payment Path
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 8 elements
+[4] Items Path lane: 2 elements
+[5] Payment Path lane: 5 elements
+
+  Total elements: 15
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: OnlineShopPurchase_62158
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 7/15 | Missing: Start Order, Log In, Split, Join, Deliver Item, Return?, Return Items, Order Comple
+  [Attempt 2] Found: 7/15 | Missing: Start Order, Log In, Split, Join, Deliver Item, Return?, Return Items, Order Comple
+  [Attempt 3] Found: 7/15 | Missing: Start Order, Log In, Split, Join, Deliver Item, Return?, Return Items, Order Comple
+  [Attempt 4] Found: 7/15 | Missing: Start Order, Log In, Split, Join, Deliver Item, Return?, Return Items, Order Comple
+  [Attempt 5] Found: 7/15 | Missing: Start Order, Log In, Split, Join, Deliver Item, Return?, Return Items, Order Comple
+  [Attempt 5] TIMEOUT - 7/15 elements
+
+[10] WARNING: 7/15 elements ready
+         Missing: Start Order, Log In, Split, Join, Deliver Items, Return?, Return Items, Order Complete
+
+[11] Trying manual unmask...
+
+  [Unmask] Start Order -> Y=55 (Customer): OK
+  [Unmask] Log In -> Y=55 (Customer): OK
+  [Unmask] Split -> Y=55 (Customer): OK
+  [Unmask] Join -> Y=55 (Customer): OK
+  [Unmask] Deliver Items -> Y=55 (Customer): OK
+  [Unmask] Return? -> Y=55 (Customer): OK
+  [Unmask] Return Items -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+
+[12] Manual unmask: 8 elements
+[13] All elements now available
+
+  Lanes: Customer(5-132); Items Path(132-232); Payment Path(232-436)
+  Elements: Start Orde=Y55, Log In=Y55, Split=Y55, Select Ite=Y143, Set Paymen=Y243, Choose Rew=Y143, Payment Ty=Y243, Installmen=Y243, Join=Y55, Pay Now=Y243, Deliver It=Y55, Payment Do=Y243, Return?=Y55, Return Ite=Y55, Order Comp=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[14] Customer centerY = 45
+[15] Items Path centerY = 159
+[16] Payment Path centerY = 311
+
+[17] Customer/Start Order -> (60,45)
+[18] Customer/Log In -> (200,45)
+[19] Customer/Split -> (340,45)
+[20] Items Path/Select Items -> (480,159)
+[21] Payment Path/Set Payment -> (480,311)
+[22] Items Path/Choose Reward -> (620,159)
+[23] Payment Path/Payment Type? -> (620,311)
+[24] Payment Path/Installment -> (690,346)
+[25] Customer/Join -> (760,45)
+[26] Payment Path/Pay Now -> (760,311)
+[27] Customer/Deliver Items -> (900,45)
+[28] Payment Path/Payment Done -> (900,311)
+[29] Customer/Return? -> (1040,45)
+[30] Customer/Return Items -> (1180,45)
+[31] Customer/Order Complete -> (1320,45)
+
+  Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 17 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-132); Items Path(132-232); Payment Path(232-436)
+  Elements: Start Orde=Y45, Log In=Y45, Split=Y45, Select Ite=Y159, Set Paymen=Y311, Choose Rew=Y159, Payment Ty=Y311, Installmen=Y346, Join=Y45, Pay Now=Y311, Deliver It=Y45, Payment Do=Y311, Return?=Y45, Return Ite=Y45, Order Comp=Y45
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OnlineShopPurchase_62158
+Lanes:    3
+Elements: 15 (15 in diagram)
+Flows:    17
+==================================================================
+
+Process Flow Summary:
+  1. Start -> Log In
+  2. PARALLEL SPLIT: Items Path || Payment Path
+  3. Items Path: Select Items -> Choose Reward
+  4. Payment Path: Set Payment -> Pay Now XOR Installment
+  5. PARALLEL JOIN: Synchronize both paths
+  6. Deliver Items
+  7. Return? -> Return Items -> Deliver (loop) OR End
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=15,gateways=5,flows=17,data=0,data_assoc=0
+======================================================================

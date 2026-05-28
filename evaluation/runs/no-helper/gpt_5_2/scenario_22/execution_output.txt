@@ -1,0 +1,144 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN SUBROGATION / RECOURSE PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   26481
+Process Name:   SubrogationRecourse_26481
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: SubrogationRecourse_26481
+[2] LaneSet created
+[3] Lanes: Claims Handler, Insurant, Finance, Collection Agency
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Element] Claims Handler / Subrogation info received | addToLane=True
+  [Element] Claims Handler / Check recourse possibility | addToLane=True
+  [Element] Claims Handler / Recourse possible? | addToLane=True
+  [Element] Claims Handler / Send payment request | addToLane=True
+  [Element] Claims Handler / Set reminder | addToLane=True
+  [Element] Claims Handler / Response? | addToLane=True
+  [Element] Insurant / Send disagreement | addToLane=True
+  [Element] Claims Handler / Check disagreement reasoning | addToLane=True
+  [Element] Claims Handler / Insurant right? | addToLane=True
+  [Element] Finance / Make booking | addToLane=True
+  [Element] Claims Handler / Forward to collection agency | addToLane=True
+  [Element] Collection Agency / Collection processing | addToLane=True
+  [Element] Claims Handler / Case closed | addToLane=True
+  [Element] Claims Handler / Case handed to collection | addToLane=True
+
+[4] Total elements: 14
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram created: SubrogationRecourse_26481
+[6] DiagramHandle obtained
+[7] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[8] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 1/14 | Missing: Subrogation , Check recour, Recourse pos, Send payment, Set reminder, Response?, Send disagre, Check disagr, Insurant rig, Forward to c, Collection p, Case closed, Case handed 
+  [Attempt 2] Found: 1/14 | Missing: Subrogation , Check recour, Recourse pos, Send payment, Set reminder, Response?, Send disagre, Check disagr, Insurant rig, Forward to c, Collection p, Case closed, Case handed 
+  [Attempt 3] Found: 1/14 | Missing: Subrogation , Check recour, Recourse pos, Send payment, Set reminder, Response?, Send disagre, Check disagr, Insurant rig, Forward to c, Collection p, Case closed, Case handed 
+  [Attempt 3] TIMEOUT - 1/14 elements
+
+[9] WARNING: 1/14 elements ready after 150ms
+         Missing: Subrogation info received, Check recourse possibility, Recourse possible?, Send payment request, Set reminder, Response?, Send disagreement, Check disagreement reasoning, Insurant right?, Forward to collection agency, Collection processing, Case closed, Case handed to collection
+
+[10] Trying manual unmask for missing elements (inside correct lane Y)...
+
+  [Unmask] Subrogation info received -> Y=55 (Claims Handler): OK
+  [Unmask] Check recourse possibility -> Y=55 (Claims Handler): OK
+  [Unmask] Recourse possible? -> Y=55 (Claims Handler): OK
+  [Unmask] Send payment request -> Y=55 (Claims Handler): OK
+  [Unmask] Set reminder -> Y=55 (Claims Handler): OK
+  [Unmask] Response? -> Y=55 (Claims Handler): OK
+  [Unmask] Send disagreement -> Y=155 (Insurant): OK
+  [Unmask] Check disagreement reasoning -> Y=55 (Claims Handler): OK
+  [Unmask] Insurant right? -> Y=55 (Claims Handler): OK
+  [Unmask] Forward to collection agency -> Y=55 (Claims Handler): OK
+  [Unmask] Collection processing -> Y=355 (Collection Agency): OK
+  [Unmask] Case closed -> Y=55 (Claims Handler): OK
+  [Unmask] Case handed to collection -> Y=55 (Claims Handler): OK
+
+[11] Manual unmask: 13 elements unmasked
+[12] All elements now available
+
+  Lanes: Claims Handler(5-140); Insurant(140-240); Finance(240-340); Collection Agency(340-440)
+  Elements: Subrogation in=Y55, Check recourse=Y55, Recourse possi=Y55, Send payment r=Y55, Set reminder=Y55, Response?=Y55, Make booking=Y251, Send disagreem=Y155, Case closed=Y55, Check disagree=Y55, Insurant right=Y55, Forward to col=Y55, Collection pro=Y355, Case handed to=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Claims Handler centerY = 49
+[14] Insurant centerY = 167
+[15] Finance centerY = 267
+[16] Collection Agency centerY = 367
+
+[17] Claims Handler/Subrogation info received -> (80,49) 33x33
+[18] Claims Handler/Check recourse possibility -> (230,49) 150x60
+[19] Claims Handler/Recourse possible? -> (380,49) 40x40
+[20] Claims Handler/Send payment request -> (530,49) 150x60
+[21] Claims Handler/Set reminder -> (680,49) 150x60
+[22] Claims Handler/Response? -> (830,49) 40x40
+[23] Finance/Make booking -> (980,267) 150x60
+[24] Insurant/Send disagreement -> (980,167) 150x60
+[25] Claims Handler/Case closed -> (1130,49) 33x33
+[26] Claims Handler/Check disagreement reasoning -> (1130,49) 150x60
+[27] Claims Handler/Insurant right? -> (1280,49) 40x40
+[28] Claims Handler/Forward to collection agency -> (1430,49) 150x60
+[29] Collection Agency/Collection processing -> (1580,367) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Claims Handler(5-140); Insurant(140-240); Finance(240-340); Collection Agency(340-440)
+         After:  Lanes: Claims Handler(5-140); Insurant(140-240); Finance(240-340); Collection Agency(340-501)
+[30] Claims Handler/Case handed to collection -> (1730,49) 33x33
+
+[31] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Subrogation info recei -> Check recourse possibi
+  [Flow] Check recourse possibi -> Recourse possible?
+  [Flow] Recourse possible? -> Send payment request | guard=Yes
+  [Flow] Recourse possible? -> Case closed | guard=No
+  [Flow] Send payment request -> Set reminder
+  [Flow] Set reminder -> Response?
+  [Flow] Response? -> Make booking | guard=Payment received
+  [Flow] Response? -> Send disagreement | guard=Disagreement
+  [Flow] Response? -> Forward to collection  | guard=Deadline reached
+  [Flow] Send disagreement -> Check disagreement rea
+  [Flow] Check disagreement rea -> Insurant right?
+  [Flow] Insurant right? -> Case closed | guard=Yes
+  [Flow] Insurant right? -> Forward to collection  | guard=No
+  [Flow] Make booking -> Case closed
+  [Flow] Forward to collection  -> Collection processing
+  [Flow] Collection processing -> Case handed to collect
+[32] Created flows: 16 | Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Claims Handler(5-140); Insurant(140-240); Finance(240-340); Collection Agency(340-501)
+  Elements: Subrogation in=Y49, Check recourse=Y49, Recourse possi=Y49, Send payment r=Y49, Set reminder=Y49, Response?=Y49, Make booking=Y267, Send disagreem=Y167, Case closed=Y49, Check disagree=Y49, Insurant right=Y49, Forward to col=Y49, Collection pro=Y367, Case handed to=Y49
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  SubrogationRecourse_26481
+Lanes:    4
+Elements: 14 (14 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=4,elements=14,gateways=3,flows=16,data=0,data_assoc=0
+======================================================================

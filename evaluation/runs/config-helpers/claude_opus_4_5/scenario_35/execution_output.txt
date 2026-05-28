@@ -1,0 +1,116 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ChainsawProduction_14145
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ChainsawProduction_14145
+[2] Lanes: Customer, Sales, Procurement, Production, Quality
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer: 7 elements
+[4] Sales: 4 elements
+[5] Procurement: 7 elements
+[6] Production: 2 elements
+[7] Quality: 2 elements
+
+  Total: 22 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[8] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[9] Diagram: ChainsawProduction_14145
+[10] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Order Guide Bar=0, Order Power Unit=90, Order Safety Guard=180
+  [Auto-stack] col 5: Order Chain=0, Order Handle Assembly=90
+[Customer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Specify Requirements -> Y=55: OK
+  [Unmask] Receive Updates -> Y=55: OK
+  [Unmask] Evaluate Prototype -> Y=55: OK
+  [Unmask] Approved? -> Y=55: OK
+  [Unmask] Receive Final Order -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Specify Requirements -> col=1 (210,25) relY=20
+  Receive Updates -> col=10 (1380,25) relY=20
+  Evaluate Prototype -> col=12 (1640,25) relY=20
+  Approved? -> col=13 (1770,25) relY=20
+  Receive Final Order -> col=16 (2160,25) relY=20
+  End -> col=17 (2290,25) relY=20
+
+[Sales] Lane bounds: 132-241
+  [maxElementBottomRelY=80]
+  Capture Order -> col=2 (340,152) relY=20
+  Send Update -> col=10 (1380,152) relY=20
+  Send Prototype -> col=12 (1640,152) relY=20
+  Deliver Remaining -> col=16 (2160,152) relY=20
+  Order Specification (DO from Capture Order) -> (300,222) maxBottomRelY=80
+
+[Procurement] Lane bounds: 314-522
+  [maxElementBottomRelY=260]
+  Split Orders -> col=3 (470,334) relY=20
+  Order Guide Bar -> col=4 (600,334) relY=20
+  Order Chain -> col=5 (730,334) relY=20
+  Order Power Unit -> col=4 (600,424) relY=110
+  Order Handle Assembly -> col=5 (730,424) relY=110
+  Order Safety Guard -> col=4 (600,514) relY=200
+  Await All Parts -> col=6 (860,334) relY=20
+  Parts Inventory (DO from Inspect Parts) -> (1080,584) maxBottomRelY=260
+
+[Production] Lane bounds: 676-776
+  [Unmask] Assemble Chainsaw -> Y=726: OK
+  [Unmask] Produce Remaining -> Y=726: OK
+  [Unmask] Prototype -> Y=726: OK
+  [maxElementBottomRelY=80]
+  Assemble Chainsaw -> col=9 (1250,696) relY=20
+  Produce Remaining -> col=15 (2030,696) relY=20
+  Prototype (DO from Assemble Chainsaw) -> (1340,766) maxBottomRelY=80
+
+[Quality] Lane bounds: 858-958
+  [Unmask] Inspect Parts -> Y=908: OK
+  [Unmask] Final Inspection -> Y=908: OK
+  [maxElementBottomRelY=80]
+  Inspect Parts -> col=7 (990,878) relY=20
+  Final Inspection -> col=11 (1510,878) relY=20
+
+
+[11] Repositioned: 25/25
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[12] Created 26 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[13] Data associations: 10
+
+==================================================================
+COMPLETE: ChainsawProduction_14145
+==================================================================
+Lanes: 5 | Elements: 22 | Data: 3 | Flows: 26 | DataAssoc: 10
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

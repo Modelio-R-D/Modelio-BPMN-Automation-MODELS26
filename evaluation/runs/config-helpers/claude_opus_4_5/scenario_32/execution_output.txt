@@ -1,0 +1,140 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: FarmingBot_12103
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FarmingBot_12103
+[2] Lanes: Player, Bot System, Event Handler, Social
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Player: 8 elements
+[4] Bot System: 14 elements
+[5] Event Handler: 7 elements
+[6] Social: 8 elements
+
+  Total: 37 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[7] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram: FarmingBot_12103
+[9] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 3: Resources Valid?=0, Too Many Selected=90
+  [Auto-stack] col 5: Tools Needed?=0, Queue Tool Crafting=90
+  [Auto-stack] col 8: Farm Wood=0, Farm Stone=90, Farm Iron=180, Farm Gold=270, Farm Gems=360
+  [Auto-stack] col 8: Disaster Strikes=0, Milestone Reached=90, Preference Update=180
+  [Auto-stack] col 9: Calculate Setback=0, Send Notification=90
+  [Auto-stack] col 14: Select Friends=0, Skip Sharing=90
+  [Auto-stack] col 16: Post Achievement=0, Send Materials=90
+[Player] Lane bounds: 5-152
+  [maxElementBottomRelY=170]
+  Start -> col=0 (60,25) relY=20
+  Select Resources -> col=1 (190,25) relY=20
+  Set Priorities -> col=2 (320,25) relY=20
+  Resources Valid? -> col=3 (450,25) relY=20
+  Too Many Selected -> col=3 (450,115) relY=110
+  Update Preferences -> col=8 (1100,25) relY=20
+  View Milestone -> col=9 (1230,25) relY=20
+  Continue Farming? -> col=10 (1360,25) relY=20
+  Resource List (DO from Select Resources) -> (280,185) maxBottomRelY=170
+  Priority Queue (DO from Set Priorities) -> (410,185) maxBottomRelY=170
+
+[Bot System] Lane bounds: 277-386
+  [Unmask] Farm Iron -> Y=331: OK
+  [Unmask] Farm Gold -> Y=331: OK
+  [Unmask] Farm Gems -> Y=331: OK
+  [Unmask] Join Resources -> Y=331: OK
+  [Unmask] Update Inventory -> Y=331: OK
+  [Unmask] All Complete? -> Y=331: OK
+  [Unmask] Farming Complete -> Y=331: OK
+  [Unmask] Tool Requirements -> Y=331: OK
+  [Unmask] Inventory -> Y=331: OK
+  [maxElementBottomRelY=440]
+  Check Dependencies -> col=4 (580,297) relY=20
+  Tools Needed? -> col=5 (710,297) relY=20
+  Queue Tool Crafting -> col=5 (710,387) relY=110
+  Prepare Farming -> col=6 (840,297) relY=20
+  Fork Resources -> col=7 (970,297) relY=20
+  Farm Wood -> col=8 (1100,297) relY=20
+  Farm Stone -> col=8 (1100,387) relY=110
+  Farm Iron -> col=8 (1100,477) relY=200
+  Farm Gold -> col=8 (1100,567) relY=290
+  Farm Gems -> col=8 (1100,657) relY=380
+  Join Resources -> col=9 (1230,297) relY=20
+  Update Inventory -> col=10 (1360,297) relY=20
+  All Complete? -> col=11 (1490,297) relY=20
+  Farming Complete -> col=12 (1620,297) relY=20
+  Tool Requirements (DO from Check Dependencies) -> (670,727) maxBottomRelY=440
+  Inventory (DO from Update Inventory) -> (1580,727) maxBottomRelY=440
+
+[Event Handler] Lane bounds: 819-919
+  [maxElementBottomRelY=240]
+  Event Gateway -> col=7 (970,839) relY=20
+  Disaster Strikes -> col=8 (1100,839) relY=20
+  Milestone Reached -> col=8 (1100,929) relY=110
+  Preference Update -> col=8 (1100,1019) relY=200
+  Calculate Setback -> col=9 (1230,839) relY=20
+  Send Notification -> col=9 (1230,929) relY=110
+  Merge Events -> col=10 (1360,839) relY=20
+
+[Social] Lane bounds: 1089-1189
+  [Unmask] Share Results? -> Y=1139: OK
+  [Unmask] Select Friends -> Y=1139: OK
+  [Unmask] Choose Share Type -> Y=1139: OK
+  [Unmask] Post Achievement -> Y=1139: OK
+  [Unmask] Send Materials -> Y=1139: OK
+  [Unmask] Join Share -> Y=1139: OK
+  [Unmask] End Process -> Y=1139: OK
+  [Unmask] Skip Sharing -> Y=1139: OK
+  [Unmask] Friend List -> Y=1139: OK
+  [maxElementBottomRelY=170]
+  Share Results? -> col=13 (1750,1109) relY=20
+  Select Friends -> col=14 (1880,1109) relY=20
+  Choose Share Type -> col=15 (2010,1109) relY=20
+  Post Achievement -> col=16 (2140,1109) relY=20
+  Send Materials -> col=16 (2140,1199) relY=110
+  Join Share -> col=17 (2270,1109) relY=20
+  End Process -> col=18 (2400,1109) relY=20
+  Skip Sharing -> col=14 (1880,1199) relY=110
+  Friend List (DO from Select Friends) -> (1970,1269) maxBottomRelY=170
+
+
+[10] Repositioned: 42/42
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[11] Created 47 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[12] Data associations: 11
+
+==================================================================
+COMPLETE: FarmingBot_12103
+==================================================================
+Lanes: 4 | Elements: 37 | Data: 5 | Flows: 47 | DataAssoc: 11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 11
+======================================================================

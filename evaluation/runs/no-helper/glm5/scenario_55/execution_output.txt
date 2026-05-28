@@ -1,0 +1,166 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN CATHETER PLACEMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   70114
+Process Name:   CatheterPlacement_70114
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: CatheterPlacement_70114
+[2] Lanes: Doctor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Doctor lane: 35 elements
+
+  Total elements: 35
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: CatheterPlacement_70114
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 0/35 | Missing: Start, Prepare Impl, Wash Hands, Get Sterile , Clean Punctu, Drape Punctu, Configure Ul, Put Gel in P, Cover Probe, Put Sterile , Position Pro, Position Pat, Identify Vei, Anatomic ID, Doppler ID, Compression , Vein Identif, Anesthetize , Puncture, Blood Return, Drop Probe, Remove Syrin, Install Guid, Remove Troca, Check Wire M, Check Long A, Check Short , Wire Checked, Wire Positio, Widen Pathwa, Advance Cath, Remove Guide, Verify Flow , Check Cathet, End
+  [Attempt 2] Found: 0/35 | Missing: Start, Prepare Impl, Wash Hands, Get Sterile , Clean Punctu, Drape Punctu, Configure Ul, Put Gel in P, Cover Probe, Put Sterile , Position Pro, Position Pat, Identify Vei, Anatomic ID, Doppler ID, Compression , Vein Identif, Anesthetize , Puncture, Blood Return, Drop Probe, Remove Syrin, Install Guid, Remove Troca, Check Wire M, Check Long A, Check Short , Wire Checked, Wire Positio, Widen Pathwa, Advance Cath, Remove Guide, Verify Flow , Check Cathet, End
+  [Attempt 3] Found: 0/35 | Missing: Start, Prepare Impl, Wash Hands, Get Sterile , Clean Punctu, Drape Punctu, Configure Ul, Put Gel in P, Cover Probe, Put Sterile , Position Pro, Position Pat, Identify Vei, Anatomic ID, Doppler ID, Compression , Vein Identif, Anesthetize , Puncture, Blood Return, Drop Probe, Remove Syrin, Install Guid, Remove Troca, Check Wire M, Check Long A, Check Short , Wire Checked, Wire Positio, Widen Pathwa, Advance Cath, Remove Guide, Verify Flow , Check Cathet, End
+  [Attempt 3] TIMEOUT - 0/35 elements
+
+[8] WARNING: 0/35 elements ready after 150ms
+         Missing: Start, Prepare Implements, Wash Hands, Get Sterile Clothes, Clean Puncture Area, Drape Puncture Zone, Configure Ultrasound, Put Gel in Probe, Cover Probe, Put Sterile Gel, Position Probe, Position Patient, Identify Vein, Anatomic ID, Doppler ID, Compression ID, Vein Identified, Anesthetize Patient, Puncture, Blood Return OK?, Drop Probe, Remove Syringe, Install Guidewire, Remove Trocar, Check Wire Method, Check Long Axis, Check Short Axis, Wire Checked, Wire Position OK?, Widen Pathway, Advance Catheter, Remove Guidewire, Verify Flow and Reflow, Check Catheter Position, End
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Start -> Y=105 (Doctor): OK
+  [Unmask] Prepare Implements -> Y=105 (Doctor): OK
+  [Unmask] Wash Hands -> Y=105 (Doctor): OK
+  [Unmask] Get Sterile Clothes -> Y=105 (Doctor): OK
+  [Unmask] Clean Puncture Area -> Y=105 (Doctor): OK
+  [Unmask] Drape Puncture Zone -> Y=105 (Doctor): OK
+  [Unmask] Configure Ultrasound -> Y=105 (Doctor): OK
+  [Unmask] Put Gel in Probe -> Y=105 (Doctor): OK
+  [Unmask] Cover Probe -> Y=105 (Doctor): OK
+  [Unmask] Put Sterile Gel -> Y=105 (Doctor): OK
+  [Unmask] Position Probe -> Y=105 (Doctor): OK
+  [Unmask] Position Patient -> Y=105 (Doctor): OK
+  [Unmask] Identify Vein -> Y=105 (Doctor): OK
+  [Unmask] Anatomic ID -> Y=50 (Doctor): OK
+  [Unmask] Doppler ID -> Y=105 (Doctor): OK
+  [Unmask] Compression ID -> Y=160 (Doctor): OK
+  [Unmask] Vein Identified -> Y=105 (Doctor): OK
+  [Unmask] Anesthetize Patient -> Y=105 (Doctor): OK
+  [Unmask] Puncture -> Y=105 (Doctor): OK
+  [Unmask] Blood Return OK? -> Y=105 (Doctor): OK
+  [Unmask] Drop Probe -> Y=105 (Doctor): OK
+  [Unmask] Remove Syringe -> Y=105 (Doctor): OK
+  [Unmask] Install Guidewire -> Y=105 (Doctor): OK
+  [Unmask] Remove Trocar -> Y=105 (Doctor): OK
+  [Unmask] Check Wire Method -> Y=105 (Doctor): OK
+  [Unmask] Check Long Axis -> Y=50 (Doctor): OK
+  [Unmask] Check Short Axis -> Y=160 (Doctor): OK
+  [Unmask] Wire Checked -> Y=105 (Doctor): OK
+  [Unmask] Wire Position OK? -> Y=105 (Doctor): OK
+  [Unmask] Widen Pathway -> Y=105 (Doctor): OK
+  [Unmask] Advance Catheter -> Y=105 (Doctor): OK
+  [Unmask] Remove Guidewire -> Y=105 (Doctor): OK
+  [Unmask] Verify Flow and Reflow -> Y=105 (Doctor): OK
+  [Unmask] Check Catheter Position -> Y=105 (Doctor): OK
+  [Unmask] End -> Y=105 (Doctor): OK
+
+[10] Manual unmask: 35 elements unmasked
+
+  Lanes: Doctor(5-217)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Doctor centerY = 88
+
+[12] Start -> (80,Y88)
+[13] Prepare Implements -> (210,Y88)
+[14] Wash Hands -> (340,Y88)
+[15] Get Sterile Clothes -> (470,Y88)
+[16] Clean Puncture Area -> (600,Y88)
+[17] Drape Puncture Zone -> (730,Y88)
+[18] Configure Ultrasound -> (860,Y88)
+[19] Put Gel in Probe -> (990,Y88)
+[20] Cover Probe -> (1120,Y88)
+[21] Put Sterile Gel -> (1250,Y88)
+[22] Position Probe -> (1380,Y88)
+[23] Position Patient -> (1510,Y88)
+[24] Identify Vein -> (1640,Y88)
+[25] Anatomic ID -> (1770,Y33 (offset=-55))
+[26] Compression ID -> (1770,Y143 (offset=55))
+[27] Doppler ID -> (1770,Y88)
+[28] Vein Identified -> (1900,Y88)
+[29] Anesthetize Patient -> (2030,Y88)
+[30] Puncture -> (2160,Y88)
+[31] Blood Return OK? -> (2290,Y88)
+[32] Drop Probe -> (2420,Y88)
+[33] Remove Syringe -> (2550,Y88)
+[34] Install Guidewire -> (2680,Y88)
+[35] Remove Trocar -> (2810,Y88)
+[36] Check Wire Method -> (2940,Y88)
+[37] Check Long Axis -> (3070,Y33 (offset=-55))
+[38] Check Short Axis -> (3070,Y143 (offset=55))
+[39] Wire Checked -> (3200,Y88)
+[40] Wire Position OK? -> (3330,Y88)
+[41] Widen Pathway -> (3460,Y88)
+[42] Advance Catheter -> (3590,Y88)
+[43] Remove Guidewire -> (3720,Y88)
+[44] Verify Flow and Reflow -> (3850,Y88)
+[45] Check Catheter Position -> (3980,Y88)
+[46] End -> (4110,Y88)
+
+  Repositioned: 35/35
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[47] Created 39 sequence flows
+[48] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Doctor(5-217)
+  Elements: Start=Y88, Prepare Im=Y88, Wash Hands=Y88, Get Steril=Y88, Clean Punc=Y88, Drape Punc=Y88, Configure =Y88, Put Gel in=Y88, Cover Prob=Y88, Put Steril=Y88, Position P=Y88, Position P=Y88, Identify V=Y88, Anatomic I=Y33, Compressio=Y143, Doppler ID=Y88, Vein Ident=Y88, Anesthetiz=Y88, Puncture=Y88, Blood Retu=Y88, Drop Probe=Y88, Remove Syr=Y88, Install Gu=Y88, Remove Tro=Y88, Check Wire=Y88, Check Long=Y33, Check Shor=Y143, Wire Check=Y88, Wire Posit=Y88, Widen Path=Y88, Advance Ca=Y88, Remove Gui=Y88, Verify Flo=Y88, Check Cath=Y88, End=Y88
+
+[49] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  CatheterPlacement_70114
+Lanes:    1
+Elements: 35 (35 in diagram)
+Flows:    39
+==================================================================
+
+PROCESS SUMMARY:
+  1. Preparation: Implements, washing, sterile clothes
+  2. Site prep: Clean and drape puncture zone
+  3. Ultrasound: Configure, gel, cover, sterile gel
+  4. Positioning: Probe and patient
+  5. Vein ID: Anatomic / Doppler / Compression (XOR)
+  6. Puncture: Anesthetize and puncture
+  7. Blood check: Loop back if No, continue if Yes
+  8. Guidewire: Install, remove trocar
+  9. Wire check: Long axis / Short axis (XOR)
+  10. Wire position: Loop back if No, continue if Yes
+  11. Catheter: Widen, advance, remove guidewire
+  12. Final: Verify flow/reflow, check position
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=1,elements=35,gateways=6,flows=39,data=0,data_assoc=0
+======================================================================

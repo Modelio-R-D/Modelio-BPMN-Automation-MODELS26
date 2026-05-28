@@ -1,0 +1,119 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:         Storage management
+Script Version: v9.1
+Execution ID:   99097
+Process Name:   Storage_management_99097
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Storage_management_99097
+[2] Lanes: Order System, Warehouse, Wholesaler, Stock System, Shipping
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements: 18
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: Storage_management_99097
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/18 | Missing: Order Receiv, Read Order F, Deliver Prod, Wait For Arr, Register Pro, Prepare Ship, Request Cour, Shipment Pre, Ship Order, Order Shippe
+  [Attempt 2] Found: 8/18 | Missing: Order Receiv, Read Order F, Deliver Prod, Wait For Arr, Register Pro, Prepare Ship, Request Cour, Shipment Pre, Ship Order, Order Shippe
+  [Attempt 3] Found: 8/18 | Missing: Order Receiv, Read Order F, Deliver Prod, Wait For Arr, Register Pro, Prepare Ship, Request Cour, Shipment Pre, Ship Order, Order Shippe
+  [Attempt 3] TIMEOUT - 8/18 elements
+
+[8] WARNING: 8/18 elements ready after 150ms
+         Missing: Order Received, Read Order From OMS, Deliver Product, Wait For Arrival, Register Product In Stock System, Prepare Shipment, Request Courier, Shipment Prepared, Ship Order, Order Shipped
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Order Received -> Y=55 (Order System): OK
+  [Unmask] Read Order From OMS -> Y=55 (Order System): OK
+  [Unmask] Deliver Product -> Y=309 (Wholesaler): OK
+  [Unmask] Wait For Arrival -> Y=309 (Wholesaler): OK
+  [Unmask] Register Product In Stock System -> Y=409 (Stock System): OK
+  [Unmask] Prepare Shipment -> Y=509 (Shipping): OK
+  [Unmask] Request Courier -> Y=509 (Shipping): OK
+  [Unmask] Shipment Prepared -> Y=509 (Shipping): OK
+  [Unmask] Ship Order -> Y=509 (Shipping): OK
+  [Unmask] Order Shipped -> Y=509 (Shipping): OK
+
+[10] Manual unmask: 10 elements unmasked
+[11] All elements now available
+
+  Lanes: Order System(5-129); Warehouse(129-283); Wholesaler(283-383); Stock System(383-483); Shipping(483-586)
+  Elements: Order Received=Y55, Read Order Fro=Y55, Select Next Pr=Y140, Product In Sto=Y140, Withdraw Produ=Y140, Reorder Produc=Y140, Deliver Produc=Y309, Wait For Arriv=Y309, Waited More Th=Y140, Demand Delay P=Y140, Register Produ=Y409, Order Ready Fo=Y140, Prepare Shipme=Y509, Pack Products=Y140, Request Courie=Y509, Shipment Prepa=Y509, Ship Order=Y509, Order Shipped=Y509
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Order System elementsTopY = 37
+[13] Warehouse elementsTopY = 176
+[14] Wholesaler elementsTopY = 303
+[15] Stock System elementsTopY = 403
+[16] Shipping elementsTopY = 504
+
+[17] Order System/Order Received -> (80,37) 33x33
+[18] Order System/Read Order From OMS -> (230,37) 150x60
+[19] Warehouse/Select Next Product -> (380,176) 150x60
+[20] Warehouse/Product In Stock? -> (530,176) 40x40
+[21] Warehouse/Withdraw Product -> (680,176) 150x60
+[22] Warehouse/Reorder Product -> (830,176) 150x60
+[23] Wholesaler/Deliver Product -> (980,303) 150x60
+[24] Wholesaler/Wait For Arrival -> (1130,303) 150x60
+[25] Warehouse/Waited More Than 10 Days? -> (1280,176) 40x40
+[26] Warehouse/Demand Delay Penalty -> (1430,176) 150x60
+[27] Stock System/Register Product In Stock System -> (1580,403) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Order System(5-129); Warehouse(129-283); Wholesaler(283-383); Stock System(383-483); Shipping(483-586)
+         After:  Lanes: Order System(5-129); Warehouse(129-283); Wholesaler(283-383); Stock System(383-506); Shipping(506-609)
+[28] Warehouse/Order Ready For Shipment? -> (1730,176) 40x40
+[29] Shipping/Prepare Shipment -> (1880,504) 40x40 *** LANE CHANGED ***
+         Before: Lanes: Order System(5-129); Warehouse(129-283); Wholesaler(283-383); Stock System(383-506); Shipping(506-609)
+         After:  Lanes: Order System(-8-116); Warehouse(116-270); Wholesaler(270-370); Stock System(370-493); Shipping(493-609)
+[30] Warehouse/Pack Products -> (2030,176) 150x60
+[31] Shipping/Request Courier -> (2030,504) 150x60
+[32] Shipping/Shipment Prepared -> (2180,504) 40x40
+[33] Shipping/Ship Order -> (2330,504) 150x60
+[34] Shipping/Order Shipped -> (2480,504) 33x33
+
+  Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[35] Created 21 sequence flows
+[36] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Order System(-8-116); Warehouse(116-270); Wholesaler(270-370); Stock System(370-493); Shipping(493-609)
+  Elements: Order Received=Y24, Read Order Fro=Y24, Select Next Pr=Y163, Product In Sto=Y163, Withdraw Produ=Y163, Reorder Produc=Y163, Deliver Produc=Y290, Wait For Arriv=Y290, Waited More Th=Y163, Demand Delay P=Y163, Register Produ=Y390, Order Ready Fo=Y163, Prepare Shipme=Y504, Pack Products=Y176, Request Courie=Y504, Shipment Prepa=Y504, Ship Order=Y504, Order Shipped=Y504
+
+[37] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Storage management
+Process:  Storage_management_99097
+Lanes:    5
+Elements: 18 (18 in diagram)
+Flows:    21
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=18,gateways=5,flows=21,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,87 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LegoMachineBuilder_41687
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LegoMachineBuilder_41687
+[2] Lanes: Engineer, Children
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Engineer: 13 elements
+[4] Children: 1 elements
+
+  Total: 14 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: LegoMachineBuilder_41687
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 6: Reorder Parts=0, Test Subcomponent=90
+  [Auto-stack] col 8: Redesign Subcomponent=0, More Subcomponents?=90
+[Engineer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Develop Design -> Y=55: OK
+  [Unmask] Order Brick Sets -> Y=55: OK
+  [Unmask] Build Subcomponent -> Y=55: OK
+  [Unmask] Parts Available? -> Y=55: OK
+  [Unmask] Reorder Parts -> Y=55: OK
+  [Unmask] Test Subcomponent -> Y=55: OK
+  [Unmask] Test OK? -> Y=55: OK
+  [Unmask] Redesign Subcomponent -> Y=55: OK
+  [Unmask] Rebuild Subcomponent -> Y=55: OK
+  [Unmask] More Subcomponents? -> Y=55: OK
+  [Unmask] Assemble Machine -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Develop Design -> col=1 (230,25) relY=20
+  Order Brick Sets -> col=2 (380,25) relY=20
+  Build Subcomponent -> col=4 (680,25) relY=20
+  Parts Available? -> col=5 (830,25) relY=20
+  Reorder Parts -> col=6 (980,25) relY=20
+  Test Subcomponent -> col=6 (980,115) relY=110
+  Test OK? -> col=7 (1130,25) relY=20
+  Redesign Subcomponent -> col=8 (1280,25) relY=20
+  Rebuild Subcomponent -> col=9 (1430,25) relY=20
+  More Subcomponents? -> col=8 (1280,115) relY=110
+  Assemble Machine -> col=10 (1580,25) relY=20
+  End -> col=11 (1730,25) relY=20
+
+[Children] Lane bounds: 192-292
+  [Unmask] Sort Parts -> Y=242: OK
+  [maxElementBottomRelY=80]
+  Sort Parts -> col=3 (530,212) relY=20
+
+
+[7] Repositioned: 14/14
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 16 sequence flows
+
+==================================================================
+COMPLETE: LegoMachineBuilder_41687
+==================================================================
+Lanes: 2 | Elements: 14 | Flows: 16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=14,gateways=3,flows=16,data=0,data_assoc=0
+======================================================================

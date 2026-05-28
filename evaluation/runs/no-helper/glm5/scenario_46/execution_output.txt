@@ -1,0 +1,110 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN STORAGE MANAGEMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   63414
+Process Name:   StorageManagement_63414
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: StorageManagement_63414
+[2] Lanes: Warehouse, Procurement, Shipping
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Warehouse lane: 7 elements
+[4] Procurement lane: 3 elements
+[5] Shipping lane: 6 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: StorageManagement_63414
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 6/16 | Missing: Order Receiv, Read Order, Product in S, Withdraw fro, Register in , Order Ready?, Select Next , Reorder from, Delay > 10 d, Demand Penal
+  [Attempt 2] Found: 6/16 | Missing: Order Receiv, Read Order, Product in S, Withdraw fro, Register in , Order Ready?, Select Next , Reorder from, Delay > 10 d, Demand Penal
+  [Attempt 3] Found: 6/16 | Missing: Order Receiv, Read Order, Product in S, Withdraw fro, Register in , Order Ready?, Select Next , Reorder from, Delay > 10 d, Demand Penal
+  [Attempt 3] TIMEOUT - 6/16 elements
+
+[10] WARNING: 6/16 elements ready
+         Missing: Order Received, Read Order, Product in Stock?, Withdraw from Warehouse, Register in Stock, Order Ready?, Select Next Product, Reorder from Wholesaler, Delay > 10 days?, Demand Penalty
+
+[11] Trying manual unmask...
+
+  [Unmask] Order Received -> Y=55 (Warehouse): FAILED
+  [Unmask] Read Order -> Y=55 (Warehouse): FAILED
+  [Unmask] Product in Stock? -> Y=55 (Warehouse): FAILED
+  [Unmask] Withdraw from Warehouse -> Y=55 (Warehouse): FAILED
+  [Unmask] Register in Stock -> Y=55 (Warehouse): FAILED
+  [Unmask] Order Ready? -> Y=55 (Warehouse): FAILED
+  [Unmask] Select Next Product -> Y=55 (Warehouse): FAILED
+  [Unmask] Reorder from Wholesaler -> Y=155 (Procurement): FAILED
+  [Unmask] Delay > 10 days? -> Y=155 (Procurement): FAILED
+  [Unmask] Demand Penalty -> Y=155 (Procurement): FAILED
+
+  Lanes: Warehouse(5-105); Procurement(105-205); Shipping(205-305)
+  Elements: Order Rece=--, Read Order=--, Product in=--, Reorder fr=--, Withdraw f=--, Delay > 10=--, Demand Pen=--, Register i=--, Order Read=--, Select Nex=--, Fork=Y216, Request Co=Y216, Pack Produ=Y216, Join=Y216, Ship=Y216, Order Ship=Y216
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Warehouse centerY = 32
+[13] Procurement centerY = 132
+[14] Shipping centerY = 232
+
+[15] SKIP Order Received: not in diagram
+[16] SKIP Read Order: not in diagram
+[17] SKIP Product in Stock?: not in diagram
+[18] SKIP Reorder from Wholesaler: not in diagram
+[19] SKIP Withdraw from Warehouse: not in diagram
+[20] SKIP Delay > 10 days?: not in diagram
+[21] SKIP Demand Penalty: not in diagram
+[22] SKIP Register in Stock: not in diagram
+[23] SKIP Order Ready?: not in diagram
+[24] SKIP Select Next Product: not in diagram
+[25] Shipping/Fork -> (1250,232) *** LANE CHANGED ***
+[26] Shipping/Request Courier -> (1380,232)
+[27] Shipping/Pack Products -> (1510,232)
+[28] Shipping/Join -> (1640,232)
+[29] Shipping/Ship -> (1770,232)
+[30] Shipping/Order Shipped -> (1900,232)
+
+  Repositioned: 6/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[31] Created 19 sequence flows
+[32] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Warehouse(5-105); Procurement(105-205); Shipping(205-309)
+  Elements: Order Rece=--, Read Order=--, Product in=--, Reorder fr=--, Withdraw f=--, Delay > 10=--, Demand Pen=--, Register i=--, Order Read=--, Select Nex=--, Fork=Y232, Request Co=Y232, Pack Produ=Y232, Join=Y232, Ship=Y232, Order Ship=Y232
+
+[33] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  StorageManagement_63414
+Lanes:    3
+Elements: 16 (6 in diagram)
+Flows:    19
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=5,flows=19,data=0,data_assoc=0
+======================================================================

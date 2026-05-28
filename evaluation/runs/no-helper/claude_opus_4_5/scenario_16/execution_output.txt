@@ -1,0 +1,114 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ANNUAL AUDIT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   46098
+Process Name:   AnnualAudit_46098
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: AnnualAudit_46098
+[2] Lanes: Coordinator, Regional, Compliance, AuditTeam, Director
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Coordinator lane: 2 elements
+[4] Regional lane: 5 elements
+[5] Compliance lane: 2 elements
+[6] AuditTeam lane: 18 elements
+[7] Director lane: 4 elements
+
+  Total elements: 31
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: AnnualAudit_46098
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 6/31 | Missing: Audit Init, Send Notif, Check Regu, Join Prep, Discrepanc...
+  [Attempt 2] Found: 6/31 | Missing: Audit Init, Send Notif, Check Regu, Join Prep, Discrepanc...
+  [Attempt 3] Found: 6/31 | Missing: Audit Init, Send Notif, Check Regu, Join Prep, Discrepanc...
+  [Attempt 4] Found: 6/31 | Missing: Audit Init, Send Notif, Check Regu, Join Prep, Discrepanc...
+  [Attempt 5] Found: 6/31 | Missing: Audit Init, Send Notif, Check Regu, Join Prep, Discrepanc...
+  [Attempt 5] TIMEOUT - 6/31 elements
+
+[12] WARNING: 6/31 elements ready
+
+[13] Trying manual unmask...
+
+  [Unmask] Audit Initiated -> Y=55 (Coordina): OK
+  [Unmask] Send Notification -> Y=55 (Coordina): OK
+  [Unmask] Check Regulations -> Y=263 (Complian): OK
+  [Unmask] Join Prep -> Y=263 (Complian): OK
+  [Unmask] Discrepancies? -> Y=363 (AuditTea): OK
+  [Unmask] Request Clarify -> Y=363 (AuditTea): OK
+  [Unmask] Risk Assessment -> Y=363 (AuditTea): OK
+  [Unmask] Split Risk -> Y=363 (AuditTea): OK
+  [Unmask] Financial Risk -> Y=363 (AuditTea): OK
+  [Unmask] Operational Risk -> Y=363 (AuditTea): OK
+  [Unmask] Compliance Risk -> Y=363 (AuditTea): OK
+  [Unmask] Join Risk -> Y=363 (AuditTea): OK
+  [Unmask] High Risk? -> Y=363 (AuditTea): OK
+  [Unmask] Data Analysis -> Y=363 (AuditTea): OK
+  [Unmask] Interviews -> Y=363 (AuditTea): OK
+  [Unmask] Site Visits -> Y=363 (AuditTea): OK
+  [Unmask] Join Invest -> Y=363 (AuditTea): OK
+  [Unmask] Merge Path -> Y=363 (AuditTea): OK
+  [Unmask] Compile Report -> Y=363 (AuditTea): OK
+  [Unmask] Update Report -> Y=363 (AuditTea): OK
+  [Unmask] Split Invest -> Y=363 (AuditTea): OK
+  [Unmask] Review Report -> Y=463 (Director): OK
+  [Unmask] Approved? -> Y=463 (Director): OK
+  [Unmask] Distribute Report -> Y=463 (Director): OK
+  [Unmask] Audit Closed -> Y=463 (Director): OK
+
+[14] Manual unmask: 25 elements
+[15] All elements now available
+
+  Lanes: Coordina(5-125); Regional(125-233); Complian(233-340); AuditTea(340-440); Director(440-540)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[16] Coordinator centerY = 42
+[17] Regional centerY = 156
+[18] Compliance centerY = 263
+[19] AuditTeam centerY = 367
+[20] Director centerY = 467
+
+[21] Repositioned: 31/31
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[22] Created 38 sequence flows
+[23] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Coordina(5-125); Regional(125-233); Complian(233-340); AuditTea(340-444); Director(444-544)
+
+[24] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  AnnualAudit_46098
+Lanes:    5
+Elements: 31 (31 in diagram)
+Flows:    38
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=31,gateways=10,flows=38,data=0,data_assoc=0
+======================================================================

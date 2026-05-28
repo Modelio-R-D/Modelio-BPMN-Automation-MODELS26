@@ -1,0 +1,91 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComplianceAuditProcess_94475
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplianceAuditProcess_94475
+[2] Lanes: Company, Internal Teams, External Auditors
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Company: 6 elements
+[4] Internal Teams: 3 elements
+[5] External Auditors: 5 elements
+
+  Total: 14 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 4
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: ComplianceAuditProcess_94475
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Company] Lane bounds: 5-137
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Schedule Compliance Audit -> col=1 (230,25) relY=20
+  Make Corrections -> col=7 (1130,25) relY=20
+  Certification Awarded? -> col=10 (1580,25) relY=20
+  Receive Certification -> col=12 (1880,25) relY=20
+  End -> col=13 (2030,25) relY=20
+  Audit Schedule (DO from Schedule Compliance Audit) -> (320,95) maxBottomRelY=80
+
+[Internal Teams] Lane bounds: 187-287
+  [Unmask] Prepare Documentation -> Y=237: OK
+  [Unmask] Gather Evidence -> Y=237: OK
+  [Unmask] Conduct Self-Assessment -> Y=237: OK
+  [Unmask] Documentation Package -> Y=237: OK
+  [maxElementBottomRelY=80]
+  Prepare Documentation -> col=2 (380,207) relY=20
+  Gather Evidence -> col=3 (530,207) relY=20
+  Conduct Self-Assessment -> col=4 (680,207) relY=20
+  Documentation Package (DO from Conduct Self-Assessment) -> (620,277) maxBottomRelY=80
+
+[External Auditors] Lane bounds: 369-610
+  [maxElementBottomRelY=80]
+  Review Processes -> col=5 (830,389) relY=20
+  Identify Gaps -> col=6 (980,389) relY=20
+  Conduct Final Audit -> col=8 (1280,389) relY=20
+  Evaluate Compliance -> col=9 (1430,389) relY=20
+  Issue Official Documents -> col=11 (1730,389) relY=20
+  Gap Analysis Report (DO from Identify Gaps) -> (920,459) maxBottomRelY=80
+  Certification Documents (DO from Issue Official Documents) -> (1520,459) maxBottomRelY=80
+
+
+[9] Repositioned: 18/18
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 14 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 8
+
+==================================================================
+COMPLETE: ComplianceAuditProcess_94475
+==================================================================
+Lanes: 3 | Elements: 14 | Data: 4 | Flows: 14 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 1
+======================================================================

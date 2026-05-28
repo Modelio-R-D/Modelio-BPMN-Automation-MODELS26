@@ -1,0 +1,140 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ORDER FULFILLMENT PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   18530
+Process Name:   OrderFulfillment_18530
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OrderFulfillment_18530
+[2] Lanes: Customer, System, Warehouse, Shipping, Cust Service
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 3 elements
+[4] System lane: 14 elements
+[5] Warehouse lane: 5 elements
+[6] Shipping lane: 4 elements
+[7] Cust Service lane: 7 elements
+
+  Total elements: 33
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: OrderFulfillment_18530
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for elements (max 5 attempts)...
+
+  [Attempt 1] Found: 30/33 | Missing: Order Plac, Order Canc, Order Comp
+  [Attempt 2] Found: 30/33 | Missing: Order Plac, Order Canc, Order Comp
+  [Attempt 3] Found: 30/33 | Missing: Order Plac, Order Canc, Order Comp
+  [Attempt 4] Found: 30/33 | Missing: Order Plac, Order Canc, Order Comp
+  [Attempt 5] Found: 30/33 | Missing: Order Plac, Order Canc, Order Comp
+  [Attempt 5] TIMEOUT - 30/33 elements
+
+[12] WARNING: 30/33 elements ready
+         Missing: Order Placed, Order Cancelled, Order Complete
+
+[13] Trying manual unmask...
+
+  [Unmask] Order Placed -> Y=55 (Customer): OK
+  [Unmask] Order Cancelled -> Y=55 (Customer): OK
+  [Unmask] Order Complete -> Y=55 (Customer): OK
+
+[14] Manual unmask: 3 elements
+
+  Lanes: Customer(5-125); System(125-264); Warehous(264-477); Shipping(477-883); Cust Ser(883-1660)
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[15] Customer centerY = 42
+[16] System centerY = 171
+[17] Warehouse centerY = 347
+[18] Shipping centerY = 657
+[19] Cust Service centerY = 1248
+
+[20] Custom/Order Placed -> (80,42)
+[21] System/Record Order -> (220,171)
+[22] System/Process Paym -> (360,171)
+[23] System/Payment OK? -> (500,171)
+[24] System/Notify Pay F -> (640,171)
+[25] System/Check Stock -> (780,171)
+[26] Custom/Order Cancel -> (780,42)
+[27] System/In Stock? -> (920,171)
+[28] System/Back-Order -> (1060,171)
+[29] System/Inform Delay -> (1200,171)
+[30] System/Fork -> (1340,171)
+[31] Wareho/Pick Items -> (1480,347)
+[32] Shippi/Prep Documen -> (1480,657)
+[33] Shippi/Internationa -> (1620,657)
+[34] Wareho/Quality Chec -> (1620,347)
+[35] Shippi/Customs Docs -> (1760,657)
+[36] Wareho/Package Item -> (1760,347)
+[37] Wareho/Gift Wrap? -> (1900,347)
+[38] Wareho/Gift Wrap -> (2040,347)
+[39] System/Join -> (2180,171)
+[40] Shippi/Dispatch Ord -> (2320,657)
+[41] System/Ship Confirm -> (2460,171)
+[42] System/Update Inven -> (2600,171)
+[43] System/Feedback Req -> (2740,171)
+[44] System/Issues? -> (2880,171)
+[45] Custom/Order Comple -> (2880,42)
+[46] Cust S/Send Return  -> (3020,1248)
+[47] Cust S/Receive Retu -> (3160,1248)
+[48] Cust S/Inspect Item -> (3300,1248)
+[49] Cust S/Resolution? -> (3440,1248)
+[50] Cust S/Process Refu -> (3580,1248)
+[51] Cust S/Process Repl -> (3720,1248)
+[52] Cust S/Return Done -> (3860,1248)
+
+  Repositioned: 33/33
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[53] Created 37 sequence flows
+[54] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); System(125-264); Warehous(264-477); Shipping(477-883); Cust Ser(883-1660)
+
+[55] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OrderFulfillment_18530
+Lanes:    5
+Elements: 33 (33 in diagram)
+Flows:    37
+==================================================================
+
+PROCESS SUMMARY:
+  1. Order placed -> Payment processing
+  2. Payment fails -> Notify & Cancel
+  3. Payment OK -> Check stock
+  4. Out of stock -> Back-order loop
+  5. In stock -> Parallel fulfillment:
+     - Warehouse: Pick -> QC -> Package -> [Gift Wrap]
+     - Shipping: Docs -> [Customs]
+  6. Join -> Dispatch -> Confirmation -> Update
+  7. Feedback request -> Issues?
+  8. No issues -> Complete
+  9. Issues -> Returns: Label -> Receive -> Inspect -> Refund/Replace
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=33,gateways=8,flows=37,data=0,data_assoc=0
+======================================================================

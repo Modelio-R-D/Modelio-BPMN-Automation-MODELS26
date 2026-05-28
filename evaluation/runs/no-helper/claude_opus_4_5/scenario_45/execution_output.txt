@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN ONLINE SHOP ORDERING PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   19463
+Process Name:   OnlineShopOrdering_19463
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: OnlineShopOrdering_19463
+[2] Lanes: Customer, E-Shop System, Bank
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 10 elements
+[4] E-Shop System lane: 9 elements
+[5] Bank lane: 1 element
+
+  Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: OnlineShopOrdering_19463
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 20 elements ready
+
+[10] SUCCESS: All 20 elements ready in 50ms
+
+  Lanes: Customer(5-130); E-Shop System(130-267); Bank(267-422)
+  Elements: Start=Y16, Login=Y20, Check Cred=Y141, Login Fail=Y60, Login OK?=Y141, Select Pro=Y25, Add to Car=Y30, Save Produ=Y35, All Select=Y141, Finish Ord=Y141, Split=Y141, Enter Paym=Y40, Enter Ship=Y45, Prepare Sh=Y141, Confirm Pa=Y278, Same as Bi=Y50, Enter Bill=Y55, Join=Y141, Complete O=Y141, Order Comp=Y141
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Customer centerY = 44
+[12] E-Shop System centerY = 175
+[13] Bank centerY = 321
+
+[14] Customer/Start -> (60,44)
+[15] Customer/Login -> (190,44)
+[16] E-Shop System/Check Credentials -> (320,175)
+[17] Customer/Login Failed -> (320,44)
+[18] E-Shop System/Login OK? -> (385,175)
+[19] Customer/Select Product -> (450,44)
+[20] Customer/Add to Cart -> (580,44)
+[21] Customer/Save Product -> (710,44)
+[22] E-Shop System/All Selected? -> (840,175)
+[23] E-Shop System/Finish Order -> (970,175)
+[24] E-Shop System/Split -> (1035,175)
+[25] Customer/Enter Payment Data -> (1100,44)
+[26] Customer/Enter Shipping Addr -> (1230,44)
+[27] E-Shop System/Prepare Shipment -> (1230,175)
+[28] Bank/Confirm Payment -> (1360,321)
+[29] Customer/Same as Billing? -> (1360,44)
+[30] Customer/Enter Billing Addr -> (1490,44)
+[31] E-Shop System/Join -> (1620,175)
+[32] E-Shop System/Complete Order -> (1750,175)
+[33] E-Shop System/Order Complete -> (1880,175)
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[34] Created 22 sequence flows
+[35] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-130); E-Shop System(130-267); Bank(267-422)
+  Elements: Start=Y44, Login=Y44, Check Cred=Y175, Login Fail=Y44, Login OK?=Y175, Select Pro=Y44, Add to Car=Y44, Save Produ=Y44, All Select=Y175, Finish Ord=Y175, Split=Y175, Enter Paym=Y44, Enter Ship=Y44, Prepare Sh=Y175, Confirm Pa=Y321, Same as Bi=Y44, Enter Bill=Y44, Join=Y175, Complete O=Y175, Order Comp=Y175
+
+[36] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  OnlineShopOrdering_19463
+Lanes:    3
+Elements: 20 (20 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=20,gateways=5,flows=22,data=0,data_assoc=0
+======================================================================

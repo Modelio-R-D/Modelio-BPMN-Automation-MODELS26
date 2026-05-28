@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1">
+    <task id="Task_1" name="Successful delivery">
+      <incoming>SequenceFlow_17</incoming>
+      <outgoing>SequenceFlow_5</outgoing>
+    </task>
+    <task id="Task_2" name="Customer places order online">
+      <incoming>SequenceFlow_2</incoming>
+      <outgoing>SequenceFlow_3</outgoing>
+    </task>
+    <task id="Task_3" name="Hand over order to logistics provider">
+      <incoming>SequenceFlow_21</incoming>
+      <outgoing>SequenceFlow_23</outgoing>
+    </task>
+    <task id="Task_4" name="Customer places order over the phone">
+      <incoming>SequenceFlow_15</incoming>
+      <outgoing>SequenceFlow_8</outgoing>
+    </task>
+    <task id="Task_5" name="Monitor shipment">
+      <incoming>SequenceFlow_22</incoming>
+      <outgoing>SequenceFlow_12</outgoing>
+    </task>
+    <task id="Task_6" name="Pick and pack items">
+      <incoming>SequenceFlow_11</incoming>
+      <outgoing>SequenceFlow_14</outgoing>
+    </task>
+    <task id="Task_7" name="Generate and send order confirmation">
+      <incoming>SequenceFlow_7</incoming>
+      <outgoing>SequenceFlow_9</outgoing>
+    </task>
+    <task id="Task_8" name="Process customer feedback or returns">
+      <incoming>SequenceFlow_16</incoming>
+      <outgoing>SequenceFlow_10</outgoing>
+    </task>
+    <task id="Task_9" name="Generate shipping label">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_13</outgoing>
+    </task>
+    <task id="Task_10" name="Send tracking information to customer">
+      <incoming>SequenceFlow_23</incoming>
+      <outgoing>SequenceFlow_6</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1">
+      <incoming>SequenceFlow_4</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+      <outgoing>SequenceFlow_15</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_2">
+      <incoming>SequenceFlow_3</incoming>
+      <incoming>SequenceFlow_8</incoming>
+      <outgoing>SequenceFlow_7</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_3">
+      <incoming>SequenceFlow_5</incoming>
+      <outgoing>SequenceFlow_16</outgoing>
+      <outgoing>SequenceFlow_20</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_4">
+      <incoming>SequenceFlow_6</incoming>
+      <incoming>SequenceFlow_18</incoming>
+      <outgoing>SequenceFlow_22</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_5">
+      <incoming>SequenceFlow_10</incoming>
+      <incoming>SequenceFlow_20</incoming>
+      <outgoing>SequenceFlow_19</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="ExclusiveGateway_6">
+      <incoming>SequenceFlow_12</incoming>
+      <outgoing>SequenceFlow_17</outgoing>
+      <outgoing>SequenceFlow_18</outgoing>
+    </exclusiveGateway>
+    <parallelGateway id="ParallelGateway_1">
+      <incoming>SequenceFlow_9</incoming>
+      <outgoing>SequenceFlow_1</outgoing>
+      <outgoing>SequenceFlow_11</outgoing>
+    </parallelGateway>
+    <parallelGateway id="ParallelGateway_2">
+      <incoming>SequenceFlow_13</incoming>
+      <incoming>SequenceFlow_14</incoming>
+      <outgoing>SequenceFlow_21</outgoing>
+    </parallelGateway>
+    <startEvent id="StartEvent_1" name="start">
+      <outgoing>SequenceFlow_4</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_1" name="end">
+      <incoming>SequenceFlow_19</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" sourceRef="ParallelGateway_1" targetRef="Task_9"/>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="ExclusiveGateway_1" targetRef="Task_2"/>
+    <sequenceFlow id="SequenceFlow_3" sourceRef="Task_2" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_4" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_1"/>
+    <sequenceFlow id="SequenceFlow_5" sourceRef="Task_1" targetRef="ExclusiveGateway_3"/>
+    <sequenceFlow id="SequenceFlow_6" sourceRef="Task_10" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_7" sourceRef="ExclusiveGateway_2" targetRef="Task_7"/>
+    <sequenceFlow id="SequenceFlow_8" sourceRef="Task_4" targetRef="ExclusiveGateway_2"/>
+    <sequenceFlow id="SequenceFlow_9" sourceRef="Task_7" targetRef="ParallelGateway_1"/>
+    <sequenceFlow id="SequenceFlow_10" sourceRef="Task_8" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_11" sourceRef="ParallelGateway_1" targetRef="Task_6"/>
+    <sequenceFlow id="SequenceFlow_12" sourceRef="Task_5" targetRef="ExclusiveGateway_6"/>
+    <sequenceFlow id="SequenceFlow_13" sourceRef="Task_9" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_14" sourceRef="Task_6" targetRef="ParallelGateway_2"/>
+    <sequenceFlow id="SequenceFlow_15" sourceRef="ExclusiveGateway_1" targetRef="Task_4"/>
+    <sequenceFlow id="SequenceFlow_16" sourceRef="ExclusiveGateway_3" targetRef="Task_8"/>
+    <sequenceFlow id="SequenceFlow_17" sourceRef="ExclusiveGateway_6" targetRef="Task_1"/>
+    <sequenceFlow id="SequenceFlow_18" sourceRef="ExclusiveGateway_6" targetRef="ExclusiveGateway_4"/>
+    <sequenceFlow id="SequenceFlow_19" sourceRef="ExclusiveGateway_5" targetRef="EndEvent_1"/>
+    <sequenceFlow id="SequenceFlow_20" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_5"/>
+    <sequenceFlow id="SequenceFlow_21" sourceRef="ParallelGateway_2" targetRef="Task_3"/>
+    <sequenceFlow id="SequenceFlow_22" sourceRef="ExclusiveGateway_4" targetRef="Task_5"/>
+    <sequenceFlow id="SequenceFlow_23" sourceRef="Task_3" targetRef="Task_10"/>
+  </process>
+</definitions>

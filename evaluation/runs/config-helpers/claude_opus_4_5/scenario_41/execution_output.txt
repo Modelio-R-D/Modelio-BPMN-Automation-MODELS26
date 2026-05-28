@@ -1,0 +1,118 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: BottlingMachineInspection_20961
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: BottlingMachineInspection_20961
+[2] Lanes: Inspector, Application, Machine
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Inspector: 6 elements
+[4] Application: 13 elements
+[5] Machine: 1 elements
+
+  Total: 20 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 3
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: BottlingMachineInspection_20961
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 4: Machine Valid?=0, Show Error=90
+  [Auto-stack] col 9: Display Collected Value=0, Merge Values=90
+  [Auto-stack] col 10: Evaluate Result=0, Additional Questions?=90
+[Inspector] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Enter Machine Type -> Y=55: OK
+  [Unmask] Enter Serial Number -> Y=55: OK
+  [Unmask] Input Value -> Y=55: OK
+  [Unmask] Review Report -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Enter Machine Type -> col=1 (210,25) relY=20
+  Enter Serial Number -> col=2 (340,25) relY=20
+  Input Value -> col=7 (990,25) relY=20
+  Review Report -> col=13 (1770,25) relY=20
+  End -> col=14 (1900,25) relY=20
+
+[Application] Lane bounds: 125-225
+  [Unmask] Validate Machine ID -> Y=175: OK
+  [Unmask] Machine Valid? -> Y=175: OK
+  [Unmask] Show Error -> Y=175: OK
+  [Unmask] Display Question -> Y=175: OK
+  [Unmask] Question Type? -> Y=175: OK
+  [Unmask] Record Manual Value -> Y=175: OK
+  [Unmask] Request Machine Data -> Y=175: OK
+  [Unmask] Display Collected Value -> Y=175: OK
+  [Unmask] Merge Values -> Y=175: OK
+  [Unmask] Evaluate Result -> Y=175: OK
+  [Unmask] Additional Questions? -> Y=175: OK
+  [Unmask] More Questions? -> Y=175: OK
+  [Unmask] Generate Report -> Y=175: OK
+  [Unmask] Machine Info -> Y=175: OK
+  [Unmask] Inspection Data -> Y=175: OK
+  [Unmask] Inspection Report -> Y=175: OK
+  [maxElementBottomRelY=170]
+  Validate Machine ID -> col=3 (470,145) relY=20
+  Machine Valid? -> col=4 (600,145) relY=20
+  Show Error -> col=4 (600,235) relY=110
+  Display Question -> col=5 (730,145) relY=20
+  Question Type? -> col=6 (860,145) relY=20
+  Record Manual Value -> col=8 (1120,145) relY=20
+  Request Machine Data -> col=7 (990,145) relY=20
+  Display Collected Value -> col=9 (1250,145) relY=20
+  Merge Values -> col=9 (1250,235) relY=110
+  Evaluate Result -> col=10 (1380,145) relY=20
+  Additional Questions? -> col=10 (1380,235) relY=110
+  More Questions? -> col=11 (1510,145) relY=20
+  Generate Report -> col=12 (1640,145) relY=20
+  Machine Info (DO from Validate Machine ID) -> (560,305) maxBottomRelY=170
+  Inspection Data (DO from Display Collected Value) -> (1340,305) maxBottomRelY=170
+  Inspection Report (DO from Generate Report) -> (1600,305) maxBottomRelY=170
+
+[Machine] Lane bounds: 397-497
+  [Unmask] Collect Sensor Data -> Y=447: OK
+  [maxElementBottomRelY=80]
+  Collect Sensor Data -> col=8 (1120,417) relY=20
+
+
+[9] Repositioned: 23/23
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 8
+
+==================================================================
+COMPLETE: BottlingMachineInspection_20961
+==================================================================
+Lanes: 3 | Elements: 20 | Data: 3 | Flows: 23 | DataAssoc: 8
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 5
+======================================================================

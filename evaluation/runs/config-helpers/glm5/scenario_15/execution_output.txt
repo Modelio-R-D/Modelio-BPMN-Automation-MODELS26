@@ -1,0 +1,75 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ComplianceAuditProcess_25972
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ComplianceAuditProcess_25972
+[2] Lanes: Company, Auditor
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Company: 7 elements
+[4] Auditor: 4 elements
+
+  Total: 11 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ComplianceAuditProcess_25972
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Company] Lane bounds: 5-105
+  [Unmask] Audit Scheduled -> Y=55: OK
+  [Unmask] Prepare Documentation -> Y=55: OK
+  [Unmask] Gather Evidence -> Y=55: OK
+  [Unmask] Conduct Self-Assessment -> Y=55: OK
+  [Unmask] Implement Corrections -> Y=55: OK
+  [Unmask] Issue Official Documents -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Audit Scheduled -> col=0 (80,25) relY=20
+  Prepare Documentation -> col=1 (230,25) relY=20
+  Gather Evidence -> col=2 (380,25) relY=20
+  Conduct Self-Assessment -> col=3 (530,25) relY=20
+  Implement Corrections -> col=5 (830,25) relY=20
+  Issue Official Documents -> col=9 (1430,25) relY=20
+  End -> col=10 (1580,25) relY=20
+
+[Auditor] Lane bounds: 125-244
+  [maxElementBottomRelY=80]
+  Perform Initial Audit -> col=4 (680,145) relY=20
+  Conduct Final Audit -> col=6 (980,145) relY=20
+  Criteria Met? -> col=7 (1130,145) relY=20
+  Award Certification -> col=8 (1280,145) relY=20
+
+
+[7] Repositioned: 11/11
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 11 sequence flows
+
+==================================================================
+COMPLETE: ComplianceAuditProcess_25972
+==================================================================
+Lanes: 2 | Elements: 11 | Flows: 11
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=11,gateways=1,flows=11,data=0,data_assoc=0
+======================================================================

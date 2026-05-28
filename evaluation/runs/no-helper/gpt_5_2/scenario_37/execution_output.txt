@@ -1,0 +1,175 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - CONTRACT
+==================================================================
+Script Version: v9.1
+Execution ID:   82714
+Process Name:   Contract_82714
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: Contract_82714
+[2] Lanes: Builder, Web Shops, Friends
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Create] Need Parts | Lane=Builder | addToLane=True
+  [Create] Create Parts List | Lane=Builder | addToLane=True
+  [Create] Query Web Shops | Lane=Builder | addToLane=True
+  [Create] Compare Offers (Price/Time) | Lane=Builder | addToLane=True
+  [Create] Allocate Parts (Cheapest) | Lane=Builder | addToLane=True
+  [Create] Create Order Lists Per Shop | Lane=Builder | addToLane=True
+  [Create] Place Orders | Lane=Builder | addToLane=True
+  [Create] Receive Delivery Batch | Lane=Builder | addToLane=True
+  [Create] Add Delivered Parts To Stock | Lane=Builder | addToLane=True
+  [Create] Build With Available Parts | Lane=Builder | addToLane=True
+  [Create] Consume Parts And Update Stock | Lane=Builder | addToLane=True
+  [Create] Check Stock Levels | Lane=Builder | addToLane=True
+  [Create] Stock Level? | Lane=Builder | addToLane=True
+  [Create] Reorder Cheapest | Lane=Builder | addToLane=True
+  [Create] Reorder Fastest | Lane=Builder | addToLane=True
+  [Create] Write Complaint Email | Lane=Builder | addToLane=True
+  [Create] Build Complete? | Lane=Builder | addToLane=True
+  [Create] Contract Completed | Lane=Builder | addToLane=True
+  [Create] Stopped (No Stock) | Lane=Builder | addToLane=True
+  [Create] Send Availability And Quotes | Lane=Web Shops | addToLane=True
+  [Create] Ship Parts In Batches | Lane=Web Shops | addToLane=True
+  [Create] Friends Read Complaint | Lane=Friends | addToLane=True
+
+  Total elements: 22
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[3] Diagram created: Contract
+[4] DiagramHandle obtained
+[5] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[6] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 1/22 | Missing: Need Parts, Create Parts, Query Web Sh, Compare Offe, Allocate Par, Create Order, Place Orders, Receive Deli, Add Delivere, Build With A, Consume Part, Check Stock , Stock Level?, Reorder Chea, Reorder Fast, Write Compla, Build Comple, Contract Com, Stopped (No , Send Availab, Ship Parts I
+  [Attempt 2] Found: 1/22 | Missing: Need Parts, Create Parts, Query Web Sh, Compare Offe, Allocate Par, Create Order, Place Orders, Receive Deli, Add Delivere, Build With A, Consume Part, Check Stock , Stock Level?, Reorder Chea, Reorder Fast, Write Compla, Build Comple, Contract Com, Stopped (No , Send Availab, Ship Parts I
+  [Attempt 3] Found: 1/22 | Missing: Need Parts, Create Parts, Query Web Sh, Compare Offe, Allocate Par, Create Order, Place Orders, Receive Deli, Add Delivere, Build With A, Consume Part, Check Stock , Stock Level?, Reorder Chea, Reorder Fast, Write Compla, Build Comple, Contract Com, Stopped (No , Send Availab, Ship Parts I
+  [Attempt 3] TIMEOUT - 1/22 elements
+
+[7] WARNING: 1/22 elements ready after 150ms
+         Missing: Need Parts, Create Parts List, Query Web Shops, Compare Offers (Price/Time), Allocate Parts (Cheapest), Create Order Lists Per Shop, Place Orders, Receive Delivery Batch, Add Delivered Parts To Stock, Build With Available Parts, Consume Parts And Update Stock, Check Stock Levels, Stock Level?, Reorder Cheapest, Reorder Fastest, Write Complaint Email, Build Complete?, Contract Completed, Stopped (No Stock), Send Availability And Quotes, Ship Parts In Batches
+
+[8] Trying manual unmask for missing elements (inside lane Y)...
+
+  [Unmask] Need Parts -> Y=55 (Builder): OK
+  [Unmask] Create Parts List -> Y=55 (Builder): OK
+  [Unmask] Query Web Shops -> Y=55 (Builder): OK
+  [Unmask] Compare Offers (Price/Time) -> Y=55 (Builder): OK
+  [Unmask] Allocate Parts (Cheapest) -> Y=55 (Builder): OK
+  [Unmask] Create Order Lists Per Shop -> Y=55 (Builder): OK
+  [Unmask] Place Orders -> Y=55 (Builder): OK
+  [Unmask] Receive Delivery Batch -> Y=55 (Builder): OK
+  [Unmask] Add Delivered Parts To Stock -> Y=55 (Builder): OK
+  [Unmask] Build With Available Parts -> Y=55 (Builder): OK
+  [Unmask] Consume Parts And Update Stock -> Y=55 (Builder): OK
+  [Unmask] Check Stock Levels -> Y=55 (Builder): OK
+  [Unmask] Stock Level? -> Y=55 (Builder): OK
+  [Unmask] Reorder Cheapest -> Y=55 (Builder): OK
+  [Unmask] Reorder Fastest -> Y=55 (Builder): OK
+  [Unmask] Write Complaint Email -> Y=55 (Builder): OK
+  [Unmask] Build Complete? -> Y=55 (Builder): OK
+  [Unmask] Contract Completed -> Y=55 (Builder): OK
+  [Unmask] Stopped (No Stock) -> Y=55 (Builder): OK
+  [Unmask] Send Availability And Quotes -> Y=155 (Web Shops): OK
+  [Unmask] Ship Parts In Batches -> Y=155 (Web Shops): OK
+
+[9] Manual unmask: 21 elements unmasked
+[10] All elements now available
+
+  Lanes: Builder(5-132); Web Shops(132-232); Friends(232-340)
+  Elements: Need Parts=Y55, Create Parts=Y55, Query Web Sh=Y55, Send Availab=Y155, Compare Offe=Y55, Allocate Par=Y55, Create Order=Y55, Place Orders=Y55, Ship Parts I=Y155, Receive Deli=Y55, Add Delivere=Y55, Build Comple=Y55, Build With A=Y55, Consume Part=Y55, Check Stock =Y55, Stock Level?=Y55, Reorder Chea=Y55, Reorder Fast=Y55, Write Compla=Y55, Friends Read=Y243, Contract Com=Y55, Stopped (No =Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Builder centerY = 45
+[12] Web Shops centerY = 159
+[13] Friends centerY = 263
+
+[14] Builder/Need Parts -> (80,45) 33x33
+[15] Builder/Create Parts List -> (240,45) 150x60
+[16] Builder/Query Web Shops -> (400,45) 150x60
+[17] Web Shops/Send Availability And Quotes -> (560,159) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Builder(5-132); Web Shops(132-232); Friends(232-340)
+         After:  Lanes: Builder(5-132); Web Shops(132-233); Friends(233-341)
+[18] Builder/Compare Offers (Price/Time) -> (720,45) 150x60
+[19] Builder/Allocate Parts (Cheapest) -> (880,45) 150x60
+[20] Builder/Create Order Lists Per Shop -> (1040,45) 150x60
+[21] Builder/Place Orders -> (1200,45) 150x60
+[22] Web Shops/Ship Parts In Batches -> (1360,159) 150x60
+[23] Builder/Receive Delivery Batch -> (1520,45) 150x60
+[24] Builder/Add Delivered Parts To Stock -> (1680,45) 150x60
+[25] Builder/Build Complete? -> (1840,45) 40x40
+[26] Builder/Build With Available Parts -> (2000,45) 150x60
+[27] Builder/Consume Parts And Update Stock -> (2160,45) 150x60
+[28] Builder/Check Stock Levels -> (2320,45) 150x60
+[29] Builder/Stock Level? -> (2480,45) 40x40
+[30] Builder/Reorder Cheapest -> (2640,45) 150x60
+[31] Builder/Reorder Fastest -> (2800,45) 150x60
+[32] Builder/Write Complaint Email -> (2960,45) 150x60
+[33] Friends/Friends Read Complaint -> (3120,263) 150x60
+[34] Builder/Contract Completed -> (3280,45) 33x33
+[35] Builder/Stopped (No Stock) -> (3280,45) 33x33
+
+  Repositioned: 22/22
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Need Parts -> Create Parts List
+  [Flow] Create Parts List -> Query Web Shops
+  [Flow] Query Web Shops -> Send Availability And Quotes
+  [Flow] Send Availability And Quotes -> Compare Offers (Price/Time)
+  [Flow] Compare Offers (Price/Time) -> Allocate Parts (Cheapest)
+  [Flow] Allocate Parts (Cheapest) -> Create Order Lists Per Shop
+  [Flow] Create Order Lists Per Shop -> Place Orders
+  [Flow] Place Orders -> Ship Parts In Batches
+  [Flow] Ship Parts In Batches -> Receive Delivery Batch
+  [Flow] Receive Delivery Batch -> Add Delivered Parts To Stock
+  [Flow] Add Delivered Parts To Stock -> Build Complete?
+  [Flow] Build Complete? -> Build With Available Parts [Guard=No]
+  [Flow] Build Complete? -> Contract Completed [Guard=Yes]
+  [Flow] Build With Available Parts -> Consume Parts And Update Stock
+  [Flow] Consume Parts And Update Stock -> Check Stock Levels
+  [Flow] Check Stock Levels -> Stock Level?
+  [Flow] Stock Level? -> Write Complaint Email [Guard=0]
+  [Flow] Stock Level? -> Reorder Fastest [Guard=<3]
+  [Flow] Stock Level? -> Reorder Cheapest [Guard=<5]
+  [Flow] Stock Level? -> Build Complete? [Guard=>=5]
+  [Flow] Reorder Cheapest -> Ship Parts In Batches
+  [Flow] Reorder Fastest -> Ship Parts In Batches
+  [Flow] Write Complaint Email -> Friends Read Complaint
+  [Flow] Friends Read Complaint -> Stopped (No Stock)
+[36] Created 24 sequence flows
+[37] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Builder(5-132); Web Shops(132-233); Friends(233-341)
+  Elements: Need Parts=Y45, Create Parts=Y45, Query Web Sh=Y45, Send Availab=Y159, Compare Offe=Y45, Allocate Par=Y45, Create Order=Y45, Place Orders=Y45, Ship Parts I=Y159, Receive Deli=Y45, Add Delivere=Y45, Build Comple=Y45, Build With A=Y45, Consume Part=Y45, Check Stock =Y45, Stock Level?=Y45, Reorder Chea=Y45, Reorder Fast=Y45, Write Compla=Y45, Friends Read=Y263, Contract Com=Y45, Stopped (No =Y45
+
+[38] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  Contract_82714
+Lanes:    3
+Elements: 22 (22 in diagram)
+Flows:    24
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=22,gateways=2,flows=24,data=0,data_assoc=0
+======================================================================

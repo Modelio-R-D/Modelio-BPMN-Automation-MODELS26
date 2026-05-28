@@ -1,0 +1,129 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Inspection of an Energy Drink Bottling Machine
+Script Version: v9.2
+Execution ID:   90413
+Process Name:   Inspection_EnergyDrinkBottlingMachine_90413
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Inspection_EnergyDrinkBottlingMachine_90413
+[2] Lanes: Inspector, Inspection App, Bottling Machine
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] Inspector / Begin Inspection | addToLane=True
+  [Add] Inspector / Enter Machine Type and Serial Number | addToLane=True
+  [Add] Inspector / Answer Inspection Questions | addToLane=True
+  [Add] Inspector / Press Test Buttons on Machine | addToLane=True
+  [Add] Inspector / Review Collected Values | addToLane=True
+  [Add] Inspector / Answer Additional Questions | addToLane=True
+  [Add] Inspector / Confirm Results and Sign | addToLane=True
+  [Add] Inspector / Inspection Completed | addToLane=True
+  [Add] Inspector / Inspection Failed (Report Created) | addToLane=True
+[3] Inspector lane: 9 elements
+  [Add] Inspection App / Load Checklist and Limits | addToLane=True
+  [Add] Inspection App / Display Questions and Capture Inputs | addToLane=True
+  [Add] Inspection App / Request Machine Measurements | addToLane=True
+  [Add] Inspection App / Validate Results Against Limits | addToLane=True
+  [Add] Inspection App / Results OK? | addToLane=True
+  [Add] Inspection App / Generate Inspection Report | addToLane=True
+[4] Inspection App lane: 6 elements
+  [Add] Bottling Machine / Provide Measurements to App | addToLane=True
+[5] Bottling Machine lane: 1 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: Inspection of an Energy Drink Bottling Machine
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] All 16 elements ready
+
+[10] SUCCESS: All 16 elements ready in 50ms
+
+  Lanes: Inspector(5-125); Inspection App(125-257); Bottling Machine(257-357)
+  Elements: Begin Inspec=Y16, Enter Machin=Y20, Load Checkli=Y136, Answer Inspe=Y25, Display Ques=Y136, Press Test B=Y30, Provide Meas=Y268, Request Mach=Y136, Review Colle=Y35, Validate Res=Y136, Answer Addit=Y40, Results OK?=Y136, Confirm Resu=Y45, Generate Ins=Y136, Inspection C=Y50, Inspection F=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[11] Inspector centerY = 42
+[12] Inspection App centerY = 168
+[13] Bottling Machine centerY = 284
+
+[14] Inspector/Begin Inspection -> (80,42) 33x33
+[15] Inspector/Enter Machine Type and Serial Number -> (240,42) 150x60
+[16] Inspection App/Load Checklist and Limits -> (400,168) 150x60
+[17] Inspector/Answer Inspection Questions -> (560,42) 150x60
+[18] Inspection App/Display Questions and Capture Inputs -> (720,168) 150x60
+[19] Inspector/Press Test Buttons on Machine -> (880,42) 150x60
+[20] Bottling Machine/Provide Measurements to App -> (1040,284) 150x60 *** LANE CHANGED ***
+         Before: Lanes: Inspector(5-125); Inspection App(125-257); Bottling Machine(257-357)
+         After:  Lanes: Inspector(5-125); Inspection App(125-257); Bottling Machine(257-405)
+[21] Inspection App/Request Machine Measurements -> (1040,168) 150x60
+[22] Inspector/Review Collected Values -> (1200,42) 150x60
+[23] Inspection App/Validate Results Against Limits -> (1360,168) 150x60
+[24] Inspector/Answer Additional Questions -> (1520,42) 150x60
+[25] Inspection App/Results OK? -> (1680,168) 40x40
+[26] Inspector/Confirm Results and Sign -> (1840,42) 150x60
+[27] Inspection App/Generate Inspection Report -> (2000,168) 150x60
+[28] Inspector/Inspection Completed -> (2160,42) 33x33
+[29] Inspector/Inspection Failed (Report Created) -> (2160,42) 33x33
+
+  Repositioned: 16/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Begin Inspection -> Enter Machine Type and Serial Number
+  [Flow] Enter Machine Type and Serial Number -> Load Checklist and Limits
+  [Flow] Load Checklist and Limits -> Answer Inspection Questions
+  [Flow] Answer Inspection Questions -> Display Questions and Capture Inputs
+  [Flow] Display Questions and Capture Inputs -> Press Test Buttons on Machine
+  [Flow] Press Test Buttons on Machine -> Request Machine Measurements
+  [Flow] Request Machine Measurements -> Provide Measurements to App
+  [Flow] Provide Measurements to App -> Review Collected Values
+  [Flow] Review Collected Values -> Validate Results Against Limits
+  [Flow] Validate Results Against Limits -> Results OK?
+  [Flow] Results OK? -> Confirm Results and Sign | guard=Yes
+  [Flow] Results OK? -> Answer Additional Questions | guard=No
+  [Flow] Answer Additional Questions -> Generate Inspection Report
+  [Flow] Generate Inspection Report -> Inspection Failed (Report Created)
+  [Flow] Confirm Results and Sign -> Generate Inspection Report
+  [Flow] Generate Inspection Report -> Inspection Completed
+[30] Created 16 sequence flows
+[31] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Inspector(5-125); Inspection App(125-257); Bottling Machine(257-405)
+  Elements: Begin Inspec=Y42, Enter Machin=Y42, Load Checkli=Y168, Answer Inspe=Y42, Display Ques=Y168, Press Test B=Y42, Provide Meas=Y284, Request Mach=Y168, Review Colle=Y42, Validate Res=Y168, Answer Addit=Y42, Results OK?=Y168, Confirm Resu=Y42, Generate Ins=Y168, Inspection C=Y42, Inspection F=Y42
+
+[32] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Inspection of an Energy Drink Bottling Machine
+Process:  Inspection_EnergyDrinkBottlingMachine_90413
+Lanes:    3
+Elements: 16 (16 in diagram)
+Flows:    16
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=1,flows=16,data=0,data_assoc=0
+======================================================================

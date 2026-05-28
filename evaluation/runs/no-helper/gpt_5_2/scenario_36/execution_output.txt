@@ -1,0 +1,148 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:          Luxury Airplane
+Script Version: v1.0
+Execution ID:   68597
+Process Name:   LuxuryAirplane_68597
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process created: LuxuryAirplane_68597
+[2] Lanes created: Customer, Engineering, Bar Team, Seats Team, Toilet Team, Lighting Team, Entertainment Team, Assembly, Test Flight, Logistics
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Total elements created: 34
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: LuxuryAirplane_68597
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 6 attempts, 80ms interval)...
+
+  [Attempt 1] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 2] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 3] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 4] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 5] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 6] Found: 15/34 | Missing: Customer wants l, Choose bar type, Choose seat coun, Choose seat colo, Choose toilet wa, Choose extras (l, Send specificati, Russian team - B, Irish team - Bui, French team - Bu, Japanese team - , Italian team - B, Prepare mood lig, Assemble luxury , Integrate interi, Receive test pro, Deliver airplane, Confirm delivery, Luxury airplane 
+  [Attempt 6] TIMEOUT - 15/34 elements
+
+[8] WARNING: 15/34 elements ready after 480ms
+         Missing: Customer wants luxury airplane, Choose bar type, Choose seat count, Choose seat color, Choose toilet water level, Choose extras (lighting, IFE), Send specifications, Russian team - Build Vodka bar, Irish team - Build Whiskey bar, French team - Build Champagne bar, Japanese team - Build Sushi bar, Italian team - Build Espresso bar, Prepare mood lighting kit, Assemble luxury interior, Integrate interior into airplane, Receive test protocol (Customer), Deliver airplane, Confirm delivery, Luxury airplane accepted
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Customer wants luxury airplane -> Y=55 (Customer): OK
+  [Unmask] Choose bar type -> Y=55 (Customer): OK
+  [Unmask] Choose seat count -> Y=55 (Customer): OK
+  [Unmask] Choose seat color -> Y=55 (Customer): OK
+  [Unmask] Choose toilet water level -> Y=55 (Customer): OK
+  [Unmask] Choose extras (lighting, IFE) -> Y=55 (Customer): OK
+  [Unmask] Send specifications -> Y=55 (Customer): OK
+  [Unmask] Russian team - Build Vodka bar -> Y=263 (Bar Team): OK
+  [Unmask] Irish team - Build Whiskey bar -> Y=263 (Bar Team): OK
+  [Unmask] French team - Build Champagne bar -> Y=263 (Bar Team): OK
+  [Unmask] Japanese team - Build Sushi bar -> Y=263 (Bar Team): OK
+  [Unmask] Italian team - Build Espresso bar -> Y=263 (Bar Team): OK
+  [Unmask] Prepare mood lighting kit -> Y=956 (Lighting Team): OK
+  [Unmask] Assemble luxury interior -> Y=1920 (Assembly): OK
+  [Unmask] Integrate interior into airplane -> Y=1920 (Assembly): OK
+  [Unmask] Receive test protocol (Customer) -> Y=55 (Customer): OK
+  [Unmask] Deliver airplane -> Y=3874 (Logistics): OK
+  [Unmask] Confirm delivery -> Y=55 (Customer): OK
+  [Unmask] Luxury airplane accepted -> Y=55 (Customer): OK
+
+[10] Manual unmask: 19 elements unmasked
+[11] All elements now available
+
+  Lanes: Customer(5-125); Engineering(125-233); Bar Team(233-333); Seats Team(333-534); Toilet Team(534-926); Lighting Team(926-1026); Entertainment Team(1026-1890); Assembly(1890-1990); Test Flight(1990-3844); Logistics(3844-3944)
+  Elements: Customer wants lux=Y55, Choose bar type=Y55, Choose seat count=Y55, Choose seat color=Y55, Choose toilet wate=Y55, Choose extras (lig=Y55, Send specification=Y55, Receive specificat=Y136, Validate specifica=Y136, Send requirements =Y136, Manufacture parts=Y136, Which bar?=Y136, Build seats packag=Y344, Configure toilet s=Y545, French team - Buil=Y263, Irish team - Build=Y263, Italian team - Bui=Y263, Japanese team - Bu=Y263, Prepare entertainm=Y1037, Prepare mood light=Y956, Russian team - Bui=Y263, Bar ready=Y136, All parts ready=Y136, Assemble luxury in=Y1920, Integrate interior=Y1920, Perform test fligh=Y2001, Create test protoc=Y2001, Distribute protoco=Y2001, Receive test proto=Y55, Receive test proto=Y136, Protocol distribut=Y2001, Deliver airplane=Y3874, Confirm delivery=Y55, Luxury airplane ac=Y55
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[12] Customer centerY = 42
+[13] Engineering centerY = 156
+[14] Bar Team centerY = 260
+[15] Seats Team centerY = 410
+[16] Toilet Team centerY = 707
+[17] Lighting Team centerY = 953
+[18] Entertainment Team centerY = 1435
+[19] Assembly centerY = 1917
+[20] Test Flight centerY = 2894
+[21] Logistics centerY = 3871
+
+[22] Customer/Customer wants luxury airplane -> (80,42) 30x30
+[23] Customer/Choose bar type -> (250,42) 170x60
+[24] Customer/Choose seat count -> (420,42) 170x60
+[25] Customer/Choose seat color -> (590,42) 170x60
+[26] Customer/Choose toilet water level -> (760,42) 170x60
+[27] Customer/Choose extras (lighting, IFE) -> (930,42) 170x60
+[28] Customer/Send specifications -> (1100,42) 170x60
+[29] Engineering/Receive specifications -> (1270,156) 170x60
+[30] Engineering/Validate specifications -> (1440,156) 170x60
+[31] Engineering/Send requirements to teams -> (1610,156) 170x60
+[32] Engineering/Manufacture parts -> (1780,156) 45x45
+[33] Engineering/Which bar? -> (1950,156) 45x45
+[34] Seats Team/Build seats package (count and color) -> (2120,410) 170x60
+[35] Toilet Team/Configure toilet system (water level) -> (2120,707) 170x60
+[36] Bar Team/French team - Build Champagne bar -> (2120,260) 170x60
+[37] Bar Team/Irish team - Build Whiskey bar -> (2120,260) 170x60
+[38] Bar Team/Italian team - Build Espresso bar -> (2120,260) 170x60
+[39] Bar Team/Japanese team - Build Sushi bar -> (2120,260) 170x60
+[40] Entertainment Team/Prepare entertainment system (IFE) -> (2120,1435) 170x60
+[41] Lighting Team/Prepare mood lighting kit -> (2120,953) 170x60
+[42] Bar Team/Russian team - Build Vodka bar -> (2120,260) 170x60
+[43] Engineering/Bar ready -> (2290,156) 45x45
+[44] Engineering/All parts ready -> (2460,156) 45x45
+[45] Assembly/Assemble luxury interior -> (2630,1917) 170x60
+[46] Assembly/Integrate interior into airplane -> (2800,1917) 170x60
+[47] Test Flight/Perform test flight -> (2970,2894) 170x60
+[48] Test Flight/Create test protocol -> (3140,2894) 170x60
+[49] Test Flight/Distribute protocol -> (3310,2894) 45x45
+[50] Customer/Receive test protocol (Customer) -> (3480,42) 170x60
+[51] Engineering/Receive test protocol (Factory) -> (3480,156) 170x60
+[52] Test Flight/Protocol distributed -> (3650,2894) 45x45
+[53] Logistics/Deliver airplane -> (3820,3871) 170x60
+[54] Customer/Confirm delivery -> (3990,42) 170x60
+[55] Customer/Luxury airplane accepted -> (4160,42) 30x30
+
+  Repositioned: 34/34
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[56] Created 42 sequence flows
+[57] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(5-125); Engineering(125-233); Bar Team(233-333); Seats Team(333-534); Toilet Team(534-926); Lighting Team(926-1026); Entertainment Team(1026-1890); Assembly(1890-1990); Test Flight(1990-3844); Logistics(3844-3944)
+  Elements: Customer wants lux=Y42, Choose bar type=Y42, Choose seat count=Y42, Choose seat color=Y42, Choose toilet wate=Y42, Choose extras (lig=Y42, Send specification=Y42, Receive specificat=Y156, Validate specifica=Y156, Send requirements =Y156, Manufacture parts=Y156, Which bar?=Y156, Build seats packag=Y410, Configure toilet s=Y707, French team - Buil=Y260, Irish team - Build=Y260, Italian team - Bui=Y260, Japanese team - Bu=Y260, Prepare entertainm=Y1435, Prepare mood light=Y953, Russian team - Bui=Y260, Bar ready=Y156, All parts ready=Y156, Assemble luxury in=Y1917, Integrate interior=Y1917, Perform test fligh=Y2894, Create test protoc=Y2894, Distribute protoco=Y2894, Receive test proto=Y42, Receive test proto=Y156, Protocol distribut=Y2894, Deliver airplane=Y3871, Confirm delivery=Y42, Luxury airplane ac=Y42
+
+[58] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Title:    Luxury Airplane
+Process:  LuxuryAirplane_68597
+Lanes:    10
+Elements: 34 (34 in diagram)
+Flows:    42
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=10,elements=34,gateways=6,flows=42,data=0,data_assoc=0
+======================================================================

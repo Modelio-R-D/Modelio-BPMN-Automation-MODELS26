@@ -1,0 +1,132 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN HIRING AND ONBOARDING PROCESS - DEBUG LOG
+==================================================================
+Script Version: v1.0
+Execution ID:   58625
+Process Name:   HiringAndOnboarding_58625
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: HiringAndOnboarding_58625
+[2] Lanes: Department, HR, Hiring Manager, Candidate, Onboarding Team
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Department lane: 3 elements
+[4] HR lane: 9 elements
+[5] Hiring Manager lane: 5 elements
+[6] Candidate lane: 5 elements
+[7] Onboarding Team lane: 4 elements
+
+  Total flow elements: 26
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[8] Diagram created: HiringAndOnboarding_58625
+[9] DiagramHandle obtained
+[10] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[11] Waiting for lanes + elements (max 6 attempts, 100ms interval)...
+
+  [Attempt 1] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 2] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 3] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 4] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 5] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 6] Found: 21/31 | Missing: Conduct Phon, Invite Candi, Extend Offer, Negotiate Sa, Complete Onb, State Interv, Interview Pr, Review Offer, Salary Negot, Accept Offer
+  [Attempt 6] TIMEOUT - 21/31 elements
+
+[12] Wait done in 600ms
+         Ready: 21/31
+
+[13] WARNING: Missing flow elements after wait: 10
+         Missing: Conduct Phone Interviews, Invite Candidates to Interviews, Extend Offer, Negotiate Salary, Complete Onboarding Paperwork, State Interview Preference, Interview Preference?, Review Offer, Salary Negotiation Needed?, Accept Offer
+
+[14] Trying manual unmask for missing elements...
+
+  [Unmask] Conduct Phone Interviews -> Y=160 (HR): OK
+  [Unmask] Invite Candidates to Interviews -> Y=160 (HR): OK
+  [Unmask] Extend Offer -> Y=160 (HR): OK
+  [Unmask] Negotiate Salary -> Y=160 (HR): OK
+  [Unmask] Complete Onboarding Paperwork -> Y=160 (HR): OK
+  [Unmask] State Interview Preference -> Y=454 (Candidate): OK
+  [Unmask] Interview Preference? -> Y=454 (Candidate): OK
+  [Unmask] Review Offer -> Y=454 (Candidate): OK
+  [Unmask] Salary Negotiation Needed? -> Y=454 (Candidate): OK
+  [Unmask] Accept Offer -> Y=454 (Candidate): OK
+
+[15] Manual unmask: 10 elements unmasked
+
+  Lanes: Department(5-110); HR(110-217); Hiring Manager(217-411); Candidate(411-531); Onboarding Team(531-984)
+  Elements: Need for New=Y16, Submit Hirin=Y20, Create Job D=Y121, Post Job on =Y121, Collect Resu=Y121, Screen Resum=Y121, Conduct Phon=Y160, Invite Candi=Y160, State Interv=Y454, Interview Pr=Y454, Conduct Virt=Y228, Conduct In-P=Y228, Interviews C=Y228, Choose Candi=Y228, Extend Offer=Y160, Review Offer=Y454, Salary Negot=Y454, Negotiate Sa=Y160, Accept Offer=Y454, Start Onboar=Y542, Complete Onb=Y160, Orientation=Y542, Provide Role=Y228, Onboarding C=Y542, Integrate Ne=Y25, New Hire Ful=Y542
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[16] Department centerY = 34
+[17] HR centerY = 140
+[18] Hiring Manager centerY = 291
+[19] Candidate centerY = 448
+[20] Onboarding Team centerY = 734
+
+[21] Department/Need for New Hire Identified -> (80,34) 33x33
+[22] Department/Submit Hiring Request -> (240,34) 150x60
+[23] HR/Create Job Description -> (400,140) 150x60
+[24] HR/Post Job on Job Boards -> (560,140) 150x60
+[25] HR/Collect Resumes -> (720,140) 150x60
+[26] HR/Screen Resumes -> (880,140) 150x60
+[27] HR/Conduct Phone Interviews -> (1040,140) 150x60
+[28] HR/Invite Candidates to Interviews -> (1200,140) 150x60
+[29] Candidate/State Interview Preference -> (1360,448) 150x60
+[30] Candidate/Interview Preference? -> (1520,448) 40x40
+[31] Hiring Manager/Conduct Virtual Interview -> (1680,291) 150x60
+[32] Hiring Manager/Conduct In-Person Interview -> (1840,291) 150x60
+[33] Hiring Manager/Interviews Completed -> (2000,291) 40x40
+[34] Hiring Manager/Choose Candidate -> (2160,291) 150x60
+[35] HR/Extend Offer -> (2320,140) 150x60
+[36] Candidate/Review Offer -> (2480,448) 150x60
+[37] Candidate/Salary Negotiation Needed? -> (2640,448) 40x40
+[38] HR/Negotiate Salary -> (2800,140) 150x60
+[39] Candidate/Accept Offer -> (2960,448) 150x60
+[40] Onboarding Team/Start Onboarding -> (3120,734) 40x40
+[41] HR/Complete Onboarding Paperwork -> (3280,140) 150x60
+[42] Onboarding Team/Orientation -> (3280,734) 150x60
+[43] Hiring Manager/Provide Role Training -> (3280,291) 150x60
+[44] Onboarding Team/Onboarding Complete -> (3440,734) 40x40
+[45] Department/Integrate New Hire into Team -> (3600,34) 150x60
+[46] Onboarding Team/New Hire Fully Integrated -> (3760,734) 33x33
+
+  Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[47] Created 29 sequence flows
+[48] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Department(5-110); HR(110-217); Hiring Manager(217-411); Candidate(411-531); Onboarding Team(531-984)
+  Elements: Need for New=Y34, Submit Hirin=Y34, Create Job D=Y140, Post Job on =Y140, Collect Resu=Y140, Screen Resum=Y140, Conduct Phon=Y140, Invite Candi=Y140, State Interv=Y448, Interview Pr=Y448, Conduct Virt=Y291, Conduct In-P=Y291, Interviews C=Y291, Choose Candi=Y291, Extend Offer=Y140, Review Offer=Y448, Salary Negot=Y448, Negotiate Sa=Y140, Accept Offer=Y448, Start Onboar=Y734, Complete Onb=Y140, Orientation=Y734, Provide Role=Y291, Onboarding C=Y734, Integrate Ne=Y34, New Hire Ful=Y734
+
+[49] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  HiringAndOnboarding_58625
+Lanes:    5
+Elements: 26 (26 with graphics)
+Flows:    29
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=26,gateways=5,flows=29,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,109 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: App For Participating at the Vienna Night Run_56671
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: App For Participating at the Vienna Night Run_56671
+[2] Lanes: Runner, App, Fitness Gadget
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Runner: 10 elements
+[4] App: 9 elements
+[5] Fitness Gadget: 2 elements
+
+  Total: 21 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 5
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: App For Participating at the Vienna Night Run_56671
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 10: Go from home=0, Leave directly from work=90
+  [Auto-stack] col 13: Run Vienna Night Run 5km=0, Drink during run=90
+[Runner] Lane bounds: 5-132
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Test run 5km -> col=2 (380,25) relY=20
+  Train -> col=6 (980,25) relY=20
+  Go from home -> col=10 (1580,25) relY=20
+  Leave directly from work -> col=10 (1580,115) relY=110
+  Run and drink -> col=12 (1880,25) relY=20
+  Run Vienna Night Run 5km -> col=13 (2030,25) relY=20
+  Drink during run -> col=13 (2030,115) relY=110
+  Done running and drinking -> col=14 (2180,25) relY=20
+  End -> col=17 (2630,25) relY=20
+
+[App] Lane bounds: 186-286
+  [Unmask] Select starting block -> Y=236: OK
+  [Unmask] Record 5km time -> Y=236: OK
+  [Unmask] Time under 25 min? -> Y=236: OK
+  [Unmask] Get starting number -> Y=236: OK
+  [Unmask] Enter workday end time -> Y=236: OK
+  [Unmask] Determine departure option -> Y=236: OK
+  [Unmask] More than 1 hour left? -> Y=236: OK
+  [Unmask] Departure decided -> Y=236: OK
+  [Unmask] Show final time -> Y=236: OK
+  [Unmask] Start Time -> Y=236: OK
+  [Unmask] Starting Number -> Y=236: OK
+  [Unmask] Workday End -> Y=236: OK
+  [maxElementBottomRelY=80]
+  Select starting block -> col=1 (230,206) relY=20
+  Record 5km time -> col=4 (680,206) relY=20
+  Time under 25 min? -> col=5 (830,206) relY=20
+  Get starting number -> col=6 (980,206) relY=20
+  Enter workday end time -> col=7 (1130,206) relY=20
+  Determine departure option -> col=8 (1280,206) relY=20
+  More than 1 hour left? -> col=9 (1430,206) relY=20
+  Departure decided -> col=11 (1730,206) relY=20
+  Show final time -> col=16 (2480,206) relY=20
+  Start Time (DO from Select starting block) -> (320,276) maxBottomRelY=80
+  Starting Number (DO from Get starting number) -> (1070,276) maxBottomRelY=80
+  Workday End (DO from Enter workday end time) -> (1220,276) maxBottomRelY=80
+
+[Fitness Gadget] Lane bounds: 368-539
+  [maxElementBottomRelY=80]
+  Measure 5km time -> col=3 (530,388) relY=20
+  Measure final time -> col=15 (2330,388) relY=20
+  5km Time (DO from Measure 5km time) -> (620,458) maxBottomRelY=80
+  Final Time (DO from Measure final time) -> (2420,458) maxBottomRelY=80
+
+
+[9] Repositioned: 26/26
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 23 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 9
+
+==================================================================
+COMPLETE: App For Participating at the Vienna Night Run_56671
+==================================================================
+Lanes: 3 | Elements: 21 | Data: 5 | Flows: 23 | DataAssoc: 9
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=26,gateways=5,flows=23,data=5,data_assoc=9
+======================================================================

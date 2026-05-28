@@ -1,0 +1,160 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN DIAGRAM CREATION - DEBUG LOG
+==================================================================
+Title:         DIY Repair of a Broken Smartphone Screen
+Script Version: v1.0
+Execution ID:   87364
+Process Name:   DIY_Repair_Smartphone_Screen_87364
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: DIY_Repair_Smartphone_Screen_87364
+[2] Lanes: DIYer, Online Tool, Friends, Shop, Expert
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+  [Add] DIYer / Screen Broken (addToLane=True)
+  [Add] DIYer / Enter model and damage (addToLane=True)
+  [Add] DIYer / Check what I already have (addToLane=True)
+  [Add] DIYer / Missing items? (addToLane=True)
+  [Add] DIYer / Contact friends (addToLane=True)
+  [Add] DIYer / Friends can help? (addToLane=True)
+  [Add] DIYer / Get items from friends (addToLane=True)
+  [Add] DIYer / Order missing items (addToLane=True)
+  [Add] DIYer / Items ready (addToLane=True)
+  [Add] DIYer / Replace screen (addToLane=True)
+  [Add] DIYer / Repair successful? (addToLane=True)
+  [Add] DIYer / Record review or video (addToLane=True)
+  [Add] DIYer / Send phone to expert (addToLane=True)
+  [Add] Online Tool / Generate materials tools options (addToLane=True)
+  [Add] Online Tool / Provide repair instructions (addToLane=True)
+  [Add] Friends / Friends offer parts or tools (addToLane=True)
+  [Add] Shop / Deliver ordered items (addToLane=True)
+  [Add] Expert / Repair phone professionally (addToLane=True)
+  [Add] Online Tool / Send review (addToLane=True)
+  [Add] DIYer / Phone working (addToLane=True)
+
+[3] Total elements: 20
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[4] Diagram created: DIY_Repair_Smartphone_Screen_87364
+[5] DiagramHandle obtained
+[6] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[7] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 15/20 | Missing: Generate mat, Provide repa, Deliver orde, Repair phone, Send review
+  [Attempt 2] Found: 15/20 | Missing: Generate mat, Provide repa, Deliver orde, Repair phone, Send review
+  [Attempt 3] Found: 15/20 | Missing: Generate mat, Provide repa, Deliver orde, Repair phone, Send review
+  [Attempt 3] TIMEOUT - 15/20 elements
+
+[8] WARNING: 15/20 elements ready after 150ms
+         Missing: Generate materials tools options, Provide repair instructions, Deliver ordered items, Repair phone professionally, Send review
+
+[9] Trying manual unmask for missing elements...
+
+  [Unmask] Generate materials tools options -> Y=200 (Online Tool): OK
+  [Unmask] Provide repair instructions -> Y=200 (Online Tool): OK
+  [Unmask] Deliver ordered items -> Y=400 (Shop): OK
+  [Unmask] Repair phone professionally -> Y=500 (Expert): OK
+  [Unmask] Send review -> Y=200 (Online Tool): OK
+
+[10] Manual unmask: 5 elements unmasked
+[11] All elements now available
+
+[12] Waiting for lanes bounds...
+  [Attempt 1] All 5 elements ready
+  Lane graphics ready: 5/5 after 50ms
+
+  Lanes: DIYer(5-150); Online Tool(150-270); Friends(270-370); Shop(370-470); Expert(470-570)
+  Elements: Screen Broke=Y16, Enter model =Y20, Generate mat=Y200, Check what I=Y25, Missing item=Y30, Contact frie=Y35, Friends offe=Y281, Friends can =Y40, Get items fr=Y45, Order missin=Y50, Deliver orde=Y413, Items ready=Y55, Provide repa=Y200, Replace scre=Y60, Repair succe=Y65, Record revie=Y70, Send phone t=Y75, Repair phone=Y513, Send review=Y200, Phone workin=Y80
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] DIYer centerY = 54
+[14] Online Tool centerY = 187
+[15] Friends centerY = 297
+[16] Shop centerY = 397
+[17] Expert centerY = 497
+
+[18] DIYer/Screen Broken -> (80,54) 33x33
+[19] DIYer/Enter model and damage -> (240,54) 160x60
+[20] Online Tool/Generate materials tools options -> (400,187) 160x60
+[21] DIYer/Check what I already have -> (560,54) 160x60
+[22] DIYer/Missing items? -> (720,54) 40x40
+[23] DIYer/Contact friends -> (880,54) 160x60
+[24] Friends/Friends offer parts or tools -> (1040,297) 160x60
+[25] DIYer/Friends can help? -> (1200,54) 40x40
+[26] DIYer/Get items from friends -> (1360,54) 160x60
+[27] DIYer/Order missing items -> (1360,54) 160x60
+[28] Shop/Deliver ordered items -> (1520,397) 160x60
+[29] DIYer/Items ready -> (1680,54) 40x40
+[30] Online Tool/Provide repair instructions -> (1840,187) 160x60
+[31] DIYer/Replace screen -> (2000,54) 160x60
+[32] DIYer/Repair successful? -> (2160,54) 40x40
+[33] DIYer/Record review or video -> (2320,54) 160x60
+[34] DIYer/Send phone to expert -> (2320,54) 160x60
+[35] Expert/Repair phone professionally -> (2480,497) 160x60
+[36] Online Tool/Send review -> (2480,187) 33x33
+[37] DIYer/Phone working -> (2640,54) 33x33
+
+  Repositioned: 20/20
+
+== PHASE 6: CREATE FLOWS ========================================
+
+  [Flow] Screen Broken -> Enter model and damage
+  [Flow] Enter model and damage -> Generate materials tools options
+  [Flow] Generate materials tools options -> Check what I already have
+  [Flow] Check what I already have -> Missing items?
+  [Flow] Missing items? -> Contact friends (guard=Yes)
+  [Flow] Missing items? -> Items ready (guard=No)
+  [Flow] Contact friends -> Friends offer parts or tools
+  [Flow] Friends offer parts or tools -> Friends can help?
+  [Flow] Friends can help? -> Get items from friends (guard=Yes)
+  [Flow] Friends can help? -> Order missing items (guard=No)
+  [Flow] Get items from friends -> Items ready
+  [Flow] Order missing items -> Deliver ordered items
+  [Flow] Deliver ordered items -> Items ready
+  [Flow] Items ready -> Provide repair instructions
+  [Flow] Provide repair instructions -> Replace screen
+  [Flow] Replace screen -> Repair successful?
+  [Flow] Repair successful? -> Record review or video (guard=Yes)
+  [Flow] Record review or video -> Send review
+  [Flow] Send review -> Phone working
+  [Flow] Repair successful? -> Send phone to expert (guard=No)
+  [Flow] Send phone to expert -> Repair phone professionally
+  [Flow] Repair phone professionally -> Phone working
+
+[38] Created 22 sequence flows (missing=0)
+[39] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: DIYer(5-150); Online Tool(150-270); Friends(270-370); Shop(370-470); Expert(470-570)
+  Elements: Screen Broke=Y54, Enter model =Y54, Generate mat=Y187, Check what I=Y54, Missing item=Y54, Contact frie=Y54, Friends offe=Y297, Friends can =Y54, Get items fr=Y54, Order missin=Y54, Deliver orde=Y397, Items ready=Y54, Provide repa=Y187, Replace scre=Y54, Repair succe=Y54, Record revie=Y54, Send phone t=Y54, Repair phone=Y497, Send review=Y187, Phone workin=Y54
+
+[40] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  DIY_Repair_Smartphone_Screen_87364
+Title:    DIY Repair of a Broken Smartphone Screen
+Lanes:    5
+Elements: 20 (20 in diagram)
+Flows:    22
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=5,elements=20,gateways=4,flows=22,data=0,data_assoc=0
+======================================================================

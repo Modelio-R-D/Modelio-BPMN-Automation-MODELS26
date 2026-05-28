@@ -1,0 +1,97 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: LegoBuildProcess_13767
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: LegoBuildProcess_13767
+[2] Lanes: Designer, Children, Builder
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Designer: 4 elements
+[4] Children: 1 elements
+[5] Builder: 8 elements
+
+  Total: 13 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 2
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: LegoBuildProcess_13767
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Designer] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Develop Basic Design -> Y=55: OK
+  [Unmask] Order Lego Sets -> Y=55: OK
+  [Unmask] Redesign Subcomponent -> Y=55: OK
+  [Unmask] Design Specs -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Start -> col=0 (80,25) relY=20
+  Develop Basic Design -> col=1 (230,25) relY=20
+  Order Lego Sets -> col=2 (380,25) relY=20
+  Redesign Subcomponent -> col=8 (1280,25) relY=20
+  Design Specs (DO from Develop Basic Design) -> (320,95) maxBottomRelY=80
+
+[Children] Lane bounds: 187-321
+  [maxElementBottomRelY=80]
+  Sort Parts -> col=3 (530,207) relY=20
+  Sorted Containers (DO from Sort Parts) -> (620,277) maxBottomRelY=80
+
+[Builder] Lane bounds: 369-469
+  [Unmask] Parts Available? -> Y=419: OK
+  [Unmask] Reorder Parts -> Y=419: OK
+  [Unmask] Build Subcomponent -> Y=419: OK
+  [Unmask] Test Subcomponent -> Y=419: OK
+  [Unmask] Test OK? -> Y=419: OK
+  [Unmask] More Subcomponents? -> Y=419: OK
+  [Unmask] Assemble Machine -> Y=419: OK
+  [Unmask] End -> Y=419: OK
+  [maxElementBottomRelY=80]
+  Parts Available? -> col=4 (680,389) relY=20
+  Reorder Parts -> col=5 (830,389) relY=20
+  Build Subcomponent -> col=6 (980,389) relY=20
+  Test Subcomponent -> col=7 (1130,389) relY=20
+  Test OK? -> col=8 (1280,389) relY=20
+  More Subcomponents? -> col=9 (1430,389) relY=20
+  Assemble Machine -> col=10 (1580,389) relY=20
+  End -> col=11 (1730,389) relY=20
+
+
+[9] Repositioned: 15/15
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 15 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 4
+
+==================================================================
+COMPLETE: LegoBuildProcess_13767
+==================================================================
+Lanes: 3 | Elements: 13 | Data: 2 | Flows: 15 | DataAssoc: 4
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+Gateways: 3
+======================================================================

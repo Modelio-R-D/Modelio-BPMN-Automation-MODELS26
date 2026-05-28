@@ -1,0 +1,113 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+
+==================================================================
+BPMN FRIDGE SERVICE PROCESS
+==================================================================
+Script Version: v1.0
+Execution ID:   14908
+Process Name:   FridgeService_14908
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: FridgeService_14908
+[2] Lanes: Customer, Service Center, Service Facility
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Customer lane: 7 elements
+[4] Service Center lane: 3 elements
+[5] Service Facility lane: 6 elements
+
+  Total elements: 16
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[6] Diagram created: FridgeService_14908
+[7] DiagramHandle obtained
+[8] Save (triggers auto-unmask)
+
+== PHASE 4: WAIT FOR AUTO-UNMASK ================================
+
+[9] Waiting for elements (max 3 attempts, 50ms interval)...
+
+  [Attempt 1] Found: 8/16 | Missing: Fridge Makes, Describe Sym, Send Report, Wait for Tec, Confirm Repa, Rate Service, Service Comp, Forward to F
+  [Attempt 2] Found: 8/16 | Missing: Fridge Makes, Describe Sym, Send Report, Wait for Tec, Confirm Repa, Rate Service, Service Comp, Forward to F
+  [Attempt 3] Found: 8/16 | Missing: Fridge Makes, Describe Sym, Send Report, Wait for Tec, Confirm Repa, Rate Service, Service Comp, Forward to F
+  [Attempt 3] TIMEOUT - 8/16 elements
+
+[10] WARNING: 8/16 elements ready after 150ms
+         Missing: Fridge Makes Noise, Describe Symptoms, Send Report, Wait for Technician, Confirm Repair OK, Rate Service, Service Complete, Forward to Facility
+
+[11] Trying manual unmask for missing elements...
+
+  [Unmask] Fridge Makes Noise -> Y=55 (Customer): FAILED
+  [Unmask] Describe Symptoms -> Y=55 (Customer): FAILED
+  [Unmask] Send Report -> Y=55 (Customer): FAILED
+  [Unmask] Wait for Technician -> Y=55 (Customer): FAILED
+  [Unmask] Confirm Repair OK -> Y=55 (Customer): FAILED
+  [Unmask] Rate Service -> Y=55 (Customer): FAILED
+  [Unmask] Service Complete -> Y=55 (Customer): FAILED
+  [Unmask] Forward to Facility -> Y=155 (Service Center): FAILED
+[12] Still missing: Fridge Makes Noise, Describe Symptoms, Send Report, Wait for Technician, Confirm Repair OK, Rate Service, Service Complete, Forward to Facility
+
+  Lanes: Customer(5-105); Service Center(105-205); Service Facility(205-404)
+  Elements: Fridge Mak=--, Describe S=--, Send Repor=--, Receive Re=Y116, Select Loc=Y116, Forward to=--, Wait for T=--, Schedule A=Y216, Order Part=Y216, Visit Cust=Y216, Can Repair=Y216, Confirm Re=--, Repair Fri=Y216, Close Serv=Y216, Rate Servi=--, Service Co=--
+
+== PHASE 5: REPOSITION ELEMENTS =================================
+
+[13] Customer centerY = 32
+[14] Service Center centerY = 132
+[15] Service Facility centerY = 281
+
+[16] SKIP Fridge Makes Noise: not in diagram
+[17] SKIP Describe Symptoms: not in diagram
+[18] SKIP Send Report: not in diagram
+[19] Service Center/Receive Report -> (500,132) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Service Center(105-205); Service Facility(205-404)
+         After:  Lanes: Customer(5-105); Service Center(105-238); Service Facility(238-437)
+[20] Service Center/Select Local Facility -> (640,132) 120x60
+[21] SKIP Forward to Facility: not in diagram
+[22] SKIP Wait for Technician: not in diagram
+[23] Service Facility/Schedule Appointment -> (920,281) 120x60
+[24] Service Facility/Order Parts -> (1060,231) 120x60 *** LANE CHANGED ***
+         Before: Lanes: Customer(5-105); Service Center(105-238); Service Facility(238-437)
+         After:  Lanes: Customer(-13-87); Service Center(87-220); Service Facility(220-437)
+[25] Service Facility/Visit Customer -> (1060,281) 120x60
+[26] Service Facility/Can Repair? -> (1200,281) 40x40
+[27] SKIP Confirm Repair OK: not in diagram
+[28] Service Facility/Repair Fridge -> (1340,281) 120x60
+[29] Service Facility/Close Service Ticket -> (1480,281) 120x60
+[30] SKIP Rate Service: not in diagram
+[31] SKIP Service Complete: not in diagram
+
+  Repositioned: 8/16
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[32] Created 17 sequence flows
+[33] Save
+
+== FINAL STATE ==================================================
+
+  Lanes: Customer(-13-87); Service Center(87-220); Service Facility(220-437)
+  Elements: Fridge Mak=--, Describe S=--, Send Repor=--, Receive Re=Y114, Select Loc=Y114, Forward to=--, Wait for T=--, Schedule A=Y263, Order Part=Y231, Visit Cust=Y281, Can Repair=Y281, Confirm Re=--, Repair Fri=Y281, Close Serv=Y281, Rate Servi=--, Service Co=--
+
+[34] Diagram closed
+
+==================================================================
+COMPLETE
+==================================================================
+Process:  FridgeService_14908
+Lanes:    3
+Elements: 16 (8 in diagram)
+Flows:    17
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=16,gateways=1,flows=17,data=0,data_assoc=0
+======================================================================

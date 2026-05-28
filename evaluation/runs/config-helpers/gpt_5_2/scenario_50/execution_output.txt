@@ -1,0 +1,69 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: ClaimSettlementRecommendation_59520
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: ClaimSettlementRecommendation_59520
+[2] Lanes: Claims Officer, Senior Claims Officer
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Claims Officer: 5 elements
+[4] Senior Claims Officer: 2 elements
+
+  Total: 7 elements
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[5] Diagram: ClaimSettlementRecommendation_59520
+[6] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+[Claims Officer] Lane bounds: 5-105
+  [Unmask] Claim Registered -> Y=55: OK
+  [Unmask] Examine Claim -> Y=55: OK
+  [Unmask] Write Settlement Recommendation -> Y=55: OK
+  [Unmask] Proceed With Claim Handling -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [maxElementBottomRelY=80]
+  Claim Registered -> col=0 (80,25) relY=20
+  Examine Claim -> col=1 (230,25) relY=20
+  Write Settlement Recommendation -> col=2 (380,25) relY=20
+  Proceed With Claim Handling -> col=5 (830,25) relY=20
+  End -> col=6 (980,25) relY=20
+
+[Senior Claims Officer] Lane bounds: 131-319
+  [maxElementBottomRelY=80]
+  Check Recommendation -> col=3 (530,151) relY=20
+  Recommendation OK? -> col=4 (680,151) relY=20
+
+
+[7] Repositioned: 7/7
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[8] Created 7 sequence flows
+
+==================================================================
+COMPLETE: ClaimSettlementRecommendation_59520
+==================================================================
+Lanes: 2 | Elements: 7 | Flows: 7
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=2,elements=7,gateways=1,flows=7,data=0,data_assoc=0
+======================================================================

@@ -1,0 +1,143 @@
+Found 2 total packages in model
+Skipping system package: UML Types
+Found 1 user packages (excluding system packages)
+Using existing package: testing_automation
+======================================================================
+BPMN_Helpers.py v3.2 loaded (Data Objects: True)
+
+==================================================================
+BPMN PROCESS CREATION
+==================================================================
+Process Name: Becoming A Parent_63209
+Positioning: COLUMN-BASED
+==================================================================
+
+== PHASE 1: CREATE PROCESS & LANES ==============================
+
+[1] Process: Becoming A Parent_63209
+[2] Lanes: Parent, Social Security, Company HR
+
+== PHASE 2: CREATE ELEMENTS =====================================
+
+[3] Parent: 23 elements
+[4] Social Security: 6 elements
+[5] Company HR: 6 elements
+
+  Total: 35 elements
+
+== PHASE 2B: CREATE DATA OBJECTS ================================
+
+[6] Data Objects: 6
+
+== PHASE 3: CREATE DIAGRAM ======================================
+
+[7] Diagram: Becoming A Parent_63209
+[8] Save (triggers auto-unmask)
+
+== PHASE 4 & 5: UNMASK AND POSITION ELEMENTS =====================
+
+Mode: COLUMN-BASED (lane-by-lane)
+
+  [Auto-stack] col 5: Notify Social Security=0, Notify Company HR=90
+  [Auto-stack] col 9: Receive SS confirmation=0, Receive company info=90
+  [Auto-stack] col 17: Send SS extension request=0, Send HR extension request=90
+  [Auto-stack] col 21: Receive SS extension confirmation=0, Receive HR updated plan=90
+[Parent] Lane bounds: 5-105
+  [Unmask] Start -> Y=55: OK
+  [Unmask] Fetch leave models -> Y=55: OK
+  [Unmask] Select leave model -> Y=55: OK
+  [Unmask] Collect required info -> Y=55: OK
+  [Unmask] Notify parties in time -> Y=55: OK
+  [Unmask] Notify Social Security -> Y=55: OK
+  [Unmask] Notify Company HR -> Y=55: OK
+  [Unmask] Receive SS confirmation -> Y=55: OK
+  [Unmask] Receive company info -> Y=55: OK
+  [Unmask] All responses received -> Y=55: OK
+  [Unmask] Finalize leave plan -> Y=55: OK
+  [Unmask] Start maternity leave -> Y=55: OK
+  [Unmask] Leave period ends -> Y=55: OK
+  [Unmask] Extend leave? -> Y=55: OK
+  [Unmask] Request extension -> Y=55: OK
+  [Unmask] Notify extension -> Y=55: OK
+  [Unmask] Send SS extension request -> Y=55: OK
+  [Unmask] Send HR extension request -> Y=55: OK
+  [Unmask] Receive SS extension confirmation -> Y=55: OK
+  [Unmask] Receive HR updated plan -> Y=55: OK
+  [Unmask] Extension responses received -> Y=55: OK
+  [Unmask] Extended leave ends -> Y=55: OK
+  [Unmask] End -> Y=55: OK
+  [Unmask] Leave Models -> Y=55: OK
+  [Unmask] Selected Model -> Y=55: OK
+  [Unmask] Application Data -> Y=55: OK
+  [Unmask] SS Confirmation -> Y=55: OK
+  [Unmask] Company Info -> Y=55: OK
+  [Unmask] Extension Request -> Y=55: OK
+  [maxElementBottomRelY=170]
+  Start -> col=0 (80,25) relY=20
+  Fetch leave models -> col=1 (230,25) relY=20
+  Select leave model -> col=2 (380,25) relY=20
+  Collect required info -> col=3 (530,25) relY=20
+  Notify parties in time -> col=4 (680,25) relY=20
+  Notify Social Security -> col=5 (830,25) relY=20
+  Notify Company HR -> col=5 (830,115) relY=110
+  Receive SS confirmation -> col=9 (1430,25) relY=20
+  Receive company info -> col=9 (1430,115) relY=110
+  All responses received -> col=10 (1580,25) relY=20
+  Finalize leave plan -> col=11 (1730,25) relY=20
+  Start maternity leave -> col=12 (1880,25) relY=20
+  Leave period ends -> col=13 (2030,25) relY=20
+  Extend leave? -> col=14 (2180,25) relY=20
+  Request extension -> col=15 (2330,25) relY=20
+  Notify extension -> col=16 (2480,25) relY=20
+  Send SS extension request -> col=17 (2630,25) relY=20
+  Send HR extension request -> col=17 (2630,115) relY=110
+  Receive SS extension confirmation -> col=21 (3230,25) relY=20
+  Receive HR updated plan -> col=21 (3230,115) relY=110
+  Extension responses received -> col=22 (3380,25) relY=20
+  Extended leave ends -> col=24 (3680,25) relY=20
+  End -> col=25 (3830,25) relY=20
+  Leave Models (DO from Fetch leave models) -> (320,185) maxBottomRelY=170
+  Selected Model (DO from Select leave model) -> (470,185) maxBottomRelY=170
+  Application Data (DO from Collect required info) -> (620,185) maxBottomRelY=170
+  SS Confirmation (DO from Receive SS confirmation) -> (1520,185) maxBottomRelY=170
+  Company Info (DO from Receive company info) -> (1520,185) maxBottomRelY=170
+  Extension Request (DO from Request extension) -> (2420,185) maxBottomRelY=170
+
+[Social Security] Lane bounds: 277-377
+  [maxElementBottomRelY=80]
+  Receive leave notice -> col=6 (980,297) relY=20
+  Confirm eligibility -> col=7 (1130,297) relY=20
+  Send SS confirmation -> col=8 (1280,297) relY=20
+  Receive extension request -> col=18 (2780,297) relY=20
+  Process extension (SS) -> col=19 (2930,297) relY=20
+  Send extension confirmation -> col=20 (3080,297) relY=20
+
+[Company HR] Lane bounds: 377-477
+  [maxElementBottomRelY=80]
+  Receive leave notice (HR) -> col=6 (980,397) relY=20
+  Check policy and coverage -> col=7 (1130,397) relY=20
+  Send company info -> col=8 (1280,397) relY=20
+  Receive extension request (HR) -> col=18 (2780,397) relY=20
+  Update leave plan (HR) -> col=19 (2930,397) relY=20
+  Send updated plan -> col=20 (3080,397) relY=20
+
+
+[9] Repositioned: 41/41
+
+== PHASE 6: CREATE FLOWS ========================================
+
+[10] Created 37 sequence flows
+
+== PHASE 6B: CREATE DATA ASSOCIATIONS ===========================
+
+[11] Data associations: 14
+
+==================================================================
+COMPLETE: Becoming A Parent_63209
+==================================================================
+Lanes: 3 | Elements: 35 | Data: 6 | Flows: 37 | DataAssoc: 14
+==================================================================
+======================================================================
+SUCCESS: BPMN diagram created!
+BPMN_METRICS:lanes=3,elements=41,gateways=5,flows=37,data=6,data_assoc=14
+======================================================================
