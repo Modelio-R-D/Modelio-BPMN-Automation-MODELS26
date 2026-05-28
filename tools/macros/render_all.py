@@ -60,6 +60,13 @@ ONLY_APPROACH = None        # e.g. "config-helpers" or "no-helper"
 ONLY_LLM      = None        # e.g. "claude_opus_4_5", "gpt_5_2", "glm5"
 ONLY_SCENARIO = None        # e.g. "scenario_07"
 
+# Set GROUND_TRUTH = True to render the reference side instead (input
+# becomes ground_truth.py, output becomes ground_truth.png). Note that
+# ground_truth.py is the same across all 6 cells for a given scenario,
+# so the typical workflow is to render one cell with GROUND_TRUTH=True
+# and copy the resulting PNGs to the other five.
+GROUND_TRUTH = False
+
 PNG_RESOLUTION = 10         # second argument to dh.saveInFile
 
 # ============================================================================
@@ -123,8 +130,14 @@ def _snapshot_diagrams():
     return snap
 
 
+SCRIPT_NAME = "ground_truth.py" if GROUND_TRUTH else "generated.py"
+OUT_NAME    = "ground_truth.png" if GROUND_TRUTH else "diagram_generated.png"
+ERR_NAME    = "ground_truth_render_error.txt" if GROUND_TRUTH else "diagram_render_error.txt"
+PKG_SUFFIX  = "__GT" if GROUND_TRUTH else ""
+
+
 def _list_runs():
-    """Yield (approach, llm, scenario, script_path) for every generated.py."""
+    """Yield (approach, llm, scenario, script_path) for every script."""
     runs_root = os.path.join(REPO_ROOT, "evaluation", "runs")
     if not os.path.isdir(runs_root):
         raise Exception("REPO_ROOT does not contain evaluation/runs/: " + runs_root)
@@ -145,9 +158,9 @@ def _list_runs():
                 if ONLY_SCENARIO is not None and scenario != ONLY_SCENARIO:
                     continue
                 sdir = os.path.join(ldir, scenario)
-                gen_py = os.path.join(sdir, "generated.py")
-                if os.path.isfile(gen_py):
-                    yield (approach, llm, scenario, gen_py)
+                script_path = os.path.join(sdir, SCRIPT_NAME)
+                if os.path.isfile(script_path) and os.path.getsize(script_path) > 0:
+                    yield (approach, llm, scenario, script_path)
 
 
 # ============================================================================
@@ -156,15 +169,15 @@ def _list_runs():
 
 def _render_one(approach, llm, scenario, script_path, models26):
     out_dir = os.path.dirname(script_path)
-    out_png = os.path.join(out_dir, "diagram_generated.png").replace("\\", "/")
-    err_path = os.path.join(out_dir, "diagram_render_error.txt")
+    out_png = os.path.join(out_dir, OUT_NAME).replace("\\", "/")
+    err_path = os.path.join(out_dir, ERR_NAME)
     if os.path.isfile(err_path):
         try:
             os.remove(err_path)
         except:
             pass
 
-    pkgname = _safe_pkg_name(approach, llm, scenario)
+    pkgname = _safe_pkg_name(approach, llm, scenario) + PKG_SUFFIX
     subpkg, _ = _get_or_create_subpkg(models26, pkgname)
 
     f = open(script_path, "r")

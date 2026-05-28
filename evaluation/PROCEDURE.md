@@ -103,11 +103,20 @@ Modelio model it produces — the JSONL fields `lanes`, `elements`,
 After the metric-collection phase, every `generated.py` is re-executed
 inside a clean Modelio session — each in its own sub-package under the
 `MODELS26` UML package — and the resulting BPMN diagram is exported as
-`diagram_generated.png` next to the script. This step is **for reviewer inspection
-only** — it does not feed back into any number in the paper. 312/330
-renders succeed; the 18 failures (mostly GLM5 syntactic and
-hallucinated-import issues) are documented per-cell in
-`diagram_render_error.txt`.
+`diagram_generated.png` next to the script. The ground-truth side is
+also rendered: each `ground_truth.py` produces a `ground_truth.png`
+that lets reviewers compare the reference BPMN diagram against the LLM
+output side-by-side. Because every scenario's `ground_truth.py` is the
+same across all 6 cells, the ground-truth PNG is rendered once and
+copied to the other five.
+
+Both render passes are **for reviewer inspection only** — they do not
+feed back into any number in the paper. 312/330 `diagram_generated.png`
+renders succeed (the 18 failures are mostly GLM5 syntactic and
+hallucinated-import issues, documented per-cell in
+`diagram_render_error.txt`); 54/55 unique `ground_truth.png` renders
+succeed (`scenario_23`'s `ground_truth.py` is empty in the source JSONL
+— `modelio_config: None` — so no ground-truth PNG is produced for it).
 
 The reproducible path for reviewers is the Modelio macro
 [`tools/macros/render_all.py`](../tools/macros/render_all.py), which

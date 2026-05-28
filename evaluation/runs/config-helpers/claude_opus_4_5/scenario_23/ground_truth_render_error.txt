@@ -1,0 +1,8 @@
+Full Modelio remote-execution output below.
+---
+(no error line matched)
+---
+FOUND_DIAGRAMS:0
+NO_DIAGRAM_PRODUCED
+DONE
+

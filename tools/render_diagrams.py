@@ -201,15 +201,19 @@ def build_wrapper(generated_py: Path, out_png: Path, pkg_suffix: str = "") -> st
 # Per-run execution + batch
 # ---------------------------------------------------------------------------
 
-def render_one(generated_py: Path, dry_run: bool = False) -> tuple[bool, str]:
+def render_one(generated_py: Path, dry_run: bool = False,
+               *, out_name: str = "diagram_generated.png",
+               log_name: str = "diagram_render.log",
+               err_name: str = "diagram_render_error.txt",
+               pkg_suffix: str = "") -> tuple[bool, str]:
     run_dir = generated_py.parent
-    out_png = run_dir / "diagram_generated.png"
-    log_path = run_dir / "diagram_render.log"
-    err_path = run_dir / "diagram_render_error.txt"
+    out_png = run_dir / out_name
+    log_path = run_dir / log_name
+    err_path = run_dir / err_name
     if err_path.exists():
         err_path.unlink()
 
-    wrapper = build_wrapper(generated_py, out_png)
+    wrapper = build_wrapper(generated_py, out_png, pkg_suffix=pkg_suffix)
 
     if dry_run:
         print(wrapper)
@@ -241,9 +245,10 @@ def render_one(generated_py: Path, dry_run: bool = False) -> tuple[bool, str]:
 
 
 def iter_targets(args: argparse.Namespace) -> list[Path]:
+    script_name = "ground_truth.py" if args.ground_truth else "generated.py"
     if args.only:
-        return [RUNS_DIR / args.only / "generated.py"]
-    paths = sorted(RUNS_DIR.glob("*/*/scenario_*/generated.py"))
+        return [RUNS_DIR / args.only / script_name]
+    paths = sorted(RUNS_DIR.glob(f"*/*/scenario_*/{script_name}"))
     if args.approach:
         paths = [p for p in paths if p.parts[-4] == args.approach]
     if args.llm:
@@ -280,10 +285,27 @@ def main() -> None:
                    help="Print the wrapper that would be sent; do not connect.")
     p.add_argument("--check", action="store_true",
                    help="Verify Modelio is reachable and MODELS26 exists, then exit.")
+    p.add_argument("--ground-truth", action="store_true",
+                   help="Render ground_truth.py instead of generated.py; "
+                        "output filename becomes ground_truth.png, log/error files "
+                        "become ground_truth_render.{log,error.txt}, and the per-run "
+                        "Modelio sub-package gets a __GT suffix to avoid colliding "
+                        "with the corresponding generated-side render.")
     args = p.parse_args()
 
     if args.check:
         sys.exit(0 if check_modelio() else 1)
+
+    if args.ground_truth:
+        out_name = "ground_truth.png"
+        log_name = "ground_truth_render.log"
+        err_name = "ground_truth_render_error.txt"
+        pkg_suffix = "__GT"
+    else:
+        out_name = "diagram_generated.png"
+        log_name = "diagram_render.log"
+        err_name = "diagram_render_error.txt"
+        pkg_suffix = ""
 
     targets = iter_targets(args)
     ok = 0
@@ -294,7 +316,9 @@ def main() -> None:
         if not t.exists():
             print(f"[{i:3d}/{len(targets):3d}] SKIP {rel} (missing)")
             continue
-        success, msg = render_one(t, dry_run=args.dry_run)
+        success, msg = render_one(t, dry_run=args.dry_run,
+                                  out_name=out_name, log_name=log_name,
+                                  err_name=err_name, pkg_suffix=pkg_suffix)
         tag = "OK  " if success else "FAIL"
         print(f"[{i:3d}/{len(targets):3d}] {tag} {rel}  ({msg})")
         if success:

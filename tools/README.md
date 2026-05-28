@@ -41,6 +41,33 @@ The macro prints progress as it works and writes `diagram_generated.png` next to
 each `evaluation/runs/.../generated.py`. To restrict the run, edit
 `ONLY_APPROACH`, `ONLY_LLM`, or `ONLY_SCENARIO` at the top of the macro.
 
+## Rendering the ground-truth side (`ground_truth.png`)
+
+The authors' driver also supports rendering the reference side:
+
+```bash
+# Render ground_truth.py for one cell (54/55 unique scenarios produce PNGs;
+# scenario_23 has no ground_truth.py in the source JSONL).
+python tools/render_diagrams.py --ground-truth \
+       --approach config-helpers --llm claude_opus_4_5
+
+# Copy the 54 PNGs to the same scenario folders in the other 5 cells
+# (the underlying ground_truth.py is identical across cells modulo a
+# single execfile() path line, which the wrapper rewrites anyway).
+python -c "
+import shutil
+from pathlib import Path
+src = Path('evaluation/runs/config-helpers/claude_opus_4_5')
+for png in sorted(src.glob('scenario_*/ground_truth.png')):
+    for cell in ['config-helpers/gpt_5_2', 'config-helpers/glm5',
+                 'no-helper/claude_opus_4_5', 'no-helper/gpt_5_2', 'no-helper/glm5']:
+        dst = Path('evaluation/runs') / cell / png.parent.name / 'ground_truth.png'
+        shutil.copyfile(png, dst)
+"
+```
+
+The render-once-and-copy shortcut saves 270 redundant Modelio renders.
+
 ## A note on the two scripts
 
 `render_diagrams.py` is the same logic as `macros/render_all.py`,
