@@ -5,6 +5,7 @@ Utilities used during artifact preparation and reproduction.
 | Path                              | Purpose                                                                 |
 |-----------------------------------|-------------------------------------------------------------------------|
 | `extract_runs_from_jsonl.py`      | Regenerates [`evaluation/runs/`](../evaluation/runs/) from [`evaluation/results/raw_jsonl/`](../evaluation/results/raw_jsonl/). |
+| `build_comparisons.py`            | Regenerates [`evaluation/comparisons/`](../evaluation/comparisons/) (55 per-scenario side-by-side docs) and the 330 thin `comparison.md` stubs inside each per-run folder. Reads from `metrics.json` and the PNGs; idempotent. |
 | `macros/render_all.py`            | **Modelio macro for reproducibility.** Re-renders every `generated.py` inside a stock Modelio and saves `diagram_generated.png` next to each script. |
 | `render_diagrams.py`              | Internal automation driver the authors used to produce the committed PNGs. Documented for transparency, but **not the public reproduction path** — see the note below. |
 

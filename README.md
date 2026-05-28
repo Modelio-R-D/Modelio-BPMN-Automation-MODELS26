@@ -48,15 +48,16 @@ generated scripts, and the resulting metrics are all in this repository.
 │
 ├── evaluation/                     — everything supporting the paper's quantitative claims
 │   ├── PROCEDURE.md                —   who ran it, when, with what settings
+│   ├── comparisons/                —   55 per-scenario docs: reference vs. all 6 LLM outputs
 │   ├── prompts/                    —   system prompts + preliminary-test prompts
 │   ├── scenarios/                  —   the 55 PMo input scenarios (browsable)
 │   ├── runs/                       —   per-(approach, LLM, scenario) artifacts
 │   │   └── config-helpers/claude_opus_4_5/scenario_07/
 │   │       ├── input_scenario.md
-│   │       ├── ground_truth.bpmn
-│   │       ├── generated.py
-│   │       ├── execution_output.txt
-│   │       └── metrics.json
+│   │       ├── ground_truth.bpmn          (XML) / .py (Modelio script) / .png
+│   │       ├── generated.py / diagram_generated.png
+│   │       ├── execution_output.txt / metrics.json
+│   │       └── comparison.md              — short stub linking to ../comparisons/scenario_07.md
 │   ├── results/                    —   paper tables + reproducibility notebook
 │   │   ├── tables.md
 │   │   ├── Evals.ipynb
@@ -65,6 +66,7 @@ generated scripts, and the resulting metrics are all in this repository.
 │
 ├── tools/                          — utilities
 │   ├── extract_runs_from_jsonl.py  —   regenerates evaluation/runs/ from raw JSONL
+│   ├── build_comparisons.py        —   regenerates evaluation/comparisons/ and per-cell stubs
 │   ├── macros/render_all.py        —   Modelio macro: reproduce the PNGs inside a stock Modelio
 │   └── render_diagrams.py          —   internal driver (authors only; see tools/README.md)
 │

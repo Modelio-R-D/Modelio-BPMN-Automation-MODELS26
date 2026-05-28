@@ -12,7 +12,7 @@ token counts, execution result) are committed under
 under [`evaluation/runs/`](evaluation/runs/).
 
 LLM access **is** required only if a reviewer wants to repeat the generation
-step (see §3 below).
+step (see §5 below).
 
 ---
 
@@ -36,7 +36,18 @@ Running all cells reproduces:
 These map to Tables 6–10 in the paper PDF. The notebook reads only from
 [`evaluation/results/raw_jsonl/`](evaluation/results/raw_jsonl/).
 
-## 2. Browse per-scenario artifacts (no Modelio)
+## 2. Browse per-scenario comparison docs (no Modelio)
+
+The fastest path to "what does the LLM actually produce?" is
+[`evaluation/comparisons/`](evaluation/comparisons/) — 55 per-scenario
+documents, each showing the reference BPMN diagram next to all 6
+generated outputs with their structural metrics and per-element deltas.
+Start at the index [`evaluation/comparisons/README.md`](evaluation/comparisons/README.md).
+
+Each per-run folder also has a thin `comparison.md` that embeds both
+diagrams inline for that specific cell.
+
+## 3. Browse per-scenario raw artifacts (no Modelio)
 
 For each of the 55 scenarios × 6 (approach, LLM) cells, the artifacts are
 extracted as readable files:
@@ -64,7 +75,7 @@ Config+Helpers:
 ls evaluation/runs/config-helpers/claude_opus_4_5/scenario_07/
 ```
 
-## 3. Re-execute a generated script in Modelio (Modelio required)
+## 4. Re-execute a generated script in Modelio (Modelio required)
 
 Prerequisites: Modelio 5.0 or later. See [`INSTALL.md`](INSTALL.md) for setup.
 
@@ -75,7 +86,7 @@ Prerequisites: Modelio 5.0 or later. See [`INSTALL.md`](INSTALL.md) for setup.
    `evaluation/runs/.../generated.py`, click **Run**.
 4. The generated BPMN diagram appears in the package.
 
-## 4. Re-execute the LLM generation step (LLM API key required)
+## 5. Re-execute the LLM generation step (LLM API key required)
 
 This step is only needed if a reviewer wants to repeat the generation phase of
 the experiment. The exact LLM versions used were:

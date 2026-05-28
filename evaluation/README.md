@@ -9,6 +9,7 @@ claims and the qualitative MATISSE validation.
 |---------------------------------------------|----------------------------------------------------------|
 | The paper tables (PMo benchmark)            | [`results/tables.md`](results/tables.md)                 |
 | The paper tables (MATISSE)                  | [`matisse/partner_metrics.md`](matisse/partner_metrics.md)|
+| **Per-scenario comparison docs** (reference vs. all 6 LLM outputs side-by-side) | **[`comparisons/`](comparisons/)** |
 | The 55 PMo input scenarios                  | [`scenarios/`](scenarios/)                               |
 | The prompts sent to the LLMs                | [`prompts/`](prompts/)                                   |
 | The 330 individual run artifacts            | [`runs/`](runs/)                                         |
