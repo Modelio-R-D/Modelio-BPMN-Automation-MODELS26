@@ -18,7 +18,7 @@ claims and the qualitative MATISSE validation.
 | The 6-stage MATISSE pipeline                | [`matisse/procedure.md`](matisse/procedure.md)           |
 | The raw JSONL experiment data               | [`results/raw_jsonl/`](results/raw_jsonl/)               |
 | The reproducibility notebook                | [`results/Evals.ipynb`](results/Evals.ipynb)             |
-| Preliminary baseline experiments (motivation for Config+Helpers) | [`prompts/preliminary_tests/`](prompts/preliminary_tests/) |
+| Preliminary baseline experiments (motivation for Config+Helpers) | [`preliminary_tests/`](preliminary_tests/) |
 
 ## The two evaluations
 

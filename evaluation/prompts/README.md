@@ -27,6 +27,9 @@ The 55 PMo natural-language descriptions are at
 
 ## Preliminary tests
 
-The exploratory prompts that *predate* the published baseline — the ones that
-motivated the move to Config+Helpers — are documented in
-[`preliminary_tests/`](preliminary_tests/).
+The exploratory prompts that *predate* the published baseline — the
+ones that motivated the move to Config+Helpers — are documented in
+[`../preliminary_tests/`](../preliminary_tests/). They are a separate
+evaluation track (different LLM set, different scenarios, different
+purpose) and now live as a peer folder of [`runs/`](../runs/) and
+[`matisse/`](../matisse/) rather than as a prompts sub-collection.

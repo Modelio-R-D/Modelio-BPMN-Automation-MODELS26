@@ -152,3 +152,11 @@ two.
   Any bias in how the helper counts a particular construct affects both
   sides equally — keeping MAE comparable — but the absolute counts are
   helper-defined rather than abstract BPMN-XML-defined.
+- **LLM-set difference between preliminary and published runs.** The
+  preliminary evaluation in
+  [`preliminary_tests/`](preliminary_tests/) used Claude Opus 4.5,
+  GPT-5.2, and **Gemini Pro 3.1**; the published benchmark documented
+  here substituted **GLM5** for Gemini to make the LLM set
+  open-weight-hostable. Findings about *Gemini-specific* convergence
+  behaviour in the preliminary work therefore do not transfer
+  one-to-one to the published numbers.

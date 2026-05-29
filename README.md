@@ -49,7 +49,8 @@ generated scripts, and the resulting metrics are all in this repository.
 ├── evaluation/                     — everything supporting the paper's quantitative claims
 │   ├── PROCEDURE.md                —   who ran it, when, with what settings
 │   ├── comparisons/                —   55 per-scenario docs: reference vs. all 6 LLM outputs
-│   ├── prompts/                    —   system prompts + preliminary-test prompts
+│   ├── preliminary_tests/          —   pilot one-shot evaluation (3 LLMs, 3 scenarios) that motivated Config+Helpers
+│   ├── prompts/                    —   system prompts for the published benchmark
 │   ├── scenarios/                  —   the 55 PMo input scenarios (browsable)
 │   ├── runs/                       —   per-(approach, LLM, scenario) artifacts
 │   │   └── config-helpers/claude_opus_4_5/scenario_07/
@@ -95,7 +96,7 @@ generated scripts, and the resulting metrics are all in this repository.
   are at [`docs/DSL_DESIGN.md`](docs/DSL_DESIGN.md).
 - **Preliminary baseline experiments** that motivated the move from direct
   generation to Config+Helpers are at
-  [`evaluation/prompts/preliminary_tests/`](evaluation/prompts/preliminary_tests/).
+  [`evaluation/preliminary_tests/`](evaluation/preliminary_tests/).
 - **Reproducing the tables** from the raw data: see
   [`REPRODUCE.md`](REPRODUCE.md).
 

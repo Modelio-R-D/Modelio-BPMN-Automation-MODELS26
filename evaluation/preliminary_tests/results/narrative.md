@@ -1,0 +1,419 @@
+# Experiment 1: One-Shot Generation Results
+
+## Summary
+
+| Model | S1 (No Example) | S1 (With Example) | S1 (With Debugging) | M1 | C1 |
+|-------|-----------------|-------------------|---------------------|-----|-----|
+| Claude Opus 4.5 | Failure (API) | Failure (API) | **Model OK, Layout Broken** (5 rounds) | - | - |
+| GPT-5.2 Thinking | Failure (Syntax) | **Model OK, Layout Broken** | - | - | - |
+| Gemini Pro (Dec 2025) | Failure (API) | Failure (API) | **FAILURE** (9 rounds) | - | - |
+
+**Note:** "Model OK, Layout Broken" = Script executes, BPMN model created correctly, but diagram layout is corrupted. Layout is a separate problem from model generation.
+
+---
+
+# S1 - Document Approval (Simple)
+
+## Prompt
+
+```
+Generate a complete Jython script for Modelio that creates a BPMN diagram for the following process:
+
+A simple document approval process with one reviewer:
+1. Start
+2. Submit Document (user task)
+3. Review Document (user task)
+4. End
+
+Single lane: "Reviewer"
+Linear flow from start to end.
+
+The script should:
+1. Create a new BpmnProcess
+2. Create BpmnLanes for each role
+3. Create all BPMN elements (tasks, events, gateways)
+4. Create sequence flows connecting elements
+5. Create a BpmnProcessDesignDiagram
+6. Position all elements in the diagram with proper layout
+
+Output only the complete, executable Jython script.
+```
+
+---
+
+## S1 - Claude Opus 4.5 (Round 1 - No Example)
+
+**Script:** [s1_claude.py](scripts/s1_claude.py)
+**Lines of Code:** 267
+**Result:** Failure
+
+**Modelio Output:**
+```
+ImportError: No module named model in <script> at line number 6
+```
+
+**Error Type:** API (wrong imports)
+**Notes:** Generated plausible-looking but incorrect import statements
+
+---
+
+## S1 - Gemini Pro (Dec 2025) (Round 1 - No Example)
+
+**Script:** [s1_gemini.py](scripts/s1_gemini.py)
+**Lines of Code:** 148
+**Result:** Failure
+
+**Modelio Output:**
+```
+ImportError: No module named model in <script> at line number 1
+```
+
+**Error Type:** API (wrong imports)
+**Notes:** Wrong import paths
+
+---
+
+## S1 - GPT-5.2 Thinking (Round 1 - No Example)
+
+**Script:** [s1_gpt5.py](scripts/s1_gpt5.py)
+**Lines of Code:** 204 (incomplete - script truncated)
+**Result:** Failure
+
+**Modelio Output:**
+```
+org.python.antlr.ParseException: encoding declaration in Unicode string
+```
+
+**Error Type:** Syntax (encoding declaration not allowed in Jython)
+**Notes:** Added `# -*- coding: utf-8 -*-` which Jython rejects. Script also incomplete.
+
+---
+
+# S1 - Round 2 (With Examples)
+
+## Prompt (Round 2)
+
+```
+Generate a complete Jython script for Modelio that creates a BPMN diagram for the following process:
+
+A simple document approval process with one reviewer:
+1. Start
+2. Submit Document (user task)
+3. Review Document (user task)
+4. End
+
+Single lane: "Reviewer"
+Linear flow from start to end.
+
+The script should:
+1. Create a new BpmnProcess
+2. Create BpmnLanes for each role
+3. Create all BPMN elements (tasks, events, gateways)
+4. Create sequence flows connecting elements
+5. Create a BpmnProcessDesignDiagram
+6. Position all elements in the diagram with proper layout
+
+See examples in attachment. Fix BPMN.
+
+Output only the complete, executable Jython script.
+```
+
+*(Attached: makesingleton.py and Sort.py from Modelio examples)*
+
+---
+
+## S1 - Claude Opus 4.5 (Round 2-5 - With Example + Debugging)
+
+**Final Script:** [s1_claude_r5.py](scripts/s1_claude_r5.py)
+**Lines of Code:** 191
+**Result:** Success (after 5 rounds of debugging)
+
+**Screenshot:** [s1_claude_r5.png](screenshots/s1_claude_r5.png)
+
+### Debugging Journey
+
+**Round 2:** Initial attempt with examples
+- Failed (details not captured)
+
+**Round 3:**
+```
+AttributeError: 'org.modelio.metamodel.impl.bpmn.events.BpmnStartEv' object has no attribute 'setLane'
+```
+- **Error Type:** API
+- **Fix:** Lane membership must be set from Lane side using `lane.getFlowElementRef().add(element)`, not `element.setLane(lane)`
+
+**Round 4:**
+```
+AttributeError: 'org.modelio.api.impl.diagrams.DiagramService' object has no attribute 'createDiagram'
+```
+- **Error Type:** API
+- **Fix:** Diagrams created through model factory, not DiagramService
+
+**Round 5:**
+```
+AttributeError: 'java.util.ArrayList' object has no attribute 'setSize'
+```
+- **Error Type:** API
+- **Fix:** `unmask()` returns ArrayList, not single graphic. Must use `graphics.get(0).setSize()`
+
+**Final Output (Round 5):**
+```
+Created process: Document Approval Process
+Created lane: Reviewer
+Created 4 flow elements
+Added elements to lane
+Created 3 sequence flows
+Created diagram: Document Approval Process Diagram
+Diagram layout completed
+
+SUCCESS: Document Approval Process created!
+```
+
+**Notes:** Required 5 rounds of iterative debugging with error feedback. Each round revealed a different API misconception. Final script is 191 lines with proper helper functions. **Layout corrupted** - same issue as GPT, elements not positioned correctly despite coordinates being set.
+
+---
+
+## S1 - Gemini Pro (Dec 2025) (Round 2-9 - With Example + Debugging)
+
+**Final Script:** [s1_gemini_r9.py](scripts/s1_gemini_r9.py)
+**Lines of Code:** 169
+**Result:** **FAILURE after 9 rounds**
+
+### Debugging Journey (9 rounds - all failed)
+
+**Round 3:**
+```
+ImportError: No module named process
+```
+- **Error Type:** API (wrong import path)
+
+**Round 4:**
+```
+NameError: global name 'Model' is not defined
+```
+- **Error Type:** API (non-existent global)
+
+**Round 5:**
+```
+AttributeError: 'SharedModelingSession' object has no attribute 'getMetamodel'
+```
+- **Error Type:** API (wrong method)
+
+**Round 6:**
+```
+TypeError: No visible constructors for class (BpmnProcess)
+```
+- **Error Type:** API (tried to instantiate interface)
+
+**Round 7:**
+```
+AttributeError: 'SmMetamodel' object has no attribute 'getMObjectFactory'
+```
+- **Error Type:** API (wrong factory access)
+
+**Round 8:**
+```
+Error: MClass for BpmnProcess found, but has no attribute 'createInstance'
+```
+- **Error Type:** API (reflection doesn't work)
+
+**Round 9:**
+```
+Error: MClass object has no attribute 'createInstance'
+```
+- **Error Type:** API (still trying reflection)
+
+### Critical Observation
+
+**Gemini went in completely wrong direction after Round 3.**
+
+The working pattern (shown in Claude's R5 and the provided examples) is:
+```python
+modelingSession.getModel().createBpmnProcess()
+```
+
+Instead, Gemini tried increasingly complex approaches:
+1. `Model.getMetamodel().getMObjectFactory()` - doesn't exist
+2. `new BpmnProcess()` - can't instantiate interfaces
+3. `metamodel.getMClass("BpmnProcess").createInstance()` - reflection doesn't work
+
+**Root cause:** Gemini failed to learn from the provided examples (makesingleton.py, Sort.py) which clearly show `modelingSession.getModel().createX()` pattern.
+
+**Notes:** After 9 rounds of debugging, Gemini could not produce a working script. Each fix introduced new errors, spiraling away from the correct solution instead of converging.
+
+---
+
+## S1 - GPT-5.2 Thinking (Round 2 - With Example)
+
+**Script:** [s1_gpt5_r2.py](scripts/s1_gpt5_r2.py)
+**Lines of Code:** TBD
+**Result:** Partial Success
+
+**Screenshot:** [s1_gpt5_r2.png](screenshots/s1_gpt5_r2.png)
+
+**Modelio Output:**
+```
+Script executed successfully (model created)
+Diagram layout corrupted
+```
+
+**Error Type:** Layout
+**Notes:** Script executed without errors and created the BPMN model, but diagram layout is corrupted due to Modelio's unpredictable diagram unmasking behavior. Elements positioned incorrectly.
+
+---
+
+# M1 - Leave Request (Medium)
+
+## Prompt
+
+```
+Generate a complete Jython script for Modelio that creates a BPMN diagram for the following process:
+
+An employee leave request process:
+
+Lanes: Employee, Manager
+
+Flow:
+1. Start (Employee)
+2. Submit Leave Request (User Task, Employee)
+3. Review Request (User Task, Manager)
+4. Decision Gateway (Manager)
+5. If Approved: Update Calendar (Service Task, Employee)
+6. If Rejected: Notify Employee (Send Task, Manager)
+7. End (Employee for approved path, Manager for rejected path)
+
+The manager reviews and either approves or rejects the request.
+
+The script should:
+1. Create a new BpmnProcess
+2. Create BpmnLanes for each role
+3. Create all BPMN elements (tasks, events, gateways)
+4. Create sequence flows connecting elements
+5. Create a BpmnProcessDesignDiagram
+6. Position all elements in the diagram with proper layout
+
+Output only the complete, executable Jython script.
+```
+
+---
+
+## M1 - Claude Opus 4.5
+
+**Script:** [m1_claude.py](scripts/m1_claude.py)
+**Lines of Code:**
+**Result:** Success / Partial / Failure
+
+**Modelio Output:**
+```
+
+```
+
+**Notes:**
+
+---
+
+# C1 - Hiring Process (Complex)
+
+## Prompt
+
+```
+Generate a complete Jython script for Modelio that creates a BPMN diagram for the following process:
+
+A complete hiring workflow:
+
+Lanes: HR, Hiring Manager, Candidate, IT
+
+Flow:
+1. Start (HR)
+2. Post Job Opening (User Task, HR)
+3. Receive Applications (User Task, HR)
+4. Screen Candidates (User Task, HR)
+5. Decision: Qualified? (Exclusive Gateway, HR)
+6. If No: Send Rejection (Send Task, HR) -> End
+7. If Yes: Schedule Interview (User Task, HR)
+8. Conduct Interview (User Task, Hiring Manager)
+9. Decision: Hire? (Exclusive Gateway, Hiring Manager)
+10. If No: Send Rejection (Send Task, HR) -> End
+11. If Yes: Make Offer (User Task, HR)
+12. Candidate Decision (User Task, Candidate)
+13. Decision: Accepted? (Exclusive Gateway, Candidate)
+14. If No: End
+15. If Yes: Setup Account (Service Task, IT)
+16. Onboard Employee (User Task, HR)
+17. End
+
+Multiple decision points and four lanes with cross-lane handoffs.
+
+The script should:
+1. Create a new BpmnProcess
+2. Create BpmnLanes for each role
+3. Create all BPMN elements (tasks, events, gateways)
+4. Create sequence flows connecting elements
+5. Create a BpmnProcessDesignDiagram
+6. Position all elements in the diagram with proper layout
+
+Output only the complete, executable Jython script.
+```
+
+---
+
+## C1 - Claude Opus 4.5
+
+**Script:** [c1_claude.py](scripts/c1_claude.py)
+**Lines of Code:**
+**Result:** Success / Partial / Failure
+
+**Modelio Output:**
+```
+
+```
+
+**Notes:**
+
+---
+
+# Observations
+
+## Round 1: No Examples - All Failed
+
+All three models failed when generating Modelio Jython scripts without examples:
+- **Claude Opus 4.5:** Wrong import paths (API hallucination)
+- **GPT-5.2 Thinking:** Encoding declaration error + incomplete script
+- **Gemini Pro:** Wrong import paths (API hallucination)
+
+**Conclusion:** LLMs cannot generate correct Modelio API code from training data alone.
+
+## Round 2+: With Examples + Debugging
+
+| Model | Result | Rounds | Notes |
+|-------|--------|--------|-------|
+| GPT-5.2 | **Model OK** | 1 | Model created first try, layout corrupted |
+| Claude | **Model OK** | 5 | Required iterative debugging, converged |
+| Gemini | **FAILURE** | 9 | Diverged from correct solution, never converged |
+
+## Common Failure Patterns
+
+1. **Wrong imports:** `org.modelio.api.model` doesn't exist
+2. **Encoding declarations:** Jython rejects `# -*- coding: utf-8 -*-`
+3. **API method names:** `element.setLane()` doesn't exist, use `lane.getFlowElementRef().add()`
+4. **Diagram creation:** Not via DiagramService, but via model factory
+5. **Unmask return type:** Returns ArrayList, not single graphic
+6. **Over-engineering:** Gemini tried complex reflection/factory patterns when simple `getModel().createX()` works
+
+## Key Findings (Preliminary)
+
+1. **Zero-shot generation fails 100%** - No model successfully generated working Modelio code without examples
+2. **Examples help but not enough** - Even with examples, multiple debugging rounds needed
+3. **API knowledge gap** - Models hallucinate plausible but incorrect API methods
+4. **Convergence varies by model:**
+   - GPT-5.2: Worked on first try with examples (best)
+   - Claude: Converged after 5 rounds of debugging (good)
+   - Gemini: Diverged after 9 rounds, never converged (failed)
+5. **Model creation vs Layout are separate problems:**
+   - Model creation: Achievable with examples + debugging (2/3 models)
+   - Diagram layout: Broken even with correct coordinates (Modelio API issue)
+   - Layout should be handled separately (auto-layout or manual)
+6. **Debugging behavior matters:**
+   - Some models learn from error messages and converge
+   - Some models spiral into increasingly complex wrong solutions
+   - Gemini tried reflection/factory patterns instead of simple `modelingSession.getModel().createX()`
