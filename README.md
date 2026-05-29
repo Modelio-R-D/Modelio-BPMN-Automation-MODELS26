@@ -8,7 +8,7 @@ LLM via LM Studio generates a runnable Modelio macro.
 
 This repository is the companion artifact for the MODELS 2026 paper
 **"Towards LLM-Assisted Business Process Modeling in an Industrial Modeling
-Tool: An Experience Report"** (submission #110).
+Tool: An Experience Report"**.
 
 The paper reports two complementary solutions and compares them across
 three LLMs on 55 BPMN scenarios — both solutions, the prompts, the
@@ -21,7 +21,7 @@ generated scripts, and the resulting metrics are all in this repository.
 ```
 .
 ├── README.md                       — this file (navigation hub)
-├── REPRODUCE.md                    — step-by-step replication for artifact reviewers
+├── REPRODUCE.md                    — step-by-step replication guide
 ├── INSTALL.md                      — Modelio + Python setup
 ├── CHANGELOG.md                    — version history
 ├── LICENSE                         — Apache 2.0
@@ -80,7 +80,7 @@ The Config+Helpers feature smoke tests now live at
 [`approaches/config-helpers/tests/`](approaches/config-helpers/tests/)
 (formerly top-level `tests/`).
 
-## For paper reviewers
+## For paper readers
 
 - **The paper's tables** are at
   [`evaluation/results/tables.md`](evaluation/results/tables.md) (Tables 1–5
