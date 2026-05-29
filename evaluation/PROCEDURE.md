@@ -48,14 +48,14 @@ scenarios where the retry budget was exhausted.
 
 Two system prompts, one per approach. They are versioned in this repository:
 
-- Config+Helpers: [`prompts/system_prompt_config_helpers.md`](prompts/system_prompt_config_helpers.md)
-- No-Helper:      [`prompts/system_prompt_no_helper.md`](prompts/system_prompt_no_helper.md)
+- Config+Helpers: [`../approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md)
+- No-Helper:      [`../approaches/no-helper/system_prompt.md`](../approaches/no-helper/system_prompt.md)
 
 Per-scenario user prompts are formed by wrapping the natural-language
-description from [`scenarios/scenario_NN.md`](scenarios/) with the template in
-[`prompts/user_prompt_template.md`](prompts/user_prompt_template.md). The
-exact text submitted to the LLM for each of the 330 runs is captured in the
-`generated.py` file's leading comment and reproducible from the raw JSONL.
+description from [`scenarios/scenario_NN.md`](scenarios/) with a fixed
+template; the exact text submitted to the LLM for each of the 330 runs
+is captured in the `generated.py` file's leading comment and is
+reproducible from the raw JSONL.
 
 ## 4. Execution in Modelio
 
@@ -141,8 +141,10 @@ two.
 - **Structural-only validation.** Metrics count elements; they do not assess
   *process logic*. Two models with identical counts may still differ in
   semantics.
-- **Single-run.** LLMs are non-deterministic; reported differences in
-  Tables 5–8 of the paper reflect single executions per cell.
+- **Single-run.** LLMs are non-deterministic; the reported differences in
+  the paper's evaluation tables (artifact Tables 1–5 in
+  [`results/tables.md`](results/tables.md), paper Tables 6–10) reflect
+  single executions per cell.
 - **Self-evaluation.** The authors implemented both approaches; the choice of
   prompts and helper API surface may favor Config+Helpers.
 - **Model-version drift.** LLM endpoints evolve. Token-count and timing

@@ -98,8 +98,8 @@ the experiment. The exact LLM versions used were:
 LLM settings: see [`evaluation/PROCEDURE.md`](evaluation/PROCEDURE.md) §LLM
 settings for temperature, top-p, and retry policy. The system prompts are:
 
-- Config+Helpers: [`evaluation/prompts/system_prompt_config_helpers.md`](evaluation/prompts/system_prompt_config_helpers.md)
-- No-Helper: [`evaluation/prompts/system_prompt_no_helper.md`](evaluation/prompts/system_prompt_no_helper.md)
+- Config+Helpers: [`approaches/config-helpers/system_prompt.md`](approaches/config-helpers/system_prompt.md)
+- No-Helper: [`approaches/no-helper/system_prompt.md`](approaches/no-helper/system_prompt.md)
 
 For each of the 55 scenarios in [`evaluation/scenarios/`](evaluation/scenarios/),
 send `input_scenario.md` to the LLM with the corresponding system prompt and

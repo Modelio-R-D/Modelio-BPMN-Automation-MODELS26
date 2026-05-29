@@ -335,9 +335,12 @@ def _build_cell_stub(approach: str, llm_slug: str, llm_name: str, scenario_id: i
     lines.append("## Files in this folder")
     lines.append("")
     lines.append("- [`input_scenario.md`](input_scenario.md) — natural-language prompt")
-    lines.append("- [`ground_truth.bpmn`](ground_truth.bpmn) — reference BPMN XML")
-    lines.append("- [`ground_truth.py`](ground_truth.py) — reference Modelio script")
-    lines.append("- [`ground_truth.png`](ground_truth.png) — rendered reference diagram")
+    if (run_dir / "ground_truth.bpmn").stat().st_size > 0:
+        lines.append("- [`ground_truth.bpmn`](ground_truth.bpmn) — reference BPMN XML")
+    if (run_dir / "ground_truth.py").stat().st_size > 0:
+        lines.append("- [`ground_truth.py`](ground_truth.py) — reference Modelio script")
+    if gt_png.exists():
+        lines.append("- [`ground_truth.png`](ground_truth.png) — rendered reference diagram")
     lines.append("- [`generated.py`](generated.py) — LLM output")
     if png.exists():
         lines.append("- [`diagram_generated.png`](diagram_generated.png) — rendered LLM diagram")

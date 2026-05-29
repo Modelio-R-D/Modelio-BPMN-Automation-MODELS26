@@ -17,8 +17,8 @@ Create your first BPMN diagram using AI and Modelio in under 10 minutes.
 2. Create a new project (e.g., "Modelio BPMN")
 3. In project settings, click **Add files**
 4. Upload these two files from this repository:
-   - [`CLAUDE_INSTRUCTIONS.md`](../CLAUDE_INSTRUCTIONS.md)
-   - [`BPMN_Helpers.py`](../BPMN_Helpers.py)
+   - [`approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md)
+   - [`approaches/config-helpers/BPMN_Helpers.py`](../approaches/config-helpers/BPMN_Helpers.py)
 
 ### Option B: Other AI Assistants
 
@@ -28,7 +28,7 @@ Attach the same files to your conversation or paste their contents as context.
 
 ## Step 2: Install the Helper Library (One Time)
 
-Copy [`BPMN_Helpers.py`](../BPMN_Helpers.py) to your Modelio macros folder:
+Copy [`approaches/config-helpers/BPMN_Helpers.py`](../approaches/config-helpers/BPMN_Helpers.py) to your Modelio macros folder:
 
 | OS | Path |
 |----|------|
@@ -190,8 +190,8 @@ Create a customer support ticket process:
 
 ## Next Steps
 
-- See [`examples/`](../examples/) for complete working macros
-- Read [`CLAUDE_INSTRUCTIONS.md`](../CLAUDE_INSTRUCTIONS.md) for all supported BPMN elements
+- See [`approaches/config-helpers/examples/`](../approaches/config-helpers/examples/) for complete working macros
+- Read [`approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md) for all supported BPMN elements
 - Check [`API_REFERENCE.md`](API_REFERENCE.md) for configuration options
 
 ---

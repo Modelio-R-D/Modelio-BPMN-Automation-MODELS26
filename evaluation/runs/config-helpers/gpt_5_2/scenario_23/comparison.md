@@ -31,8 +31,6 @@ _No reference diagram available (scenario_23: `modelio_config` is `None` in sour
 
 - [`input_scenario.md`](input_scenario.md) — natural-language prompt
 - [`ground_truth.bpmn`](ground_truth.bpmn) — reference BPMN XML
-- [`ground_truth.py`](ground_truth.py) — reference Modelio script
-- [`ground_truth.png`](ground_truth.png) — rendered reference diagram
 - [`generated.py`](generated.py) — LLM output
 - [`diagram_generated.png`](diagram_generated.png) — rendered LLM diagram
 - [`metrics.json`](metrics.json) — full metric record
