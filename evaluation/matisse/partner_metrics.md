@@ -30,16 +30,16 @@ workflows and generated BPMN models are confidential — see
 
 ## Table M3 — Structural metrics by partner (final BPMN models)
 
-| Partner | Domain           | Scenarios | Avg Lanes | Avg Tasks | Avg Gateways | Avg Data Obj. | Avg Data Assoc. |
-|---------|------------------|----------:|----------:|----------:|-------------:|--------------:|----------------:|
-| P1      | Railway          |         2 |       3.0 |      13.0 |          6.0 |          10.0 |            17.5 |
-| P2      | Energy/microgrid |         3 |       4.3 |      11.0 |          1.3 |           4.0 |             8.7 |
-| P3      | Smart grid       |         4 |       5.0 |      15.8 |          3.3 |           9.0 |            15.5 |
-| P4      | Infrastructure   |         4 |       4.5 |      11.8 |          4.0 |           6.5 |            11.0 |
-| P5      | Manufacturing    |         5 |       5.0 |      15.8 |          3.6 |           6.2 |            12.4 |
-| P6      | Automotive       |         4 |      3.75 |      17.3 |          3.5 |          11.8 |            23.8 |
-| P7      | Defense          |         2 |       4.0 |      14.0 |          2.5 |          13.0 |            26.0 |
-| **All** |                  |    **24** |   **4.3** |  **14.5** |      **3.3** |       **8.2** |        **14.6** |
+| Partner | Scenarios | Avg Lanes | Avg Tasks | Avg Gateways | Avg Data Obj. | Avg Data Assoc. |
+|---------|----------:|----------:|----------:|-------------:|--------------:|----------------:|
+| P1      |         2 |       3.0 |      13.0 |          6.0 |          10.0 |            17.5 |
+| P2      |         3 |       4.3 |      11.0 |          1.3 |           4.0 |             8.7 |
+| P3      |         4 |       5.0 |      15.8 |          3.3 |           9.0 |            15.5 |
+| P4      |         4 |       4.5 |      11.8 |          4.0 |           6.5 |            11.0 |
+| P5      |         5 |       5.0 |      15.8 |          3.6 |           6.2 |            12.4 |
+| P6      |         4 |      3.75 |      17.3 |          3.5 |          11.8 |            23.8 |
+| P7      |         2 |       4.0 |      14.0 |          2.5 |          13.0 |            26.0 |
+| **All** |    **24** |   **4.3** |  **14.5** |      **3.3** |       **8.2** |        **14.6** |
 
 ## Table M4 — MATISSE vs. PMo dataset comparison
 
