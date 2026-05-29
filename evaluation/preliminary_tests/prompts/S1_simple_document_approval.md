@@ -34,9 +34,11 @@ Output only the complete, executable Jython script.
 ## Round-2+ prompt (with-examples condition)
 
 Same prompt as above, with the trailing line *"See examples in
-attachment. Fix BPMN."* and the two files from
-[`../modelio_api_examples/`](../modelio_api_examples/) attached:
-`MakeSingleton.py` and `Sort.py`.
+attachment. Fix BPMN."* and the two Modelio sample macros from
+[`../modelio_api_examples/`](../modelio_api_examples/) attached as
+context:
+[`MakeSingleton.py`](../modelio_api_examples/MakeSingleton.py) and
+[`Sort.py`](../modelio_api_examples/Sort.py).
 
 ```
 Generate a complete Jython script for Modelio that creates a BPMN diagram for the following process:

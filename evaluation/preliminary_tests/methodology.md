@@ -29,22 +29,20 @@ benchmark in [`../runs/`](../runs/) substituted GLM5 for Gemini to make
 the LLM set fully open-weight-hostable; the preliminary tests pre-date
 that decision.
 
-## Test scenarios
+## Test scenario
 
-A single scenario at three complexity levels:
+A single scenario was exercised end-to-end:
 
-| ID | Complexity | Lanes | Elements | Description                                |
-|----|------------|------:|---------:|--------------------------------------------|
-| S1 | Simple     |     1 |        4 | Document Approval — linear, one reviewer   |
-| M1 | Medium     |     2 |      ~10 | Leave Request — one gateway, two branches  |
-| C1 | Complex    |     4 |      ~17 | Hiring Process — three gateways, four lanes|
-
-Only **S1** was exercised round-by-round across all three LLMs. M1 and
-C1 have one generated Claude script each but no per-round outcome —
-treated as exploratory.
+| ID | Complexity | Lanes | Elements | Description                              |
+|----|------------|------:|---------:|------------------------------------------|
+| S1 | Simple     |     1 |        4 | Document Approval — linear, one reviewer |
 
 The rationale was *if models fail on the simplest case, they fail on
-complex ones* — so most of the budget went into S1.
+complex ones* — so the entire test budget went into S1. Medium and
+Complex variants were considered but never run; the published
+55-scenario PMo benchmark in [`../runs/`](../runs/) covers that
+complexity range at much greater depth than two ad-hoc preliminary
+scenarios ever would have.
 
 ## Two conditions (the independent variable)
 
@@ -97,7 +95,7 @@ motivation* described in paper §2.2 and §6.
 
 | Aspect              | Preliminary (here)                       | Published benchmark (`../runs/`)        |
 |---------------------|------------------------------------------|-----------------------------------------|
-| Scenarios           | 3 (only S1 with full round-by-round)     | 55 (PMo dataset)                        |
+| Scenarios           | 1 (S1, Simple, exercised across all LLMs)| 55 (PMo dataset)                        |
 | LLMs                | Claude Opus 4.5, GPT-5.2, Gemini Pro 3.1 | Claude Opus 4.5, GPT-5.2, GLM5          |
 | Approaches compared | One-shot only                            | Config+Helpers vs. No-Helper            |
 | Runs per cell       | 1 + retries until budget                 | 1 (with retries only for GLM5 syntax)   |

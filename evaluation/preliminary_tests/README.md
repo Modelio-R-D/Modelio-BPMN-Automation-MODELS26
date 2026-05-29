@@ -18,34 +18,44 @@ in the first place*.
 ```
 preliminary_tests/
 ├── README.md                            ← you are here
-├── methodology.md                       Trimmed experimental design (Exp 1 only)
-├── prompts/                             The three scenario prompts (S1, M1, C1)
+├── methodology.md                       Experimental design (S1 only)
+├── prompts/
+│   └── S1_simple_document_approval.md   The single scenario that was exercised
 ├── modelio_api_examples/                Modelio OSS sample macros given to the LLMs
 │   ├── README.md                          ← what they are and why they're committed here
 │   ├── MakeSingleton.py
 │   └── Sort.py
 └── results/
-    ├── narrative.md                     Full round-by-round source narrative
-    ├── scripts/                         All 10 generated Jython scripts (verbatim)
+    ├── narrative.md                     Full round-by-round narrative
+    ├── scripts/                         All 8 generated Jython scripts (verbatim)
     └── screenshots/                     The 2 converged-diagram screenshots
 ```
 
 ## LLMs and scenarios
 
-| LLM             | Version              | Test budget (S1) |
+The preliminary evaluation deliberately spent its entire budget on the
+**simplest** scenario — *Document Approval (S1)* — for all three LLMs.
+The reasoning: if current LLMs cannot generate a working Modelio Jython
+script for a 1-lane, 4-element linear process even with multiple
+debugging rounds, scaling to medium or complex scenarios is moot. That
+prediction held: Claude needed 5 rounds, Gemini failed after 9.
+
+| LLM             | Version              | Rounds on S1     |
 |-----------------|----------------------|------------------|
-| Claude Opus 4.5 | Anthropic, Dec 2025  | 5 rounds         |
-| GPT-5.2 Thinking| OpenAI, Dec 2025     | 2 rounds         |
-| Gemini Pro 3.1  | Google, Dec 2025     | 9 rounds         |
+| Claude Opus 4.5 | Anthropic, Dec 2025  | 5                |
+| GPT-5.2 Thinking| OpenAI, Dec 2025     | 2                |
+| Gemini Pro 3.1  | Google, Dec 2025     | 9                |
 
-| Scenario | Complexity | Lanes | Elements | Round-by-round data? |
-|----------|------------|------:|---------:|----------------------|
-| **S1** — Document Approval   | Simple  | 1 | 4   | ✅ all three LLMs |
-| **M1** — Leave Request       | Medium  | 2 | ~10 | one Claude attempt only |
-| **C1** — Hiring Process      | Complex | 4 | ~17 | one Claude attempt only |
+| Scenario | Complexity | Lanes | Elements | Status |
+|----------|------------|------:|---------:|--------|
+| **S1** — Document Approval | Simple | 1 | 4 | Fully exercised across all three LLMs |
 
-The full per-LLM × per-scenario prompts are in
-[`prompts/`](prompts/).
+The full S1 prompt is in
+[`prompts/S1_simple_document_approval.md`](prompts/S1_simple_document_approval.md).
+Medium (M1) and Complex (C1) variants were considered but never
+exercised; the published 55-scenario PMo benchmark in
+[`../runs/`](../runs/) covers that complexity range at much greater
+depth.
 
 ## The two conditions
 
@@ -94,11 +104,6 @@ their provenance and what each one demonstrates about the Modelio API.
 The full narrative — Modelio output for every round, the specific API
 fix per attempt, and the reasoning trace — lives in
 [`results/narrative.md`](results/narrative.md).
-
-For M1 and C1, only one Claude attempt was captured each:
-[`results/scripts/m1_claude.py`](results/scripts/m1_claude.py) and
-[`results/scripts/c1_claude.py`](results/scripts/c1_claude.py).
-No round-by-round outcome was recorded for those.
 
 ## Converged diagrams
 
@@ -199,13 +204,14 @@ what the helper now absorbs.
 
 ## What's not here
 
+- **M1 and C1 scenarios** were designed but never exercised. The
+  designs are not committed here; the published 55-scenario PMo
+  benchmark in [`../runs/`](../runs/) covers the medium and complex
+  end of the space at much greater depth than M1/C1 ever would have.
 - `claims_checklist.md` from the source folder — author-internal
   evidence-tracking; not artifact-relevant.
-- Empty experiment stubs (`exp2_v1_minor`, `exp3_config_helpers`,
-  Exp 4 MATISSE statistics, Exp 5 partner survey) — planned but never
-  run. The published benchmark in [`../runs/`](../runs/) and the
-  MATISSE summary in [`../matisse/`](../matisse/) cover their
+- Empty experiment stubs from the source planning doc (V1 minor
+  validation, Config+Helpers comprehensive, MATISSE statistics,
+  partner survey) — planned but never run. The published benchmark
+  and the MATISSE summary in [`../matisse/`](../matisse/) cover their
   territory.
-- M1 and C1 round-by-round narratives — only one Claude attempt each
-  was captured; that script is committed but no per-round outcome was
-  recorded.
