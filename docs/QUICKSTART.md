@@ -192,7 +192,7 @@ Create a customer support ticket process:
 
 - See [`approaches/config-helpers/examples/`](../approaches/config-helpers/examples/) for complete working macros
 - Read [`approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md) for all supported BPMN elements
-- Check [`API_REFERENCE.md`](API_REFERENCE.md) for configuration options
+- Check [`approaches/config-helpers/docs/API_REFERENCE.md`](../approaches/config-helpers/docs/API_REFERENCE.md) for configuration options
 
 ---
 

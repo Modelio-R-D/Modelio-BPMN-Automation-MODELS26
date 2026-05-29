@@ -12,5 +12,5 @@ Both are first-class paper contributions and both are exercised on all
 55 PMo benchmark scenarios. See
 [`docs/APPROACHES.md`](../docs/APPROACHES.md) for the side-by-side
 architectural comparison and
-[`docs/DSL_DESIGN.md`](../docs/DSL_DESIGN.md) for why the Config+Helpers
+[`config-helpers/docs/DSL_DESIGN.md`](config-helpers/docs/DSL_DESIGN.md) for why the Config+Helpers
 DSL took the form it did.

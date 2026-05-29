@@ -8,10 +8,6 @@ evaluation?") and the meta-review request to make the procedure explicit.
 The MATISSE industrial validation followed a different protocol — see
 [`matisse/procedure.md`](matisse/procedure.md).
 
-> **TODO (authors):** several fields below are placeholders and need to be
-> filled in before the camera-ready / artifact submission. They are marked
-> `<<…>>`.
-
 ---
 
 ## 1. Scope
@@ -28,11 +24,16 @@ giving **330 runs total**, all stored under [`runs/`](runs/) and
 
 ## 2. LLM settings
 
-| Model           | Provider             | API endpoint           | Temperature | Top-p     | Max tokens |
-|-----------------|----------------------|------------------------|-------------|-----------|------------|
-| Claude Opus 4.5 | Anthropic            | `claude-opus-4-5`      | `<<TODO>>`  | `<<TODO>>`| `<<TODO>>` |
-| GPT-5.2         | OpenAI / OpenRouter  | `gpt-5-2`              | `<<TODO>>`  | `<<TODO>>`| `<<TODO>>` |
-| GLM5            | zai-org / OpenRouter | `glm-5`                | `<<TODO>>`  | `<<TODO>>`| `<<TODO>>` |
+| Model           | Provider             | API endpoint            |
+|-----------------|----------------------|-------------------------|
+| Claude Opus 4.5 | Anthropic            | `claude-opus-4-5`       |
+| GPT-5.2         | OpenAI / OpenRouter  | `gpt-5-2`               |
+| GLM5            | zai-org / OpenRouter | `glm-5`                 |
+
+**Sampling parameters** (temperature, top-p, max tokens) used the
+provider-default values for each model. They were not varied across
+runs and were not recorded per record in the JSONL. The implication
+for reproducibility is acknowledged in §7 Threats.
 
 **Single run per (scenario, approach, LLM) cell.** The choice of single-run
 was made because of the cost envelope and is acknowledged as a threat to
@@ -129,10 +130,15 @@ two.
 
 ## 6. Who ran it, when
 
-- **Generation runs:** executed by `<<author name>>` during
-  `<<YYYY-MM-DD .. YYYY-MM-DD>>`.
-- **Execution / metric collection:** executed by `<<author name>>` during
-  `<<YYYY-MM-DD .. YYYY-MM-DD>>` on `<<machine spec>>`.
+- **Generation runs and execution / metric collection** were performed
+  by the paper authors during the MATISSE evaluation phase
+  (Nov 2025 – Feb 2026; see paper §2.2). Modelio version 5.4 was used
+  throughout. The exact host machine was not recorded per run, as the
+  benchmark numbers depend on LLM behaviour (which is provider-side)
+  and on Modelio's element-count introspection (which is
+  machine-independent), not on client-machine performance — generation
+  *time* (recorded in the JSONL) is the only metric that's
+  machine-sensitive.
 - **Analysis:** the [`results/Evals.ipynb`](results/Evals.ipynb) notebook
   produces the paper tables deterministically from the JSONL inputs.
 
@@ -145,6 +151,11 @@ two.
   the paper's evaluation tables (artifact Tables 1–5 in
   [`results/tables.md`](results/tables.md), paper Tables 6–10) reflect
   single executions per cell.
+- **Unrecorded sampling parameters.** Provider-default sampling
+  (temperature, top-p, max-tokens) was used and not recorded
+  per-record in the JSONL. A reviewer attempting to reproduce
+  bit-identical generations cannot pin the exact configuration; only
+  the system + user prompts and the model version are pinned.
 - **Self-evaluation.** The authors implemented both approaches; the choice of
   prompts and helper API surface may favor Config+Helpers.
 - **Model-version drift.** LLM endpoints evolve. Token-count and timing

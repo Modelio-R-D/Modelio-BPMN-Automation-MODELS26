@@ -99,7 +99,7 @@ their provenance and what each one demonstrates about the Modelio API.
 > visually corrupted by Modelio's auto-unmask non-determinism. This is
 > a Modelio-side issue, not an LLM-side issue — it's exactly the
 > problem the helper library in [`../../approaches/config-helpers/BPMN_Helpers.py`](../../approaches/config-helpers/BPMN_Helpers.py)
-> was later built to absorb. See [`../../docs/LAYOUT_RULES.md`](../../docs/LAYOUT_RULES.md).
+> was later built to absorb. See [`../../approaches/config-helpers/docs/LAYOUT_RULES.md`](../../approaches/config-helpers/docs/LAYOUT_RULES.md).
 
 The full narrative — Modelio output for every round, the specific API
 fix per attempt, and the reasoning trace — lives in
@@ -194,7 +194,7 @@ Every failure mode above is structural: the LLM doesn't know enough of
 the Modelio Jython API to get every detail right, and the model-creation
 + diagram-layout pipeline has too many surfaces for the LLM to be
 responsible for all of them. The design conclusion — articulated in
-[`../../docs/DSL_DESIGN.md`](../../docs/DSL_DESIGN.md) — was to push
+[`../../approaches/config-helpers/docs/DSL_DESIGN.md`](../../approaches/config-helpers/docs/DSL_DESIGN.md) — was to push
 the API/layout mechanics into a hand-written helper library and ask the
 LLM to emit only a compact `CONFIG = {…}` intermediate representation.
 What the LLM still has to do (process semantics, lane assignments,

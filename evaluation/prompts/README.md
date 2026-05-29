@@ -14,11 +14,15 @@ These are the same files that a user downloads to configure their LLM (see
 the project [`README.md`](../../README.md)). The artifact and the live tool
 use the **same** prompts; there is no benchmark-only variant.
 
-## User-prompt template
+## User-prompt content
 
-> **TODO (authors):** add `user_prompt_template.md` with the wrapper used to
-> turn a PMo natural-language description into a user message (role,
-> formatting instructions, output expectations).
+There is no separate user-prompt template: the user message sent to the
+LLM for each run is the scenario's natural-language description from
+[`../scenarios/scenario_NN.md`](../scenarios/), verbatim, with no
+additional wrapper. The system prompt (one of the two above) carries
+all role / format / output instructions. The exact text submitted for
+each of the 330 runs is reconstructable from the raw JSONL's `input`
+field.
 
 ## Per-scenario inputs
 

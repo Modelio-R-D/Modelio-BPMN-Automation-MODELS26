@@ -80,7 +80,7 @@ Modelio execution attempt. There was no inter-rater reliability check.
   well-formed BPMN process in the Modelio model tree.
 - **Layout OK** — the diagram, when opened, has every element placed
   legibly. (Note that "Model OK" without "Layout OK" is a common
-  outcome — see [`../../docs/LAYOUT_RULES.md`](../../docs/LAYOUT_RULES.md)
+  outcome — see [`../../approaches/config-helpers/docs/LAYOUT_RULES.md`](../../approaches/config-helpers/docs/LAYOUT_RULES.md)
   for why Modelio's auto-unmask makes layout the harder half.)
 - **Failure** — script raises an exception before the BPMN process
   appears in Modelio.

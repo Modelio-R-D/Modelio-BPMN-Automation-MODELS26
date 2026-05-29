@@ -253,7 +253,7 @@ Instead, Gemini tried increasingly complex approaches:
 ## S1 - GPT-5.2 Thinking (Round 2 - With Example)
 
 **Script:** [s1_gpt5_r2.py](scripts/s1_gpt5_r2.py)
-**Lines of Code:** TBD
+**Lines of Code:** 205
 **Result:** Partial Success
 
 **Screenshot:** [s1_gpt5_r2.png](screenshots/s1_gpt5_r2.png)

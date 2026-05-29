@@ -3,7 +3,7 @@
 These rules are enforced by the helper library at execution time and
 documented in the system prompt so the LLM can avoid producing invalid
 configurations. They are extracted here from
-[`../approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md)
+[`../system_prompt.md`](../system_prompt.md)
 for reference and for users who want to inspect / extend the layout
 algorithm.
 

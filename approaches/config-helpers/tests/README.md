@@ -1,6 +1,6 @@
 # Helper-library tests
 
-Feature-level test cases for [`BPMN_Helpers.py`](../approaches/config-helpers/BPMN_Helpers.py).
+Feature-level test cases for [`BPMN_Helpers.py`](../BPMN_Helpers.py).
 Each `Test_NN_*.py` exercises one isolated capability — they are intended
 to be pasted into Modelio's script panel and run individually.
 
@@ -14,4 +14,4 @@ to be pasted into Modelio's script panel and run individually.
 
 `test_prompts.md` contains complexity-graded prompts for stress-testing
 the LLM generation step. These are independent from — and pre-date — the
-PMo benchmark in [`../evaluation/`](../evaluation/).
+PMo benchmark in [`../../../evaluation/`](../../../evaluation/).

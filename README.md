@@ -31,20 +31,24 @@ generated scripts, and the resulting metrics are all in this repository.
 │   │   ├── BPMN_Helpers.py         —     the helper library (install to Modelio)
 │   │   ├── BPMN_Export.py          —     reverse-direction export macro
 │   │   ├── system_prompt.md        —     LLM system prompt
-│   │   └── examples/               —     4 worked examples
+│   │   ├── examples/               —     4 worked examples (complete business processes)
+│   │   ├── tests/                  —     5 feature smoke tests (one BPMN feature each)
+│   │   ├── lm_studio/              —     Qwen + LM Studio setup for this approach
+│   │   └── docs/                   —     Config+Helpers deep documentation
+│   │       ├── API_REFERENCE.md    —       Config schema, element types
+│   │       ├── DSL_DESIGN.md       —       design rationale + alternatives explored
+│   │       ├── EXECUTION_FLOW.md   —       internal execution phases
+│   │       └── LAYOUT_RULES.md     —       layout rules the helper enforces
 │   └── no-helper/                  —   baseline: LLM emits Modelio API calls directly
 │       ├── system_prompt.md
 │       ├── templates/
+│       ├── lm_studio/              —     Qwen + LM Studio setup for this approach
 │       └── examples/
 │
-├── docs/                           — user & design documentation
-│   ├── QUICKSTART.md
-│   ├── APPROACHES.md               —   side-by-side comparison
-│   ├── EXECUTION_FLOW.md
-│   ├── API_REFERENCE.md            —   Config schema, element types
-│   ├── DSL_DESIGN.md               —   design rationale + alternatives explored
-│   ├── LAYOUT_RULES.md             —   layout rules the helper enforces
-│   └── BPMN_EXPORT.md              —   the export feature
+├── docs/                           — cross-cutting user documentation
+│   ├── QUICKSTART.md               —   10-minute "first BPMN diagram" walkthrough
+│   ├── APPROACHES.md               —   side-by-side comparison of the two approaches
+│   └── images/                     —   figures shared by the root README
 │
 ├── evaluation/                     — everything supporting the paper's quantitative claims
 │   ├── PROCEDURE.md                —   who ran it, when, with what settings
@@ -65,14 +69,16 @@ generated scripts, and the resulting metrics are all in this repository.
 │   │   └── raw_jsonl/              —     source-of-truth experiment data
 │   └── matisse/                    —   industrial validation (metrics only; materials confidential)
 │
-├── tools/                          — utilities
-│   ├── extract_runs_from_jsonl.py  —   regenerates evaluation/runs/ from raw JSONL
-│   ├── build_comparisons.py        —   regenerates evaluation/comparisons/ and per-cell stubs
-│   ├── macros/render_all.py        —   Modelio macro: reproduce the PNGs inside a stock Modelio
-│   └── render_diagrams.py          —   internal driver (authors only; see tools/README.md)
-│
-└── tests/                          — feature-level test cases for the helper library
+└── tools/                          — utilities
+    ├── extract_runs_from_jsonl.py  —   regenerates evaluation/runs/ from raw JSONL
+    ├── build_comparisons.py        —   regenerates evaluation/comparisons/ and per-cell stubs
+    ├── macros/render_all.py        —   Modelio macro: reproduce the PNGs inside a stock Modelio
+    └── render_diagrams.py          —   internal driver (authors only; see tools/README.md)
 ```
+
+The Config+Helpers feature smoke tests now live at
+[`approaches/config-helpers/tests/`](approaches/config-helpers/tests/)
+(formerly top-level `tests/`).
 
 ## For paper reviewers
 
@@ -93,7 +99,7 @@ generated scripts, and the resulting metrics are all in this repository.
   and [`evaluation/matisse/procedure.md`](evaluation/matisse/procedure.md)
   (MATISSE).
 - **DSL design alternatives** explored before settling on the published IR
-  are at [`docs/DSL_DESIGN.md`](docs/DSL_DESIGN.md).
+  are at [`approaches/config-helpers/docs/DSL_DESIGN.md`](approaches/config-helpers/docs/DSL_DESIGN.md).
 - **Preliminary baseline experiments** that motivated the move from direct
   generation to Config+Helpers are at
   [`evaluation/preliminary_tests/`](evaluation/preliminary_tests/).

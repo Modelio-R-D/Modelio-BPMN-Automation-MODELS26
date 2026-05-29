@@ -20,10 +20,13 @@ A 6-stage pipeline was applied to each scenario:
 6. **Deliverable** — final BPMN models consolidated into the project
    deliverable.
 
-> **TODO (authors):** add per-partner notes on the review cadence (who
-> performed the LLM-assisted review at stage 2, who validated at stage 5,
-> typical iteration count). This is the place to address Reviewer 2 Q2 for
-> the MATISSE side of the evaluation.
+Per-partner review cadence (who performed the stage-2 LLM-assisted
+review, who validated at stage 5, typical iteration counts) is
+documented in the MATISSE consortium deliverable and is **not
+disclosed in this public artifact** — consistent with the
+confidentiality boundary stated in [`README.md`](README.md). Aggregate
+retention figures and structural metrics are in
+[`partner_metrics.md`](partner_metrics.md).
 
 ## Why MATISSE is presented separately from the PMo benchmark
 

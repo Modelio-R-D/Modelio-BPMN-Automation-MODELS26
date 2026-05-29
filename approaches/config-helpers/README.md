@@ -51,6 +51,6 @@ CONFIG = {
 }
 ```
 
-See [`docs/API_REFERENCE.md`](../../docs/API_REFERENCE.md) for the full
-schema and [`docs/LAYOUT_RULES.md`](../../docs/LAYOUT_RULES.md) for the
+See [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) for the full
+schema and [`docs/LAYOUT_RULES.md`](docs/LAYOUT_RULES.md) for the
 layout rules `BPMN_Helpers.py` enforces.
