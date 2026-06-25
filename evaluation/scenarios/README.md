@@ -8,15 +8,6 @@ Each of the 55 input scenarios from the PMo dataset, one per file
 - The ground-truth structural metrics (lanes, elements, gateways, flows,
   data objects, data associations)
 
-These are the inputs fed to the LLMs in the controlled benchmark.
-
-## Sources
-
-The PMo dataset (Brissard et al. 2025, arXiv:2507.11356) consolidates 55
-scenarios from five upstream sources. Per-scenario attribution is recorded
-in the upstream dataset; this folder preserves only the natural-language
-text and ground-truth metrics.
-
 ## Regenerating
 
 These files are derived from the JSONL records (any of the six raw files

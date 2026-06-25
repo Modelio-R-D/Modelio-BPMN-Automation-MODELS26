@@ -130,9 +130,8 @@ if (selectedElements.size > 0):
 - ❌ **Path dependency**: `execfile()` path must match your Modelio version
 - ❌ **Less portable**: Need both files to share
 
-## Detailed Comparison
 
-### File Size
+## File Size Comparison
 
 | Process | Single-File | Two-File (Config Only) | Reduction |
 |---------|-------------|------------------------|-----------|
@@ -141,19 +140,6 @@ if (selectedElements.size > 0):
 | Complex (30 elements) | ~700 lines | ~150 lines | 79% |
 
 The helper library is ~500 lines, but it's written once and reused.
-
-### AI Generation Quality
-
-We tested generating the same process 10 times with each approach:
-
-| Metric | Single-File | Two-File |
-|--------|-------------|----------|
-| Syntax errors | 3/10 runs | 0/10 runs |
-| Logic errors | 2/10 runs | 1/10 runs |
-| Generation time | ~45 seconds | ~15 seconds |
-| Token usage | ~8,000 tokens | ~2,000 tokens |
-
-The two-file approach is significantly more reliable for AI-assisted generation.
 
 ### Maintenance Scenario
 
@@ -168,10 +154,10 @@ The two-file approach is significantly more reliable for AI-assisted generation.
 
 | Task | Single-File | Two-File |
 |------|-------------|----------|
-| Understanding structure | ⭐⭐ Easy | ⭐⭐⭐ Easier |
-| First-time setup | ⭐⭐⭐ Easiest | ⭐⭐ Easy |
-| Creating new processes | ⭐ Hard | ⭐⭐⭐ Easiest |
-| Debugging | ⭐⭐ Moderate | ⭐⭐⭐ Easiest |
+| Understanding structure | ⭐⭐ Moderate | ⭐⭐⭐ Easy |
+| First-time setup | ⭐⭐⭐ Easy | ⭐⭐⭐ Easy |
+| Creating new processes | ⭐ Hard | ⭐⭐⭐ Easy |
+| Debugging | ⭐ Hard | ⭐⭐⭐ Easy |
 
 ## When to Use Each
 

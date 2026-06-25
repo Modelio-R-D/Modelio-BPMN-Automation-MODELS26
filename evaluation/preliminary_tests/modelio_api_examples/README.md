@@ -48,6 +48,4 @@ artifact, with full author attribution preserved in their headers.
 
 For the round-by-round results that show how each LLM did or did not
 benefit from having these in context, see
-[`../README.md`](../README.md) (top-level report) and
-[`../results/narrative.md`](../results/narrative.md) (full source
-narrative).
+[`../README.md`](../README.md) (full narrative).

@@ -24,3 +24,6 @@ Thumbs.db
 *.tmp
 *.bak
 *.log
+
+# Secrets — never commit the real .env
+.env

@@ -44,8 +44,7 @@ Only required to repeat the generation phase. The experiments used:
 - GPT-5.2 (OpenAI API or OpenRouter)
 - GLM5 (zai-org via OpenRouter)
 
-See [`evaluation/PROCEDURE.md`](evaluation/PROCEDURE.md) for the exact
-settings.
+LLM versions and sampling settings are described in the paper.
 
 ## 5. Verify the installation
 

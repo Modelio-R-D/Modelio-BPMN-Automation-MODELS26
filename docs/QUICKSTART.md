@@ -16,13 +16,12 @@ Create your first BPMN diagram using AI and Modelio in under 10 minutes.
 1. Go to [claude.ai](https://claude.ai) and click **Projects** in the sidebar
 2. Create a new project (e.g., "Modelio BPMN")
 3. In project settings, click **Add files**
-4. Upload these two files from this repository:
+4. Upload this file into it:
    - [`approaches/config-helpers/system_prompt.md`](../approaches/config-helpers/system_prompt.md)
-   - [`approaches/config-helpers/BPMN_Helpers.py`](../approaches/config-helpers/BPMN_Helpers.py)
 
 ### Option B: Other AI Assistants
 
-Attach the same files to your conversation or paste their contents as context.
+Attach the same file to your conversation or paste its contents as context.
 
 ---
 
@@ -59,20 +58,19 @@ Process:
 5. Customer receives delivery
 ```
 
-Claude will generate a complete Modelio macro based on your description.
+Claude will generate a Jython script (Modelio macro) that creates the BPMN diagram. Copy the generated script to your clipboard.
 
 ---
 
 ## Step 4: Run the Macro in Modelio
 
-1. **Copy** the generated script from Claude
-2. Open **Modelio** and open/create a project
-3. **Right-click a Package** in the model explorer
+Once you have opened Modelio and created or opened a project:
+1. **Select a Package** in the model explorer
    - If you don't have one: Right-click root → Create element → Package
-4. Go to **Views → Script** to open the Script view
-5. **Paste** the script
-6. Click **Run** (play button)
+2. Go to **Views → Script** to display the Script view, then paste the generated Jython script.
+3. Click **Run** (play button)
 
+![modelio script](images/modelio_script.png)
 ---
 
 ## Step 5: View Your Diagram

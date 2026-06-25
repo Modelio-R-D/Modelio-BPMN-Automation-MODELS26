@@ -34,5 +34,4 @@ The MATISSE evaluation is *qualitative and partner-driven*: partners did
 not work from a fixed scoring rubric, and "adopted as-is" reflects partner
 acceptance rather than an external ground truth. The PMo controlled
 benchmark exists precisely to complement this with metric-driven
-comparison. See [`../PROCEDURE.md`](../PROCEDURE.md) for the controlled
-benchmark.
+comparison. See the paper for the controlled benchmark methodology.

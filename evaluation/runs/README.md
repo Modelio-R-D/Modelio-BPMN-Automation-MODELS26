@@ -43,54 +43,7 @@ config-helpers/                          no-helper/
 > attempt for this run. The point of the comparison is to compare
 > structural metrics — and now, side-by-side diagrams — between them.
 
-## Why ground-truth PNGs are rendered once and copied
 
-For each of the 55 scenarios, the `ground_truth.py` content is the same
-across all 6 (approach, LLM) cells — modulo a single `execfile()` path
-line that the render wrapper rewrites in memory anyway. So we render
-once per scenario in the `config-helpers/claude_opus_4_5` cell and copy
-the resulting PNG to the matching scenario folder in the other 5 cells.
-This produces 54 unique × 6 cells = **324 ground-truth PNG files**.
 
-`scenario_23` is the one exception: its `ground_truth.py` is empty in
-the original JSONL (`modelio_config: None`), so no ground-truth PNG is
-produced for it in any cell.
 
-## Regenerating
 
-The JSONL is the source of truth; everything except the `.png` files is
-derived from it.
-
-```bash
-# Refresh all .md / .py / .bpmn / .json files from the JSONL
-python tools/extract_runs_from_jsonl.py --clean
-
-# Re-render the PNGs from inside a stock Modelio installation.
-# Reviewer path:  tools/macros/render_all.py (Modelio macro)
-# Authors' path:  tools/render_diagrams.py (internal driver)
-python tools/render_diagrams.py                # generated.py for every cell
-python tools/render_diagrams.py --ground-truth --approach config-helpers --llm claude_opus_4_5
-# then copy ground_truth.png across the other 5 cells (one-liner; see tools/README.md)
-```
-
-Both render paths are idempotent: re-running overwrites existing PNGs
-and re-uses per-run sub-packages inside MODELS26.
-
-## About the 18 failed `diagram_generated.png` renders
-
-Of the 330 runs, 312 produced a `diagram_generated.png` and 18 did not.
-The failures cluster on the LLMs the paper already identifies as weaker
-— most are GLM5 producing syntactically broken Python or hallucinated
-Modelio class names, and a handful are Claude/GPT scripts that hit BPMN
-well-formedness rules Modelio enforces. The exact failure mode for each
-is captured in `diagram_render_error.txt`.
-
-## About ground-truth diagram quality
-
-Modelio's BPMN auto-unmask behavior is non-deterministic (the README
-calls this out explicitly): for processes with many elements packed into
-a single lane, only a subset may render on a given execution. The
-helper retries, but a few ground-truth scenarios needed 2–3 attempts to
-converge on a fully-populated diagram. All 54 ground-truth PNGs
-committed here passed a final post-render audit confirming zero
-`SKIP (no graphics)` lines in their render log.

@@ -14,7 +14,6 @@ claims and the qualitative MATISSE validation.
 | The prompts sent to the LLMs                | [`prompts/`](prompts/)                                   |
 | The 330 individual run artifacts            | [`runs/`](runs/)                                         |
 | How to reproduce the tables                 | [`../REPRODUCE.md`](../REPRODUCE.md)                     |
-| Who ran the benchmark, when, with what LLM settings | [`PROCEDURE.md`](PROCEDURE.md)                   |
 | The 6-stage MATISSE pipeline                | [`matisse/procedure.md`](matisse/procedure.md)           |
 | The raw JSONL experiment data               | [`results/raw_jsonl/`](results/raw_jsonl/)               |
 | The reproducibility notebook                | [`results/Evals.ipynb`](results/Evals.ipynb)             |

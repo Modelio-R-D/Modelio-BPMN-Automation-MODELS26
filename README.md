@@ -25,15 +25,14 @@ generated scripts, and the resulting metrics are all in this repository.
 ├── INSTALL.md                      — Modelio + Python setup
 ├── CHANGELOG.md                    — version history
 ├── LICENSE                         — Apache 2.0
+├── requirements.txt                — Python dependencies
 │
 ├── approaches/                     — the two solutions evaluated in the paper
 │   ├── config-helpers/             —   intermediate representation + helper library
 │   │   ├── BPMN_Helpers.py         —     the helper library (install to Modelio)
-│   │   ├── BPMN_Export.py          —     reverse-direction export macro
 │   │   ├── system_prompt.md        —     LLM system prompt
 │   │   ├── examples/               —     4 worked examples (complete business processes)
 │   │   ├── tests/                  —     5 feature smoke tests (one BPMN feature each)
-│   │   ├── lm_studio/              —     Qwen + LM Studio setup for this approach
 │   │   └── docs/                   —     Config+Helpers deep documentation
 │   │       ├── API_REFERENCE.md    —       Config schema, element types
 │   │       ├── DSL_DESIGN.md       —       design rationale + alternatives explored
@@ -42,21 +41,23 @@ generated scripts, and the resulting metrics are all in this repository.
 │   └── no-helper/                  —   baseline: LLM emits Modelio API calls directly
 │       ├── system_prompt.md
 │       ├── templates/
-│       ├── lm_studio/              —     Qwen + LM Studio setup for this approach
 │       └── examples/
 │
 ├── docs/                           — cross-cutting user documentation
 │   ├── QUICKSTART.md               —   10-minute "first BPMN diagram" walkthrough
-│   ├── APPROACHES.md               —   side-by-side comparison of the two approaches
+│   ├── APPROACHES.md               —   guide to rerunning the Config+Helpers vs. No-Helper evaluation
 │   └── images/                     —   figures shared by the root README
 │
-├── evaluation/                     — everything supporting the paper's quantitative claims
+├── Evaluation/                     — everything supporting the paper's quantitative claims
 │   ├── PROCEDURE.md                —   who ran it, when, with what settings
+│   ├── dataset/                    —   PMo benchmark input + ground-truth complexity metrics
+│   │   ├── PMo_input.jsonl         —     raw extract: natural-language input + BPMN XML (55 scenarios)
+│   │   └── PMo_input_processed.jsonl —   enriched with complexity label and structural metrics
 │   ├── comparisons/                —   55 per-scenario docs: reference vs. all 6 LLM outputs
-│   ├── preliminary_tests/          —   pilot one-shot evaluation (3 LLMs, 3 scenarios) that motivated Config+Helpers
-│   ├── prompts/                    —   system prompts for the published benchmark
-│   ├── scenarios/                  —   the 55 PMo input scenarios (browsable)
-│   ├── runs/                       —   per-(approach, LLM, scenario) artifacts
+│   ├── preliminary_tests/          —   pilot study (3 LLMs × 3 scenarios) that motivated Config+Helpers
+│   ├── prompts/                    —   system prompts used during the benchmark
+│   ├── scenarios/                  —   the 55 PMo scenarios in human-readable Markdown
+│   ├── runs/                       —   per-(approach × LLM × scenario) artifacts
 │   │   └── config-helpers/claude_opus_4_5/scenario_07/
 │   │       ├── input_scenario.md
 │   │       ├── ground_truth.bpmn          (XML) / .py (Modelio script) / .png
@@ -69,16 +70,12 @@ generated scripts, and the resulting metrics are all in this repository.
 │   │   └── raw_jsonl/              —     source-of-truth experiment data
 │   └── matisse/                    —   industrial validation (metrics only; materials confidential)
 │
-└── tools/                          — utilities
-    ├── extract_runs_from_jsonl.py  —   regenerates evaluation/runs/ from raw JSONL
-    ├── build_comparisons.py        —   regenerates evaluation/comparisons/ and per-cell stubs
-    ├── macros/render_all.py        —   Modelio macro: reproduce the PNGs inside a stock Modelio
-    └── render_diagrams.py          —   internal driver (authors only; see tools/README.md)
+└── tools/                          — pipeline and utility scripts
+    ├── run_pipeline.py             —   LLM generation pipeline (calls OpenRouter, writes JSONL)
+    ├── bpmn_to_complexity.py       —   parser: BPMN XML → structural complexity metrics
+    ├── get_bpmn_metrics.py         —   Modelio macro: inspect metrics of a diagram interactively
+    └── extract_runs_from_jsonl.py  —   regenerates Evaluation/runs/ from raw JSONL
 ```
-
-The Config+Helpers feature smoke tests now live at
-[`approaches/config-helpers/tests/`](approaches/config-helpers/tests/)
-(formerly top-level `tests/`).
 
 ## For paper readers
 
@@ -94,10 +91,6 @@ The Config+Helpers feature smoke tests now live at
 - **The generated BPMN scripts** for every run are at
   [`evaluation/runs/`](evaluation/runs/) — 330 folders, one per
   (approach × LLM × scenario) cell.
-- **The evaluation procedure** is at
-  [`evaluation/PROCEDURE.md`](evaluation/PROCEDURE.md) (controlled benchmark)
-  and [`evaluation/matisse/procedure.md`](evaluation/matisse/procedure.md)
-  (MATISSE).
 - **DSL design alternatives** explored before settling on the published IR
   are at [`approaches/config-helpers/docs/DSL_DESIGN.md`](approaches/config-helpers/docs/DSL_DESIGN.md).
 - **Preliminary baseline experiments** that motivated the move from direct
@@ -120,9 +113,7 @@ Quick path:
    `CONFIG = {…}` Python script.
 4. In Modelio, select a package, open **Views → Script**, paste and run.
 
-See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for a longer walkthrough and
-[`docs/APPROACHES.md`](docs/APPROACHES.md) for when to use Config+Helpers vs.
-the No-Helper baseline.
+See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for a 10-minute "first BPMN diagram" walkthrough example using our Config+Helpers approach, and [`REPRODUCE.md`](REPRODUCE.md) to rerun our experiments comparing Config+Helpers against the No-Helper baseline.
 
 ## License
 

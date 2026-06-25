@@ -62,4 +62,4 @@
 
 ## How these docs were produced
 
-Generated deterministically from the per-run artifacts by [`tools/build_comparisons.py`](../../tools/build_comparisons.py). Run it again to refresh (overwrites in place).
+Generated from the per-run artifacts during the experiment. The source data is in [`Evaluation/results/raw_jsonl/`](../results/raw_jsonl/).

@@ -68,8 +68,7 @@ Output only the complete, executable Jython script.
 ## Results
 
 Round-by-round outcomes per LLM are tabulated in
-[`../README.md`](../README.md) and narrated in detail in
-[`../results/narrative.md`](../results/narrative.md). The generated
+[`../README.md`](../README.md). The generated
 scripts for S1 are at
 [`../results/scripts/`](../results/scripts/):
 `s1_claude.py`, `s1_claude_r2.py`, `s1_claude_r5.py`,
