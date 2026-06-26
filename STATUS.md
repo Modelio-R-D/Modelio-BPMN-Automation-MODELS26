@@ -67,8 +67,8 @@ sets without modifying any code.
 We believe this artifact satisfies the Available criteria on the following grounds.
 
 **Publicly accessible.**
-The artifact is published on Zenodo at a stable, persistent URL with a DOI.
-No registration is required to download it.
+The artifact is published on Zenodo at a stable, persistent URL.
+**DOI:** [10.5281/zenodo.20931887](https://doi.org/10.5281/zenodo.20931887)
 
 **Open license.**
 The software components of this artifact are released under the **Apache License 2.0**

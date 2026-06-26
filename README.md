@@ -1,5 +1,7 @@
 # Modelio BPMN Automation — MODELS 2026 artifact
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20931887.svg)](https://doi.org/10.5281/zenodo.20931887)
+
 LLM-assisted BPMN modeling in [Modelio](https://www.modelio.org/). Describe
 a process in plain language and Claude, ChatGPT, Gemini, GLM5, or a local
 LLM via LM Studio generates a runnable Modelio macro.
