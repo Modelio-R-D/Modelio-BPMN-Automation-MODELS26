@@ -4,7 +4,7 @@ This document compares two approaches for generating BPMN diagrams in Modelio us
 
 ## Overview
 
-| Aspect | Single-File Approach (v1) | Two-File Approach (current) |
+| Aspect | No-Helper | Config+Helpers |
 |--------|---------------------|------------------------|
 | Files | 1 (everything inline) | 2 (helpers + config) |
 | Lines of code | 500-700+ per script | ~50-100 per config script |
@@ -13,7 +13,7 @@ This document compares two approaches for generating BPMN diagrams in Modelio us
 | Maintenance | Edit each file | Fix helpers once |
 | Best for | Learning, prototypes | Production, AI use, Local LLMs (LM Studio) |
 
-## Single-File Approach (v1)
+## No-Helper Approach 
 
 ### How It Works
 
@@ -69,7 +69,7 @@ if (selectedElements.size > 0):
 - ❌ **Hard to maintain**: Bug fixes require updating every file
 - ❌ **Slow generation**: AI must generate hundreds of lines
 
-## Two-File Approach (current)
+## Config+Helpers Approach (current)
 
 ### How It Works
 
@@ -133,7 +133,7 @@ if (selectedElements.size > 0):
 
 ## File Size Comparison
 
-| Process | Single-File | Two-File (Config Only) | Reduction |
+| Process | No-Helper | Config+Helpers | Reduction |
 |---------|-------------|------------------------|-----------|
 | Simple (5 elements) | ~550 lines | ~40 lines | 93% |
 | Medium (15 elements) | ~620 lines | ~80 lines | 87% |
@@ -147,12 +147,12 @@ The helper library is ~500 lines, but it's written once and reused.
 
 | Approach | Fix Required |
 |----------|-------------|
-| Single-file | Edit every process file (10+ files) |
-| Two-file | Edit BPMN_Helpers.py once |
+| No-Helper | Edit every process file (10+ files) |
+| Config+Helpers | Edit BPMN_Helpers.py once |
 
 ### Learning Curve
 
-| Task | Single-File | Two-File |
+| Task | No-Helper | Config+Helpers |
 |------|-------------|----------|
 | Understanding structure | ⭐⭐ Moderate | ⭐⭐⭐ Easy |
 | First-time setup | ⭐⭐⭐ Easy | ⭐⭐⭐ Easy |
@@ -161,14 +161,14 @@ The helper library is ~500 lines, but it's written once and reused.
 
 ## When to Use Each
 
-### Use Single-File (v1) When:
+### Use No-Helper When:
 
 - Learning how Modelio macros work
 - Creating a one-off script you won't reuse
 - Sharing with someone who doesn't want to install helpers
 - Teaching the fundamentals of BPMN automation
 
-### Use Two-File (current) When:
+### Use Config+Helpers When:
 
 - Using AI to generate processes (recommended!)
 - Working with local LLMs (LM Studio)
@@ -179,6 +179,6 @@ The helper library is ~500 lines, but it's written once and reused.
 
 ## Conclusion
 
-For most users, especially those using AI to generate BPMN macros, the **two-file approach (current) is strongly recommended**. The one-time setup cost is minimal, and the benefits—faster generation, fewer errors, easier maintenance—are substantial.
+For most users, especially those using AI to generate BPMN macros, the **Config+Helpers approach (current) is strongly recommended**. The one-time setup cost is minimal, and the benefits—faster generation, fewer errors, easier maintenance—are substantial.
 
-The single-file approach remains valuable for learning and understanding how Modelio's BPMN API works under the hood.
+The No-Helper approach remains valuable for learning and understanding how Modelio's BPMN API works under the hood.

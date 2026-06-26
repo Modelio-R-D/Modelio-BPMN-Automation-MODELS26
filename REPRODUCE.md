@@ -63,8 +63,7 @@ pipeline from:
 
 No manual copy-paste needed — `--approach` selects the right prompt.
 
-**Set up your API key** in `.env` at the repository root (copy from
-[`.env.example`](.env.example)):
+**Set up your API key** in `.env` at the repository root :
 
 ```
 OPENROUTER_API_KEY=your-key-here
@@ -89,6 +88,8 @@ python tools/run_pipeline.py \
     --input    Evaluation/dataset/PMo_input_processed.jsonl \
     --output   Evaluation/results/raw_jsonl/exp_no_helper/generated_claude_opus.jsonl
 ```
+
+**For token economy, we recommend both tips below before running all 55 scenarios:**
 
 > **Tip — test on two scenarios first.**  
 > Add `--limit 2 --verbose` to process only the first two records and print
@@ -118,6 +119,15 @@ LLM versions and sampling settings are listed in the paper (§ Experiment Setup)
 
 ## Step 3 — Test generated scripts in Modelio
 
+> **Transparency note — how the original experiment ran Modelio.**  
+> The 330 scenarios were not executed manually. The original pipeline used an
+> internal **ScriptServer** component that automated script injection into
+> Modelio, package selection, and metric capture for each run. This component
+> is **not included** in the artifact; the execution-related fields in the
+> raw JSONL files were populated by it. We hope to open-source it soon.
+> In the meantime, the manual steps below let you exercise any individual
+> generated script and verify its output.
+
 Once you have a JSONL output from Step 2, unpack it into the per-run folder
 tree:
 
@@ -126,7 +136,10 @@ python tools/extract_runs_from_jsonl.py --clean
 ```
 
 This populates `Evaluation/runs/<approach>/<llm>/scenario_<NN>/` with
-`generated.py`, `ground_truth.py`, `metrics.json`, etc.
+`generated.py`, `ground_truth.py`, `input_scenario.md`, and a partial
+`metrics.json` (tokens and generation time from the API call). The
+`execution_output.txt` and execution fields in `metrics.json` will be
+empty at this point, they must be filled in manually after running each generated script in Modelio and recording the output (see below).
 
 **To run a generated script and see the BPMN diagram:**
 
@@ -139,9 +152,16 @@ This populates `Evaluation/runs/<approach>/<llm>/scenario_<NN>/` with
 **To extract structural metrics from a diagram you just generated:**
 
 Open the Modelio Script console and run
-[`tools/get_bpmn_metrics.py`](tools/get_bpmn_metrics.py) — it prints lane,
-element, gateway, flow, and data-object counts directly from the open diagram.
-These can be compared against the ground-truth values.
+[`tools/get_bpmn_metrics.py`](tools/get_bpmn_metrics.py). It works in two modes
+depending on what is selected in the model explorer:
+
+- **Single process selected** — prints lane, element, gateway, flow, and
+  data-object counts for that process only.
+- **Package selected** — iterates over all BPMN processes inside the package
+  and prints metrics for each one.
+
+The output can be compared directly against the ground-truth values in
+`metrics.json`.
 
 ---
 

@@ -15,10 +15,6 @@ pastes-and-runs with no separate parsing or wrapping step. This
 constraint shapes every choice below, especially the syntactic-format
 decision in [§Syntactic format](#syntactic-format).
 
-It addresses Reviewer 3's main question — *"What DSL alternatives did
-you try (e.g., different abstraction levels, ordering methods,
-syntactic formats) during the iterations?"* — and meta-review point 2.
-
 ---
 
 ## Final form (what the paper reports)

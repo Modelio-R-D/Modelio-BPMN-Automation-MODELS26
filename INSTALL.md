@@ -31,20 +31,30 @@ The macros run inside Modelio's bundled Jython 2.7 and need no external
 Python. Only the **reproduction / analysis** tools need a separate Python:
 
 ```bash
-pip install pandas numpy jupyterlab
+pip install -r requirements.txt
 ```
 
 Python 3.10 or later.
 
-## 4. LLM access (optional)
+## 4. LLM access
 
-Only required to repeat the generation phase. The experiments used:
+Required to repeat the generation phase. All three models used in the
+experiments are accessible via [OpenRouter](https://openrouter.ai):
 
-- Claude Opus 4.5 (Anthropic API)
-- GPT-5.2 (OpenAI API or OpenRouter)
-- GLM5 (zai-org via OpenRouter)
+| Model | OpenRouter identifier |
+|---|---|
+| Claude Opus 4.5 | `anthropic/claude-opus-4-5` |
+| GPT-5.2 | `openai/gpt-5-2` |
+| GLM5 | `z-ai/glm-5` |
 
-LLM versions and sampling settings are described in the paper.
+Create a `.env` file at the repository root with your key:
+
+```
+OPENROUTER_API_KEY=your-key-here
+```
+
+LLM versions and sampling settings are described in the paper. See
+[`REPRODUCE.md`](REPRODUCE.md) for the full generation pipeline.
 
 ## 5. Verify the installation
 

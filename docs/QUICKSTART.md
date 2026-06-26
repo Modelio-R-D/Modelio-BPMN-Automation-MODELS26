@@ -76,10 +76,11 @@ Once you have opened Modelio and created or opened a project:
 ## Step 5: View Your Diagram
 
 1. Expand your package in the model explorer
-2. Find the new process (named like `OrderFulfillment_12345`)
-3. Double-click the process diagram to open it
+2. Find the new process (named like `SalesInquiryToOrder_14363`)
+3. Double-click the process diagram to open it in the diagram view.
 4. Your BPMN diagram is ready!
 
+![modelio script executed](images/modelio_script_executed.png)
 ---
 
 ## Customization
