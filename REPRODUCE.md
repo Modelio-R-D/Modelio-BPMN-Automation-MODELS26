@@ -141,13 +141,18 @@ This populates `evaluation/runs/<approach>/<llm>/scenario_<NN>/` with
 `execution_output.txt` and execution fields in `metrics.json` will be
 empty at this point, they must be filled in manually after running each generated script in Modelio and recording the output (see below).
 
+---
+
 **To run a generated script and see the BPMN diagram:**
 
-1. Install Modelio 5.4+ (see [`INSTALL.md`](INSTALL.md)).
-2. Copy [`approaches/config-helpers/BPMN_Helpers.py`](approaches/config-helpers/BPMN_Helpers.py)
-   into your Modelio macros folder.
-3. Open Modelio, select a package, open **Views → Script**, paste and run the
-   contents of any `evaluation/runs/.../generated.py`.
+Once you have installed Modelio 5.4+ (see [`INSTALL.md`](INSTALL.md)) and created or opened a project:
+1. **Select a Package** in the model explorer
+   - If you don't have one: Right-click root → Create element → Package
+2. Go to **Views → Script** to display the Script view, then paste the contents of any `evaluation/runs/.../generated.py`.
+3. Click **Run** (play button)
+
+![modelio script](docs/images/modelio_script.png)
+---
 
 **To extract structural metrics from a diagram you just generated:**
 
