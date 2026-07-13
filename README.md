@@ -3,8 +3,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20931887.svg)](https://doi.org/10.5281/zenodo.20931887)
 
 LLM-assisted BPMN modeling in [Modelio](https://www.modelio.org/). Describe
-a process in plain language and Claude, ChatGPT, Gemini, GLM5, or a local
-LLM via LM Studio generates a runnable Modelio macro.
+a process in plain language and Claude, ChatGPT, Gemini, GLM5, or any
+**local open-source model via [Ollama](https://ollama.com)** generates a runnable Modelio macro.
 
 ![BPMN Example](docs/images/expense-approval-example.png)
 
@@ -74,6 +74,7 @@ generated scripts, and the resulting metrics are all in this repository.
 │
 └── tools/                          — pipeline and utility scripts
     ├── run_pipeline.py             —   LLM generation pipeline (calls OpenRouter, writes JSONL)
+    ├── run_pipeline_ollama.py      —    extended run_pipeline.py to support local models via Ollama
     ├── bpmn_to_complexity.py       —   parser: BPMN XML → structural complexity metrics
     ├── get_bpmn_metrics.py         —   Modelio macro: inspect metrics of a diagram interactively
     └── extract_runs_from_jsonl.py  —   regenerates Evaluation/runs/ from raw JSONL
@@ -116,6 +117,8 @@ Quick path:
 4. In Modelio, select a package, open **Views → Script**, paste and run.
 
 See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) for a 10-minute "first BPMN diagram" walkthrough example using our Config+Helpers approach, and [`REPRODUCE.md`](REPRODUCE.md) to rerun our experiments comparing Config+Helpers against the No-Helper baseline.
+
+> **Running locally?** Use [`tools/run_pipeline_ollama.py`](tools/run_pipeline_ollama.py) instead of `run_pipeline.py` to run any Ollama-served model.
 
 ## License
 
