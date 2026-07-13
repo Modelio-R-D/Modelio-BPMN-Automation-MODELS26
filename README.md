@@ -50,8 +50,8 @@ generated scripts, and the resulting metrics are all in this repository.
 │   ├── APPROACHES.md               —   guide to rerunning the Config+Helpers vs. No-Helper evaluation
 │   └── images/                     —   figures shared by the root README
 │
-├── Evaluation/                     — everything supporting the paper's quantitative claims
-│   ├── PROCEDURE.md                —   who ran it, when, with what settings
+├── evaluation/                     — everything supporting the paper's quantitative claims
+│   ├── README.md                   — Evaluation folder navigation and structure guide
 │   ├── dataset/                    —   PMo benchmark input + ground-truth complexity metrics
 │   │   ├── PMo_input.jsonl         —     raw extract: natural-language input + BPMN XML (55 scenarios)
 │   │   └── PMo_input_processed.jsonl —   enriched with complexity label and structural metrics

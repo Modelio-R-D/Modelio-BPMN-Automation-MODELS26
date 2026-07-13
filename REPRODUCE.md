@@ -5,7 +5,7 @@ from the MODELS 2026 paper *"Towards LLM-Assisted Business Process Modeling
 in an Industrial Modeling Tool"*.
 
 Following these steps will reproduce the contents of
-[`Evaluation/results/raw_jsonl/`](Evaluation/results/raw_jsonl/) — the
+[`evaluation/results/raw_jsonl/`](evaluation/results/raw_jsonl/) — the
 source-of-truth JSONL files from which all paper tables are derived (Step 4).
 The original runs cover **2 approaches × 3 LLMs × 55 scenarios = 330 cells**.
 
@@ -28,9 +28,9 @@ benchmark. We extracted two fields from it per scenario:
 - **BPMN 2.0 XML** — used as the ground-truth reference.
 
 The 55 extracted records, enriched with complexity labels and structural
-metrics, are in [`Evaluation/dataset/PMo_input_processed.jsonl`](Evaluation/dataset/PMo_input_processed.jsonl).
+metrics, are in [`evaluation/dataset/PMo_input_processed.jsonl`](evaluation/dataset/PMo_input_processed.jsonl).
 
-→ See [`Evaluation/dataset/README.md`](Evaluation/dataset/README.md) for a
+→ See [`evaluation/dataset/README.md`](evaluation/dataset/README.md) for a
 full description of the dataset fields and how the ground-truth metrics were
 derived.
 
@@ -75,8 +75,8 @@ OPENROUTER_API_KEY=your-key-here
 python tools/run_pipeline.py \
     --approach config-helpers \
     --model    anthropic/claude-opus-4-5 \
-    --input    Evaluation/dataset/PMo_input_processed.jsonl \
-    --output   Evaluation/results/raw_jsonl/exp_config_helper/generated_claude_opus.jsonl
+    --input    evaluation/dataset/PMo_input_processed.jsonl \
+    --output   evaluation/results/raw_jsonl/exp_config_helper/generated_claude_opus.jsonl
 ```
 
 **Run for No-Helper:**
@@ -85,8 +85,8 @@ python tools/run_pipeline.py \
 python tools/run_pipeline.py \
     --approach no-helper \
     --model    anthropic/claude-opus-4-5 \
-    --input    Evaluation/dataset/PMo_input_processed.jsonl \
-    --output   Evaluation/results/raw_jsonl/exp_no_helper/generated_claude_opus.jsonl
+    --input    evaluation/dataset/PMo_input_processed.jsonl \
+    --output   evaluation/results/raw_jsonl/exp_no_helper/generated_claude_opus.jsonl
 ```
 
 **For token economy, we recommend both tips below before running all 55 scenarios:**
@@ -98,7 +98,7 @@ python tools/run_pipeline.py \
 > ```bash
 > python tools/run_pipeline.py --approach config-helpers \
 >     --model anthropic/claude-opus-4-5 \
->     --input Evaluation/dataset/PMo_input_processed.jsonl \
+>     --input evaluation/dataset/PMo_input_processed.jsonl \
 >     --output /tmp/test_output.jsonl \
 >     --limit 2 --verbose --delay 0
 > ```
@@ -135,7 +135,7 @@ tree:
 python tools/extract_runs_from_jsonl.py --clean
 ```
 
-This populates `Evaluation/runs/<approach>/<llm>/scenario_<NN>/` with
+This populates `evaluation/runs/<approach>/<llm>/scenario_<NN>/` with
 `generated.py`, `ground_truth.py`, `input_scenario.md`, and a partial
 `metrics.json` (tokens and generation time from the API call). The
 `execution_output.txt` and execution fields in `metrics.json` will be
@@ -147,7 +147,7 @@ empty at this point, they must be filled in manually after running each generate
 2. Copy [`approaches/config-helpers/BPMN_Helpers.py`](approaches/config-helpers/BPMN_Helpers.py)
    into your Modelio macros folder.
 3. Open Modelio, select a package, open **Views → Script**, paste and run the
-   contents of any `Evaluation/runs/.../generated.py`.
+   contents of any `evaluation/runs/.../generated.py`.
 
 **To extract structural metrics from a diagram you just generated:**
 
@@ -167,11 +167,11 @@ The output can be compared directly against the ground-truth values in
 
 ## Step 4 — Reproduce the paper tables
 
-Once you have generated JSONL files in `Evaluation/results/raw_jsonl/`, open
+Once you have generated JSONL files in `evaluation/results/raw_jsonl/`, open
 the analysis notebook:
 
 ```bash
-jupyter lab Evaluation/results/Evals.ipynb
+jupyter lab evaluation/results/Evals.ipynb
 ```
 
 Running all cells reproduces the five quantitative tables from the paper:
@@ -184,7 +184,7 @@ Running all cells reproduces the five quantitative tables from the paper:
 | Table 4 | Table 9 | Mean Absolute Error by structural dimension |
 | Table 5 | Table 10 | Generated output size (lines of code) |
 
-The notebook reads directly from `Evaluation/results/raw_jsonl/` — no
+The notebook reads directly from `evaluation/results/raw_jsonl/` — no
 intermediate files needed.
 
 ---

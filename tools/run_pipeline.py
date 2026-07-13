@@ -20,15 +20,15 @@ Usage
     python tools/run_pipeline.py \\
         --approach config-helpers \\
         --model openai/gpt-5.2 \\
-        --input  Evaluation/dataset/PMo_input_processed.jsonl \\
-        --output Evaluation/results/raw_jsonl/exp_config_helper/generated_gpt52.jsonl
+        --input  evaluation/dataset/PMo_input_processed.jsonl \\
+        --output evaluation/results/raw_jsonl/exp_config_helper/generated_gpt52.jsonl
 
     # No-Helper approach, Claude Opus
     python tools/run_pipeline.py \\
         --approach no-helper \\
         --model anthropic/claude-opus-4-5 \\
-        --input  Evaluation/dataset/PMo_input_processed.jsonl \\
-        --output Evaluation/results/raw_jsonl/exp_no_helper/generated_claude_opus.jsonl
+        --input  evaluation/dataset/PMo_input_processed.jsonl \\
+        --output evaluation/results/raw_jsonl/exp_no_helper/generated_claude_opus.jsonl
 
     # Resume an interrupted run (skips already-written lines)
     python tools/run_pipeline.py ... --resume
