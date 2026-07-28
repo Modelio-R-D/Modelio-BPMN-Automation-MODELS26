@@ -117,6 +117,59 @@ LLM versions and sampling settings are listed in the paper (§ Experiment Setup)
 
 ---
 
+### Alternative: run with a local Ollama model
+
+[`tools/run_pipeline_ollama.py`](tools/run_pipeline_ollama.py) has the same
+interface as `run_pipeline.py` but sends requests to a local
+[Ollama](https://ollama.com) instance — no API key required.
+
+**Prerequisites:**
+
+1. [Install Ollama](https://ollama.com/download) and start the server:
+   ```bash
+   ollama serve
+   ```
+2. Pull the model you want to use, e.g.:
+   ```bash
+   ollama pull qwen2.5:7b
+   ```
+
+**Run Config+Helpers with qwen2.5:7b:**
+
+```bash
+python tools/run_pipeline_ollama.py \
+    --approach config-helpers \
+    --model    qwen2.5:7b \
+    --input    evaluation/dataset/PMo_input_processed.jsonl \
+    --output   evaluation/results/raw_jsonl/exp_config_helper/generated_qwen.jsonl
+```
+
+**Run No-Helper with qwen2.5:7b:**
+
+```bash
+python tools/run_pipeline_ollama.py \
+    --approach no-helper \
+    --model    qwen2.5:7b \
+    --input    evaluation/dataset/PMo_input_processed.jsonl \
+    --output   evaluation/results/raw_jsonl/exp_no_helper/generated_qwen.jsonl
+```
+
+**Quick smoke-test (2 scenarios, verbose output):**
+
+```bash
+python tools/run_pipeline_ollama.py \
+    --approach config-helpers \
+    --model    qwen2.5:7b \
+    --input    evaluation/dataset/PMo_input_processed.jsonl \
+    --output   /tmp/test_ollama.jsonl \
+    --limit 2 --verbose --delay 0
+```
+
+See `python tools/run_pipeline_ollama.py --help` for all options, including
+`--host` to point at a non-default Ollama URL.
+
+---
+
 ## Step 3 — Test generated scripts in Modelio
 
 > **Transparency note — how the original experiment ran Modelio.**  

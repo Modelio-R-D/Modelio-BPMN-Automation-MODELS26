@@ -15,21 +15,13 @@ The system prompt is loaded automatically from the approach directory:
 Usage
 -----
     # Config+Helpers approach, qwen2.5:1.5b
-    python tools/run_pipeline_ollama.py \\
-        --approach config-helpers \\
-        --model qwen2.5:1.5b \\
-        --input  evaluation/dataset/PMo_input_processed.jsonl \\
-        --output evaluation/results/raw_jsonl/exp_config_helper/generated_qwen.jsonl
+    python tools/run_pipeline_ollama.py --approach config-helpers --model qwen2.5:1.5b --input evaluation/dataset/PMo_input_processed.jsonl --output evaluation/results/raw_jsonl/exp_config_helper/generated_qwen.jsonl
 
     # No-Helper approach, tinyllama
-    python tools/run_pipeline_ollama.py \\
-        --approach no-helper \\
-        --model tinyllama \\
-        --input  evaluation/dataset/PMo_input_processed.jsonl \\
-        --output evaluation/results/raw_jsonl/exp_no_helper/generated_tinyllama.jsonl
+    python tools/run_pipeline_ollama.py --approach no-helper --model tinyllama --input evaluation/dataset/PMo_input_processed.jsonl --output evaluation/results/raw_jsonl/exp_no_helper/generated_tinyllama.jsonl
 
     # Resume an interrupted run (skips already-written lines)
-    python tools/run_pipeline_ollama.py ... --resume
+    python tools/run_pipeline_ollama.py --approach config-helpers --model qwen2.5:1.5b --input evaluation/dataset/PMo_input_processed.jsonl --output evaluation/results/raw_jsonl/exp_config_helper/generated_qwen.jsonl --resume
 
 Environment
 -----------
